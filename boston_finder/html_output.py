@@ -145,7 +145,7 @@ def _git_deploy(html: str):
         print(f"  [deploy] failed: {ex}")
 
 
-def generate(events: list[dict], today: datetime, days: int):
+def generate(events: list[dict], today: datetime, days: int, persona: str = "brian"):
     end_date = today + timedelta(days=days - 1)
 
     # group by date, sorted chronologically with today first
@@ -194,12 +194,20 @@ def generate(events: list[dict], today: datetime, days: int):
             url = e.get("url", "")
             link = f'<a class="link" href="{url}" target="_blank">{url}</a>' if url else ""
             score_badge = f'<span class="score" title="Relevance score 1-10">{score}</span>' if score else ""
+            eid = url.replace("https://", "").replace("/", "_").replace(".", "_")[:40]
+            feedback = f"""<div class="feedback" id="fb_{eid}">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','{url}','{e['name'].replace("'","")}')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'chloe','up','{url}','{e['name'].replace("'","")}')">👍 Chloe</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','{url}','{e['name'].replace("'","")}')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'chloe','down','{url}','{e['name'].replace("'","")}')">👎 Chloe</button>
+            </div>""" if url else ""
             cards += f"""
             <div class="card">
                 <div class="card-title">{e['name']} {score_badge}</div>
                 <div class="meta">{time_venue}</div>
                 {reason}
                 {link}
+                {feedback}
             </div>"""
         today_tag = ' <span class="today-tag">TODAY</span>' if is_today else ""
         sections += f"""
@@ -208,26 +216,32 @@ def generate(events: list[dict], today: datetime, days: int):
             {cards}
         </div>"""
 
+    is_chloe  = (persona == "chloe")
+    title_str = "Chloe's Events" if is_chloe else "Boston Events"
+    nav_brian = "" if not is_chloe else '<a href="/" style="color:#888;text-decoration:none">← Brian</a> &nbsp;'
+    nav_chloe = "" if is_chloe else '&nbsp; <a href="/chloe" style="color:#888;text-decoration:none">Chloe →</a>'
+    accent    = "#c084fc" if is_chloe else "#f0a500"  # purple for Chloe, amber for Brian
+
     html = f"""<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Boston Events — {today.strftime('%B %-d, %Y')}</title>
+<title>{title_str} — {today.strftime('%B %-d, %Y')}</title>
 <style>
   body {{ font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
           background: #0f0f0f; color: #e8e8e8; margin: 0; padding: 24px; }}
   h1   {{ font-size: 1.4rem; font-weight: 600; color: #fff; margin: 0 0 4px; }}
   .sub {{ color: #888; font-size: 0.85rem; margin-bottom: 28px; }}
   .day-section {{ margin-bottom: 32px; }}
-  .day-header  {{ font-size: 1rem; font-weight: 700; color: #f0a500;
+  .day-header  {{ font-size: 1rem; font-weight: 700; color: {accent};
                   text-transform: uppercase; letter-spacing: 0.05em;
                   border-bottom: 1px solid #333; padding-bottom: 6px; margin-bottom: 12px; }}
   .card        {{ background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 8px;
                   padding: 14px 16px; margin-bottom: 10px; }}
   .card:hover  {{ border-color: #444; }}
   .card-title  {{ font-size: 1rem; font-weight: 600; color: #fff; margin-bottom: 4px; }}
-  .score       {{ background: #f0a500; color: #000; font-size: 0.7rem; font-weight: 700;
+  .score       {{ background: {accent}; color: #000; font-size: 0.7rem; font-weight: 700;
                   padding: 2px 7px; border-radius: 99px; margin-left: 8px;
                   vertical-align: middle; }}
   .meta        {{ font-size: 0.82rem; color: #888; margin-bottom: 4px; }}
@@ -240,7 +254,7 @@ def generate(events: list[dict], today: datetime, days: int):
                   vertical-align: middle; letter-spacing: 0.05em; }}
   .legend      {{ background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 8px;
                   padding: 12px 16px; margin-bottom: 28px; font-size: 0.78rem; color: #888; }}
-  .legend b    {{ color: #f0a500; }}
+  .legend b    {{ color: {accent}; }}
   .cost-bar    {{ background: #111; border: 1px solid #222; border-radius: 8px;
                   padding: 10px 16px; margin-bottom: 20px; font-size: 0.78rem; color: #666; }}
   .cost-item   {{ margin-right: 4px; }}
@@ -262,10 +276,17 @@ def generate(events: list[dict], today: datetime, days: int):
   .show-more-btn:hover {{ border-color: #555; color: #ccc; }}
   #extra-events {{ display: none; }}
   .extra-label  {{ font-size: 0.72rem; color: #555; font-style: italic; margin-left: 6px; }}
+  .feedback     {{ margin-top: 8px; display: flex; gap: 6px; flex-wrap: wrap; }}
+  .fb-btn       {{ background: none; border: 1px solid #2a2a2a; border-radius: 99px;
+                   padding: 3px 10px; font-size: 0.7rem; color: #555; cursor: pointer; }}
+  .fb-btn:hover {{ border-color: #555; color: #aaa; }}
+  .fb-btn.done  {{ border-color: #444; color: #7fff7f; }}
+  .fb-btn.skip  {{ border-color: #444; color: #ff7070; }}
 </style>
 </head>
 <body>
-  <h1>Boston Events</h1>
+  <div style="font-size:0.8rem;margin-bottom:12px">{nav_brian}<span style="color:#555">Boston Events</span>{nav_chloe}</div>
+  <h1>{title_str}</h1>
   <div class="sub">{today.strftime('%B %-d')} – {end_date.strftime('%B %-d, %Y')} &nbsp;·&nbsp; {len(events)} events</div>
   {_cost_html()}
   {_oyster_html()}
@@ -277,6 +298,12 @@ def generate(events: list[dict], today: datetime, days: int):
   </div>
   {sections}
   {_extra_events_html(today, end_date)}
+  <!-- Netlify form (hidden) — required for Netlify to detect and activate the form -->
+  <form name="event-feedback" netlify netlify-honeypot="bot-field" hidden>
+    <input name="bot-field">
+    <input name="persona"><input name="vote"><input name="event_url"><input name="event_name">
+  </form>
+
   <div class="footer">Generated {datetime.now().strftime('%B %-d, %Y at %-I:%M %p')}</div>
 <script>
   function toggleExtra() {{
@@ -289,6 +316,27 @@ def generate(events: list[dict], today: datetime, days: int):
       el.style.display = 'none';
       btn.textContent = btn.dataset.label;
     }}
+  }}
+
+  function sendFeedback(btn, persona, vote, url, name) {{
+    var cls = vote === 'up' ? 'done' : 'skip';
+    btn.classList.add(cls);
+    btn.disabled = true;
+    var body = new URLSearchParams({{
+      'form-name': 'event-feedback',
+      'persona': persona,
+      'vote': vote,
+      'event_url': url,
+      'event_name': name
+    }});
+    fetch('https://highendeventfinder.netlify.app/', {{
+      method: 'POST',
+      headers: {{'Content-Type': 'application/x-www-form-urlencoded'}},
+      body: body.toString()
+    }}).catch(function() {{
+      btn.classList.remove(cls);
+      btn.disabled = false;
+    }});
   }}
 </script>
 </body>

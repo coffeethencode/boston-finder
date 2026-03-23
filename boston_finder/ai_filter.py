@@ -44,10 +44,11 @@ def deduplicate(events: list[dict]) -> list[dict]:
     return out
 
 
-def score(events: list[dict], prompt_role: str, min_score: int = 5) -> tuple[list[dict], int, int]:
+def score(events: list[dict], prompt_role: str, min_score: int = 5, persona: str = "brian") -> tuple[list[dict], int, int]:
     """
     Score a list of events using Claude.
     prompt_role: describes what kinds of events to look for (injected into prompt).
+    persona: cache namespace so different people get independent scores.
     Returns (events_with_score >= min_score sorted descending, n_cached, n_scored).
     """
     if not ANTHROPIC_API_KEY:
@@ -59,7 +60,7 @@ def score(events: list[dict], prompt_role: str, min_score: int = 5) -> tuple[lis
     for e in events:
         url = e.get("url", "")
         if url:
-            cached = get_scored(url)
+            cached = get_scored(url, persona)
             if cached and cached["score"] >= min_score:
                 e["score"]  = cached["score"]
                 e["reason"] = cached["reason"]
@@ -85,10 +86,16 @@ def score(events: list[dict], prompt_role: str, min_score: int = 5) -> tuple[lis
              for j, e in enumerate(chunk)],
             indent=2,
         )
+        try:
+            from pull_feedback import get_feedback_context
+            feedback_ctx = get_feedback_context(persona)
+        except Exception:
+            feedback_ctx = ""
+
         system_prompt = f"""{prompt_role}
 
 {SOFT_RULES}
-
+{(chr(10) + feedback_ctx) if feedback_ctx else ""}
 Score each event 0–10. Only return events with score >= {min_score}.
 For "_raw: true" entries, extract individual events from the description and score each.
 Return ONLY a JSON array: [{{"index": 0, "score": 7, "reason": "brief reason"}}]"""
@@ -144,7 +151,7 @@ Return ONLY a JSON array: [{{"index": 0, "score": 7, "reason": "brief reason"}}]
                     name = chunk[idx].get("name", "")
                     rated_indices.add(idx)
                     if url:
-                        save_scored(url, s, r, name)
+                        save_scored(url, s, r, name, persona)
                     if s >= min_score:
                         chunk[idx]["score"] = s
                         chunk[idx]["reason"] = r
@@ -154,7 +161,7 @@ Return ONLY a JSON array: [{{"index": 0, "score": 7, "reason": "brief reason"}}]
                 if idx not in rated_indices:
                     url = e.get("url", "")
                     if url:
-                        save_scored(url, 0, "below threshold", e.get("name", ""))
+                        save_scored(url, 0, "below threshold", e.get("name", ""), persona)
         except Exception as ex:
             print(f"  [ai_filter] {ex} — keyword fallback")
             results += _keyword_fallback(chunk, min_score)

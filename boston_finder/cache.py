@@ -27,10 +27,10 @@ def _save_scored(data: dict):
         json.dump(data, f, indent=2)
 
 
-def get_scored(url: str) -> dict | None:
+def get_scored(url: str, persona: str = "brian") -> dict | None:
     """Return cached score+reason for a URL, or None if unseen/expired."""
     store = _load_scored()
-    entry = store.get(url)
+    entry = store.get(f"{persona}:{url}")
     if not entry:
         return None
     scored_at = datetime.fromisoformat(entry["scored_at"])
@@ -39,10 +39,10 @@ def get_scored(url: str) -> dict | None:
     return entry  # {"score": N, "reason": "...", "scored_at": "..."}
 
 
-def save_scored(url: str, score: int, reason: str, name: str = ""):
+def save_scored(url: str, score: int, reason: str, name: str = "", persona: str = "brian"):
     """Persist a score for a URL."""
     store = _load_scored()
-    store[url] = {
+    store[f"{persona}:{url}"] = {
         "score":     score,
         "reason":    reason,
         "name":      name,

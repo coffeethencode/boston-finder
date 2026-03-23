@@ -90,6 +90,14 @@ def main():
     args = parser.parse_args()
 
     run_start = datetime.now()
+
+    # sync feedback before scoring so today's run reflects it
+    try:
+        import pull_feedback
+        pull_feedback.sync()
+    except Exception as ex:
+        print(f"  [feedback] sync skipped: {ex}")
+
     today = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
     end   = today + timedelta(days=args.days - 1)
     print(f"\nSearching Boston events: {today.strftime('%Y-%m-%d')} → {end.strftime('%Y-%m-%d')}")
@@ -128,7 +136,7 @@ def main():
     costs.log_run(run_start, n_total, n_cached, n_scored)
     display(filtered, today, args.days)
     from boston_finder.html_output import generate
-    generate(filtered, today, args.days)
+    generate(filtered, today, args.days, persona="brian")
 
 
 if __name__ == "__main__":
