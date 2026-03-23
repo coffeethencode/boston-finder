@@ -293,8 +293,8 @@ def generate(events: list[dict], today: datetime, days: int, persona: str = "bri
 </head>
 <body>
   <nav class="nav">
-    <a href="/" class="{nav_brian_cls}">Brian</a>
-    <a href="/chloe" class="{nav_chloe_cls}">Chloe</a>
+    <a href="https://highendeventfinder.netlify.app/" class="{nav_brian_cls}">Brian</a>
+    <a href="https://highendeventfinder.netlify.app/chloe" class="{nav_chloe_cls}">Chloe</a>
   </nav>
   <h1>{title_str}</h1>
   <div class="sub">{today.strftime('%B %-d')} – {end_date.strftime('%B %-d, %Y')} &nbsp;·&nbsp; {len(events)} events</div>
