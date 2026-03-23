@@ -92,7 +92,14 @@
             </thead>
             <tbody>
               <tr style="background:#1e2a1e">
-                <td>3/23 6:09 PM <b style='color:#7fff7f;font-size:0.65rem'>LATEST</b></td>
+                <td>3/23 6:18 PM <b style='color:#7fff7f;font-size:0.65rem'>LATEST</b></td>
+                <td style="color:#aaa">177 cached / 0 scored</td>
+                <td style="color:#aaa">—</td>
+                <td style="color:#e8e8e8;font-weight:600">$0.0000</td>
+                <td style="color:#666">0.0s</td>
+              </tr>
+              <tr>
+                <td>3/23 6:09 PM</td>
                 <td style="color:#aaa">177 cached / 0 scored</td>
                 <td style="color:#aaa">—</td>
                 <td style="color:#e8e8e8;font-weight:600">$0.0000</td>
@@ -114,13 +121,6 @@
               </tr>
               <tr>
                 <td>3/23 5:50 PM</td>
-                <td style="color:#aaa">101 cached / 0 scored</td>
-                <td style="color:#aaa">—</td>
-                <td style="color:#e8e8e8;font-weight:600">$0.0000</td>
-                <td style="color:#666">0.0s</td>
-              </tr>
-              <tr>
-                <td>3/23 5:49 PM</td>
                 <td style="color:#aaa">101 cached / 0 scored</td>
                 <td style="color:#aaa">—</td>
                 <td style="color:#e8e8e8;font-weight:600">$0.0000</td>
@@ -1109,13 +1109,13 @@
             </div>
         </div>
   
-  <!-- Netlify form (hidden) — required for Netlify to detect and activate the form -->
-  <form name="event-feedback" netlify netlify-honeypot="bot-field" hidden>
+  <!-- Netlify form detector — must be visible to Netlify's scanner (use CSS to hide, not hidden attr) -->
+  <form name="event-feedback" data-netlify="true" netlify-honeypot="bot-field" style="display:none;position:absolute">
     <input name="bot-field">
     <input name="persona"><input name="vote"><input name="event_url"><input name="event_name">
   </form>
 
-  <div class="footer">Generated March 23, 2026 at 6:11 PM</div>
+  <div class="footer">Generated March 23, 2026 at 6:21 PM</div>
 <script>
   function toggleExtra() {
     var el = document.getElementById('extra-events');
