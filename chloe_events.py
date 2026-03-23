@@ -50,7 +50,7 @@ def generate_chloe_html(events: list[dict], today: datetime, days: int):
         _html_mod.OUTPUT_FILE = orig
 
     # deploy chloe.html to Netlify alongside brian's index.html
-    import shutil, subprocess
+    import os, shutil, subprocess
     repo = _html_mod.GITHUB_REPO
     deploy_path = os.path.join(repo, "docs", "chloe.html")
     if os.path.exists(CHLOE_OUTPUT) and os.path.isdir(repo):
