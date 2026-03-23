@@ -114,29 +114,35 @@ def _extra_events_html(today: datetime, end_date: datetime) -> str:
         return ""
 
 
-def _netlify_deploy():
-    """Deploy ~/boston_events_site/ to Netlify if CLI is available."""
-    import shutil
-    if not shutil.which("netlify"):
-        return
-    netlify_toml = os.path.join(DEPLOY_DIR, "netlify.toml")
-    if not os.path.exists(netlify_toml):
-        return  # site not yet configured — skip silently
-    result = subprocess.run(
-        ["netlify", "deploy", "--prod", "--dir", DEPLOY_DIR, "--json"],
-        capture_output=True, text=True
-    )
+GITHUB_REPO  = os.path.expanduser("~/python-projects/boston-finder-repo")
+
+
+def _git_deploy(html: str):
+    """Write HTML to the GitHub repo's docs/ folder and push — Netlify auto-deploys from there."""
+    docs_dir = os.path.join(GITHUB_REPO, "docs")
+    if not os.path.isdir(docs_dir):
+        return  # repo not set up locally — skip silently
     try:
-        import json
-        data = json.loads(result.stdout)
-        url = data.get("deploy_url") or data.get("url", "")
-        if url:
-            print(f"  [netlify] deployed → {url}")
-    except Exception:
-        if result.returncode == 0:
-            print("  [netlify] deployed")
+        with open(os.path.join(docs_dir, "index.html"), "w") as f:
+            f.write(html)
+        subprocess.run(["git", "-C", GITHUB_REPO, "add", "docs/index.html"], check=True)
+        result = subprocess.run(
+            ["git", "-C", GITHUB_REPO, "diff", "--cached", "--quiet"],
+            capture_output=True
+        )
+        if result.returncode != 0:  # there are staged changes
+            from datetime import datetime
+            ts = datetime.now().strftime("%Y-%m-%d %-I:%M %p")
+            subprocess.run(
+                ["git", "-C", GITHUB_REPO, "commit", "-m", f"Deploy: events digest {ts}"],
+                check=True, capture_output=True
+            )
+            subprocess.run(["git", "-C", GITHUB_REPO, "push"], check=True, capture_output=True)
+            print(f"  [deploy] → https://highendeventfinder.netlify.app")
         else:
-            print(f"  [netlify] deploy failed: {result.stderr[:100]}")
+            print("  [deploy] no changes to push")
+    except Exception as ex:
+        print(f"  [deploy] failed: {ex}")
 
 
 def generate(events: list[dict], today: datetime, days: int):
@@ -291,10 +297,5 @@ def generate(events: list[dict], today: datetime, days: int):
     with open(OUTPUT_FILE, "w") as f:
         f.write(html)
 
-    # also write to deploy dir so Netlify can serve it as index.html
-    os.makedirs(DEPLOY_DIR, exist_ok=True)
-    with open(DEPLOY_FILE, "w") as f:
-        f.write(html)
-
     subprocess.run(["open", OUTPUT_FILE])
-    _netlify_deploy()
+    _git_deploy(html)
