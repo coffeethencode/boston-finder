@@ -52,6 +52,13 @@
   .show-more-btn:hover { border-color: #555; color: #ccc; }
   #extra-events { display: none; }
   .extra-label  { font-size: 0.72rem; color: #555; font-style: italic; margin-left: 6px; }
+  .nav          { display: flex; gap: 4px; margin-bottom: 20px; border-bottom: 1px solid #222; padding-bottom: 12px; }
+  .nav-link     { padding: 6px 16px; border-radius: 6px; font-size: 0.85rem; color: #666;
+                   text-decoration: none; border: 1px solid transparent; }
+  .nav-link:hover { color: #aaa; border-color: #333; }
+  .nav-active   { padding: 6px 16px; border-radius: 6px; font-size: 0.85rem; font-weight: 600;
+                   color: #f0a500; border: 1px solid #f0a50033; background: #f0a50011;
+                   text-decoration: none; }
   .feedback     { margin-top: 8px; display: flex; gap: 6px; flex-wrap: wrap; }
   .fb-btn       { background: none; border: 1px solid #2a2a2a; border-radius: 99px;
                    padding: 3px 10px; font-size: 0.7rem; color: #555; cursor: pointer; }
@@ -61,7 +68,10 @@
 </style>
 </head>
 <body>
-  <div style="font-size:0.8rem;margin-bottom:12px"><span style="color:#555">Boston Events</span>&nbsp; <a href="/chloe" style="color:#888;text-decoration:none">Chloe →</a></div>
+  <nav class="nav">
+    <a href="/" class="nav-active">Brian</a>
+    <a href="/chloe" class="nav-link">Chloe</a>
+  </nav>
   <h1>Boston Events</h1>
   <div class="sub">March 23 – March 29, 2026 &nbsp;·&nbsp; 102 events</div>
   <div class="cost-bar">
@@ -82,7 +92,14 @@
             </thead>
             <tbody>
               <tr style="background:#1e2a1e">
-                <td>3/23 5:42 PM <b style='color:#7fff7f;font-size:0.65rem'>LATEST</b></td>
+                <td>3/23 5:45 PM <b style='color:#7fff7f;font-size:0.65rem'>LATEST</b></td>
+                <td style="color:#aaa">102 cached / 0 scored</td>
+                <td style="color:#aaa">—</td>
+                <td style="color:#e8e8e8;font-weight:600">$0.0000</td>
+                <td style="color:#666">0.0s</td>
+              </tr>
+              <tr>
+                <td>3/23 5:42 PM</td>
                 <td style="color:#aaa">0 cached / 354 scored</td>
                 <td style="color:#aaa">claude-haiku-4-5-20251001 $0.0318</td>
                 <td style="color:#e8e8e8;font-weight:600">$0.0318</td>
@@ -108,13 +125,6 @@
                 <td style="color:#aaa">claude-haiku-4-5-20251001 $0.0008</td>
                 <td style="color:#e8e8e8;font-weight:600">$0.0008</td>
                 <td style="color:#666">1.9s</td>
-              </tr>
-              <tr>
-                <td>3/23 11:12 AM</td>
-                <td style="color:#aaa">130 cached / 2 scored</td>
-                <td style="color:#aaa">claude-haiku-4-5-20251001 $0.0008</td>
-                <td style="color:#e8e8e8;font-weight:600">$0.0008</td>
-                <td style="color:#666">1.4s</td>
               </tr>
             </tbody>
           </table>
@@ -1393,7 +1403,7 @@
     <input name="persona"><input name="vote"><input name="event_url"><input name="event_name">
   </form>
 
-  <div class="footer">Generated March 23, 2026 at 5:44 PM</div>
+  <div class="footer">Generated March 23, 2026 at 5:46 PM</div>
 <script>
   function toggleExtra() {
     var el = document.getElementById('extra-events');
