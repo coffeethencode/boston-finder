@@ -37,32 +37,47 @@ def _save(data: list):
 
 def pull():
     """Fetch submissions from Netlify Forms API via CLI."""
+    form_id = _get_form_id()
+    if not form_id:
+        return []
     result = subprocess.run(
-        ["netlify", "api", "listFormSubmissions",
-         "--data", json.dumps({"formId": _get_form_id()})],
+        ["netlify", "api", "listFormSubmissions", "--data", json.dumps({"formId": form_id})],
         capture_output=True, text=True
     )
     if result.returncode != 0:
-        print(f"  [feedback] Netlify API error: {result.stderr[:200]}")
         return []
     try:
-        return json.loads(result.stdout)
+        data = json.loads(result.stdout)
+        return data if isinstance(data, list) else []
     except Exception:
         return []
 
 
+def _get_site_id() -> str:
+    """Get numeric site ID from site name."""
+    result = subprocess.run(
+        ["netlify", "api", "getSite", "--data", json.dumps({"site_id": NETLIFY_SITE})],
+        capture_output=True, text=True
+    )
+    try:
+        return json.loads(result.stdout).get("id", NETLIFY_SITE)
+    except Exception:
+        return NETLIFY_SITE
+
+
 def _get_form_id() -> str:
     """Find the form ID for 'event-feedback' on our site."""
+    site_id = _get_site_id()
     result = subprocess.run(
-        ["netlify", "api", "listSiteForms",
-         "--data", json.dumps({"site_id": NETLIFY_SITE})],
+        ["netlify", "api", "listSiteForms", "--data", json.dumps({"site_id": site_id})],
         capture_output=True, text=True
     )
     try:
         forms = json.loads(result.stdout)
-        for f in forms:
-            if f.get("name") == "event-feedback":
-                return f["id"]
+        if isinstance(forms, list):
+            for f in forms:
+                if f.get("name") == "event-feedback":
+                    return f["id"]
     except Exception:
         pass
     return ""
@@ -72,6 +87,11 @@ def sync():
     """Pull Netlify submissions and merge into local feedback file."""
     existing = _load()
     existing_ids = {e.get("netlify_id") for e in existing if e.get("netlify_id")}
+
+    form_id = _get_form_id()
+    if not form_id:
+        print("  [feedback] form not yet registered on Netlify (submit one feedback first)")
+        return existing
 
     submissions = pull()
     new_count = 0

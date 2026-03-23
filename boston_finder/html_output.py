@@ -217,10 +217,10 @@ def generate(events: list[dict], today: datetime, days: int, persona: str = "bri
         </div>"""
 
     is_chloe  = (persona == "chloe")
-    title_str = "Chloe's Events" if is_chloe else "Boston Events"
-    nav_brian = "" if not is_chloe else '<a href="/" style="color:#888;text-decoration:none">← Brian</a> &nbsp;'
-    nav_chloe = "" if is_chloe else '&nbsp; <a href="/chloe" style="color:#888;text-decoration:none">Chloe →</a>'
-    accent    = "#c084fc" if is_chloe else "#f0a500"  # purple for Chloe, amber for Brian
+    title_str = "Chloe's Boston" if is_chloe else "Boston Events"
+    accent    = "#c084fc" if is_chloe else "#f0a500"
+    nav_brian_cls = "nav-active" if not is_chloe else "nav-link"
+    nav_chloe_cls = "nav-active" if is_chloe else "nav-link"
 
     html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -276,6 +276,13 @@ def generate(events: list[dict], today: datetime, days: int, persona: str = "bri
   .show-more-btn:hover {{ border-color: #555; color: #ccc; }}
   #extra-events {{ display: none; }}
   .extra-label  {{ font-size: 0.72rem; color: #555; font-style: italic; margin-left: 6px; }}
+  .nav          {{ display: flex; gap: 4px; margin-bottom: 20px; border-bottom: 1px solid #222; padding-bottom: 12px; }}
+  .nav-link     {{ padding: 6px 16px; border-radius: 6px; font-size: 0.85rem; color: #666;
+                   text-decoration: none; border: 1px solid transparent; }}
+  .nav-link:hover {{ color: #aaa; border-color: #333; }}
+  .nav-active   {{ padding: 6px 16px; border-radius: 6px; font-size: 0.85rem; font-weight: 600;
+                   color: {accent}; border: 1px solid {accent}33; background: {accent}11;
+                   text-decoration: none; }}
   .feedback     {{ margin-top: 8px; display: flex; gap: 6px; flex-wrap: wrap; }}
   .fb-btn       {{ background: none; border: 1px solid #2a2a2a; border-radius: 99px;
                    padding: 3px 10px; font-size: 0.7rem; color: #555; cursor: pointer; }}
@@ -285,7 +292,10 @@ def generate(events: list[dict], today: datetime, days: int, persona: str = "bri
 </style>
 </head>
 <body>
-  <div style="font-size:0.8rem;margin-bottom:12px">{nav_brian}<span style="color:#555">Boston Events</span>{nav_chloe}</div>
+  <nav class="nav">
+    <a href="/" class="{nav_brian_cls}">Brian</a>
+    <a href="/chloe" class="{nav_chloe_cls}">Chloe</a>
+  </nav>
   <h1>{title_str}</h1>
   <div class="sub">{today.strftime('%B %-d')} – {end_date.strftime('%B %-d, %Y')} &nbsp;·&nbsp; {len(events)} events</div>
   {_cost_html()}
