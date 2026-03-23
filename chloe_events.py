@@ -18,6 +18,7 @@ from boston_finder.sources      import get_sources
 from boston_finder.fetchers     import fetch_source, enrich_events
 from boston_finder.ai_filter    import sports_filter, deduplicate, score
 from boston_finder.preferences  import hard_skip_filter
+from boston_finder.location     import location_filter
 from boston_finder               import costs
 
 CHLOE_PROMPT = """You are filtering Boston events for Chloe, who wants upscale, interesting things to do in Boston.
@@ -110,6 +111,8 @@ def main():
         from boston_finder.ai_filter import _keyword_fallback
         filtered = _keyword_fallback(all_events, 1)
         n_cached, n_scored = 0, 0
+
+    filtered = location_filter(filtered, persona="chloe")
 
     print(f"\n  Enriching {len(filtered)} events (times + prices)...")
     enrich_events(filtered)
