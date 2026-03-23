@@ -1,0 +1,22 @@
+__pycache__/
+*.pyc
+*.pyo
+.env
+myenv/
+venv/
+.DS_Store
+
+# Local data files — stay on your machine, not in the repo
+~/boston_finder_cache.json
+~/boston_finder_scored.json
+~/boston_finder_costs.json
+~/boston_finder_runs.json
+~/boston_venue_ratings.json
+~/oyster_triage.json
+~/oyster_research.txt
+~/boston_events.html
+~/boston_events_site/
+
+# Secrets
+*.pem
+private_key*
