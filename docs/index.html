@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Boston Events — March 24, 2026</title>
+<title>Boston Events — Brian</title>
 <style>
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
           background: #0f0f0f; color: #e8e8e8; margin: 0; padding: 24px; }
@@ -46,6 +46,10 @@
   .oyster-item { display: inline-block; background: #111; border: 1px solid #1e3a1e;
                   border-radius: 6px; padding: 4px 10px; margin: 3px; font-size: 0.75rem; color: #aaa; }
   .oyster-item b { color: #7fff7f; }
+  .sources-bar { background: #111; border: 1px solid #222; border-radius: 8px;
+                  padding: 10px 16px; margin-bottom: 20px; font-size: 0.78rem; color: #666; }
+  .src-pill    { display: inline-block; background: #1e1e1e; border: 1px solid #2a2a2a;
+                  border-radius: 99px; padding: 2px 10px; margin: 2px; font-size: 0.75rem; color: #aaa; }
   .show-more-btn { background: #1a1a1a; border: 1px solid #333; border-radius: 6px;
                     padding: 8px 16px; color: #888; font-size: 0.8rem; cursor: pointer;
                     margin-bottom: 24px; display: block; width: 100%; text-align: left; }
@@ -65,1027 +69,151 @@
   .fb-btn:hover { border-color: #555; color: #aaa; }
   .fb-btn.done  { border-color: #444; color: #7fff7f; }
   .fb-btn.skip  { border-color: #444; color: #ff7070; }
+  #loading      { color: #555; font-size: 0.9rem; padding: 40px 0; }
 </style>
 </head>
 <body>
+
   <nav class="nav">
-    <a href="https://highendeventfinder.netlify.app/" class="nav-active">Brian</a>
-    <a href="https://highendeventfinder.netlify.app/chloe" class="nav-link">Chloe</a>
+    <a href="./index.html" class="nav-active">Brian</a>
+    <a href="./chloe.html" class="nav-link">Chloe</a>
   </nav>
-  <h1>Boston Events</h1>
-  <div class="sub">March 24 – March 30, 2026 &nbsp;·&nbsp; 74 events</div>
-  <div class="cost-bar">
-          <div style="display:flex;gap:20px;margin-bottom:10px">
-            <span class="cost-item">Week: <b>$0.3076</b></span>
-            <span class="cost-item">Month: <b>$0.4343</b></span>
-            <span class="cost-item">Total: <b>$0.4343</b></span>
-          </div>
-          <table style="width:100%;border-collapse:collapse;font-size:0.75rem;color:#888">
-            <thead>
-              <tr style="color:#555;text-align:left;border-bottom:1px solid #222">
-                <th style="padding:4px 8px 4px 0">Run</th>
-                <th style="padding:4px 8px">Events</th>
-                <th style="padding:4px 8px">Model</th>
-                <th style="padding:4px 8px">Cost</th>
-                <th style="padding:4px 8px">Time</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr style="background:#1e2a1e">
-                <td>3/24 8:36 AM <b style='color:#7fff7f;font-size:0.65rem'>LATEST</b></td>
-                <td style="color:#aaa">141 cached / 81 scored</td>
-                <td style="color:#aaa">claude-haiku-4-5-20251001 $0.0070</td>
-                <td style="color:#e8e8e8;font-weight:600">$0.0070</td>
-                <td style="color:#666">8.8s</td>
-              </tr>
-              <tr>
-                <td>3/23 6:34 PM</td>
-                <td style="color:#aaa">0 cached / 0 scored</td>
-                <td style="color:#aaa">—</td>
-                <td style="color:#e8e8e8;font-weight:600">$0.0000</td>
-                <td style="color:#666">0.0s</td>
-              </tr>
-              <tr>
-                <td>3/23 6:33 PM</td>
-                <td style="color:#aaa">0 cached / 0 scored</td>
-                <td style="color:#aaa">—</td>
-                <td style="color:#e8e8e8;font-weight:600">$0.0000</td>
-                <td style="color:#666">0.0s</td>
-              </tr>
-              <tr>
-                <td>3/23 6:18 PM</td>
-                <td style="color:#aaa">177 cached / 0 scored</td>
-                <td style="color:#aaa">—</td>
-                <td style="color:#e8e8e8;font-weight:600">$0.0000</td>
-                <td style="color:#666">0.0s</td>
-              </tr>
-              <tr>
-                <td>3/23 6:09 PM</td>
-                <td style="color:#aaa">177 cached / 0 scored</td>
-                <td style="color:#aaa">—</td>
-                <td style="color:#e8e8e8;font-weight:600">$0.0000</td>
-                <td style="color:#666">0.0s</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-  <div class="oyster-bar">
-          <div class="oyster-title">🦪 Oyster Deals <span style="font-weight:400;color:#555;font-size:0.72rem">(last checked 1d ago)</span></div>
-          <span class="oyster-item"><b>Lower Mills Tavern — $1 oysters</b></span><span class="oyster-item"><b>224 Boston — $1 oysters</b></span><span class="oyster-item"><b>Batifol — $1 oysters</b></span><span class="oyster-item"><b>Bambara Kitchen — $1 oysters</b></span><span class="oyster-item"><b>Viale — $1 oysters</b></span><span class="oyster-item"><b>Althea — $1 oysters</b></span><span class="oyster-item"><b>Russell House Tavern — $1 oysters</b></span><span class="oyster-item"><b>Grafton Street Pub — $1 oysters</b></span><span class="oyster-item"><b>Charlie's Kitchen — $1 oysters ($2 normally)</b></span><span class="oyster-item"><b>Café Saint-Germain — $1 oysters</b></span><span class="oyster-item"><b>Vera's — $1 oysters</b></span><span class="oyster-item"><b>La Brasa — $1 oysters</b></span>
-        </div>
-  <div class="legend">
-    <b>Score 1–10</b> — how relevant this event is for you &nbsp;|&nbsp;
-    <b>8–10</b> must consider &nbsp;·&nbsp;
-    <b>5–7</b> worth knowing &nbsp;·&nbsp;
-    <b>1–4</b> low priority
+
+  <div id="loading">Loading events…</div>
+  <div id="main" style="display:none">
+    <h1>Boston Events</h1>
+    <div class="sub" id="subtitle"></div>
+
+    <div class="cost-bar" id="cost-bar"></div>
+
+    <div class="sources-bar" id="sources-bar"></div>
+
+    <div class="oyster-bar" id="oyster-bar"></div>
+
+    <div class="legend">
+      <b>Score 1–10</b> — how relevant this event is for you &nbsp;|&nbsp;
+      <b>8–10</b> must consider &nbsp;·&nbsp;
+      <b>5–7</b> worth knowing &nbsp;·&nbsp;
+      <b>1–4</b> low priority
+    </div>
+
+    <div id="events-container"></div>
+
+    <button class="show-more-btn" id="extra-btn" onclick="toggleExtra()" style="display:none"></button>
+    <div id="extra-events"></div>
+
+    <div class="footer" id="footer"></div>
   </div>
-  
-        <div class="day-section">
-            <div class="day-header">Tuesday, March 24 <span class="today-tag">TODAY</span></div>
-            
-            <div class="card" data-url="https://www.eventbrite.com/e/weekly-wine-dinner-tickets-1770551018759" data-name="Weekly Wine Dinner">
-                <div class="card-title">Weekly Wine Dinner <span class="score" title="Relevance score 1-10">8</span></div>
-                <div class="meta">$0 &nbsp;|&nbsp; Forage &nbsp;|&nbsp; 5 Craigie Circle, Cambridge</div>
-                <div class="reason">→ Small production natural wines with farm-to-table pairings; recurring upscale dining experience with curated themes</div>
-                <a class="link" href="https://www.eventbrite.com/e/weekly-wine-dinner-tickets-1770551018759" target="_blank">https://www.eventbrite.com/e/weekly-wine-dinner-tickets-1770551018759</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://www.eventbrite.com/e/the-menopause-table-a-wine-tasting-for-clinicians-tickets-1985083474108" data-name="The Menopause Table: A Wine Tasting for Clinicians">
-                <div class="card-title">The Menopause Table: A Wine Tasting for Clinicians <span class="score" title="Relevance score 1-10">8</span></div>
-                <div class="meta">$0 &nbsp;|&nbsp; Pellas Gallery &nbsp;|&nbsp; 73 Newbury Street, Boston</div>
-                <div class="reason">→ Private wine tasting for professionals with expert conversations and happy hour</div>
-                <a class="link" href="https://www.eventbrite.com/e/the-menopause-table-a-wine-tasting-for-clinicians-tickets-1985083474108" target="_blank">https://www.eventbrite.com/e/the-menopause-table-a-wine-tasting-for-clinicians-tickets-1985083474108</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://www.eventbrite.com/e/curated-cuisine-south-asian-recipes-from-the-diaspora-spice-co-tickets-1978357317994" data-name="Curated Cuisine: South Asian recipes from The Diaspora Spice Co.">
-                <div class="card-title">Curated Cuisine: South Asian recipes from The Diaspora Spice Co. <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">$12–$60 &nbsp;|&nbsp; WBUR CitySpace &nbsp;|&nbsp; 890 Commonwealth Avenue, Boston</div>
-                <div class="reason">→ Curated culinary event with CEO conversation and cooking demo from notable food entrepreneur</div>
-                <a class="link" href="https://www.eventbrite.com/e/curated-cuisine-south-asian-recipes-from-the-diaspora-spice-co-tickets-1978357317994" target="_blank">https://www.eventbrite.com/e/curated-cuisine-south-asian-recipes-from-the-diaspora-spice-co-tickets-1978357317994</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://www.eventbrite.com/e/pierre-henry-gomont-in-conversation-soviet-land-tickets-1982352208820" data-name="Pierre-Henry Gomont in Conversation: Soviet Land">
-                <div class="card-title">Pierre-Henry Gomont in Conversation: Soviet Land <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">$0–$10 &nbsp;|&nbsp; French Library / Alliance Française of Boston & Cambridge &nbsp;|&nbsp; 53 Marlborough Street, Boston</div>
-                <div class="reason">→ High-status cultural event with filmmaker discussion on geopolitical themes</div>
-                <a class="link" href="https://www.eventbrite.com/e/pierre-henry-gomont-in-conversation-soviet-land-tickets-1982352208820" target="_blank">https://www.eventbrite.com/e/pierre-henry-gomont-in-conversation-soviet-land-tickets-1982352208820</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://www.eventbrite.com/e/the-past-is-now-an-intertribal-panel-on-king-philips-war-tickets-1980783850819" data-name="The Past is Now: An Intertribal Panel on King Philip&#39;s War">
-                <div class="card-title">The Past is Now: An Intertribal Panel on King Philip's War <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">$0 &nbsp;|&nbsp; Cambridge Public Library &nbsp;|&nbsp; 449 Broadway, Cambridge</div>
-                <div class="reason">→ Intertribal panel on history—academic/cultural panel addressing civic history and accountability</div>
-                <a class="link" href="https://www.eventbrite.com/e/the-past-is-now-an-intertribal-panel-on-king-philips-war-tickets-1980783850819" target="_blank">https://www.eventbrite.com/e/the-past-is-now-an-intertribal-panel-on-king-philips-war-tickets-1980783850819</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://www.eventbrite.com/e/the-future-of-ai-in-sports-media-and-entertainment-tickets-1983163403124" data-name="THE FUTURE OF AI IN SPORTS, MEDIA AND ENTERTAINMENT">
-                <div class="card-title">THE FUTURE OF AI IN SPORTS, MEDIA AND ENTERTAINMENT <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">$350–$550 &nbsp;|&nbsp; Boston Convention and Exhibition Center &nbsp;|&nbsp; 415 Summer Street, Boston</div>
-                <div class="reason">→ Executive briefing for industry leaders on AI; high-status professional networking</div>
-                <a class="link" href="https://www.eventbrite.com/e/the-future-of-ai-in-sports-media-and-entertainment-tickets-1983163403124" target="_blank">https://www.eventbrite.com/e/the-future-of-ai-in-sports-media-and-entertainment-tickets-1983163403124</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://www.eventbrite.com/e/cheers-to-her-sipping-cocktails-inspired-by-americas-iconic-women-tickets-1982801600964" data-name="Cheers to Her – Sipping cocktails inspired by America’s iconic women">
-                <div class="card-title">Cheers to Her – Sipping cocktails inspired by America’s iconic women <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">$0 &nbsp;|&nbsp; Rebel's Guild &nbsp;|&nbsp; 200 Stuart Street, Boston</div>
-                <div class="reason">→ Themed cocktail event celebrating women's history—upscale bar event with cultural/historical substance</div>
-                <a class="link" href="https://www.eventbrite.com/e/cheers-to-her-sipping-cocktails-inspired-by-americas-iconic-women-tickets-1982801600964" target="_blank">https://www.eventbrite.com/e/cheers-to-her-sipping-cocktails-inspired-by-americas-iconic-women-tickets-1982801600964</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://www.eventbrite.com/e/foodies-new-friends-cambridge-entrepreneurs-2026-dinner-club-tickets-1979934126270" data-name="Foodies + New Friends: Cambridge Entrepreneurs | 2026 Dinner Club">
-                <div class="card-title">Foodies + New Friends: Cambridge Entrepreneurs | 2026 Dinner Club <span class="score" title="Relevance score 1-10">6</span></div>
-                <div class="meta">$109 &nbsp;|&nbsp; Restaurant of the Week &nbsp;|&nbsp; Massachusetts Avenue, Cambridge</div>
-                <div class="reason">→ Entrepreneur dinner networking with rotating local restaurants—professional networking with good food</div>
-                <a class="link" href="https://www.eventbrite.com/e/foodies-new-friends-cambridge-entrepreneurs-2026-dinner-club-tickets-1979934126270" target="_blank">https://www.eventbrite.com/e/foodies-new-friends-cambridge-entrepreneurs-2026-dinner-club-tickets-1979934126270</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-        </div>
-        <div class="day-section">
-            <div class="day-header">Wednesday, March 25</div>
-            
-            <div class="card" data-url="https://www.eventbrite.com/e/dinner-at-terra-barolo-butcher-experience-tickets-1984514414034" data-name="Dinner at Terra: Barolo & Butcher Experience">
-                <div class="card-title">Dinner at Terra: Barolo & Butcher Experience <span class="score" title="Relevance score 1-10">9</span></div>
-                <div class="meta">$177 &nbsp;|&nbsp; Terra &nbsp;|&nbsp; 800 Boylston Street, Boston</div>
-                <div class="reason">→ Four-course chef's table experience with premium wine pairings; high-status dining</div>
-                <a class="link" href="https://www.eventbrite.com/e/dinner-at-terra-barolo-butcher-experience-tickets-1984514414034" target="_blank">https://www.eventbrite.com/e/dinner-at-terra-barolo-butcher-experience-tickets-1984514414034</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://www.eventbrite.com/e/wine-flight-night-tickets-1983818782381" data-name="Wine Flight Night">
-                <div class="card-title">Wine Flight Night <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">$0 &nbsp;|&nbsp; Tilde &nbsp;|&nbsp; 2376 Massachusetts Avenue, Cambridge</div>
-                <div class="reason">→ Regular wine flight tasting with curator expertise; upscale beverage program</div>
-                <a class="link" href="https://www.eventbrite.com/e/wine-flight-night-tickets-1983818782381" target="_blank">https://www.eventbrite.com/e/wine-flight-night-tickets-1983818782381</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-        </div>
-        <div class="day-section">
-            <div class="day-header">Thursday, March 26</div>
-            
-            <div class="card" data-url="https://www.eventbrite.com/e/belle-glos-wine-dinner-tickets-1984490700105" data-name="Belle Glos Wine Dinner">
-                <div class="card-title">Belle Glos Wine Dinner <span class="score" title="Relevance score 1-10">9</span></div>
-                <div class="meta">$162 &nbsp;|&nbsp; Hotel AKA Boston Common &nbsp;|&nbsp; 90 Tremont Street, Boston</div>
-                <div class="reason">→ Wine dinner at upscale Downtown Boston venue with executive chef—premium food/drink experience</div>
-                <a class="link" href="https://www.eventbrite.com/e/belle-glos-wine-dinner-tickets-1984490700105" target="_blank">https://www.eventbrite.com/e/belle-glos-wine-dinner-tickets-1984490700105</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://www.eventbrite.com/e/paul-hobbs-wine-dinner-hosted-by-del-friscos-double-eagle-seaport-tickets-1980445735507" data-name="Paul Hobbs Wine Dinner - Hosted by Del Frisco&#39;s Double Eagle Seaport">
-                <div class="card-title">Paul Hobbs Wine Dinner - Hosted by Del Frisco's Double Eagle Seaport <span class="score" title="Relevance score 1-10">9</span></div>
-                <div class="meta">$185 &nbsp;|&nbsp; Del Frisco's Double Eagle Steakhouse &nbsp;|&nbsp; 250 Northern Avenue, Boston</div>
-                <div class="reason">→ Named winemaker five-course dinner with curated wine pairings from premium regions; high-status culinary experience</div>
-                <a class="link" href="https://www.eventbrite.com/e/paul-hobbs-wine-dinner-hosted-by-del-friscos-double-eagle-seaport-tickets-1980445735507" target="_blank">https://www.eventbrite.com/e/paul-hobbs-wine-dinner-hosted-by-del-friscos-double-eagle-seaport-tickets-1980445735507</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://www.eventbrite.com/e/discovering-georgia-ancient-winemaking-from-the-cradle-of-civilization-tickets-1985395451240" data-name="Discovering Georgia: Ancient Winemaking from the Cradle of Civilization">
-                <div class="card-title">Discovering Georgia: Ancient Winemaking from the Cradle of Civilization <span class="score" title="Relevance score 1-10">8</span></div>
-                <div class="meta">$39 &nbsp;|&nbsp; Wild Child &nbsp;|&nbsp; 30 Bow Street, Somerville</div>
-                <div class="reason">→ Educational wine tasting with expert importer; cultural/culinary event combining learning and upscale drinking</div>
-                <a class="link" href="https://www.eventbrite.com/e/discovering-georgia-ancient-winemaking-from-the-cradle-of-civilization-tickets-1985395451240" target="_blank">https://www.eventbrite.com/e/discovering-georgia-ancient-winemaking-from-the-cradle-of-civilization-tickets-1985395451240</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://www.eventbrite.com/e/four-course-whiskey-dinner-hosted-by-rising-eagle-and-regimental-spirits-registration-1983780188947" data-name="Four-course Whiskey Dinner, hosted by Rising Eagle and Regimental Spirits">
-                <div class="card-title">Four-course Whiskey Dinner, hosted by Rising Eagle and Regimental Spirits <span class="score" title="Relevance score 1-10">8</span></div>
-                <div class="meta">$93–$101 &nbsp;|&nbsp; Rising Eagle Publick House &nbsp;|&nbsp; 505 Main Street, Melrose</div>
-                <div class="reason">→ Immersive four-course whiskey dinner featuring newly released bourbon - high-end culinary experience</div>
-                <a class="link" href="https://www.eventbrite.com/e/four-course-whiskey-dinner-hosted-by-rising-eagle-and-regimental-spirits-registration-1983780188947" target="_blank">https://www.eventbrite.com/e/four-course-whiskey-dinner-hosted-by-rising-eagle-and-regimental-spirits-registration-1983780188947</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://www.eventbrite.com/e/boston-health-innovation-night-with-xrhealths-eran-orr-registration-1783255839219" data-name="Boston Health Innovation Night with XRHealth&#39;s Eran Orr">
-                <div class="card-title">Boston Health Innovation Night with XRHealth's Eran Orr <span class="score" title="Relevance score 1-10">8</span></div>
-                <div class="meta">$22–$27 &nbsp;|&nbsp; Liberty Lobby Bar &nbsp;|&nbsp; 215 Charles Street, Boston</div>
-                <div class="reason">→ Healthcare innovation networking for innovators and investors—high-status professional forum</div>
-                <a class="link" href="https://www.eventbrite.com/e/boston-health-innovation-night-with-xrhealths-eran-orr-registration-1783255839219" target="_blank">https://www.eventbrite.com/e/boston-health-innovation-night-with-xrhealths-eran-orr-registration-1783255839219</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://www.eventbrite.com/e/fashionably-late-thursdays-2026-winterspring-season-tickets-1981387752104" data-name="Fashionably Late Thursdays - 2026 Winter/Spring Season">
-                <div class="card-title">Fashionably Late Thursdays - 2026 Winter/Spring Season <span class="score" title="Relevance score 1-10">8</span></div>
-                <div class="meta">$0 &nbsp;|&nbsp; Liberty Lobby at The Liberty Hotel &nbsp;|&nbsp; 215 Charles St, Boston</div>
-                <div class="reason">→ Fashionable recurring Thursday night event with interactive fashion shows at upscale hotel venue, scene-y and media-worthy</div>
-                <a class="link" href="https://www.eventbrite.com/e/fashionably-late-thursdays-2026-winterspring-season-tickets-1981387752104" target="_blank">https://www.eventbrite.com/e/fashionably-late-thursdays-2026-winterspring-season-tickets-1981387752104</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://www.eventbrite.com/e/lobby-day-tickets-1980604741097" data-name="Lobby Day">
-                <div class="card-title">Lobby Day <span class="score" title="Relevance score 1-10">8</span></div>
-                <div class="meta">$0 &nbsp;|&nbsp; Massachusetts State House &nbsp;|&nbsp; 24 Beacon Street, Boston</div>
-                <div class="reason">→ Civic advocacy day at State House—directly relevant to government transparency, open meeting law, civic accountability expertise</div>
-                <a class="link" href="https://www.eventbrite.com/e/lobby-day-tickets-1980604741097" target="_blank">https://www.eventbrite.com/e/lobby-day-tickets-1980604741097</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://www.eventbrite.com/e/2026-charles-river-jazz-festival-fundraiser-tickets-1981450569994" data-name="2026 Charles River Jazz Festival Fundraiser">
-                <div class="card-title">2026 Charles River Jazz Festival Fundraiser <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">$45–$125 &nbsp;|&nbsp; Rochambeau &nbsp;|&nbsp; 900 Boylston Street, Boston</div>
-                <div class="reason">→ Fundraiser with live music and fine food—combines upscale dining with charity benefit</div>
-                <a class="link" href="https://www.eventbrite.com/e/2026-charles-river-jazz-festival-fundraiser-tickets-1981450569994" target="_blank">https://www.eventbrite.com/e/2026-charles-river-jazz-festival-fundraiser-tickets-1981450569994</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://www.eventbrite.com/e/film-screening-the-watermelon-woman-tickets-1984055953767" data-name="Film Screening: The Watermelon Woman">
-                <div class="card-title">Film Screening: The Watermelon Woman <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">$0 &nbsp;|&nbsp; Museum of African American History &nbsp;|&nbsp; 46 Joy Street, Boston</div>
-                <div class="reason">→ Film screening + panel on archives and silences—cultural event with intellectual/media component</div>
-                <a class="link" href="https://www.eventbrite.com/e/film-screening-the-watermelon-woman-tickets-1984055953767" target="_blank">https://www.eventbrite.com/e/film-screening-the-watermelon-woman-tickets-1984055953767</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://www.eventbrite.com/e/socio-technical-models-to-culturally-conscious-workforce-development-tickets-1983498566607" data-name="Socio-technical Models to Culturally-Conscious Workforce Development">
-                <div class="card-title">Socio-technical Models to Culturally-Conscious Workforce Development <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">$0 &nbsp;|&nbsp; Ryder Hall: Center for Design &nbsp;|&nbsp; 11 Leon Street, Boston</div>
-                <div class="reason">→ Civic engagement speaker series on digital civic life—directly matches government/civic accountability expertise</div>
-                <a class="link" href="https://www.eventbrite.com/e/socio-technical-models-to-culturally-conscious-workforce-development-tickets-1983498566607" target="_blank">https://www.eventbrite.com/e/socio-technical-models-to-culturally-conscious-workforce-development-tickets-1983498566607</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://www.eventbrite.com/e/great-power-competition-in-areas-beyond-national-jurisdiction-tickets-1984094421826" data-name="Great Power Competition in Areas Beyond National Jurisdiction">
-                <div class="card-title">Great Power Competition in Areas Beyond National Jurisdiction <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">$0 &nbsp;|&nbsp; Alumni Center &nbsp;|&nbsp; 716 Columbus Avenue, Boston</div>
-                <div class="reason">→ Foreign policy/geopolitics keynote series—high-level professional forum on government/international affairs</div>
-                <a class="link" href="https://www.eventbrite.com/e/great-power-competition-in-areas-beyond-national-jurisdiction-tickets-1984094421826" target="_blank">https://www.eventbrite.com/e/great-power-competition-in-areas-beyond-national-jurisdiction-tickets-1984094421826</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-        </div>
-        <div class="day-section">
-            <div class="day-header">Friday, March 27</div>
-            
-            <div class="card" data-url="https://www.eventbrite.com/e/28th-africa-business-conference-at-harvard-business-school-tickets-1948942331979" data-name="28th Africa Business Conference at Harvard Business School">
-                <div class="card-title">28th Africa Business Conference at Harvard Business School <span class="score" title="Relevance score 1-10">8</span></div>
-                <div class="meta">$169–$263 &nbsp;|&nbsp; Harvard Business School &nbsp;|&nbsp; Klarman Hall, Boston</div>
-                <div class="reason">→ Harvard Business School Africa Business Conference—prestigious business conference with policy/economic focus</div>
-                <a class="link" href="https://www.eventbrite.com/e/28th-africa-business-conference-at-harvard-business-school-tickets-1948942331979" target="_blank">https://www.eventbrite.com/e/28th-africa-business-conference-at-harvard-business-school-tickets-1948942331979</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://www.eventbrite.com/e/evolveher-womens-leadership-panel-charity-fashion-experience-tickets-1983976099922" data-name="EVOLVEHER Women’s Leadership Panel + Charity Fashion Experience">
-                <div class="card-title">EVOLVEHER Women’s Leadership Panel + Charity Fashion Experience <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">$23–$55 &nbsp;|&nbsp; Watertown Sons of Italy &nbsp;|&nbsp; 520 Pleasant Street, Watertown</div>
-                <div class="reason">→ Women's leadership panel + fashion experience—combines professional expertise with fashion/media event</div>
-                <a class="link" href="https://www.eventbrite.com/e/evolveher-womens-leadership-panel-charity-fashion-experience-tickets-1983976099922" target="_blank">https://www.eventbrite.com/e/evolveher-womens-leadership-panel-charity-fashion-experience-tickets-1983976099922</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://www.eventbrite.com/e/big-ballers-dinner-with-entrepreneurs-boston-tickets-1978812499454" data-name="Big Ballers: Dinner with Entrepreneurs | Boston">
-                <div class="card-title">Big Ballers: Dinner with Entrepreneurs | Boston <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">$109–$1069 &nbsp;|&nbsp; Restaurant of the Week &nbsp;|&nbsp; Temple Place, Boston</div>
-                <div class="reason">→ High-level entrepreneur dinner networking at different restaurants - professional development</div>
-                <a class="link" href="https://www.eventbrite.com/e/big-ballers-dinner-with-entrepreneurs-boston-tickets-1978812499454" target="_blank">https://www.eventbrite.com/e/big-ballers-dinner-with-entrepreneurs-boston-tickets-1978812499454</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://www.eventbrite.com/e/symbolic-storytelling-conversational-visit-to-the-boston-mfa-tickets-1984586771457" data-name="Symbolic storytelling conversational visit to the Boston MFA">
-                <div class="card-title">Symbolic storytelling conversational visit to the Boston MFA <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">$162 &nbsp;|&nbsp; Museum of Fine Arts, Boston &nbsp;|&nbsp; 465 Huntington Avenue, Boston</div>
-                <div class="reason">→ Exclusive conversational tour at Boston MFA with artist-playwright, intellectual cultural event</div>
-                <a class="link" href="https://www.eventbrite.com/e/symbolic-storytelling-conversational-visit-to-the-boston-mfa-tickets-1984586771457" target="_blank">https://www.eventbrite.com/e/symbolic-storytelling-conversational-visit-to-the-boston-mfa-tickets-1984586771457</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-        </div>
-        <div class="day-section">
-            <div class="day-header">Saturday, March 28</div>
-            
-            <div class="card" data-url="https://www.eventbrite.com/e/spring-wine-preview-a-tasting-extravaganza50-tickets-1855108041089" data-name="Spring Wine Preview: A Tasting Extravaganza—$50">
-                <div class="card-title">Spring Wine Preview: A Tasting Extravaganza—$50 <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">$53 &nbsp;|&nbsp; Formaggio Kitchen - Cambridge &nbsp;|&nbsp; 358 Huron Ave, Cambridge</div>
-                <div class="reason">→ Wine tasting and preview event; upscale seasonal beverage program</div>
-                <a class="link" href="https://www.eventbrite.com/e/spring-wine-preview-a-tasting-extravaganza50-tickets-1855108041089" target="_blank">https://www.eventbrite.com/e/spring-wine-preview-a-tasting-extravaganza50-tickets-1855108041089</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://www.eventbrite.com/e/bourbon-tasting-tickets-1977924154390" data-name="Bourbon Tasting">
-                <div class="card-title">Bourbon Tasting <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">$45 &nbsp;|&nbsp; Trillium Fort Point &nbsp;|&nbsp; 50 Thomson Place, Boston</div>
-                <div class="reason">→ Upscale bourbon and whiskey tasting with expert guidance from Trillium team</div>
-                <a class="link" href="https://www.eventbrite.com/e/bourbon-tasting-tickets-1977924154390" target="_blank">https://www.eventbrite.com/e/bourbon-tasting-tickets-1977924154390</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://www.eventbrite.com/e/vip-whiskey-tour-and-tasting-tickets-1981588399245" data-name="VIP Whiskey Tour and Tasting">
-                <div class="card-title">VIP Whiskey Tour and Tasting <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">$70 &nbsp;|&nbsp; Boston Harbor Distillery &nbsp;|&nbsp; 12R Ericsson St, Boston</div>
-                <div class="reason">→ VIP whiskey tasting event, upscale food and drink experience</div>
-                <a class="link" href="https://www.eventbrite.com/e/vip-whiskey-tour-and-tasting-tickets-1981588399245" target="_blank">https://www.eventbrite.com/e/vip-whiskey-tour-and-tasting-tickets-1981588399245</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://www.eventbrite.com/e/the-chop-bar-at-oggi-tickets-1984686029340" data-name="The Chop Bar at Oggi">
-                <div class="card-title">The Chop Bar at Oggi <span class="score" title="Relevance score 1-10">6</span></div>
-                <div class="meta">$70 &nbsp;|&nbsp; Oggi Gourmet &nbsp;|&nbsp; 30 Dunster Street, Cambridge</div>
-                <div class="reason">→ Upscale pop-up dining experience (The Chop Bar); high-end food scene</div>
-                <a class="link" href="https://www.eventbrite.com/e/the-chop-bar-at-oggi-tickets-1984686029340" target="_blank">https://www.eventbrite.com/e/the-chop-bar-at-oggi-tickets-1984686029340</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-        </div>
-        <div class="day-section">
-            <div class="day-header">Sunday, March 29</div>
-            
-            <div class="card" data-url="https://www.eventbrite.com/e/cocktail-cheese-tasting-tickets-1977921647893" data-name="Cocktail & Cheese Tasting">
-                <div class="card-title">Cocktail & Cheese Tasting <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">$45 &nbsp;|&nbsp; Trillium Fort Point &nbsp;|&nbsp; 50 Thomson Place, Boston</div>
-                <div class="reason">→ Cocktail and cheese tasting—upscale food/drink pairing event</div>
-                <a class="link" href="https://www.eventbrite.com/e/cocktail-cheese-tasting-tickets-1977921647893" target="_blank">https://www.eventbrite.com/e/cocktail-cheese-tasting-tickets-1977921647893</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://www.eventbrite.com/e/dinner-with-entrepreneurs-cambridge-tickets-1859037905419" data-name="Dinner with Entrepreneurs | Cambridge">
-                <div class="card-title">Dinner with Entrepreneurs | Cambridge <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">$55–$130 &nbsp;|&nbsp; Restaurant of the Week &nbsp;|&nbsp; Cambridge Street, Cambridge</div>
-                <div class="reason">→ Entrepreneur networking dinner with focus on making meaningful connections</div>
-                <a class="link" href="https://www.eventbrite.com/e/dinner-with-entrepreneurs-cambridge-tickets-1859037905419" target="_blank">https://www.eventbrite.com/e/dinner-with-entrepreneurs-cambridge-tickets-1859037905419</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-        </div>
-        <div class="day-section">
-            <div class="day-header">Monday, March 30</div>
-            
-            <div class="card" data-url="https://www.eventbrite.com/e/shuck-oysters-to-fight-cancer-tickets-1984577161714" data-name="Shuck Oysters to Fight Cancer!">
-                <div class="card-title">Shuck Oysters to Fight Cancer! <span class="score" title="Relevance score 1-10">8</span></div>
-                <div class="meta">$109 &nbsp;|&nbsp; Jadu Cafe and Wine Bar &nbsp;|&nbsp; 767 Centre Street, Boston</div>
-                <div class="reason">→ Upscale oyster event with wine and charity fundraising for cancer—combines food/drink expertise with charitable giving</div>
-                <a class="link" href="https://www.eventbrite.com/e/shuck-oysters-to-fight-cancer-tickets-1984577161714" target="_blank">https://www.eventbrite.com/e/shuck-oysters-to-fight-cancer-tickets-1984577161714</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://www.eventbrite.com/e/solomont-speaker-series-jill-lepore-tickets-1981427703600" data-name="Solomont Speaker Series: Jill Lepore">
-                <div class="card-title">Solomont Speaker Series: Jill Lepore <span class="score" title="Relevance score 1-10">8</span></div>
-                <div class="meta">$0 &nbsp;|&nbsp; ASEAN Auditorium, Cabot Intercultural Center &nbsp;|&nbsp; 170 Packard Avenue, Medford</div>
-                <div class="reason">→ Harvard professor and bestselling historian speaker series—high-status intellectual event</div>
-                <a class="link" href="https://www.eventbrite.com/e/solomont-speaker-series-jill-lepore-tickets-1981427703600" target="_blank">https://www.eventbrite.com/e/solomont-speaker-series-jill-lepore-tickets-1981427703600</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://www.eventbrite.com/e/book-launch-party-sticking-stigma-tickets-1984910968138" data-name="Book Launch Party: &quot;Sticking Stigma&quot;">
-                <div class="card-title">Book Launch Party: "Sticking Stigma" <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">$0 &nbsp;|&nbsp; International Village Residence Hall &nbsp;|&nbsp; 1155 Tremont Street, Boston</div>
-                <div class="reason">→ Book launch for arts/performance work—intellectual, cultural event with artistic credibility</div>
-                <a class="link" href="https://www.eventbrite.com/e/book-launch-party-sticking-stigma-tickets-1984910968138" target="_blank">https://www.eventbrite.com/e/book-launch-party-sticking-stigma-tickets-1984910968138</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-        </div>
-        <div class="day-section">
-            <div class="day-header">Date unknown</div>
-            
-            <div class="card" data-url="https://do617.com/events/2026/3/24/inside-the-cabinet-room-leadership-diplomacy-and-decision-making-ft-evan-ryan-tickets" data-name="Inside the Cabinet Room: Leadership, Diplomacy, and Decision-Making ft. Evan Ryan">
-                <div class="card-title">Inside the Cabinet Room: Leadership, Diplomacy, and Decision-Making ft. Evan Ryan <span class="score" title="Relevance score 1-10">8</span></div>
-                <div class="meta">John F. Kennedy Jr. Forum at the Institute of Politics</div>
-                <div class="reason">→ Leadership and diplomacy panel with government official—high-status policy forum directly aligned with civic/government expertise</div>
-                <a class="link" href="https://do617.com/events/2026/3/24/inside-the-cabinet-room-leadership-diplomacy-and-decision-making-ft-evan-ryan-tickets" target="_blank">https://do617.com/events/2026/3/24/inside-the-cabinet-room-leadership-diplomacy-and-decision-making-ft-evan-ryan-tickets</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://do617.com/events/2026/3/26/strategy-messaging-and-power-a-conversation-with-anita-dunn-tickets" data-name="Strategy, Messaging, and Power: A Conversation with Anita Dunn">
-                <div class="card-title">Strategy, Messaging, and Power: A Conversation with Anita Dunn <span class="score" title="Relevance score 1-10">8</span></div>
-                <div class="meta">John F. Kennedy Jr. Forum at the Institute of Politics</div>
-                <div class="reason">→ High-status political/messaging panel with Anita Dunn, influential strategist—directly relevant to government, media, and public affairs expertise</div>
-                <a class="link" href="https://do617.com/events/2026/3/26/strategy-messaging-and-power-a-conversation-with-anita-dunn-tickets" target="_blank">https://do617.com/events/2026/3/26/strategy-messaging-and-power-a-conversation-with-anita-dunn-tickets</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://do617.com/events/2026/3/24/boston-speakers-series-malcolm-gladwell-tickets" data-name="Boston Speakers Series–Malcolm Gladwell">
-                <div class="card-title">Boston Speakers Series–Malcolm Gladwell <span class="score" title="Relevance score 1-10">8</span></div>
-                <div class="meta">Boston Symphony Hall</div>
-                <div class="reason">→ Boston Speakers Series with Malcolm Gladwell - high-status intellectual event, perfect for networking and engagement with influential thought leader</div>
-                <a class="link" href="https://do617.com/events/2026/3/24/boston-speakers-series-malcolm-gladwell-tickets" target="_blank">https://do617.com/events/2026/3/24/boston-speakers-series-malcolm-gladwell-tickets</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://do617.com/events/2026/3/24/boston-speakers-series-malcolm-gladwell-tickets-zmbzzpw" data-name="Boston Speakers Series–Malcolm Gladwell">
-                <div class="card-title">Boston Speakers Series–Malcolm Gladwell <span class="score" title="Relevance score 1-10">8</span></div>
-                <div class="meta">Symphony Hall, Boston, MA</div>
-                <div class="reason">→ Boston Speakers Series with Malcolm Gladwell - high-status intellectual event, perfect for networking and engagement with influential thought leader</div>
-                <a class="link" href="https://do617.com/events/2026/3/24/boston-speakers-series-malcolm-gladwell-tickets-zmbzzpw" target="_blank">https://do617.com/events/2026/3/24/boston-speakers-series-malcolm-gladwell-tickets-zmbzzpw</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://do617.com/events/2026/3/25/boston-speakers-series-malcolm-gladwell-tickets" data-name="Boston Speakers Series–Malcolm Gladwell">
-                <div class="card-title">Boston Speakers Series–Malcolm Gladwell <span class="score" title="Relevance score 1-10">8</span></div>
-                <div class="meta">Boston Symphony Hall</div>
-                <div class="reason">→ Boston Speakers Series with Malcolm Gladwell; high-profile thought leader event</div>
-                <a class="link" href="https://do617.com/events/2026/3/25/boston-speakers-series-malcolm-gladwell-tickets" target="_blank">https://do617.com/events/2026/3/25/boston-speakers-series-malcolm-gladwell-tickets</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://do617.com/events/2026/3/26/dvorak-symphony-no-9-and-excerpts-from-nixon-in-china-with-renee-fleming-tickets-d0zzzpe" data-name="Dvořák Symphony No. 9 and Excerpts from Nixon in China with Renée Fleming">
-                <div class="card-title">Dvořák Symphony No. 9 and Excerpts from Nixon in China with Renée Fleming <span class="score" title="Relevance score 1-10">8</span></div>
-                <div class="meta">Symphony Hall, Boston, MA</div>
-                <div class="reason">→ Symphony performance with world-class soprano Renée Fleming; high-status cultural event</div>
-                <a class="link" href="https://do617.com/events/2026/3/26/dvorak-symphony-no-9-and-excerpts-from-nixon-in-china-with-renee-fleming-tickets-d0zzzpe" target="_blank">https://do617.com/events/2026/3/26/dvorak-symphony-no-9-and-excerpts-from-nixon-in-china-with-renee-fleming-tickets-d0zzzpe</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://do617.com/events/2026/3/26/dvorak-symphony-no-9-and-excerpts-from-nixon-in-china-with-renee-fleming-tickets" data-name="Dvořák Symphony No. 9 and Excerpts from Nixon in China with Renée Fleming">
-                <div class="card-title">Dvořák Symphony No. 9 and Excerpts from Nixon in China with Renée Fleming <span class="score" title="Relevance score 1-10">8</span></div>
-                <div class="meta">Boston Symphony Hall</div>
-                <div class="reason">→ Symphony performance with world-class soprano Renée Fleming; high-status cultural event</div>
-                <a class="link" href="https://do617.com/events/2026/3/26/dvorak-symphony-no-9-and-excerpts-from-nixon-in-china-with-renee-fleming-tickets" target="_blank">https://do617.com/events/2026/3/26/dvorak-symphony-no-9-and-excerpts-from-nixon-in-china-with-renee-fleming-tickets</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://do617.com/events/2026/3/29/lady-gaga-tickets" data-name="Lady Gaga">
-                <div class="card-title">Lady Gaga <span class="score" title="Relevance score 1-10">8</span></div>
-                <div class="meta">TD Garden</div>
-                <div class="reason">→ Major artist performance; significant entertainment event</div>
-                <a class="link" href="https://do617.com/events/2026/3/29/lady-gaga-tickets" target="_blank">https://do617.com/events/2026/3/29/lady-gaga-tickets</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://www.bostonbar.org/events/" data-name="[PAGE] Boston Bar Assoc">
-                <div class="card-title">[PAGE] Boston Bar Assoc <span class="score" title="Relevance score 1-10">8</span></div>
-                <div class="meta"></div>
-                <div class="reason">→ Boston Bar Association events—professional legal networking, panels, and policy forums directly aligned with user's government/transparency expertise</div>
-                <a class="link" href="https://www.bostonbar.org/events/" target="_blank">https://www.bostonbar.org/events/</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://do617.com/events/2026/3/30/lady-gaga-tickets" data-name="Lady Gaga">
-                <div class="card-title">Lady Gaga <span class="score" title="Relevance score 1-10">8</span></div>
-                <div class="meta">TD Garden</div>
-                <div class="reason">→ Major concert event; high-profile entertainment</div>
-                <a class="link" href="https://do617.com/events/2026/3/30/lady-gaga-tickets" target="_blank">https://do617.com/events/2026/3/30/lady-gaga-tickets</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://do617.com/events/2026/3/24/a-taste-of-time-italian-food-through-the-ages-1773863766" data-name="A Taste of Time: Italian Food Through the Ages">
-                <div class="card-title">A Taste of Time: Italian Food Through the Ages <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">Standard Italian</div>
-                <div class="reason">→ Italian food history panel/tasting - educational food event</div>
-                <a class="link" href="https://do617.com/events/2026/3/24/a-taste-of-time-italian-food-through-the-ages-1773863766" target="_blank">https://do617.com/events/2026/3/24/a-taste-of-time-italian-food-through-the-ages-1773863766</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://do617.com/events/2026/3/24/hands-on-gnocchi-al-pesto-tickets" data-name="Hands-On: Gnocchi al Pesto">
-                <div class="card-title">Hands-On: Gnocchi al Pesto <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">Eataly Boston</div>
-                <div class="reason">→ Hands-on Italian cooking class - upscale food experience</div>
-                <a class="link" href="https://do617.com/events/2026/3/24/hands-on-gnocchi-al-pesto-tickets" target="_blank">https://do617.com/events/2026/3/24/hands-on-gnocchi-al-pesto-tickets</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://do617.com/events/2026/3/25/omakasethe-babys-way-tickets" data-name="Omakase…The Baby’s Way">
-                <div class="card-title">Omakase…The Baby’s Way <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">Fat Baby</div>
-                <div class="reason">→ Omakase dining experience - high-end food event</div>
-                <a class="link" href="https://do617.com/events/2026/3/25/omakasethe-babys-way-tickets" target="_blank">https://do617.com/events/2026/3/25/omakasethe-babys-way-tickets</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://do617.com/events/2026/3/25/copy-of-hands-on-pasta-alla-carbonara-tickets" data-name="Copy of Hands-On: Pasta alla Carbonara">
-                <div class="card-title">Copy of Hands-On: Pasta alla Carbonara <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">Eataly Boston</div>
-                <div class="reason">→ Hands-on pasta cooking class - upscale food experience</div>
-                <a class="link" href="https://do617.com/events/2026/3/25/copy-of-hands-on-pasta-alla-carbonara-tickets" target="_blank">https://do617.com/events/2026/3/25/copy-of-hands-on-pasta-alla-carbonara-tickets</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://do617.com/events/2026/3/25/hands-on-pasta-alla-puttanesca-tickets" data-name="Hands-On: Pasta alla Puttanesca">
-                <div class="card-title">Hands-On: Pasta alla Puttanesca <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">Eataly Boston</div>
-                <div class="reason">→ Hands-on Italian pasta cooking class</div>
-                <a class="link" href="https://do617.com/events/2026/3/25/hands-on-pasta-alla-puttanesca-tickets" target="_blank">https://do617.com/events/2026/3/25/hands-on-pasta-alla-puttanesca-tickets</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://do617.com/events/2026/3/24/folk-americana-roots-hall-of-fame-induction-2025-class-tickets" data-name="Folk Americana Roots Hall of Fame Induction - 2025 Class">
-                <div class="card-title">Folk Americana Roots Hall of Fame Induction - 2025 Class <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">Boch Center Wang Theatre</div>
-                <div class="reason">→ Hall of fame induction ceremony—high-status recognition event with prestige</div>
-                <a class="link" href="https://do617.com/events/2026/3/24/folk-americana-roots-hall-of-fame-induction-2025-class-tickets" target="_blank">https://do617.com/events/2026/3/24/folk-americana-roots-hall-of-fame-induction-2025-class-tickets</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://do617.com/events/2026/3/24/the-moth-boston-storyslam-tickets" data-name="The Moth: Boston StorySLAM">
-                <div class="card-title">The Moth: Boston StorySLAM <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">Arts At The Armory</div>
-                <div class="reason">→ The Moth StorySLAM—prestigious storytelling event, media/journalism adjacent, scene-y and influential</div>
-                <a class="link" href="https://do617.com/events/2026/3/24/the-moth-boston-storyslam-tickets" target="_blank">https://do617.com/events/2026/3/24/the-moth-boston-storyslam-tickets</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://do617.com/events/2026/3/26/colorful-cosmopolitanism-artistic-representations-of-the-nation-as-mother-tickets" data-name="Colorful Cosmopolitanism: Artistic Representations of the Nation as Mother">
-                <div class="card-title">Colorful Cosmopolitanism: Artistic Representations of the Nation as Mother <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">Museum of Fine Arts Boston</div>
-                <div class="reason">→ Colorful Cosmopolitanism - intellectual art/cultural panel on nation and artistic representation</div>
-                <a class="link" href="https://do617.com/events/2026/3/26/colorful-cosmopolitanism-artistic-representations-of-the-nation-as-mother-tickets" target="_blank">https://do617.com/events/2026/3/26/colorful-cosmopolitanism-artistic-representations-of-the-nation-as-mother-tickets</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://do617.com/events/2026/3/26/teaching-with-hindu-art-depictions-of-the-divine-in-prints-paintings-and-sculptures-tickets" data-name="Teaching with Hindu Art: Depictions of the Divine in Prints, Paintings, and Sculptures">
-                <div class="card-title">Teaching with Hindu Art: Depictions of the Divine in Prints, Paintings, and Sculptures <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">Museum of Fine Arts Boston</div>
-                <div class="reason">→ Teaching with Hindu Art - cultural art panel on divine representations, open to public</div>
-                <a class="link" href="https://do617.com/events/2026/3/26/teaching-with-hindu-art-depictions-of-the-divine-in-prints-paintings-and-sculptures-tickets" target="_blank">https://do617.com/events/2026/3/26/teaching-with-hindu-art-depictions-of-the-divine-in-prints-paintings-and-sculptures-tickets</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://do617.com/events/2026/3/27/suffs-tickets" data-name="Suffs">
-                <div class="card-title">Suffs <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">Emerson Colonial Theatre</div>
-                <div class="reason">→ Suffs is a Tony-nominated Broadway musical about women's suffrage—upscale theater event with historical/civic interest</div>
-                <a class="link" href="https://do617.com/events/2026/3/27/suffs-tickets" target="_blank">https://do617.com/events/2026/3/27/suffs-tickets</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://do617.com/events/2026/3/28/suffs-tickets-9ekyek6" data-name="Suffs">
-                <div class="card-title">Suffs <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">Emerson Colonial Theatre</div>
-                <div class="reason">→ Suffs (duplicate)—Tony-nominated Broadway musical with civic/historical themes</div>
-                <a class="link" href="https://do617.com/events/2026/3/28/suffs-tickets-9ekyek6" target="_blank">https://do617.com/events/2026/3/28/suffs-tickets-9ekyek6</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://do617.com/events/2026/3/29/castle-of-our-skins-with-daniel-bernard-roumain-electric-violin-and-val-inc-sound-chemist-tickets" data-name="Castle of Our Skins with Daniel Bernard Roumain, electric violin and Val-Inc, sound chemist">
-                <div class="card-title">Castle of Our Skins with Daniel Bernard Roumain, electric violin and Val-Inc, sound chemist <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">Isabella Stewart Gardner Museum</div>
-                <div class="reason">→ Performance art event with accomplished musicians (Daniel Bernard Roumain)—high-quality cultural experience</div>
-                <a class="link" href="https://do617.com/events/2026/3/29/castle-of-our-skins-with-daniel-bernard-roumain-electric-violin-and-val-inc-sound-chemist-tickets" target="_blank">https://do617.com/events/2026/3/29/castle-of-our-skins-with-daniel-bernard-roumain-electric-violin-and-val-inc-sound-chemist-tickets</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://do617.com/events/2026/3/25/lori-z-jazz-trio-barside-ft-lori-zuroff-on-vocals-molly-flannery-on-piano-and-bill-mccormack-on-bass-tickets" data-name="Lori Z Jazz Trio: Barside ft. Lori Zuroff on vocals, Molly Flannery on piano and Bill McCormack on bass.">
-                <div class="card-title">Lori Z Jazz Trio: Barside ft. Lori Zuroff on vocals, Molly Flannery on piano and Bill McCormack on bass. <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">Sanctuary - Cultural Arts Center</div>
-                <div class="reason">→ Upscale jazz trio at a bar venue; sophisticated live music experience</div>
-                <a class="link" href="https://do617.com/events/2026/3/25/lori-z-jazz-trio-barside-ft-lori-zuroff-on-vocals-molly-flannery-on-piano-and-bill-mccormack-on-bass-tickets" target="_blank">https://do617.com/events/2026/3/25/lori-z-jazz-trio-barside-ft-lori-zuroff-on-vocals-molly-flannery-on-piano-and-bill-mccormack-on-bass-tickets</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://do617.com/events/2026/3/26/imagining-museums-the-next-150-years-of-stewarding-art-at-wellesley-tickets" data-name="Imagining Museums: The Next 150 Years of Stewarding Art at Wellesley">
-                <div class="card-title">Imagining Museums: The Next 150 Years of Stewarding Art at Wellesley <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">Lulu Chow Wang Campus Center</div>
-                <div class="reason">→ Museum symposium on cultural stewardship; intellectually substantive cultural forum</div>
-                <a class="link" href="https://do617.com/events/2026/3/26/imagining-museums-the-next-150-years-of-stewarding-art-at-wellesley-tickets" target="_blank">https://do617.com/events/2026/3/26/imagining-museums-the-next-150-years-of-stewarding-art-at-wellesley-tickets</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://do617.com/events/2026/3/27/dvorak-symphony-no-9-and-excerpts-from-nixon-in-china-with-renee-fleming-tickets-7075560" data-name="Dvořák Symphony No. 9 and Excerpts from Nixon in China with Renée Fleming">
-                <div class="card-title">Dvořák Symphony No. 9 and Excerpts from Nixon in China with Renée Fleming <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">Symphony Hall, Boston, MA</div>
-                <div class="reason">→ Classical music performance featuring renowned soprano Renée Fleming at what appears to be a prestigious venue; upscale cultural event</div>
-                <a class="link" href="https://do617.com/events/2026/3/27/dvorak-symphony-no-9-and-excerpts-from-nixon-in-china-with-renee-fleming-tickets-7075560" target="_blank">https://do617.com/events/2026/3/27/dvorak-symphony-no-9-and-excerpts-from-nixon-in-china-with-renee-fleming-tickets-7075560</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://do617.com/events/2026/3/27/dvorak-symphony-no-9-and-excerpts-from-nixon-in-china-with-renee-fleming-tickets" data-name="Dvořák Symphony No. 9 and Excerpts from Nixon in China with Renée Fleming">
-                <div class="card-title">Dvořák Symphony No. 9 and Excerpts from Nixon in China with Renée Fleming <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">Boston Symphony Hall</div>
-                <div class="reason">→ Classical music performance featuring renowned soprano Renée Fleming at what appears to be a prestigious venue; upscale cultural event</div>
-                <a class="link" href="https://do617.com/events/2026/3/27/dvorak-symphony-no-9-and-excerpts-from-nixon-in-china-with-renee-fleming-tickets" target="_blank">https://do617.com/events/2026/3/27/dvorak-symphony-no-9-and-excerpts-from-nixon-in-china-with-renee-fleming-tickets</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://do617.com/events/2026/3/28/diana-krall-tickets" data-name="Diana Krall">
-                <div class="card-title">Diana Krall <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">The Cabot</div>
-                <div class="reason">→ Diana Krall is an internationally acclaimed jazz pianist; high-caliber upscale musical performance</div>
-                <a class="link" href="https://do617.com/events/2026/3/28/diana-krall-tickets" target="_blank">https://do617.com/events/2026/3/28/diana-krall-tickets</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://do617.com/events/2026/3/28/dvorak-symphony-no-9-and-excerpts-from-nixon-in-china-with-renee-fleming-tickets-xmybbq7" data-name="Dvořák Symphony No. 9 and Excerpts from Nixon in China with Renée Fleming">
-                <div class="card-title">Dvořák Symphony No. 9 and Excerpts from Nixon in China with Renée Fleming <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">Symphony Hall, Boston, MA</div>
-                <div class="reason">→ Classical music with renowned performer Renée Fleming; upscale cultural event</div>
-                <a class="link" href="https://do617.com/events/2026/3/28/dvorak-symphony-no-9-and-excerpts-from-nixon-in-china-with-renee-fleming-tickets-xmybbq7" target="_blank">https://do617.com/events/2026/3/28/dvorak-symphony-no-9-and-excerpts-from-nixon-in-china-with-renee-fleming-tickets-xmybbq7</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://do617.com/events/2026/3/29/emanuel-ax-piano-tickets" data-name="Emanuel Ax, piano">
-                <div class="card-title">Emanuel Ax, piano <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">Shalin Liu Performance Center</div>
-                <div class="reason">→ Classical piano performance by acclaimed pianist Emanuel Ax; upscale cultural event</div>
-                <a class="link" href="https://do617.com/events/2026/3/29/emanuel-ax-piano-tickets" target="_blank">https://do617.com/events/2026/3/29/emanuel-ax-piano-tickets</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://do617.com/events/2026/4/9/vivo-performing-arts-presents-david-sedaris-tickets" data-name="Vivo Performing ArtsDavid Sedaris">
-                <div class="card-title">Vivo Performing ArtsDavid Sedaris <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">Symphony Hall, Boston, MA</div>
-                <div class="reason">→ David Sedaris at Vivo Performing Arts is a high-status literary/comedy event with an acclaimed author</div>
-                <a class="link" href="https://do617.com/events/2026/4/9/vivo-performing-arts-presents-david-sedaris-tickets" target="_blank">https://do617.com/events/2026/4/9/vivo-performing-arts-presents-david-sedaris-tickets</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://www.aclum.org/en/events" data-name="[PAGE] ACLU MA">
-                <div class="card-title">[PAGE] ACLU MA <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta"></div>
-                <div class="reason">→ ACLU MA events—civic, government transparency, and civil rights alignment with user expertise in public records/FOIA law and civic accountability</div>
-                <a class="link" href="https://www.aclum.org/en/events" target="_blank">https://www.aclum.org/en/events</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://www.wbur.org/events" data-name="[PAGE] WBUR Events">
-                <div class="card-title">[PAGE] WBUR Events <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta"></div>
-                <div class="reason">→ WBUR CitySpace events include high-status panels, media conversations, journalist events, and cultural programming (Moth, podcast tapings, author talks)</div>
-                <a class="link" href="https://www.wbur.org/events" target="_blank">https://www.wbur.org/events</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://www.bso.org/events" data-name="[PAGE] BSO Events">
-                <div class="card-title">[PAGE] BSO Events <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta"></div>
-                <div class="reason">→ Boston Symphony Orchestra events—high-status classical music venue with galas, special events, and upscale cultural programming</div>
-                <a class="link" href="https://www.bso.org/events" target="_blank">https://www.bso.org/events</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://do617.com/events/2026/3/30/good-writing-an-evening-with-anne-lamott-neal-allen-tickets" data-name="Good Writing: An Evening with Anne Lamott & Neal Allen">
-                <div class="card-title">Good Writing: An Evening with Anne Lamott & Neal Allen <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">Emerson Colonial Theatre</div>
-                <div class="reason">→ Literary event with established authors; intellectual and cultural appeal</div>
-                <a class="link" href="https://do617.com/events/2026/3/30/good-writing-an-evening-with-anne-lamott-neal-allen-tickets" target="_blank">https://do617.com/events/2026/3/30/good-writing-an-evening-with-anne-lamott-neal-allen-tickets</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://do617.com/events/2026/3/30/joel-kim-booster-tickets" data-name="Joel Kim Booster">
-                <div class="card-title">Joel Kim Booster <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">Crystal Ballroom at Somerville Theatre</div>
-                <div class="reason">→ Comedy show by established performer; entertainment</div>
-                <a class="link" href="https://do617.com/events/2026/3/30/joel-kim-booster-tickets" target="_blank">https://do617.com/events/2026/3/30/joel-kim-booster-tickets</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://do617.com/events/2026/3/31/ladysmith-black-mambazo-tickets" data-name="Gile Series: Ladysmith Black Mambazo">
-                <div class="card-title">Gile Series: Ladysmith Black Mambazo <span class="score" title="Relevance score 1-10">7</span></div>
-                <div class="meta">Capitol Center for the Arts</div>
-                <div class="reason">→ Gile Series concert; established world music act; cultural event</div>
-                <a class="link" href="https://do617.com/events/2026/3/31/ladysmith-black-mambazo-tickets" target="_blank">https://do617.com/events/2026/3/31/ladysmith-black-mambazo-tickets</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://do617.com/events/2026/3/24/jessica-brilliant-keener-with-alex-george-evening-begins-the-day-tickets" data-name="Jessica Brilliant Keener with Alex George: Evening Begins the Day">
-                <div class="card-title">Jessica Brilliant Keener with Alex George: Evening Begins the Day <span class="score" title="Relevance score 1-10">6</span></div>
-                <div class="meta">Brookline Booksmith</div>
-                <div class="reason">→ Author event with literary discussion—fits intellectual networking and media/arts scene</div>
-                <a class="link" href="https://do617.com/events/2026/3/24/jessica-brilliant-keener-with-alex-george-evening-begins-the-day-tickets" target="_blank">https://do617.com/events/2026/3/24/jessica-brilliant-keener-with-alex-george-evening-begins-the-day-tickets</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://do617.com/events/2026/3/28/salem-film-fest-tickets" data-name="Salem Film Fest">
-                <div class="card-title">Salem Film Fest <span class="score" title="Relevance score 1-10">6</span></div>
-                <div class="meta">Downtown Salem</div>
-                <div class="reason">→ Film festival—cultural event open to public, potential for upscale social scene</div>
-                <a class="link" href="https://do617.com/events/2026/3/28/salem-film-fest-tickets" target="_blank">https://do617.com/events/2026/3/28/salem-film-fest-tickets</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://www.icaboston.org/events" data-name="[PAGE] ICA Boston">
-                <div class="card-title">[PAGE] ICA Boston <span class="score" title="Relevance score 1-10">6</span></div>
-                <div class="meta"></div>
-                <div class="reason">→ ICA Boston offers First Fridays, talks, music, and art events—upscale cultural programming with networking potential</div>
-                <a class="link" href="https://www.icaboston.org/events" target="_blank">https://www.icaboston.org/events</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-            <div class="card" data-url="https://do617.com/events/2026/4/10/bridget-everett-big-titties-big-dreams-tickets" data-name="Bridget Everett: Big Titties, Big Dreams">
-                <div class="card-title">Bridget Everett: Big Titties, Big Dreams <span class="score" title="Relevance score 1-10">5</span></div>
-                <div class="meta">MGM Music Hall at Fenway</div>
-                <div class="reason">→ Bridget Everett is an acclaimed performer; upscale comedy venue event</div>
-                <a class="link" href="https://do617.com/events/2026/4/10/bridget-everett-big-titties-big-dreams-tickets" target="_blank">https://do617.com/events/2026/4/10/bridget-everett-big-titties-big-dreams-tickets</a>
-                <div class="feedback">
-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
-            </div>
-            </div>
-        </div>
-  <button class="show-more-btn" id="extra-btn" onclick="toggleExtra()" data-label="▼ Show 1 lower-priority events (scored 1–4)">▼ Show 1 lower-priority events (scored 1–4)</button>
-        <div id="extra-events">
-            <div class="card" style="opacity:0.6">
-              <div class="card-title" style="color:#888">Mayflower Brewing's Spring Warehouse Jam Series: The Dirty Water Dance Band <span class="score" style="background:#333;color:#666">4</span></div>
-              <div class="reason" style="color:#555">→ Brewery event with live music is casual/fun but lacks the upscale food/drink, networking, or high-status elements this user seeks. Not exclusive or scene-y enough to warrant attendance.</div>
-              <a class="link" href="brian:https://do617.com/events/2026/3/27/mayflower-brewing-s-spring-warehouse-jam-series-the-dirty-water-dance-band-tickets" target="_blank">brian:https://do617.com/events/2026/3/27/mayflower-brewing-s-spring-warehouse-jam-series-the-dirty-water-dance-band-tickets</a>
-            </div></div>
-  <!-- Netlify form detector — must be visible to Netlify's scanner (use CSS to hide, not hidden attr) -->
+
+  <!-- Netlify form stub (hidden, required for form detection) -->
   <form name="event-feedback" data-netlify="true" netlify-honeypot="bot-field" style="display:none;position:absolute">
+    <input type="hidden" name="form-name" value="event-feedback">
     <input name="bot-field">
-    <input name="persona"><input name="vote"><input name="event_url"><input name="event_name">
+    <input name="persona">
+    <input name="vote">
+    <input name="event_url">
+    <input name="event_name">
   </form>
 
-  <div class="footer">Generated March 24, 2026 at 9:53 AM</div>
 <script>
-  function toggleExtra() {
-    var el = document.getElementById('extra-events');
-    var btn = document.getElementById('extra-btn');
-    if (el.style.display === 'none' || !el.style.display) {
-      el.style.display = 'block';
-      btn.textContent = '▲ Hide lower-priority events';
-    } else {
-      el.style.display = 'none';
-      btn.textContent = btn.dataset.label;
-    }
+(function() {
+
+  // ── Helpers ──────────────────────────────────────────────────────────────
+
+  function esc(s) {
+    return String(s)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
   }
+
+  function fmtTime(isoStr) {
+    if (!isoStr || isoStr.indexOf('T') === -1) return '';
+    var timePart = isoStr.split('T')[1].substring(0, 5); // "HH:MM"
+    var parts = timePart.split(':');
+    var h = parseInt(parts[0], 10);
+    var m = parts[1];
+    var ampm = h >= 12 ? 'PM' : 'AM';
+    h = h % 12 || 12;
+    return h + ':' + m + ' ' + ampm;
+  }
+
+  function fmtDate(isoStr) {
+    // Returns "Monday, March 24" from "2026-03-24T..." or "2026-03-24"
+    var datePart = isoStr.split('T')[0];
+    var parts = datePart.split('-');
+    var d = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
+    var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+    var months = ['January','February','March','April','May','June',
+                  'July','August','September','October','November','December'];
+    return days[d.getDay()] + ', ' + months[d.getMonth()] + ' ' + d.getDate();
+  }
+
+  function dateKey(isoStr) {
+    return isoStr.split('T')[0];
+  }
+
+  function fmtRunTs(ts) {
+    // ts like "2026-03-24T08:00" → "3/24 8:00 AM"
+    var datePart = ts.split('T')[0];
+    var dp = datePart.split('-');
+    var m = parseInt(dp[1], 10);
+    var d = parseInt(dp[2], 10);
+    var time = ts.indexOf('T') !== -1 ? ts.split('T')[1].substring(0, 5) : '';
+    var timeFmt = '';
+    if (time) {
+      var tp = time.split(':');
+      var hh = parseInt(tp[0], 10);
+      var mm = tp[1];
+      var ampm = hh >= 12 ? 'PM' : 'AM';
+      hh = hh % 12 || 12;
+      timeFmt = hh + ':' + mm + ' ' + ampm;
+    }
+    return m + '/' + d + (timeFmt ? ' ' + timeFmt : '');
+  }
+
+  function fmtDuration(ms) {
+    if (!ms && ms !== 0) return '—';
+    return (ms / 1000).toFixed(1) + 's';
+  }
+
+  function fmtMoney(n) {
+    if (n === undefined || n === null) return '$0.0000';
+    return '$' + n.toFixed(4);
+  }
+
+  function buildMeta(ev) {
+    var parts = [];
+    var time = fmtTime(ev.start || '');
+    if (time) parts.push(time);
+    if (ev.price) parts.push(ev.price);
+    if (ev.venue) parts.push(ev.venue);
+    if (ev.address) parts.push(ev.address);
+    return parts.join(' &nbsp;|&nbsp; ');
+  }
+
+  function buildCard(ev) {
+    var meta = buildMeta(ev);
+    var url = esc(ev.url || '');
+    var name = esc(ev.name || '');
+    return '<div class="card" data-url="' + url + '" data-name="' + name + '">' +
+      '<div class="card-title">' + name +
+        ' <span class="score" title="Relevance score 1-10">' + esc(ev.score) + '</span>' +
+      '</div>' +
+      (meta ? '<div class="meta">' + meta + '</div>' : '') +
+      (ev.reason ? '<div class="reason">→ ' + esc(ev.reason) + '</div>' : '') +
+      (ev.url ? '<a class="link" href="' + url + '" target="_blank">' + url + '</a>' : '') +
+      '<div class="feedback">' +
+        '<button class="fb-btn" data-p="brian" data-v="up">\uD83D\uDC4D Brian</button>' +
+        '<button class="fb-btn" data-p="chloe" data-v="up">\uD83D\uDC4D Chloe</button>' +
+        '<button class="fb-btn" data-p="brian" data-v="down">\uD83D\uDC4E Brian</button>' +
+        '<button class="fb-btn" data-p="chloe" data-v="down">\uD83D\uDC4E Chloe</button>' +
+      '</div>' +
+    '</div>';
+  }
+
+  // ── Feedback ─────────────────────────────────────────────────────────────
 
   document.addEventListener('click', function(e) {
     var btn = e.target.closest('.fb-btn');
@@ -1095,25 +223,192 @@
   });
 
   function sendFeedback(btn, persona, vote, url, name) {
-    var cls = vote === 'up' ? 'done' : 'skip';
-    btn.classList.add(cls);
+    btn.classList.add(vote === 'up' ? 'done' : 'skip');
     btn.disabled = true;
-    var body = new URLSearchParams({
-      'form-name': 'event-feedback',
-      'persona': persona,
-      'vote': vote,
-      'event_url': url,
-      'event_name': name
-    });
-    fetch('https://highendeventfinder.netlify.app/', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
-      body: body.toString()
-    }).catch(function() {
-      btn.classList.remove(cls);
-      btn.disabled = false;
-    });
+    fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'},
+      body: new URLSearchParams({'form-name':'event-feedback','persona':persona,'vote':vote,'event_url':url,'event_name':name}).toString()
+    }).catch(function(){});
   }
+
+  // ── Extra events toggle ───────────────────────────────────────────────────
+
+  window.toggleExtra = function() {
+    var el = document.getElementById('extra-events');
+    var btn = document.getElementById('extra-btn');
+    el.style.display = (el.style.display === 'none' || !el.style.display) ? 'block' : 'none';
+    btn.textContent = el.style.display === 'block' ? '\u25B2 Hide lower-priority events' : btn.dataset.label;
+  };
+
+  // ── Render ────────────────────────────────────────────────────────────────
+
+  function renderAll(data) {
+    document.getElementById('loading').style.display = 'none';
+    document.getElementById('main').style.display = '';
+
+    // Subtitle
+    var events = data.events || [];
+    var today = data.today || '';
+    var days = data.days || 7;
+    var startDate = today;
+    var endDateObj = new Date(today.split('-')[0], parseInt(today.split('-')[1],10)-1, parseInt(today.split('-')[2],10) + days - 1);
+    var months = ['January','February','March','April','May','June',
+                  'July','August','September','October','November','December'];
+    var endLabel = months[endDateObj.getMonth()] + ' ' + endDateObj.getDate();
+    var startParts = today.split('-');
+    var startLabel = months[parseInt(startParts[1],10)-1] + ' ' + parseInt(startParts[2],10);
+    document.getElementById('subtitle').innerHTML =
+      startLabel + ' \u2013 ' + endLabel + ', ' + startParts[0] +
+      ' &nbsp;\u00B7&nbsp; ' + events.length + ' events';
+
+    // Cost bar
+    var costs = data.costs || {};
+    var runs = (costs.runs || []).slice(-5).reverse();
+    var costHtml = '<div style="display:flex;gap:20px;margin-bottom:10px">' +
+      '<span class="cost-item">Week: <b>$' + (costs.week || 0).toFixed(4) + '</b></span>' +
+      '<span class="cost-item">Month: <b>$' + (costs.month || 0).toFixed(4) + '</b></span>' +
+      '<span class="cost-item">Total: <b>$' + (costs.total || 0).toFixed(4) + '</b></span>' +
+    '</div>';
+    if (runs.length) {
+      costHtml += '<table style="width:100%;border-collapse:collapse;font-size:0.75rem;color:#888">' +
+        '<thead><tr style="color:#555;text-align:left;border-bottom:1px solid #222">' +
+          '<th style="padding:4px 8px 4px 0">Run</th>' +
+          '<th style="padding:4px 8px">Events</th>' +
+          '<th style="padding:4px 8px">Model</th>' +
+          '<th style="padding:4px 8px">Cost</th>' +
+          '<th style="padding:4px 8px">Time</th>' +
+        '</tr></thead><tbody>';
+      runs.forEach(function(run, i) {
+        var models = run.models || {};
+        var modelStr = Object.keys(models).map(function(k) {
+          return esc(k) + ' ' + fmtMoney(models[k]);
+        }).join(', ') || '\u2014';
+        var isLatest = (i === 0);
+        costHtml += '<tr' + (isLatest ? ' style="background:#1e2a1e"' : '') + '>' +
+          '<td style="padding:4px 8px 4px 0">' + esc(fmtRunTs(run.ts || '')) +
+            (isLatest ? ' <b style="color:#7fff7f;font-size:0.65rem">LATEST</b>' : '') +
+          '</td>' +
+          '<td style="color:#aaa;padding:4px 8px">' + (run.events_cached||0) + ' cached / ' + (run.events_scored||0) + ' scored</td>' +
+          '<td style="color:#aaa;padding:4px 8px">' + modelStr + '</td>' +
+          '<td style="color:#e8e8e8;font-weight:600;padding:4px 8px">' + fmtMoney(run.cost_usd) + '</td>' +
+          '<td style="color:#666;padding:4px 8px">' + fmtDuration(run.duration_ms) + '</td>' +
+        '</tr>';
+      });
+      costHtml += '</tbody></table>';
+    }
+    document.getElementById('cost-bar').innerHTML = costHtml;
+
+    // Sources bar
+    var sources = data.sources || {};
+    var srcKeys = Object.keys(sources);
+    var srcHtml = '';
+    if (srcKeys.length) {
+      srcHtml = srcKeys.map(function(k) {
+        return '<span class="src-pill">' + esc(k) + ' ' + sources[k] + '</span>';
+      }).join(' ');
+    }
+    var srcBar = document.getElementById('sources-bar');
+    if (srcHtml) {
+      srcBar.innerHTML = srcHtml;
+    } else {
+      srcBar.style.display = 'none';
+    }
+
+    // Oyster bar
+    var oysters = data.oyster_deals || [];
+    var oysterBar = document.getElementById('oyster-bar');
+    if (oysters.length) {
+      var oysterHtml = '<div class="oyster-title">\uD83E\uDDAA Oyster Deals</div>';
+      oysterHtml += oysters.map(function(o) {
+        return '<span class="oyster-item"><b>' + esc(o.name) + (o.deal ? ' \u2014 ' + esc(o.deal) : '') + '</b></span>';
+      }).join('');
+      oysterBar.innerHTML = oysterHtml;
+    } else {
+      oysterBar.style.display = 'none';
+    }
+
+    // Group events by date
+    var groups = {};
+    var order = [];
+    events.forEach(function(ev) {
+      var key = ev.start ? dateKey(ev.start) : (today || 'unknown');
+      if (!groups[key]) {
+        groups[key] = [];
+        order.push(key);
+      }
+      groups[key].push(ev);
+    });
+    // Sort days chronologically
+    order.sort();
+
+    var eventsHtml = '';
+    order.forEach(function(key) {
+      var label = fmtDate(key);
+      var isToday = (key === today);
+      eventsHtml += '<div class="day-section">';
+      eventsHtml += '<div class="day-header">' + esc(label) +
+        (isToday ? ' <span class="today-tag">TODAY</span>' : '') +
+      '</div>';
+      groups[key].forEach(function(ev) {
+        eventsHtml += buildCard(ev);
+      });
+      eventsHtml += '</div>';
+    });
+    document.getElementById('events-container').innerHTML = eventsHtml;
+
+    // Extra events toggle
+    var extra = data.extra_events || [];
+    var extraBtn = document.getElementById('extra-btn');
+    var extraContainer = document.getElementById('extra-events');
+    if (extra.length) {
+      var label = '\u25BC Show lower-priority events (' + extra.length + ')';
+      extraBtn.textContent = label;
+      extraBtn.dataset.label = label;
+      extraBtn.style.display = 'block';
+      var extraHtml = '<div class="day-section">';
+      extraHtml += '<div class="day-header">Lower Priority <span class="extra-label">score 1\u20134</span></div>';
+      extra.forEach(function(ev) {
+        extraHtml += buildCard(ev);
+      });
+      extraHtml += '</div>';
+      extraContainer.innerHTML = extraHtml;
+    }
+
+    // Footer
+    var genAt = data.generated_at || '';
+    var footerText = '';
+    if (genAt) {
+      var datePart2 = genAt.split('T')[0];
+      var timePart2 = genAt.indexOf('T') !== -1 ? genAt.split('T')[1].substring(0,5) : '';
+      var dp2 = datePart2.split('-');
+      var d2 = new Date(parseInt(dp2[0],10), parseInt(dp2[1],10)-1, parseInt(dp2[2],10));
+      var months2 = ['January','February','March','April','May','June',
+                     'July','August','September','October','November','December'];
+      var dateStr2 = months2[d2.getMonth()] + ' ' + d2.getDate() + ', ' + dp2[0];
+      var timeStr2 = '';
+      if (timePart2) {
+        var tp2 = timePart2.split(':');
+        var hh2 = parseInt(tp2[0],10);
+        var mm2 = tp2[1];
+        var ampm2 = hh2 >= 12 ? 'PM' : 'AM';
+        hh2 = hh2 % 12 || 12;
+        timeStr2 = hh2 + ':' + mm2 + ' ' + ampm2;
+      }
+      footerText = 'Generated ' + dateStr2 + (timeStr2 ? ' at ' + timeStr2 : '');
+    }
+    document.getElementById('footer').innerHTML = '<div class="footer">' + esc(footerText) + '</div>';
+  }
+
+  // ── Fetch ─────────────────────────────────────────────────────────────────
+
+  fetch('https://raw.githubusercontent.com/coffeethencode/boston-finder/data/data/brian.json?t=' + Math.floor(Date.now() / 300000))
+    .then(function(r) { return r.json(); })
+    .then(function(data) { renderAll(data); })
+    .catch(function(err) {
+      document.getElementById('loading').style.display = 'none';
+      document.body.innerHTML += '<p style="color:#f00">Failed to load events: ' + err + '</p>';
+    });
+
+})();
 </script>
 </body>
 </html>
