@@ -43,10 +43,18 @@
   .footer      { margin-top: 40px; font-size: 0.75rem; color: #555; }
   .oyster-bar  { background: #0a1a0a; border: 1px solid #1a3a1a; border-radius: 8px;
                   padding: 14px 16px; margin-bottom: 24px; }
-  .oyster-title { font-size: 0.9rem; font-weight: 700; color: #7fff7f; margin-bottom: 8px; }
-  .oyster-item { display: inline-block; background: #111; border: 1px solid #1e3a1e;
-                  border-radius: 6px; padding: 4px 10px; margin: 3px; font-size: 0.75rem; color: #aaa; }
-  .oyster-item b { color: #7fff7f; }
+  .oyster-title { font-size: 0.9rem; font-weight: 700; color: #7fff7f; margin-bottom: 10px; }
+  .oyster-days  { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 12px; }
+  .oday-btn    { padding: 3px 10px; border-radius: 99px; border: 1px solid #1e3a1e;
+                  background: #0d200d; color: #4a8a4a; font-size: 0.72rem; cursor: pointer; }
+  .oday-btn.active { background: #1a3a1a; color: #7fff7f; border-color: #3a6a3a; font-weight: 700; }
+  .oyster-list  { display: flex; flex-direction: column; gap: 6px; }
+  .oyster-item { display: flex; justify-content: space-between; align-items: baseline;
+                  background: #0d1a0d; border: 1px solid #1a2e1a; border-radius: 6px;
+                  padding: 7px 11px; font-size: 0.78rem; color: #aaa; }
+  .oyster-item b { color: #7fff7f; font-size: 0.82rem; }
+  .oyster-meta  { font-size: 0.72rem; color: #556; margin-top: 2px; }
+  .oyster-hours { font-size: 0.75rem; color: #7fff7f; opacity: 0.7; white-space: nowrap; margin-left: 12px; }
   .sources-bar { background: #111; border: 1px solid #222; border-radius: 8px;
                   padding: 10px 16px; margin-bottom: 20px; font-size: 0.78rem; color: #666; }
   .src-pill    { display: inline-block; background: #1e1e1e; border: 1px solid #2a2a2a;
@@ -314,20 +322,69 @@
       srcBar.style.display = 'none';
     }
 
-    // Oyster bar
+    // Oyster bar — day-of-week view
     var oysters = data.oyster_deals || [];
     var oysterBar = document.getElementById('oyster-bar');
     if (oysters.length) {
-      var oysterHtml = '<div class="oyster-title">\uD83E\uDDAA Oyster Deals</div>';
-      oysterHtml += oysters.map(function(o) {
-        var label = esc(o.name);
-        var meta = [o.address, o.reason].filter(Boolean).map(esc).join(' \u2014 ');
-        var inner = '<b>' + label + '</b>' + (meta ? '<br><span style="font-weight:normal;font-size:0.8rem;color:#aaa">' + meta + '</span>' : '');
-        return o.url
-          ? '<a class="oyster-item" href="' + esc(o.url) + '" target="_blank" style="text-decoration:none">' + inner + '</a>'
-          : '<span class="oyster-item">' + inner + '</span>';
-      }).join('');
-      oysterBar.innerHTML = oysterHtml;
+      var DAY_NAMES = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+      var DAY_FULL  = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+      var todayDow  = new Date().getDay(); // 0=Sun
+
+      function oysterDays(o) {
+        var desc = ((o.description || '') + ' ' + (o.reason || '')).toLowerCase();
+        var name = (o.name || '').toLowerCase();
+        if (/daily|every day|all week/i.test(desc + name)) return [0,1,2,3,4,5,6];
+        var days = [];
+        var map = {sun:0,mon:1,tue:2,wed:3,thu:4,fri:5,sat:6,
+                   sunday:0,monday:1,tuesday:2,wednesday:3,thursday:4,friday:5,saturday:6};
+        Object.keys(map).forEach(function(k){ if(desc.indexOf(k)!==-1) days.push(map[k]); });
+        // handle ranges like "mon-wed", "mon–fri"
+        var rangeMatch = desc.match(/([a-z]+)[–\-]([a-z]+)/);
+        if (rangeMatch) {
+          var s = map[rangeMatch[1]], e = map[rangeMatch[2]];
+          if (s !== undefined && e !== undefined) {
+            days = []; for(var d=s; d<=e; d++) days.push(d);
+          }
+        }
+        return days.length ? days : [0,1,2,3,4,5,6]; // default: all days if unknown
+      }
+
+      function oysterHours(o) {
+        var m = (o.description||'').match(/(\d+(?::\d+)?\s*(?:AM|PM|am|pm)[^.,$]*)/i);
+        return m ? m[1].trim() : '';
+      }
+
+      function renderOysterDay(dow) {
+        var items = oysters.filter(function(o){ return oysterDays(o).indexOf(dow) !== -1; });
+        if (!items.length) return '<div style="color:#444;font-size:0.8rem;padding:8px 0">No deals on ' + DAY_FULL[dow] + '</div>';
+        return '<div class="oyster-list">' + items.map(function(o) {
+          var venueName = esc(o.venue || o.name.split('\u2014')[0].trim());
+          var hood  = esc(o.address || '');
+          var hours = esc(oysterHours(o));
+          var deal  = esc((o.name||'').split('\u2014')[1] || o.reason || '');
+          var left  = '<div><b>' + venueName + '</b>' +
+                      (hood ? '<div class="oyster-meta">' + hood + (deal ? ' \u00b7 ' + deal : '') + '</div>' : '') +
+                      '</div>';
+          var right = hours ? '<span class="oyster-hours">' + hours + '</span>' : '';
+          var inner = left + right;
+          return o.url
+            ? '<a class="oyster-item" href="' + esc(o.url) + '" target="_blank" style="text-decoration:none">' + inner + '</a>'
+            : '<div class="oyster-item">' + inner + '</div>';
+        }).join('') + '</div>';
+      }
+
+      var activeDow = todayDow;
+      function buildOyster() {
+        var tabs = '<div class="oyster-days">' +
+          DAY_NAMES.map(function(d,i) {
+            var cls = 'oday-btn' + (i===activeDow ? ' active' : '');
+            var todayMark = i===todayDow ? ' \u25cf' : '';
+            return '<button class="' + cls + '" onclick="setOysterDay(' + i + ')">' + d + todayMark + '</button>';
+          }).join('') + '</div>';
+        oysterBar.innerHTML = '<div class="oyster-title">\uD83E\uDDAA Oyster Deals</div>' + tabs + renderOysterDay(activeDow);
+      }
+      window.setOysterDay = function(dow) { activeDow = dow; buildOyster(); };
+      buildOyster();
     } else {
       oysterBar.style.display = 'none';
     }
