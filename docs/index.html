@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- v2 -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -319,7 +320,12 @@
     if (oysters.length) {
       var oysterHtml = '<div class="oyster-title">\uD83E\uDDAA Oyster Deals</div>';
       oysterHtml += oysters.map(function(o) {
-        return '<span class="oyster-item"><b>' + esc(o.name) + (o.deal ? ' \u2014 ' + esc(o.deal) : '') + '</b></span>';
+        var label = esc(o.name);
+        var meta = [o.address, o.reason].filter(Boolean).map(esc).join(' \u2014 ');
+        var inner = '<b>' + label + '</b>' + (meta ? '<br><span style="font-weight:normal;font-size:0.8rem;color:#aaa">' + meta + '</span>' : '');
+        return o.url
+          ? '<a class="oyster-item" href="' + esc(o.url) + '" target="_blank" style="text-decoration:none">' + inner + '</a>'
+          : '<span class="oyster-item">' + inner + '</span>';
       }).join('');
       oysterBar.innerHTML = oysterHtml;
     } else {
