@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-25T15:17:06.808465",
+  "generated_at": "2026-03-25T17:06:44.763214",
   "today": "2026-03-25",
   "days": 7,
   "persona": "brian",
@@ -1101,32 +1101,10 @@
     }
   ],
   "costs": {
-    "week": 0.4446,
-    "month": 0.5712,
-    "total": 0.5712,
+    "week": 0.5224,
+    "month": 0.649,
+    "total": 0.649,
     "runs": [
-      {
-        "ts": "2026-03-25T08:07:05.926478",
-        "events_total": 523,
-        "events_cached": 95,
-        "events_scored": 64,
-        "cost_usd": 0.030282,
-        "duration_ms": 30005,
-        "models": {
-          "claude-haiku-4-5-20251001": 0.030282
-        }
-      },
-      {
-        "ts": "2026-03-25T08:09:43.424742",
-        "events_total": 399,
-        "events_cached": 78,
-        "events_scored": 0,
-        "cost_usd": 0.024401,
-        "duration_ms": 24126,
-        "models": {
-          "claude-haiku-4-5-20251001": 0.024401
-        }
-      },
       {
         "ts": "2026-03-25T09:23:44.687045",
         "events_total": 537,
@@ -1156,6 +1134,28 @@
         "duration_ms": 24154,
         "models": {
           "claude-haiku-4-5-20251001": 0.024414
+        }
+      },
+      {
+        "ts": "2026-03-25T15:17:08.232722",
+        "events_total": 507,
+        "events_cached": 68,
+        "events_scored": 288,
+        "cost_usd": 0.050847,
+        "duration_ms": 51188,
+        "models": {
+          "claude-haiku-4-5-20251001": 0.050847
+        }
+      },
+      {
+        "ts": "2026-03-25T17:06:07.117205",
+        "events_total": 512,
+        "events_cached": 109,
+        "events_scored": 0,
+        "cost_usd": 0.026933,
+        "duration_ms": 25707,
+        "models": {
+          "claude-haiku-4-5-20251001": 0.026933
         }
       }
     ],
