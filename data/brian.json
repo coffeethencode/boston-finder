@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-03-25T08:08:58.483813",
+  "generated_at": "2026-03-25T08:10:58.743083",
   "today": "2026-03-25",
-  "days": 7,
+  "days": 5,
   "persona": "brian",
   "events": [
     {
@@ -17,18 +17,6 @@
       "_proximity": 3
     },
     {
-      "source": "do617:food-drink",
-      "name": "Spring Wine Preview",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/28/spring-wine-preview-tickets",
-      "start": "2026-03-28T7:15PM",
-      "venue": "Formaggio Kitchen",
-      "address": "",
-      "score": 8,
-      "reason": "Spring wine preview - upscale wine tasting event",
-      "_proximity": 3
-    },
-    {
       "source": "do617:film-theatre-performing-arts",
       "name": "Strategy, Messaging, and Power: A Conversation with Anita Dunn",
       "description": "",
@@ -38,6 +26,18 @@
       "address": "",
       "score": 8,
       "reason": "High-status political/messaging panel with Anita Dunn, influential strategist\u2014directly relevant to government, media, and public affairs expertise",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:concerts",
+      "name": "Boston Speakers Series\u2013Malcolm Gladwell",
+      "description": "",
+      "url": "https://do617.com/events/2026/3/25/boston-speakers-series-malcolm-gladwell-tickets",
+      "start": "2026-03-25T8:00PM",
+      "venue": "Boston Symphony Hall",
+      "address": "",
+      "score": 8,
+      "reason": "Boston Speakers Series with Malcolm Gladwell; high-profile thought leader event",
       "_proximity": 3
     },
     {
@@ -74,30 +74,6 @@
       "address": "",
       "score": 8,
       "reason": "Major artist performance; significant entertainment event",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
-      "name": "Lady Gaga",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/30/lady-gaga-tickets",
-      "start": "2026-03-30T8:00PM",
-      "venue": "TD Garden",
-      "address": "",
-      "score": 8,
-      "reason": "Major concert event; high-profile entertainment",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Public Service and Global Security: A Conversation with Curtis Ried",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/31/public-service-and-global-security-a-conversation-with-curtis-ried-tickets",
-      "start": "2026-03-31T12:00PM",
-      "venue": "John F. Kennedy Jr. Forum at the Institute of Politics",
-      "address": "",
-      "score": 8,
-      "reason": "Public Service and Global Security conversation \u2014 directly aligns with civic accountability and government policy expertise",
       "_proximity": 3
     },
     {
@@ -161,30 +137,6 @@
       "_proximity": 3
     },
     {
-      "source": "do617:food-drink",
-      "name": "Mixology Class | Spring Cocktails",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/28/mixology-class-spring-cocktails-tickets",
-      "start": "2026-03-28T6:00PM",
-      "venue": "Short Path Distillery",
-      "address": "",
-      "score": 7,
-      "reason": "Mixology class for cocktails - upscale beverage education/experience",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Class: Ramen Masterclass",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/28/class-ramen-masterclass-tickets",
-      "start": "2026-03-28T1:00PM",
-      "venue": "Pagu",
-      "address": "",
-      "score": 7,
-      "reason": "Ramen masterclass - elevated culinary education",
-      "_proximity": 3
-    },
-    {
       "source": "do617:film-theatre-performing-arts",
       "name": "Colorful Cosmopolitanism: Artistic Representations of the Nation as Mother",
       "description": "",
@@ -245,15 +197,15 @@
       "_proximity": 3
     },
     {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Good Writing: An Evening with Anne Lamott & Neal Allen",
+      "source": "do617:concerts",
+      "name": "Lori Z Jazz Trio: Barside ft. Lori Zuroff on vocals, Molly Flannery on piano and Bill McCormack on bass.",
       "description": "",
-      "url": "https://do617.com/events/2026/3/30/good-writing-an-evening-with-anne-lamott-neal-allen-tickets",
-      "start": "2026-03-30T7:30PM",
-      "venue": "Emerson Colonial Theatre",
+      "url": "https://do617.com/events/2026/3/25/lori-z-jazz-trio-barside-ft-lori-zuroff-on-vocals-molly-flannery-on-piano-and-bill-mccormack-on-bass-tickets",
+      "start": "2026-03-25T5:15PM",
+      "venue": "Sanctuary - Cultural Arts Center",
       "address": "",
       "score": 7,
-      "reason": "Literary event with established authors; intellectual and cultural appeal",
+      "reason": "Upscale jazz trio at a bar venue; sophisticated live music experience",
       "_proximity": 3
     },
     {
@@ -329,30 +281,6 @@
       "_proximity": 3
     },
     {
-      "source": "do617:concerts",
-      "name": "Joel Kim Booster",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/30/joel-kim-booster-tickets",
-      "start": "2026-03-30T7:30PM",
-      "venue": "Crystal Ballroom at Somerville Theatre",
-      "address": "",
-      "score": 7,
-      "reason": "Comedy show by established performer; entertainment",
-      "_proximity": 4
-    },
-    {
-      "source": "do617:concerts",
-      "name": "Gile Series: Ladysmith Black Mambazo",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/31/ladysmith-black-mambazo-tickets",
-      "start": "2026-03-30T7:00PM",
-      "venue": "Capitol Center for the Arts",
-      "address": "",
-      "score": 7,
-      "reason": "Gile Series concert; established world music act; cultural event",
-      "_proximity": 3
-    },
-    {
       "source": "do617:comedy",
       "name": "Vivo Performing ArtsDavid Sedaris",
       "description": "",
@@ -362,54 +290,6 @@
       "address": "",
       "score": 7,
       "reason": "David Sedaris at Vivo Performing Arts is a high-status literary/comedy event with an acclaimed author",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:comedy",
-      "name": "Lena Dunham",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/16/lena-dunham-tickets",
-      "start": "2026-03-30T7:30PM",
-      "venue": "The Wilbur",
-      "address": "",
-      "score": 7,
-      "reason": "Lena Dunham appearance \u2014 media/entertainment figure, potentially high-profile event with good crowd and scene",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:comedy",
-      "name": "Sherri Shepherd VIP M&G add-on",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/17/sherri-shepherd-vip-m-g-add-on-tickets",
-      "start": "2026-03-30T7:30PM",
-      "venue": "The Wilbur",
-      "address": "",
-      "score": 7,
-      "reason": "Sherri Shepherd VIP M&G add-on \u2014 exclusive meet-and-greet opportunity, high-status experience",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Cookbook Release Party",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/31/cookbook-release-party-tickets",
-      "start": "2026-03-31T6:00PM",
-      "venue": "Citrus and Salt",
-      "address": "",
-      "score": 7,
-      "reason": "Cookbook release party \u2014 upscale food/drink event, likely with interesting crowd and networking",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "GRAYSCALE Indie Business Summit",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/31/grayscale-indie-business-summit-tickets",
-      "start": "2026-03-31T10:00AM",
-      "venue": "CinemaSalem",
-      "address": "",
-      "score": 7,
-      "reason": "GRAYSCALE Indie Business Summit \u2014 startup/business networking, professional development",
       "_proximity": 3
     },
     {
@@ -1089,21 +969,10 @@
     }
   ],
   "costs": {
-    "week": 0.3685,
-    "month": 0.4952,
-    "total": 0.4952,
+    "week": 0.3929,
+    "month": 0.5196,
+    "total": 0.5196,
     "runs": [
-      {
-        "ts": "2026-03-24T08:36:20.255055",
-        "events_total": 621,
-        "events_cached": 141,
-        "events_scored": 81,
-        "cost_usd": 0.00702,
-        "duration_ms": 8804,
-        "models": {
-          "claude-haiku-4-5-20251001": 0.00702
-        }
-      },
       {
         "ts": "2026-03-24T18:03:33.985921",
         "events_total": 533,
@@ -1143,12 +1012,23 @@
         "models": {
           "claude-haiku-4-5-20251001": 0.030282
         }
+      },
+      {
+        "ts": "2026-03-25T08:09:43.424742",
+        "events_total": 399,
+        "events_cached": 78,
+        "events_scored": 0,
+        "cost_usd": 0.024401,
+        "duration_ms": 24126,
+        "models": {
+          "claude-haiku-4-5-20251001": 0.024401
+        }
       }
     ],
     "netlify": "1000/1000 credits remaining"
   },
   "sources": {
-    "do617": 37,
+    "do617": 27,
     "allevents": 2
   }
 }
