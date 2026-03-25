@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-25T15:18:09.373450",
+  "generated_at": "2026-03-25T17:07:17.825815",
   "today": "2026-03-25",
   "days": 7,
   "persona": "chloe",
@@ -233,6 +233,18 @@
       "_proximity": 3
     },
     {
+      "source": "do617:food-drink",
+      "name": "Jazz Dinner w/ Jordan Gravel!",
+      "description": "",
+      "url": "https://do617.com/events/2026/3/30/jazz-dinner-w-jordan-gravel-tickets",
+      "start": "2026-03-30T19:00",
+      "venue": "Gulu-Gulu Cafe",
+      "address": "",
+      "score": 7,
+      "reason": "Jazz dinner with live music and food \u2014 upscale dining experience Chloe enjoys",
+      "_proximity": 3
+    },
+    {
       "source": "do617:film-theatre-performing-arts",
       "name": "Suffs",
       "description": "",
@@ -350,18 +362,6 @@
       "address": "",
       "score": 7,
       "reason": "MFA thesis exhibition; upscale art event and gallery opening",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Jazz Dinner w/ Jordan Gravel!",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/30/jazz-dinner-w-jordan-gravel-tickets",
-      "start": "2026-03-30T19:00",
-      "venue": "Gulu-Gulu Cafe",
-      "address": "",
-      "score": 7,
-      "reason": "Jazz dinner with live music and food \u2014 upscale dining experience Chloe enjoys",
       "_proximity": 3
     },
     {
@@ -1190,32 +1190,10 @@
     }
   ],
   "costs": {
-    "week": 0.4954,
-    "month": 0.6221,
-    "total": 0.6221,
+    "week": 0.5493,
+    "month": 0.6759,
+    "total": 0.6759,
     "runs": [
-      {
-        "ts": "2026-03-25T08:09:43.424742",
-        "events_total": 399,
-        "events_cached": 78,
-        "events_scored": 0,
-        "cost_usd": 0.024401,
-        "duration_ms": 24126,
-        "models": {
-          "claude-haiku-4-5-20251001": 0.024401
-        }
-      },
-      {
-        "ts": "2026-03-25T09:23:44.687045",
-        "events_total": 537,
-        "events_cached": 108,
-        "events_scored": 14,
-        "cost_usd": 0.027232,
-        "duration_ms": 26900,
-        "models": {
-          "claude-haiku-4-5-20251001": 0.027232
-        }
-      },
       {
         "ts": "2026-03-25T15:08:09.338433",
         "events_total": 230,
@@ -1245,6 +1223,28 @@
         "duration_ms": 51188,
         "models": {
           "claude-haiku-4-5-20251001": 0.050847
+        }
+      },
+      {
+        "ts": "2026-03-25T17:06:07.117205",
+        "events_total": 512,
+        "events_cached": 109,
+        "events_scored": 0,
+        "cost_usd": 0.026933,
+        "duration_ms": 25707,
+        "models": {
+          "claude-haiku-4-5-20251001": 0.026933
+        }
+      },
+      {
+        "ts": "2026-03-25T17:06:47.274212",
+        "events_total": 512,
+        "events_cached": 109,
+        "events_scored": 0,
+        "cost_usd": 0.026933,
+        "duration_ms": 24584,
+        "models": {
+          "claude-haiku-4-5-20251001": 0.026933
         }
       }
     ],
