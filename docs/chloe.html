@@ -302,6 +302,24 @@
         '</tr>';
       });
       costHtml += '</tbody></table>';
+      // Efficiency notes for latest run
+      var latestRun = runs[0];
+      if (latestRun && latestRun.efficiency) {
+        var eff = latestRun.efficiency;
+        var effColor = eff.cache_hit_rate >= 0.7 ? '#4a8a4a' : eff.cache_hit_rate >= 0.4 ? '#8a7a3a' : '#8a4a4a';
+        costHtml += '<div style="margin-top:8px;padding:6px 8px;background:#111;border-radius:4px;font-size:0.72rem;color:' + effColor + '">' +
+          '\u26a1 ' + esc(eff.notes[0] || '') +
+          (latestRun.deploy_why && latestRun.deploy_why !== 'run' ? ' &nbsp;\u00b7&nbsp; <span style="color:#555">run: ' + esc(latestRun.deploy_why) + '</span>' : '') +
+          '</div>';
+      }
+      // Netlify credits
+      var netlify = latestRun && latestRun.netlify;
+      if (netlify && netlify.total) {
+        var pct = netlify.remaining / netlify.total;
+        var ncColor = pct > 0.5 ? '#4a8a4a' : pct > 0.2 ? '#8a7a3a' : '#8a4a4a';
+        costHtml += '<div style="margin-top:4px;font-size:0.72rem;color:' + ncColor + '">' +
+          '\uD83C\uDF10 Netlify: ' + netlify.remaining + '/' + netlify.total + ' credits remaining (' + netlify.used + ' used)</div>';
+      }
     }
     document.getElementById('cost-bar').innerHTML = costHtml;
 
@@ -310,9 +328,11 @@
     var srcKeys = Object.keys(sources);
     var srcHtml = '';
     if (srcKeys.length) {
-      srcHtml = srcKeys.map(function(k) {
-        return '<span class="src-pill">' + esc(k) + ' ' + sources[k] + '</span>';
-      }).join(' ');
+      var totalShown = srcKeys.reduce(function(a, k) { return a + sources[k]; }, 0);
+      srcHtml = 'Sources: ' + srcKeys.map(function(k) {
+        return '<span class="src-pill">' + esc(k) + ' <b>' + sources[k] + '</b></span>';
+      }).join(' ') +
+      ' <span style="color:#444;margin-left:8px">\u2192 ' + totalShown + ' shown</span>';
     }
     var srcBar = document.getElementById('sources-bar');
     if (srcHtml) {
@@ -347,23 +367,80 @@
         var m = (o.description||'').match(/(\d+(?::\d+)?\s*(?:AM|PM|am|pm)[^.,$]*)/i);
         return m ? m[1].trim() : '';
       }
+
+      function bostonHour() {
+        // Current hour (0-23) in Boston time (handles EST/EDT automatically)
+        var d = new Date();
+        var fmt = new Intl.DateTimeFormat('en-US', {
+          timeZone: 'America/New_York', hour: 'numeric', hour12: false
+        });
+        return parseInt(fmt.format(d), 10);
+      }
+
+      function parseEndHour24(hoursStr) {
+        // Parse "5-7pm", "5:00 PM–7:00 PM" → end hour in 24h. Returns null if can't parse.
+        if (!hoursStr) return null;
+        var s = hoursStr.toLowerCase();
+        // look for end time in ranges: "5-7pm", "5–7pm", "5:00-7:00 pm"
+        var m = s.match(/[–\-]\s*(\d+)(?::\d+)?\s*(am|pm)/);
+        if (m) {
+          var h = parseInt(m[1], 10);
+          if (m[2] === 'pm' && h !== 12) h += 12;
+          if (m[2] === 'am' && h === 12) h = 0;
+          return h;
+        }
+        // single time — treat it as end time
+        var s2 = s.match(/(\d+)(?::\d+)?\s*(am|pm)/);
+        if (s2) {
+          var h2 = parseInt(s2[1], 10);
+          if (s2[2] === 'pm' && h2 !== 12) h2 += 12;
+          if (s2[2] === 'am' && h2 === 12) h2 = 0;
+          return h2;
+        }
+        return null;
+      }
+
+      var hidePast = true;
       function renderOysterDay(dow) {
+        var isToday = (dow === todayDow);
+        var currentH = isToday ? bostonHour() : -1;
         var items = oysters.filter(function(o){ return oysterDays(o).indexOf(dow) !== -1; });
-        if (!items.length) return '<div style="color:#444;font-size:0.8rem;padding:8px 0">No deals on ' + DAY_FULL[dow] + '</div>';
-        return '<div class="oyster-list">' + items.map(function(o) {
+        var pastItems = [];
+        var futureItems = [];
+        if (isToday && hidePast) {
+          items.forEach(function(o) {
+            var endH = parseEndHour24(oysterHours(o));
+            if (endH !== null && endH <= currentH) {
+              pastItems.push(o);
+            } else {
+              futureItems.push(o);
+            }
+          });
+          items = futureItems;
+        }
+        if (!items.length && !pastItems.length) return '<div style="color:#444;font-size:0.8rem;padding:8px 0">No deals on ' + DAY_FULL[dow] + '</div>';
+        if (!items.length && isToday) return '<div style="color:#556;font-size:0.8rem;padding:8px 0">All deals for today have ended. ' + (pastItems.length ? pastItems.length + ' hidden.' : '') + '</div>';
+        var renderItem = function(o) {
           var venueName = esc(o.venue || o.name.split('\u2014')[0].trim());
           var hood  = esc(o.address || '');
           var hours = esc(oysterHours(o));
           var deal  = esc((o.name||'').split('\u2014')[1] || o.reason || '');
           var left  = '<div><b>' + venueName + '</b>' +
-                      (hood ? '<div class="oyster-meta">' + hood + (deal ? ' \u00b7 ' + deal : '') + '</div>' : '') + '</div>';
+                      (hood ? '<div class="oyster-meta">' + hood + (deal ? ' \u00b7 ' + deal : '') + '</div>' : '') +
+                      '</div>';
           var right = hours ? '<span class="oyster-hours">' + hours + '</span>' : '';
           var inner = left + right;
           return o.url
             ? '<a class="oyster-item" href="' + esc(o.url) + '" target="_blank" style="text-decoration:none">' + inner + '</a>'
             : '<div class="oyster-item">' + inner + '</div>';
-        }).join('') + '</div>';
+        };
+        var html = '<div class="oyster-list">' + items.map(renderItem).join('') + '</div>';
+        if (isToday && pastItems.length > 0) {
+          html += '<div style="font-size:0.72rem;color:#445;margin-top:6px;padding:4px 0">' + pastItems.length + ' deal' + (pastItems.length > 1 ? 's' : '') + ' ended today \u2014 <button onclick="togglePastOysters()" style="background:none;border:none;color:#557;font-size:0.72rem;cursor:pointer;padding:0">show all</button></div>';
+        }
+        return html;
       }
+
       var activeDow = todayDow;
       function buildOyster() {
         var tabs = '<div class="oyster-days">' +
@@ -375,6 +452,7 @@
         oysterBar.innerHTML = '<div class="oyster-title">\uD83E\uDDAA Oyster Deals</div>' + tabs + renderOysterDay(activeDow);
       }
       window.setOysterDay = function(dow) { activeDow = dow; buildOyster(); };
+      window.togglePastOysters = function() { hidePast = !hidePast; buildOyster(); };
       buildOyster();
     } else {
       oysterBar.style.display = 'none';
