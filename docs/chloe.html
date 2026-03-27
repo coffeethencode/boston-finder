@@ -59,6 +59,26 @@
   .oyster-item b { color: #7fff7f; font-size: 0.82rem; }
   .oyster-meta  { font-size: 0.72rem; color: #556; margin-top: 2px; }
   .oyster-hours { font-size: 0.75rem; color: #7fff7f; opacity: 0.7; white-space: nowrap; margin-left: 12px; }
+  .oyster-scroll { max-height: 300px; overflow-y: auto; padding-right: 2px; }
+  .ev-modal-bg  { position:fixed; inset:0; background:rgba(0,0,0,0.75); z-index:200;
+                   display:flex; align-items:flex-end; justify-content:center; }
+  @media(min-width:600px){ .ev-modal-bg { align-items:center; } }
+  .ev-modal     { background:#1c1c1c; border:1px solid #333; border-radius:16px 16px 0 0;
+                   width:100%; max-width:580px; max-height:85vh; overflow-y:auto;
+                   padding:20px; box-sizing:border-box; }
+  @media(min-width:600px){ .ev-modal { border-radius:12px; } }
+  .ev-modal-x   { float:right; background:none; border:none; color:#666; font-size:1.3rem;
+                   cursor:pointer; padding:0; line-height:1; margin-left:8px; }
+  .ev-modal h2  { font-size:1rem; font-weight:700; color:#fff; margin:0 0 10px; }
+  .ev-modal-meta { font-size:0.8rem; color:#888; margin-bottom:6px; line-height:1.6; }
+  .ev-modal-reason { font-size:0.82rem; color:#c8c8c8; margin-bottom:8px; padding:6px 10px;
+                      background:#222; border-radius:4px; }
+  .ev-modal-desc { font-size:0.76rem; color:#666; margin-bottom:12px; max-height:100px;
+                    overflow-y:auto; line-height:1.5; white-space:pre-wrap; }
+  .ev-modal-footer { display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; padding-top:12px; border-top:1px solid #2a2a2a; }
+  .ev-modal-link { display:inline-block; background:#c084fc; color:#000; font-size:0.82rem;
+                    font-weight:700; padding:8px 18px; border-radius:6px; text-decoration:none; }
+  .ev-modal-src  { font-size:0.72rem; color:#555; align-self:center; }
   .sources-bar { background: #111; border: 1px solid #222; border-radius: 8px;
                   padding: 10px 16px; margin-bottom: 20px; font-size: 0.78rem; color: #666; }
   .src-pill    { display: inline-block; background: #1e1e1e; border: 1px solid #2a2a2a;
@@ -132,6 +152,8 @@
 (function() {
 
   // ── Helpers ──────────────────────────────────────────────────────────────
+
+  var evMap = {}; // populated by renderAll for modal lookups
 
   function esc(s) {
     return String(s)
@@ -260,6 +282,8 @@
 
     // Subtitle
     var events = data.events || [];
+    // index events by URL for modal lookup
+    events.forEach(function(ev) { if (ev.url) evMap[ev.url] = ev; });
     var today = data.today || '';
     var days = data.days || 7;
     var startDate = today;
@@ -312,13 +336,17 @@
       if (latestRun && latestRun.efficiency) {
         var eff = latestRun.efficiency;
         var effColor = eff.cache_hit_rate >= 0.7 ? '#4a8a4a' : eff.cache_hit_rate >= 0.4 ? '#8a7a3a' : '#8a4a4a';
+        var notesHtml = (eff.notes || []).map(function(n){ return esc(n); }).join('<br>');
         costHtml += '<div style="margin-top:8px;padding:6px 8px;background:#111;border-radius:4px;font-size:0.72rem;color:' + effColor + '">' +
-          '\u26a1 ' + esc(eff.notes[0] || '') +
-          (latestRun.deploy_why && latestRun.deploy_why !== 'run' ? ' &nbsp;\u00b7&nbsp; <span style="color:#555">run: ' + esc(latestRun.deploy_why) + '</span>' : '') +
+          '\u26a1 ' + notesHtml +
+          (latestRun.deploy_why && latestRun.deploy_why !== 'run' ? '<br><span style="color:#555">run: ' + esc(latestRun.deploy_why) + '</span>' : '') +
           '</div>';
       }
-      // Netlify credits
-      var netlify = latestRun && latestRun.netlify;
+      // Netlify credits — find most recent run that has valid credit data
+      var netlify = null;
+      for (var ri = 0; ri < runs.length; ri++) {
+        if (runs[ri].netlify && runs[ri].netlify.total) { netlify = runs[ri].netlify; break; }
+      }
       if (netlify && netlify.total) {
         var pct = netlify.remaining / netlify.total;
         var ncColor = pct > 0.5 ? '#4a8a4a' : pct > 0.2 ? '#8a7a3a' : '#8a4a4a';
@@ -329,13 +357,18 @@
     document.getElementById('cost-bar').innerHTML = costHtml;
 
     // Sources bar
-    var sources = data.sources || {};
-    var srcKeys = Object.keys(sources);
-    var srcHtml = '';
+    var sources    = data.sources || {};
+    var srcUrls    = data.source_urls || {};
+    var srcKeys    = Object.keys(sources);
+    var srcHtml    = '';
     if (srcKeys.length) {
       var totalShown = srcKeys.reduce(function(a, k) { return a + sources[k]; }, 0);
       srcHtml = 'Sources: ' + srcKeys.map(function(k) {
-        return '<span class="src-pill">' + esc(k) + ' <b>' + sources[k] + '</b></span>';
+        var inner = esc(k) + ' <b>' + sources[k] + '</b>';
+        var u = srcUrls[k];
+        return u
+          ? '<a class="src-pill" href="' + esc(u) + '" target="_blank" style="text-decoration:none;color:inherit">' + inner + '</a>'
+          : '<span class="src-pill">' + inner + '</span>';
       }).join(' ') +
       ' <span style="color:#444;margin-left:8px">\u2192 ' + totalShown + ' shown</span>';
     }
@@ -480,6 +513,7 @@
         } else {
           html = '<div class="oyster-list">' + items.map(renderItem).join('') + '</div>';
         }
+        html = '<div class="oyster-scroll">' + html + '</div>';
         if (isToday && pastItems.length > 0) {
           html += '<div style="font-size:0.72rem;color:#445;margin-top:6px;padding:4px 0">' + pastItems.length + ' deal' + (pastItems.length > 1 ? 's' : '') + ' ended today \u2014 <button onclick="togglePastOysters()" style="background:none;border:none;color:#557;font-size:0.72rem;cursor:pointer;padding:0">show all</button></div>';
         }
@@ -592,6 +626,55 @@
       document.getElementById('loading').style.display = 'none';
       document.body.innerHTML += '<p style="color:#f00">Failed to load events: ' + err + '</p>';
     });
+
+  // ── Event detail modal ────────────────────────────────────────────────────
+
+  var _modalBg = null;
+  function showEventModal(ev) {
+    closeEventModal();
+    var meta = [];
+    if (ev.start && ev.start.indexOf('T') !== -1) meta.push(fmtDate(ev.start) + ' at ' + fmtTime(ev.start));
+    else if (ev.start) meta.push(fmtDate(ev.start));
+    if (ev.price) meta.push(ev.price);
+    if (ev.venue) meta.push(ev.venue);
+    if (ev.address) meta.push(ev.address);
+    if (ev.source) meta.push('via ' + ev.source);
+    var scoreHtml = ev.score ? ' <span class="score">' + ev.score + '</span>' : '';
+    var linkHtml = ev.url
+      ? '<a class="ev-modal-link" href="' + esc(ev.url) + '" target="_blank">View event \u2192</a>'
+      : '';
+    var inner = '<button class="ev-modal-x" onclick="closeEventModal()">\u00d7</button>' +
+      '<h2>' + esc(ev.name || '') + scoreHtml + '</h2>' +
+      (meta.length ? '<div class="ev-modal-meta">' + meta.map(esc).join('<br>') + '</div>' : '') +
+      (ev.reason ? '<div class="ev-modal-reason">\u2192 ' + esc(ev.reason) + '</div>' : '') +
+      (ev.description ? '<div class="ev-modal-desc">' + esc(ev.description) + '</div>' : '') +
+      '<div class="ev-modal-footer">' + linkHtml + '</div>';
+    var modal = document.createElement('div');
+    modal.className = 'ev-modal';
+    modal.innerHTML = inner;
+    var bg = document.createElement('div');
+    bg.className = 'ev-modal-bg';
+    bg.appendChild(modal);
+    bg.addEventListener('click', function(e) { if (e.target === bg) closeEventModal(); });
+    document.body.appendChild(bg);
+    _modalBg = bg;
+    document.addEventListener('keydown', _escListener);
+  }
+  function _escListener(e) { if (e.key === 'Escape') closeEventModal(); }
+  window.closeEventModal = function() {
+    if (_modalBg) { _modalBg.remove(); _modalBg = null; }
+    document.removeEventListener('keydown', _escListener);
+  };
+
+  document.addEventListener('click', function(e) {
+    if (e.target.closest('.fb-btn')) return;
+    if (e.target.closest('a')) return;
+    if (e.target.closest('.ev-modal')) return;
+    var card = e.target.closest('.card');
+    if (!card || !card.dataset.url) return;
+    var ev = evMap[card.dataset.url];
+    if (ev) showEventModal(ev);
+  });
 
 })();
 </script>
