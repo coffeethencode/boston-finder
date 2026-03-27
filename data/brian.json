@@ -1,394 +1,9 @@
 {
-  "generated_at": "2026-03-26T08:46:17.937915",
-  "today": "2026-03-26",
+  "generated_at": "2026-03-27T08:42:13.909003",
+  "today": "2026-03-27",
   "days": 7,
   "persona": "brian",
-  "events": [
-    {
-      "source": "do617:food-drink",
-      "name": "Discovering Georgia: Ancient Winemaking from the Cradle of Civilization",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/26/discovering-georgia-ancient-winemaking-from-the-cradle-of-civilization-tickets",
-      "start": "2026-03-26T18:00",
-      "venue": "Wild Child",
-      "address": "",
-      "score": 8,
-      "reason": "Upscale wine tasting event focused on Georgian winemaking - fits premium drink/education interest",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Spring Wine Preview",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/28/spring-wine-preview-tickets",
-      "start": "2026-03-28T19:15",
-      "venue": "Formaggio Kitchen",
-      "address": "",
-      "score": 8,
-      "reason": "Spring wine preview - upscale wine tasting event",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Strategy, Messaging, and Power: A Conversation with Anita Dunn",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/26/strategy-messaging-and-power-a-conversation-with-anita-dunn-tickets",
-      "start": "2026-03-26T12:00",
-      "venue": "John F. Kennedy Jr. Forum at the Institute of Politics",
-      "address": "",
-      "score": 8,
-      "reason": "High-status political/messaging panel with Anita Dunn, influential strategist\u2014directly relevant to government, media, and public affairs expertise",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Public Service and Global Security: A Conversation with Curtis Ried",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/31/public-service-and-global-security-a-conversation-with-curtis-ried-tickets",
-      "start": "2026-03-31T12:00",
-      "venue": "John F. Kennedy Jr. Forum at the Institute of Politics",
-      "address": "",
-      "score": 8,
-      "reason": "Public Service and Global Security conversation \u2014 directly aligns with civic accountability and government policy expertise",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
-      "name": "Dvo\u0159\u00e1k Symphony No. 9 and Excerpts from Nixon in China with Ren\u00e9e Fleming",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/26/dvorak-symphony-no-9-and-excerpts-from-nixon-in-china-with-renee-fleming-tickets-d0zzzpe",
-      "start": "2026-03-26T19:30",
-      "venue": "Symphony Hall, Boston, MA",
-      "address": "",
-      "score": 8,
-      "reason": "Symphony performance with world-class soprano Ren\u00e9e Fleming; high-status cultural event",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
-      "name": "Lady Gaga",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/29/lady-gaga-tickets",
-      "start": "2026-03-29T20:00",
-      "venue": "TD Garden",
-      "address": "",
-      "score": 8,
-      "reason": "Major artist performance; significant entertainment event",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
-      "name": "Lady Gaga",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/30/lady-gaga-tickets",
-      "start": "2026-03-30T20:00",
-      "venue": "TD Garden",
-      "address": "",
-      "score": 8,
-      "reason": "Major concert event; high-profile entertainment",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Hands-On: Pasta all'Amatriciana",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/26/hands-on-pasta-all-amatriciana-tickets",
-      "start": "2026-03-26T15:00",
-      "venue": "Eataly Boston",
-      "address": "",
-      "score": 7,
-      "reason": "Hands-on Italian pasta cooking class",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Hands-On: Pasta alla Norcina al Tartufo",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/26/hands-on-pasta-alla-norcina-al-tartufo-tickets",
-      "start": "2026-03-26T18:00",
-      "venue": "Eataly Boston",
-      "address": "",
-      "score": 7,
-      "reason": "Hands-on Italian pasta cooking class with truffle",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Mixology Class | Spring Cocktails",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/28/mixology-class-spring-cocktails-tickets",
-      "start": "2026-03-28T18:00",
-      "venue": "Short Path Distillery",
-      "address": "",
-      "score": 7,
-      "reason": "Mixology class for cocktails - upscale beverage education/experience",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Class: Ramen Masterclass",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/28/class-ramen-masterclass-tickets",
-      "start": "2026-03-28T13:00",
-      "venue": "Pagu",
-      "address": "",
-      "score": 7,
-      "reason": "Ramen masterclass - elevated culinary education",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Jazz Dinner w/ Jordan Gravel!",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/30/jazz-dinner-w-jordan-gravel-tickets",
-      "start": "2026-03-30T19:00",
-      "venue": "Gulu-Gulu Cafe",
-      "address": "",
-      "score": 7,
-      "reason": "Upscale dinner event with live jazz \u2014 fits high-status food/drink + entertainment profile",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Cookbook Release Party",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/31/cookbook-release-party-tickets",
-      "start": "2026-03-31T18:00",
-      "venue": "Citrus and Salt",
-      "address": "",
-      "score": 7,
-      "reason": "Cookbook release party \u2014 upscale food/drink event, likely with interesting crowd and networking",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Colorful Cosmopolitanism: Artistic Representations of the Nation as Mother",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/26/colorful-cosmopolitanism-artistic-representations-of-the-nation-as-mother-tickets",
-      "start": "2026-03-26T14:00",
-      "venue": "Museum of Fine Arts Boston",
-      "address": "",
-      "score": 7,
-      "reason": "Colorful Cosmopolitanism - intellectual art/cultural panel on nation and artistic representation",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Teaching with Hindu Art: Depictions of the Divine in Prints, Paintings, and Sculptures",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/26/teaching-with-hindu-art-depictions-of-the-divine-in-prints-paintings-and-sculptures-tickets",
-      "start": "2026-03-26T16:30",
-      "venue": "Museum of Fine Arts Boston",
-      "address": "",
-      "score": 7,
-      "reason": "Teaching with Hindu Art - cultural art panel on divine representations, open to public",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Suffs",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/27/suffs-tickets",
-      "start": "2026-03-27T20:00",
-      "venue": "Emerson Colonial Theatre",
-      "address": "",
-      "score": 7,
-      "reason": "Suffs is a Tony-nominated Broadway musical about women's suffrage\u2014upscale theater event with historical/civic interest",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Suffs",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/28/suffs-tickets-9ekyek6",
-      "start": "2026-03-28T20:00",
-      "venue": "Emerson Colonial Theatre",
-      "address": "",
-      "score": 7,
-      "reason": "Suffs (duplicate)\u2014Tony-nominated Broadway musical with civic/historical themes",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Castle of Our Skins with Daniel Bernard Roumain, electric violin and Val-Inc, sound chemist",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/29/castle-of-our-skins-with-daniel-bernard-roumain-electric-violin-and-val-inc-sound-chemist-tickets",
-      "start": "2026-03-29T13:30",
-      "venue": "Isabella Stewart Gardner Museum",
-      "address": "",
-      "score": 7,
-      "reason": "Performance art event with accomplished musicians (Daniel Bernard Roumain)\u2014high-quality cultural experience",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Good Writing: An Evening with Anne Lamott & Neal Allen",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/30/good-writing-an-evening-with-anne-lamott-neal-allen-tickets",
-      "start": "2026-03-30T19:30",
-      "venue": "Emerson Colonial Theatre",
-      "address": "",
-      "score": 7,
-      "reason": "Literary event with established authors; intellectual and cultural appeal",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "GRAYSCALE Indie Business Summit",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/31/grayscale-indie-business-summit-tickets",
-      "start": "2026-03-31T10:00",
-      "venue": "CinemaSalem",
-      "address": "",
-      "score": 7,
-      "reason": "GRAYSCALE Indie Business Summit \u2014 startup/business networking, professional development",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
-      "name": "Imagining Museums: The Next 150 Years of Stewarding Art at Wellesley",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/26/imagining-museums-the-next-150-years-of-stewarding-art-at-wellesley-tickets",
-      "start": "2026-03-26T09:00",
-      "venue": "Lulu Chow Wang Campus Center",
-      "address": "",
-      "score": 7,
-      "reason": "Museum symposium on cultural stewardship; intellectually substantive cultural forum",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
-      "name": "Dvo\u0159\u00e1k Symphony No. 9 and Excerpts from Nixon in China with Ren\u00e9e Fleming",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/27/dvorak-symphony-no-9-and-excerpts-from-nixon-in-china-with-renee-fleming-tickets-7075560",
-      "start": "2026-03-27T19:30",
-      "venue": "Symphony Hall, Boston, MA",
-      "address": "",
-      "score": 7,
-      "reason": "Classical music performance featuring renowned soprano Ren\u00e9e Fleming at what appears to be a prestigious venue; upscale cultural event",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
-      "name": "Diana Krall",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/28/diana-krall-tickets",
-      "start": "2026-03-28T20:00",
-      "venue": "The Cabot",
-      "address": "",
-      "score": 7,
-      "reason": "Diana Krall is an internationally acclaimed jazz pianist; high-caliber upscale musical performance",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
-      "name": "Dvo\u0159\u00e1k Symphony No. 9 and Excerpts from Nixon in China with Ren\u00e9e Fleming",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/28/dvorak-symphony-no-9-and-excerpts-from-nixon-in-china-with-renee-fleming-tickets-xmybbq7",
-      "start": "2026-03-28T20:00",
-      "venue": "Symphony Hall, Boston, MA",
-      "address": "",
-      "score": 7,
-      "reason": "Classical music with renowned performer Ren\u00e9e Fleming; upscale cultural event",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
-      "name": "Emanuel Ax, piano",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/29/emanuel-ax-piano-tickets",
-      "start": "2026-03-29T15:00",
-      "venue": "Shalin Liu Performance Center",
-      "address": "",
-      "score": 7,
-      "reason": "Classical piano performance by acclaimed pianist Emanuel Ax; upscale cultural event",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
-      "name": "Joel Kim Booster",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/30/joel-kim-booster-tickets",
-      "start": "2026-03-30T19:30",
-      "venue": "Crystal Ballroom at Somerville Theatre",
-      "address": "",
-      "score": 7,
-      "reason": "Comedy show by established performer; entertainment",
-      "_proximity": 4
-    },
-    {
-      "source": "do617:concerts",
-      "name": "Gile Series: Ladysmith Black Mambazo",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/31/ladysmith-black-mambazo-tickets",
-      "start": "2026-03-31T19:00",
-      "venue": "Capitol Center for the Arts",
-      "address": "",
-      "score": 7,
-      "reason": "Gile Series concert; established world music act; cultural event",
-      "_proximity": 3
-    },
-    {
-      "source": "luma:boston",
-      "name": "Resolution Hacks (w. Eight Sleep, swsh, Duckbill, Fragile, Clair & Wayfair)",
-      "description": "",
-      "url": "https://lu.ma/w8yvu0hq",
-      "start": "2026-03-28T13:00",
-      "venue": "",
-      "address": "Cambridge, Massachusetts",
-      "score": 7,
-      "reason": "Multi-company startup/product hackathon with established brands \u2014 strong VC/startup networking",
-      "_proximity": 5
-    },
-    {
-      "source": "luma:boston",
-      "name": "Boston Founders & IP Night",
-      "description": "",
-      "url": "https://lu.ma/3l7iyd13",
-      "start": "2026-03-31T23:30",
-      "venue": "",
-      "address": "Cambridge, Massachusetts",
-      "score": 7,
-      "reason": "Founders + IP networking night \u2014 direct entrepreneurship/legal expertise intersection, high-value crowd",
-      "_proximity": 5
-    },
-    {
-      "source": "allevents:business",
-      "name": "28th Africa Business Conference at Harvard Business School",
-      "description": "",
-      "url": "https://allevents.in/boston/28th-africa-business-conference-at-harvard-business-school/100001948942331979",
-      "start": "2026-03-27",
-      "venue": "Harvard Business School",
-      "address": "Boston, MA",
-      "score": 7,
-      "reason": "Africa Business Conference at HBS \u2014 high-status professional forum, Harvard venue, policy/business networking",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Salem Film Fest",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/28/salem-film-fest-tickets",
-      "start": "2026-03-28T10:00",
-      "venue": "Downtown Salem",
-      "address": "",
-      "score": 6,
-      "reason": "Film festival\u2014cultural event open to public, potential for upscale social scene",
-      "_proximity": 8
-    },
-    {
-      "source": "allevents:business",
-      "name": "Latino Professional Mixer 2026",
-      "description": "",
-      "url": "https://allevents.in/boston/latino-professional-mixer-2026/100001981877024531",
-      "start": "2026-03-26",
-      "venue": "Courtyard by Marriott Boston Downtown",
-      "address": "Boston, MA",
-      "score": 6,
-      "reason": "Professional networking mixer \u2014 good crowd, Brian values diverse professional events",
-      "_proximity": 8
-    }
-  ],
+  "events": [],
   "extra_events": [
     {
       "name": "Mayflower Brewing's Spring Warehouse Jam Series: The Dirty Water Dance Band",
@@ -1010,28 +625,6 @@
     "total": 0.7351,
     "runs": [
       {
-        "ts": "2026-03-25T17:06:47.274212",
-        "events_total": 512,
-        "events_cached": 109,
-        "events_scored": 0,
-        "cost_usd": 0.026933,
-        "duration_ms": 24584,
-        "models": {
-          "claude-haiku-4-5-20251001": 0.026933
-        }
-      },
-      {
-        "ts": "2026-03-25T17:22:39.909295",
-        "events_total": 512,
-        "events_cached": 109,
-        "events_scored": 0,
-        "cost_usd": 0.026933,
-        "duration_ms": 24753,
-        "models": {
-          "claude-haiku-4-5-20251001": 0.026933
-        }
-      },
-      {
         "ts": "2026-03-25T17:23:15.641539",
         "events_total": 512,
         "events_cached": 109,
@@ -1073,18 +666,52 @@
             "Hit rate dropped 45% vs avg \u2014 new sources or cache cleared?"
           ]
         }
+      },
+      {
+        "ts": "2026-03-26T08:46:21.075628",
+        "events_total": 506,
+        "events_cached": 89,
+        "events_scored": 75,
+        "cost_usd": 0,
+        "duration_ms": 0,
+        "models": {},
+        "deploy_why": "run",
+        "netlify": {
+          "remaining": 1000,
+          "total": 1000,
+          "used": 0
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.543,
+          "avg_hit_rate": 0.911,
+          "cost_per_scored_event": 0.0,
+          "notes": [
+            "Hit rate dropped 37% vs avg \u2014 new sources or cache cleared?"
+          ]
+        }
+      },
+      {
+        "ts": "2026-03-27T08:42:03.824747",
+        "events_total": 0,
+        "events_cached": 0,
+        "events_scored": 0,
+        "cost_usd": 0,
+        "duration_ms": 0,
+        "models": {},
+        "deploy_why": "run",
+        "netlify": {},
+        "efficiency": {
+          "cache_hit_rate": 0.0,
+          "avg_hit_rate": 0.819,
+          "cost_per_scored_event": 0.0,
+          "notes": [
+            "Hit rate dropped 82% vs avg \u2014 new sources or cache cleared?"
+          ]
+        }
       }
     ],
-    "netlify": "1000/1000 credits remaining"
+    "netlify": ""
   },
-  "sources": {
-    "do617": 28,
-    "luma": 2,
-    "allevents": 2
-  },
-  "source_stats": {
-    "do617": 28,
-    "luma": 2,
-    "allevents": 2
-  }
+  "sources": {},
+  "source_stats": {}
 }
