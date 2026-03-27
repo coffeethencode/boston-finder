@@ -43,10 +43,15 @@
   .oyster-bar  { background: #0a1a0a; border: 1px solid #1a3a1a; border-radius: 8px;
                   padding: 14px 16px; margin-bottom: 24px; }
   .oyster-title { font-size: 0.9rem; font-weight: 700; color: #7fff7f; margin-bottom: 10px; }
-  .oyster-days  { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 12px; }
+  .oyster-days  { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 8px; }
   .oday-btn    { padding: 3px 10px; border-radius: 99px; border: 1px solid #1e3a1e;
                   background: #0d200d; color: #4a8a4a; font-size: 0.72rem; cursor: pointer; }
   .oday-btn.active { background: #1a3a1a; color: #7fff7f; border-color: #3a6a3a; font-weight: 700; }
+  .oyster-location { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; margin-bottom: 12px; font-size: 0.7rem; color: #3a5a3a; }
+  .ohood-btn   { padding: 2px 8px; border-radius: 99px; border: 1px solid #1a2e1a;
+                  background: #080f08; color: #3a6a3a; font-size: 0.7rem; cursor: pointer; }
+  .ohood-btn.active { background: #1a3020; color: #afffaf; border-color: #2a5a3a; font-weight: 700; }
+  .oyster-tier  { font-size: 0.68rem; color: #3a5a3a; padding: 4px 0 2px; letter-spacing: 0.05em; text-transform: uppercase; }
   .oyster-list  { display: flex; flex-direction: column; gap: 6px; }
   .oyster-item { display: flex; justify-content: space-between; align-items: baseline;
                   background: #0d1a0d; border: 1px solid #1a2e1a; border-radius: 6px;
@@ -400,6 +405,33 @@
         return null;
       }
 
+      // Neighborhood proximity tables — each hood maps to scores from that location
+      var HOOD_PROXIMITY = {
+        'South End':     {'South End':10,'Back Bay':9,'Beacon Hill':8,'Downtown':8,'Financial District':8,'West End':7,'North End':7,'Fenway':7,'Kenmore':6,'Mission Hill':6,'Seaport':5,'South Boston':5,'Southie':5,'Cambridge':5,'Brookline':5,'Roxbury':5,'Somerville':4,'Charlestown':4,'Jamaica Plain':4,'Allston':3,'Brighton':3,'Dorchester':3},
+        'Back Bay':      {'Back Bay':10,'Newbury Street':10,'South End':9,'Beacon Hill':9,'Fenway':8,'Kenmore':8,'Downtown':8,'Financial District':7,'North End':7,'West End':7,'Mission Hill':7,'Seaport':6,'Cambridge':5,'Brookline':6,'South Boston':5,'Somerville':4,'Charlestown':4,'Jamaica Plain':5,'Allston':4},
+        'Cambridge':     {'Cambridge':10,'Somerville':8,'Charlestown':7,'North End':7,'West End':6,'Beacon Hill':6,'Downtown':6,'Financial District':6,'Back Bay':5,'South End':5,'Fenway':5,'Allston':5,'Medford':5,'Brookline':4,'Seaport':4,'South Boston':4,'Jamaica Plain':4},
+        'North End':     {'North End':10,'West End':9,'Charlestown':8,'Beacon Hill':8,'Downtown':8,'Financial District':8,'Cambridge':6,'Back Bay':6,'Seaport':5,'South End':5,'Fenway':5,'Somerville':5},
+        'Seaport':       {'Seaport':10,'Financial District':8,'Downtown':8,'South Boston':7,'Southie':7,'South End':6,'Back Bay':5,'North End':5,'Beacon Hill':5,'Cambridge':4,'Fenway':4},
+        'Beacon Hill':   {'Beacon Hill':10,'West End':9,'Downtown':9,'Financial District':8,'Back Bay':8,'North End':7,'South End':7,'Cambridge':6,'Fenway':6,'Charlestown':6,'Seaport':5},
+        'Fenway':        {'Fenway':10,'Kenmore':10,'Back Bay':8,'Brookline':7,'South End':7,'Mission Hill':8,'Allston':6,'Cambridge':5,'Beacon Hill':6,'Jamaica Plain':6,'Downtown':6},
+        'Somerville':    {'Somerville':10,'Cambridge':8,'Medford':7,'Charlestown':7,'North End':6,'West End':5,'Beacon Hill':5,'Downtown':5,'Allston':5,'Back Bay':4,'Fenway':4,'South End':3},
+        'South Boston':  {'South Boston':10,'Southie':10,'Seaport':8,'Financial District':6,'Downtown':6,'South End':5,'Back Bay':4,'North End':4,'Beacon Hill':4,'Cambridge':3},
+      };
+      var HOODS = ['South End','Back Bay','Cambridge','North End','Seaport','Beacon Hill','Fenway','Somerville','South Boston'];
+
+      var currentHood = null; // null = use server-side _proximity field
+
+      function proxScore(o) {
+        if (!currentHood) return (o._proximity || 3);
+        var table = HOOD_PROXIMITY[currentHood] || {};
+        var addr = ((o.address || '') + ' ' + (o.venue || '')).toLowerCase();
+        var best = 3;
+        Object.keys(table).forEach(function(k) {
+          if (addr.indexOf(k.toLowerCase()) !== -1) best = Math.max(best, table[k]);
+        });
+        return best;
+      }
+
       var hidePast = true;
       function renderOysterDay(dow) {
         var isToday = (dow === todayDow);
@@ -410,16 +442,16 @@
         if (isToday && hidePast) {
           items.forEach(function(o) {
             var endH = parseEndHour24(oysterHours(o));
-            if (endH !== null && endH <= currentH) {
-              pastItems.push(o);
-            } else {
-              futureItems.push(o);
-            }
+            if (endH !== null && endH <= currentH) { pastItems.push(o); } else { futureItems.push(o); }
           });
           items = futureItems;
         }
+        // Sort by proximity from selected hood
+        items.sort(function(a, b) { return proxScore(b) - proxScore(a); });
+
         if (!items.length && !pastItems.length) return '<div style="color:#444;font-size:0.8rem;padding:8px 0">No deals on ' + DAY_FULL[dow] + '</div>';
         if (!items.length && isToday) return '<div style="color:#556;font-size:0.8rem;padding:8px 0">All deals for today have ended. ' + (pastItems.length ? pastItems.length + ' hidden.' : '') + '</div>';
+
         var renderItem = function(o) {
           var venueName = esc(o.venue || o.name.split('\u2014')[0].trim());
           var hood  = esc(o.address || '');
@@ -434,7 +466,20 @@
             ? '<a class="oyster-item" href="' + esc(o.url) + '" target="_blank" style="text-decoration:none">' + inner + '</a>'
             : '<div class="oyster-item">' + inner + '</div>';
         };
-        var html = '<div class="oyster-list">' + items.map(renderItem).join('') + '</div>';
+
+        // Group by tier when a hood is selected
+        var html = '';
+        if (currentHood) {
+          var tiers = [{label:'Nearby',min:9},{label:'Easy',min:7},{label:'Doable',min:5},{label:'Hike',min:0}];
+          tiers.forEach(function(t) {
+            var tier = items.filter(function(o){ var s=proxScore(o); return s>=t.min && (t.min===9?s>=9:t.min===7?s>=7&&s<9:t.min===5?s>=5&&s<7:s<5); });
+            if (!tier.length) return;
+            html += '<div class="oyster-tier">' + t.label + '</div>';
+            html += '<div class="oyster-list" style="margin-bottom:8px">' + tier.map(renderItem).join('') + '</div>';
+          });
+        } else {
+          html = '<div class="oyster-list">' + items.map(renderItem).join('') + '</div>';
+        }
         if (isToday && pastItems.length > 0) {
           html += '<div style="font-size:0.72rem;color:#445;margin-top:6px;padding:4px 0">' + pastItems.length + ' deal' + (pastItems.length > 1 ? 's' : '') + ' ended today \u2014 <button onclick="togglePastOysters()" style="background:none;border:none;color:#557;font-size:0.72rem;cursor:pointer;padding:0">show all</button></div>';
         }
@@ -449,9 +494,17 @@
             var todayMark = i===todayDow ? ' \u25cf' : '';
             return '<button class="' + cls + '" onclick="setOysterDay(' + i + ')">' + d + todayMark + '</button>';
           }).join('') + '</div>';
-        oysterBar.innerHTML = '<div class="oyster-title">\uD83E\uDDAA Oyster Deals</div>' + tabs + renderOysterDay(activeDow);
+        var hoodBtns = '<div class="oyster-location"><span>I\'m in:</span>' +
+          HOODS.map(function(h) {
+            var cls = 'ohood-btn' + (h===currentHood ? ' active' : '');
+            return '<button class="' + cls + '" onclick="setOysterHood(\'' + h + '\')">' + h + '</button>';
+          }).join('') +
+          (currentHood ? ' <button class="ohood-btn" onclick="setOysterHood(null)" style="opacity:0.5">\u00d7 clear</button>' : '') +
+          '</div>';
+        oysterBar.innerHTML = '<div class="oyster-title">\uD83E\uDDAA Oyster Deals</div>' + tabs + hoodBtns + renderOysterDay(activeDow);
       }
-      window.setOysterDay = function(dow) { activeDow = dow; buildOyster(); };
+      window.setOysterDay  = function(dow)  { activeDow = dow; buildOyster(); };
+      window.setOysterHood = function(hood) { currentHood = hood; buildOyster(); };
       window.togglePastOysters = function() { hidePast = !hidePast; buildOyster(); };
       buildOyster();
     } else {
