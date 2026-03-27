@@ -3,21 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chloe's Boston</title>
+<title>Kirk's Boston</title>
 <style>
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
           background: #0f0f0f; color: #e8e8e8; margin: 0; padding: 24px; }
   h1   { font-size: 1.4rem; font-weight: 600; color: #fff; margin: 0 0 4px; }
   .sub { color: #888; font-size: 0.85rem; margin-bottom: 28px; }
   .day-section { margin-bottom: 32px; }
-  .day-header  { font-size: 1rem; font-weight: 700; color: #c084fc;
+  .day-header  { font-size: 1rem; font-weight: 700; color: #38bdf8;
                   text-transform: uppercase; letter-spacing: 0.05em;
                   border-bottom: 1px solid #333; padding-bottom: 6px; margin-bottom: 12px; }
   .card        { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 8px;
                   padding: 14px 16px; margin-bottom: 10px; }
   .card:hover  { border-color: #444; }
   .card-title  { font-size: 1rem; font-weight: 600; color: #fff; margin-bottom: 4px; }
-  .score       { background: #c084fc; color: #000; font-size: 0.7rem; font-weight: 700;
+  .score       { background: #38bdf8; color: #000; font-size: 0.7rem; font-weight: 700;
                   padding: 2px 7px; border-radius: 99px; margin-left: 8px;
                   vertical-align: middle; }
   .meta        { font-size: 0.82rem; color: #888; margin-bottom: 4px; }
@@ -30,7 +30,7 @@
                   vertical-align: middle; letter-spacing: 0.05em; }
   .legend      { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 8px;
                   padding: 12px 16px; margin-bottom: 28px; font-size: 0.78rem; color: #888; }
-  .legend b    { color: #c084fc; }
+  .legend b    { color: #38bdf8; }
   .cost-bar    { background: #111; border: 1px solid #222; border-radius: 8px;
                   padding: 10px 16px; margin-bottom: 20px; font-size: 0.78rem; color: #666; }
   .cost-item   { margin-right: 4px; }
@@ -76,7 +76,7 @@
   .ev-modal-desc { font-size:0.76rem; color:#666; margin-bottom:12px; max-height:100px;
                     overflow-y:auto; line-height:1.5; white-space:pre-wrap; }
   .ev-modal-footer { display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; padding-top:12px; border-top:1px solid #2a2a2a; }
-  .ev-modal-link { display:inline-block; background:#c084fc; color:#000; font-size:0.82rem;
+  .ev-modal-link { display:inline-block; background:#38bdf8; color:#000; font-size:0.82rem;
                     font-weight:700; padding:8px 18px; border-radius:6px; text-decoration:none; }
   .ev-modal-src  { font-size:0.72rem; color:#555; align-self:center; }
   .sources-bar { background: #111; border: 1px solid #222; border-radius: 8px;
@@ -94,7 +94,7 @@
                    text-decoration: none; border: 1px solid transparent; }
   .nav-link:hover { color: #aaa; border-color: #333; }
   .nav-active   { padding: 6px 16px; border-radius: 6px; font-size: 0.85rem; font-weight: 600;
-                   color: #c084fc; border: 1px solid #c084fc33; background: #c084fc11;
+                   color: #38bdf8; border: 1px solid #38bdf833; background: #38bdf811;
                    text-decoration: none; }
   .feedback     { margin-top: 8px; display: flex; gap: 6px; flex-wrap: wrap; }
   .fb-btn       { background: none; border: 1px solid #2a2a2a; border-radius: 99px;
@@ -109,18 +109,32 @@
 
   <nav class="nav">
     <a href="./index.html" class="nav-link">Brian</a>
-    <a href="./chloe.html" class="nav-active">Chloe</a>
-    <a href="./kirk.html" class="nav-link">Kirk</a>
+    <a href="./chloe.html" class="nav-link">Chloe</a>
+    <a href="./kirk.html" class="nav-active">Kirk</a>
   </nav>
 
   <div id="loading">Loading events…</div>
   <div id="main" style="display:none">
-    <h1>Chloe's Boston</h1>
+    <h1>Kirk's Boston</h1>
     <div class="sub" id="subtitle"></div>
 
     <div class="cost-bar" id="cost-bar"></div>
 
     <div class="sources-bar" id="sources-bar"></div>
+
+    <div style="background:#0a0f1a;border:1px solid #1a2a3a;border-radius:8px;padding:14px 16px;margin-bottom:20px;font-size:0.8rem;color:#888">
+      <div style="font-weight:700;color:#38bdf8;margin-bottom:6px">&#128100; Kirk Brown &mdash; Sales Engineer</div>
+      <div style="line-height:1.7">
+        <span style="color:#aaa">Background:</span> Mapbox (SoftBank), Bit Flow &nbsp;&middot;&nbsp; Finishing master&rsquo;s &nbsp;&middot;&nbsp; Has a car, travels for quality events<br>
+        <span style="color:#aaa">Hunting for:</span> VC &amp; startup events, tech meetups, SE/presales community, founder dinners, demo days<br>
+        <span style="color:#aaa">Range:</span> Boston &middot; Cambridge &middot; Somerville &middot; Providence RI<br>
+        <span style="color:#aaa">Scoring:</span> Event caliber &gt; location &mdash; high-company-quality events score highest regardless of distance
+      </div>
+      <details style="margin-top:10px">
+        <summary style="cursor:pointer;color:#38bdf8;font-size:0.75rem;user-select:none">&#9660; View full scoring prompt</summary>
+        <pre id="kirk-prompt" style="margin-top:8px;font-size:0.7rem;color:#666;white-space:pre-wrap;font-family:inherit;line-height:1.6"></pre>
+      </details>
+    </div>
 
     <div class="oyster-bar" id="oyster-bar"></div>
 
@@ -241,10 +255,10 @@
       (ev.reason ? '<div class="reason">→ ' + esc(ev.reason) + '</div>' : '') +
       (ev.url ? '<a class="link" href="' + url + '" target="_blank">' + url + '</a>' : '') +
       '<div class="feedback">' +
+        '<button class="fb-btn" data-p="kirk" data-v="up">\uD83D\uDC4D Kirk</button>' +
         '<button class="fb-btn" data-p="brian" data-v="up">\uD83D\uDC4D Brian</button>' +
-        '<button class="fb-btn" data-p="chloe" data-v="up">\uD83D\uDC4D Chloe</button>' +
+        '<button class="fb-btn" data-p="kirk" data-v="down">\uD83D\uDC4E Kirk</button>' +
         '<button class="fb-btn" data-p="brian" data-v="down">\uD83D\uDC4E Brian</button>' +
-        '<button class="fb-btn" data-p="chloe" data-v="down">\uD83D\uDC4E Chloe</button>' +
       '</div>' +
     '</div>';
   }
@@ -280,6 +294,10 @@
   function renderAll(data) {
     document.getElementById('loading').style.display = 'none';
     document.getElementById('main').style.display = '';
+
+    // Inject scoring prompt into profile panel
+    var promptEl = document.getElementById('kirk-prompt');
+    if (promptEl && data.persona_prompt) promptEl.textContent = data.persona_prompt;
 
     // Subtitle
     var events = data.events || [];
@@ -620,7 +638,7 @@
 
   // ── Fetch ─────────────────────────────────────────────────────────────────
 
-  fetch('https://raw.githubusercontent.com/coffeethencode/boston-finder/data/data/chloe.json?t=' + Math.floor(Date.now() / 300000))
+  fetch('https://raw.githubusercontent.com/coffeethencode/boston-finder/data/data/kirk.json?t=' + Math.floor(Date.now() / 300000))
     .then(function(r) { return r.json(); })
     .then(function(data) { renderAll(data); })
     .catch(function(err) {
