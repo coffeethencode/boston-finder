@@ -367,10 +367,11 @@
         if (runs[ri].netlify && runs[ri].netlify.total) { netlify = runs[ri].netlify; break; }
       }
       if (netlify && netlify.total) {
-        var pct = netlify.remaining / netlify.total;
-        var ncColor = pct > 0.5 ? '#4a8a4a' : pct > 0.2 ? '#8a7a3a' : '#8a4a4a';
-        costHtml += '<div style="margin-top:4px;font-size:0.72rem;color:' + ncColor + '">' +
-          '\uD83C\uDF10 Netlify: ' + netlify.remaining + '/' + netlify.total + ' credits remaining (' + netlify.used + ' used)</div>';
+        var dashUrl = netlify.dashboard_url || 'https://app.netlify.com/billing';
+        costHtml += '<div style="margin-top:4px;font-size:0.72rem;color:#556">' +
+          '\uD83C\uDF10 Netlify: ' + netlify.total + ' credit pack &mdash; ' +
+          '<a href="' + dashUrl + '" target="_blank" style="color:#4a9eff;text-decoration:none">check balance in dashboard</a>' +
+          ' (API doesn\'t expose usage)</div>';
       }
     }
     document.getElementById('cost-bar').innerHTML = costHtml;
@@ -472,6 +473,7 @@
       var HOODS = ['South End','Back Bay','Cambridge','North End','Seaport','Beacon Hill','Fenway','Somerville','South Boston'];
 
       var currentHood = null; // null = use server-side _proximity field
+      var showProvidence = true; // Kirk goes to Providence
 
       function proxScore(o) {
         if (!currentHood) return (o._proximity || 3);
@@ -488,7 +490,8 @@
       function renderOysterDay(dow) {
         var isToday = (dow === todayDow);
         var currentH = isToday ? bostonHour() : -1;
-        var items = oysters.filter(function(o){ return oysterDays(o).indexOf(dow) !== -1; });
+        var items = oysters.filter(function(o){ return oysterDays(o).indexOf(dow) !== -1 && (o.city || 'Boston') !== 'Providence'; });
+        var pvdItems = oysters.filter(function(o){ return oysterDays(o).indexOf(dow) !== -1 && o.city === 'Providence'; });
         var pastItems = [];
         var futureItems = [];
         if (isToday && hidePast) {
@@ -536,6 +539,16 @@
         if (isToday && pastItems.length > 0) {
           html += '<div style="font-size:0.72rem;color:#445;margin-top:6px;padding:4px 0">' + pastItems.length + ' deal' + (pastItems.length > 1 ? 's' : '') + ' ended today \u2014 <button onclick="togglePastOysters()" style="background:none;border:none;color:#557;font-size:0.72rem;cursor:pointer;padding:0">show all</button></div>';
         }
+        // Providence — expanded by default for Kirk
+        if (pvdItems.length) {
+          pvdItems.sort(function(a, b) { return (b.score||0) - (a.score||0); });
+          var pvdToggle = '<div style="margin-top:10px;border-top:1px solid #1a2e3a;padding-top:8px">' +
+            '<button onclick="toggleProvidence()" style="background:none;border:none;color:' + (showProvidence ? '#93c5fd' : '#2a4a6a') + ';font-size:0.72rem;cursor:pointer;padding:0;letter-spacing:0.04em">' +
+            (showProvidence ? '\u25bc' : '\u25b6') + ' Providence RI (' + pvdItems.length + ' deals)</button>' +
+            (showProvidence ? '<div class="oyster-list" style="margin-top:6px">' + pvdItems.map(renderItem).join('') + '</div>' : '') +
+            '</div>';
+          html += pvdToggle;
+        }
         return html;
       }
 
@@ -559,6 +572,7 @@
       window.setOysterDay  = function(dow)  { activeDow = dow; buildOyster(); };
       window.setOysterHood = function(hood) { currentHood = hood; buildOyster(); };
       window.togglePastOysters = function() { hidePast = !hidePast; buildOyster(); };
+      window.toggleProvidence  = function() { showProvidence = !showProvidence; buildOyster(); };
       buildOyster();
     } else {
       oysterBar.style.display = 'none';
