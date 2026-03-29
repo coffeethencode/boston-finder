@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-03-28T08:18:03.414504",
-  "today": "2026-03-28",
+  "generated_at": "2026-03-29T08:18:07.580943",
+  "today": "2026-03-29",
   "days": 7,
   "persona": "kirk",
-  "persona_prompt": "You are filtering Boston, Cambridge, and Providence RI events for Kirk Brown.\n\nKirk's background:\n- Sales Engineer with experience at Mapbox (SoftBank-backed) and Bit Flow\n- Finishing his master's degree\n- Looking for his next role in tech\n\nWhat Kirk wants:\n- VC & startup events: demo days, pitch nights, investor panels, founder dinners, accelerator showcases\n- Tech & startup community: hackathons, product launches, startup meetups, tech networking\n- Sales Engineer specific: SE community events, RevOps meetups, Pavilion events, Salesforce/HubSpot ecosystem, presales community\n- Geographic range: Boston, Cambridge, Somerville, Providence RI \u2014 he has a car and will travel for a great event\n- Quality and caliber of attendees/company matter far more than location\n- University/masters adjacent: MIT, Harvard, Brown, Northeastern \u2014 events open to grad students\n- Career-building: panels with VC partners, engineering leadership, startup hiring events\n- Interesting bonus: geo/spatial tech (his Mapbox background), fintech, data infrastructure\n\nSCORE 9-10 (must attend):\n- Startup pitch nights or demo days (especially MIT, Harvard, MassChallenge, Greentown)\n- VC-hosted networking events or LP meetups open to founders/operators\n- Sales Engineer or presales community events (Pavilion SE chapter, SE Collective, etc.)\n- Tech meetup with senior engineers or founders (not just recruiters)\n- Providence startup or tech events when substantial (Forge, RI innovation community)\n\nSCORE 5-7 (worth knowing):\n- General tech networking with good company mix\n- University research showcases with industry crossover\n- Revenue/GTM-focused panels (sales ops, CRO events, B2B SaaS)\n- SaaS product launches or beta events in relevant sectors\n\nLOWER PRIORITY (score \u2264 4):\n- Pure academic lectures with no industry networking angle\n- Social events with no career/tech relevance\n- Events clearly targeted at undergrads only\n- Sports, arts-only, food/drink without tech angle\n- Events in Providence unless genuinely high-value",
+  "persona_prompt": "You are filtering Boston, Cambridge, and Providence RI events for Kirk Brown.\n\nKirk's background:\n- Hardware engineer who has also done software engineering and software sales\n- Sales Engineer at Mapbox (SoftBank-backed geo/spatial tech) and Bit Flow (machine vision / industrial hardware)\n- Experienced selling and demoing both hardware products and software platforms to technical buyers\n- Finishing his master's degree\n- Looking for his next role \u2014 open to hardware, software, or technical sales\n\nWhat Kirk wants:\n- Hardware & embedded: semiconductor events, robotics, embedded systems, IoT, machine vision, industrial tech, PCB/FPGA, sensors\n- Defense & deep tech: defense tech startups, dual-use hardware, MIT Lincoln Lab adjacent events, Draper Lab, MITRE\n- VC & startup events: demo days, pitch nights, investor panels, founder dinners, accelerator showcases (hardware AND software)\n- Tech community: hackathons, product launches, startup meetups, tech networking with practitioners\n- Sales Engineer / presales: SE community events, RevOps meetups, Pavilion events, Salesforce/HubSpot ecosystem\n- Geographic range: Boston, Cambridge, Somerville, Providence RI \u2014 has a car, will travel for quality\n- University: MIT, Harvard, Brown, Northeastern, WPI \u2014 especially hardware/robotics/EE research events open to industry\n- Career: panels with engineering leadership, CTO talks, startup hiring, technical founder events\n- Domain expertise: geo/spatial tech, machine vision, industrial automation, fintech, data infrastructure\n\nSCORE 9-10 (must attend):\n- Hardware startup demo days or pitch nights (Greentown Labs, FORGE RI, MIT hardware)\n- Semiconductor or chip design events (ARM, Analog Devices, MIT MTL, IEEE Boston)\n- Robotics showcases with industry participation (Boston Dynamics adjacent, MassRobotics)\n- Defense tech or dual-use hardware networking (Draper, MITRE, DIU events open to industry)\n- Sales Engineer or presales community events (Pavilion SE chapter, SE Collective)\n- VC-hosted events open to founders/operators \u2014 hardware or deep tech focus especially\n- MIT or Brown research-to-industry events with real networking\n\nSCORE 5-7 (worth knowing):\n- General tech networking with solid company mix (not just recruiters)\n- University EE/CS/robotics showcases with industry crossover\n- Revenue/GTM panels (sales ops, CRO, B2B technical sales)\n- SaaS or hardware product launches in relevant sectors\n- Maker/hardware community events (Artisan's Asylum, HackerSpace Boston)\n\nLOWER PRIORITY (score \u2264 4):\n- Pure academic lectures with no networking or industry angle\n- Social events with no career/tech relevance\n- Events clearly targeted at undergrads only with no industry presence\n- Sports, arts-only, food/drink without tech angle\n- Generic networking mixers with no engineering or sales focus",
   "events": [
     {
       "source": "Eventbrite:model+showcase",
@@ -43,30 +43,6 @@
       "_proximity": 3
     },
     {
-      "source": "do617:concerts",
-      "name": "Entrepreneurship Summit 2026",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/29/entrepreneurship-summit-2026-tickets",
-      "start": "2026-03-29T08:00",
-      "venue": "Klarman Hall",
-      "address": "",
-      "score": 8,
-      "reason": "Entrepreneurship Summit 2026 \u2014 directly aligned with Kirk's startup/VC interests, likely has pitch competitions, investor panels, and founder networking. High-caliber event for career building.",
-      "_proximity": 3
-    },
-    {
-      "source": "luma:boston",
-      "name": "Resolution Hacks (w. Eight Sleep, swsh, Duckbill, Fragile, Clair & Wayfair)",
-      "description": "",
-      "url": "https://lu.ma/w8yvu0hq",
-      "start": "2026-03-28T13:00",
-      "venue": "",
-      "address": "Cambridge, Massachusetts",
-      "score": 8,
-      "reason": "Hackathon with tech companies (Eight Sleep, Wayfair, etc.). Direct match for Kirk's interest in startup/tech events and networking with engineers and product teams.",
-      "_proximity": 5
-    },
-    {
       "source": "luma:boston",
       "name": "Boston Founders & IP Night",
       "description": "",
@@ -80,18 +56,6 @@
     },
     {
       "source": "luma:boston",
-      "name": "Mindful Makers Hack #9 - Open Ideas Hack",
-      "description": "",
-      "url": "https://lu.ma/v29pynp3",
-      "start": "2026-03-28T13:45",
-      "venue": "",
-      "address": "Cambridge, Massachusetts",
-      "score": 7,
-      "reason": "Hackathon (Mindful Makers Hack). Aligns with Kirk's interest in tech community events and hands-on startup/product building environment.",
-      "_proximity": 5
-    },
-    {
-      "source": "luma:boston",
       "name": "Fireside Chat with Cloudflare CEO Matthew Prince | Presented by TNT",
       "description": "",
       "url": "https://lu.ma/uaoh8rxz",
@@ -101,87 +65,6 @@
       "score": 7,
       "reason": "Cloudflare CEO fireside chat. Tech leadership insight from a major SaaS company; relevant for Kirk's understanding of scaling tech businesses and potential sales eng career trajectory.",
       "_proximity": 5
-    },
-    {
-      "source": "do617:concerts",
-      "name": "Cambridge Job Fair - Cambridge Career Fair",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/1/cambridge-job-fair-cambridge-career-fair-tickets",
-      "start": "2026-04-01T11:00",
-      "venue": "Cambridge",
-      "address": "",
-      "score": 6,
-      "reason": "Cambridge Career Fair \u2014 job fair in Kirk's target geography with potential tech employer booths and networking; good for exploring next role opportunities.",
-      "_proximity": 5
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Tool Training: Black Cat Labs 90W Laser Cutter",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/tool-training-black-cat-labs-90w-laser-cutter--2",
-      "start": "2026-03-28",
-      "date": "2026-03-28",
-      "venue": "",
-      "address": "",
-      "score": 6,
-      "reason": "Tool training at Black Cat Labs (laser cutter) \u2014 maker/tech community event, potential networking with engineers and builders"
-    },
-    {
-      "source": "luma:boston",
-      "name": "Build Your Agentic Research Assistant",
-      "description": "",
-      "url": "https://lu.ma/bvjy0mnr",
-      "start": "2026-04-03T19:00",
-      "venue": "",
-      "address": "Cambridge, Massachusetts",
-      "score": 6,
-      "reason": "AI/agentic research tools align with tech background; potential networking with builders and founders interested in AI infrastructure",
-      "_proximity": 5
-    },
-    {
-      "source": "WBUR Events",
-      "name": "The WBUR Breakfast Club: WHOOP Founder and CEO Will Ahmed in conversation with Tiziana Dearing",
-      "description": "",
-      "url": "https://www.wbur.org/events",
-      "start": "2026-04-16",
-      "venue": "",
-      "address": "",
-      "score": 6,
-      "reason": "WBUR Breakfast Club with WHOOP CEO Will Ahmed \u2014 founder/CEO conversation with strong tech/hardware angle, good for networking with innovators and media presence"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Advanced FDM 3d Printing",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/advanced-fdm-3d-printing--2",
-      "start": "2026-03-28",
-      "date": "2026-03-28",
-      "venue": "",
-      "address": "",
-      "score": 5,
-      "reason": "Advanced 3D printing workshop \u2014 technical skill-building relevant to tech community, potential to meet engineers"
-    },
-    {
-      "source": "WBUR Events",
-      "name": "The WBUR Breakfast Club: JetBlue CEO Joanna Geraghty in conversation with Tiziana Dearing",
-      "description": "",
-      "url": "https://www.wbur.org/events",
-      "start": "2026-05-12",
-      "venue": "",
-      "address": "",
-      "score": 5,
-      "reason": "WBUR Breakfast Club with JetBlue CEO Joanna Geraghty \u2014 executive leadership conversation, decent networking opportunity with business/operations leaders"
-    },
-    {
-      "source": "WBUR Events",
-      "name": "The WBUR Festival",
-      "description": "Join us Friday, May 29 and Saturday, May 30 for lively conversations, podcast tapings and musical performances.",
-      "url": "https://www.wbur.org/events",
-      "start": "2026-05-29",
-      "venue": "",
-      "address": "",
-      "score": 5,
-      "reason": "WBUR Festival (May 29-30) \u2014 lively conversations and performances; potential for casual networking with media, tech, and public radio figures; worth attending for the energy and cross-industry crowd"
     }
   ],
   "extra_events": [],
@@ -792,78 +675,203 @@
       "reason": "Discounted $2 oysters all day, daily availability"
     }
   ],
+  "hot_restaurants": {
+    "updated": "2026-03-28T18:37:22.235423",
+    "restaurants": [
+      {
+        "name": "Fallow Kin",
+        "neighborhood": "Cambridge",
+        "editorial": "The owners of Tallula, Conor Dennehy and Danielle Ayer, and former Tasting Counter chef Marcos Sanchez finally opened their Cambridge restaurant in October 2025, taking over the former Craigie on Main space. The a la carte and chef's counter tasting menus explore New England cuisine with seasonal and New American angles, leaning heavily on vegetables; see: caramelized carrots paired with duck prosciutto and chicken with pumpkin mole. Out in the lounge, the kitchen is serving up a zero-waste menu, with dishes like duck wings and smoked fish terrine.",
+        "mentioned_nights": null,
+        "sources": [
+          "Eater Heatmap"
+        ],
+        "vibe": "Refined New England tasting counter, Cambridge fine dining",
+        "hot_night": null,
+        "hot_hours": null,
+        "crowd_type": "Food enthusiasts, date nights, fine dining regulars, industry crowd",
+        "buzz_score": 8,
+        "good_for_brian": false,
+        "good_for_chloe": true,
+        "note": "Pedigreed ownership (Tallula, Tasting Counter) and zero-waste lounge concept make this a destination restaurant with serious culinary credentials."
+      },
+      {
+        "name": "SJ's",
+        "neighborhood": "Leather District",
+        "editorial": "Chef Sarah Wade's third Boston restaurant, SJ's, is her new destination for funky comfort food, which just recently opened in November 2025 in the Leather District (near Chinatown). This means creative dishes with global influences, such as pork rillette macarons and confit rabbit leg with sal de gusano.",
+        "mentioned_nights": null,
+        "sources": [
+          "Eater Heatmap"
+        ],
+        "vibe": "Experimental comfort food hotspot, creative global cuisine",
+        "hot_night": null,
+        "hot_hours": null,
+        "crowd_type": "Food adventurers, Chef Sarah Wade followers, creative dining seekers",
+        "buzz_score": 7,
+        "good_for_brian": false,
+        "good_for_chloe": true,
+        "note": "Chef Sarah Wade's ambitious third venture serving inventive dishes like pork rillette macarons in newly opened Leather District location near Chinatown."
+      },
+      {
+        "name": "Si Cara South Boston",
+        "neighborhood": "South Boston",
+        "editorial": "Indulge in perfectly crispy chicken cutlets, soft canotto-style pizza, and natural wines at Si Cara's new location in South Boston, which opened in January. This spot is a departure from the original restaurant in Central Square. In addition to slinging pies in a more sophisticated setting, this location also has weekend brunch (a new venture for Si Cara) and a lower-level lounge that offers cocktails and bites in a moody ambiance. The music you're hearing in the lounge? Vinyl from chef/owner Michael Lombardi's personal collection.",
+        "mentioned_nights": "weekend",
+        "sources": [
+          "Eater Heatmap"
+        ],
+        "vibe": "Sophisticated wine bar with moody vinyl lounge, South Boston newcomer",
+        "hot_night": "weekend",
+        "hot_hours": null,
+        "crowd_type": "wine enthusiasts, date nights, design-conscious diners, industry crowd",
+        "buzz_score": 7,
+        "good_for_brian": false,
+        "good_for_chloe": true,
+        "note": "Chef/owner Michael Lombardi's personal vinyl collection and carefully curated natural wines elevate the experience beyond typical South Boston dining."
+      },
+      {
+        "name": "Ama",
+        "neighborhood": "Allston",
+        "editorial": "The team at Comfort Kitchen opened their newest (and biggest) venture, Ama, a globally-inspired restaurant paying homage to mothers, inside the Atlas Hotel in Allston in January. The cuisine is finding its footing, balancing the innovative global flavors that Comfort Kitchen is known for with the demands of a hotel restaurant. But the star-studded team, including the new additions of Birds of Paradise alums Jen LaForge and Will Isaza behind the bar, is one to watch.",
+        "mentioned_nights": null,
+        "sources": [
+          "Eater Heatmap"
+        ],
+        "vibe": "Ambitious global cuisine in sleek hotel dining room, Allston",
+        "hot_night": null,
+        "hot_hours": null,
+        "crowd_type": "Hotel guests, culinary adventurers, cocktail enthusiasts, industry insiders",
+        "buzz_score": 6,
+        "good_for_brian": true,
+        "good_for_chloe": true,
+        "note": "Star-studded bar program (Birds of Paradise alums) and globally-inspired cuisine from Comfort Kitchen team make this worth watching as it matures."
+      },
+      {
+        "name": "My Girl",
+        "neighborhood": "Financial District",
+        "editorial": "My Girl is a new, more grown-up cocktail lounge in the space of the former nightlife destination Mariel Underground, which opened in December 2025 underneath the ever-bustling Cuban restaurant Mariel in the Financial District. Inspired by 1950s Havana, the lounge offers craft cocktails, a curated menu of small bites, and, for those really ready to hit the town, bottle service.",
+        "mentioned_nights": null,
+        "sources": [
+          "Eater Heatmap"
+        ],
+        "vibe": "Sophisticated 1950s Havana-inspired cocktail lounge",
+        "hot_night": null,
+        "hot_hours": null,
+        "crowd_type": "Upscale professionals, cocktail enthusiasts, date nights",
+        "buzz_score": 6,
+        "good_for_brian": true,
+        "good_for_chloe": true,
+        "note": "Newly opened underground lounge with craft cocktails and retro Havana atmosphere offers an upscale alternative to the bustling restaurant above."
+      },
+      {
+        "name": "Holdfast Specialty Seafood Co.",
+        "neighborhood": "Allston",
+        "editorial": "Holdfast is an Allston hole-in-the-wall, casual seafood spot dishing out hot and cold lobster rolls, oyster and clam sandwiches, and fries served in special sauce, which opened in November 2025. The spot is co-owned by chefs Nathan Gould and Tyler Paolini (formerly of O Ya) with business partner Jesse Kim. Eat a savory sandwich standing at a counter after a night out or co-opt the large communal table for a lavish spread of oysters, yellowtail crudo, and caviar service with kettle chips.",
+        "mentioned_nights": null,
+        "sources": [
+          "Eater Heatmap"
+        ],
+        "vibe": "Casual seafood counter spot, post-night-out casual elegance",
+        "hot_night": null,
+        "hot_hours": null,
+        "crowd_type": "Late-night diners, oyster enthusiasts, industry insiders, casual luxury seekers",
+        "buzz_score": 6,
+        "good_for_brian": true,
+        "good_for_chloe": true,
+        "note": "New spot from O Ya alumni offering elevated casual seafood (lobster rolls, caviar service, yellowtail crudo) in a hole-in-the-wall format with communal dining."
+      },
+      {
+        "name": "Hawksmoor",
+        "neighborhood": "Fort Point",
+        "editorial": "With Sunday roasts and \"unbelievably cold\" martinis, can a new steakhouse break into Boston's crowded beef scene?",
+        "mentioned_nights": "Sunday",
+        "sources": [
+          "Boston Magazine"
+        ],
+        "vibe": "Upscale steakhouse with old-school cocktail sophistication",
+        "hot_night": "Sunday",
+        "hot_hours": null,
+        "crowd_type": "Affluent diners, special occasion crowds, cocktail enthusiasts",
+        "buzz_score": 6,
+        "good_for_brian": false,
+        "good_for_chloe": true,
+        "note": "London steakhouse pedigree brings refined beef-and-martini scene to Fort Point's industrial waterfront."
+      },
+      {
+        "name": "Willie's",
+        "neighborhood": "Beacon Hill",
+        "editorial": "From vodka-sauced, pepperoni-cup pizza to Korean-meets-Italian pasta at chef Jamie Bissonnette's new neighborhood spot in Boston.",
+        "mentioned_nights": null,
+        "sources": [
+          "Boston Magazine"
+        ],
+        "vibe": "Inventive neighborhood spot, fusion-forward pizza and pasta",
+        "hot_night": null,
+        "hot_hours": null,
+        "crowd_type": "Beacon Hill locals, food-focused diners, adventurous eaters",
+        "buzz_score": 6,
+        "good_for_brian": false,
+        "good_for_chloe": true,
+        "note": "Chef Jamie Bissonnette's creative Korean-Italian fusion and unconventional pepperoni-cup pizza warrant a visit for culinary experimentation."
+      },
+      {
+        "name": "Celine",
+        "neighborhood": "Fort Point",
+        "editorial": "The team behind South End favorites SRV and Baleia takes over the old Blue Dragon space around late summer.",
+        "mentioned_nights": null,
+        "sources": [
+          "Boston Magazine"
+        ],
+        "vibe": "Elevated Portuguese dining, Fort Point cool factor",
+        "hot_night": null,
+        "hot_hours": null,
+        "crowd_type": "SRV/Baleia loyalists, South End spillover, Portuguese food enthusiasts",
+        "buzz_score": 6,
+        "good_for_brian": true,
+        "good_for_chloe": true,
+        "note": "Proven operators (SRV, Baleia success) taking over prime Blue Dragon location with likely upscale Portuguese concept."
+      },
+      {
+        "name": "Third Time Together",
+        "neighborhood": "Cambridge's Kendall Square",
+        "editorial": "Levantine Hot Dogs and Award-Winning Ice Cream Get a Cambridge Home. Third Time Together, a pop-up previously at Bow Market and the Charles River Speedway, is now permanently in Kendall Square.",
+        "mentioned_nights": null,
+        "sources": [
+          "Boston Magazine"
+        ],
+        "vibe": "casual Levantine street food meets artisanal ice cream, Kendall Square tech-adjacent",
+        "hot_night": null,
+        "hot_hours": null,
+        "crowd_type": "casual diners, foodies, Kendall Square workers, ice cream seekers",
+        "buzz_score": 5,
+        "good_for_brian": false,
+        "good_for_chloe": false,
+        "note": "Award-winning ice cream and unique Levantine hot dogs justify a visit, but it's a daytime/casual spot rather than evening scene destination."
+      },
+      {
+        "name": "La Padrona",
+        "neighborhood": "Back Bay",
+        "editorial": "Timeless classics like prime rib and Dover sole will be on the menu at the former Bristol Lounge address, courtesy of A Street Hospitality.",
+        "mentioned_nights": null,
+        "sources": [
+          "Boston Magazine"
+        ],
+        "vibe": "Elegant fine dining, classic French-Italian in historic Back Bay",
+        "hot_night": null,
+        "hot_hours": null,
+        "crowd_type": "Upscale diners, special occasions, established Back Bay residents",
+        "buzz_score": 5,
+        "good_for_brian": false,
+        "good_for_chloe": true,
+        "note": "Timeless classics in a prestigious address with A Street Hospitality's pedigree make this a go-to for refined dining rather than scene-hunting."
+      }
+    ]
+  },
   "costs": {
-    "week": 0.895,
-    "month": 1.0216,
-    "total": 1.0216,
+    "week": 1.1473,
+    "month": 1.2739,
+    "total": 1.2739,
     "runs": [
-      {
-        "ts": "2026-03-27T08:42:03.824747",
-        "events_total": 0,
-        "events_cached": 0,
-        "events_scored": 0,
-        "cost_usd": 0,
-        "duration_ms": 0,
-        "models": {},
-        "deploy_why": "run",
-        "netlify": {},
-        "efficiency": {
-          "cache_hit_rate": 0.0,
-          "avg_hit_rate": 0.819,
-          "cost_per_scored_event": 0.0,
-          "notes": [
-            "Hit rate dropped 82% vs avg \u2014 new sources or cache cleared?"
-          ]
-        }
-      },
-      {
-        "ts": "2026-03-27T08:43:14.180169",
-        "events_total": 0,
-        "events_cached": 0,
-        "events_scored": 0,
-        "cost_usd": 0,
-        "duration_ms": 0,
-        "models": {},
-        "deploy_why": "run",
-        "netlify": {},
-        "efficiency": {
-          "cache_hit_rate": 0.0,
-          "avg_hit_rate": 0.619,
-          "cost_per_scored_event": 0.0,
-          "notes": [
-            "Hit rate dropped 62% vs avg \u2014 new sources or cache cleared?"
-          ]
-        }
-      },
-      {
-        "ts": "2026-03-28T08:09:45.907302",
-        "events_total": 752,
-        "events_cached": 109,
-        "events_scored": 501,
-        "cost_usd": 0.141848,
-        "duration_ms": 143884,
-        "models": {
-          "claude-haiku-4-5-20251001": 0.141848
-        },
-        "deploy_why": "run",
-        "netlify": {
-          "total": 1000,
-          "used": null,
-          "remaining": null,
-          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
-        },
-        "efficiency": {
-          "cache_hit_rate": 0.179,
-          "avg_hit_rate": 0.419,
-          "cost_per_scored_event": 0.00028,
-          "notes": [
-            "Cache 18% hit (109 cached, 501 scored) \u2014 many new events, normal on first daily run",
-            "High scoring volume (501 scored) \u2014 consider raising min_score to cut costs",
-            "High cost $0.1418 \u2014 check for new uncached scrape_url sources burning tokens",
-            "Cache hit rate 18% vs recent avg 42% (109 cached / 501 scored) \u2014 possible new sources added or score cache cleared"
-          ]
-        }
-      },
       {
         "ts": "2026-03-28T08:13:59.426222",
         "events_total": 752,
@@ -917,16 +925,123 @@
             "High scoring volume (829 scored) \u2014 consider raising min_score to cut costs"
           ]
         }
+      },
+      {
+        "ts": "2026-03-29T08:12:23.161245",
+        "persona": "brian",
+        "events_total": 804,
+        "events_cached": 164,
+        "events_scored": 368,
+        "cost_usd": 0.178999,
+        "duration_ms": 190268,
+        "models": {
+          "claude-haiku-4-5-20251001": 0.178999
+        },
+        "source_counts": {
+          "Eventbrite": 31,
+          "Liberty Hotel events": 8,
+          "Boston Fashion Week": 1,
+          "Boston Calendar": 21,
+          "allevents": 2,
+          "IG": 9,
+          "do617": 28,
+          "Boston Bar Assoc": 12,
+          "Mass Fashion Week": 1,
+          "Meetup": 4,
+          "6ONE7 Productions": 6,
+          "luma": 3,
+          "ticketmaster": 2,
+          "WBUR Events": 16,
+          "BSO Events": 20,
+          "MIT List Visual Arts": 4,
+          "MassRobotics events": 2,
+          "SoWa Boston": 1,
+          "Greentown Labs events": 1
+        },
+        "deploy_why": "run",
+        "netlify": {
+          "total": 1000,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.308,
+          "avg_hit_rate": 0.052,
+          "cost_per_scored_event": 0.00049,
+          "notes": [
+            "Cache 31% hit (164 cached, 368 scored) \u2014 many new events, normal on first daily run",
+            "High scoring volume (368 scored) \u2014 consider raising min_score to cut costs",
+            "High cost $0.1790 \u2014 check for new uncached scrape_url sources burning tokens"
+          ]
+        }
+      },
+      {
+        "ts": "2026-03-29T08:17:29.321639",
+        "persona": "chloe",
+        "events_total": 804,
+        "events_cached": 94,
+        "events_scored": 372,
+        "cost_usd": 0,
+        "duration_ms": 0,
+        "models": {},
+        "source_counts": {
+          "Eventbrite": 7,
+          "Liberty Hotel events": 8,
+          "Boston Fashion Week": 1,
+          "do617": 34,
+          "Mass Fashion Week": 1,
+          "ticketmaster": 1,
+          "Boston Calendar": 10,
+          "MassRobotics events": 1
+        },
+        "deploy_why": "run",
+        "netlify": {
+          "total": 1000,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.202,
+          "avg_hit_rate": 0.113,
+          "cost_per_scored_event": 0.0,
+          "notes": [
+            "Cache 20% hit (94 cached, 372 scored) \u2014 many new events, normal on first daily run",
+            "High scoring volume (372 scored) \u2014 consider raising min_score to cut costs"
+          ]
+        }
+      },
+      {
+        "ts": "2026-03-29T08:17:56.289459",
+        "persona": "kirk",
+        "events_total": 804,
+        "events_cached": 5,
+        "events_scored": 372,
+        "cost_usd": 0,
+        "duration_ms": 0,
+        "models": {},
+        "source_counts": {
+          "Eventbrite": 2,
+          "luma": 3
+        },
+        "deploy_why": "run",
+        "netlify": {
+          "total": 1000,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.013,
+          "avg_hit_rate": 0.154,
+          "cost_per_scored_event": 0.0,
+          "notes": [
+            "Cache 1% hit (5 cached, 372 scored) \u2014 many new events, normal on first daily run",
+            "High scoring volume (372 scored) \u2014 consider raising min_score to cut costs"
+          ]
+        }
       }
     ],
-    "netlify": "1000/1000 credits remaining"
+    "netlify": "1000 credit pack \u2014 check balance at app.netlify.com/billing"
   },
   "sources": {
     "Eventbrite": 2,
-    "luma": 6,
-    "do617": 2,
-    "Boston Calendar": 2,
-    "WBUR Events": 3
+    "luma": 3
   },
   "source_urls": {
     "do617": "https://do617.com/events/food-drink",
@@ -938,6 +1053,11 @@
     "ICA Boston": "https://www.icaboston.org/events",
     "BSO Events": "https://www.bso.org/events",
     "Gardner Museum": "https://www.gardnermuseum.org/calendar",
+    "Harvard Arts calendar": "https://arts.harvard.edu/events",
+    "Harvard Gazette events": "https://news.harvard.edu/gazette/section/events-arts/",
+    "MIT List Visual Arts": "https://listart.mit.edu/events-programs",
+    "Boston Athen\u00e6um": "https://bostonathenaeum.org/calendar/",
+    "Cambridge Arts": "https://www.cambridgeartscouncil.org/events/",
     "SoWa Boston": "https://www.sowaboston.com/events/",
     "MIT Events": "https://events.mit.edu/",
     "Harvard Kennedy School": "https://www.hks.harvard.edu/events",
@@ -966,13 +1086,16 @@
     "ticketmaster": "https://www.ticketmaster.com/discover/concerts/boston",
     "Boston Hassle": "https://bostonhassle.com/calendar/",
     "Concertful Boston": "https://concertful.com/concerts/boston-ma",
-    "Boston Magazine": "https://www.bostonmagazine.com/things-to-do/"
+    "Boston Magazine": "https://www.bostonmagazine.com/things-to-do/",
+    "MassRobotics events": "https://www.massrobotics.org/events/",
+    "IEEE Boston events": "https://ieee-boston.org/events/",
+    "Artisan's Asylum events": "https://artisansasylum.com/calendar/",
+    "MassChallenge events": "https://masschallenge.org/events/",
+    "Greentown Labs events": "https://greentownlabs.com/events/",
+    "Venture Lane events": "https://www.venturelane.co/events"
   },
   "source_stats": {
     "Eventbrite": 2,
-    "luma": 6,
-    "do617": 2,
-    "Boston Calendar": 2,
-    "WBUR Events": 3
+    "luma": 3
   }
 }
