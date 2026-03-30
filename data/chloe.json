@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-03-29T08:17:55.161130",
-  "today": "2026-03-29",
+  "generated_at": "2026-03-30T08:13:32.639770",
+  "today": "2026-03-30",
   "days": 7,
   "persona": "chloe",
   "persona_prompt": "You are filtering Boston events for Chloe, who wants upscale, interesting things to do in Boston.\nShe loves:\n- Art: gallery openings, museum events, art shows, artist talks, art fairs, photography exhibits, sculpture\n- Food & drink: wine tastings, wine dinners, chef's table experiences, cocktail classes, food festivals, upscale restaurant events, mixology\n- Fancy experiences: galas, benefit dinners, charity auctions, cultural receptions, film premieres, theater openings\n- Design, fashion, and aesthetics \u2014 runway shows, trunk shows, luxury boutique events, bridal showcases, couture\n- Wellness and beauty events that are upscale (spa launches, product launches, brand events)\n- Sip-and-craft events (sip & paint, pottery, floral arranging) \u2014 she likes these IF the crowd seems upscale or scene-y; skip if it reads as basic/suburban\n- Anything cultured, beautiful, or scene-y\n- Asian cultural events are great (she is Chinese and appreciates these)\n\nSCORE 9-10 (must attend):\n- \"Fashionably LATE\" Thursdays at The Liberty Hotel \u2014 weekly interactive runway with models weaving through the crowd, free admission, scene-y crowd\n- Boston Fashion Week (Oct 2026) events, especially luxury eveningwear, couture, and accessory showcases\n- Boston En Vogue \u2014 luxury gown and couture runway shows\n- Trunk shows at luxury boutiques (Galia Lahav bridal, Agent Provocateur, Newbury St boutiques)\n- SwimBoston \u2014 annual swimwear/bikini runway at Boston Harbor Distillery\n- Any event at a Newbury St boutique, Back Bay gallery, or luxury hotel\n- Museum opening receptions with cocktails or wine \u2014 Harvard Art Museums, MFA, ICA, Gardner \u2014 the \"art party\" type evening where the crowd is cultured and interesting, not just a museum visit\n- University arts/cultural events at Harvard, MIT, BU that are open to the public and have a reception component\n\nLower priority for her:\n- Pure civic/government/policy events (unless they're glamorous)\n- Sports\n- Basic networking mixers with no food/drink/art angle\n- Sip-and-craft events at chain venues or with a generic/tourist vibe (score \u2264 4)",
@@ -17,114 +17,6 @@
       "reason": "Fashionably LATE Thursdays at Liberty Hotel. Exactly matches her preferences: interactive runway show, luxury venue, scene-y crowd, free admission, weekly fashion-forward event.",
       "_proximity": 3,
       "price": "$0"
-    },
-    {
-      "source": "Liberty Hotel events",
-      "name": "Fashionably LATE Thursdays - House of Culture",
-      "description": "Fashion show featuring House of Culture designer with models strutting through the lobby catwalk, 3 rounds and 12 looks. Music by DJ Skoolyahd starting at 8:30pm, runway show 9pm-10pm.",
-      "url": "https://libertyhotel.com/liberty-affairs/fashionably-late/",
-      "start": "2026-04-02",
-      "venue": "The Liberty Hotel",
-      "address": "Boston, Massachusetts",
-      "score": 10,
-      "reason": "Fashionably LATE Thursdays at Max & Riley \u2014 interactive runway with DJ and models; consistent with her must-attend weekly series.",
-      "_proximity": 3
-    },
-    {
-      "source": "Liberty Hotel events",
-      "name": "Fashionably LATE Thursdays - ba&sh Boston",
-      "description": "Fashion show featuring ba&sh Boston designer with models strutting through the lobby catwalk, 3 rounds and 12 looks. Music by DJ Skoolyahd starting at 8:30pm, runway show 9pm-10pm.",
-      "url": "https://libertyhotel.com/liberty-affairs/fashionably-late/",
-      "start": "2026-04-09",
-      "venue": "The Liberty Hotel",
-      "address": "Boston, Massachusetts",
-      "score": 10,
-      "reason": "Fashionably LATE Thursdays at Max & Riley \u2014 interactive runway with DJ and models; consistent with her must-attend weekly series.",
-      "_proximity": 3
-    },
-    {
-      "source": "Liberty Hotel events",
-      "name": "Fashionably LATE Thursdays - Pattee Silver",
-      "description": "Fashion show featuring Pattee Silver designer with models strutting through the lobby catwalk, 3 rounds and 12 looks. Music by DJ Skoolyahd starting at 8:30pm, runway show 9pm-10pm.",
-      "url": "https://libertyhotel.com/liberty-affairs/fashionably-late/",
-      "start": "2026-04-16",
-      "venue": "The Liberty Hotel",
-      "address": "Boston, Massachusetts",
-      "score": 10,
-      "reason": "Fashionably LATE Thursdays at Max & Riley \u2014 interactive runway with DJ and models; consistent with her must-attend weekly series.",
-      "_proximity": 3
-    },
-    {
-      "source": "Liberty Hotel events",
-      "name": "Fashionably LATE Thursdays - Lavish Living Clothing",
-      "description": "Fashion show featuring Lavish Living Clothing designer with models strutting through the lobby catwalk, 3 rounds and 12 looks. Music by DJ Skoolyahd starting at 8:30pm, runway show 9pm-10pm.",
-      "url": "https://libertyhotel.com/liberty-affairs/fashionably-late/",
-      "start": "2026-04-23",
-      "venue": "The Liberty Hotel",
-      "address": "Boston, Massachusetts",
-      "score": 10,
-      "reason": "Fashionably LATE Thursdays at Max & Riley \u2014 interactive runway with DJ and models; consistent with her must-attend weekly series.",
-      "_proximity": 3
-    },
-    {
-      "source": "Liberty Hotel events",
-      "name": "Fashionably LATE Thursdays - Kaybea Collection",
-      "description": "Fashion show featuring Kaybea Collection designer with models strutting through the lobby catwalk, 3 rounds and 12 looks. Music by DJ Skoolyahd starting at 8:30pm, runway show 9pm-10pm.",
-      "url": "https://libertyhotel.com/liberty-affairs/fashionably-late/",
-      "start": "2026-04-30",
-      "venue": "The Liberty Hotel",
-      "address": "Boston, Massachusetts",
-      "score": 10,
-      "reason": "Fashionably LATE Thursdays at Max & Riley \u2014 interactive runway with DJ and models; consistent with her must-attend weekly series.",
-      "_proximity": 3
-    },
-    {
-      "source": "Liberty Hotel events",
-      "name": "Fashionably LATE Thursdays - Thornpetal",
-      "description": "Fashion show featuring Thornpetal designer with models strutting through the lobby catwalk, 3 rounds and 12 looks. Music by DJ Skoolyahd starting at 8:30pm, runway show 9pm-10pm.",
-      "url": "https://libertyhotel.com/liberty-affairs/fashionably-late/",
-      "start": "2026-05-07",
-      "venue": "The Liberty Hotel",
-      "address": "Boston, Massachusetts",
-      "score": 10,
-      "reason": "Fashionably LATE Thursdays at Max & Riley \u2014 interactive runway with DJ and models; consistent with her must-attend weekly series.",
-      "_proximity": 3
-    },
-    {
-      "source": "Liberty Hotel events",
-      "name": "Fashionably LATE Thursdays - Akmaral Bridal",
-      "description": "Fashion show featuring Akmaral Bridal designer with models strutting through the lobby catwalk, 3 rounds and 12 looks. Music by DJ Skoolyahd starting at 8:30pm, runway show 9pm-10pm.",
-      "url": "https://libertyhotel.com/liberty-affairs/fashionably-late/",
-      "start": "2026-05-14",
-      "venue": "The Liberty Hotel",
-      "address": "Boston, Massachusetts",
-      "score": 10,
-      "reason": "Fashionably LATE Thursdays at Max & Riley \u2014 interactive runway with DJ and models; consistent with her must-attend weekly series.",
-      "_proximity": 3
-    },
-    {
-      "source": "Liberty Hotel events",
-      "name": "Fashionably LATE Thursdays - Max & Riley",
-      "description": "Fashion show featuring Max & Riley designer with models strutting through the lobby catwalk, 3 rounds and 12 looks. Music by DJ Skoolyahd starting at 8:30pm, runway show 9pm-10pm.",
-      "url": "https://libertyhotel.com/liberty-affairs/fashionably-late/",
-      "start": "2026-05-21",
-      "venue": "The Liberty Hotel",
-      "address": "Boston, Massachusetts",
-      "score": 10,
-      "reason": "Fashionably LATE Thursdays at Max & Riley \u2014 interactive runway with DJ and models; consistent with her must-attend weekly series.",
-      "_proximity": 3
-    },
-    {
-      "source": "Boston Fashion Week",
-      "name": "32nd Annual Boston Fashion Week",
-      "description": "The official Boston Fashion Week event running October 4-10, 2026. Multiple fashion events and shows throughout the week.",
-      "url": "https://www.bostonfashionweek.com/",
-      "start": "2026-10-04",
-      "venue": "",
-      "address": "Boston, Massachusetts",
-      "score": 9,
-      "reason": "32nd Annual Boston Fashion Week (October 2026) \u2014 major designer events and fashion shows; directly on her must-attend list.",
-      "_proximity": 3
     },
     {
       "source": "Eventbrite:reception",
@@ -179,18 +71,6 @@
       "source": "do617:concerts",
       "name": "Lady Gaga",
       "description": "",
-      "url": "https://do617.com/events/2026/3/29/lady-gaga-tickets",
-      "start": "2026-03-29T20:00",
-      "venue": "TD Garden",
-      "address": "",
-      "score": 8,
-      "reason": "Lady Gaga concert\u2014iconic pop/performance artist known for elaborate, scene-y productions and fashion-forward aesthetics. High-energy cultural event.",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
-      "name": "Lady Gaga",
-      "description": "",
       "url": "https://do617.com/events/2026/3/30/lady-gaga-tickets",
       "start": "2026-03-30T20:00",
       "venue": "TD Garden",
@@ -209,82 +89,6 @@
       "address": "",
       "score": 8,
       "reason": "The Peking Acrobats \u2014 Asian cultural performance, upscale and beautiful; Chloe is Chinese and appreciates Asian cultural events",
-      "_proximity": 3
-    },
-    {
-      "source": "Mass Fashion Week",
-      "name": "MAFW: In Full Bloom",
-      "description": "A night where creatives rise, confidence blossoms, and vision turns into reality.",
-      "url": "https://www.massfashionweek.com/",
-      "start": "2026-05-23T17:30",
-      "venue": "Plymouth Memorial Hall",
-      "address": "Plymouth, MA",
-      "score": 8,
-      "reason": "MAFW: In Full Bloom \u2014 upscale fashion event celebrating emerging designers and New England talent; aligns with her interest in design and artistic expression.",
-      "_proximity": 3
-    },
-    {
-      "source": "Eventbrite:gala",
-      "name": "Cocktail & Cheese Tasting",
-      "description": "Learn how to pair your cocktails  and cheese together for flavor combos to melt in your mouth!",
-      "url": "https://www.eventbrite.com/e/cocktail-cheese-tasting-tickets-1977921647893",
-      "start": "2026-03-29",
-      "venue": "Trillium Fort Point",
-      "address": "50 Thomson Place, Boston",
-      "score": 7,
-      "reason": "Cocktail and cheese pairing class, upscale food & drink experience she loves",
-      "_proximity": 3,
-      "price": "$45"
-    },
-    {
-      "source": "Eventbrite:royale+boston",
-      "name": "Diva Royale - Drag Queen Dinner & Brunch Show Boston",
-      "description": "Diva Royale - Drag Queen Dinner & Brunch Show Boston",
-      "url": "https://www.eventbrite.com/e/diva-royale-drag-queen-dinner-brunch-show-boston-tickets-728548737887",
-      "start": "2026-03-29",
-      "venue": "Upstairs at Hennessy\u2019s",
-      "address": "25 Union Street, Boston",
-      "score": 7,
-      "reason": "Drag queen dinner/brunch show. High-energy, entertaining, culturally significant performance; upscale dining experience with strong scene appeal.",
-      "_proximity": 3,
-      "price": "$29\u2013$1225"
-    },
-    {
-      "source": "Eventbrite:venu+boston",
-      "name": "Boston Weddings Bubbly Brunch 2026",
-      "description": "Don\u2019t miss the ultimate Boston Weddings event! Discover top vendors, explore the latest trends, and MORE!",
-      "url": "https://www.eventbrite.com/e/boston-weddings-bubbly-brunch-2026-tickets-1975339443450",
-      "start": "2026-03-29",
-      "venue": "The Fairmont Copley Plaza",
-      "address": "138 Saint James Avenue, Boston",
-      "score": 7,
-      "reason": "Boston Weddings bridal event with vendors and trends. Luxury fashion/aesthetic focus; trunk shows and bridal showcases are on her must-attend list.",
-      "_proximity": 3,
-      "price": "$37\u2013$71"
-    },
-    {
-      "source": "Eventbrite:cactus+club+boston",
-      "name": "41ST ANNUAL MLK BANQUET",
-      "description": "The Caribbean Foundation of Boston and The South End Brunch Club proudly present\n\nTHE 2 KINGS 2026 BANQUET\n\n\n\nAn intergenerational gathering",
-      "url": "https://www.eventbrite.com/e/41st-annual-mlk-banquet-tickets-1981643376684",
-      "start": "2026-03-29",
-      "venue": "575 Warren St",
-      "address": "575 Warren Street, Boston",
-      "score": 7,
-      "reason": "MLK Banquet with intergenerational gathering. Upscale cultural/civic event with good food and community significance; appeals to her interest in scene-y, cultured experiences.",
-      "_proximity": 3,
-      "price": "$93\u2013$135"
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Sunday dinner JAZZ \u2013 Mike Mele & Joe McMahon DUO \u2013 in the lounge",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/29/sunday-dinner-jazz-mike-mele-joe-mcmahon-duo-in-the-lounge-tickets",
-      "start": "2026-03-29T18:00",
-      "venue": "Lou's",
-      "address": "",
-      "score": 7,
-      "reason": "Sunday dinner jazz with live duo \u2014 elegant dining with cultural entertainment",
       "_proximity": 3
     },
     {
@@ -321,30 +125,6 @@
       "address": "",
       "score": 7,
       "reason": "Sofar Sounds concert \u2014 intimate, curated music experience with upscale positioning and cultural appeal",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Castle of Our Skins with Daniel Bernard Roumain, electric violin and Val-Inc, sound chemist",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/29/castle-of-our-skins-with-daniel-bernard-roumain-electric-violin-and-val-inc-sound-chemist-tickets",
-      "start": "2026-03-29T13:30",
-      "venue": "Isabella Stewart Gardner Museum",
-      "address": "",
-      "score": 7,
-      "reason": "Upscale cultural performance with electric violin and sound art",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "2026 Spring Mfa Thesis Exhibition // Part I",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/29/2026-spring-mfa-thesis-exhibition-part-i-tickets",
-      "start": "2026-03-29T11:00",
-      "venue": "MassArt x SoWa",
-      "address": "",
-      "score": 7,
-      "reason": "MFA thesis exhibition; upscale art event and gallery opening",
       "_proximity": 3
     },
     {
@@ -541,18 +321,6 @@
     },
     {
       "source": "do617:concerts",
-      "name": "Emanuel Ax, piano",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/29/emanuel-ax-piano-tickets",
-      "start": "2026-03-29T15:00",
-      "venue": "Shalin Liu Performance Center",
-      "address": "",
-      "score": 7,
-      "reason": "Emanuel Ax piano recital\u2014world-class classical pianist. Upscale, prestigious concert experience.",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
       "name": "Gile Series: Ladysmith Black Mambazo",
       "description": "",
       "url": "https://do617.com/events/2026/3/31/ladysmith-black-mambazo-tickets",
@@ -603,18 +371,6 @@
     },
     {
       "source": "do617:film-theatre-performing-arts",
-      "name": "Salem Film Fest",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/29/salem-film-fest-tickets",
-      "start": "2026-03-29T10:00",
-      "venue": "Downtown Salem",
-      "address": "",
-      "score": 6,
-      "reason": "Film festival; cultural event",
-      "_proximity": 8
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
       "name": "Jade Song with Nina Haines: I Love You Don't Die",
       "description": "",
       "url": "https://do617.com/events/2026/3/31/jade-song-with-nina-haines-i-love-you-don-t-die-tickets",
@@ -639,11 +395,11 @@
     },
     {
       "source": "Boston Calendar",
-      "name": "Social Dinner - Kaju",
+      "name": "Spring Workshop: Expressive Animals in Watercolor",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/social-dinner-muqueca",
-      "start": "2026-03-29",
-      "date": "2026-03-29",
+      "url": "https://www.thebostoncalendar.com/events/spring-workshop-expressive-animals-in-watercolor",
+      "start": "2026-03-30",
+      "date": "2026-03-30",
       "venue": "",
       "address": "",
       "score": 1,
@@ -651,11 +407,11 @@
     },
     {
       "source": "Boston Calendar",
-      "name": "$1 Oysters at 224 Boston",
+      "name": "$1 Oysters at Loco Taqueria &amp; Oyster Bar",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/1-oysters-at-224-boston--159",
-      "start": "2026-03-29",
-      "date": "2026-03-29",
+      "url": "https://www.thebostoncalendar.com/events/1-oysters-at-loco-taqueria-oyster-bar--163",
+      "start": "2026-03-30",
+      "date": "2026-03-30",
       "venue": "",
       "address": "",
       "score": 1,
@@ -663,11 +419,11 @@
     },
     {
       "source": "Boston Calendar",
-      "name": "DOLLAR OYSTERS BUCK A SHUCK TRADESMAN CHARLESTOWN",
+      "name": "Painted Burro Waltham- Happy Hour Deals!",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/dollar-oysters-buck-a-shuck-tradesman-charlestown--81",
-      "start": "2026-03-29",
-      "date": "2026-03-29",
+      "url": "https://www.thebostoncalendar.com/events/painted-burro-waltham-weekly-happy-hour-deals--9",
+      "start": "2026-03-30",
+      "date": "2026-03-30",
       "venue": "",
       "address": "",
       "score": 1,
@@ -675,11 +431,11 @@
     },
     {
       "source": "Boston Calendar",
-      "name": "$1 OYSTER BRUNCH",
+      "name": "$1 Oysters at The Independent",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/1-oyster-brunch--26",
-      "start": "2026-03-29",
-      "date": "2026-03-29",
+      "url": "https://www.thebostoncalendar.com/events/1-oysters-at-the-independent--117",
+      "start": "2026-03-30",
+      "date": "2026-03-30",
       "venue": "",
       "address": "",
       "score": 1,
@@ -687,11 +443,11 @@
     },
     {
       "source": "Boston Calendar",
-      "name": "Trillium Classes &amp; Tastings",
+      "name": "$1 Oysters at Lower Mills Tavern",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/trillium-classes-tastings--12",
-      "start": "2026-03-29",
-      "date": "2026-03-29",
+      "url": "https://www.thebostoncalendar.com/events/1-oysters-at-lower-mills-tavern--163",
+      "start": "2026-03-30",
+      "date": "2026-03-30",
       "venue": "",
       "address": "",
       "score": 1,
@@ -699,11 +455,11 @@
     },
     {
       "source": "Boston Calendar",
-      "name": "Spring Equinox Grand Tasting with Life Love Cheese",
+      "name": "So Close at Nook: $12 experimental cocktails",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/spring-equinox-grand-tasting-with-life-love-cheese",
-      "start": "2026-03-29",
-      "date": "2026-03-29",
+      "url": "https://www.thebostoncalendar.com/events/so-close--123",
+      "start": "2026-03-30",
+      "date": "2026-03-30",
       "venue": "",
       "address": "",
       "score": 1,
@@ -711,11 +467,11 @@
     },
     {
       "source": "Boston Calendar",
-      "name": "Zero Proof: Cocktails *In-Person* *NEW*",
+      "name": "$1 Oysters in Downtown Boston",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/zero-proof-cocktails-in-person-new--2",
-      "start": "2026-03-29",
-      "date": "2026-03-29",
+      "url": "https://www.thebostoncalendar.com/events/1-oysters-in-downtown-boston--17",
+      "start": "2026-03-30",
+      "date": "2026-03-30",
       "venue": "",
       "address": "",
       "score": 1,
@@ -723,11 +479,11 @@
     },
     {
       "source": "Boston Calendar",
-      "name": "Posto South End- Happy Hour Deals!",
+      "name": "GIRL DINNER!",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/posto-south-end-happy-hour-deals--297",
-      "start": "2026-03-29",
-      "date": "2026-03-29",
+      "url": "https://www.thebostoncalendar.com/events/girl-dinner--10",
+      "start": "2026-03-30",
+      "date": "2026-03-30",
       "venue": "",
       "address": "",
       "score": 1,
@@ -737,9 +493,9 @@
       "source": "Boston Calendar",
       "name": "Painted Burro Davis Square- Happy Hour Deals!",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/painted-burro-davis-square-happy-hour-deals--105",
-      "start": "2026-03-29",
-      "date": "2026-03-29",
+      "url": "https://www.thebostoncalendar.com/events/painted-burro-davis-square-happy-hour-deals--153",
+      "start": "2026-03-30",
+      "date": "2026-03-30",
       "venue": "",
       "address": "",
       "score": 1,
@@ -747,23 +503,35 @@
     },
     {
       "source": "Boston Calendar",
-      "name": "Sunday Supper Club - Whiskey Dinner with Michter&#39;s",
+      "name": "Posto South End- Happy Hour Deals!",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/sunday-supper-club-whiskey-dinner-with-michter-s",
-      "start": "2026-03-29",
-      "date": "2026-03-29",
+      "url": "https://www.thebostoncalendar.com/events/posto-south-end-happy-hour-deals--250",
+      "start": "2026-03-30",
+      "date": "2026-03-30",
       "venue": "",
       "address": "",
       "score": 1,
-      "reason": "",
-      "_proximity": 3
+      "reason": ""
     },
     {
-      "source": "MassRobotics events",
-      "name": "European Robotics Forum",
-      "description": "The leading event for the European robotics and AI community, bringing together over 1,000 participants from industry, academia, and the public sector.",
-      "url": "https://www.massrobotics.org/events/",
-      "start": "2026-03-23",
+      "source": "Boston Calendar",
+      "name": "Mai Seaport Handroll Happy Hour Special",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/mai-seaport-handroll-happy-hour-special--3",
+      "start": "2026-03-30",
+      "date": "2026-03-30",
+      "venue": "",
+      "address": "",
+      "score": 1,
+      "reason": ""
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "Stone Social Impact Forum \u2014 A Conversation with Tracy Palandjian on Investing in Opportunity.",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/stone-social-impact-forum-a-conversation-with-tracy-palandjian-on-investing-in-opportunity",
+      "start": "2026-03-30",
+      "date": "2026-03-30",
       "venue": "",
       "address": "",
       "score": 1,
@@ -771,613 +539,7 @@
     }
   ],
   "extra_events": [],
-  "oyster_deals": [
-    {
-      "source": "deep_research",
-      "name": "Lower Mills Tavern \u2014 $1 oysters",
-      "description": "Dorchester. $1 oysters, Mondays, 4:00 PM until sold out.",
-      "url": "",
-      "start": "",
-      "venue": "Lower Mills Tavern",
-      "address": "Dorchester",
-      "score": 10,
-      "reason": "Dollar oysters, Mondays, sold out basis indicates popularity"
-    },
-    {
-      "source": "deep_research",
-      "name": "224 Boston \u2014 $1 oysters",
-      "description": "Dorchester. $1 oysters, Mondays & Tuesdays, 5:00 PM - 10:00 PM.",
-      "url": "",
-      "start": "",
-      "venue": "224 Boston",
-      "address": "Dorchester",
-      "score": 10,
-      "reason": "Dollar oysters, two days per week, extended evening hours"
-    },
-    {
-      "source": "deep_research",
-      "name": "Batifol \u2014 $1 oysters",
-      "description": "Kendall Square. $1 oysters, Daily, 4:00 PM - 6:00 PM.",
-      "url": "",
-      "start": "",
-      "venue": "Batifol",
-      "address": "Kendall Square",
-      "score": 10,
-      "reason": "Dollar oysters daily, 2-hour happy hour window"
-    },
-    {
-      "source": "deep_research",
-      "name": "Bambara Kitchen \u2014 $1 oysters",
-      "description": "East Cambridge. $1 oysters, Daily, 5:00 PM - 7:00 PM.",
-      "url": "",
-      "start": "",
-      "venue": "Bambara Kitchen",
-      "address": "East Cambridge",
-      "score": 10,
-      "reason": "Dollar oysters daily, 2-hour evening happy hour"
-    },
-    {
-      "source": "deep_research",
-      "name": "Viale \u2014 $1 oysters",
-      "description": "Central Square. $1 oysters, Sat-Thu 5:00-7:00 PM; Fridays 4:00-7:00 PM.",
-      "url": "",
-      "start": "",
-      "venue": "Viale",
-      "address": "Central Square",
-      "score": 10,
-      "reason": "Dollar oysters daily with extended Friday hours"
-    },
-    {
-      "source": "deep_research",
-      "name": "Althea \u2014 $1 oysters",
-      "description": "Central Square. $1 oysters, Daily, 2:00 PM - 5:00 PM.",
-      "url": "",
-      "start": "",
-      "venue": "Althea",
-      "address": "Central Square",
-      "score": 10,
-      "reason": "Dollar oysters daily, 3-hour afternoon window"
-    },
-    {
-      "source": "deep_research",
-      "name": "Russell House Tavern \u2014 $1 oysters",
-      "description": "Harvard Square. $1 oysters, Sun-Thu 9:00-11:00 PM; Fri-Sat 10:00 PM-12:00 AM.",
-      "url": "",
-      "start": "",
-      "venue": "Russell House Tavern",
-      "address": "Harvard Square",
-      "score": 10,
-      "reason": "Dollar oysters nightly, late-night happy hour option"
-    },
-    {
-      "source": "deep_research",
-      "name": "Grafton Street Pub \u2014 $1 oysters",
-      "description": "Harvard Square. $1 oysters, Monday \u2013 Friday, 5:00 PM - 7:00 PM.",
-      "url": "",
-      "start": "",
-      "venue": "Grafton Street Pub",
-      "address": "Harvard Square",
-      "score": 10,
-      "reason": "Dollar oysters weekdays, prime happy hour time"
-    },
-    {
-      "source": "deep_research",
-      "name": "Charlie's Kitchen \u2014 $1 oysters ($2 normally)",
-      "description": "Harvard Square. $1 oysters ($2 normally), Sundays, 12:00 PM - 4:00 PM & 6:00-8:00 PM.",
-      "url": "",
-      "start": "",
-      "venue": "Charlie's Kitchen",
-      "address": "Harvard Square",
-      "score": 10,
-      "reason": "Dollar oysters Sundays, two time windows, 50% discount from $2"
-    },
-    {
-      "source": "deep_research",
-      "name": "Caf\u00e9 Saint-Germain \u2014 $1 oysters",
-      "description": "Cambridge. $1 oysters, Daily, 4:00 PM - 6:00 PM.",
-      "url": "",
-      "start": "",
-      "venue": "Caf\u00e9 Saint-Germain",
-      "address": "Cambridge",
-      "score": 10,
-      "reason": "Dollar oysters daily, 2-hour afternoon window"
-    },
-    {
-      "source": "deep_research",
-      "name": "Vera's \u2014 $1 oysters",
-      "description": "Union Square. $1 oysters, Tuesday \u2013 Sunday, 5:00 PM - 6:00 PM.",
-      "url": "",
-      "start": "",
-      "venue": "Vera's",
-      "address": "Union Square",
-      "score": 10,
-      "reason": "Dollar oysters 5+ days per week, 1-hour evening window"
-    },
-    {
-      "source": "deep_research",
-      "name": "La Brasa \u2014 $1 oysters",
-      "description": "East Somerville. $1 oysters, Daily, 5:00 PM - 6:00 PM.",
-      "url": "",
-      "start": "",
-      "venue": "La Brasa",
-      "address": "East Somerville",
-      "score": 10,
-      "reason": "Dollar oysters daily, 1-hour evening happy hour"
-    },
-    {
-      "source": "deep_research",
-      "name": "Legal Sea Foods \u2014 $1 oysters",
-      "description": "Chestnut Hill (Brookline border). $1 oysters, Daily, 3:00 PM - 6:00 PM (Dine-in bar area only).",
-      "url": "",
-      "start": "",
-      "venue": "Legal Sea Foods",
-      "address": "Chestnut Hill (Brookline border)",
-      "score": 10,
-      "reason": "Dollar oysters daily, 3-hour window, established chain venue"
-    },
-    {
-      "source": "known_venue",
-      "name": "Island Creek Oyster Bar \u2014 $1 oysters at the bar, select hours",
-      "description": "Kenmore. Standing deal: $1 oysters at the bar, select hours",
-      "url": "https://islandcreekoysters.com/pages/boston",
-      "start": "",
-      "venue": "Island Creek Oyster Bar",
-      "address": "Kenmore",
-      "score": 9,
-      "reason": "Dollar oysters at the bar at upscale Island Creek Oyster Bar"
-    },
-    {
-      "source": "known_venue",
-      "name": "Row 34 \u2014 Dollar oysters Mon\u2013Wed 5\u20136pm",
-      "description": "Fort Point. Standing deal: Dollar oysters Mon\u2013Wed 5\u20136pm",
-      "url": "https://www.row34.com",
-      "start": "",
-      "venue": "Row 34",
-      "address": "Fort Point",
-      "score": 9,
-      "reason": "Dollar oysters Mon\u2013Wed 5\u20136pm at respected Fort Point seafood spot"
-    },
-    {
-      "source": "known_venue",
-      "name": "Woods Hill Pier 4 \u2014 Dollar oysters Mon\u2013Wed 5\u20136pm",
-      "description": "Seaport. Standing deal: Dollar oysters Mon\u2013Wed 5\u20136pm",
-      "url": "https://www.woodshillpier4.com",
-      "start": "",
-      "venue": "Woods Hill Pier 4",
-      "address": "Seaport",
-      "score": 9,
-      "reason": "Dollar oysters Mon\u2013Wed 5\u20136pm at upscale Woods Hill Pier 4"
-    },
-    {
-      "source": "deep_research",
-      "name": "Rochambeau \u2014 $1 oysters",
-      "description": "Back Bay. $1 oysters, Daily, 3:00 PM - 6:00 PM.",
-      "url": "",
-      "start": "",
-      "venue": "Rochambeau",
-      "address": "Back Bay",
-      "score": 9,
-      "reason": "Dollar oysters daily 3\u20136pm at Back Bay's Rochambeau"
-    },
-    {
-      "source": "deep_research",
-      "name": "Citizen Public House \u2014 $1 oysters",
-      "description": "Fenway. $1 oysters, Monday \u2013 Saturday, 4:00 PM - 2:00 AM.",
-      "url": "",
-      "start": "",
-      "venue": "Citizen Public House",
-      "address": "Fenway",
-      "score": 9,
-      "reason": "Dollar oysters Mon\u2013Sat 4pm\u20132am at Citizen Public House Fenway"
-    },
-    {
-      "source": "deep_research",
-      "name": "Trillium Brewing Co. \u2014 $1 oysters",
-      "description": "Fort Point. $1 oysters, Monday \u2013 Friday, 2:00 PM - 4:00 PM.",
-      "url": "",
-      "start": "",
-      "venue": "Trillium Brewing Co.",
-      "address": "Fort Point",
-      "score": 9,
-      "reason": "Dollar oysters, weekday afternoon happy hour, 2-hour window"
-    },
-    {
-      "source": "deep_research",
-      "name": "The Independent \u2014 $1 oysters",
-      "description": "Union Square. $1 oysters, Mondays, 4:00 PM - 10:00 PM.",
-      "url": "",
-      "start": "",
-      "venue": "The Independent",
-      "address": "Union Square",
-      "score": 9,
-      "reason": "Dollar oysters Mondays, extended 6-hour window"
-    },
-    {
-      "source": "deep_research",
-      "name": "Thirsty Scholar Pub \u2014 $1 oysters",
-      "description": "Somerville (Teele Sq area). $1 oysters, Tuesdays, 4:00 PM until sold out.",
-      "url": "",
-      "start": "",
-      "venue": "Thirsty Scholar Pub",
-      "address": "Somerville (Teele Sq area)",
-      "score": 9,
-      "reason": "Dollar oysters Tuesdays, sold out basis indicates value"
-    },
-    {
-      "source": "known_venue",
-      "name": "Russell House Tavern \u2014 $1 oysters 9\u201310pm Sun & Mon",
-      "description": "Harvard Square. Standing deal: $1 oysters 9\u201310pm Sun & Mon",
-      "url": "https://www.russellhouserestaurant.com",
-      "start": "",
-      "venue": "Russell House Tavern",
-      "address": "Harvard Square",
-      "score": 8,
-      "reason": "Dollar oysters 9\u201310pm Sun & Mon at Harvard Square tavern"
-    },
-    {
-      "source": "known_venue",
-      "name": "Legal Sea Foods Long Wharf \u2014 $1 oysters daily 3-6pm (bar area only)",
-      "description": "Downtown/Waterfront. Standing deal: $1 oysters daily 3-6pm (bar area only)",
-      "url": "https://www.legalseafoods.com/restaurants/boston-long-wharf",
-      "start": "",
-      "venue": "Legal Sea Foods Long Wharf",
-      "address": "Downtown/Waterfront",
-      "score": 8,
-      "reason": "Dollar oysters daily 3\u20136pm at Legal Sea Foods Long Wharf"
-    },
-    {
-      "source": "known_venue",
-      "name": "Legal Sea Foods Prudential \u2014 $1 oysters daily 3-6pm (bar area only)",
-      "description": "Back Bay. Standing deal: $1 oysters daily 3-6pm (bar area only)",
-      "url": "https://www.legalseafoods.com/restaurants/boston-prudential-center",
-      "start": "",
-      "venue": "Legal Sea Foods Prudential",
-      "address": "Back Bay",
-      "score": 8,
-      "reason": "Dollar oysters daily 3\u20136pm at Legal Sea Foods Prudential"
-    },
-    {
-      "source": "deep_research",
-      "name": "Fin Point Oyster Bar + Grille \u2014 $1 oysters",
-      "description": "Financial District. $1 oysters, Thursday \u2013 Sunday, 2:00 PM - 5:00 PM.",
-      "url": "",
-      "start": "",
-      "venue": "Fin Point Oyster Bar + Grille",
-      "address": "Financial District",
-      "score": 8,
-      "reason": "Dollar oysters Thu\u2013Sun 2\u20135pm at Fin Point Oyster Bar"
-    },
-    {
-      "source": "deep_research",
-      "name": "State Street Provisions \u2014 $1 oysters",
-      "description": "Downtown/Waterfront. $1 oysters, Monday \u2013 Friday, 3:00 PM - 5:00 PM.",
-      "url": "",
-      "start": "",
-      "venue": "State Street Provisions",
-      "address": "Downtown/Waterfront",
-      "score": 8,
-      "reason": "Dollar oysters Mon\u2013Fri 3\u20135pm at State Street Provisions"
-    },
-    {
-      "source": "deep_research",
-      "name": "The Merchant \u2014 $1 oysters",
-      "description": "Downtown. $1 oysters, Monday & Friday, 4:00 PM - 7:00 PM.",
-      "url": "",
-      "start": "",
-      "venue": "The Merchant",
-      "address": "Downtown",
-      "score": 8,
-      "reason": "Dollar oysters Mon & Fri 4\u20137pm at The Merchant"
-    },
-    {
-      "source": "deep_research",
-      "name": "The Bosworth \u2014 $1 oysters",
-      "description": "Downtown. $1 oysters, Daily, starting at 5:00 PM (while supplies last).",
-      "url": "",
-      "start": "",
-      "venue": "The Bosworth",
-      "address": "Downtown",
-      "score": 8,
-      "reason": "Dollar oysters daily from 5pm at The Bosworth"
-    },
-    {
-      "source": "deep_research",
-      "name": "Joe's Waterfront \u2014 $1 oysters",
-      "description": "Downtown/Waterfront. $1 oysters, Daily, 5:00 PM to close (Seasonal through March).",
-      "url": "",
-      "start": "",
-      "venue": "Joe's Waterfront",
-      "address": "Downtown/Waterfront",
-      "score": 8,
-      "reason": "Dollar oysters daily 5pm\u2013close (seasonal) at Joe's Waterfront"
-    },
-    {
-      "source": "deep_research",
-      "name": "Bostonia Public House \u2014 $1 oysters",
-      "description": "Financial District. $1 oysters, Monday \u2013 Friday, 3:00 PM - 6:00 PM.",
-      "url": "",
-      "start": "",
-      "venue": "Bostonia Public House",
-      "address": "Financial District",
-      "score": 8,
-      "reason": "Dollar oysters Mon\u2013Fri 3\u20136pm at Bostonia Public House"
-    },
-    {
-      "source": "deep_research",
-      "name": "Carrie Nation Cocktail Club \u2014 $1 oysters",
-      "description": "Beacon Hill. $1 oysters, Tuesday \u2013 Thursday, 4:00 PM - 7:00 PM.",
-      "url": "",
-      "start": "",
-      "venue": "Carrie Nation Cocktail Club",
-      "address": "Beacon Hill",
-      "score": 8,
-      "reason": "Dollar oysters Tue\u2013Thu 4\u20137pm at Carrie Nation Cocktail Club"
-    },
-    {
-      "source": "deep_research",
-      "name": "Bootleg Special \u2014 $1 oysters",
-      "description": "Back Bay. $1 oysters, Thursdays 5:00-10:00 PM; Fri-Sat late-night 10:00 PM.",
-      "url": "",
-      "start": "",
-      "venue": "Bootleg Special",
-      "address": "Back Bay",
-      "score": 8,
-      "reason": "Dollar oysters Thu 5\u201310pm and Fri\u2013Sat late-night at Bootleg Special"
-    },
-    {
-      "source": "deep_research",
-      "name": "Sonsie \u2014 $1 oysters",
-      "description": "Back Bay. $1 oysters, Wednesday \u2013 Sunday, 3:00 PM - 4:00 PM.",
-      "url": "",
-      "start": "",
-      "venue": "Sonsie",
-      "address": "Back Bay",
-      "score": 8,
-      "reason": "Dollar oysters Wed\u2013Sun 3\u20134pm at Sonsie"
-    },
-    {
-      "source": "deep_research",
-      "name": "Limani \u2014 $1 oysters",
-      "description": "Seaport. $1 oysters, Monday \u2013 Friday, 4:00 PM - 6:00 PM.",
-      "url": "",
-      "start": "",
-      "venue": "Limani",
-      "address": "Seaport",
-      "score": 8,
-      "reason": "Dollar oysters Mon\u2013Fri 4\u20136pm at Limani Seaport"
-    },
-    {
-      "source": "deep_research",
-      "name": "Matria \u2014 $1 oysters",
-      "description": "Seaport. $1 oysters, Thursdays, 4:00 PM - 7:00 PM.",
-      "url": "",
-      "start": "",
-      "venue": "Matria",
-      "address": "Seaport",
-      "score": 8,
-      "reason": "Dollar oysters Thu 4\u20137pm at Matria Seaport"
-    },
-    {
-      "source": "deep_research",
-      "name": "Lincoln Tavern & Restaurant \u2014 $1 oysters & $1 shrimp",
-      "description": "South Boston. $1 oysters & $1 shrimp, Tuesdays, 10:00 AM - 10:00 PM (Summer Fri 1-4 PM).",
-      "url": "",
-      "start": "",
-      "venue": "Lincoln Tavern & Restaurant",
-      "address": "South Boston",
-      "score": 8,
-      "reason": "Dollar oysters Tue 10am\u201310pm (summer Fri 1\u20134pm) at Lincoln Tavern"
-    },
-    {
-      "source": "deep_research",
-      "name": "Loco Taqueria & Oyster Bar \u2014 $1 oysters",
-      "description": "South Boston. $1 oysters, Mondays, 11:00 AM - 12:30 AM.",
-      "url": "",
-      "start": "",
-      "venue": "Loco Taqueria & Oyster Bar",
-      "address": "South Boston",
-      "score": 8,
-      "reason": "Dollar oysters all-day Monday at Loco Taqueria & Oyster Bar"
-    },
-    {
-      "source": "deep_research",
-      "name": "The Broadway \u2014 $1 oysters",
-      "description": "South Boston. $1 oysters, Wednesdays 11:30 AM - 1:00 AM; Daily 2:00 PM - 6:00 PM.",
-      "url": "",
-      "start": "",
-      "venue": "The Broadway",
-      "address": "South Boston",
-      "score": 8,
-      "reason": "Dollar oysters Wed 11:30am\u20131am and daily 2\u20136pm at The Broadway"
-    },
-    {
-      "source": "deep_research",
-      "name": "Publico Street Bistro & Garden \u2014 $1 oysters & shrimp",
-      "description": "South Boston. $1 oysters & shrimp, Mondays & Tuesdays, 11:00 AM to close (or until sold out); Thursdays.",
-      "url": "",
-      "start": "",
-      "venue": "Publico Street Bistro & Garden",
-      "address": "South Boston",
-      "score": 8,
-      "reason": "Dollar oysters & shrimp Mon\u2013Tue and Thu at Publico Street Bistro"
-    },
-    {
-      "source": "deep_research",
-      "name": "Ilona \u2014 $1 oysters",
-      "description": "South End. $1 oysters, Thursdays 5:00 PM - 1:00 AM; Fri-Sat 4:00 PM - 7:00 PM.",
-      "url": "",
-      "start": "",
-      "venue": "Ilona",
-      "address": "South End",
-      "score": 8,
-      "reason": "Dollar oysters Thu 5pm\u20131am and Fri\u2013Sat 4\u20137pm at Ilona"
-    },
-    {
-      "source": "deep_research",
-      "name": "Petit Robert Bistro \u2014 $1 oysters (limit 16 pp)",
-      "description": "South End. $1 oysters (limit 16 pp), Monday \u2013 Thursday, 3:00 PM - 6:00 PM.",
-      "url": "",
-      "start": "",
-      "venue": "Petit Robert Bistro",
-      "address": "South End",
-      "score": 8,
-      "reason": "Dollar oysters (limit 16pp) Mon\u2013Thu 3\u20136pm at Petit Robert Bistro"
-    },
-    {
-      "source": "deep_research",
-      "name": "Yellow Door Taqueria \u2014 $1 oysters",
-      "description": "South End / Dorchester. $1 oysters, Sundays, 12:00 PM until sold out (\"Shuck It Sundays\").",
-      "url": "",
-      "start": "",
-      "venue": "Yellow Door Taqueria",
-      "address": "South End / Dorchester",
-      "score": 8,
-      "reason": "Dollar oysters Sundays until sold out at Yellow Door Taqueria"
-    },
-    {
-      "source": "deep_research",
-      "name": "Rail Stop \u2014 $1 oysters",
-      "description": "Brighton. $1 oysters, Monday \u2013 Friday, 3:00 PM - 6:00 PM.",
-      "url": "",
-      "start": "",
-      "venue": "Rail Stop",
-      "address": "Brighton",
-      "score": 8,
-      "reason": "Dollar oysters Mon\u2013Fri 3\u20136pm at Rail Stop Brighton"
-    },
-    {
-      "source": "deep_research",
-      "name": "Warren Tavern \u2014 $1 oysters",
-      "description": "Charlestown. $1 oysters, Monday \u2013 Friday, 3:00 PM - 6:00 PM.",
-      "url": "",
-      "start": "",
-      "venue": "Warren Tavern",
-      "address": "Charlestown",
-      "score": 8,
-      "reason": "Dollar oysters Mon\u2013Fri 3\u20136pm at Warren Tavern Charlestown"
-    },
-    {
-      "source": "deep_research",
-      "name": "Tradesman \u2014 $1 Duxbury oysters",
-      "description": "Charlestown. $1 Duxbury oysters, Saturday & Sunday, 11:00 AM - 3:00 PM.",
-      "url": "",
-      "start": "",
-      "venue": "Tradesman",
-      "address": "Charlestown",
-      "score": 8,
-      "reason": "Dollar Duxbury oysters Sat\u2013Sun 11am\u20133pm at Tradesman"
-    },
-    {
-      "source": "deep_research",
-      "name": "Monument Restaurant \u2014 $1 oysters",
-      "description": "Charlestown. $1 oysters, Mondays, 11:30 AM - 11:00 PM.",
-      "url": "",
-      "start": "",
-      "venue": "Monument Restaurant",
-      "address": "Charlestown",
-      "score": 8,
-      "reason": "Dollar oysters all-day Monday at Monument Restaurant"
-    },
-    {
-      "source": "deep_research",
-      "name": "Savin Bar and Kitchen \u2014 $1 oysters (Call to confirm)",
-      "description": "Dorchester. $1 oysters (Call to confirm), Monday \u2013 Friday, 4:00 PM - 6:00 PM.",
-      "url": "",
-      "start": "",
-      "venue": "Savin Bar and Kitchen",
-      "address": "Dorchester",
-      "score": 8,
-      "reason": "Dollar oysters Mon\u2013Fri 4\u20136pm at Savin Bar and Kitchen"
-    },
-    {
-      "source": "deep_research",
-      "name": "Waypoint \u2014 $2 oysters (Discounted)",
-      "description": "Harvard/Central. $2 oysters (Discounted), Tuesday \u2013 Saturday, 5:00 PM to close.",
-      "url": "",
-      "start": "",
-      "venue": "Waypoint",
-      "address": "Harvard/Central",
-      "score": 8,
-      "reason": "Discounted $2 oysters, 5+ days per week, evening deal"
-    },
-    {
-      "source": "deep_research",
-      "name": "Punch Bowl \u2014 $1.25 oysters",
-      "description": "Brookline Village. $1.25 oysters, Daily, 3:00 PM - 5:00 PM.",
-      "url": "",
-      "start": "",
-      "venue": "Punch Bowl",
-      "address": "Brookline Village",
-      "score": 8,
-      "reason": "Near-dollar oysters ($1.25) daily, 2-hour afternoon window"
-    },
-    {
-      "source": "deep_research",
-      "name": "Alcove \u2014 $1 oysters (with beverage purchase)",
-      "description": "West End. $1 oysters (with beverage purchase), Monday \u2013 Friday, 3:00 PM - 5:00 PM.",
-      "url": "",
-      "start": "",
-      "venue": "Alcove",
-      "address": "West End",
-      "score": 7,
-      "reason": "Dollar oysters (with beverage purchase) Mon\u2013Fri 3\u20135pm at Alcove"
-    },
-    {
-      "source": "deep_research",
-      "name": "Rebel's Guild \u2014 $1 oysters (Bar only)",
-      "description": "Back Bay. $1 oysters (Bar only), Tuesdays, 5:00 PM until sold out.",
-      "url": "",
-      "start": "",
-      "venue": "Rebel's Guild",
-      "address": "Back Bay",
-      "score": 7,
-      "reason": "Dollar oysters at bar Tuesdays until sold out at Rebel's Guild"
-    },
-    {
-      "source": "deep_research",
-      "name": "Woods Hill Pier \u2014 $1 oysters (Bar only, limit 1 dozen)",
-      "description": "Seaport. $1 oysters (Bar only, limit 1 dozen), Sunday & Monday, 5:00 PM - 10:00 PM.",
-      "url": "",
-      "start": "",
-      "venue": "Woods Hill Pier",
-      "address": "Seaport",
-      "score": 7,
-      "reason": "Dollar oysters (bar only, limit 1 dozen) Sun & Mon 5\u201310pm at Woods Hill Pier"
-    },
-    {
-      "source": "deep_research",
-      "name": "Gray's Hall \u2014 $1 oysters",
-      "description": "South Boston. $1 oysters, Tuesdays, open until sold out.",
-      "url": "",
-      "start": "",
-      "venue": "Gray's Hall",
-      "address": "South Boston",
-      "score": 7,
-      "reason": "Dollar oysters Tuesdays until sold out at Gray's Hall"
-    },
-    {
-      "source": "deep_research",
-      "name": "Prezza \u2014 $1 oysters (with beverage or app purchase)",
-      "description": "North End. $1 oysters (with beverage or app purchase), Daily, 4:00 PM - 5:00 PM.",
-      "url": "",
-      "start": "",
-      "venue": "Prezza",
-      "address": "North End",
-      "score": 7,
-      "reason": "Dollar oysters (with beverage or app) daily 4\u20135pm at Prezza"
-    },
-    {
-      "source": "deep_research",
-      "name": "Summer Shack \u2014 $2 oysters (Discounted)",
-      "description": "Cambridge (Alewife). $2 oysters (Discounted), Daily, all day.",
-      "url": "",
-      "start": "",
-      "venue": "Summer Shack",
-      "address": "Cambridge (Alewife)",
-      "score": 7,
-      "reason": "Discounted $2 oysters all day, daily availability"
-    }
-  ],
+  "oyster_deals": [],
   "hot_restaurants": {
     "updated": "2026-03-28T18:37:22.235423",
     "restaurants": [
@@ -1571,93 +733,10 @@
     ]
   },
   "costs": {
-    "week": 1.1473,
+    "week": 0,
     "month": 1.2739,
     "total": 1.2739,
     "runs": [
-      {
-        "ts": "2026-03-28T08:09:45.907302",
-        "events_total": 752,
-        "events_cached": 109,
-        "events_scored": 501,
-        "cost_usd": 0.141848,
-        "duration_ms": 143884,
-        "models": {
-          "claude-haiku-4-5-20251001": 0.141848
-        },
-        "deploy_why": "run",
-        "netlify": {
-          "total": 1000,
-          "used": null,
-          "remaining": null,
-          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
-        },
-        "efficiency": {
-          "cache_hit_rate": 0.179,
-          "avg_hit_rate": 0.419,
-          "cost_per_scored_event": 0.00028,
-          "notes": [
-            "Cache 18% hit (109 cached, 501 scored) \u2014 many new events, normal on first daily run",
-            "High scoring volume (501 scored) \u2014 consider raising min_score to cut costs",
-            "High cost $0.1418 \u2014 check for new uncached scrape_url sources burning tokens",
-            "Cache hit rate 18% vs recent avg 42% (109 cached / 501 scored) \u2014 possible new sources added or score cache cleared"
-          ]
-        }
-      },
-      {
-        "ts": "2026-03-28T08:13:59.426222",
-        "events_total": 752,
-        "events_cached": 49,
-        "events_scored": 567,
-        "cost_usd": 0.065643,
-        "duration_ms": 71579,
-        "models": {
-          "claude-haiku-4-5-20251001": 0.065643
-        },
-        "deploy_why": "run",
-        "netlify": {
-          "total": 1000,
-          "used": null,
-          "remaining": null,
-          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
-        },
-        "efficiency": {
-          "cache_hit_rate": 0.08,
-          "avg_hit_rate": 0.255,
-          "cost_per_scored_event": 0.00012,
-          "notes": [
-            "Cache 8% hit (49 cached, 567 scored) \u2014 many new events, normal on first daily run",
-            "High scoring volume (567 scored) \u2014 consider raising min_score to cut costs"
-          ]
-        }
-      },
-      {
-        "ts": "2026-03-28T08:16:09.535589",
-        "events_total": 752,
-        "events_cached": 0,
-        "events_scored": 829,
-        "cost_usd": 0.079076,
-        "duration_ms": 85326,
-        "models": {
-          "claude-haiku-4-5-20251001": 0.079076
-        },
-        "deploy_why": "run",
-        "netlify": {
-          "total": 1000,
-          "used": null,
-          "remaining": null,
-          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
-        },
-        "efficiency": {
-          "cache_hit_rate": 0.0,
-          "avg_hit_rate": 0.16,
-          "cost_per_scored_event": 0.0001,
-          "notes": [
-            "Cache 0% hit (0 cached, 829 scored) \u2014 many new events, normal on first daily run",
-            "High scoring volume (829 scored) \u2014 consider raising min_score to cut costs"
-          ]
-        }
-      },
       {
         "ts": "2026-03-29T08:12:23.161245",
         "persona": "brian",
@@ -1739,19 +818,105 @@
             "High scoring volume (372 scored) \u2014 consider raising min_score to cut costs"
           ]
         }
+      },
+      {
+        "ts": "2026-03-29T08:17:56.289459",
+        "persona": "kirk",
+        "events_total": 804,
+        "events_cached": 5,
+        "events_scored": 372,
+        "cost_usd": 0,
+        "duration_ms": 0,
+        "models": {},
+        "source_counts": {
+          "Eventbrite": 2,
+          "luma": 3
+        },
+        "deploy_why": "run",
+        "netlify": {
+          "total": 1000,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.013,
+          "avg_hit_rate": 0.154,
+          "cost_per_scored_event": 0.0,
+          "notes": [
+            "Cache 1% hit (5 cached, 372 scored) \u2014 many new events, normal on first daily run",
+            "High scoring volume (372 scored) \u2014 consider raising min_score to cut costs"
+          ]
+        }
+      },
+      {
+        "ts": "2026-03-30T08:12:36.246904",
+        "persona": "brian",
+        "events_total": 754,
+        "events_cached": 133,
+        "events_scored": 163,
+        "cost_usd": 0,
+        "duration_ms": 0,
+        "models": {},
+        "source_counts": {
+          "Eventbrite": 26,
+          "allevents": 2,
+          "do617": 25,
+          "Meetup": 4,
+          "luma": 3,
+          "ticketmaster": 1,
+          "Boston Calendar": 12
+        },
+        "deploy_why": "run",
+        "netlify": {
+          "total": 1000,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.449,
+          "avg_hit_rate": 0.121,
+          "cost_per_scored_event": 0.0,
+          "notes": [
+            "Cache 45% hit (133 cached, 163 scored) \u2014 many new events, normal on first daily run"
+          ]
+        }
+      },
+      {
+        "ts": "2026-03-30T08:13:10.606961",
+        "persona": "chloe",
+        "events_total": 754,
+        "events_cached": 66,
+        "events_scored": 338,
+        "cost_usd": 0,
+        "duration_ms": 0,
+        "models": {},
+        "source_counts": {
+          "Eventbrite": 3,
+          "do617": 28,
+          "ticketmaster": 1,
+          "Boston Calendar": 12
+        },
+        "deploy_why": "run",
+        "netlify": {
+          "total": 1000,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.163,
+          "avg_hit_rate": 0.195,
+          "cost_per_scored_event": 0.0,
+          "notes": [
+            "Cache 16% hit (66 cached, 338 scored) \u2014 many new events, normal on first daily run",
+            "High scoring volume (338 scored) \u2014 consider raising min_score to cut costs"
+          ]
+        }
       }
     ],
     "netlify": "1000 credit pack \u2014 check balance at app.netlify.com/billing"
   },
   "sources": {
-    "Eventbrite": 7,
-    "Liberty Hotel events": 8,
-    "Boston Fashion Week": 1,
-    "do617": 34,
-    "Mass Fashion Week": 1,
+    "Eventbrite": 3,
+    "do617": 28,
     "ticketmaster": 1,
-    "Boston Calendar": 10,
-    "MassRobotics events": 1
+    "Boston Calendar": 12
   },
   "source_urls": {
     "do617": "https://do617.com/events/food-drink",
@@ -1805,13 +970,9 @@
     "Venture Lane events": "https://www.venturelane.co/events"
   },
   "source_stats": {
-    "Eventbrite": 7,
-    "Liberty Hotel events": 8,
-    "Boston Fashion Week": 1,
-    "do617": 34,
-    "Mass Fashion Week": 1,
+    "Eventbrite": 3,
+    "do617": 28,
     "ticketmaster": 1,
-    "Boston Calendar": 10,
-    "MassRobotics events": 1
+    "Boston Calendar": 12
   }
 }
