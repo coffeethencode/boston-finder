@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-03-30T08:13:32.639770",
-  "today": "2026-03-30",
+  "generated_at": "2026-03-31T08:34:51.813502",
+  "today": "2026-03-31",
   "days": 7,
   "persona": "chloe",
   "persona_prompt": "You are filtering Boston events for Chloe, who wants upscale, interesting things to do in Boston.\nShe loves:\n- Art: gallery openings, museum events, art shows, artist talks, art fairs, photography exhibits, sculpture\n- Food & drink: wine tastings, wine dinners, chef's table experiences, cocktail classes, food festivals, upscale restaurant events, mixology\n- Fancy experiences: galas, benefit dinners, charity auctions, cultural receptions, film premieres, theater openings\n- Design, fashion, and aesthetics \u2014 runway shows, trunk shows, luxury boutique events, bridal showcases, couture\n- Wellness and beauty events that are upscale (spa launches, product launches, brand events)\n- Sip-and-craft events (sip & paint, pottery, floral arranging) \u2014 she likes these IF the crowd seems upscale or scene-y; skip if it reads as basic/suburban\n- Anything cultured, beautiful, or scene-y\n- Asian cultural events are great (she is Chinese and appreciates these)\n\nSCORE 9-10 (must attend):\n- \"Fashionably LATE\" Thursdays at The Liberty Hotel \u2014 weekly interactive runway with models weaving through the crowd, free admission, scene-y crowd\n- Boston Fashion Week (Oct 2026) events, especially luxury eveningwear, couture, and accessory showcases\n- Boston En Vogue \u2014 luxury gown and couture runway shows\n- Trunk shows at luxury boutiques (Galia Lahav bridal, Agent Provocateur, Newbury St boutiques)\n- SwimBoston \u2014 annual swimwear/bikini runway at Boston Harbor Distillery\n- Any event at a Newbury St boutique, Back Bay gallery, or luxury hotel\n- Museum opening receptions with cocktails or wine \u2014 Harvard Art Museums, MFA, ICA, Gardner \u2014 the \"art party\" type evening where the crowd is cultured and interesting, not just a museum visit\n- University arts/cultural events at Harvard, MIT, BU that are open to the public and have a reception component\n\nLower priority for her:\n- Pure civic/government/policy events (unless they're glamorous)\n- Sports\n- Basic networking mixers with no food/drink/art angle\n- Sip-and-craft events at chain venues or with a generic/tourist vibe (score \u2264 4)",
@@ -69,18 +69,6 @@
     },
     {
       "source": "do617:concerts",
-      "name": "Lady Gaga",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/30/lady-gaga-tickets",
-      "start": "2026-03-30T20:00",
-      "venue": "TD Garden",
-      "address": "",
-      "score": 8,
-      "reason": "Lady Gaga concert\u2014iconic pop/performance artist known for elaborate, scene-y productions and fashion-forward aesthetics. High-energy cultural event.",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
       "name": "The Peking Acrobats",
       "description": "",
       "url": "https://do617.com/events/2026/4/2/the-peking-acrobats-tickets",
@@ -89,18 +77,6 @@
       "address": "",
       "score": 8,
       "reason": "The Peking Acrobats \u2014 Asian cultural performance, upscale and beautiful; Chloe is Chinese and appreciates Asian cultural events",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Jazz Dinner w/ Jordan Gravel!",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/30/jazz-dinner-w-jordan-gravel-tickets",
-      "start": "2026-03-30T19:00",
-      "venue": "Gulu-Gulu Cafe",
-      "address": "",
-      "score": 7,
-      "reason": "Jazz dinner with live music and food \u2014 upscale dining experience Chloe enjoys",
       "_proximity": 3
     },
     {
@@ -125,42 +101,6 @@
       "address": "",
       "score": 7,
       "reason": "Sofar Sounds concert \u2014 intimate, curated music experience with upscale positioning and cultural appeal",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Elements of Cinema: The Spirit of the Beehive",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/30/elements-of-cinema-the-spirit-of-the-beehive-tickets",
-      "start": "2026-03-30T18:00",
-      "venue": "The Brattle Theatre",
-      "address": "",
-      "score": 7,
-      "reason": "Film screening and analysis \u2014 cinematic/cultural programming, educational art-focused event",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Good Writing: An Evening with Anne Lamott & Neal Allen",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/30/good-writing-an-evening-with-anne-lamott-neal-allen-tickets",
-      "start": "2026-03-30T19:30",
-      "venue": "Emerson Colonial Theatre",
-      "address": "",
-      "score": 7,
-      "reason": "Author event with Anne Lamott \u2014 literary, cultured gathering with respected writer",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Unfolding: A Solo Exhibition by Amaliia Prysmerk",
-      "description": "",
-      "url": "https://do617.com/events/2026/3/30/unfolding-a-solo-exhibition-by-amaliia-prysmerk-tickets",
-      "start": "2026-03-30T07:00",
-      "venue": "South Crackatorium",
-      "address": "",
-      "score": 7,
-      "reason": "Solo art exhibition \u2014 aligns with Chloe's love of gallery openings and art shows",
       "_proximity": 3
     },
     {
@@ -308,18 +248,6 @@
       "_proximity": 3
     },
     {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "SoWa APRIL FIRST FRIDAY // 2026 MFA THESIS // PART I",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/3/sowa-april-first-friday-2026-mfa-thesis-part-i-tickets",
-      "start": "2026-04-03T17:00",
-      "venue": "MassArt x SoWa Gallery",
-      "address": "",
-      "score": 7,
-      "reason": "SoWa First Friday with MFA thesis exhibition; combines art scene and gallery openings in Boston's art district",
-      "_proximity": 3
-    },
-    {
       "source": "do617:concerts",
       "name": "Gile Series: Ladysmith Black Mambazo",
       "description": "",
@@ -357,19 +285,6 @@
       "_proximity": 3
     },
     {
-      "source": "Eventbrite:boat+cruise",
-      "name": "Jared Sims and the Catalyst at The Mad Monkfish",
-      "description": "Jared Sims & The Catalyst bring groove-driven, fearless modern jazz to Monkfish on  April 2. Boston\u2019s Jazz Artist of the Year live!",
-      "url": "https://www.eventbrite.com/e/jared-sims-and-the-catalyst-at-the-mad-monkfish-tickets-1982389906575",
-      "start": "2026-04-02",
-      "venue": "The Mad Monkfish",
-      "address": "524 Massachusetts Avenue, Cambridge",
-      "score": 6,
-      "reason": "Jazz performance by acclaimed artist at established venue. Cultural, refined; good for an upscale evening out with great music.",
-      "_proximity": 5,
-      "price": "$13"
-    },
-    {
       "source": "do617:film-theatre-performing-arts",
       "name": "Jade Song with Nina Haines: I Love You Don't Die",
       "description": "",
@@ -395,23 +310,23 @@
     },
     {
       "source": "Boston Calendar",
-      "name": "Spring Workshop: Expressive Animals in Watercolor",
+      "name": "Wine Dinners at Forage",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/spring-workshop-expressive-animals-in-watercolor",
-      "start": "2026-03-30",
-      "date": "2026-03-30",
+      "url": "https://www.thebostoncalendar.com/events/wine-dinners-at-forage--24",
+      "start": "2026-03-31",
+      "date": "2026-03-31",
       "venue": "",
       "address": "",
-      "score": 1,
+      "score": 2,
       "reason": ""
     },
     {
       "source": "Boston Calendar",
-      "name": "$1 Oysters at Loco Taqueria &amp; Oyster Bar",
+      "name": "$1 Oysters at Lincoln Tavern &amp; Restaurant",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/1-oysters-at-loco-taqueria-oyster-bar--163",
-      "start": "2026-03-30",
-      "date": "2026-03-30",
+      "url": "https://www.thebostoncalendar.com/events/1-oysters-at-lincoln-tavern-restaurant--114",
+      "start": "2026-03-31",
+      "date": "2026-03-31",
       "venue": "",
       "address": "",
       "score": 1,
@@ -421,9 +336,9 @@
       "source": "Boston Calendar",
       "name": "Painted Burro Waltham- Happy Hour Deals!",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/painted-burro-waltham-weekly-happy-hour-deals--9",
-      "start": "2026-03-30",
-      "date": "2026-03-30",
+      "url": "https://www.thebostoncalendar.com/events/painted-burro-waltham-weekly-happy-hour-deals--57",
+      "start": "2026-03-31",
+      "date": "2026-03-31",
       "venue": "",
       "address": "",
       "score": 1,
@@ -431,11 +346,11 @@
     },
     {
       "source": "Boston Calendar",
-      "name": "$1 Oysters at The Independent",
+      "name": "Two&#39;sDay Night Dinner Date",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/1-oysters-at-the-independent--117",
-      "start": "2026-03-30",
-      "date": "2026-03-30",
+      "url": "https://www.thebostoncalendar.com/events/two-sday-night-dinner-date--10",
+      "start": "2026-03-31",
+      "date": "2026-03-31",
       "venue": "",
       "address": "",
       "score": 1,
@@ -443,47 +358,11 @@
     },
     {
       "source": "Boston Calendar",
-      "name": "$1 Oysters at Lower Mills Tavern",
+      "name": "$1 Oysters at Gray&#39;s Hall",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/1-oysters-at-lower-mills-tavern--163",
-      "start": "2026-03-30",
-      "date": "2026-03-30",
-      "venue": "",
-      "address": "",
-      "score": 1,
-      "reason": ""
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "So Close at Nook: $12 experimental cocktails",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/so-close--123",
-      "start": "2026-03-30",
-      "date": "2026-03-30",
-      "venue": "",
-      "address": "",
-      "score": 1,
-      "reason": ""
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "$1 Oysters in Downtown Boston",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/1-oysters-in-downtown-boston--17",
-      "start": "2026-03-30",
-      "date": "2026-03-30",
-      "venue": "",
-      "address": "",
-      "score": 1,
-      "reason": ""
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "GIRL DINNER!",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/girl-dinner--10",
-      "start": "2026-03-30",
-      "date": "2026-03-30",
+      "url": "https://www.thebostoncalendar.com/events/1-oysters-at-gray-s-hall--163",
+      "start": "2026-03-31",
+      "date": "2026-03-31",
       "venue": "",
       "address": "",
       "score": 1,
@@ -493,9 +372,9 @@
       "source": "Boston Calendar",
       "name": "Painted Burro Davis Square- Happy Hour Deals!",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/painted-burro-davis-square-happy-hour-deals--153",
-      "start": "2026-03-30",
-      "date": "2026-03-30",
+      "url": "https://www.thebostoncalendar.com/events/painted-burro-davis-square-happy-hour-deals--201",
+      "start": "2026-03-31",
+      "date": "2026-03-31",
       "venue": "",
       "address": "",
       "score": 1,
@@ -505,9 +384,9 @@
       "source": "Boston Calendar",
       "name": "Posto South End- Happy Hour Deals!",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/posto-south-end-happy-hour-deals--250",
-      "start": "2026-03-30",
-      "date": "2026-03-30",
+      "url": "https://www.thebostoncalendar.com/events/posto-south-end-happy-hour-deals--203",
+      "start": "2026-03-31",
+      "date": "2026-03-31",
       "venue": "",
       "address": "",
       "score": 1,
@@ -515,11 +394,11 @@
     },
     {
       "source": "Boston Calendar",
-      "name": "Mai Seaport Handroll Happy Hour Special",
+      "name": "Project STEP Honors Lecolion Washington at \u201cSTEP into Grace\u201d Fundraiser in Boston\u2019s Seaport",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/mai-seaport-handroll-happy-hour-special--3",
-      "start": "2026-03-30",
-      "date": "2026-03-30",
+      "url": "https://www.thebostoncalendar.com/events/project-step-honors-lecolion-washington-at-step-into-grace-fundraiser-in-boston-s-seaport",
+      "start": "2026-03-31",
+      "date": "2026-03-31",
       "venue": "",
       "address": "",
       "score": 1,
@@ -527,11 +406,35 @@
     },
     {
       "source": "Boston Calendar",
-      "name": "Stone Social Impact Forum \u2014 A Conversation with Tracy Palandjian on Investing in Opportunity.",
+      "name": "Pressed Flower Frame Workshop",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/stone-social-impact-forum-a-conversation-with-tracy-palandjian-on-investing-in-opportunity",
-      "start": "2026-03-30",
-      "date": "2026-03-30",
+      "url": "https://www.thebostoncalendar.com/events/pressed-flower-frame-workshop--12",
+      "start": "2026-03-31",
+      "date": "2026-03-31",
+      "venue": "",
+      "address": "",
+      "score": 1,
+      "reason": ""
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "Tequila Meets Asian Fusion for One-Night-Only Pairing Dinner at Karma Winchester",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/tequila-meets-asian-fusion-for-one-night-only-pairing-dinner-at-karma-winchester",
+      "start": "2026-03-31",
+      "date": "2026-03-31",
+      "venue": "",
+      "address": "",
+      "score": 1,
+      "reason": ""
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "Virtual Open House - School of Fashion Design",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/virtual-open-house-school-of-fashion-design--4",
+      "start": "2026-03-31",
+      "date": "2026-03-31",
       "venue": "",
       "address": "",
       "score": 1,
@@ -541,194 +444,29 @@
   "extra_events": [],
   "oyster_deals": [],
   "hot_restaurants": {
-    "updated": "2026-03-28T18:37:22.235423",
+    "updated": "2026-03-30T17:18:21.386295",
     "restaurants": [
       {
-        "name": "Fallow Kin",
-        "neighborhood": "Cambridge",
-        "editorial": "The owners of Tallula, Conor Dennehy and Danielle Ayer, and former Tasting Counter chef Marcos Sanchez finally opened their Cambridge restaurant in October 2025, taking over the former Craigie on Main space. The a la carte and chef's counter tasting menus explore New England cuisine with seasonal and New American angles, leaning heavily on vegetables; see: caramelized carrots paired with duck prosciutto and chicken with pumpkin mole. Out in the lounge, the kitchen is serving up a zero-waste menu, with dishes like duck wings and smoked fish terrine.",
+        "name": "Zuma",
+        "neighborhood": "Seaport",
+        "editorial": "High-energy Japanese izakaya in the Seaport. Known for a lively bar scene, beautiful room, and a crowd that dresses up. Popular for late dinner and drinks.",
+        "sources": [
+          "watchlist"
+        ],
+        "mentioned_nights": "Thursday, Friday",
+        "maps_hot_night": "Sunday",
+        "maps_hot_score": 80.8
+      },
+      {
+        "name": "Desnuda",
+        "neighborhood": "East Boston / Seaport",
+        "editorial": "Intimate raw bar and natural wine spot. Industry crowd, low-key cool. East Boston location and Seaport outpost.",
+        "sources": [
+          "watchlist"
+        ],
         "mentioned_nights": null,
-        "sources": [
-          "Eater Heatmap"
-        ],
-        "vibe": "Refined New England tasting counter, Cambridge fine dining",
-        "hot_night": null,
-        "hot_hours": null,
-        "crowd_type": "Food enthusiasts, date nights, fine dining regulars, industry crowd",
-        "buzz_score": 8,
-        "good_for_brian": false,
-        "good_for_chloe": true,
-        "note": "Pedigreed ownership (Tallula, Tasting Counter) and zero-waste lounge concept make this a destination restaurant with serious culinary credentials."
-      },
-      {
-        "name": "SJ's",
-        "neighborhood": "Leather District",
-        "editorial": "Chef Sarah Wade's third Boston restaurant, SJ's, is her new destination for funky comfort food, which just recently opened in November 2025 in the Leather District (near Chinatown). This means creative dishes with global influences, such as pork rillette macarons and confit rabbit leg with sal de gusano.",
-        "mentioned_nights": null,
-        "sources": [
-          "Eater Heatmap"
-        ],
-        "vibe": "Experimental comfort food hotspot, creative global cuisine",
-        "hot_night": null,
-        "hot_hours": null,
-        "crowd_type": "Food adventurers, Chef Sarah Wade followers, creative dining seekers",
-        "buzz_score": 7,
-        "good_for_brian": false,
-        "good_for_chloe": true,
-        "note": "Chef Sarah Wade's ambitious third venture serving inventive dishes like pork rillette macarons in newly opened Leather District location near Chinatown."
-      },
-      {
-        "name": "Si Cara South Boston",
-        "neighborhood": "South Boston",
-        "editorial": "Indulge in perfectly crispy chicken cutlets, soft canotto-style pizza, and natural wines at Si Cara's new location in South Boston, which opened in January. This spot is a departure from the original restaurant in Central Square. In addition to slinging pies in a more sophisticated setting, this location also has weekend brunch (a new venture for Si Cara) and a lower-level lounge that offers cocktails and bites in a moody ambiance. The music you're hearing in the lounge? Vinyl from chef/owner Michael Lombardi's personal collection.",
-        "mentioned_nights": "weekend",
-        "sources": [
-          "Eater Heatmap"
-        ],
-        "vibe": "Sophisticated wine bar with moody vinyl lounge, South Boston newcomer",
-        "hot_night": "weekend",
-        "hot_hours": null,
-        "crowd_type": "wine enthusiasts, date nights, design-conscious diners, industry crowd",
-        "buzz_score": 7,
-        "good_for_brian": false,
-        "good_for_chloe": true,
-        "note": "Chef/owner Michael Lombardi's personal vinyl collection and carefully curated natural wines elevate the experience beyond typical South Boston dining."
-      },
-      {
-        "name": "Ama",
-        "neighborhood": "Allston",
-        "editorial": "The team at Comfort Kitchen opened their newest (and biggest) venture, Ama, a globally-inspired restaurant paying homage to mothers, inside the Atlas Hotel in Allston in January. The cuisine is finding its footing, balancing the innovative global flavors that Comfort Kitchen is known for with the demands of a hotel restaurant. But the star-studded team, including the new additions of Birds of Paradise alums Jen LaForge and Will Isaza behind the bar, is one to watch.",
-        "mentioned_nights": null,
-        "sources": [
-          "Eater Heatmap"
-        ],
-        "vibe": "Ambitious global cuisine in sleek hotel dining room, Allston",
-        "hot_night": null,
-        "hot_hours": null,
-        "crowd_type": "Hotel guests, culinary adventurers, cocktail enthusiasts, industry insiders",
-        "buzz_score": 6,
-        "good_for_brian": true,
-        "good_for_chloe": true,
-        "note": "Star-studded bar program (Birds of Paradise alums) and globally-inspired cuisine from Comfort Kitchen team make this worth watching as it matures."
-      },
-      {
-        "name": "My Girl",
-        "neighborhood": "Financial District",
-        "editorial": "My Girl is a new, more grown-up cocktail lounge in the space of the former nightlife destination Mariel Underground, which opened in December 2025 underneath the ever-bustling Cuban restaurant Mariel in the Financial District. Inspired by 1950s Havana, the lounge offers craft cocktails, a curated menu of small bites, and, for those really ready to hit the town, bottle service.",
-        "mentioned_nights": null,
-        "sources": [
-          "Eater Heatmap"
-        ],
-        "vibe": "Sophisticated 1950s Havana-inspired cocktail lounge",
-        "hot_night": null,
-        "hot_hours": null,
-        "crowd_type": "Upscale professionals, cocktail enthusiasts, date nights",
-        "buzz_score": 6,
-        "good_for_brian": true,
-        "good_for_chloe": true,
-        "note": "Newly opened underground lounge with craft cocktails and retro Havana atmosphere offers an upscale alternative to the bustling restaurant above."
-      },
-      {
-        "name": "Holdfast Specialty Seafood Co.",
-        "neighborhood": "Allston",
-        "editorial": "Holdfast is an Allston hole-in-the-wall, casual seafood spot dishing out hot and cold lobster rolls, oyster and clam sandwiches, and fries served in special sauce, which opened in November 2025. The spot is co-owned by chefs Nathan Gould and Tyler Paolini (formerly of O Ya) with business partner Jesse Kim. Eat a savory sandwich standing at a counter after a night out or co-opt the large communal table for a lavish spread of oysters, yellowtail crudo, and caviar service with kettle chips.",
-        "mentioned_nights": null,
-        "sources": [
-          "Eater Heatmap"
-        ],
-        "vibe": "Casual seafood counter spot, post-night-out casual elegance",
-        "hot_night": null,
-        "hot_hours": null,
-        "crowd_type": "Late-night diners, oyster enthusiasts, industry insiders, casual luxury seekers",
-        "buzz_score": 6,
-        "good_for_brian": true,
-        "good_for_chloe": true,
-        "note": "New spot from O Ya alumni offering elevated casual seafood (lobster rolls, caviar service, yellowtail crudo) in a hole-in-the-wall format with communal dining."
-      },
-      {
-        "name": "Hawksmoor",
-        "neighborhood": "Fort Point",
-        "editorial": "With Sunday roasts and \"unbelievably cold\" martinis, can a new steakhouse break into Boston's crowded beef scene?",
-        "mentioned_nights": "Sunday",
-        "sources": [
-          "Boston Magazine"
-        ],
-        "vibe": "Upscale steakhouse with old-school cocktail sophistication",
-        "hot_night": "Sunday",
-        "hot_hours": null,
-        "crowd_type": "Affluent diners, special occasion crowds, cocktail enthusiasts",
-        "buzz_score": 6,
-        "good_for_brian": false,
-        "good_for_chloe": true,
-        "note": "London steakhouse pedigree brings refined beef-and-martini scene to Fort Point's industrial waterfront."
-      },
-      {
-        "name": "Willie's",
-        "neighborhood": "Beacon Hill",
-        "editorial": "From vodka-sauced, pepperoni-cup pizza to Korean-meets-Italian pasta at chef Jamie Bissonnette's new neighborhood spot in Boston.",
-        "mentioned_nights": null,
-        "sources": [
-          "Boston Magazine"
-        ],
-        "vibe": "Inventive neighborhood spot, fusion-forward pizza and pasta",
-        "hot_night": null,
-        "hot_hours": null,
-        "crowd_type": "Beacon Hill locals, food-focused diners, adventurous eaters",
-        "buzz_score": 6,
-        "good_for_brian": false,
-        "good_for_chloe": true,
-        "note": "Chef Jamie Bissonnette's creative Korean-Italian fusion and unconventional pepperoni-cup pizza warrant a visit for culinary experimentation."
-      },
-      {
-        "name": "Celine",
-        "neighborhood": "Fort Point",
-        "editorial": "The team behind South End favorites SRV and Baleia takes over the old Blue Dragon space around late summer.",
-        "mentioned_nights": null,
-        "sources": [
-          "Boston Magazine"
-        ],
-        "vibe": "Elevated Portuguese dining, Fort Point cool factor",
-        "hot_night": null,
-        "hot_hours": null,
-        "crowd_type": "SRV/Baleia loyalists, South End spillover, Portuguese food enthusiasts",
-        "buzz_score": 6,
-        "good_for_brian": true,
-        "good_for_chloe": true,
-        "note": "Proven operators (SRV, Baleia success) taking over prime Blue Dragon location with likely upscale Portuguese concept."
-      },
-      {
-        "name": "Third Time Together",
-        "neighborhood": "Cambridge's Kendall Square",
-        "editorial": "Levantine Hot Dogs and Award-Winning Ice Cream Get a Cambridge Home. Third Time Together, a pop-up previously at Bow Market and the Charles River Speedway, is now permanently in Kendall Square.",
-        "mentioned_nights": null,
-        "sources": [
-          "Boston Magazine"
-        ],
-        "vibe": "casual Levantine street food meets artisanal ice cream, Kendall Square tech-adjacent",
-        "hot_night": null,
-        "hot_hours": null,
-        "crowd_type": "casual diners, foodies, Kendall Square workers, ice cream seekers",
-        "buzz_score": 5,
-        "good_for_brian": false,
-        "good_for_chloe": false,
-        "note": "Award-winning ice cream and unique Levantine hot dogs justify a visit, but it's a daytime/casual spot rather than evening scene destination."
-      },
-      {
-        "name": "La Padrona",
-        "neighborhood": "Back Bay",
-        "editorial": "Timeless classics like prime rib and Dover sole will be on the menu at the former Bristol Lounge address, courtesy of A Street Hospitality.",
-        "mentioned_nights": null,
-        "sources": [
-          "Boston Magazine"
-        ],
-        "vibe": "Elegant fine dining, classic French-Italian in historic Back Bay",
-        "hot_night": null,
-        "hot_hours": null,
-        "crowd_type": "Upscale diners, special occasions, established Back Bay residents",
-        "buzz_score": 5,
-        "good_for_brian": false,
-        "good_for_chloe": true,
-        "note": "Timeless classics in a prestigious address with A Street Hospitality's pedigree make this a go-to for refined dining rather than scene-hunting."
+        "maps_hot_night": "Sunday",
+        "maps_hot_score": 81.3
       }
     ]
   },
@@ -737,116 +475,6 @@
     "month": 1.2739,
     "total": 1.2739,
     "runs": [
-      {
-        "ts": "2026-03-29T08:12:23.161245",
-        "persona": "brian",
-        "events_total": 804,
-        "events_cached": 164,
-        "events_scored": 368,
-        "cost_usd": 0.178999,
-        "duration_ms": 190268,
-        "models": {
-          "claude-haiku-4-5-20251001": 0.178999
-        },
-        "source_counts": {
-          "Eventbrite": 31,
-          "Liberty Hotel events": 8,
-          "Boston Fashion Week": 1,
-          "Boston Calendar": 21,
-          "allevents": 2,
-          "IG": 9,
-          "do617": 28,
-          "Boston Bar Assoc": 12,
-          "Mass Fashion Week": 1,
-          "Meetup": 4,
-          "6ONE7 Productions": 6,
-          "luma": 3,
-          "ticketmaster": 2,
-          "WBUR Events": 16,
-          "BSO Events": 20,
-          "MIT List Visual Arts": 4,
-          "MassRobotics events": 2,
-          "SoWa Boston": 1,
-          "Greentown Labs events": 1
-        },
-        "deploy_why": "run",
-        "netlify": {
-          "total": 1000,
-          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
-        },
-        "efficiency": {
-          "cache_hit_rate": 0.308,
-          "avg_hit_rate": 0.052,
-          "cost_per_scored_event": 0.00049,
-          "notes": [
-            "Cache 31% hit (164 cached, 368 scored) \u2014 many new events, normal on first daily run",
-            "High scoring volume (368 scored) \u2014 consider raising min_score to cut costs",
-            "High cost $0.1790 \u2014 check for new uncached scrape_url sources burning tokens"
-          ]
-        }
-      },
-      {
-        "ts": "2026-03-29T08:17:29.321639",
-        "persona": "chloe",
-        "events_total": 804,
-        "events_cached": 94,
-        "events_scored": 372,
-        "cost_usd": 0,
-        "duration_ms": 0,
-        "models": {},
-        "source_counts": {
-          "Eventbrite": 7,
-          "Liberty Hotel events": 8,
-          "Boston Fashion Week": 1,
-          "do617": 34,
-          "Mass Fashion Week": 1,
-          "ticketmaster": 1,
-          "Boston Calendar": 10,
-          "MassRobotics events": 1
-        },
-        "deploy_why": "run",
-        "netlify": {
-          "total": 1000,
-          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
-        },
-        "efficiency": {
-          "cache_hit_rate": 0.202,
-          "avg_hit_rate": 0.113,
-          "cost_per_scored_event": 0.0,
-          "notes": [
-            "Cache 20% hit (94 cached, 372 scored) \u2014 many new events, normal on first daily run",
-            "High scoring volume (372 scored) \u2014 consider raising min_score to cut costs"
-          ]
-        }
-      },
-      {
-        "ts": "2026-03-29T08:17:56.289459",
-        "persona": "kirk",
-        "events_total": 804,
-        "events_cached": 5,
-        "events_scored": 372,
-        "cost_usd": 0,
-        "duration_ms": 0,
-        "models": {},
-        "source_counts": {
-          "Eventbrite": 2,
-          "luma": 3
-        },
-        "deploy_why": "run",
-        "netlify": {
-          "total": 1000,
-          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
-        },
-        "efficiency": {
-          "cache_hit_rate": 0.013,
-          "avg_hit_rate": 0.154,
-          "cost_per_scored_event": 0.0,
-          "notes": [
-            "Cache 1% hit (5 cached, 372 scored) \u2014 many new events, normal on first daily run",
-            "High scoring volume (372 scored) \u2014 consider raising min_score to cut costs"
-          ]
-        }
-      },
       {
         "ts": "2026-03-30T08:12:36.246904",
         "persona": "brian",
@@ -908,15 +536,106 @@
             "High scoring volume (338 scored) \u2014 consider raising min_score to cut costs"
           ]
         }
+      },
+      {
+        "ts": "2026-03-30T08:13:34.083108",
+        "persona": "kirk",
+        "events_total": 754,
+        "events_cached": 5,
+        "events_scored": 338,
+        "cost_usd": 0,
+        "duration_ms": 0,
+        "models": {},
+        "source_counts": {
+          "Eventbrite": 2,
+          "luma": 3
+        },
+        "deploy_why": "run",
+        "netlify": {
+          "total": 1000,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.015,
+          "avg_hit_rate": 0.227,
+          "cost_per_scored_event": 0.0,
+          "notes": [
+            "Cache 1% hit (5 cached, 338 scored) \u2014 many new events, normal on first daily run",
+            "High scoring volume (338 scored) \u2014 consider raising min_score to cut costs",
+            "Cache hit rate 1% vs recent avg 23% (5 cached / 338 scored) \u2014 possible new sources added or score cache cleared"
+          ]
+        }
+      },
+      {
+        "ts": "2026-03-31T08:33:30.435523",
+        "persona": "brian",
+        "events_total": 730,
+        "events_cached": 111,
+        "events_scored": 232,
+        "cost_usd": 0,
+        "duration_ms": 0,
+        "models": {},
+        "source_counts": {
+          "Eventbrite": 25,
+          "allevents": 2,
+          "do617": 20,
+          "Meetup": 3,
+          "luma": 3,
+          "Boston Calendar": 11
+        },
+        "deploy_why": "run",
+        "netlify": {
+          "total": 1000,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.324,
+          "avg_hit_rate": 0.168,
+          "cost_per_scored_event": 0.0,
+          "notes": [
+            "Cache 32% hit (111 cached, 232 scored) \u2014 many new events, normal on first daily run",
+            "High scoring volume (232 scored) \u2014 consider raising min_score to cut costs"
+          ]
+        }
+      },
+      {
+        "ts": "2026-03-31T08:34:19.841814",
+        "persona": "chloe",
+        "events_total": 730,
+        "events_cached": 53,
+        "events_scored": 399,
+        "cost_usd": 0,
+        "duration_ms": 0,
+        "models": {},
+        "source_counts": {
+          "Eventbrite": 2,
+          "do617": 22,
+          "ticketmaster": 1,
+          "Boston Calendar": 11
+        },
+        "deploy_why": "run",
+        "netlify": {
+          "total": 1000,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.117,
+          "avg_hit_rate": 0.193,
+          "cost_per_scored_event": 0.0,
+          "notes": [
+            "Cache 12% hit (53 cached, 399 scored) \u2014 many new events, normal on first daily run",
+            "High scoring volume (399 scored) \u2014 consider raising min_score to cut costs"
+          ]
+        }
       }
     ],
     "netlify": "1000 credit pack \u2014 check balance at app.netlify.com/billing"
   },
   "sources": {
-    "Eventbrite": 3,
-    "do617": 28,
+    "Eventbrite": 2,
+    "do617": 22,
     "ticketmaster": 1,
-    "Boston Calendar": 12
+    "Boston Calendar": 11
   },
   "source_urls": {
     "do617": "https://do617.com/events/food-drink",
@@ -970,9 +689,9 @@
     "Venture Lane events": "https://www.venturelane.co/events"
   },
   "source_stats": {
-    "Eventbrite": 3,
-    "do617": 28,
+    "Eventbrite": 2,
+    "do617": 22,
     "ticketmaster": 1,
-    "Boston Calendar": 12
+    "Boston Calendar": 11
   }
 }
