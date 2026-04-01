@@ -1,46 +1,93 @@
 {
-  "generated_at": "2026-03-31T08:35:11.875659",
-  "today": "2026-03-31",
+  "generated_at": "2026-04-01T08:17:31.671778",
+  "today": "2026-04-01",
   "days": 7,
   "persona": "kirk",
   "persona_prompt": "You are filtering Boston, Cambridge, and Providence RI events for Kirk Brown.\n\nKirk's background:\n- Hardware engineer who has also done software engineering and software sales\n- Sales Engineer at Mapbox (SoftBank-backed geo/spatial tech) and Bit Flow (machine vision / industrial hardware)\n- Experienced selling and demoing both hardware products and software platforms to technical buyers\n- Finishing his master's degree\n- Looking for his next role \u2014 open to hardware, software, or technical sales\n\nWhat Kirk wants:\n- Hardware & embedded: semiconductor events, robotics, embedded systems, IoT, machine vision, industrial tech, PCB/FPGA, sensors\n- Defense & deep tech: defense tech startups, dual-use hardware, MIT Lincoln Lab adjacent events, Draper Lab, MITRE\n- VC & startup events: demo days, pitch nights, investor panels, founder dinners, accelerator showcases (hardware AND software)\n- Tech community: hackathons, product launches, startup meetups, tech networking with practitioners\n- Sales Engineer / presales: SE community events, RevOps meetups, Pavilion events, Salesforce/HubSpot ecosystem\n- Geographic range: Boston, Cambridge, Somerville, Providence RI \u2014 has a car, will travel for quality\n- University: MIT, Harvard, Brown, Northeastern, WPI \u2014 especially hardware/robotics/EE research events open to industry\n- Career: panels with engineering leadership, CTO talks, startup hiring, technical founder events\n- Domain expertise: geo/spatial tech, machine vision, industrial automation, fintech, data infrastructure\n\nSCORE 9-10 (must attend):\n- Hardware startup demo days or pitch nights (Greentown Labs, FORGE RI, MIT hardware)\n- Semiconductor or chip design events (ARM, Analog Devices, MIT MTL, IEEE Boston)\n- Robotics showcases with industry participation (Boston Dynamics adjacent, MassRobotics)\n- Defense tech or dual-use hardware networking (Draper, MITRE, DIU events open to industry)\n- Sales Engineer or presales community events (Pavilion SE chapter, SE Collective)\n- VC-hosted events open to founders/operators \u2014 hardware or deep tech focus especially\n- MIT or Brown research-to-industry events with real networking\n\nSCORE 5-7 (worth knowing):\n- General tech networking with solid company mix (not just recruiters)\n- University EE/CS/robotics showcases with industry crossover\n- Revenue/GTM panels (sales ops, CRO, B2B technical sales)\n- SaaS or hardware product launches in relevant sectors\n- Maker/hardware community events (Artisan's Asylum, HackerSpace Boston)\n\nLOWER PRIORITY (score \u2264 4):\n- Pure academic lectures with no networking or industry angle\n- Social events with no career/tech relevance\n- Events clearly targeted at undergrads only with no industry presence\n- Sports, arts-only, food/drink without tech angle\n- Generic networking mixers with no engineering or sales focus",
   "events": [
     {
-      "source": "Eventbrite:model+showcase",
-      "name": "AI AGENTS SHOWCASE (INDUSTRY-SPECIFIC CUSTOMIZED DEMO-DAY)",
-      "description": "Witness the convergence of cutting-edge technology and visionary minds",
-      "url": "https://www.eventbrite.com/e/ai-agents-showcase-industry-specific-customized-demo-day-tickets-1981633479080",
-      "start": "2026-03-31",
-      "venue": "Boston Convention and Exhibition Center",
-      "address": "415 Summer Street, Boston",
+      "source": "Meetup: Tech Boston",
+      "name": "April 3 - Video Understanding AI Hackathon at Northeastern University",
+      "description": "Join our in-person AI Hackathon at Northeastern University on April 3 inspired by the CVPR 2026 [CV4Smalls](https://coe.northeastern.edu/event/3rd-cv4smalls-workshop-computer-vision-with-small-data-beyond-scale-toward-data-efficient-dynamically-aware-video-intelligence/) workshop and challenge.\n\n**[Pre-registration is mandatory as seats are limited](https://voxel51.com/events/video-understanding-ai-hackathon-at-northeastern-april-3-2026)**\n\nThe event will focus on video understanding using the [",
+      "url": "https://www.meetup.com/boston-ai-machine-learning-data-science/events/313673058/",
+      "start": "2026-04-03T09:00",
+      "date": "2026-04-03",
+      "venue": "Northeastern University, Raytheon Amphitheater (Egan 240)",
+      "address": "Boston",
       "score": 9,
-      "reason": "AI agents demo day \u2014 exactly Kirk's target: startup showcase, cutting-edge tech, investor/founder audience, career-building opportunity",
-      "_proximity": 3,
-      "price": "$589"
-    },
-    {
-      "source": "Eventbrite:model+showcase",
-      "name": "Pre-Sales Product Demo Presentation: 1 Day Training in Boston, MA",
-      "description": "Deliver compelling product demonstrations that showcase features, solve client problems, and strengthen adoption.",
-      "url": "https://www.eventbrite.sg/e/pre-sales-product-demo-presentation-1-day-training-in-boston-ma-tickets-1979214394533",
-      "start": "2026-04-02",
-      "venue": "Regus - Boston - Federal Street",
-      "address": "101 Federal Street Suite 1900, Boston",
-      "score": 8,
-      "reason": "Pre-sales product demo training \u2014 directly relevant to Kirk's Sales Engineer background and skill development",
+      "reason": "Video Understanding AI Hackathon at Northeastern\u2014directly aligned with Kirk's machine vision expertise. In-person event at university with hands-on technical participation and real hardware/CV work.",
       "_proximity": 3
     },
     {
+      "source": "MassRobotics events",
+      "name": "Live recording of Automated with Brian Heater Feat Daniela Rus",
+      "description": "Join us for a live audience A3 podcast hosting Daniela Rus, Director of MIT/CSAIL. Registration required, limited seats.",
+      "url": "https://www.massrobotics.org/events/",
+      "start": "2026-04-06T10:00",
+      "venue": "",
+      "address": "",
+      "score": 9,
+      "reason": "Live recording of Automated with Brian Heater featuring Daniela Rus (MIT CSAIL Director) \u2014 premier robotics community event with direct access to MIT research leadership and industry professionals. Limited seats, registered networking.",
+      "_proximity": 3
+    },
+    {
+      "source": "Meetup: Tech Boston",
+      "name": "Building AI Apps with Integration at the Core + Networking Reception",
+      "description": "[Register at Luma event page](https://luma.com/k95ox35r)\n\nJoin us at the MIT-IBM Watson AI Lab for an engaging and hands-on session focused on building next-generation AI applications where integration is foundational.\n\nThis event brings together developers, architects, and business leaders to explore how Agentic AI systems are designed, integrated, and deployed in real-world environments.\n\nThrough expert talks and a practical workshop, you\u2019ll gain insights into the evolving AI landscape, the ro",
+      "url": "https://www.meetup.com/big-data-developers-in-boston/events/314059175/",
+      "start": "2026-04-01T14:15",
+      "date": "2026-04-01",
+      "venue": "MIT IBM AI Lab",
+      "address": "Cambridge",
+      "score": 8,
+      "reason": "MIT-IBM Watson AI Lab event on building AI apps with integration focus. Located at MIT, brings together developers and architects. Networking reception + hands-on workshop. High-quality venue and crowd.",
+      "_proximity": 5
+    },
+    {
       "source": "luma:boston",
-      "name": "Boston Founders & IP Night",
+      "name": "TNT & Unusual Ventures | B2B Founder Lunch",
       "description": "",
-      "url": "https://lu.ma/3l7iyd13",
-      "start": "2026-03-31T23:30",
+      "url": "https://lu.ma/46t89k8t",
+      "start": "2026-04-01T16:00",
       "venue": "",
       "address": "Cambridge, Massachusetts",
       "score": 8,
-      "reason": "Boston Founders & IP Night. Strong match for startup networking, founder connections, and potential VC/investor presence.",
+      "reason": "TNT & Unusual Ventures B2B Founder Lunch \u2014 direct VC + founder networking event aligned with Kirk's startup/career interests",
       "_proximity": 5
+    },
+    {
+      "source": "MassRobotics events",
+      "name": "Boston Robot Hackers \u2013 Kalman Filters",
+      "description": "Kalman Filters are used in some of the world's most advanced guidance, navigation, and control systems, including aircraft and spacecraft, in order to provide the ground station with accurate information.",
+      "url": "https://www.massrobotics.org/events/",
+      "start": "2026-04-02T19:00",
+      "venue": "",
+      "address": "",
+      "score": 8,
+      "reason": "Boston Robot Hackers meetup on Kalman Filters \u2014 directly relevant to robotics, embedded systems, and guidance/navigation tech. Strong technical community event with hands-on learning."
+    },
+    {
+      "source": "MassRobotics events",
+      "name": "Automated with Brian Heater National Robotics Week Podcast Sessions",
+      "description": "Automated with Brian Heater National Robotics Week Podcast Session featuring guests including Professor Daniela Rus and other robotics industry leaders.",
+      "url": "https://www.massrobotics.org/events/",
+      "start": "2026-04-06",
+      "venue": "",
+      "address": "",
+      "score": 8,
+      "reason": "Automated with Brian Heater National Robotics Week Podcast Sessions featuring Daniela Rus and robotics leaders \u2014 high-profile industry networking with MIT CSAIL director and thought leaders in robotics."
+    },
+    {
+      "source": "MassRobotics events",
+      "name": "Women in Robotics Meet-up at Locus Robotics",
+      "description": "Connect, share, and grow\u2014an evening to network with peers, chat with mentors, and build connections with others in the field.",
+      "url": "https://www.massrobotics.org/events/",
+      "start": "2026-04-06T17:00",
+      "venue": "Locus Robotics",
+      "address": "Wilmington",
+      "score": 8,
+      "reason": "Women in Robotics Meetup at Locus Robotics \u2014 networking event with robotics peers, mentors, and industry professionals. Strong community focus and real robotics company venue.",
+      "_proximity": 3
     },
     {
       "source": "luma:boston",
@@ -55,16 +102,91 @@
       "_proximity": 5
     },
     {
-      "source": "Boston Calendar",
-      "name": "Wine Dinners at Forage",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/wine-dinners-at-forage--24",
-      "start": "2026-03-31",
-      "date": "2026-03-31",
+      "source": "Meetup: Tech Boston",
+      "name": "April: AI workflows at scale + K8s how-to",
+      "description": "[Coder](coder.com) is sponsoring food & bev this time - thank you **Coder!!**\n\nAs usual:\n\n1. **RSVP's close 48 hrs before the event**. Please make it easy on us by RSVP'ing only if you intend to show up.\n2. **Don't be late!** You'll get locked out, and that's no fun!\n===\n\n**Agenda**\n\n6:00 pm: food / drinks / networking\n6:20 pm: Talk #1: **AI Workflows At Scale** with Nicky Pike from Coder\n7:00 pm: Who is hiring? Who is looking?\n7:10 pm: Talk #2: **Deploy LiteLLM on K8s** with Michael O'Leary\n7:5",
+      "url": "https://www.meetup.com/boston-kubernetes-meetup/events/312884167/",
+      "start": "2026-04-07T18:00",
+      "date": "2026-04-07",
+      "venue": "90 Broadway",
+      "address": "Cambridge",
+      "score": 7,
+      "reason": "AI workflows and Kubernetes technical talks with food/networking. Coder sponsorship signals quality company presence. Relevant to Kirk's software engineering and infrastructure interests.",
+      "_proximity": 5
+    },
+    {
+      "source": "Meetup: Tech Boston",
+      "name": "Boston Hackers - April Meetup",
+      "description": "**Where:**\n*K logix headquarters @ 1319 Beacon St #1, Brookline, MA 02446*\n\nAn event organizer will be outside to let folks in prior to, and a little after, event start.\n\n[Learn more about us!](https://hackers.boston)\n\n**Travel & Parking:**\n\n* Venue is Accessible from the T (green line) via the Coolidge Corner station.\n* Street and garage parking are nearby for attendees coming via car.\n* There is also a lot behind the nearby CVS (32 Centre Street, Brookline) with metered parking.\n\n**Agenda:**\n\n",
+      "url": "https://www.meetup.com/boston-hackers/events/313240171/",
+      "start": "2026-04-02T19:00",
+      "date": "2026-04-02",
+      "venue": "K logix",
+      "address": "Brookline",
+      "score": 7,
+      "reason": "Boston Hackers meetup with technical hacker community. Good networking opportunity with practitioners building real projects. Accessible venue in Brookline.",
+      "_proximity": 5
+    },
+    {
+      "source": "Meetup: Tech Boston",
+      "name": "How to think: a framework for success in a tech company ",
+      "description": "*Please RSVP ahead of time and bring a government-issued ID for check-in.*\n\nA talk on how to operate within a tech company in ways that help you stand out and grow in your career. This is especially important in 2026 as the traditional work of developers gets pushed to AI. What are the important contributions someone can bring to a tech company? This talk explores several things you have to pay attention to in order to grow your career.\n\nAbout the Speaker\nRafael Mendiola, co-founder, building a ",
+      "url": "https://www.meetup.com/boston-code-and-coffee/events/314054068/",
+      "start": "2026-04-04T13:00",
+      "date": "2026-04-04",
+      "venue": "CIC Cambridge @ 1 Broadway",
+      "address": "Cambridge",
+      "score": 7,
+      "reason": "Career development talk on operating effectively in tech companies. Relevant for Kirk's transition and growth as he looks for next role. Practical advice on standing out as engineer/sales engineer.",
+      "_proximity": 5
+    },
+    {
+      "source": "Meetup: Tech Boston",
+      "name": "Open Project Night - Every Tuesday, In Person! ",
+      "description": "Welcome to Cambridge Hackspace!\n\nBring yourself, your ideas, and your projects\u2014any projects!\u2014to the Hackspace and hang out with kindred spirits who like to tinker, learn, and share ideas about making stuff!\n\nNo experience necessary, and no existing project required! We're a place and a community when you can explore and develop your curiosity and interest in making things. Come try things out, learn new skills, and meet folks who want to do the same.\n\nOur door can be hard to find! There are [dir",
+      "url": "https://www.meetup.com/cambridge-hackspace/events/313732182/",
+      "start": "2026-04-07T18:30",
+      "date": "2026-04-07",
+      "venue": "Cambridge Hackspace",
+      "address": "Somerville",
+      "score": 7,
+      "reason": "Cambridge Hackspace Open Project Night\u2014hands-on making and tinkering community. Good for hardware/embedded interests and meeting people who build things. Regular, accessible event.",
+      "_proximity": 5
+    },
+    {
+      "source": "MassRobotics events",
+      "name": "National Robotics Week 2026",
+      "description": "The mission of National Robotics Week (RoboWeek) is simple yet powerful: to inspire students to pursue robotics and STEM-related fields while sharing the excitement of robotics with people of all ages.",
+      "url": "https://www.massrobotics.org/events/",
+      "start": "2026-04-04",
       "venue": "",
       "address": "",
-      "score": 2,
-      "reason": ""
+      "score": 7,
+      "reason": "National Robotics Week 2026 \u2014 aligns with Kirk's robotics and STEM interests. Broad event that attracts industry, startups, and practitioners across robotics ecosystem."
+    },
+    {
+      "source": "MassRobotics events",
+      "name": "Automated with Brian Heater Happy Hour",
+      "description": "Happy Hour with Brian Heater. This event is intended for robotics startups and industry professionals. Registration required.",
+      "url": "https://www.massrobotics.org/events/",
+      "start": "2026-04-08T16:30",
+      "venue": "MassRobotics",
+      "address": "Boston",
+      "score": 7,
+      "reason": "Automated with Brian Heater Happy Hour for robotics startups and professionals \u2014 targeted networking event for hardware/robotics industry professionals. Good casual setting for meeting founders and operators.",
+      "_proximity": 3
+    },
+    {
+      "source": "Greentown Labs events",
+      "name": "Boston Climate Week at Greentown Boston",
+      "description": "Celebrate the inaugural Boston Climate Week on Wednesday, May 6 and Thursday, May 7 at Greentown Boston!",
+      "url": "https://greentownlabs.com/events/",
+      "start": "2026-05-06",
+      "venue": "Greentown Boston",
+      "address": "Boston, MA",
+      "score": 7,
+      "reason": "Greentown Boston is a premier hardware accelerator venue. Even though climate focus isn't Kirk's primary domain, this event likely attracts hardware founders, investors, and deep tech practitioners. Strong networking potential with relevant Boston ecosystem.",
+      "_proximity": 3
     }
   ],
   "extra_events": [],
@@ -97,101 +219,10 @@
     ]
   },
   "costs": {
-    "week": 0,
-    "month": 1.2739,
-    "total": 1.2739,
+    "week": 0.2441,
+    "month": 0.2441,
+    "total": 1.5181,
     "runs": [
-      {
-        "ts": "2026-03-30T08:13:10.606961",
-        "persona": "chloe",
-        "events_total": 754,
-        "events_cached": 66,
-        "events_scored": 338,
-        "cost_usd": 0,
-        "duration_ms": 0,
-        "models": {},
-        "source_counts": {
-          "Eventbrite": 3,
-          "do617": 28,
-          "ticketmaster": 1,
-          "Boston Calendar": 12
-        },
-        "deploy_why": "run",
-        "netlify": {
-          "total": 1000,
-          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
-        },
-        "efficiency": {
-          "cache_hit_rate": 0.163,
-          "avg_hit_rate": 0.195,
-          "cost_per_scored_event": 0.0,
-          "notes": [
-            "Cache 16% hit (66 cached, 338 scored) \u2014 many new events, normal on first daily run",
-            "High scoring volume (338 scored) \u2014 consider raising min_score to cut costs"
-          ]
-        }
-      },
-      {
-        "ts": "2026-03-30T08:13:34.083108",
-        "persona": "kirk",
-        "events_total": 754,
-        "events_cached": 5,
-        "events_scored": 338,
-        "cost_usd": 0,
-        "duration_ms": 0,
-        "models": {},
-        "source_counts": {
-          "Eventbrite": 2,
-          "luma": 3
-        },
-        "deploy_why": "run",
-        "netlify": {
-          "total": 1000,
-          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
-        },
-        "efficiency": {
-          "cache_hit_rate": 0.015,
-          "avg_hit_rate": 0.227,
-          "cost_per_scored_event": 0.0,
-          "notes": [
-            "Cache 1% hit (5 cached, 338 scored) \u2014 many new events, normal on first daily run",
-            "High scoring volume (338 scored) \u2014 consider raising min_score to cut costs",
-            "Cache hit rate 1% vs recent avg 23% (5 cached / 338 scored) \u2014 possible new sources added or score cache cleared"
-          ]
-        }
-      },
-      {
-        "ts": "2026-03-31T08:33:30.435523",
-        "persona": "brian",
-        "events_total": 730,
-        "events_cached": 111,
-        "events_scored": 232,
-        "cost_usd": 0,
-        "duration_ms": 0,
-        "models": {},
-        "source_counts": {
-          "Eventbrite": 25,
-          "allevents": 2,
-          "do617": 20,
-          "Meetup": 3,
-          "luma": 3,
-          "Boston Calendar": 11
-        },
-        "deploy_why": "run",
-        "netlify": {
-          "total": 1000,
-          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
-        },
-        "efficiency": {
-          "cache_hit_rate": 0.324,
-          "avg_hit_rate": 0.168,
-          "cost_per_scored_event": 0.0,
-          "notes": [
-            "Cache 32% hit (111 cached, 232 scored) \u2014 many new events, normal on first daily run",
-            "High scoring volume (232 scored) \u2014 consider raising min_score to cut costs"
-          ]
-        }
-      },
       {
         "ts": "2026-03-31T08:34:19.841814",
         "persona": "chloe",
@@ -251,14 +282,127 @@
             "Cache hit rate 1% vs recent avg 21% (4 cached / 399 scored) \u2014 possible new sources added or score cache cleared"
           ]
         }
+      },
+      {
+        "ts": "2026-04-01T08:10:37.236040",
+        "persona": "brian",
+        "events_total": 656,
+        "events_cached": 128,
+        "events_scored": 299,
+        "cost_usd": 0.148276,
+        "duration_ms": 160989,
+        "models": {
+          "claude-haiku-4-5-20251001": 0.148276
+        },
+        "source_counts": {
+          "Liberty Hotel events": 8,
+          "allevents": 3,
+          "Boston Fashion Week": 1,
+          "do617": 22,
+          "Meetup": 7,
+          "Boston Bar Assoc": 12,
+          "Mass Fashion Week": 1,
+          "Boston Calendar": 15,
+          "luma": 4,
+          "IG": 3,
+          "WBUR Events": 16,
+          "BSO Events": 20
+        },
+        "deploy_why": "run",
+        "netlify": {
+          "total": 1000,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.3,
+          "avg_hit_rate": 0.126,
+          "cost_per_scored_event": 0.0005,
+          "notes": [
+            "Cache 30% hit (128 cached, 299 scored) \u2014 many new events, normal on first daily run",
+            "High scoring volume (299 scored) \u2014 consider raising min_score to cut costs",
+            "High cost $0.1483 \u2014 check for new uncached scrape_url sources burning tokens"
+          ]
+        }
+      },
+      {
+        "ts": "2026-04-01T08:14:36.092657",
+        "persona": "chloe",
+        "events_total": 656,
+        "events_cached": 50,
+        "events_scored": 442,
+        "cost_usd": 0.048307,
+        "duration_ms": 52619,
+        "models": {
+          "claude-haiku-4-5-20251001": 0.048307
+        },
+        "source_counts": {
+          "Liberty Hotel events": 8,
+          "Boston Fashion Week": 1,
+          "allevents": 3,
+          "do617": 26,
+          "Mass Fashion Week": 1,
+          "ticketmaster": 2,
+          "MIT List Visual Arts": 5,
+          "IG": 4,
+          "Boston Calendar": 6,
+          "Meetup": 1,
+          "luma": 3
+        },
+        "deploy_why": "run",
+        "netlify": {
+          "total": 1000,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.102,
+          "avg_hit_rate": 0.153,
+          "cost_per_scored_event": 0.00011,
+          "notes": [
+            "Cache 10% hit (50 cached, 442 scored) \u2014 many new events, normal on first daily run",
+            "High scoring volume (442 scored) \u2014 consider raising min_score to cut costs"
+          ]
+        }
+      },
+      {
+        "ts": "2026-04-01T08:16:16.370937",
+        "persona": "kirk",
+        "events_total": 656,
+        "events_cached": 1,
+        "events_scored": 442,
+        "cost_usd": 0.047523,
+        "duration_ms": 48895,
+        "models": {
+          "claude-haiku-4-5-20251001": 0.047523
+        },
+        "source_counts": {
+          "Meetup": 6,
+          "MassRobotics events": 6,
+          "luma": 2,
+          "Greentown Labs events": 1
+        },
+        "deploy_why": "run",
+        "netlify": {
+          "total": 1000,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.002,
+          "avg_hit_rate": 0.17,
+          "cost_per_scored_event": 0.00011,
+          "notes": [
+            "Cache 0% hit (1 cached, 442 scored) \u2014 many new events, normal on first daily run",
+            "High scoring volume (442 scored) \u2014 consider raising min_score to cut costs"
+          ]
+        }
       }
     ],
     "netlify": "1000 credit pack \u2014 check balance at app.netlify.com/billing"
   },
   "sources": {
-    "Eventbrite": 2,
+    "Meetup": 6,
+    "MassRobotics events": 6,
     "luma": 2,
-    "Boston Calendar": 1
+    "Greentown Labs events": 1
   },
   "source_urls": {
     "do617": "https://do617.com/events/food-drink",
@@ -312,8 +456,9 @@
     "Venture Lane events": "https://www.venturelane.co/events"
   },
   "source_stats": {
-    "Eventbrite": 2,
+    "Meetup": 6,
+    "MassRobotics events": 6,
     "luma": 2,
-    "Boston Calendar": 1
+    "Greentown Labs events": 1
   }
 }
