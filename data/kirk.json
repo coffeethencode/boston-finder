@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-02T10:52:37.320412",
+  "generated_at": "2026-04-02T10:54:04.605643",
   "today": "2026-04-02",
   "days": 7,
   "persona": "kirk",
@@ -1169,44 +1169,6 @@
     "total": 1.7522,
     "runs": [
       {
-        "ts": "2026-04-02T08:14:48.489439",
-        "persona": "chloe",
-        "events_total": 664,
-        "events_cached": 58,
-        "events_scored": 196,
-        "cost_usd": 0.022463,
-        "duration_ms": 26220,
-        "models": {
-          "claude-haiku-4-5-20251001": 0.022463
-        },
-        "source_counts": {
-          "Liberty Hotel events": 8,
-          "allevents": 3,
-          "Boston Fashion Week": 1,
-          "Boston Calendar": 15,
-          "do617": 23,
-          "ticketmaster": 2,
-          "Mass Fashion Week": 1,
-          "MIT Events": 1,
-          "IG": 3,
-          "Meetup": 4,
-          "luma": 1
-        },
-        "deploy_why": "run",
-        "netlify": {
-          "total": 1000,
-          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
-        },
-        "efficiency": {
-          "cache_hit_rate": 0.228,
-          "avg_hit_rate": 0.166,
-          "cost_per_scored_event": 0.00011,
-          "notes": [
-            "Cache 23% hit (58 cached, 196 scored) \u2014 many new events, normal on first daily run"
-          ]
-        }
-      },
-      {
         "ts": "2026-04-02T08:15:55.133675",
         "persona": "kirk",
         "events_total": 664,
@@ -1310,6 +1272,33 @@
         "efficiency": {
           "cache_hit_rate": 0.0,
           "avg_hit_rate": 0.135,
+          "cost_per_scored_event": 0.0,
+          "notes": [
+            "No events processed \u2014 pipeline ran with no data (check sources or previous crash)"
+          ]
+        }
+      },
+      {
+        "ts": "2026-04-02T10:51:06.797356",
+        "persona": "kirk",
+        "events_total": 664,
+        "events_cached": 0,
+        "events_scored": 0,
+        "cost_usd": 0,
+        "duration_ms": 0,
+        "models": {},
+        "by_stage": {},
+        "source_counts": {
+          "Boston Calendar": 15
+        },
+        "deploy_why": "run",
+        "netlify": {
+          "total": 1000,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.0,
+          "avg_hit_rate": 0.052,
           "cost_per_scored_event": 0.0,
           "notes": [
             "No events processed \u2014 pipeline ran with no data (check sources or previous crash)"
