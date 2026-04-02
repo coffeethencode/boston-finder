@@ -82,6 +82,15 @@
   .ev-modal-src  { font-size:0.72rem; color:#555; align-self:center; }
   .sources-bar { background: #111; border: 1px solid #222; border-radius: 8px;
                   padding: 10px 16px; margin-bottom: 20px; font-size: 0.78rem; color: #666; }
+  .hotrest-bar  { background: #0d0d1a; border: 1px solid #1a1a3a; border-radius: 8px;
+                  padding: 10px 16px; margin-bottom: 20px; }
+  .hotrest-title { font-size: 0.9rem; font-weight: 700; color: #9ab; margin-bottom: 8px; cursor: pointer; user-select: none; }
+  .hotrest-grid  { display: flex; flex-wrap: wrap; gap: 8px; }
+  .hotrest-card  { background: #111; border: 1px solid #1e1e3a; border-radius: 6px;
+                   padding: 8px 12px; min-width: 200px; max-width: 280px; flex: 1; }
+  .hotrest-name  { font-size: 0.85rem; font-weight: 600; color: #ccd; }
+  .hotrest-vibe  { font-size: 0.72rem; color: #667; margin-top: 2px; }
+  .hotrest-meta  { font-size: 0.7rem; color: #9ab; margin-top: 4px; }
   .src-pill    { display: inline-block; background: #1e1e1e; border: 1px solid #2a2a2a;
                   border-radius: 99px; padding: 2px 10px; margin: 2px; font-size: 0.75rem; color: #aaa; }
   .show-more-btn { background: #1a1a1a; border: 1px solid #333; border-radius: 6px;
@@ -124,6 +133,8 @@
     <div class="sources-bar" id="sources-bar"></div>
 
     <div class="oyster-bar" id="oyster-bar"></div>
+
+    <div class="hotrest-bar" id="hotrest-bar" style="display:none"></div>
 
     <div class="legend">
       <b>Score 1–10</b> — how relevant this event is for you &nbsp;|&nbsp;
@@ -311,23 +322,41 @@
       costHtml += '<table style="width:100%;border-collapse:collapse;font-size:0.75rem;color:#888">' +
         '<thead><tr style="color:#555;text-align:left;border-bottom:1px solid #222">' +
           '<th style="padding:4px 8px 4px 0">Run</th>' +
+          '<th style="padding:4px 8px">Persona</th>' +
           '<th style="padding:4px 8px">Events</th>' +
-          '<th style="padding:4px 8px">Model</th>' +
+          '<th style="padding:4px 8px">Where cost went</th>' +
           '<th style="padding:4px 8px">Cost</th>' +
           '<th style="padding:4px 8px">Time</th>' +
         '</tr></thead><tbody>';
       runs.forEach(function(run, i) {
-        var models = run.models || {};
-        var modelStr = Object.keys(models).map(function(k) {
-          return esc(k) + ' ' + fmtMoney(models[k]);
-        }).join(', ') || '\u2014';
         var isLatest = (i === 0);
+        // Stage breakdown — fetch=extract_raw, score=persona scoring, restaurants=hot_restaurants
+        var stages = run.by_stage || {};
+        var STAGE_ORDER = ['fetch','score','restaurants'];
+        var stageStr = STAGE_ORDER.filter(function(s){ return stages[s] > 0; })
+          .map(function(s){ return '<span style="color:#667">' + s + '</span> ' + fmtMoney(stages[s]); })
+          .join(' &nbsp;+&nbsp; ');
+        // Fall back to model breakdown if no stage data
+        if (!stageStr) {
+          var models = run.models || {};
+          stageStr = Object.keys(models).map(function(k) {
+            return esc(k.replace('claude-','').replace('-20251001','')) + ' ' + fmtMoney(models[k]);
+          }).join(', ') || '\u2014';
+        }
+        // Top sources (event counts by source)
+        var srcCounts = run.source_counts || {};
+        var srcKeys = Object.keys(srcCounts).sort(function(a,b){ return srcCounts[b]-srcCounts[a]; });
+        var srcStr = srcKeys.slice(0,5).map(function(k){ return esc(k)+'&thinsp;'+srcCounts[k]; }).join(' &middot; ');
         costHtml += '<tr' + (isLatest ? ' style="background:#1e2a1e"' : '') + '>' +
           '<td style="padding:4px 8px 4px 0">' + esc(fmtRunTs(run.ts || '')) +
             (isLatest ? ' <b style="color:#7fff7f;font-size:0.65rem">LATEST</b>' : '') +
           '</td>' +
-          '<td style="color:#aaa;padding:4px 8px">' + (run.events_cached||0) + ' cached / ' + (run.events_scored||0) + ' scored</td>' +
-          '<td style="color:#aaa;padding:4px 8px">' + modelStr + '</td>' +
+          '<td style="color:#9ab;padding:4px 8px;text-transform:capitalize">' + esc(run.persona || '\u2014') + '</td>' +
+          '<td style="color:#aaa;padding:4px 8px">' +
+            (run.events_cached||0) + ' cached&thinsp;/&thinsp;' + (run.events_scored||0) + ' scored' +
+            (srcStr ? '<br><span style="color:#445;font-size:0.67rem">' + srcStr + '</span>' : '') +
+          '</td>' +
+          '<td style="padding:4px 8px">' + stageStr + '</td>' +
           '<td style="color:#e8e8e8;font-weight:600;padding:4px 8px">' + fmtMoney(run.cost_usd) + '</td>' +
           '<td style="color:#666;padding:4px 8px">' + fmtDuration(run.duration_ms) + '</td>' +
         '</tr>';
@@ -642,6 +671,41 @@
       footerText = 'Generated ' + dateStr2 + (timeStr2 ? ' at ' + timeStr2 : '');
     }
     document.getElementById('footer').innerHTML = '<div class="footer">' + esc(footerText) + '</div>';
+
+    // Hot restaurants
+    var hrData = (data.hot_restaurants || {}).restaurants || [];
+    var hrBar  = document.getElementById('hotrest-bar');
+    if (hrData.length) {
+      hrBar.style.display = '';
+      var hrUpdated = (data.hot_restaurants || {}).updated || '';
+      var hrAge = hrUpdated ? ' <span style="font-weight:400;color:#445;font-size:0.72rem">(updated ' + fmtRunTs(hrUpdated) + ')</span>' : '';
+      var hrOpen = false;
+      function renderHotRest() {
+        if (!hrOpen) {
+          hrBar.innerHTML = '<div class="hotrest-title" onclick="toggleHotRest()">🍽 Buzzy Restaurants <span style="font-size:0.75rem;color:#445">▶ ' + hrData.length + ' spots</span>' + hrAge + '</div>';
+          return;
+        }
+        var cards = hrData.slice(0, 20).map(function(r) {
+          var buzz   = r.buzz_score ? '★' + r.buzz_score + '/10' : '';
+          var night  = r.hot_night ? '🔥 ' + r.hot_night + (r.hot_hours ? ' ' + r.hot_hours : '') : '';
+          var flags  = (r.good_for_brian ? ' ✓B' : '') + (r.good_for_chloe ? ' ✓C' : '');
+          var vibe   = esc(r.vibe || r.summary || '');
+          var price  = r.price ? esc(r.price) + ' · ' : '';
+          var addr   = esc((r.address || '').split(',')[0]);
+          var meta   = [price + addr, night, buzz + flags].filter(Boolean).join(' &nbsp;·&nbsp; ');
+          var link   = r.website ? ' <a href="' + esc(r.website) + '" target="_blank" style="color:#4a9eff;text-decoration:none;font-size:0.7rem">↗</a>' : '';
+          return '<div class="hotrest-card">' +
+            '<div class="hotrest-name">' + esc(r.google_name || r.name) + link + '</div>' +
+            (vibe ? '<div class="hotrest-vibe">' + vibe + '</div>' : '') +
+            (meta ? '<div class="hotrest-meta">' + meta + '</div>' : '') +
+            '</div>';
+        }).join('');
+        hrBar.innerHTML = '<div class="hotrest-title" onclick="toggleHotRest()">🍽 Buzzy Restaurants ▼' + hrAge + '</div>' +
+          '<div class="hotrest-grid">' + cards + '</div>';
+      }
+      window.toggleHotRest = function() { hrOpen = !hrOpen; renderHotRest(); };
+      renderHotRest();
+    }
   }
 
   // ── Fetch ─────────────────────────────────────────────────────────────────
