@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-04T08:17:16.269342",
-  "today": "2026-04-04",
+  "generated_at": "2026-04-05T16:40:14.643829",
+  "today": "2026-04-05",
   "days": 7,
   "persona": "chloe",
   "persona_prompt": "You are filtering Boston events for Chloe, who wants upscale, interesting things to do in Boston.\nShe loves:\n- Art: gallery openings, museum events, art shows, artist talks, art fairs, photography exhibits, sculpture\n- Food & drink: wine tastings, wine dinners, chef's table experiences, cocktail classes, food festivals, upscale restaurant events, mixology\n- Fancy experiences: galas, benefit dinners, charity auctions, cultural receptions, film premieres, theater openings\n- Design, fashion, and aesthetics \u2014 runway shows, trunk shows, luxury boutique events, bridal showcases, couture\n- Wellness and beauty events that are upscale (spa launches, product launches, brand events)\n- Sip-and-craft events (sip & paint, pottery, floral arranging) \u2014 she likes these IF the crowd seems upscale or scene-y; skip if it reads as basic/suburban\n- Anything cultured, beautiful, or scene-y\n- Asian cultural events are great (she is Chinese and appreciates these)\n\nSCORE 9-10 (must attend):\n- \"Fashionably LATE\" Thursdays at The Liberty Hotel \u2014 weekly interactive runway with models weaving through the crowd, free admission, scene-y crowd\n- Boston Fashion Week (Oct 2026) events, especially luxury eveningwear, couture, and accessory showcases\n- Boston En Vogue \u2014 luxury gown and couture runway shows\n- Trunk shows at luxury boutiques (Galia Lahav bridal, Agent Provocateur, Newbury St boutiques)\n- SwimBoston \u2014 annual swimwear/bikini runway at Boston Harbor Distillery\n- Any event at a Newbury St boutique, Back Bay gallery, or luxury hotel\n- Museum opening receptions with cocktails or wine \u2014 Harvard Art Museums, MFA, ICA, Gardner \u2014 the \"art party\" type evening where the crowd is cultured and interesting, not just a museum visit\n- University arts/cultural events at Harvard, MIT, BU that are open to the public and have a reception component\n\nLower priority for her:\n- Pure civic/government/policy events (unless they're glamorous)\n- Sports\n- Basic networking mixers with no food/drink/art angle\n- Sip-and-craft events at chain venues or with a generic/tourist vibe (score \u2264 4)",
@@ -17,102 +17,6 @@
       "reason": "Fashionably LATE Thursdays at Liberty Hotel \u2014 perfect match; weekly interactive runway, models, scene-y crowd, fashion-forward, free admission, weekly opportunity.",
       "_proximity": 3,
       "price": "$0"
-    },
-    {
-      "source": "Liberty Hotel events",
-      "name": "Fashionably LATE Thursdays - ba&sh Boston",
-      "description": "Fashion show featuring ba&sh Boston designer's collection. Models strut through the lobby's catwalk from 9pm-10pm with DJ Skoolyahd providing music starting at 8:30pm.",
-      "url": "https://libertyhotel.com/liberty-affairs/fashionably-late/",
-      "start": "2026-04-09",
-      "venue": "The Liberty Hotel",
-      "address": "Boston, MA",
-      "score": 10,
-      "reason": "Fashionably LATE Thursdays at Max & Riley \u2014 interactive runway with DJ and models; consistent with her must-attend weekly series.",
-      "_proximity": 3
-    },
-    {
-      "source": "Liberty Hotel events",
-      "name": "Fashionably LATE Thursdays - Pattee Silver",
-      "description": "Fashion show featuring Pattee Silver designer's collection. Models strut through the lobby's catwalk from 9pm-10pm with DJ Skoolyahd providing music starting at 8:30pm.",
-      "url": "https://libertyhotel.com/liberty-affairs/fashionably-late/",
-      "start": "2026-04-16",
-      "venue": "The Liberty Hotel",
-      "address": "Boston, MA",
-      "score": 10,
-      "reason": "Fashionably LATE Thursdays at Max & Riley \u2014 interactive runway with DJ and models; consistent with her must-attend weekly series.",
-      "_proximity": 3
-    },
-    {
-      "source": "Liberty Hotel events",
-      "name": "Fashionably LATE Thursdays - Lavish Living Clothing",
-      "description": "Fashion show featuring Lavish Living Clothing designer's collection. Models strut through the lobby's catwalk from 9pm-10pm with DJ Skoolyahd providing music starting at 8:30pm.",
-      "url": "https://libertyhotel.com/liberty-affairs/fashionably-late/",
-      "start": "2026-04-23",
-      "venue": "The Liberty Hotel",
-      "address": "Boston, MA",
-      "score": 10,
-      "reason": "Fashionably LATE Thursdays at Max & Riley \u2014 interactive runway with DJ and models; consistent with her must-attend weekly series.",
-      "_proximity": 3
-    },
-    {
-      "source": "Liberty Hotel events",
-      "name": "Fashionably LATE Thursdays - Kaybea Collection",
-      "description": "Fashion show featuring Kaybea Collection designer's work. Models strut through the lobby's catwalk from 9pm-10pm with DJ Skoolyahd providing music starting at 8:30pm.",
-      "url": "https://libertyhotel.com/liberty-affairs/fashionably-late/",
-      "start": "2026-04-30",
-      "venue": "The Liberty Hotel",
-      "address": "Boston, MA",
-      "score": 10,
-      "reason": "Fashionably LATE Thursdays at Max & Riley \u2014 interactive runway with DJ and models; consistent with her must-attend weekly series.",
-      "_proximity": 3
-    },
-    {
-      "source": "Liberty Hotel events",
-      "name": "Fashionably LATE Thursdays - Thornpetal",
-      "description": "Fashion show featuring Thornpetal designer's collection. Models strut through the lobby's catwalk from 9pm-10pm with DJ Skoolyahd providing music starting at 8:30pm.",
-      "url": "https://libertyhotel.com/liberty-affairs/fashionably-late/",
-      "start": "2026-05-07",
-      "venue": "The Liberty Hotel",
-      "address": "Boston, MA",
-      "score": 10,
-      "reason": "Fashionably LATE Thursdays at Max & Riley \u2014 interactive runway with DJ and models; consistent with her must-attend weekly series.",
-      "_proximity": 3
-    },
-    {
-      "source": "Liberty Hotel events",
-      "name": "Fashionably LATE Thursdays - Akmaral Bridal",
-      "description": "Fashion show featuring Akmaral Bridal designer's collection. Models strut through the lobby's catwalk from 9pm-10pm with DJ Skoolyahd providing music starting at 8:30pm.",
-      "url": "https://libertyhotel.com/liberty-affairs/fashionably-late/",
-      "start": "2026-05-14",
-      "venue": "The Liberty Hotel",
-      "address": "Boston, MA",
-      "score": 10,
-      "reason": "Fashionably LATE Thursdays at Max & Riley \u2014 interactive runway with DJ and models; consistent with her must-attend weekly series.",
-      "_proximity": 3
-    },
-    {
-      "source": "Liberty Hotel events",
-      "name": "Fashionably LATE Thursdays - Max & Riley",
-      "description": "Fashion show featuring Max & Riley designer's collection. Models strut through the lobby's catwalk from 9pm-10pm with DJ Skoolyahd providing music starting at 8:30pm.",
-      "url": "https://libertyhotel.com/liberty-affairs/fashionably-late/",
-      "start": "2026-05-21",
-      "venue": "The Liberty Hotel",
-      "address": "Boston, MA",
-      "score": 10,
-      "reason": "Fashionably LATE Thursdays at Max & Riley \u2014 interactive runway with DJ and models; consistent with her must-attend weekly series.",
-      "_proximity": 3
-    },
-    {
-      "source": "Boston Fashion Week",
-      "name": "32nd Annual Boston Fashion Week",
-      "description": "The official Boston Fashion Week runs for one week in October, featuring fashion events and presentations from designers, retailers, and event producers.",
-      "url": "https://www.bostonfashionweek.com/",
-      "start": "2026-10-04",
-      "venue": "Boston Fashion Week",
-      "address": "Boston, Massachusetts",
-      "score": 9,
-      "reason": "32nd Annual Boston Fashion Week (October 2026) \u2014 major designer events and fashion shows; directly on her must-attend list.",
-      "_proximity": 3
     },
     {
       "source": "do617:food-drink",
@@ -137,105 +41,6 @@
       "score": 9,
       "reason": "Champagne & Caviar Tastings \u2014 luxury food and drink tasting, sophisticated, refined. Core interest for Chloe.",
       "_proximity": 3
-    },
-    {
-      "source": "Eventbrite:model+showcase",
-      "name": "Verge 9th Annual Showcase: Verge: Spring 2026",
-      "description": "We\u2019re excited to highlight our year\u2019s work and several other Chinese performance groups from the Greater Boston area in our 9th Annual Show!",
-      "url": "https://www.eventbrite.com/e/verge-9th-annual-showcase-verge-spring-2026-tickets-1985834596736",
-      "start": "2026-04-04",
-      "venue": "915 Commonwealth Ave",
-      "address": "915 Commonwealth Avenue, Boston",
-      "score": 8,
-      "reason": "Chinese performance showcase (9th Annual) \u2014 directly aligns with Chloe's Chinese heritage and love of Asian cultural events. Great opportunity to support local arts groups.",
-      "_proximity": 3,
-      "price": "$3\u2013$8"
-    },
-    {
-      "source": "Eventbrite:gallery+opening",
-      "name": "Where Do I Go? \u0644\u0648\u064a\u0646 \u0631\u0648\u062d | Rania Matar",
-      "description": "Join us for the opening reception of Rania Matar's photographic love letter to the women of Lebanon: Where Do I Go? \u0644\u0648\u064a\u0646 \u0631\u0648\u062d",
-      "url": "https://www.eventbrite.com/e/where-do-i-go-rania-matar-tickets-1983634821148",
-      "start": "2026-04-09",
-      "venue": "Leica Store & Gallery Boston",
-      "address": "74 Arlington Street, Boston",
-      "score": 8,
-      "reason": "Opening reception for Rania Matar photography exhibition on Lebanese women \u2014 excellent art opening, meaningful cultural content, opening reception format with likely cocktails and upscale crowd.",
-      "_proximity": 3,
-      "price": "$0"
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Pesvebi - Georgian National Dance Ensemble: Queen Tamar",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/4/pesvebi-georgian-national-dance-ensemble-queen-tamar-tickets",
-      "start": "2026-04-04T19:00",
-      "venue": "Somerville Theatre",
-      "address": "",
-      "score": 8,
-      "reason": "Georgian National Dance Ensemble\u2014international cultural performance, elegant and scene-y",
-      "_proximity": 4
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "2026 Spring Mfa Thesis Exhibition // Part I",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/5/2026-spring-mfa-thesis-exhibition-part-i-tickets",
-      "start": "2026-04-05T11:00",
-      "venue": "MassArt x SoWa",
-      "address": "",
-      "score": 8,
-      "reason": "MFA Thesis Exhibition\u2014university art opening, cultured crowd, aligned with Chloe's art passion",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "2026 Spring Mfa Thesis Exhibition // Part I",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/8/2026-spring-mfa-thesis-exhibition-part-i-tickets",
-      "start": "2026-04-08T11:00",
-      "venue": "MassArt x SoWa",
-      "address": "",
-      "score": 8,
-      "reason": "MFA thesis exhibition \u2014 museum-quality art event, likely opening reception with cultured crowd",
-      "_proximity": 3
-    },
-    {
-      "source": "ticketmaster",
-      "name": "HEY RIM JEON",
-      "description": "Described as a brilliant pianist by legendary saxophonist Benny Golson, Hey Rim Jeon has been enjoying the recent accolades and acknowledgements of her accomplishments as a musician and educator, following the release of her new jazz recording Groovitude, which soared to No. 14 on the Jazz Week National Radio Chart and remained in the top 20 for several consecutive weeks. The recording features a guest spot by her dear friend and colleague Grammy Award-winning jazz drummer Terri Lyne Carrington, as well as bassist John Lockwood and drummer Yoron Israel. The recording holds a special place in her heart, as its dedicated to her late father. In addition, her recent sold-out CD release concert at Scullers, the No. 1 Jazz Club in Boston, and the world-famous Birdland jazz club, established Hey Rim as a force to be reckoned with in the jazz community. She received rave reviews from fans and music critics, as well as members of the Korean Cultural Center and Korean Cultural Society. A high point of her trip to New York was viewing her image for the first time on a billboard at Times Square that flashed brightly during her gig at Birdland. On the educational side, Hey Rim was granted an early promotion to Professor at the Berklee College of Music, where she has been teaching in the Piano Department since 2010. In 2021, she received Berklees prestigious Exemplary Mentorship Award and is the first Korean faculty member at the institution. Hey Rim recently received the honor of being included in Marquiss Whos Who in America 2022 (75th Edition). As leader of her own band, Hey Rim Jeon and Friends, she has performed both nationally and internationally. Bill Milkowski of JazzTimes described her album Mona Lisa Puzzle as an intense, intelligent statement. It was awarded the Best Jazz Album in the 2009 New England Urban Music Awards, and reached CD Babys Top 10 Modern Creative Jazz Albums list. Hey Rim has appeared as a featured guest on NBCs Weekend Today in New York and was the subject of a documentary on Koreas National TV network titled In the Name of Korea. She has also been interviewed on a variety of podcasts and has performed her work on several online TV and radio shows. ALL TICKETS ARE NON-REFUNDABLE AND CANNOT BE EXCHANGED FOR ANOTHER SHOW.If you require special accommodations, please call the box office at 617-562-4111.",
-      "url": "https://www.ticketweb.com/event/hey-rim-jeon-scullers-jazz-club-tickets/14048394",
-      "start": "2026-04-04T23:00",
-      "venue": "Scullers Jazz Club",
-      "address": "Boston, MA",
-      "price": "$48\u2013$59",
-      "score": 8,
-      "reason": "Hey Rim Jeon concert \u2014 accomplished Korean pianist/professor, jazz excellence, cultural resonance for Chloe, upscale music experience",
-      "_proximity": 3
-    },
-    {
-      "source": "Mass Fashion Week",
-      "name": "MAFW: In Full Bloom",
-      "description": "A night where creatives rise, confidence blossoms, and vision turns into reality. This is a Mass Fashion Week event celebrating New England fashion and emerging designers.",
-      "url": "https://www.massfashionweek.com/",
-      "start": "2026-05-23T17:30",
-      "venue": "Plymouth Memorial Hall",
-      "address": "Plymouth, MA",
-      "score": 8,
-      "reason": "MAFW: In Full Bloom \u2014 upscale fashion event celebrating emerging designers and New England talent; aligns with her interest in design and artistic expression.",
-      "_proximity": 3
-    },
-    {
-      "source": "IG: Harvard Art Museums",
-      "name": "Harvard Art Museums at Night - Last Thursday of the Month",
-      "description": "Monthly evening event featuring music, drinks, activities, tours, and open galleries celebrating current exhibitions. Free admission.",
-      "url": "https://www.instagram.com/p/DWZXHUrAFZl/",
-      "start": "2026-04-30",
-      "venue": "Harvard Art Museums",
-      "address": "Cambridge, MA",
-      "score": 8,
-      "reason": "Harvard Art Museums at Night event with free admission, gallery tours, food, drinks, and music\u2014exactly Chloe's sweet spot: museum opening reception vibe with cultural content, wine/drinks, and a scene-y crowd.",
-      "_proximity": 5
     },
     {
       "source": "Eventbrite:reception",
@@ -264,6 +69,19 @@
       "price": "$13\u2013$55"
     },
     {
+      "source": "Eventbrite:gallery+opening",
+      "name": "Where Do I Go? \u0644\u0648\u064a\u0646 \u0631\u0648\u062d | Rania Matar",
+      "description": "Join us for the opening reception of Rania Matar's photographic love letter to the women of Lebanon: Where Do I Go? \u0644\u0648\u064a\u0646 \u0631\u0648\u062d",
+      "url": "https://www.eventbrite.com/e/where-do-i-go-rania-matar-tickets-1983634821148",
+      "start": "2026-04-09",
+      "venue": "Leica Store & Gallery Boston",
+      "address": "74 Arlington Street, Boston",
+      "score": 8,
+      "reason": "Opening reception for Rania Matar photography exhibition on Lebanese women \u2014 excellent art opening, meaningful cultural content, opening reception format with likely cocktails and upscale crowd.",
+      "_proximity": 3,
+      "price": "$0"
+    },
+    {
       "source": "do617:food-drink",
       "name": "Cocktail Competition",
       "description": "",
@@ -288,16 +106,28 @@
       "_proximity": 3
     },
     {
-      "source": "Boston Calendar",
-      "name": "Boston Symphony Orchestra: Andris Nelsons - Mozart Piano Concerto No. 21 With Mao Fujita",
+      "source": "do617:film-theatre-performing-arts",
+      "name": "2026 Spring Mfa Thesis Exhibition // Part I",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/boston-symphony-orchestra-andris-nelsons-mozart-piano-concerto-no-21-with-mao-fujita",
-      "start": "2026-04-04",
-      "date": "2026-04-04",
-      "venue": "",
+      "url": "https://do617.com/events/2026/4/5/2026-spring-mfa-thesis-exhibition-part-i-tickets",
+      "start": "2026-04-05T11:00",
+      "venue": "MassArt x SoWa",
       "address": "",
       "score": 8,
-      "reason": "Boston Symphony Orchestra with Andris Nelsons and Mao Fujita performing Mozart \u2014 high-culture classical music event, exactly Chloe's taste for upscale cultural experiences"
+      "reason": "MFA Thesis Exhibition\u2014university art opening, cultured crowd, aligned with Chloe's art passion",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:film-theatre-performing-arts",
+      "name": "2026 Spring Mfa Thesis Exhibition // Part I",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/8/2026-spring-mfa-thesis-exhibition-part-i-tickets",
+      "start": "2026-04-08T11:00",
+      "venue": "MassArt x SoWa",
+      "address": "",
+      "score": 8,
+      "reason": "MFA thesis exhibition \u2014 museum-quality art event, likely opening reception with cultured crowd",
+      "_proximity": 3
     },
     {
       "source": "Eventbrite:reception",
@@ -326,16 +156,17 @@
       "price": "$29\u2013$1225"
     },
     {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Presented by Lexus Broadway In BostonThe Outsiders",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/4/the-outsiders-tickets",
-      "start": "2026-04-04T20:00",
-      "venue": "Citizens Bank Opera House",
-      "address": "",
+      "source": "Eventbrite:gallery+opening",
+      "name": "OUTLET FRIDAYS @ Impeccable Art Gallery",
+      "description": "Every Friday starting 4/10, tap into a space built for connection, collaboration & pure expression. Artists, Musicians, Photographers & More",
+      "url": "https://www.eventbrite.com/e/outlet-fridays-impeccable-art-gallery-tickets-1986288665869",
+      "start": "2026-04-10",
+      "venue": "Impeccable Art Gallery",
+      "address": "460 Harrison Avenue, Boston",
       "score": 7,
-      "reason": "Broadway theater opening/major production\u2014cultured evening entertainment, upscale venue",
-      "_proximity": 3
+      "reason": "Gallery opening/artist community event (Fridays at Impeccable Art) \u2014 features artists, musicians, photographers in a gallery space. Scene-y, creative crowd focused on art and expression.",
+      "_proximity": 3,
+      "price": "$13"
     },
     {
       "source": "do617:film-theatre-performing-arts",
@@ -398,131 +229,6 @@
       "_proximity": 3
     },
     {
-      "source": "do617:concerts",
-      "name": "Isabella Stewart Gardner Museum: Paul Galbraith, guitar",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/5/isabella-stewart-gardner-museum-paul-galbraith-guitar-tickets",
-      "start": "2026-04-05T13:30",
-      "venue": "Calderwood Hall",
-      "address": "",
-      "score": 7,
-      "reason": "Isabella Stewart Gardner Museum event\u2014cultured venue, classical music (guitar), upscale setting. Aligns with Chloe's love of art institutions and refined cultural experiences.",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:comedy",
-      "name": "Vivo Performing ArtsDavid Sedaris",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/9/vivo-performing-arts-presents-david-sedaris-tickets",
-      "start": "2026-04-09T19:30",
-      "venue": "Symphony Hall, Boston, MA",
-      "address": "",
-      "score": 7,
-      "reason": "David Sedaris is a cultured, well-known humorist; Vivo Performing Arts hosts quality literary/cultural events that appeal to Chloe's taste for interesting cultural experiences.",
-      "_proximity": 3
-    },
-    {
-      "source": "Meetup: Career/Business",
-      "name": "Startup Pitch & Networking in Boston",
-      "description": "**Attention attendees!**\n**To register, use** [Luma](https://luma.com/szjsojwh)\n\nWarning:\nThe meetup is not a platform for RSVP registration; for this, you need to follow [thisLink ](https://luma.com/szjsojwh)to purchase a registration ticket.\nThe meetup is one of the platforms through which we offer participation in our events.\n\n**Startup Valley \u2014 Boston**\n\nA curated pitch night for startup founders, operators, angels and VC partners.\nWe design these sessions to help founders sharpen their thin",
-      "url": "https://www.meetup.com/startups-and-tech-events-in-boston/events/313714287/",
-      "start": "2026-04-08T19:00",
-      "date": "2026-04-08",
-      "venue": "240 Tremont St",
-      "address": "Boston",
-      "score": 7,
-      "reason": "Startup pitch night with founders, angels, and VC partners \u2014 good networking crowd, upscale startup scene energy. Brian would enjoy; Chloe may find it interesting if venue/crowd is polished.",
-      "_proximity": 3
-    },
-    {
-      "source": "Meetup: Career/Business",
-      "name": "Tech Networking Event by Startup Valley\u2028in Boston",
-      "description": "**Attention attendees!**\n**To register, use** [Luma](https://luma.com/szjsojwh)\n\nWarning:\nThe meetup is not a platform for RSVP registration; for this, you need to follow [thisLink ](https://luma.com/szjsojwh)to purchase a registration ticket.\nThe meetup is one of the platforms through which we offer participation in our events.\n\n**Startup Valley \u2014 Boston**\n\nA curated pitch night for startup founders, operators, angels and VC partners.\nWe design these sessions to help founders sharpen their thin",
-      "url": "https://www.meetup.com/startups-and-tech-events-in-boston/events/313714292/",
-      "start": "2026-04-08T19:00",
-      "date": "2026-04-08",
-      "venue": "240 Tremont St",
-      "address": "Boston",
-      "score": 7,
-      "reason": "Tech networking event by Startup Valley with startup founders, operators, angels, VCs \u2014 consistent with their curated pitch model. Good professional networking crowd.",
-      "_proximity": 3
-    },
-    {
-      "source": "Meetup: Career/Business",
-      "name": "Tech & Business Networking in Boston",
-      "description": "**Attention attendees!**\n**To register, use** [Luma](https://luma.com/szjsojwh)\n\nWarning:\nThe meetup is not a platform for RSVP registration; for this, you need to follow [thisLink ](https://luma.com/szjsojwh)to purchase a registration ticket.\nThe meetup is one of the platforms through which we offer participation in our events.\n\n**Startup Valley \u2014 Boston**\n\nA curated pitch night for startup founders, operators, angels and VC partners.\nWe design these sessions to help founders sharpen their thin",
-      "url": "https://www.meetup.com/startups-and-tech-events-in-boston/events/313714289/",
-      "start": "2026-04-08T19:00",
-      "date": "2026-04-08",
-      "venue": "240 Tremont St",
-      "address": "Boston",
-      "score": 7,
-      "reason": "Tech & business networking by Startup Valley with curated pitch format \u2014 similar upscale startup/VC energy as index 8. Solid for Brian; possible interest for Chloe depending on venue.",
-      "_proximity": 3
-    },
-    {
-      "source": "allevents:business",
-      "name": "2026 China Business Conference",
-      "description": "",
-      "url": "https://allevents.in/boston/2026-china-business-conference/100001982055303769",
-      "start": "2026-04-04",
-      "venue": "111 Western Ave",
-      "address": "Boston, MA",
-      "score": 7,
-      "reason": "2026 China Business Conference \u2014 Chloe is Chinese, strong cultural alignment, upscale business networking",
-      "_proximity": 3
-    },
-    {
-      "source": "allevents:fashion",
-      "name": "Reformation Sample Sale \u2014 Boston Seaport",
-      "description": "",
-      "url": "https://allevents.in/boston/reformation-sample-sale-\u2014-boston-seaport/100001986031159661",
-      "start": "2026-04-06",
-      "venue": "62 Seaport Blvd",
-      "address": "Boston, MA",
-      "score": 7,
-      "reason": "Reformation Sample Sale Boston Seaport \u2014 luxury fashion brand, deals on upscale apparel",
-      "_proximity": 5
-    },
-    {
-      "source": "IG: Harvard Art Museums",
-      "name": "Conversation with Leigh Raiford and Teju Cole on Photography and Social Justice",
-      "description": "A conversation examining photography's role in social justice movements and national memory, exploring how photography shapes public imagination and political struggle. Free event with registration encouraged.",
-      "url": "https://www.instagram.com/p/DWT6MY2lH13/",
-      "start": "2026-04-01T18:00",
-      "venue": "Harvard Art Museums",
-      "address": "Cambridge, MA",
-      "score": 7,
-      "reason": "Conversation between noted photography critic Teju Cole and scholar Leigh Raiford on photography's role in social justice\u2014intellectually rigorous, free, and directly tied to Chloe's love of art, photography, and cultured dialogue.",
-      "_proximity": 5
-    },
-    {
-      "source": "Eventbrite:gallery+opening",
-      "name": "Art & Architectural Historic Tour of Beacon Hill",
-      "description": "Group  Tour | Uncovering & Discovering Hidden Art Vestibules, Art Atelier, Art Galleries, Architecture  of Beacon Hill and its History",
-      "url": "https://www.eventbrite.com/e/art-architectural-historic-tour-of-beacon-hill-tickets-1977401616465",
-      "start": "2026-04-04",
-      "venue": "The Hidden Art Gallery",
-      "address": "25 Myrtle Street, Boston",
-      "score": 7,
-      "reason": "Art and architectural historic tour of Beacon Hill \u2014 combines art, history, and aesthetic appreciation. Fits her love of design and cultured experiences.",
-      "_proximity": 3,
-      "price": "$50\u2013$301"
-    },
-    {
-      "source": "Eventbrite:gallery+opening",
-      "name": "OUTLET FRIDAYS @ Impeccable Art Gallery",
-      "description": "Every Friday starting 4/10, tap into a space built for connection, collaboration & pure expression. Artists, Musicians, Photographers & More",
-      "url": "https://www.eventbrite.com/e/outlet-fridays-impeccable-art-gallery-tickets-1986288665869",
-      "start": "2026-04-10",
-      "venue": "Impeccable Art Gallery",
-      "address": "460 Harrison Avenue, Boston",
-      "score": 7,
-      "reason": "Gallery opening/artist community event (Fridays at Impeccable Art) \u2014 features artists, musicians, photographers in a gallery space. Scene-y, creative crowd focused on art and expression.",
-      "_proximity": 3,
-      "price": "$13"
-    },
-    {
       "source": "do617:film-theatre-performing-arts",
       "name": "Shen Yun",
       "description": "",
@@ -569,285 +275,6 @@
       "score": 7,
       "reason": "Wine and comedy pairing at City Winery \u2014 upscale food & drink venue with cultural entertainment, good scene potential",
       "_proximity": 3
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Dumplings to Dim Sum: Food and History Tour of Boston&#39;s Chinatown",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/chinatown-s-culture-cuisine-food-tasting-and-neighborhood-tour--111",
-      "start": "2026-04-04",
-      "date": "2026-04-04",
-      "venue": "",
-      "address": "",
-      "score": 7,
-      "reason": "Food and history tour of Boston's Chinatown \u2014 combines Chloe's love of food experiences with Asian cultural appreciation and local culinary exploration."
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "April Open Studios",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/april-open-studios",
-      "start": "2026-04-04",
-      "date": "2026-04-04",
-      "venue": "",
-      "address": "",
-      "score": 7,
-      "reason": "April Open Studios \u2014 direct access to artists, galleries, and creative community; typically a scene-y art event in Boston's creative neighborhoods."
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Holi - Festival of Colors",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/holi-festival-of-colors",
-      "start": "2026-04-04",
-      "date": "2026-04-04",
-      "venue": "",
-      "address": "",
-      "score": 7,
-      "reason": "Holi festival \u2014 cultural event celebrating Asian traditions (Chloe is Chinese and appreciates these), likely vibrant crowd and aesthetic"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Cultural Rhythms Show &amp; Conversation with Sheryl Lee Ralph",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/cultural-rhythms-show-conversation-with-sheryl-lee-ralph",
-      "start": "2026-04-04",
-      "date": "2026-04-04",
-      "venue": "",
-      "address": "",
-      "score": 7,
-      "reason": "Cultural conversation with Sheryl Lee Ralph \u2014 Black cultural event with artistic credibility, conversation-based, scene-worthy"
-    },
-    {
-      "source": "allevents:arts",
-      "name": "April 10 : Shen Yun 2026, Boston, MA",
-      "description": "",
-      "url": "https://allevents.in/boston/april-10-shen-yun-2026-boston-ma/80002619554461",
-      "start": "2026-04-10",
-      "venue": "Boch Center - Wang Theatre",
-      "address": "Boston, MA",
-      "score": 7,
-      "reason": "Shen Yun is a prestigious, visually stunning cultural production with high production values. Chloe appreciates Asian cultural events, and this fits her taste for beautiful, cultured experiences.",
-      "_proximity": 3
-    },
-    {
-      "source": "Eventbrite:embedded+systems",
-      "name": "Deep Blue: The Global Glimpse of Indigo",
-      "description": "Indigo tapestries from the collection of Maria Tavares",
-      "url": "https://www.eventbrite.com/e/deep-blue-the-global-glimpse-of-indigo-tickets-1986085662681",
-      "start": "2026-04-04",
-      "venue": "Howard Thurman Center for Common Ground",
-      "address": "808 Commonwealth Avenue, Brookline",
-      "score": 7,
-      "reason": "Art exhibit featuring indigo tapestries\u2014aligns directly with Chloe's passion for art, gallery openings, and visual culture. 'Deep Blue: The Global Glimpse of Indigo' suggests an upscale, curated exhibition.",
-      "_proximity": 5,
-      "price": "$0"
-    },
-    {
-      "source": "Eventbrite:launch+party",
-      "name": "Midwifery + The Black Birthing Family| ORIGIN STORIES",
-      "description": "Free public screening of MBBF'S ORIGIN STORIES + archival photography exhibition & FORESYTHE anthology launch. Open to all.",
-      "url": "https://www.eventbrite.com/e/midwifery-the-black-birthing-family-origin-stories-tickets-1984291180336",
-      "start": "2026-04-04",
-      "venue": "Marran Theatre",
-      "address": "34 Mellen Street, Cambridge",
-      "score": 6,
-      "reason": "Free public screening with archival photography exhibition and book launch \u2014 art/cultural event with social mission. Chloe values cultured, meaningful events.",
-      "_proximity": 5,
-      "price": "$0"
-    },
-    {
-      "source": "luma:boston",
-      "name": "[Stripe Press] Boston Pop-up",
-      "description": "",
-      "url": "https://lu.ma/8qukz62d",
-      "start": "2026-04-04T15:00",
-      "venue": "",
-      "address": "Cambridge, Massachusetts",
-      "score": 6,
-      "reason": "Stripe Press pop-up \u2014 tech/publishing event with curated audience, intellectual appeal",
-      "_proximity": 5
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "PAGU: Hand-Pulled Noodle Class",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/pagu-hand-pulled-noodle-class--29",
-      "start": "2026-04-04",
-      "date": "2026-04-04",
-      "venue": "",
-      "address": "",
-      "score": 6,
-      "reason": "Hand-pulled noodle class at PAGU \u2014 Asian culinary experience, hands-on food skill class, culturally relevant"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Bottomless Bubbles, Bites &amp; Flights Brunch at Flight Club | Boston Seaport",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/bottomless-bubbles-bites-flights-brunch-at-flight-club-boston-seaport--103",
-      "start": "2026-04-04",
-      "date": "2026-04-04",
-      "venue": "",
-      "address": "",
-      "score": 6,
-      "reason": "Bottomless brunch with flights at Flight Club Seaport \u2014 upscale food and drink experience with wine/cocktail component in a trendy venue."
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Saturday Jazz Brunch",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/saturday-jazz-brunch--25",
-      "start": "2026-04-04",
-      "date": "2026-04-04",
-      "venue": "",
-      "address": "",
-      "score": 6,
-      "reason": "Saturday Jazz Brunch \u2014 cultured, scene-y dining experience combining food, drink, and live music in an upscale setting."
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Chocolate Lover Tour of Back Bay!",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/chocolate-lover-tour-of-back-bay--108",
-      "start": "2026-04-04",
-      "date": "2026-04-04",
-      "venue": "",
-      "address": "",
-      "score": 6,
-      "reason": "Chocolate Lover Tour of Back Bay \u2014 food-focused experience in Boston's most upscale neighborhood, likely includes tastings and culinary expertise."
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "East Boston Muralists...Reimagined",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/east-boston-muralists-reimagined--26",
-      "start": "2026-04-04",
-      "date": "2026-04-04",
-      "venue": "",
-      "address": "",
-      "score": 6,
-      "reason": "East Boston Muralists...Reimagined \u2014 art-focused cultural event exploring public/street art and its reimagining, appeals to Chloe's art and design interests."
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "History of  Boston Through Paintings | Art Tour | Saturdays 12 - 1 :30pm",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/history-of-boston-through-paintings-art-tour-saturdays-12-4pm--55",
-      "start": "2026-04-04",
-      "date": "2026-04-04",
-      "venue": "",
-      "address": "",
-      "score": 6,
-      "reason": "History of Boston Through Paintings art tour \u2014 combines Chloe's love of art with guided cultural/historical education in an intimate format."
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "PAGU: Sushi &amp; Hand-Roll Class",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/pagu-sushi-hand-roll-class--22",
-      "start": "2026-04-04",
-      "date": "2026-04-04",
-      "venue": "",
-      "address": "",
-      "score": 6,
-      "reason": "Upscale sushi/hand-roll class \u2014 food & drink expertise angle, though limited detail on venue/crowd sophistication"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Spotlight Tour: Art of Healing, with Sachi Laumas \u201926",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/spotlight-tour-art-of-healing-with-sachi-laumas-26--4",
-      "start": "2026-04-04",
-      "date": "2026-04-04",
-      "venue": "",
-      "address": "",
-      "score": 6,
-      "reason": "Harvard art museum spotlight tour with curator/artist talk \u2014 cultured, educational, museum-adjacent"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Drink History! Tour of Historic Sites and Taverns (with beer or cider)",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/drink-history-tour-of-historic-sites-and-taverns-with-beer-or-cider--86",
-      "start": "2026-04-04",
-      "date": "2026-04-04",
-      "venue": "",
-      "address": "",
-      "score": 6,
-      "reason": "Drink history tour with beverages \u2014 combines food/drink interest with cultural/historical narrative"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Italian Dinner with Tiramisu Finale in Boston",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/italian-dinner-with-tiramisu-finale-in-boston--168",
-      "start": "2026-04-04",
-      "date": "2026-04-04",
-      "venue": "",
-      "address": "",
-      "score": 6,
-      "reason": "Italian dinner experience \u2014 upscale dining angle with cultural/food focus, though generic title suggests limited details"
-    },
-    {
-      "source": "luma:boston",
-      "name": "The Luminous Cloud of Unknowing: A Conversation with James K.A. Smith about Mysticism, Anxiety, and Love",
-      "description": "",
-      "url": "https://lu.ma/luminous",
-      "start": "2026-04-10T22:00",
-      "venue": "",
-      "address": "Cambridge, Massachusetts",
-      "score": 6,
-      "reason": "Intellectual conversation about mysticism and philosophy with James K.A. Smith \u2014 cultured, thoughtful event that appeals to Chloe's interest in refined cultural experiences",
-      "_proximity": 5
-    },
-    {
-      "source": "Eventbrite:defense+tech",
-      "name": "MIT Music Tech Speaker Series Presents: Akito van Troyer",
-      "description": "Sonic Alchemy: Transmuting the Everyday into Music",
-      "url": "https://www.eventbrite.com/e/mit-music-tech-speaker-series-presents-akito-van-troyer-tickets-1980647681533",
-      "start": "2026-04-07",
-      "venue": "MIT Room 4-237",
-      "address": "182 Memorial Drive, Cambridge",
-      "score": 6,
-      "reason": "MIT Music Tech Speaker Series is an intellectual, cultured event at a prestigious institution with an interesting topic (Sonic Alchemy). Fits her appreciation for art, design, and scene-y cultural events.",
-      "_proximity": 5,
-      "price": "$0"
-    },
-    {
-      "source": "Harvard Kennedy School",
-      "name": "2026 Asia Pacific Conference",
-      "description": "The Asia Pacific Conference is happening on Saturday, April 4th, 2026. Learn more and get tickets at www.harvardasiapacificcon.org",
-      "url": "https://www.harvardasiapacificcon.org",
-      "start": "2026-04-04T09:00",
-      "venue": "Harvard Kennedy School",
-      "address": "Cambridge, Massachusetts",
-      "score": 6,
-      "reason": "Asia Pacific Conference aligns with Chloe's interest in Asian cultural events and Harvard's prestige, though description lacks details on venue/reception atmosphere",
-      "_proximity": 5
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Art Exhibition | The Hidden Art Gallery",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/the-hidden-art-gallery--36",
-      "start": "2026-04-04",
-      "date": "2026-04-04",
-      "venue": "",
-      "address": "",
-      "score": 5,
-      "reason": "Art Exhibition at The Hidden Art Gallery \u2014 gallery exhibition event appeals to Chloe's interest in art shows and gallery openings."
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Korean Buttercream Flowers workshop",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/korean-buttercream-flowers-workshop",
-      "start": "2026-04-04",
-      "date": "2026-04-04",
-      "venue": "",
-      "address": "",
-      "score": 5,
-      "reason": "Korean buttercream flowers workshop \u2014 Asian cultural craft, design/aesthetics focus, sip-and-craft style if venue is upscale"
     }
   ],
   "extra_events": [
@@ -1088,134 +515,10 @@
     ]
   },
   "costs": {
-    "week": 0.8747,
-    "month": 0.8747,
-    "total": 2.1486,
+    "week": 0.909,
+    "month": 0.909,
+    "total": 2.1829,
     "runs": [
-      {
-        "ts": "2026-04-03T10:01:43.698462",
-        "persona": "brian",
-        "events_total": 708,
-        "events_cached": 152,
-        "events_scored": 218,
-        "cost_usd": 0.130581,
-        "duration_ms": 150851,
-        "models": {
-          "claude-haiku-4-5-20251001": 0.130581
-        },
-        "by_stage": {
-          "fetch": 0.10585,
-          "score": 0.024731
-        },
-        "source_counts": {
-          "Liberty Hotel events": 8,
-          "Eventbrite": 25,
-          "Boston Fashion Week": 1,
-          "IG": 5,
-          "allevents": 3,
-          "do617": 26,
-          "Meetup": 13,
-          "Boston Bar Assoc": 12,
-          "Mass Fashion Week": 1,
-          "Boston Calendar": 11,
-          "WBUR Events": 16
-        },
-        "deploy_why": "run",
-        "netlify": {
-          "total": 1000,
-          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
-        },
-        "efficiency": {
-          "cache_hit_rate": 0.411,
-          "avg_hit_rate": 0.006,
-          "cost_per_scored_event": 0.0006,
-          "notes": [
-            "Cache 41% hit (152 cached, 218 scored) \u2014 many new events, normal on first daily run",
-            "High scoring volume (218 scored) \u2014 consider raising min_score to cut costs",
-            "High cost $0.1306 \u2014 check for new uncached scrape_url sources burning tokens"
-          ]
-        }
-      },
-      {
-        "ts": "2026-04-03T10:25:32.918291",
-        "persona": "chloe",
-        "events_total": 708,
-        "events_cached": 57,
-        "events_scored": 247,
-        "cost_usd": 0.04424,
-        "duration_ms": 47719,
-        "models": {
-          "claude-haiku-4-5-20251001": 0.04424
-        },
-        "by_stage": {
-          "fetch": 0.01474,
-          "score": 0.0295
-        },
-        "source_counts": {
-          "Liberty Hotel events": 8,
-          "Eventbrite": 9,
-          "Boston Fashion Week": 1,
-          "allevents": 3,
-          "IG": 4,
-          "do617": 17,
-          "ticketmaster": 2,
-          "Mass Fashion Week": 1,
-          "Boston Calendar": 13,
-          "Meetup": 4,
-          "luma": 1
-        },
-        "deploy_why": "run",
-        "netlify": {
-          "total": 1000,
-          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
-        },
-        "efficiency": {
-          "cache_hit_rate": 0.188,
-          "avg_hit_rate": 0.082,
-          "cost_per_scored_event": 0.00018,
-          "notes": [
-            "Cache 19% hit (57 cached, 247 scored) \u2014 many new events, normal on first daily run",
-            "High scoring volume (247 scored) \u2014 consider raising min_score to cut costs"
-          ]
-        }
-      },
-      {
-        "ts": "2026-04-03T10:27:14.251297",
-        "persona": "kirk",
-        "events_total": 708,
-        "events_cached": 12,
-        "events_scored": 247,
-        "cost_usd": 0.026148,
-        "duration_ms": 30691,
-        "models": {
-          "claude-haiku-4-5-20251001": 0.026148
-        },
-        "by_stage": {
-          "score": 0.026148
-        },
-        "source_counts": {
-          "do617": 4,
-          "Meetup": 8,
-          "Greentown Labs events": 1,
-          "Eventbrite": 1,
-          "Boston Calendar": 1,
-          "IG": 2
-        },
-        "deploy_why": "run",
-        "netlify": {
-          "total": 1000,
-          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
-        },
-        "efficiency": {
-          "cache_hit_rate": 0.046,
-          "avg_hit_rate": 0.12,
-          "cost_per_scored_event": 0.00011,
-          "notes": [
-            "Cache 5% hit (12 cached, 247 scored) \u2014 many new events, normal on first daily run",
-            "High scoring volume (247 scored) \u2014 consider raising min_score to cut costs"
-          ]
-        }
-      },
       {
         "ts": "2026-04-04T08:11:20.335140",
         "persona": "brian",
@@ -1304,23 +607,97 @@
             "High scoring volume (343 scored) \u2014 consider raising min_score to cut costs"
           ]
         }
+      },
+      {
+        "ts": "2026-04-04T08:17:17.171016",
+        "persona": "kirk",
+        "events_total": 822,
+        "events_cached": 12,
+        "events_scored": 343,
+        "cost_usd": 0.034272,
+        "duration_ms": 39230,
+        "models": {
+          "claude-haiku-4-5-20251001": 0.034272
+        },
+        "by_stage": {
+          "score": 0.034272
+        },
+        "source_counts": {
+          "do617": 4,
+          "Meetup": 8,
+          "Eventbrite": 9
+        },
+        "deploy_why": "run",
+        "netlify": {
+          "total": 1000,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.034,
+          "avg_hit_rate": 0.227,
+          "cost_per_scored_event": 0.0001,
+          "notes": [
+            "Cache 3% hit (12 cached, 343 scored) \u2014 many new events, normal on first daily run",
+            "High scoring volume (343 scored) \u2014 consider raising min_score to cut costs"
+          ]
+        }
+      },
+      {
+        "ts": "2026-04-05T16:40:01.910581",
+        "persona": "brian",
+        "events_total": 424,
+        "events_cached": 68,
+        "events_scored": 83,
+        "cost_usd": 0,
+        "duration_ms": 0,
+        "models": {},
+        "by_stage": {},
+        "source_counts": {
+          "Eventbrite": 10,
+          "do617": 20
+        },
+        "deploy_why": "run",
+        "netlify": {},
+        "efficiency": {
+          "cache_hit_rate": 0.45,
+          "avg_hit_rate": 0.152,
+          "cost_per_scored_event": 0.0,
+          "notes": [
+            "Cache 45% hit (68 cached, 83 scored) \u2014 many new events, normal on first daily run"
+          ]
+        }
+      },
+      {
+        "ts": "2026-04-05T16:40:09.408767",
+        "persona": "chloe",
+        "events_total": 424,
+        "events_cached": 41,
+        "events_scored": 83,
+        "cost_usd": 0,
+        "duration_ms": 0,
+        "models": {},
+        "by_stage": {},
+        "source_counts": {
+          "Eventbrite": 7,
+          "do617": 15
+        },
+        "deploy_why": "run",
+        "netlify": {},
+        "efficiency": {
+          "cache_hit_rate": 0.331,
+          "avg_hit_rate": 0.204,
+          "cost_per_scored_event": 0.0,
+          "notes": [
+            "Cache 33% hit (41 cached, 83 scored) \u2014 many new events, normal on first daily run"
+          ]
+        }
       }
     ],
-    "netlify": "1000 credit pack \u2014 check balance at app.netlify.com/billing"
+    "netlify": ""
   },
   "sources": {
-    "Eventbrite": 12,
-    "Liberty Hotel events": 7,
-    "Boston Fashion Week": 1,
-    "do617": 19,
-    "ticketmaster": 1,
-    "Mass Fashion Week": 1,
-    "IG": 2,
-    "Boston Calendar": 17,
-    "Meetup": 3,
-    "allevents": 3,
-    "luma": 2,
-    "Harvard Kennedy School": 1
+    "Eventbrite": 7,
+    "do617": 15
   },
   "source_urls": {
     "do617": "https://do617.com/events/food-drink",
@@ -1374,17 +751,7 @@
     "Venture Lane events": "https://www.venturelane.co/events"
   },
   "source_stats": {
-    "Eventbrite": 12,
-    "Liberty Hotel events": 7,
-    "Boston Fashion Week": 1,
-    "do617": 19,
-    "ticketmaster": 1,
-    "Mass Fashion Week": 1,
-    "IG": 2,
-    "Boston Calendar": 17,
-    "Meetup": 3,
-    "allevents": 3,
-    "luma": 2,
-    "Harvard Kennedy School": 1
+    "Eventbrite": 7,
+    "do617": 15
   }
 }
