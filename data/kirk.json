@@ -1,59 +1,10 @@
 {
-  "generated_at": "2026-04-05T16:40:19.852068",
-  "today": "2026-04-05",
+  "generated_at": "2026-04-06T12:25:29.385642",
+  "today": "2026-04-06",
   "days": 7,
   "persona": "kirk",
   "persona_prompt": "You are filtering Boston, Cambridge, and Providence RI events for Kirk Brown.\n\nKirk's background:\n- Hardware engineer who has also done software engineering and software sales\n- Sales Engineer at Mapbox (SoftBank-backed geo/spatial tech) and Bit Flow (machine vision / industrial hardware)\n- Experienced selling and demoing both hardware products and software platforms to technical buyers\n- Finishing his master's degree\n- Looking for his next role \u2014 open to hardware, software, or technical sales\n\nWhat Kirk wants:\n- Hardware & embedded: semiconductor events, robotics, embedded systems, IoT, machine vision, industrial tech, PCB/FPGA, sensors\n- Defense & deep tech: defense tech startups, dual-use hardware, MIT Lincoln Lab adjacent events, Draper Lab, MITRE\n- VC & startup events: demo days, pitch nights, investor panels, founder dinners, accelerator showcases (hardware AND software)\n- Tech community: hackathons, product launches, startup meetups, tech networking with practitioners\n- Sales Engineer / presales: SE community events, RevOps meetups, Pavilion events, Salesforce/HubSpot ecosystem\n- Geographic range: Boston, Cambridge, Somerville, Providence RI \u2014 has a car, will travel for quality\n- University: MIT, Harvard, Brown, Northeastern, WPI \u2014 especially hardware/robotics/EE research events open to industry\n- Career: panels with engineering leadership, CTO talks, startup hiring, technical founder events\n- Domain expertise: geo/spatial tech, machine vision, industrial automation, fintech, data infrastructure\n\nSCORE 9-10 (must attend):\n- Hardware startup demo days or pitch nights (Greentown Labs, FORGE RI, MIT hardware)\n- Semiconductor or chip design events (ARM, Analog Devices, MIT MTL, IEEE Boston)\n- Robotics showcases with industry participation (Boston Dynamics adjacent, MassRobotics)\n- Defense tech or dual-use hardware networking (Draper, MITRE, DIU events open to industry)\n- Sales Engineer or presales community events (Pavilion SE chapter, SE Collective)\n- VC-hosted events open to founders/operators \u2014 hardware or deep tech focus especially\n- MIT or Brown research-to-industry events with real networking\n\nSCORE 5-7 (worth knowing):\n- General tech networking with solid company mix (not just recruiters)\n- University EE/CS/robotics showcases with industry crossover\n- Revenue/GTM panels (sales ops, CRO, B2B technical sales)\n- SaaS or hardware product launches in relevant sectors\n- Maker/hardware community events (Artisan's Asylum, HackerSpace Boston)\n\nLOWER PRIORITY (score \u2264 4):\n- Pure academic lectures with no networking or industry angle\n- Social events with no career/tech relevance\n- Events clearly targeted at undergrads only with no industry presence\n- Sports, arts-only, food/drink without tech angle\n- Generic networking mixers with no engineering or sales focus",
-  "events": [
-    {
-      "source": "do617:concerts",
-      "name": "AI Startup Networking & Founder Pitch Night | Boston",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/8/ai-startup-networking-founder-pitch-night-boston-tickets",
-      "start": "2026-04-08T19:00",
-      "venue": "240 Tremont St",
-      "address": "",
-      "score": 8,
-      "reason": "AI startup networking and founder pitch night \u2014 directly aligned with Kirk's interest in startup events, demo days, and founder networking in Boston",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
-      "name": "Bentley E-Hub - Founder Nights",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/7/bentley-e-hub-founder-nights-tickets",
-      "start": "2026-04-07T19:00",
-      "venue": "Multicultural Center",
-      "address": "",
-      "score": 7,
-      "reason": "Bentley E-Hub Founder Nights \u2014 direct match for Kirk's interest in startup/VC events, founder networking, and demo day atmosphere. Hardware and software founders likely present.",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
-      "name": "AI Specialists: AppliedAI Ethics Monthly Mixer - Boston",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/8/ai-specialists-appliedai-ethics-monthly-mixer-boston-tickets",
-      "start": "2026-04-08T13:00",
-      "venue": "Location TBD; Register Online",
-      "address": "",
-      "score": 7,
-      "reason": "AI specialists and applied AI ethics mixer \u2014 tech community networking with potential relevance to Kirk's data infrastructure and software background",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
-      "name": "Celigo Seminar: Operate at the Speed of AI \u2014 Boston",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/8/celigo-seminar-operate-at-the-speed-of-ai-boston-tickets",
-      "start": "2026-04-08T14:00",
-      "venue": "Hampshire House",
-      "address": "",
-      "score": 7,
-      "reason": "Celigo seminar on AI operations \u2014 B2B tech event with product/platform angle, relevant to Kirk's software and sales engineer background",
-      "_proximity": 3
-    }
-  ],
+  "events": [],
   "extra_events": [
     {
       "name": "Salt + Stone \u2014 $1 - $2 oysters (Check status)",
@@ -1032,112 +983,10 @@
     ]
   },
   "costs": {
-    "week": 0.909,
+    "week": 0,
     "month": 0.909,
     "total": 2.1829,
     "runs": [
-      {
-        "ts": "2026-04-04T08:15:54.008483",
-        "persona": "chloe",
-        "events_total": 822,
-        "events_cached": 58,
-        "events_scored": 343,
-        "cost_usd": 0.035864,
-        "duration_ms": 34681,
-        "models": {
-          "claude-haiku-4-5-20251001": 0.035864
-        },
-        "by_stage": {
-          "score": 0.035864
-        },
-        "source_counts": {
-          "Eventbrite": 12,
-          "Liberty Hotel events": 7,
-          "Boston Fashion Week": 1,
-          "do617": 19,
-          "ticketmaster": 1,
-          "Mass Fashion Week": 1,
-          "IG": 2,
-          "Boston Calendar": 17,
-          "Meetup": 3,
-          "allevents": 3,
-          "luma": 2,
-          "Harvard Kennedy School": 1
-        },
-        "deploy_why": "run",
-        "netlify": {
-          "total": 1000,
-          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
-        },
-        "efficiency": {
-          "cache_hit_rate": 0.145,
-          "avg_hit_rate": 0.198,
-          "cost_per_scored_event": 0.0001,
-          "notes": [
-            "Cache 14% hit (58 cached, 343 scored) \u2014 many new events, normal on first daily run",
-            "High scoring volume (343 scored) \u2014 consider raising min_score to cut costs"
-          ]
-        }
-      },
-      {
-        "ts": "2026-04-04T08:17:17.171016",
-        "persona": "kirk",
-        "events_total": 822,
-        "events_cached": 12,
-        "events_scored": 343,
-        "cost_usd": 0.034272,
-        "duration_ms": 39230,
-        "models": {
-          "claude-haiku-4-5-20251001": 0.034272
-        },
-        "by_stage": {
-          "score": 0.034272
-        },
-        "source_counts": {
-          "do617": 4,
-          "Meetup": 8,
-          "Eventbrite": 9
-        },
-        "deploy_why": "run",
-        "netlify": {
-          "total": 1000,
-          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
-        },
-        "efficiency": {
-          "cache_hit_rate": 0.034,
-          "avg_hit_rate": 0.227,
-          "cost_per_scored_event": 0.0001,
-          "notes": [
-            "Cache 3% hit (12 cached, 343 scored) \u2014 many new events, normal on first daily run",
-            "High scoring volume (343 scored) \u2014 consider raising min_score to cut costs"
-          ]
-        }
-      },
-      {
-        "ts": "2026-04-05T16:40:01.910581",
-        "persona": "brian",
-        "events_total": 424,
-        "events_cached": 68,
-        "events_scored": 83,
-        "cost_usd": 0,
-        "duration_ms": 0,
-        "models": {},
-        "by_stage": {},
-        "source_counts": {
-          "Eventbrite": 10,
-          "do617": 20
-        },
-        "deploy_why": "run",
-        "netlify": {},
-        "efficiency": {
-          "cache_hit_rate": 0.45,
-          "avg_hit_rate": 0.152,
-          "cost_per_scored_event": 0.0,
-          "notes": [
-            "Cache 45% hit (68 cached, 83 scored) \u2014 many new events, normal on first daily run"
-          ]
-        }
-      },
       {
         "ts": "2026-04-05T16:40:09.408767",
         "persona": "chloe",
@@ -1187,13 +1036,77 @@
             "Cache hit rate 6% vs recent avg 26% (5 cached / 83 scored) \u2014 possible new sources added or score cache cleared"
           ]
         }
+      },
+      {
+        "ts": "2026-04-06T12:25:25.239749",
+        "persona": "brian",
+        "events_total": 0,
+        "events_cached": 0,
+        "events_scored": 0,
+        "cost_usd": 0,
+        "duration_ms": 0,
+        "models": {},
+        "by_stage": {},
+        "source_counts": {},
+        "deploy_why": "run",
+        "netlify": {},
+        "efficiency": {
+          "cache_hit_rate": 0.0,
+          "avg_hit_rate": 0.203,
+          "cost_per_scored_event": 0.0,
+          "notes": [
+            "No events processed \u2014 pipeline ran with no data (check sources or previous crash)"
+          ]
+        }
+      },
+      {
+        "ts": "2026-04-06T12:25:27.167902",
+        "persona": "chloe",
+        "events_total": 0,
+        "events_cached": 0,
+        "events_scored": 0,
+        "cost_usd": 0,
+        "duration_ms": 0,
+        "models": {},
+        "by_stage": {},
+        "source_counts": {},
+        "deploy_why": "run",
+        "netlify": {},
+        "efficiency": {
+          "cache_hit_rate": 0.0,
+          "avg_hit_rate": 0.174,
+          "cost_per_scored_event": 0.0,
+          "notes": [
+            "No events processed \u2014 pipeline ran with no data (check sources or previous crash)"
+          ]
+        }
+      },
+      {
+        "ts": "2026-04-06T12:25:28.457660",
+        "persona": "kirk",
+        "events_total": 0,
+        "events_cached": 0,
+        "events_scored": 0,
+        "cost_usd": 0,
+        "duration_ms": 0,
+        "models": {},
+        "by_stage": {},
+        "source_counts": {},
+        "deploy_why": "run",
+        "netlify": {},
+        "efficiency": {
+          "cache_hit_rate": 0.0,
+          "avg_hit_rate": 0.168,
+          "cost_per_scored_event": 0.0,
+          "notes": [
+            "No events processed \u2014 pipeline ran with no data (check sources or previous crash)"
+          ]
+        }
       }
     ],
     "netlify": ""
   },
-  "sources": {
-    "do617": 4
-  },
+  "sources": {},
   "source_urls": {
     "do617": "https://do617.com/events/food-drink",
     "ACLU MA": "https://www.aclum.org/en/events",
@@ -1245,7 +1158,5 @@
     "Greentown Labs events": "https://greentownlabs.com/events/",
     "Venture Lane events": "https://www.venturelane.co/events"
   },
-  "source_stats": {
-    "do617": 4
-  }
+  "source_stats": {}
 }
