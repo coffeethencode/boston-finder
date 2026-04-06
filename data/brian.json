@@ -1,381 +1,10 @@
 {
-  "generated_at": "2026-04-05T16:40:09.180485",
-  "today": "2026-04-05",
+  "generated_at": "2026-04-06T12:25:26.993410",
+  "today": "2026-04-06",
   "days": 7,
   "persona": "brian",
   "persona_prompt": "You are filtering Boston events for someone who wants high-status, interesting things to attend:\n- Oyster happy hours or upscale food/drink (wine dinners, tastings, chef's tables)\n- Galas, fundraisers, charity benefits, receptions, award ceremonies\n- Events where they can attend as a subject matter expert: public records law, open meeting law, FOIA, government transparency, civic accountability, journalism\n- High-status professional networking, panels, policy forums, finance/VC/startup events\n- Fashion/model events, runway shows, press events, media events, bikini/swimwear shows, fitness model showcases, promotional model events, brand activations\n- Recurring upscale nightlife: scene-y bar/club nights, VIP events, boat/yacht cruises, influencer events\n- Anything exclusive, influential, or scene-y\n\nSCORE 9-10 (always attend):\n- \"Fashionably LATE\" Thursdays at The Liberty Hotel \u2014 weekly interactive runway, models weave through crowd, free admission\n- Boston Fashion Week events (Oct 4-10, 2026) and surrounding pre/post events\n- SwimBoston \u2014 annual swimwear/bikini runway at Boston Harbor Distillery (21+)\n- Boston En Vogue runway shows \u2014 luxury evening gowns and couture\n- Mass Fashion Week showcases\n- Harpoon Brewery festivals (St. Pats, Summer Games at Lawn on D, Oktoberfest)\n- Boat/yacht cruises on Boston Harbor \u2014 Taylor Swift, Barbie, themed nights\n- Any event at Royale Boston, ICON, VENU with 6ONE7 Productions or similar promoters\n- Museum/gallery opening receptions with a cocktail hour or wine \u2014 Harvard Art Museums, MFA, ICA, Gardner \u2014 not a regular museum visit but a special evening event with a crowd\n- University cultural events open to the public that draw an interesting mix of people (academics, creatives, professionals) \u2014 Harvard, MIT, BU, Northeastern\n\nNOT wanted: pure sports games, road races, youth sports, basic trivia nights at chains.",
-  "events": [
-    {
-      "source": "Eventbrite:fashion+show",
-      "name": "Fashionably Late Thursdays - 2026 Winter/Spring Season",
-      "description": "Fashionably Late brings Boston's fashion scene to life.  Every Thursday, the hotel's lobby transforms into an interactive fashion show.",
-      "url": "https://www.eventbrite.com/e/fashionably-late-thursdays-2026-winterspring-season-tickets-1981387754110",
-      "start": "2026-04-09",
-      "venue": "Liberty Lobby at The Liberty Hotel",
-      "address": "215 Charles St, Boston",
-      "score": 10,
-      "reason": "Fashionably Late Thursdays at Liberty Hotel \u2014 recurring runway/interactive fashion show, free admission, models on floor, scene-y, exactly matches preferences.",
-      "_proximity": 3,
-      "price": "$0"
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Champagne & Caviar Tastings",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/10/champagne-caviar-tastings-tickets",
-      "start": "2026-04-10T17:00",
-      "venue": "Troquet on South",
-      "address": "",
-      "score": 9,
-      "reason": "Champagne & Caviar Tastings \u2014 premium food/drink experience, luxury positioning, ideal for sophisticated attendee",
-      "_proximity": 3
-    },
-    {
-      "source": "Eventbrite:reception",
-      "name": "40th Celebration: Opening Reception of Performing Conditions",
-      "description": "Join us for the opening reception of the new exhibition at the List Center, Performing Conditions: Artistic Labor and Dependency as Form.",
-      "url": "https://www.eventbrite.com/e/40th-celebration-opening-reception-of-performing-conditions-tickets-1982291184294",
-      "start": "2026-04-10",
-      "venue": "MIT List Visual Arts Center",
-      "address": "20 Ames Street, Cambridge",
-      "score": 8,
-      "reason": "List Center exhibition opening reception \u2014 upscale art event with cocktail hour, MIT-affiliated, intellectual crowd, great venue for networking",
-      "_proximity": 5,
-      "price": "$0"
-    },
-    {
-      "source": "Eventbrite:reception",
-      "name": "Night at the Louvre: Art, Intrigue & a Modern Heist",
-      "description": "Bestselling author Elaine Sciolino shares an intimate journey of discovery and revelation into the world\u2019s most famous museum.",
-      "url": "https://www.eventbrite.com/e/night-at-the-louvre-art-intrigue-a-modern-heist-tickets-1980582945907",
-      "start": "2026-04-07",
-      "venue": "French Library / Alliance Fran\u00e7aise of Boston & Cambridge",
-      "address": "53 Marlborough Street, Boston",
-      "score": 8,
-      "reason": "Author talk on art history and culture at an upscale venue \u2014 intellectually engaging, networking opportunity with an interesting crowd.",
-      "_proximity": 5,
-      "price": "$18\u2013$28"
-    },
-    {
-      "source": "Eventbrite:model+showcase",
-      "name": "AI AGENTS SHOWCASE (INDUSTRY-SPECIFIC CUSTOMIZED DEMO-DAY)",
-      "description": "Witness the convergence of cutting-edge technology and visionary minds",
-      "url": "https://www.eventbrite.com/e/ai-agents-showcase-industry-specific-customized-demo-day-tickets-1981633481086",
-      "start": "2026-04-07",
-      "venue": "Boston Convention and Exhibition Center",
-      "address": "415 Summer Street, Boston",
-      "score": 8,
-      "reason": "AI Agents demo day \u2014 startup/VC/tech networking, cutting-edge innovation, investor and founder crowd, high-value connections",
-      "_proximity": 3,
-      "price": "$589"
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Cocktail Competition",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/8/cocktail-competition-tickets",
-      "start": "2026-04-08T18:00",
-      "venue": "Bully Boy Distillers",
-      "address": "",
-      "score": 8,
-      "reason": "Cocktail Competition \u2014 upscale hospitality/bartender event, interactive format, high-skill crowd, excellent for networking",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Spring Chef's Dinner",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/10/spring-chefs-dinner-tickets",
-      "start": "2026-04-10T18:00",
-      "venue": "Harvest",
-      "address": "",
-      "score": 8,
-      "reason": "Spring Chef's Dinner \u2014 upscale culinary event, intimate dining experience, high-status food scene",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Chef's Dinner: A multi-course dinner with Chef Marco Fortina",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/10/chef-s-dinner-a-multi-course-dinner-with-chef-marco-fortina-tickets",
-      "start": "2026-04-10T18:00",
-      "venue": "Eataly Boston",
-      "address": "",
-      "score": 8,
-      "reason": "Chef's multi-course dinner is exactly the upscale culinary experience Brian seeks \u2014 high-status food event",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "State of the City",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/8/state-of-the-city-tickets",
-      "start": "2026-04-08T10:00",
-      "venue": "Zeiterion Theatre",
-      "address": "",
-      "score": 8,
-      "reason": "State of the City \u2014 civic/government event, perfect for Brian's public records and civic accountability expertise",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
-      "name": "AI, Strategy & the Future of Real Estate",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/10/ai-strategy-the-future-of-real-estate-tickets",
-      "start": "2026-04-10T08:00",
-      "venue": "DOCA Showroom",
-      "address": "",
-      "score": 8,
-      "reason": "AI, Strategy & the Future of Real Estate \u2014 directly relevant to Brian's real estate interests, policy/strategy focus, professional networking opportunity",
-      "_proximity": 3
-    },
-    {
-      "source": "Eventbrite:reception",
-      "name": "A Bel Canto Evening",
-      "description": "Boston Summer Opera presents a live opera concert celebrating the beauty of the voice, and fundraising for our upcoming 2026 season.",
-      "url": "https://www.eventbrite.com/e/a-bel-canto-evening-tickets-1981879533034",
-      "start": "2026-04-10",
-      "venue": "Arlington Street Church",
-      "address": "351 Boylston Street, Boston",
-      "score": 7,
-      "reason": "Opera fundraiser gala \u2014 high-status cultural event, supporting arts, elegant evening with affluent crowd",
-      "_proximity": 3,
-      "price": "$13\u2013$55"
-    },
-    {
-      "source": "Eventbrite:royale+boston",
-      "name": "Diva Royale - Drag Queen Dinner & Brunch Show Boston",
-      "description": "Diva Royale - Drag Queen Dinner & Brunch Show Boston",
-      "url": "https://www.eventbrite.com/e/diva-royale-drag-queen-dinner-brunch-show-boston-tickets-728548747917",
-      "start": "2026-04-05",
-      "venue": "Upstairs at Hennessy\u2019s",
-      "address": "25 Union Street, Boston",
-      "score": 7,
-      "reason": "Drag dinner show \u2014 fun, scene-y Boston nightlife event with entertainment and social energy.",
-      "_proximity": 3,
-      "price": "$29\u2013$1225"
-    },
-    {
-      "source": "Eventbrite:royale+boston",
-      "name": "The Martinez Brothers at Royale Boston",
-      "description": "Get ready to dance all night with the Martinez Brothers dropping sick beats you won\u2019t forget!",
-      "url": "https://www.eventbrite.com/e/the-martinez-brothers-at-royale-boston-tickets-1986702909884",
-      "start": "2026-04-10",
-      "venue": "Royale",
-      "address": "279 Tremont Street, Boston",
-      "score": 7,
-      "reason": "Royale Boston nightlife with top DJs \u2014 scene-y venue, quality promoter, recurring upscale nightlife destination",
-      "_proximity": 3,
-      "price": "$51"
-    },
-    {
-      "source": "Eventbrite:venu+boston",
-      "name": "VENU ON FRIDAY | 777 FRIDAYS",
-      "description": "BOSTON'S FAVORITE FRIDAY DESTINATION FOR THE BEST LATIN \u2022 DANCEHALL & HIP HOP EVERY FRIDAY NIGHT",
-      "url": "https://www.eventbrite.com/e/venu-on-friday-777-fridays-tickets-1980085948374",
-      "start": "2026-04-10",
-      "venue": "Venu Nightclub",
-      "address": "100 Warrenton Street, Boston",
-      "score": 7,
-      "reason": "VENU Latin/Dancehall/Hip Hop recurring Friday \u2014 upscale nightlife venue, cultural diversity, excellent crowd energy",
-      "_proximity": 3,
-      "price": "$0\u2013$25"
-    },
-    {
-      "source": "Eventbrite:gallery+opening",
-      "name": "Where Do I Go? \u0644\u0648\u064a\u0646 \u0631\u0648\u062d | Rania Matar",
-      "description": "Join us for the opening reception of Rania Matar's photographic love letter to the women of Lebanon: Where Do I Go? \u0644\u0648\u064a\u0646 \u0631\u0648\u062d",
-      "url": "https://www.eventbrite.com/e/where-do-i-go-rania-matar-tickets-1983634821148",
-      "start": "2026-04-09",
-      "venue": "Leica Store & Gallery Boston",
-      "address": "74 Arlington Street, Boston",
-      "score": 7,
-      "reason": "Gallery opening reception for photographic exhibition \u2014 museum/gallery opening with cultural intrigue and cocktail crowd, fits the profile exactly.",
-      "_proximity": 3,
-      "price": "$0"
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Hands-On: Spaghetti alla Nerano",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/8/hands-on-spaghetti-alla-nerano-tickets",
-      "start": "2026-04-08T18:00",
-      "venue": "Eataly Boston",
-      "address": "",
-      "score": 7,
-      "reason": "Hands-on pasta class at what appears to be upscale venue \u2014 culinary experience, high-status food focus",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "2026 Spring Mfa Thesis Exhibition // Part I",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/5/2026-spring-mfa-thesis-exhibition-part-i-tickets",
-      "start": "2026-04-05T11:00",
-      "venue": "MassArt x SoWa",
-      "address": "",
-      "score": 7,
-      "reason": "2026 Spring MFA Thesis Exhibition \u2014 university art opening, creative professionals, upscale gallery scene",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Presented by Lexus Broadway In BostonThe Outsiders",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/8/the-outsiders-tickets",
-      "start": "2026-04-08T19:00",
-      "venue": "Citizens Bank Opera House",
-      "address": "",
-      "score": 7,
-      "reason": "Broadway show (The Outsiders) \u2014 high-status cultural event, prestige entertainment",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "The Commitments",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/8/the-commitments-tickets",
-      "start": "2026-04-08T19:30",
-      "venue": "Somerville Theatre",
-      "address": "",
-      "score": 7,
-      "reason": "The Commitments (Broadway) \u2014 high-status theatrical production",
-      "_proximity": 4
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Berklee India Exchange presents Anirudh Varma Collective",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/8/berklee-india-exchange-presents-anirudh-varma-collective-tickets",
-      "start": "2026-04-08T18:00",
-      "venue": "Arrow Street Arts",
-      "address": "",
-      "score": 7,
-      "reason": "Berklee India Exchange music event \u2014 cultural affinity (Brian lived in Asia, Chloe Chinese), great music and crowd",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "The Audience",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/8/the-audience-tickets",
-      "start": "2026-04-08T19:00",
-      "venue": "Coolidge Corner Theatre",
-      "address": "",
-      "score": 7,
-      "reason": "The Audience (Broadway) \u2014 high-status theatrical production",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Mo Gilligan - The Mo You Know",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/9/mo-gilligan-the-mo-you-know-tickets",
-      "start": "2026-04-09T19:00",
-      "venue": "Arts At The Armory",
-      "address": "",
-      "score": 7,
-      "reason": "Stand-up comedy show \u2014 high-status entertainment, scene-y venue likely",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "\u2018Planet Money\u2019 Live",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/9/planet-money-live-tickets",
-      "start": "2026-04-09T19:30",
-      "venue": "WBUR CitySpace",
-      "address": "",
-      "score": 7,
-      "reason": "'Planet Money' Live aligns with Brian's journalism/civic interest and draws an engaged professional crowd",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Presented by Lexus Broadway In BostonThe Outsiders",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/9/the-outsiders-tickets",
-      "start": "2026-04-09T19:30",
-      "venue": "Citizens Bank Opera House",
-      "address": "",
-      "score": 7,
-      "reason": "Broadway in Boston production \u2014 upscale cultural event, prestige venue",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
-      "name": "Boston - Vinofile Plus Pick Up Party",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/6/boston-vinofile-plus-pick-up-party-tickets",
-      "start": "2026-04-06T18:00",
-      "venue": "City Winery",
-      "address": "",
-      "score": 7,
-      "reason": "Vinofile Plus Pick Up Party \u2014 wine tasting/networking event, upscale beverage-focused social",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
-      "name": "Bentley E-Hub - Founder Nights",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/7/bentley-e-hub-founder-nights-tickets",
-      "start": "2026-04-07T19:00",
-      "venue": "Multicultural Center",
-      "address": "",
-      "score": 7,
-      "reason": "Bentley E-Hub Founder Nights \u2014 startup/VC/entrepreneurship networking, strong professional audience",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
-      "name": "AI Startup Networking & Founder Pitch Night | Boston",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/8/ai-startup-networking-founder-pitch-night-boston-tickets",
-      "start": "2026-04-08T19:00",
-      "venue": "240 Tremont St",
-      "address": "",
-      "score": 7,
-      "reason": "AI Startup Networking & Founder Pitch Night \u2014 strong VC/startup networking event, Brian's professional interest",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
-      "name": "City Winery and Boston Comedy Festival Present: Comedy and Cabernet",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/10/city-winery-and-boston-comedy-festival-present-comedy-and-cabernet-tickets",
-      "start": "2026-04-10T19:30",
-      "venue": "City Winery",
-      "address": "",
-      "score": 7,
-      "reason": "Comedy and Cabernet at City Winery \u2014 upscale wine pairing event with entertainment, good venue, fits profile of high-status food/drink experiences",
-      "_proximity": 3
-    },
-    {
-      "source": "Eventbrite:gallery+opening",
-      "name": "Sonder Teen Gallery Opening",
-      "description": "Join the ICA's Teen Exhibitions Program at the Teen Gallery to celebrate the opening of Sonder. It's free and open to all ages.",
-      "url": "https://www.eventbrite.com/e/sonder-teen-gallery-opening-tickets-1985488769357",
-      "start": "2026-04-10",
-      "venue": "ICA Seaport Studio",
-      "address": "100 Pier 4 Boulevard, Boston",
-      "score": 6,
-      "reason": "ICA Teen Gallery opening reception \u2014 contemporary art venue, free public opening, culturally engaged crowd",
-      "_proximity": 5,
-      "price": "$0"
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Transnational Series: Kanako Nishi and Allison Markin Powell",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/7/transnational-series-kanako-nishi-and-allison-markin-powell-tickets",
-      "start": "2026-04-07T19:00",
-      "venue": "Brookline Booksmith",
-      "address": "",
-      "score": 6,
-      "reason": "Literary/cultural panel event with translators \u2014 intellectual gathering, could involve media/publishing discussion",
-      "_proximity": 5
-    }
-  ],
+  "events": [],
   "extra_events": [
     {
       "name": "Mayflower Brewing's Spring Warehouse Jam Series: The Dirty Water Dance Band",
@@ -1179,136 +808,10 @@
     ]
   },
   "costs": {
-    "week": 0.909,
+    "week": 0,
     "month": 0.909,
     "total": 2.1829,
     "runs": [
-      {
-        "ts": "2026-04-03T10:27:14.251297",
-        "persona": "kirk",
-        "events_total": 708,
-        "events_cached": 12,
-        "events_scored": 247,
-        "cost_usd": 0.026148,
-        "duration_ms": 30691,
-        "models": {
-          "claude-haiku-4-5-20251001": 0.026148
-        },
-        "by_stage": {
-          "score": 0.026148
-        },
-        "source_counts": {
-          "do617": 4,
-          "Meetup": 8,
-          "Greentown Labs events": 1,
-          "Eventbrite": 1,
-          "Boston Calendar": 1,
-          "IG": 2
-        },
-        "deploy_why": "run",
-        "netlify": {
-          "total": 1000,
-          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
-        },
-        "efficiency": {
-          "cache_hit_rate": 0.046,
-          "avg_hit_rate": 0.12,
-          "cost_per_scored_event": 0.00011,
-          "notes": [
-            "Cache 5% hit (12 cached, 247 scored) \u2014 many new events, normal on first daily run",
-            "High scoring volume (247 scored) \u2014 consider raising min_score to cut costs"
-          ]
-        }
-      },
-      {
-        "ts": "2026-04-04T08:11:20.335140",
-        "persona": "brian",
-        "events_total": 822,
-        "events_cached": 164,
-        "events_scored": 309,
-        "cost_usd": 0.159562,
-        "duration_ms": 166701,
-        "models": {
-          "claude-haiku-4-5-20251001": 0.159562
-        },
-        "by_stage": {
-          "fetch": 0.123486,
-          "score": 0.036076
-        },
-        "source_counts": {
-          "Eventbrite": 34,
-          "Liberty Hotel events": 7,
-          "Boston Fashion Week": 1,
-          "do617": 29,
-          "Boston Calendar": 24,
-          "Meetup": 11,
-          "Boston Bar Assoc": 12,
-          "Mass Fashion Week": 1,
-          "IG": 6,
-          "allevents": 2,
-          "WBUR Events": 16,
-          "BSO Events": 20,
-          "Harvard Kennedy School": 1
-        },
-        "deploy_why": "run",
-        "netlify": {
-          "total": 1000,
-          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
-        },
-        "efficiency": {
-          "cache_hit_rate": 0.347,
-          "avg_hit_rate": 0.129,
-          "cost_per_scored_event": 0.00052,
-          "notes": [
-            "Cache 35% hit (164 cached, 309 scored) \u2014 many new events, normal on first daily run",
-            "High scoring volume (309 scored) \u2014 consider raising min_score to cut costs",
-            "High cost $0.1596 \u2014 check for new uncached scrape_url sources burning tokens"
-          ]
-        }
-      },
-      {
-        "ts": "2026-04-04T08:15:54.008483",
-        "persona": "chloe",
-        "events_total": 822,
-        "events_cached": 58,
-        "events_scored": 343,
-        "cost_usd": 0.035864,
-        "duration_ms": 34681,
-        "models": {
-          "claude-haiku-4-5-20251001": 0.035864
-        },
-        "by_stage": {
-          "score": 0.035864
-        },
-        "source_counts": {
-          "Eventbrite": 12,
-          "Liberty Hotel events": 7,
-          "Boston Fashion Week": 1,
-          "do617": 19,
-          "ticketmaster": 1,
-          "Mass Fashion Week": 1,
-          "IG": 2,
-          "Boston Calendar": 17,
-          "Meetup": 3,
-          "allevents": 3,
-          "luma": 2,
-          "Harvard Kennedy School": 1
-        },
-        "deploy_why": "run",
-        "netlify": {
-          "total": 1000,
-          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
-        },
-        "efficiency": {
-          "cache_hit_rate": 0.145,
-          "avg_hit_rate": 0.198,
-          "cost_per_scored_event": 0.0001,
-          "notes": [
-            "Cache 14% hit (58 cached, 343 scored) \u2014 many new events, normal on first daily run",
-            "High scoring volume (343 scored) \u2014 consider raising min_score to cut costs"
-          ]
-        }
-      },
       {
         "ts": "2026-04-04T08:17:17.171016",
         "persona": "kirk",
@@ -1367,14 +870,83 @@
             "Cache 45% hit (68 cached, 83 scored) \u2014 many new events, normal on first daily run"
           ]
         }
+      },
+      {
+        "ts": "2026-04-05T16:40:09.408767",
+        "persona": "chloe",
+        "events_total": 424,
+        "events_cached": 41,
+        "events_scored": 83,
+        "cost_usd": 0,
+        "duration_ms": 0,
+        "models": {},
+        "by_stage": {},
+        "source_counts": {
+          "Eventbrite": 7,
+          "do617": 15
+        },
+        "deploy_why": "run",
+        "netlify": {},
+        "efficiency": {
+          "cache_hit_rate": 0.331,
+          "avg_hit_rate": 0.204,
+          "cost_per_scored_event": 0.0,
+          "notes": [
+            "Cache 33% hit (41 cached, 83 scored) \u2014 many new events, normal on first daily run"
+          ]
+        }
+      },
+      {
+        "ts": "2026-04-05T16:40:14.806972",
+        "persona": "kirk",
+        "events_total": 424,
+        "events_cached": 5,
+        "events_scored": 83,
+        "cost_usd": 0,
+        "duration_ms": 0,
+        "models": {},
+        "by_stage": {},
+        "source_counts": {
+          "do617": 4
+        },
+        "deploy_why": "run",
+        "netlify": {},
+        "efficiency": {
+          "cache_hit_rate": 0.057,
+          "avg_hit_rate": 0.261,
+          "cost_per_scored_event": 0.0,
+          "notes": [
+            "Cache 6% hit (5 cached, 83 scored) \u2014 many new events, normal on first daily run",
+            "Cache hit rate 6% vs recent avg 26% (5 cached / 83 scored) \u2014 possible new sources added or score cache cleared"
+          ]
+        }
+      },
+      {
+        "ts": "2026-04-06T12:25:25.239749",
+        "persona": "brian",
+        "events_total": 0,
+        "events_cached": 0,
+        "events_scored": 0,
+        "cost_usd": 0,
+        "duration_ms": 0,
+        "models": {},
+        "by_stage": {},
+        "source_counts": {},
+        "deploy_why": "run",
+        "netlify": {},
+        "efficiency": {
+          "cache_hit_rate": 0.0,
+          "avg_hit_rate": 0.203,
+          "cost_per_scored_event": 0.0,
+          "notes": [
+            "No events processed \u2014 pipeline ran with no data (check sources or previous crash)"
+          ]
+        }
       }
     ],
     "netlify": ""
   },
-  "sources": {
-    "Eventbrite": 10,
-    "do617": 20
-  },
+  "sources": {},
   "source_urls": {
     "do617": "https://do617.com/events/food-drink",
     "ACLU MA": "https://www.aclum.org/en/events",
@@ -1426,8 +998,5 @@
     "Greentown Labs events": "https://greentownlabs.com/events/",
     "Venture Lane events": "https://www.venturelane.co/events"
   },
-  "source_stats": {
-    "Eventbrite": 10,
-    "do617": 20
-  }
+  "source_stats": {}
 }
