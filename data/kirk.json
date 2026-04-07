@@ -1,10 +1,340 @@
 {
-  "generated_at": "2026-04-06T12:25:29.385642",
-  "today": "2026-04-06",
+  "generated_at": "2026-04-07T10:15:54.327303",
+  "today": "2026-04-07",
   "days": 7,
   "persona": "kirk",
   "persona_prompt": "You are filtering Boston, Cambridge, and Providence RI events for Kirk Brown.\n\nKirk's background:\n- Hardware engineer who has also done software engineering and software sales\n- Sales Engineer at Mapbox (SoftBank-backed geo/spatial tech) and Bit Flow (machine vision / industrial hardware)\n- Experienced selling and demoing both hardware products and software platforms to technical buyers\n- Finishing his master's degree\n- Looking for his next role \u2014 open to hardware, software, or technical sales\n\nWhat Kirk wants:\n- Hardware & embedded: semiconductor events, robotics, embedded systems, IoT, machine vision, industrial tech, PCB/FPGA, sensors\n- Defense & deep tech: defense tech startups, dual-use hardware, MIT Lincoln Lab adjacent events, Draper Lab, MITRE\n- VC & startup events: demo days, pitch nights, investor panels, founder dinners, accelerator showcases (hardware AND software)\n- Tech community: hackathons, product launches, startup meetups, tech networking with practitioners\n- Sales Engineer / presales: SE community events, RevOps meetups, Pavilion events, Salesforce/HubSpot ecosystem\n- Geographic range: Boston, Cambridge, Somerville, Providence RI \u2014 has a car, will travel for quality\n- University: MIT, Harvard, Brown, Northeastern, WPI \u2014 especially hardware/robotics/EE research events open to industry\n- Career: panels with engineering leadership, CTO talks, startup hiring, technical founder events\n- Domain expertise: geo/spatial tech, machine vision, industrial automation, fintech, data infrastructure\n\nSCORE 9-10 (must attend):\n- Hardware startup demo days or pitch nights (Greentown Labs, FORGE RI, MIT hardware)\n- Semiconductor or chip design events (ARM, Analog Devices, MIT MTL, IEEE Boston)\n- Robotics showcases with industry participation (Boston Dynamics adjacent, MassRobotics)\n- Defense tech or dual-use hardware networking (Draper, MITRE, DIU events open to industry)\n- Sales Engineer or presales community events (Pavilion SE chapter, SE Collective)\n- VC-hosted events open to founders/operators \u2014 hardware or deep tech focus especially\n- MIT or Brown research-to-industry events with real networking\n\nSCORE 5-7 (worth knowing):\n- General tech networking with solid company mix (not just recruiters)\n- University EE/CS/robotics showcases with industry crossover\n- Revenue/GTM panels (sales ops, CRO, B2B technical sales)\n- SaaS or hardware product launches in relevant sectors\n- Maker/hardware community events (Artisan's Asylum, HackerSpace Boston)\n\nLOWER PRIORITY (score \u2264 4):\n- Pure academic lectures with no networking or industry angle\n- Social events with no career/tech relevance\n- Events clearly targeted at undergrads only with no industry presence\n- Sports, arts-only, food/drink without tech angle\n- Generic networking mixers with no engineering or sales focus",
-  "events": [],
+  "events": [
+    {
+      "source": "do617:concerts",
+      "name": "AI Startup Networking & Founder Pitch Night | Boston",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/8/ai-startup-networking-founder-pitch-night-boston-tickets",
+      "start": "2026-04-08T19:00",
+      "venue": "240 Tremont St",
+      "address": "",
+      "score": 8,
+      "reason": "AI startup networking and founder pitch night \u2014 directly aligned with Kirk's interest in startup events, demo days, and founder networking in Boston",
+      "_proximity": 3
+    },
+    {
+      "source": "Meetup: Career/Business",
+      "name": "Startup Pitch & Networking in Boston",
+      "description": "**Attention attendees!**\n**To register, use** [Luma](https://luma.com/szjsojwh)\n\nWarning:\nThe meetup is not a platform for RSVP registration; for this, you need to follow [thisLink ](https://luma.com/szjsojwh)to purchase a registration ticket.\nThe meetup is one of the platforms through which we offer participation in our events.\n\n**Startup Valley \u2014 Boston**\n\nA curated pitch night for startup founders, operators, angels and VC partners.\nWe design these sessions to help founders sharpen their thin",
+      "url": "https://www.meetup.com/startups-and-tech-events-in-boston/events/313714287/",
+      "start": "2026-04-08T19:00",
+      "date": "2026-04-08",
+      "venue": "240 Tremont St",
+      "address": "Boston",
+      "score": 8,
+      "reason": "Startup pitch night for founders, operators, angels, and VC partners in Boston. Directly matches Kirk's interest in VC and startup events, demo days, and pitch nights. Curated founder/operator/investor crowd is excellent for networking and exploring opportunities. High-quality tech entrepreneurship focus.",
+      "_proximity": 3
+    },
+    {
+      "source": "Meetup: Career/Business",
+      "name": "Tech Networking Event by Startup Valley\u2028in Boston",
+      "description": "**Attention attendees!**\n**To register, use** [Luma](https://luma.com/szjsojwh)\n\nWarning:\nThe meetup is not a platform for RSVP registration; for this, you need to follow [thisLink ](https://luma.com/szjsojwh)to purchase a registration ticket.\nThe meetup is one of the platforms through which we offer participation in our events.\n\n**Startup Valley \u2014 Boston**\n\nA curated pitch night for startup founders, operators, angels and VC partners.\nWe design these sessions to help founders sharpen their thin",
+      "url": "https://www.meetup.com/startups-and-tech-events-in-boston/events/313714292/",
+      "start": "2026-04-08T19:00",
+      "date": "2026-04-08",
+      "venue": "240 Tremont St",
+      "address": "Boston",
+      "score": 8,
+      "reason": "Tech networking event by Startup Valley for founders, operators, angels, and VC partners. Curated pitch night with quality founder/operator/investor mix. Excellent for building startup ecosystem connections and exploring next-role opportunities.",
+      "_proximity": 3
+    },
+    {
+      "source": "Meetup: Career/Business",
+      "name": "Tech & Business Networking in Boston",
+      "description": "**Attention attendees!**\n**To register, use** [Luma](https://luma.com/szjsojwh)\n\nWarning:\nThe meetup is not a platform for RSVP registration; for this, you need to follow [thisLink ](https://luma.com/szjsojwh)to purchase a registration ticket.\nThe meetup is one of the platforms through which we offer participation in our events.\n\n**Startup Valley \u2014 Boston**\n\nA curated pitch night for startup founders, operators, angels and VC partners.\nWe design these sessions to help founders sharpen their thin",
+      "url": "https://www.meetup.com/startups-and-tech-events-in-boston/events/313714289/",
+      "start": "2026-04-08T19:00",
+      "date": "2026-04-08",
+      "venue": "240 Tremont St",
+      "address": "Boston",
+      "score": 8,
+      "reason": "Tech & Business Networking event by Startup Valley for founders, operators, angels, and VC partners. Same high-quality startup ecosystem as index 8. Strong match for Kirk's interest in founder networking, startup culture, and investor connections.",
+      "_proximity": 3
+    },
+    {
+      "source": "Eventbrite:venture+capital+boston",
+      "name": "Investor Connect: Pitch & Network Night     Boston",
+      "description": "Meet investors and promising startups in  Boston. Pitch your idea, discover deals, and connect with the venture community.",
+      "url": "https://www.eventbrite.com/e/investor-connect-pitch-network-night-boston-tickets-1985958497326",
+      "start": "2026-04-08",
+      "venue": "Bar Moxy",
+      "address": "240 Tremont Street, Boston",
+      "score": 8,
+      "reason": "Investor Connect pitch & network night. Direct access to founders, investors, and startup deal flow \u2014 excellent for Kirk's interest in VC, startup ecosystem, and potential job leads in hardware/deep tech.",
+      "_proximity": 3,
+      "price": "$0\u2013$23"
+    },
+    {
+      "source": "Eventbrite:venture+capital+boston",
+      "name": "Investor Connect: Pitch & Deal Flow Night | Boston",
+      "description": "Meet startups, investors, and access ongoing deal flow with weekly intros and early opportunities. Free for approved investors.",
+      "url": "https://www.eventbrite.com/e/investor-connect-pitch-deal-flow-night-boston-tickets-1986342047535",
+      "start": "2026-04-08",
+      "venue": "240 Tremont St",
+      "address": "240 Tremont Street, Boston",
+      "score": 8,
+      "reason": "Investor Connect pitch & deal flow with weekly intros. Ongoing community access to startups and investors with early opportunities \u2014 strong alignment with Kirk's hardware startup and sales engineer interests.",
+      "_proximity": 3,
+      "price": "$0\u2013$66"
+    },
+    {
+      "source": "Eventbrite:venture+capital+boston",
+      "name": "Startup Pitch Event Boston",
+      "description": "Holiday Pitch Networking: meet founders & investors, share your year, and map out your plan for the next one together.",
+      "url": "https://www.eventbrite.com/e/startup-pitch-event-boston-tickets-1984783720537",
+      "start": "2026-04-08",
+      "venue": "Bar Moxy",
+      "address": "240 Tremont Street, Boston",
+      "score": 8,
+      "reason": "Startup pitch event with founders & investors. Holiday networking with growth-stage founders and capital providers \u2014 direct pipeline to potential employers and partnership opportunities in hardware/software.",
+      "_proximity": 3,
+      "price": "$10\u2013$23"
+    },
+    {
+      "source": "do617:concerts",
+      "name": "Bentley E-Hub - Founder Nights",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/7/bentley-e-hub-founder-nights-tickets",
+      "start": "2026-04-07T19:00",
+      "venue": "Multicultural Center",
+      "address": "",
+      "score": 7,
+      "reason": "Bentley E-Hub Founder Nights \u2014 direct match for Kirk's interest in startup/VC events, founder networking, and demo day atmosphere. Hardware and software founders likely present.",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:concerts",
+      "name": "AI Specialists: AppliedAI Ethics Monthly Mixer - Boston",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/8/ai-specialists-appliedai-ethics-monthly-mixer-boston-tickets",
+      "start": "2026-04-08T13:00",
+      "venue": "Location TBD; Register Online",
+      "address": "",
+      "score": 7,
+      "reason": "AI specialists and applied AI ethics mixer \u2014 tech community networking with potential relevance to Kirk's data infrastructure and software background",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:concerts",
+      "name": "Celigo Seminar: Operate at the Speed of AI \u2014 Boston",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/8/celigo-seminar-operate-at-the-speed-of-ai-boston-tickets",
+      "start": "2026-04-08T14:00",
+      "venue": "Hampshire House",
+      "address": "",
+      "score": 7,
+      "reason": "Celigo seminar on AI operations \u2014 B2B tech event with product/platform angle, relevant to Kirk's software and sales engineer background",
+      "_proximity": 3
+    },
+    {
+      "source": "Meetup: Tech Boston",
+      "name": "Boston Gen AI Meetup April 2026: \"Coding and Engineering with AI\u201d",
+      "description": "Get ready for an engaging experience at the Boston Generative AI Meetup - April 2026 Edition. The theme is \"Coding and Engineering with AI\u201d\n\nJoin us on Wednesday April 8th for a memorable evening dedicated to the latest advancements and thinking in generative, predictive, casual, and agentic AI - at the world's largest AI meetup.\n\nWe're thrilled to bring you insightful discussions centered on the power of AI We have the opportunity to transform the business with AI, creating a better world for e",
+      "url": "https://www.meetup.com/boston-generative-ai-meetup/events/313563481/",
+      "start": "2026-04-08T18:00",
+      "date": "2026-04-08",
+      "venue": "Microsoft New England Research and Development Center",
+      "address": "Cambridge",
+      "score": 7,
+      "reason": "Boston Gen AI Meetup 'Coding and Engineering with AI' \u2014 engineering-focused AI event with networking, relevant to Kirk's software and technical sales background",
+      "_proximity": 5
+    },
+    {
+      "source": "Meetup: Tech Boston",
+      "name": "Boston AI Music Meetup @ Berklee // April ",
+      "description": "**Wednesday, April 8th, 6:00 PM**\nJoin us for a featured talk, followed by a networking session. Held at the Berklee campus in downtown Boston.\n\n**Teodor Costache**\nBerklee College of Music, President of AudioVerse Lab, and leader of Berklee\u2019s Collaboration & Innovation Club\n*Beyond Generation: Making Sense of AI in Music and the Arts*\n\n**Prince Charles Alexander** and **Jonathan Wyner**\n\n**Networking Session**\nAfter the talk, stick around for networking and pizza. A great chance to connect with",
+      "url": "https://www.meetup.com/boston-ai-music-meetup/events/313782118/",
+      "start": "2026-04-08T18:00",
+      "date": "2026-04-08",
+      "venue": "1140 1D - Lounge @ Berklee",
+      "address": "Boston",
+      "score": 7,
+      "reason": "Boston AI Music Meetup at Berklee \u2014 tech community event with featured talk and networking, solid venue and crowd for someone with software/hardware background",
+      "_proximity": 3
+    },
+    {
+      "source": "Meetup: Tech Boston",
+      "name": "Open Project Night - Every Tuesday, In Person! ",
+      "description": "Welcome to Cambridge Hackspace!\n\nBring yourself, your ideas, and your projects\u2014any projects!\u2014to the Hackspace and hang out with kindred spirits who like to tinker, learn, and share ideas about making stuff!\n\nNo experience necessary, and no existing project required! We're a place and a community when you can explore and develop your curiosity and interest in making things. Come try things out, learn new skills, and meet folks who want to do the same.\n\nOur door can be hard to find! There are [dir",
+      "url": "https://www.meetup.com/cambridge-hackspace/events/313732182/",
+      "start": "2026-04-07T18:30",
+      "date": "2026-04-07",
+      "venue": "Cambridge Hackspace",
+      "address": "Somerville",
+      "score": 7,
+      "reason": "Cambridge Hackspace Open Project Night\u2014hands-on making and tinkering community. Good for hardware/embedded interests and meeting people who build things. Regular, accessible event.",
+      "_proximity": 5
+    },
+    {
+      "source": "Meetup: Tech Boston",
+      "name": "OpenClaw Meetup",
+      "description": "## Build Your OpenClaw Strategy**.**\n\n### What It Is. Why It Matters. Why It\u2019s Coming Fast.\n\nWe are entering a new era of computing.\nNot apps.\nNot dashboards.\nNot copilots.\n\n**Agents.**\nAutonomous systems that reason, plan, call tools, interact with environments, and work alongside humans. But for agents to actually operate in the real world, they need something we have not fully defined yet:\n\n**An operating system for agents.**\nThis is where **OpenClaw** comes in.\nOpenClaw represents a new way ",
+      "url": "https://www.meetup.com/ailearningclub/events/313807678/",
+      "start": "2026-04-10T11:00",
+      "date": "2026-04-10",
+      "venue": "Online event",
+      "address": "",
+      "score": 7,
+      "reason": "OpenClaw is an autonomous agents/AI operating systems platform\u2014directly relevant to Kirk's software engineering, deep tech, and startup ecosystem interests. Agent infrastructure is a key emerging area; good networking opportunity with technical founders and practitioners.",
+      "_proximity": 3
+    },
+    {
+      "source": "Eventbrite:hardware+startup",
+      "name": "Startup Founder Night: Where Ideas Meet | Boston",
+      "description": "Startup networking in Boston for founders, builders and investors. Curated startup event to connect, share ideas and explore opportunities.",
+      "url": "https://www.eventbrite.com/e/startup-founder-night-where-ideas-meet-boston-tickets-1985642071889",
+      "start": "2026-04-08",
+      "venue": "Bar Moxy",
+      "address": "240 Tremont Street, Boston",
+      "score": 7,
+      "reason": "Startup networking event for founders, builders and investors\u2014good mix for Kirk as someone exploring next role, potential networking with hardware/deep tech founders",
+      "_proximity": 3,
+      "price": "$0\u2013$24"
+    },
+    {
+      "source": "Eventbrite:hardware+startup",
+      "name": "Founders, Investors & Talent Networking Mixer | Boston",
+      "description": "Startup networking event in Boston for founders, investors and tech talent. Meet builders and connect with Ascent Valley community",
+      "url": "https://www.eventbrite.com/e/founders-investors-talent-networking-mixer-boston-tickets-1984674338372",
+      "start": "2026-04-08",
+      "venue": "240 Tremont St",
+      "address": "240 Tremont Street, Boston",
+      "score": 7,
+      "reason": "Founders, investors & talent mixer\u2014direct access to startup ecosystem and potential hiring/collaboration opportunities for hardware/tech talent",
+      "_proximity": 3,
+      "price": "$0\u2013$24"
+    },
+    {
+      "source": "Eventbrite:defense+tech",
+      "name": "MIT Music Tech Speaker Series Presents: Akito van Troyer",
+      "description": "Sonic Alchemy: Transmuting the Everyday into Music",
+      "url": "https://www.eventbrite.com/e/mit-music-tech-speaker-series-presents-akito-van-troyer-tickets-1980647681533",
+      "start": "2026-04-07",
+      "venue": "MIT Room 4-237",
+      "address": "182 Memorial Drive, Cambridge",
+      "score": 7,
+      "reason": "MIT Music Tech Speaker Series\u2014MIT-affiliated event with technical audience; while music-focused, Kirk's hardware/embedded background could benefit from cross-disciplinary tech thinking",
+      "_proximity": 5,
+      "price": "$0"
+    },
+    {
+      "source": "Eventbrite:defense+tech",
+      "name": "Boston Tech Mixer and Social (Tech / AI / Data / IT) \u2728",
+      "description": "Join us at our TECH MIXER AND SOCIAL for afterwork drinks, networking with tech / IT workers in and connect with others in tech",
+      "url": "https://www.eventbrite.com/e/boston-tech-mixer-and-social-tech-ai-data-it-tickets-1986016324288",
+      "start": "2026-04-10",
+      "venue": "Elephant & Castle",
+      "address": "161 Devonshire St, Boston",
+      "score": 7,
+      "reason": "Boston Tech Mixer with tech/AI/data/IT focus\u2014solid afterwork networking for tech professionals; good venue for meeting peers in Kirk's domain",
+      "_proximity": 3,
+      "price": "$0"
+    },
+    {
+      "source": "Eventbrite:defense+tech",
+      "name": "Boston Tech Mixer and Social (Tech / AI / Data) \u2728 Boston Connect",
+      "description": "Join us at our TECH MIXER AND SOCIAL for afterwork drinks, networking with tech / IT workers in Boston and meet people from over the world",
+      "url": "https://www.eventbrite.com.au/e/boston-tech-mixer-and-social-tech-ai-data-boston-connect-tickets-1975977111733",
+      "start": "2026-04-10",
+      "venue": "Elephant & Castle",
+      "address": "161 Devonshire St, Boston",
+      "score": 7,
+      "reason": "Tech mixer with afterwork drinks and networking. Solid tech/AI/data focus with international attendees \u2014 good for meeting practitioners and expanding network in Boston tech scene.",
+      "_proximity": 3,
+      "price": "$8"
+    },
+    {
+      "source": "IG: Harvard Art Museums",
+      "name": "Conversation with Leigh Raiford and Teju Cole on Photography and Social Justice",
+      "description": "A timely examination of how photography shapes public imagination and political struggle, exploring photography's limits and possibilities in moments of political urgency and crisis.",
+      "url": "https://www.instagram.com/harvardartmuseums/",
+      "start": "2026-04-01T18:00",
+      "venue": "Harvard Art Museums",
+      "address": "Cambridge, Massachusetts",
+      "score": 7,
+      "reason": "Harvard Art Museums evening event with social element (drinks, music, tours). Upscale cultural venue in Cambridge with open networking potential; good for casual professional socializing.",
+      "_proximity": 5
+    },
+    {
+      "source": "Greentown Labs events",
+      "name": "Boston Climate Week at Greentown Boston",
+      "description": "Celebrate the inaugural Boston Climate Week on Wednesday, May 6 and Thursday, May 7 at Greentown Boston.",
+      "url": "https://greentownlabs.com/events/",
+      "start": "2026-05-06",
+      "venue": "Greentown Boston",
+      "address": "Boston, Massachusetts",
+      "score": 7,
+      "reason": "Greentown Boston is a premier hardware accelerator venue. Even though climate focus isn't Kirk's primary domain, this event likely attracts hardware founders, investors, and deep tech practitioners. Strong networking potential with relevant Boston ecosystem.",
+      "_proximity": 3
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "Hands On Basic Electronics",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/hands-on-basic-electronics",
+      "start": "2026-04-07",
+      "date": "2026-04-07",
+      "venue": "",
+      "address": "",
+      "score": 7,
+      "reason": "Hands-on electronics aligns with Kirk's hardware/embedded systems background and engineering interests. Practical maker/DIY event fits his hardware skillset."
+    },
+    {
+      "source": "Meetup: Tech Boston",
+      "name": "Beyond Vibe Coding: Building Multi-Agent Systems with MCP & A2A",
+      "description": "Everyone's talking about AI agents. Frameworks are multiplying. Demos are everywhere. But how do these systems actually work under the hood? Val Andrei Fajardo dismantles the magic by building a multi-agent system from first principles. No framework dependency, no black boxes. Just the core mechanics that every agent framework is built on, exposed and explained.\n\n**What you'll learn:**\n\n* The foundational agent building blocks: how an LLM + tools + a reasoning loop becomes the basic unit of ever",
+      "url": "https://www.meetup.com/serverless-toronto/events/313753660/",
+      "start": "2026-04-13T18:00",
+      "date": "2026-04-13",
+      "venue": "Online event",
+      "address": "",
+      "score": 7,
+      "reason": "Multi-agent systems and AI architecture talk. Kirk's software engineering background and technical depth make this relevant; agent frameworks are emerging infrastructure tech.",
+      "_proximity": 3
+    },
+    {
+      "source": "Meetup: Tech Boston",
+      "name": "Brookline Rust Lunch, Apr 11",
+      "description": "Join us for a casual lunchtime get-together to chat about Rust, the universe, and everything.\n\n**WHEN:** Saturday, April 11. We'll be there from 11:00 to 1:00, but feel free to stay and hang out for as long or as little as you like.\n\n**WHERE:** Temptations Cafe near Coolidge Corner in Brookline.\n\n**MORE EVENTS:** We host regular lunches (see the map above for the spot nearest to you), weekend hackathons, and large evening meetups. See [our events page](https://www.meetup.com/bostonrust/events/?t",
+      "url": "https://www.meetup.com/bostonrust/events/313883710/",
+      "start": "2026-04-11T11:00",
+      "date": "2026-04-11",
+      "venue": "Temptations Cafe",
+      "address": "Brookline",
+      "score": 7,
+      "reason": "Rust community lunch in Brookline. Local tech practitioner meetup with engineers; Rust is used in embedded systems, robotics, and systems-level hardware work. Strong networking potential.",
+      "_proximity": 5
+    },
+    {
+      "source": "Eventbrite:sales+engineer",
+      "name": "Sales Pitch Excellence : 2-Day Professional Workshop | Boston, MA",
+      "description": "A two-day workshop to master persuasive sales presentations using proven tools, strategies, and science-backed selling techniques.",
+      "url": "https://www.eventbrite.sg/e/sales-pitch-excellence-2-day-professional-workshop-boston-ma-tickets-1984267922772",
+      "start": "2026-04-13",
+      "venue": "regus MA, Boston - Federal Street",
+      "address": "100 Church Street 8th Floor New York City, Boston",
+      "score": 7,
+      "reason": "Sales pitch workshop directly relevant to Kirk's Sales Engineer background and career transition. Two-day format suggests serious professional development.",
+      "_proximity": 3
+    },
+    {
+      "source": "Eventbrite:sales+engineer",
+      "name": "Persuasive Sales Pitch Techniques: 1 Day Session in Boston, MA",
+      "description": "Learn how to design and deliver persuasive sales pitches that clearly communicate value and close deals with confidence.",
+      "url": "https://www.eventbrite.sg/e/persuasive-sales-pitch-techniques-1-day-session-in-boston-ma-tickets-1979959848205",
+      "start": "2026-04-11",
+      "venue": "Regus - Boston - Federal Street",
+      "address": "101 Federal Street Suite 1900, Boston",
+      "score": 7,
+      "reason": "Persuasive sales pitch techniques workshop aligns with Kirk's technical sales expertise and SE career interests.",
+      "_proximity": 3
+    }
+  ],
   "extra_events": [
     {
       "name": "Salt + Stone \u2014 $1 - $2 oysters (Check status)",
@@ -983,82 +1313,10 @@
     ]
   },
   "costs": {
-    "week": 0,
-    "month": 0.909,
-    "total": 2.1829,
+    "week": 0.2338,
+    "month": 1.1427,
+    "total": 2.4167,
     "runs": [
-      {
-        "ts": "2026-04-05T16:40:09.408767",
-        "persona": "chloe",
-        "events_total": 424,
-        "events_cached": 41,
-        "events_scored": 83,
-        "cost_usd": 0,
-        "duration_ms": 0,
-        "models": {},
-        "by_stage": {},
-        "source_counts": {
-          "Eventbrite": 7,
-          "do617": 15
-        },
-        "deploy_why": "run",
-        "netlify": {},
-        "efficiency": {
-          "cache_hit_rate": 0.331,
-          "avg_hit_rate": 0.204,
-          "cost_per_scored_event": 0.0,
-          "notes": [
-            "Cache 33% hit (41 cached, 83 scored) \u2014 many new events, normal on first daily run"
-          ]
-        }
-      },
-      {
-        "ts": "2026-04-05T16:40:14.806972",
-        "persona": "kirk",
-        "events_total": 424,
-        "events_cached": 5,
-        "events_scored": 83,
-        "cost_usd": 0,
-        "duration_ms": 0,
-        "models": {},
-        "by_stage": {},
-        "source_counts": {
-          "do617": 4
-        },
-        "deploy_why": "run",
-        "netlify": {},
-        "efficiency": {
-          "cache_hit_rate": 0.057,
-          "avg_hit_rate": 0.261,
-          "cost_per_scored_event": 0.0,
-          "notes": [
-            "Cache 6% hit (5 cached, 83 scored) \u2014 many new events, normal on first daily run",
-            "Cache hit rate 6% vs recent avg 26% (5 cached / 83 scored) \u2014 possible new sources added or score cache cleared"
-          ]
-        }
-      },
-      {
-        "ts": "2026-04-06T12:25:25.239749",
-        "persona": "brian",
-        "events_total": 0,
-        "events_cached": 0,
-        "events_scored": 0,
-        "cost_usd": 0,
-        "duration_ms": 0,
-        "models": {},
-        "by_stage": {},
-        "source_counts": {},
-        "deploy_why": "run",
-        "netlify": {},
-        "efficiency": {
-          "cache_hit_rate": 0.0,
-          "avg_hit_rate": 0.203,
-          "cost_per_scored_event": 0.0,
-          "notes": [
-            "No events processed \u2014 pipeline ran with no data (check sources or previous crash)"
-          ]
-        }
-      },
       {
         "ts": "2026-04-06T12:25:27.167902",
         "persona": "chloe",
@@ -1102,11 +1360,144 @@
             "No events processed \u2014 pipeline ran with no data (check sources or previous crash)"
           ]
         }
+      },
+      {
+        "ts": "2026-04-07T09:29:33.745895",
+        "persona": "brian",
+        "events_total": 728,
+        "events_cached": 105,
+        "events_scored": 389,
+        "cost_usd": 0.142408,
+        "duration_ms": 161470,
+        "models": {
+          "claude-haiku-4-5-20251001": 0.142408
+        },
+        "by_stage": {
+          "fetch": 0.095354,
+          "score": 0.047054
+        },
+        "source_counts": {
+          "Eventbrite": 38,
+          "Liberty Hotel events": 7,
+          "do617": 34,
+          "allevents": 1,
+          "Boston Fashion Week": 1,
+          "IG": 1,
+          "Boston Calendar": 9,
+          "Meetup": 9,
+          "Mass Fashion Week": 1,
+          "6ONE7 Productions": 7,
+          "WBUR Events": 6,
+          "ticketmaster": 1,
+          "Boston Bar Assoc": 2,
+          "BSO Events": 1
+        },
+        "deploy_why": "run",
+        "netlify": {
+          "total": 1000,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.213,
+          "avg_hit_rate": 0.077,
+          "cost_per_scored_event": 0.00037,
+          "notes": [
+            "Cache 21% hit (105 cached, 389 scored) \u2014 many new events, normal on first daily run",
+            "High scoring volume (389 scored) \u2014 consider raising min_score to cut costs",
+            "High cost $0.1424 \u2014 check for new uncached scrape_url sources burning tokens"
+          ]
+        }
+      },
+      {
+        "ts": "2026-04-07T10:12:12.216754",
+        "persona": "chloe",
+        "events_total": 728,
+        "events_cached": 61,
+        "events_scored": 343,
+        "cost_usd": 0.054226,
+        "duration_ms": 57081,
+        "models": {
+          "claude-haiku-4-5-20251001": 0.054226
+        },
+        "by_stage": {
+          "fetch": 0.016489,
+          "score": 0.037737
+        },
+        "source_counts": {
+          "Eventbrite": 16,
+          "Liberty Hotel events": 7,
+          "do617": 21,
+          "allevents": 5,
+          "Boston Fashion Week": 1,
+          "IG": 3,
+          "Boston Calendar": 7,
+          "Mass Fashion Week": 1,
+          "Meetup": 4,
+          "luma": 1
+        },
+        "deploy_why": "run",
+        "netlify": {
+          "total": 1000,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.151,
+          "avg_hit_rate": 0.054,
+          "cost_per_scored_event": 0.00016,
+          "notes": [
+            "Cache 15% hit (61 cached, 343 scored) \u2014 many new events, normal on first daily run",
+            "High scoring volume (343 scored) \u2014 consider raising min_score to cut costs"
+          ]
+        }
+      },
+      {
+        "ts": "2026-04-07T10:14:29.153439",
+        "persona": "kirk",
+        "events_total": 728,
+        "events_cached": 22,
+        "events_scored": 343,
+        "cost_usd": 0.037157,
+        "duration_ms": 46204,
+        "models": {
+          "claude-haiku-4-5-20251001": 0.037157
+        },
+        "by_stage": {
+          "score": 0.037157
+        },
+        "source_counts": {
+          "do617": 4,
+          "Meetup": 9,
+          "Eventbrite": 10,
+          "IG": 1,
+          "Greentown Labs events": 1,
+          "Boston Calendar": 1
+        },
+        "deploy_why": "run",
+        "netlify": {
+          "total": 1000,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.06,
+          "avg_hit_rate": 0.073,
+          "cost_per_scored_event": 0.00011,
+          "notes": [
+            "Cache 6% hit (22 cached, 343 scored) \u2014 many new events, normal on first daily run",
+            "High scoring volume (343 scored) \u2014 consider raising min_score to cut costs"
+          ]
+        }
       }
     ],
-    "netlify": ""
+    "netlify": "1000 credit pack \u2014 check balance at app.netlify.com/billing"
   },
-  "sources": {},
+  "sources": {
+    "do617": 4,
+    "Meetup": 9,
+    "Eventbrite": 10,
+    "IG": 1,
+    "Greentown Labs events": 1,
+    "Boston Calendar": 1
+  },
   "source_urls": {
     "do617": "https://do617.com/events/food-drink",
     "ACLU MA": "https://www.aclum.org/en/events",
@@ -1158,5 +1549,12 @@
     "Greentown Labs events": "https://greentownlabs.com/events/",
     "Venture Lane events": "https://www.venturelane.co/events"
   },
-  "source_stats": {}
+  "source_stats": {
+    "do617": 4,
+    "Meetup": 9,
+    "Eventbrite": 10,
+    "IG": 1,
+    "Greentown Labs events": 1,
+    "Boston Calendar": 1
+  }
 }
