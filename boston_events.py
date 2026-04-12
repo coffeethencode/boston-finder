@@ -21,18 +21,8 @@ from boston_finder.ai_filter    import sports_filter, deduplicate, score
 from boston_finder.preferences  import hard_skip_filter
 from boston_finder.location     import location_filter
 from boston_finder.notify       import send
+from boston_finder.personas     import get_prompt
 from boston_finder               import costs
-
-EVENTS_PROMPT = """You are filtering Boston events for someone who wants high-status, interesting things to attend:
-- Oyster happy hours or upscale food/drink (wine dinners, tastings, chef's tables)
-- Galas, fundraisers, charity benefits, receptions, award ceremonies
-- Events where they can attend as a subject matter expert: public records law, open meeting law, FOIA, government transparency, civic accountability, journalism
-- High-status professional networking, panels, policy forums
-- Fashion/model events, press events, media events, bikini/swimwear shows, fitness model showcases, promotional model events
-- Recurring upscale nightlife events, scene-y bar/club nights, influencer events
-- Anything exclusive, influential, or scene-y
-
-NOT wanted: pure sports games, road races, youth sports, basic trivia nights at chains."""
 
 
 def display(events: list[dict], today: datetime, days: int):
@@ -121,7 +111,7 @@ def main():
     print(f"\n  {n_total} events after filters. Scoring...\n")
 
     if not args.no_ai:
-        filtered, n_cached, n_scored = score(all_events, EVENTS_PROMPT)
+        filtered, n_cached, n_scored = score(all_events, get_prompt("brian"))
     else:
         filtered = __import__("boston_finder.ai_filter", fromlist=["_keyword_fallback"])._keyword_fallback(all_events, 1)
         n_cached, n_scored = 0, 0

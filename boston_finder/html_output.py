@@ -117,15 +117,19 @@ def _extra_events_html(today: datetime, end_date: datetime) -> str:
 GITHUB_REPO  = os.path.expanduser("~/python-projects/boston-finder-repo")
 
 
-def _git_deploy(html: str):
+def _git_deploy(html: str, persona: str = "brian"):
     """Write HTML to the GitHub repo's docs/ folder and push — Netlify auto-deploys from there."""
+    from boston_finder.personas import PERSONAS, SITE_BASE
+    p = PERSONAS.get(persona, PERSONAS["brian"])
+    deploy_file = p["deploy_file"]
+
     docs_dir = os.path.join(GITHUB_REPO, "docs")
     if not os.path.isdir(docs_dir):
         return  # repo not set up locally — skip silently
     try:
-        with open(os.path.join(docs_dir, "index.html"), "w") as f:
+        with open(os.path.join(docs_dir, deploy_file), "w") as f:
             f.write(html)
-        subprocess.run(["git", "-C", GITHUB_REPO, "add", "docs/index.html"], check=True)
+        subprocess.run(["git", "-C", GITHUB_REPO, "add", f"docs/{deploy_file}"], check=True)
         result = subprocess.run(
             ["git", "-C", GITHUB_REPO, "diff", "--cached", "--quiet"],
             capture_output=True
@@ -133,12 +137,13 @@ def _git_deploy(html: str):
         if result.returncode != 0:  # there are staged changes
             from datetime import datetime
             ts = datetime.now().strftime("%Y-%m-%d %-I:%M %p")
+            label = p.get("nav_label", persona)
             subprocess.run(
-                ["git", "-C", GITHUB_REPO, "commit", "-m", f"Deploy: events digest {ts}"],
+                ["git", "-C", GITHUB_REPO, "commit", "-m", f"Deploy: {label} events {ts}"],
                 check=True, capture_output=True
             )
             subprocess.run(["git", "-C", GITHUB_REPO, "push"], check=True, capture_output=True)
-            print(f"  [deploy] → https://highendeventfinder.netlify.app")
+            print(f"  [deploy] → {SITE_BASE}{p['url_path']}")
         else:
             print("  [deploy] no changes to push")
     except Exception as ex:
@@ -204,12 +209,17 @@ def generate(events: list[dict], today: datetime, days: int, persona: str = "bri
             link = f'<a class="link" href="{url}" target="_blank">{url}</a>' if url else ""
             score_badge = f'<span class="score" title="Relevance score 1-10">{score}</span>' if score else ""
             eid = url.replace("https://", "").replace("/", "_").replace(".", "_")[:40]
-            feedback = f"""<div class="feedback" id="fb_{eid}">
-                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','{url}','{e['name'].replace("'","")}')">👍 Brian</button>
-                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','{url}','{e['name'].replace("'","")}')">👍 Dates</button>
-                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','{url}','{e['name'].replace("'","")}')">👎 Brian</button>
-                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','{url}','{e['name'].replace("'","")}')">👎 Dates</button>
-            </div>""" if url else ""
+            safe_name = e['name'].replace("'", "")
+            fb_buttons = ""
+            for ap in active:
+                n, lb = ap["name"], ap["nav_label"]
+                fb_buttons += f"""
+                <button class="fb-btn" onclick="sendFeedback(this,'{n}','up','{url}','{safe_name}')">👍 {lb}</button>"""
+            for ap in active:
+                n, lb = ap["name"], ap["nav_label"]
+                fb_buttons += f"""
+                <button class="fb-btn" onclick="sendFeedback(this,'{n}','down','{url}','{safe_name}')">👎 {lb}</button>"""
+            feedback = f'<div class="feedback" id="fb_{eid}">{fb_buttons}\n            </div>' if url else ""
             cards += f"""
             <div class="card">
                 <div class="card-title">{e['name']} {score_badge}</div>
@@ -227,11 +237,12 @@ def generate(events: list[dict], today: datetime, days: int, persona: str = "bri
             </div>
         </div>"""
 
-    from boston_finder.personas import PERSONAS, nav_html
+    from boston_finder.personas import PERSONAS, nav_html, active_personas
     p = PERSONAS.get(persona, PERSONAS["brian"])
     title_str = p["title"]
     accent    = p["accent"]
     nav_markup = nav_html(persona)
+    active = active_personas()
 
     html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -397,4 +408,4 @@ def generate(events: list[dict], today: datetime, days: int, persona: str = "bri
         f.write(html)
 
     subprocess.run(["open", OUTPUT_FILE])
-    _git_deploy(html)
+    _git_deploy(html, persona=persona)
