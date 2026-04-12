@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<!-- v2 -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Boston Events — Brian</title>
+<title>Boston Events — April 12, 2026</title>
 <style>
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
           background: #0f0f0f; color: #e8e8e8; margin: 0; padding: 24px; }
@@ -43,56 +42,10 @@
   .footer      { margin-top: 40px; font-size: 0.75rem; color: #555; }
   .oyster-bar  { background: #0a1a0a; border: 1px solid #1a3a1a; border-radius: 8px;
                   padding: 14px 16px; margin-bottom: 24px; }
-  .oyster-title { font-size: 0.9rem; font-weight: 700; color: #7fff7f; margin-bottom: 10px; }
-  .oyster-days  { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 8px; }
-  .oday-btn    { padding: 3px 10px; border-radius: 99px; border: 1px solid #1e3a1e;
-                  background: #0d200d; color: #4a8a4a; font-size: 0.72rem; cursor: pointer; }
-  .oday-btn.active { background: #1a3a1a; color: #7fff7f; border-color: #3a6a3a; font-weight: 700; }
-  .oyster-location { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; margin-bottom: 12px; font-size: 0.7rem; color: #3a5a3a; }
-  .ohood-btn   { padding: 2px 8px; border-radius: 99px; border: 1px solid #1a2e1a;
-                  background: #080f08; color: #3a6a3a; font-size: 0.7rem; cursor: pointer; }
-  .ohood-btn.active { background: #1a3020; color: #afffaf; border-color: #2a5a3a; font-weight: 700; }
-  .oyster-tier  { font-size: 0.68rem; color: #3a5a3a; padding: 4px 0 2px; letter-spacing: 0.05em; text-transform: uppercase; }
-  .oyster-list  { display: flex; flex-direction: column; gap: 6px; }
-  .oyster-item { display: flex; justify-content: space-between; align-items: baseline;
-                  background: #0d1a0d; border: 1px solid #1a2e1a; border-radius: 6px;
-                  padding: 7px 11px; font-size: 0.78rem; color: #aaa; }
-  .oyster-item b { color: #7fff7f; font-size: 0.82rem; }
-  .oyster-meta  { font-size: 0.72rem; color: #556; margin-top: 2px; }
-  .oyster-hours { font-size: 0.75rem; color: #7fff7f; opacity: 0.7; white-space: nowrap; margin-left: 12px; }
-  .oyster-scroll { max-height: 300px; overflow-y: auto; padding-right: 2px; }
-  .ev-modal-bg  { position:fixed; inset:0; background:rgba(0,0,0,0.75); z-index:200;
-                   display:flex; align-items:flex-end; justify-content:center; }
-  @media(min-width:600px){ .ev-modal-bg { align-items:center; } }
-  .ev-modal     { background:#1c1c1c; border:1px solid #333; border-radius:16px 16px 0 0;
-                   width:100%; max-width:580px; max-height:85vh; overflow-y:auto;
-                   padding:20px; box-sizing:border-box; }
-  @media(min-width:600px){ .ev-modal { border-radius:12px; } }
-  .ev-modal-x   { float:right; background:none; border:none; color:#666; font-size:1.3rem;
-                   cursor:pointer; padding:0; line-height:1; margin-left:8px; }
-  .ev-modal h2  { font-size:1rem; font-weight:700; color:#fff; margin:0 0 10px; }
-  .ev-modal-meta { font-size:0.8rem; color:#888; margin-bottom:6px; line-height:1.6; }
-  .ev-modal-reason { font-size:0.82rem; color:#c8c8c8; margin-bottom:8px; padding:6px 10px;
-                      background:#222; border-radius:4px; }
-  .ev-modal-desc { font-size:0.76rem; color:#666; margin-bottom:12px; max-height:100px;
-                    overflow-y:auto; line-height:1.5; white-space:pre-wrap; }
-  .ev-modal-footer { display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; padding-top:12px; border-top:1px solid #2a2a2a; }
-  .ev-modal-link { display:inline-block; background:#f0a500; color:#000; font-size:0.82rem;
-                    font-weight:700; padding:8px 18px; border-radius:6px; text-decoration:none; }
-  .ev-modal-src  { font-size:0.72rem; color:#555; align-self:center; }
-  .sources-bar { background: #111; border: 1px solid #222; border-radius: 8px;
-                  padding: 10px 16px; margin-bottom: 20px; font-size: 0.78rem; color: #666; }
-  .hotrest-bar  { background: #0d0d1a; border: 1px solid #1a1a3a; border-radius: 8px;
-                  padding: 10px 16px; margin-bottom: 20px; }
-  .hotrest-title { font-size: 0.9rem; font-weight: 700; color: #9ab; margin-bottom: 8px; cursor: pointer; user-select: none; }
-  .hotrest-grid  { display: flex; flex-wrap: wrap; gap: 8px; }
-  .hotrest-card  { background: #111; border: 1px solid #1e1e3a; border-radius: 6px;
-                   padding: 8px 12px; min-width: 200px; max-width: 280px; flex: 1; }
-  .hotrest-name  { font-size: 0.85rem; font-weight: 600; color: #ccd; }
-  .hotrest-vibe  { font-size: 0.72rem; color: #667; margin-top: 2px; }
-  .hotrest-meta  { font-size: 0.7rem; color: #9ab; margin-top: 4px; }
-  .src-pill    { display: inline-block; background: #1e1e1e; border: 1px solid #2a2a2a;
-                  border-radius: 99px; padding: 2px 10px; margin: 2px; font-size: 0.75rem; color: #aaa; }
+  .oyster-title { font-size: 0.9rem; font-weight: 700; color: #7fff7f; margin-bottom: 8px; }
+  .oyster-item { display: inline-block; background: #111; border: 1px solid #1e3a1e;
+                  border-radius: 6px; padding: 4px 10px; margin: 3px; font-size: 0.75rem; color: #aaa; }
+  .oyster-item b { color: #7fff7f; }
   .show-more-btn { background: #1a1a1a; border: 1px solid #333; border-radius: 6px;
                     padding: 8px 16px; color: #888; font-size: 0.8rem; cursor: pointer;
                     margin-bottom: 24px; display: block; width: 100%; text-align: left; }
@@ -106,668 +59,526 @@
   .nav-active   { padding: 6px 16px; border-radius: 6px; font-size: 0.85rem; font-weight: 600;
                    color: #f0a500; border: 1px solid #f0a50033; background: #f0a50011;
                    text-decoration: none; }
+  .day-filter   { position: sticky; top: 0; z-index: 10; background: #0f0f0f;
+                   padding: 10px 0 8px; display: flex; gap: 6px; flex-wrap: wrap;
+                   border-bottom: 1px solid #222; margin-bottom: 16px; }
+  .day-pill     { background: #1a1a1a; border: 1px solid #333; border-radius: 99px;
+                   padding: 5px 12px; font-size: 0.78rem; color: #aaa; cursor: pointer;
+                   transition: all 0.15s; white-space: nowrap; }
+  .day-pill:hover { border-color: #555; color: #fff; }
+  .day-pill-today { border-color: #2a6e2a; }
+  .day-pill.hidden { background: #0f0f0f; border-color: #222; color: #444;
+                      text-decoration: line-through; }
+  .pill-count   { font-size: 0.65rem; color: #555; margin-left: 2px; }
+  .day-toggle   { font-size: 0.65rem; color: #555; margin-left: 6px; cursor: pointer;
+                   transition: transform 0.15s; display: inline-block; }
+  .day-section.collapsed .day-cards { display: none; }
+  .day-section.collapsed .day-toggle { transform: rotate(-90deg); }
+  .day-section.hidden-by-filter { display: none; }
+  .day-header   { cursor: pointer; user-select: none; }
   .feedback     { margin-top: 8px; display: flex; gap: 6px; flex-wrap: wrap; }
   .fb-btn       { background: none; border: 1px solid #2a2a2a; border-radius: 99px;
                    padding: 3px 10px; font-size: 0.7rem; color: #555; cursor: pointer; }
   .fb-btn:hover { border-color: #555; color: #aaa; }
   .fb-btn.done  { border-color: #444; color: #7fff7f; }
   .fb-btn.skip  { border-color: #444; color: #ff7070; }
-  #loading      { color: #555; font-size: 0.9rem; padding: 40px 0; }
 </style>
 </head>
 <body>
-
   <nav class="nav">
-    <a href="./index.html" class="nav-active">Brian</a>
-    <a href="./chloe.html" class="nav-link">Chloe</a>
-    <a href="./kirk.html" class="nav-link">Kirk</a>
+    <a href="https://highendeventfinder.netlify.app/" class="nav-active">Brian</a>
+    <a href="https://highendeventfinder.netlify.app/dates" class="nav-link">Dates</a>
   </nav>
-
-  <div id="loading">Loading events…</div>
-  <div id="main" style="display:none">
-    <h1>Boston Events</h1>
-    <div class="sub" id="subtitle"></div>
-
-    <div class="cost-bar" id="cost-bar"></div>
-
-    <div class="sources-bar" id="sources-bar"></div>
-
-    <div class="oyster-bar" id="oyster-bar"></div>
-
-    <div class="hotrest-bar" id="hotrest-bar" style="display:none"></div>
-
-    <div class="legend">
-      <b>Score 1–10</b> — how relevant this event is for you &nbsp;|&nbsp;
-      <b>8–10</b> must consider &nbsp;·&nbsp;
-      <b>5–7</b> worth knowing &nbsp;·&nbsp;
-      <b>1–4</b> low priority
-    </div>
-
-    <div id="events-container"></div>
-
-    <button class="show-more-btn" id="extra-btn" onclick="toggleExtra()" style="display:none"></button>
-    <div id="extra-events"></div>
-
-    <div class="footer" id="footer"></div>
+  <h1>Boston Events</h1>
+  <div class="sub">April 12 – April 18, 2026 &nbsp;·&nbsp; 21 events</div>
+  <div class="cost-bar">
+          <div style="display:flex;gap:20px;margin-bottom:10px">
+            <span class="cost-item">Week: <b>$0.8575</b></span>
+            <span class="cost-item">Month: <b>$1.7665</b></span>
+            <span class="cost-item">Total: <b>$3.0404</b></span>
+          </div>
+          <table style="width:100%;border-collapse:collapse;font-size:0.75rem;color:#888">
+            <thead>
+              <tr style="color:#555;text-align:left;border-bottom:1px solid #222">
+                <th style="padding:4px 8px 4px 0">Run</th>
+                <th style="padding:4px 8px">Events</th>
+                <th style="padding:4px 8px">Model</th>
+                <th style="padding:4px 8px">Cost</th>
+                <th style="padding:4px 8px">Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background:#1e2a1e">
+                <td>4/12 9:29 AM <b style='color:#7fff7f;font-size:0.65rem'>LATEST</b></td>
+                <td style="color:#aaa">0 cached / 0 scored</td>
+                <td style="color:#aaa">—</td>
+                <td style="color:#e8e8e8;font-weight:600">$0.0000</td>
+                <td style="color:#666">0.0s</td>
+              </tr>
+              <tr>
+                <td>4/11 8:11 AM</td>
+                <td style="color:#aaa">112 cached / 388 scored</td>
+                <td style="color:#aaa">claude-haiku-4-5-20251001 $0.1601</td>
+                <td style="color:#e8e8e8;font-weight:600">$0.1601</td>
+                <td style="color:#666">168.4s</td>
+              </tr>
+              <tr>
+                <td>4/10 9:34 AM</td>
+                <td style="color:#aaa">133 cached / 208 scored</td>
+                <td style="color:#aaa">claude-haiku-4-5-20251001 $0.1372</td>
+                <td style="color:#e8e8e8;font-weight:600">$0.1372</td>
+                <td style="color:#666">152.3s</td>
+              </tr>
+              <tr>
+                <td>4/9 8:11 AM</td>
+                <td style="color:#aaa">143 cached / 209 scored</td>
+                <td style="color:#aaa">claude-haiku-4-5-20251001 $0.1444</td>
+                <td style="color:#e8e8e8;font-weight:600">$0.1444</td>
+                <td style="color:#666">178.9s</td>
+              </tr>
+              <tr>
+                <td>4/8 8:15 AM</td>
+                <td style="color:#aaa">20 cached / 192 scored</td>
+                <td style="color:#aaa">claude-haiku-4-5-20251001 $0.0164</td>
+                <td style="color:#e8e8e8;font-weight:600">$0.0164</td>
+                <td style="color:#666">12.8s</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+  
+  <div class="day-filter">
+    <button class="day-pill day-pill-today" data-day="day-0" onclick="toggleDay(this)">Sun 4/12 <span class="pill-count">3</span></button><button class="day-pill" data-day="day-1" onclick="toggleDay(this)">Mon 4/13 <span class="pill-count">3</span></button><button class="day-pill" data-day="day-2" onclick="toggleDay(this)">Tue 4/14 <span class="pill-count">3</span></button><button class="day-pill" data-day="day-3" onclick="toggleDay(this)">Wed 4/15 <span class="pill-count">3</span></button><button class="day-pill" data-day="day-4" onclick="toggleDay(this)">Thu 4/16 <span class="pill-count">3</span></button><button class="day-pill" data-day="day-5" onclick="toggleDay(this)">Fri 4/17 <span class="pill-count">3</span></button><button class="day-pill" data-day="day-6" onclick="toggleDay(this)">Sat 4/18 <span class="pill-count">3</span></button>
   </div>
-
-  <!-- Netlify form stub (hidden, required for form detection) -->
-  <form name="event-feedback" data-netlify="true" netlify-honeypot="bot-field" style="display:none;position:absolute">
-    <input type="hidden" name="form-name" value="event-feedback">
+  <div class="legend">
+    <b>Score 1–10</b> — how relevant this event is for you &nbsp;|&nbsp;
+    <b>8–10</b> must consider &nbsp;·&nbsp;
+    <b>5–7</b> worth knowing &nbsp;·&nbsp;
+    <b>1–4</b> low priority
+  </div>
+  
+        <div class="day-section" id="day-0">
+            <div class="day-header" onclick="toggleDaySection(this)">Sunday, April 12 <span class="today-tag">TODAY</span> <span class="day-toggle">▼</span></div>
+            <div class="day-cards">
+            
+            <div class="card">
+                <div class="card-title">Test Event 0-0 <span class="score" title="Relevance score 1-10">10</span></div>
+                <div class="meta">6:00 PM &nbsp;|&nbsp; $25 &nbsp;|&nbsp; Test Venue &nbsp;|&nbsp; Boston, MA</div>
+                <div class="reason">→ Great event reason 0</div>
+                <a class="link" href="https://example.com/event-0-0" target="_blank">https://example.com/event-0-0</a>
+                <div class="feedback" id="fb_example_com_event-0-0">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://example.com/event-0-0','Test Event 0-0')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://example.com/event-0-0','Test Event 0-0')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://example.com/event-0-0','Test Event 0-0')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://example.com/event-0-0','Test Event 0-0')">👎 Dates</button>
+            </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Test Event 0-1 <span class="score" title="Relevance score 1-10">8</span></div>
+                <div class="meta">6:00 PM &nbsp;|&nbsp; $25 &nbsp;|&nbsp; Test Venue &nbsp;|&nbsp; Boston, MA</div>
+                <div class="reason">→ Great event reason 1</div>
+                <a class="link" href="https://example.com/event-0-1" target="_blank">https://example.com/event-0-1</a>
+                <div class="feedback" id="fb_example_com_event-0-1">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://example.com/event-0-1','Test Event 0-1')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://example.com/event-0-1','Test Event 0-1')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://example.com/event-0-1','Test Event 0-1')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://example.com/event-0-1','Test Event 0-1')">👎 Dates</button>
+            </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Test Event 0-2 <span class="score" title="Relevance score 1-10">6</span></div>
+                <div class="meta">6:00 PM &nbsp;|&nbsp; $25 &nbsp;|&nbsp; Test Venue &nbsp;|&nbsp; Boston, MA</div>
+                <div class="reason">→ Great event reason 2</div>
+                <a class="link" href="https://example.com/event-0-2" target="_blank">https://example.com/event-0-2</a>
+                <div class="feedback" id="fb_example_com_event-0-2">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://example.com/event-0-2','Test Event 0-2')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://example.com/event-0-2','Test Event 0-2')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://example.com/event-0-2','Test Event 0-2')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://example.com/event-0-2','Test Event 0-2')">👎 Dates</button>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div class="day-section" id="day-1">
+            <div class="day-header" onclick="toggleDaySection(this)">Monday, April 13 <span class="day-toggle">▼</span></div>
+            <div class="day-cards">
+            
+            <div class="card">
+                <div class="card-title">Test Event 1-0 <span class="score" title="Relevance score 1-10">10</span></div>
+                <div class="meta">6:00 PM &nbsp;|&nbsp; $25 &nbsp;|&nbsp; Test Venue &nbsp;|&nbsp; Boston, MA</div>
+                <div class="reason">→ Great event reason 0</div>
+                <a class="link" href="https://example.com/event-1-0" target="_blank">https://example.com/event-1-0</a>
+                <div class="feedback" id="fb_example_com_event-1-0">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://example.com/event-1-0','Test Event 1-0')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://example.com/event-1-0','Test Event 1-0')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://example.com/event-1-0','Test Event 1-0')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://example.com/event-1-0','Test Event 1-0')">👎 Dates</button>
+            </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Test Event 1-1 <span class="score" title="Relevance score 1-10">8</span></div>
+                <div class="meta">6:00 PM &nbsp;|&nbsp; $25 &nbsp;|&nbsp; Test Venue &nbsp;|&nbsp; Boston, MA</div>
+                <div class="reason">→ Great event reason 1</div>
+                <a class="link" href="https://example.com/event-1-1" target="_blank">https://example.com/event-1-1</a>
+                <div class="feedback" id="fb_example_com_event-1-1">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://example.com/event-1-1','Test Event 1-1')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://example.com/event-1-1','Test Event 1-1')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://example.com/event-1-1','Test Event 1-1')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://example.com/event-1-1','Test Event 1-1')">👎 Dates</button>
+            </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Test Event 1-2 <span class="score" title="Relevance score 1-10">6</span></div>
+                <div class="meta">6:00 PM &nbsp;|&nbsp; $25 &nbsp;|&nbsp; Test Venue &nbsp;|&nbsp; Boston, MA</div>
+                <div class="reason">→ Great event reason 2</div>
+                <a class="link" href="https://example.com/event-1-2" target="_blank">https://example.com/event-1-2</a>
+                <div class="feedback" id="fb_example_com_event-1-2">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://example.com/event-1-2','Test Event 1-2')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://example.com/event-1-2','Test Event 1-2')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://example.com/event-1-2','Test Event 1-2')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://example.com/event-1-2','Test Event 1-2')">👎 Dates</button>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div class="day-section" id="day-2">
+            <div class="day-header" onclick="toggleDaySection(this)">Tuesday, April 14 <span class="day-toggle">▼</span></div>
+            <div class="day-cards">
+            
+            <div class="card">
+                <div class="card-title">Test Event 2-0 <span class="score" title="Relevance score 1-10">10</span></div>
+                <div class="meta">6:00 PM &nbsp;|&nbsp; $25 &nbsp;|&nbsp; Test Venue &nbsp;|&nbsp; Boston, MA</div>
+                <div class="reason">→ Great event reason 0</div>
+                <a class="link" href="https://example.com/event-2-0" target="_blank">https://example.com/event-2-0</a>
+                <div class="feedback" id="fb_example_com_event-2-0">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://example.com/event-2-0','Test Event 2-0')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://example.com/event-2-0','Test Event 2-0')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://example.com/event-2-0','Test Event 2-0')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://example.com/event-2-0','Test Event 2-0')">👎 Dates</button>
+            </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Test Event 2-1 <span class="score" title="Relevance score 1-10">8</span></div>
+                <div class="meta">6:00 PM &nbsp;|&nbsp; $25 &nbsp;|&nbsp; Test Venue &nbsp;|&nbsp; Boston, MA</div>
+                <div class="reason">→ Great event reason 1</div>
+                <a class="link" href="https://example.com/event-2-1" target="_blank">https://example.com/event-2-1</a>
+                <div class="feedback" id="fb_example_com_event-2-1">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://example.com/event-2-1','Test Event 2-1')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://example.com/event-2-1','Test Event 2-1')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://example.com/event-2-1','Test Event 2-1')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://example.com/event-2-1','Test Event 2-1')">👎 Dates</button>
+            </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Test Event 2-2 <span class="score" title="Relevance score 1-10">6</span></div>
+                <div class="meta">6:00 PM &nbsp;|&nbsp; $25 &nbsp;|&nbsp; Test Venue &nbsp;|&nbsp; Boston, MA</div>
+                <div class="reason">→ Great event reason 2</div>
+                <a class="link" href="https://example.com/event-2-2" target="_blank">https://example.com/event-2-2</a>
+                <div class="feedback" id="fb_example_com_event-2-2">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://example.com/event-2-2','Test Event 2-2')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://example.com/event-2-2','Test Event 2-2')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://example.com/event-2-2','Test Event 2-2')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://example.com/event-2-2','Test Event 2-2')">👎 Dates</button>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div class="day-section" id="day-3">
+            <div class="day-header" onclick="toggleDaySection(this)">Wednesday, April 15 <span class="day-toggle">▼</span></div>
+            <div class="day-cards">
+            
+            <div class="card">
+                <div class="card-title">Test Event 3-0 <span class="score" title="Relevance score 1-10">10</span></div>
+                <div class="meta">6:00 PM &nbsp;|&nbsp; $25 &nbsp;|&nbsp; Test Venue &nbsp;|&nbsp; Boston, MA</div>
+                <div class="reason">→ Great event reason 0</div>
+                <a class="link" href="https://example.com/event-3-0" target="_blank">https://example.com/event-3-0</a>
+                <div class="feedback" id="fb_example_com_event-3-0">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://example.com/event-3-0','Test Event 3-0')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://example.com/event-3-0','Test Event 3-0')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://example.com/event-3-0','Test Event 3-0')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://example.com/event-3-0','Test Event 3-0')">👎 Dates</button>
+            </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Test Event 3-1 <span class="score" title="Relevance score 1-10">8</span></div>
+                <div class="meta">6:00 PM &nbsp;|&nbsp; $25 &nbsp;|&nbsp; Test Venue &nbsp;|&nbsp; Boston, MA</div>
+                <div class="reason">→ Great event reason 1</div>
+                <a class="link" href="https://example.com/event-3-1" target="_blank">https://example.com/event-3-1</a>
+                <div class="feedback" id="fb_example_com_event-3-1">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://example.com/event-3-1','Test Event 3-1')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://example.com/event-3-1','Test Event 3-1')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://example.com/event-3-1','Test Event 3-1')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://example.com/event-3-1','Test Event 3-1')">👎 Dates</button>
+            </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Test Event 3-2 <span class="score" title="Relevance score 1-10">6</span></div>
+                <div class="meta">6:00 PM &nbsp;|&nbsp; $25 &nbsp;|&nbsp; Test Venue &nbsp;|&nbsp; Boston, MA</div>
+                <div class="reason">→ Great event reason 2</div>
+                <a class="link" href="https://example.com/event-3-2" target="_blank">https://example.com/event-3-2</a>
+                <div class="feedback" id="fb_example_com_event-3-2">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://example.com/event-3-2','Test Event 3-2')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://example.com/event-3-2','Test Event 3-2')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://example.com/event-3-2','Test Event 3-2')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://example.com/event-3-2','Test Event 3-2')">👎 Dates</button>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div class="day-section" id="day-4">
+            <div class="day-header" onclick="toggleDaySection(this)">Thursday, April 16 <span class="day-toggle">▼</span></div>
+            <div class="day-cards">
+            
+            <div class="card">
+                <div class="card-title">Test Event 4-0 <span class="score" title="Relevance score 1-10">10</span></div>
+                <div class="meta">6:00 PM &nbsp;|&nbsp; $25 &nbsp;|&nbsp; Test Venue &nbsp;|&nbsp; Boston, MA</div>
+                <div class="reason">→ Great event reason 0</div>
+                <a class="link" href="https://example.com/event-4-0" target="_blank">https://example.com/event-4-0</a>
+                <div class="feedback" id="fb_example_com_event-4-0">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://example.com/event-4-0','Test Event 4-0')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://example.com/event-4-0','Test Event 4-0')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://example.com/event-4-0','Test Event 4-0')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://example.com/event-4-0','Test Event 4-0')">👎 Dates</button>
+            </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Test Event 4-1 <span class="score" title="Relevance score 1-10">8</span></div>
+                <div class="meta">6:00 PM &nbsp;|&nbsp; $25 &nbsp;|&nbsp; Test Venue &nbsp;|&nbsp; Boston, MA</div>
+                <div class="reason">→ Great event reason 1</div>
+                <a class="link" href="https://example.com/event-4-1" target="_blank">https://example.com/event-4-1</a>
+                <div class="feedback" id="fb_example_com_event-4-1">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://example.com/event-4-1','Test Event 4-1')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://example.com/event-4-1','Test Event 4-1')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://example.com/event-4-1','Test Event 4-1')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://example.com/event-4-1','Test Event 4-1')">👎 Dates</button>
+            </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Test Event 4-2 <span class="score" title="Relevance score 1-10">6</span></div>
+                <div class="meta">6:00 PM &nbsp;|&nbsp; $25 &nbsp;|&nbsp; Test Venue &nbsp;|&nbsp; Boston, MA</div>
+                <div class="reason">→ Great event reason 2</div>
+                <a class="link" href="https://example.com/event-4-2" target="_blank">https://example.com/event-4-2</a>
+                <div class="feedback" id="fb_example_com_event-4-2">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://example.com/event-4-2','Test Event 4-2')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://example.com/event-4-2','Test Event 4-2')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://example.com/event-4-2','Test Event 4-2')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://example.com/event-4-2','Test Event 4-2')">👎 Dates</button>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div class="day-section" id="day-5">
+            <div class="day-header" onclick="toggleDaySection(this)">Friday, April 17 <span class="day-toggle">▼</span></div>
+            <div class="day-cards">
+            
+            <div class="card">
+                <div class="card-title">Test Event 5-0 <span class="score" title="Relevance score 1-10">10</span></div>
+                <div class="meta">6:00 PM &nbsp;|&nbsp; $25 &nbsp;|&nbsp; Test Venue &nbsp;|&nbsp; Boston, MA</div>
+                <div class="reason">→ Great event reason 0</div>
+                <a class="link" href="https://example.com/event-5-0" target="_blank">https://example.com/event-5-0</a>
+                <div class="feedback" id="fb_example_com_event-5-0">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://example.com/event-5-0','Test Event 5-0')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://example.com/event-5-0','Test Event 5-0')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://example.com/event-5-0','Test Event 5-0')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://example.com/event-5-0','Test Event 5-0')">👎 Dates</button>
+            </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Test Event 5-1 <span class="score" title="Relevance score 1-10">8</span></div>
+                <div class="meta">6:00 PM &nbsp;|&nbsp; $25 &nbsp;|&nbsp; Test Venue &nbsp;|&nbsp; Boston, MA</div>
+                <div class="reason">→ Great event reason 1</div>
+                <a class="link" href="https://example.com/event-5-1" target="_blank">https://example.com/event-5-1</a>
+                <div class="feedback" id="fb_example_com_event-5-1">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://example.com/event-5-1','Test Event 5-1')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://example.com/event-5-1','Test Event 5-1')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://example.com/event-5-1','Test Event 5-1')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://example.com/event-5-1','Test Event 5-1')">👎 Dates</button>
+            </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Test Event 5-2 <span class="score" title="Relevance score 1-10">6</span></div>
+                <div class="meta">6:00 PM &nbsp;|&nbsp; $25 &nbsp;|&nbsp; Test Venue &nbsp;|&nbsp; Boston, MA</div>
+                <div class="reason">→ Great event reason 2</div>
+                <a class="link" href="https://example.com/event-5-2" target="_blank">https://example.com/event-5-2</a>
+                <div class="feedback" id="fb_example_com_event-5-2">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://example.com/event-5-2','Test Event 5-2')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://example.com/event-5-2','Test Event 5-2')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://example.com/event-5-2','Test Event 5-2')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://example.com/event-5-2','Test Event 5-2')">👎 Dates</button>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div class="day-section" id="day-6">
+            <div class="day-header" onclick="toggleDaySection(this)">Saturday, April 18 <span class="day-toggle">▼</span></div>
+            <div class="day-cards">
+            
+            <div class="card">
+                <div class="card-title">Test Event 6-0 <span class="score" title="Relevance score 1-10">10</span></div>
+                <div class="meta">6:00 PM &nbsp;|&nbsp; $25 &nbsp;|&nbsp; Test Venue &nbsp;|&nbsp; Boston, MA</div>
+                <div class="reason">→ Great event reason 0</div>
+                <a class="link" href="https://example.com/event-6-0" target="_blank">https://example.com/event-6-0</a>
+                <div class="feedback" id="fb_example_com_event-6-0">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://example.com/event-6-0','Test Event 6-0')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://example.com/event-6-0','Test Event 6-0')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://example.com/event-6-0','Test Event 6-0')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://example.com/event-6-0','Test Event 6-0')">👎 Dates</button>
+            </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Test Event 6-1 <span class="score" title="Relevance score 1-10">8</span></div>
+                <div class="meta">6:00 PM &nbsp;|&nbsp; $25 &nbsp;|&nbsp; Test Venue &nbsp;|&nbsp; Boston, MA</div>
+                <div class="reason">→ Great event reason 1</div>
+                <a class="link" href="https://example.com/event-6-1" target="_blank">https://example.com/event-6-1</a>
+                <div class="feedback" id="fb_example_com_event-6-1">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://example.com/event-6-1','Test Event 6-1')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://example.com/event-6-1','Test Event 6-1')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://example.com/event-6-1','Test Event 6-1')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://example.com/event-6-1','Test Event 6-1')">👎 Dates</button>
+            </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Test Event 6-2 <span class="score" title="Relevance score 1-10">6</span></div>
+                <div class="meta">6:00 PM &nbsp;|&nbsp; $25 &nbsp;|&nbsp; Test Venue &nbsp;|&nbsp; Boston, MA</div>
+                <div class="reason">→ Great event reason 2</div>
+                <a class="link" href="https://example.com/event-6-2" target="_blank">https://example.com/event-6-2</a>
+                <div class="feedback" id="fb_example_com_event-6-2">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://example.com/event-6-2','Test Event 6-2')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://example.com/event-6-2','Test Event 6-2')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://example.com/event-6-2','Test Event 6-2')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://example.com/event-6-2','Test Event 6-2')">👎 Dates</button>
+            </div>
+            </div>
+            </div>
+        </div>
+  <button class="show-more-btn" id="extra-btn" onclick="toggleExtra()" data-label="▼ Show 15 lower-priority events (scored 1–4)">▼ Show 15 lower-priority events (scored 1–4)</button>
+        <div id="extra-events">
+            <div class="card" style="opacity:0.6">
+              <div class="card-title" style="color:#888">MassChallenge Switzerland Awards 2026 <span class="score" style="background:#333;color:#666">4</span></div>
+              <div class="reason" style="color:#555">→ Startup/accelerator awards ceremony — interesting crowd and venue potential, but description lacks details on whether it's upscale, has food/drink, or a scene-y atmosphere. Without confirmation of those elements, it's below Chloe's threshold.</div>
+              <a class="link" href="chloe:https://masschallenge.org/events/" target="_blank">chloe:https://masschallenge.org/events/</a>
+            </div>
+            <div class="card" style="opacity:0.6">
+              <div class="card-title" style="color:#888">Bambara Kitchen — $1 oysters <span class="score" style="background:#333;color:#666">4</span></div>
+              <div class="reason" style="color:#555">→ $1 oysters but Cambridge location away from South End, daily happy hour but limited buzz factor.</div>
+              <a class="link" href="brian:nourl:deep_research:Bambara Kitchen — $1 oysters" target="_blank">brian:nourl:deep_research:Bambara Kitchen — $1 oysters</a>
+            </div>
+            <div class="card" style="opacity:0.6">
+              <div class="card-title" style="color:#888">Viale — $1 oysters <span class="score" style="background:#333;color:#666">4</span></div>
+              <div class="reason" style="color:#555">→ $1 oysters in Central Square, but Cambridge location and limited South End proximity.</div>
+              <a class="link" href="brian:nourl:deep_research:Viale — $1 oysters" target="_blank">brian:nourl:deep_research:Viale — $1 oysters</a>
+            </div>
+            <div class="card" style="opacity:0.6">
+              <div class="card-title" style="color:#888">Althea — $1 oysters <span class="score" style="background:#333;color:#666">4</span></div>
+              <div class="reason" style="color:#555">→ $1 oysters daily but Central Square Cambridge location, not preferred for Brian.</div>
+              <a class="link" href="brian:nourl:deep_research:Althea — $1 oysters" target="_blank">brian:nourl:deep_research:Althea — $1 oysters</a>
+            </div>
+            <div class="card" style="opacity:0.6">
+              <div class="card-title" style="color:#888">Waypoint — $2 oysters (Discounted) <span class="score" style="background:#333;color:#666">4</span></div>
+              <div class="reason" style="color:#555">→ $2 oysters (good but not $1), Harvard/Central location in Cambridge, reduces priority.</div>
+              <a class="link" href="brian:nourl:deep_research:Waypoint — $2 oysters (Discounted)" target="_blank">brian:nourl:deep_research:Waypoint — $2 oysters (Discounted)</a>
+            </div>
+            <div class="card" style="opacity:0.6">
+              <div class="card-title" style="color:#888">Russell House Tavern — $1 oysters <span class="score" style="background:#333;color:#666">4</span></div>
+              <div class="reason" style="color:#555">→ $1 oysters but late-night Harvard Square timing (9 PM+) and Cambridge location.</div>
+              <a class="link" href="brian:nourl:deep_research:Russell House Tavern — $1 oysters" target="_blank">brian:nourl:deep_research:Russell House Tavern — $1 oysters</a>
+            </div>
+            <div class="card" style="opacity:0.6">
+              <div class="card-title" style="color:#888">Grafton Street Pub — $1 oysters <span class="score" style="background:#333;color:#666">4</span></div>
+              <div class="reason" style="color:#555">→ $1 oysters, Harvard Square happy hour solid, but Cambridge location away from South End.</div>
+              <a class="link" href="brian:nourl:deep_research:Grafton Street Pub — $1 oysters" target="_blank">brian:nourl:deep_research:Grafton Street Pub — $1 oysters</a>
+            </div>
+            <div class="card" style="opacity:0.6">
+              <div class="card-title" style="color:#888">Charlie's Kitchen — $1 oysters ($2 normally) <span class="score" style="background:#333;color:#666">4</span></div>
+              <div class="reason" style="color:#555">→ $1 oysters Sunday (great value), but Harvard Square Cambridge, not in preferred zone.</div>
+              <a class="link" href="brian:nourl:deep_research:Charlie's Kitchen — $1 oysters ($2 normally)" target="_blank">brian:nourl:deep_research:Charlie's Kitchen — $1 oysters ($2 normally)</a>
+            </div>
+            <div class="card" style="opacity:0.6">
+              <div class="card-title" style="color:#888">Punch Bowl — $1.25 oysters <span class="score" style="background:#333;color:#666">4</span></div>
+              <div class="reason" style="color:#555">→ $1.25 oysters (close to deal), Brookline Village requires a trip, limited South End proximity.</div>
+              <a class="link" href="brian:nourl:deep_research:Punch Bowl — $1.25 oysters" target="_blank">brian:nourl:deep_research:Punch Bowl — $1.25 oysters</a>
+            </div>
+            <div class="card" style="opacity:0.6">
+              <div class="card-title" style="color:#888">Salt + Stone — $1 - $2 oysters (Check status) <span class="score" style="background:#333;color:#666">4</span></div>
+              <div class="reason" style="color:#555">→ $1–2 oysters Mon–Fri 2:30–5 PM in Assembly Row—temporary closure reported, uncertain status</div>
+              <a class="link" href="kirk:nourl:deep_research:Salt + Stone — $1 - $2 oysters (Check status)" target="_blank">kirk:nourl:deep_research:Salt + Stone — $1 - $2 oysters (Check status)</a>
+            </div>
+            <div class="card" style="opacity:0.6">
+              <div class="card-title" style="color:#888">Boston Climate Week at Greentown Boston <span class="score" style="background:#333;color:#666">3</span></div>
+              <div class="reason" style="color:#555">→ Climate/sustainability focus at a nonprofit accelerator space. Civic interest but no indication of upscale food, drink, design, art, or fashion elements that would appeal to Chloe. Better fit for Brian's civic interests.</div>
+              <a class="link" href="chloe:https://greentownlabs.com/events/" target="_blank">chloe:https://greentownlabs.com/events/</a>
+            </div>
+            <div class="card" style="opacity:0.6">
+              <div class="card-title" style="color:#888">Summer Shack — $2 oysters (Discounted) <span class="score" style="background:#333;color:#666">3</span></div>
+              <div class="reason" style="color:#555">→ $2 oysters (not $1), Alewife far from South End, Summer Shack is casual chain.</div>
+              <a class="link" href="brian:nourl:deep_research:Summer Shack — $2 oysters (Discounted)" target="_blank">brian:nourl:deep_research:Summer Shack — $2 oysters (Discounted)</a>
+            </div>
+            <div class="card" style="opacity:0.6">
+              <div class="card-title" style="color:#888">Café Saint-Germain — $1 oysters <span class="score" style="background:#333;color:#666">3</span></div>
+              <div class="reason" style="color:#555">→ $1 oysters but Cambridge location, daily happy hour doesn't offset distance.</div>
+              <a class="link" href="brian:nourl:deep_research:Café Saint-Germain — $1 oysters" target="_blank">brian:nourl:deep_research:Café Saint-Germain — $1 oysters</a>
+            </div>
+            <div class="card" style="opacity:0.6">
+              <div class="card-title" style="color:#888">Salt + Stone — $1 - $2 oysters (Check status) <span class="score" style="background:#333;color:#666">2</span></div>
+              <div class="reason" style="color:#555">→ Assembly Row location (out of zone), temporary closure reported, and venue is chain-mall branded. Skip.</div>
+              <a class="link" href="brian:nourl:deep_research:Salt + Stone — $1 - $2 oysters (Check status)" target="_blank">brian:nourl:deep_research:Salt + Stone — $1 - $2 oysters (Check status)</a>
+            </div>
+            <div class="card" style="opacity:0.6">
+              <div class="card-title" style="color:#888">Legal Sea Foods — $1 oysters <span class="score" style="background:#333;color:#666">2</span></div>
+              <div class="reason" style="color:#555">→ Legal Sea Foods is a tourist chain, no scene, Chestnut Hill far from South End. Skip.</div>
+              <a class="link" href="brian:nourl:deep_research:Legal Sea Foods — $1 oysters" target="_blank">brian:nourl:deep_research:Legal Sea Foods — $1 oysters</a>
+            </div></div>
+  <!-- Netlify form (hidden) — required for Netlify to detect and activate the form -->
+  <form name="event-feedback" netlify netlify-honeypot="bot-field" hidden>
     <input name="bot-field">
-    <input name="persona">
-    <input name="vote">
-    <input name="event_url">
-    <input name="event_name">
+    <input name="persona"><input name="vote"><input name="event_url"><input name="event_name">
   </form>
 
+  <div class="footer">Generated April 12, 2026 at 3:02 PM</div>
 <script>
-(function() {
-
-  // ── Helpers ──────────────────────────────────────────────────────────────
-
-  var evMap = {}; // populated by renderAll for modal lookups
-
-  function esc(s) {
-    return String(s)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;');
+  function toggleDay(pill) {
+    var dayId = pill.dataset.day;
+    var section = document.getElementById(dayId);
+    pill.classList.toggle('hidden');
+    section.classList.toggle('hidden-by-filter');
   }
 
-  function fmtTime(isoStr) {
-    if (!isoStr || isoStr.indexOf('T') === -1) return '';
-    var timePart = isoStr.split('T')[1].substring(0, 5); // "HH:MM"
-    var parts = timePart.split(':');
-    var h = parseInt(parts[0], 10);
-    var m = parts[1];
-    var ampm = h >= 12 ? 'PM' : 'AM';
-    h = h % 12 || 12;
-    return h + ':' + m + ' ' + ampm;
+  function toggleDaySection(header) {
+    header.parentElement.classList.toggle('collapsed');
   }
 
-  function fmtDate(isoStr) {
-    // Returns "Monday, March 24" from "2026-03-24T..." or "2026-03-24"
-    var datePart = isoStr.split('T')[0];
-    var parts = datePart.split('-');
-    var d = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
-    var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-    var months = ['January','February','March','April','May','June',
-                  'July','August','September','October','November','December'];
-    return days[d.getDay()] + ', ' + months[d.getMonth()] + ' ' + d.getDate();
-  }
-
-  function dateKey(isoStr) {
-    return isoStr.split('T')[0];
-  }
-
-  function fmtRunTs(ts) {
-    // ts like "2026-03-24T08:00" → "3/24 8:00 AM"
-    var datePart = ts.split('T')[0];
-    var dp = datePart.split('-');
-    var m = parseInt(dp[1], 10);
-    var d = parseInt(dp[2], 10);
-    var time = ts.indexOf('T') !== -1 ? ts.split('T')[1].substring(0, 5) : '';
-    var timeFmt = '';
-    if (time) {
-      var tp = time.split(':');
-      var hh = parseInt(tp[0], 10);
-      var mm = tp[1];
-      var ampm = hh >= 12 ? 'PM' : 'AM';
-      hh = hh % 12 || 12;
-      timeFmt = hh + ':' + mm + ' ' + ampm;
-    }
-    return m + '/' + d + (timeFmt ? ' ' + timeFmt : '');
-  }
-
-  function fmtDuration(ms) {
-    if (!ms && ms !== 0) return '—';
-    return (ms / 1000).toFixed(1) + 's';
-  }
-
-  function fmtMoney(n) {
-    if (n === undefined || n === null) return '$0.0000';
-    return '$' + n.toFixed(4);
-  }
-
-  function buildMeta(ev) {
-    var parts = [];
-    var time = fmtTime(ev.start || '');
-    if (time) parts.push(time);
-    if (ev.price) parts.push(ev.price);
-    if (ev.venue) parts.push(ev.venue);
-    if (ev.address) parts.push(ev.address);
-    return parts.join(' &nbsp;|&nbsp; ');
-  }
-
-  function buildCard(ev) {
-    var meta = buildMeta(ev);
-    var url = esc(ev.url || '');
-    var name = esc(ev.name || '');
-    return '<div class="card" data-url="' + url + '" data-name="' + name + '">' +
-      '<div class="card-title">' + name +
-        ' <span class="score" title="Relevance score 1-10">' + esc(ev.score) + '</span>' +
-      '</div>' +
-      (meta ? '<div class="meta">' + meta + '</div>' : '') +
-      (ev.reason ? '<div class="reason">→ ' + esc(ev.reason) + '</div>' : '') +
-      (ev.url ? '<a class="link" href="' + url + '" target="_blank">' + url + '</a>' : '') +
-      '<div class="feedback">' +
-        '<button class="fb-btn" data-p="brian" data-v="up">\uD83D\uDC4D Brian</button>' +
-        '<button class="fb-btn" data-p="chloe" data-v="up">\uD83D\uDC4D Chloe</button>' +
-        '<button class="fb-btn" data-p="brian" data-v="down">\uD83D\uDC4E Brian</button>' +
-        '<button class="fb-btn" data-p="chloe" data-v="down">\uD83D\uDC4E Chloe</button>' +
-      '</div>' +
-    '</div>';
-  }
-
-  // ── Feedback ─────────────────────────────────────────────────────────────
-
-  document.addEventListener('click', function(e) {
-    var btn = e.target.closest('.fb-btn');
-    if (!btn) return;
-    var card = btn.closest('.card');
-    sendFeedback(btn, btn.dataset.p, btn.dataset.v, card.dataset.url, card.dataset.name);
-  });
-
-  function sendFeedback(btn, persona, vote, url, name) {
-    btn.classList.add(vote === 'up' ? 'done' : 'skip');
-    btn.disabled = true;
-    fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'},
-      body: new URLSearchParams({'form-name':'event-feedback','persona':persona,'vote':vote,'event_url':url,'event_name':name}).toString()
-    }).catch(function(){});
-  }
-
-  // ── Extra events toggle ───────────────────────────────────────────────────
-
-  window.toggleExtra = function() {
+  function toggleExtra() {
     var el = document.getElementById('extra-events');
     var btn = document.getElementById('extra-btn');
-    el.style.display = (el.style.display === 'none' || !el.style.display) ? 'block' : 'none';
-    btn.textContent = el.style.display === 'block' ? '\u25B2 Hide lower-priority events' : btn.dataset.label;
-  };
-
-  // ── Render ────────────────────────────────────────────────────────────────
-
-  function renderAll(data) {
-    document.getElementById('loading').style.display = 'none';
-    document.getElementById('main').style.display = '';
-
-    // Subtitle
-    var events = data.events || [];
-    // index events by URL for modal lookup
-    events.forEach(function(ev) { if (ev.url) evMap[ev.url] = ev; });
-    var today = data.today || '';
-    var days = data.days || 7;
-    var startDate = today;
-    var endDateObj = new Date(today.split('-')[0], parseInt(today.split('-')[1],10)-1, parseInt(today.split('-')[2],10) + days - 1);
-    var months = ['January','February','March','April','May','June',
-                  'July','August','September','October','November','December'];
-    var endLabel = months[endDateObj.getMonth()] + ' ' + endDateObj.getDate();
-    var startParts = today.split('-');
-    var startLabel = months[parseInt(startParts[1],10)-1] + ' ' + parseInt(startParts[2],10);
-    document.getElementById('subtitle').innerHTML =
-      startLabel + ' \u2013 ' + endLabel + ', ' + startParts[0] +
-      ' &nbsp;\u00B7&nbsp; ' + events.length + ' events';
-
-    // Cost bar
-    var costs = data.costs || {};
-    var runs = (costs.runs || []).slice(-5).reverse();
-    var costHtml = '<div style="display:flex;gap:20px;margin-bottom:10px">' +
-      '<span class="cost-item">Week: <b>$' + (costs.week || 0).toFixed(4) + '</b></span>' +
-      '<span class="cost-item">Month: <b>$' + (costs.month || 0).toFixed(4) + '</b></span>' +
-      '<span class="cost-item">Total: <b>$' + (costs.total || 0).toFixed(4) + '</b></span>' +
-    '</div>';
-    if (runs.length) {
-      costHtml += '<table style="width:100%;border-collapse:collapse;font-size:0.75rem;color:#888">' +
-        '<thead><tr style="color:#555;text-align:left;border-bottom:1px solid #222">' +
-          '<th style="padding:4px 8px 4px 0">Run</th>' +
-          '<th style="padding:4px 8px">Persona</th>' +
-          '<th style="padding:4px 8px">Events</th>' +
-          '<th style="padding:4px 8px">Where cost went</th>' +
-          '<th style="padding:4px 8px">Cost</th>' +
-          '<th style="padding:4px 8px">Time</th>' +
-        '</tr></thead><tbody>';
-      runs.forEach(function(run, i) {
-        var isLatest = (i === 0);
-        // Stage breakdown — fetch=extract_raw, score=persona scoring, restaurants=hot_restaurants
-        var stages = run.by_stage || {};
-        var STAGE_ORDER = ['fetch','score','restaurants'];
-        var stageStr = STAGE_ORDER.filter(function(s){ return stages[s] > 0; })
-          .map(function(s){ return '<span style="color:#667">' + s + '</span> ' + fmtMoney(stages[s]); })
-          .join(' &nbsp;+&nbsp; ');
-        // Fall back to model breakdown if no stage data
-        if (!stageStr) {
-          var models = run.models || {};
-          stageStr = Object.keys(models).map(function(k) {
-            return esc(k.replace('claude-','').replace('-20251001','')) + ' ' + fmtMoney(models[k]);
-          }).join(', ') || '\u2014';
-        }
-        // Top sources (event counts by source)
-        var srcCounts = run.source_counts || {};
-        var srcKeys = Object.keys(srcCounts).sort(function(a,b){ return srcCounts[b]-srcCounts[a]; });
-        var srcStr = srcKeys.slice(0,5).map(function(k){ return esc(k)+'&thinsp;'+srcCounts[k]; }).join(' &middot; ');
-        costHtml += '<tr' + (isLatest ? ' style="background:#1e2a1e"' : '') + '>' +
-          '<td style="padding:4px 8px 4px 0">' + esc(fmtRunTs(run.ts || '')) +
-            (isLatest ? ' <b style="color:#7fff7f;font-size:0.65rem">LATEST</b>' : '') +
-          '</td>' +
-          '<td style="color:#9ab;padding:4px 8px;text-transform:capitalize">' + esc(run.persona || '\u2014') + '</td>' +
-          '<td style="color:#aaa;padding:4px 8px">' +
-            (run.events_cached||0) + ' cached&thinsp;/&thinsp;' + (run.events_scored||0) + ' scored' +
-            (srcStr ? '<br><span style="color:#445;font-size:0.67rem">' + srcStr + '</span>' : '') +
-          '</td>' +
-          '<td style="padding:4px 8px">' + stageStr + '</td>' +
-          '<td style="color:#e8e8e8;font-weight:600;padding:4px 8px">' + fmtMoney(run.cost_usd) + '</td>' +
-          '<td style="color:#666;padding:4px 8px">' + fmtDuration(run.duration_ms) + '</td>' +
-        '</tr>';
-      });
-      costHtml += '</tbody></table>';
-      // Efficiency notes for latest run
-      var latestRun = runs[0];
-      if (latestRun && latestRun.efficiency) {
-        var eff = latestRun.efficiency;
-        var effColor = eff.cache_hit_rate >= 0.7 ? '#4a8a4a' : eff.cache_hit_rate >= 0.4 ? '#8a7a3a' : '#8a4a4a';
-        var notesHtml = (eff.notes || []).map(function(n){ return esc(n); }).join('<br>');
-        costHtml += '<div style="margin-top:8px;padding:6px 8px;background:#111;border-radius:4px;font-size:0.72rem;color:' + effColor + '">' +
-          '\u26a1 ' + notesHtml +
-          (latestRun.deploy_why && latestRun.deploy_why !== 'run' ? '<br><span style="color:#555">run: ' + esc(latestRun.deploy_why) + '</span>' : '') +
-          '</div>';
-      }
-      // Netlify credits — find most recent run that has valid credit data
-      var netlify = null;
-      for (var ri = 0; ri < runs.length; ri++) {
-        if (runs[ri].netlify && runs[ri].netlify.total) { netlify = runs[ri].netlify; break; }
-      }
-      if (netlify && netlify.total) {
-        var dashUrl = netlify.dashboard_url || 'https://app.netlify.com/billing';
-        costHtml += '<div style="margin-top:4px;font-size:0.72rem;color:#556">' +
-          '\uD83C\uDF10 Netlify: ' + netlify.total + ' credit pack &mdash; ' +
-          '<a href="' + dashUrl + '" target="_blank" style="color:#4a9eff;text-decoration:none">check balance in dashboard</a>' +
-          ' (API doesn\'t expose usage)</div>';
-      }
-    }
-    document.getElementById('cost-bar').innerHTML = costHtml;
-
-    // Sources bar
-    var sources    = data.sources || {};
-    var srcUrls    = data.source_urls || {};
-    var srcKeys    = Object.keys(sources);
-    var srcHtml    = '';
-    if (srcKeys.length) {
-      var totalShown = srcKeys.reduce(function(a, k) { return a + sources[k]; }, 0);
-      srcHtml = 'Sources: ' + srcKeys.map(function(k) {
-        var inner = esc(k) + ' <b>' + sources[k] + '</b>';
-        var u = srcUrls[k];
-        return u
-          ? '<a class="src-pill" href="' + esc(u) + '" target="_blank" style="text-decoration:none;color:inherit">' + inner + '</a>'
-          : '<span class="src-pill">' + inner + '</span>';
-      }).join(' ') +
-      ' <span style="color:#444;margin-left:8px">\u2192 ' + totalShown + ' shown</span>';
-    }
-    var srcBar = document.getElementById('sources-bar');
-    if (srcHtml) {
-      srcBar.innerHTML = srcHtml;
+    if (el.style.display === 'none' || !el.style.display) {
+      el.style.display = 'block';
+      btn.textContent = '▲ Hide lower-priority events';
     } else {
-      srcBar.style.display = 'none';
-    }
-
-    // Oyster bar — day-of-week view
-    var oysters = data.oyster_deals || [];
-    var oysterBar = document.getElementById('oyster-bar');
-    if (oysters.length) {
-      var DAY_NAMES = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-      var DAY_FULL  = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-      var todayDow  = new Date().getDay(); // 0=Sun
-
-      function oysterDays(o) {
-        var desc = ((o.description || '') + ' ' + (o.reason || '')).toLowerCase();
-        var name = (o.name || '').toLowerCase();
-        if (/daily|every day|all week/i.test(desc + name)) return [0,1,2,3,4,5,6];
-        var days = [];
-        var map = {sun:0,mon:1,tue:2,wed:3,thu:4,fri:5,sat:6,
-                   sunday:0,monday:1,tuesday:2,wednesday:3,thursday:4,friday:5,saturday:6};
-        Object.keys(map).forEach(function(k){ if(desc.indexOf(k)!==-1) days.push(map[k]); });
-        // handle ranges like "mon-wed", "mon–fri"
-        var rangeMatch = desc.match(/([a-z]+)[–\-]([a-z]+)/);
-        if (rangeMatch) {
-          var s = map[rangeMatch[1]], e = map[rangeMatch[2]];
-          if (s !== undefined && e !== undefined) {
-            days = []; for(var d=s; d<=e; d++) days.push(d);
-          }
-        }
-        return days.length ? days : [0,1,2,3,4,5,6]; // default: all days if unknown
-      }
-
-      function oysterHours(o) {
-        var m = (o.description||'').match(/(\d+(?::\d+)?\s*(?:AM|PM|am|pm)[^.,$]*)/i);
-        return m ? m[1].trim() : '';
-      }
-
-      function bostonHour() {
-        // Current hour (0-23) in Boston time (handles EST/EDT automatically)
-        var d = new Date();
-        var fmt = new Intl.DateTimeFormat('en-US', {
-          timeZone: 'America/New_York', hour: 'numeric', hour12: false
-        });
-        return parseInt(fmt.format(d), 10);
-      }
-
-      function parseEndHour24(hoursStr) {
-        // Parse "5-7pm", "5:00 PM–7:00 PM" → end hour in 24h. Returns null if can't parse.
-        if (!hoursStr) return null;
-        var s = hoursStr.toLowerCase();
-        // look for end time in ranges: "5-7pm", "5–7pm", "5:00-7:00 pm"
-        var m = s.match(/[–\-]\s*(\d+)(?::\d+)?\s*(am|pm)/);
-        if (m) {
-          var h = parseInt(m[1], 10);
-          if (m[2] === 'pm' && h !== 12) h += 12;
-          if (m[2] === 'am' && h === 12) h = 0;
-          return h;
-        }
-        // single time — treat it as end time
-        var s2 = s.match(/(\d+)(?::\d+)?\s*(am|pm)/);
-        if (s2) {
-          var h2 = parseInt(s2[1], 10);
-          if (s2[2] === 'pm' && h2 !== 12) h2 += 12;
-          if (s2[2] === 'am' && h2 === 12) h2 = 0;
-          return h2;
-        }
-        return null;
-      }
-
-      // Neighborhood proximity tables — each hood maps to scores from that location
-      var HOOD_PROXIMITY = {
-        'South End':     {'South End':10,'Back Bay':9,'Beacon Hill':8,'Downtown':8,'Financial District':8,'West End':7,'North End':7,'Fenway':7,'Kenmore':6,'Mission Hill':6,'Seaport':5,'South Boston':5,'Southie':5,'Cambridge':5,'Brookline':5,'Roxbury':5,'Somerville':4,'Charlestown':4,'Jamaica Plain':4,'Allston':3,'Brighton':3,'Dorchester':3},
-        'Back Bay':      {'Back Bay':10,'Newbury Street':10,'South End':9,'Beacon Hill':9,'Fenway':8,'Kenmore':8,'Downtown':8,'Financial District':7,'North End':7,'West End':7,'Mission Hill':7,'Seaport':6,'Cambridge':5,'Brookline':6,'South Boston':5,'Somerville':4,'Charlestown':4,'Jamaica Plain':5,'Allston':4},
-        'Cambridge':     {'Cambridge':10,'Somerville':8,'Charlestown':7,'North End':7,'West End':6,'Beacon Hill':6,'Downtown':6,'Financial District':6,'Back Bay':5,'South End':5,'Fenway':5,'Allston':5,'Medford':5,'Brookline':4,'Seaport':4,'South Boston':4,'Jamaica Plain':4},
-        'North End':     {'North End':10,'West End':9,'Charlestown':8,'Beacon Hill':8,'Downtown':8,'Financial District':8,'Cambridge':6,'Back Bay':6,'Seaport':5,'South End':5,'Fenway':5,'Somerville':5},
-        'Seaport':       {'Seaport':10,'Financial District':8,'Downtown':8,'South Boston':7,'Southie':7,'South End':6,'Back Bay':5,'North End':5,'Beacon Hill':5,'Cambridge':4,'Fenway':4},
-        'Beacon Hill':   {'Beacon Hill':10,'West End':9,'Downtown':9,'Financial District':8,'Back Bay':8,'North End':7,'South End':7,'Cambridge':6,'Fenway':6,'Charlestown':6,'Seaport':5},
-        'Fenway':        {'Fenway':10,'Kenmore':10,'Back Bay':8,'Brookline':7,'South End':7,'Mission Hill':8,'Allston':6,'Cambridge':5,'Beacon Hill':6,'Jamaica Plain':6,'Downtown':6},
-        'Somerville':    {'Somerville':10,'Cambridge':8,'Medford':7,'Charlestown':7,'North End':6,'West End':5,'Beacon Hill':5,'Downtown':5,'Allston':5,'Back Bay':4,'Fenway':4,'South End':3},
-        'South Boston':  {'South Boston':10,'Southie':10,'Seaport':8,'Financial District':6,'Downtown':6,'South End':5,'Back Bay':4,'North End':4,'Beacon Hill':4,'Cambridge':3},
-      };
-      var HOODS = ['South End','Back Bay','Cambridge','North End','Seaport','Beacon Hill','Fenway','Somerville','South Boston'];
-
-      var currentHood = null; // null = use server-side _proximity field
-      var showProvidence = false;
-
-      function proxScore(o) {
-        if (!currentHood) return (o._proximity || 3);
-        var table = HOOD_PROXIMITY[currentHood] || {};
-        var addr = ((o.address || '') + ' ' + (o.venue || '')).toLowerCase();
-        var best = 3;
-        Object.keys(table).forEach(function(k) {
-          if (addr.indexOf(k.toLowerCase()) !== -1) best = Math.max(best, table[k]);
-        });
-        return best;
-      }
-      function proxLabel(score) {
-        if (score >= 9) return 'nearby';
-        if (score >= 7) return 'easy';
-        if (score >= 5) return 'doable';
-        return 'hike';
-      }
-
-      var hidePast = true;
-      function renderOysterDay(dow) {
-        var isToday = (dow === todayDow);
-        var currentH = isToday ? bostonHour() : -1;
-        var items = oysters.filter(function(o){ return oysterDays(o).indexOf(dow) !== -1 && (o.city || 'Boston') !== 'Providence'; });
-        var pvdItems = oysters.filter(function(o){ return oysterDays(o).indexOf(dow) !== -1 && o.city === 'Providence'; });
-        var pastItems = [];
-        var futureItems = [];
-        if (isToday && hidePast) {
-          items.forEach(function(o) {
-            var endH = parseEndHour24(oysterHours(o));
-            if (endH !== null && endH <= currentH) { pastItems.push(o); } else { futureItems.push(o); }
-          });
-          items = futureItems;
-        }
-        // Sort by proximity from selected hood
-        items.sort(function(a, b) { return proxScore(b) - proxScore(a); });
-
-        if (!items.length && !pastItems.length) return '<div style="color:#444;font-size:0.8rem;padding:8px 0">No deals on ' + DAY_FULL[dow] + '</div>';
-        if (!items.length && isToday) return '<div style="color:#556;font-size:0.8rem;padding:8px 0">All deals for today have ended. ' + (pastItems.length ? pastItems.length + ' hidden.' : '') + '</div>';
-
-        var renderItem = function(o) {
-          var venueName = esc(o.venue || o.name.split('\u2014')[0].trim());
-          var hood  = esc(o.address || '');
-          var hours = esc(oysterHours(o));
-          var deal  = esc((o.name||'').split('\u2014')[1] || o.reason || '');
-          var left  = '<div><b>' + venueName + '</b>' +
-                      (hood ? '<div class="oyster-meta">' + hood + (deal ? ' \u00b7 ' + deal : '') + '</div>' : '') +
-                      '</div>';
-          var right = hours ? '<span class="oyster-hours">' + hours + '</span>' : '';
-          var inner = left + right;
-          return o.url
-            ? '<a class="oyster-item" href="' + esc(o.url) + '" target="_blank" style="text-decoration:none">' + inner + '</a>'
-            : '<div class="oyster-item">' + inner + '</div>';
-        };
-
-        // Group by tier when a hood is selected
-        var html = '';
-        if (currentHood) {
-          var tiers = [{label:'Nearby',min:9},{label:'Easy',min:7},{label:'Doable',min:5},{label:'Hike',min:0}];
-          tiers.forEach(function(t) {
-            var tier = items.filter(function(o){ var s=proxScore(o); return s>=t.min && (t.min===9?s>=9:t.min===7?s>=7&&s<9:t.min===5?s>=5&&s<7:s<5); });
-            if (!tier.length) return;
-            html += '<div class="oyster-tier">' + t.label + '</div>';
-            html += '<div class="oyster-list" style="margin-bottom:8px">' + tier.map(renderItem).join('') + '</div>';
-          });
-        } else {
-          html = '<div class="oyster-list">' + items.map(renderItem).join('') + '</div>';
-        }
-        html = '<div class="oyster-scroll">' + html + '</div>';
-        if (isToday && pastItems.length > 0) {
-          html += '<div style="font-size:0.72rem;color:#445;margin-top:6px;padding:4px 0">' + pastItems.length + ' deal' + (pastItems.length > 1 ? 's' : '') + ' ended today \u2014 <button onclick="togglePastOysters()" style="background:none;border:none;color:#557;font-size:0.72rem;cursor:pointer;padding:0">show all</button></div>';
-        }
-        // Providence section — collapsed by default
-        if (pvdItems.length) {
-          pvdItems.sort(function(a, b) { return (b.score||0) - (a.score||0); });
-          var pvdToggle = '<div style="margin-top:10px;border-top:1px solid #1a3a1a;padding-top:8px">' +
-            '<button onclick="toggleProvidence()" style="background:none;border:none;color:' + (showProvidence ? '#afffaf' : '#3a6a4a') + ';font-size:0.72rem;cursor:pointer;padding:0;letter-spacing:0.04em">' +
-            (showProvidence ? '\u25bc' : '\u25b6') + ' Providence RI (' + pvdItems.length + ' deals)</button>' +
-            (showProvidence ? '<div class="oyster-list" style="margin-top:6px">' + pvdItems.map(renderItem).join('') + '</div>' : '') +
-            '</div>';
-          html += pvdToggle;
-        }
-        return html;
-      }
-
-      var activeDow = todayDow;
-      function buildOyster() {
-        var tabs = '<div class="oyster-days">' +
-          DAY_NAMES.map(function(d,i) {
-            var cls = 'oday-btn' + (i===activeDow ? ' active' : '');
-            var todayMark = i===todayDow ? ' \u25cf' : '';
-            return '<button class="' + cls + '" onclick="setOysterDay(' + i + ')">' + d + todayMark + '</button>';
-          }).join('') + '</div>';
-        var hoodBtns = '<div class="oyster-location"><span>I\'m in:</span>' +
-          HOODS.map(function(h) {
-            var cls = 'ohood-btn' + (h===currentHood ? ' active' : '');
-            return '<button class="' + cls + '" onclick="setOysterHood(\'' + h + '\')">' + h + '</button>';
-          }).join('') +
-          (currentHood ? ' <button class="ohood-btn" onclick="setOysterHood(null)" style="opacity:0.5">\u00d7 clear</button>' : '') +
-          '</div>';
-        oysterBar.innerHTML = '<div class="oyster-title">\uD83E\uDDAA Oyster Deals</div>' + tabs + hoodBtns + renderOysterDay(activeDow);
-      }
-      window.setOysterDay      = function(dow)  { activeDow = dow; buildOyster(); };
-      window.setOysterHood     = function(hood) { currentHood = hood; buildOyster(); };
-      window.togglePastOysters = function() { hidePast = !hidePast; buildOyster(); };
-      window.toggleProvidence  = function() { showProvidence = !showProvidence; buildOyster(); };
-      buildOyster();
-    } else {
-      oysterBar.style.display = 'none';
-    }
-
-    // Group events by date
-    var groups = {};
-    var order = [];
-    events.forEach(function(ev) {
-      var key = ev.start ? dateKey(ev.start) : (today || 'unknown');
-      if (!groups[key]) {
-        groups[key] = [];
-        order.push(key);
-      }
-      groups[key].push(ev);
-    });
-    // Sort days chronologically
-    order.sort();
-
-    var eventsHtml = '';
-    order.forEach(function(key) {
-      var label = fmtDate(key);
-      var isToday = (key === today);
-      eventsHtml += '<div class="day-section">';
-      eventsHtml += '<div class="day-header">' + esc(label) +
-        (isToday ? ' <span class="today-tag">TODAY</span>' : '') +
-      '</div>';
-      groups[key].forEach(function(ev) {
-        eventsHtml += buildCard(ev);
-      });
-      eventsHtml += '</div>';
-    });
-    document.getElementById('events-container').innerHTML = eventsHtml;
-
-    // Extra events toggle
-    var extra = data.extra_events || [];
-    var extraBtn = document.getElementById('extra-btn');
-    var extraContainer = document.getElementById('extra-events');
-    if (extra.length) {
-      var label = '\u25BC Show lower-priority events (' + extra.length + ')';
-      extraBtn.textContent = label;
-      extraBtn.dataset.label = label;
-      extraBtn.style.display = 'block';
-      var extraHtml = '<div class="day-section">';
-      extraHtml += '<div class="day-header">Lower Priority <span class="extra-label">score 1\u20134</span></div>';
-      extra.forEach(function(ev) {
-        extraHtml += buildCard(ev);
-      });
-      extraHtml += '</div>';
-      extraContainer.innerHTML = extraHtml;
-    }
-
-    // Footer
-    var genAt = data.generated_at || '';
-    var footerText = '';
-    if (genAt) {
-      var datePart2 = genAt.split('T')[0];
-      var timePart2 = genAt.indexOf('T') !== -1 ? genAt.split('T')[1].substring(0,5) : '';
-      var dp2 = datePart2.split('-');
-      var d2 = new Date(parseInt(dp2[0],10), parseInt(dp2[1],10)-1, parseInt(dp2[2],10));
-      var months2 = ['January','February','March','April','May','June',
-                     'July','August','September','October','November','December'];
-      var dateStr2 = months2[d2.getMonth()] + ' ' + d2.getDate() + ', ' + dp2[0];
-      var timeStr2 = '';
-      if (timePart2) {
-        var tp2 = timePart2.split(':');
-        var hh2 = parseInt(tp2[0],10);
-        var mm2 = tp2[1];
-        var ampm2 = hh2 >= 12 ? 'PM' : 'AM';
-        hh2 = hh2 % 12 || 12;
-        timeStr2 = hh2 + ':' + mm2 + ' ' + ampm2;
-      }
-      footerText = 'Generated ' + dateStr2 + (timeStr2 ? ' at ' + timeStr2 : '');
-    }
-    document.getElementById('footer').innerHTML = '<div class="footer">' + esc(footerText) + '</div>';
-
-    // Hot restaurants
-    var hrData = (data.hot_restaurants || {}).restaurants || [];
-    var hrBar  = document.getElementById('hotrest-bar');
-    if (hrData.length) {
-      hrBar.style.display = '';
-      var hrUpdated = (data.hot_restaurants || {}).updated || '';
-      var hrAge = hrUpdated ? ' <span style="font-weight:400;color:#445;font-size:0.72rem">(updated ' + fmtRunTs(hrUpdated) + ')</span>' : '';
-      var hrOpen = false;
-      function renderHotRest() {
-        if (!hrOpen) {
-          hrBar.innerHTML = '<div class="hotrest-title" onclick="toggleHotRest()">🍽 Buzzy Restaurants <span style="font-size:0.75rem;color:#445">▶ ' + hrData.length + ' spots</span>' + hrAge + '</div>';
-          return;
-        }
-        var cards = hrData.slice(0, 20).map(function(r) {
-          var buzz   = r.buzz_score ? '★' + r.buzz_score + '/10' : '';
-          var night  = r.hot_night ? '🔥 ' + r.hot_night + (r.hot_hours ? ' ' + r.hot_hours : '') : '';
-          var flags  = (r.good_for_brian ? ' ✓B' : '') + (r.good_for_chloe ? ' ✓C' : '');
-          var vibe   = esc(r.vibe || r.summary || '');
-          var price  = r.price ? esc(r.price) + ' · ' : '';
-          var addr   = esc((r.address || '').split(',')[0]);
-          var meta   = [price + addr, night, buzz + flags].filter(Boolean).join(' &nbsp;·&nbsp; ');
-          var link   = r.website ? ' <a href="' + esc(r.website) + '" target="_blank" style="color:#4a9eff;text-decoration:none;font-size:0.7rem">↗</a>' : '';
-          return '<div class="hotrest-card">' +
-            '<div class="hotrest-name">' + esc(r.google_name || r.name) + link + '</div>' +
-            (vibe ? '<div class="hotrest-vibe">' + vibe + '</div>' : '') +
-            (meta ? '<div class="hotrest-meta">' + meta + '</div>' : '') +
-            '</div>';
-        }).join('');
-        hrBar.innerHTML = '<div class="hotrest-title" onclick="toggleHotRest()">🍽 Buzzy Restaurants ▼' + hrAge + '</div>' +
-          '<div class="hotrest-grid">' + cards + '</div>';
-      }
-      window.toggleHotRest = function() { hrOpen = !hrOpen; renderHotRest(); };
-      renderHotRest();
+      el.style.display = 'none';
+      btn.textContent = btn.dataset.label;
     }
   }
 
-  // ── Fetch ─────────────────────────────────────────────────────────────────
-
-  fetch('https://raw.githubusercontent.com/coffeethencode/boston-finder/data/data/brian.json?t=' + Math.floor(Date.now() / 300000))
-    .then(function(r) { return r.json(); })
-    .then(function(data) { renderAll(data); })
-    .catch(function(err) {
-      document.getElementById('loading').style.display = 'none';
-      document.body.innerHTML += '<p style="color:#f00">Failed to load events: ' + err + '</p>';
+  function sendFeedback(btn, persona, vote, url, name) {
+    var cls = vote === 'up' ? 'done' : 'skip';
+    btn.classList.add(cls);
+    btn.disabled = true;
+    var body = new URLSearchParams({
+      'form-name': 'event-feedback',
+      'persona': persona,
+      'vote': vote,
+      'event_url': url,
+      'event_name': name
     });
-
-  // ── Event detail modal ────────────────────────────────────────────────────
-
-  var _modalBg = null;
-  function showEventModal(ev) {
-    closeEventModal();
-    var meta = [];
-    if (ev.start && ev.start.indexOf('T') !== -1) meta.push(fmtDate(ev.start) + ' at ' + fmtTime(ev.start));
-    else if (ev.start) meta.push(fmtDate(ev.start));
-    if (ev.price) meta.push(ev.price);
-    if (ev.venue) meta.push(ev.venue);
-    if (ev.address) meta.push(ev.address);
-    if (ev.source) meta.push('via ' + ev.source);
-    var scoreHtml = ev.score ? ' <span class="score">' + ev.score + '</span>' : '';
-    var linkHtml = ev.url
-      ? '<a class="ev-modal-link" href="' + esc(ev.url) + '" target="_blank">View event \u2192</a>'
-      : '';
-    var inner = '<button class="ev-modal-x" onclick="closeEventModal()">\u00d7</button>' +
-      '<h2>' + esc(ev.name || '') + scoreHtml + '</h2>' +
-      (meta.length ? '<div class="ev-modal-meta">' + meta.map(esc).join('<br>') + '</div>' : '') +
-      (ev.reason ? '<div class="ev-modal-reason">\u2192 ' + esc(ev.reason) + '</div>' : '') +
-      (ev.description ? '<div class="ev-modal-desc">' + esc(ev.description) + '</div>' : '') +
-      '<div class="ev-modal-footer">' + linkHtml + '</div>';
-    var modal = document.createElement('div');
-    modal.className = 'ev-modal';
-    modal.innerHTML = inner;
-    var bg = document.createElement('div');
-    bg.className = 'ev-modal-bg';
-    bg.appendChild(modal);
-    bg.addEventListener('click', function(e) { if (e.target === bg) closeEventModal(); });
-    document.body.appendChild(bg);
-    _modalBg = bg;
-    document.addEventListener('keydown', _escListener);
+    fetch('https://highendeventfinder.netlify.app/', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: body.toString()
+    }).catch(function() {
+      btn.classList.remove(cls);
+      btn.disabled = false;
+    });
   }
-  function _escListener(e) { if (e.key === 'Escape') closeEventModal(); }
-  window.closeEventModal = function() {
-    if (_modalBg) { _modalBg.remove(); _modalBg = null; }
-    document.removeEventListener('keydown', _escListener);
-  };
-
-  document.addEventListener('click', function(e) {
-    if (e.target.closest('.fb-btn')) return;
-    if (e.target.closest('a')) return;
-    if (e.target.closest('.ev-modal')) return;
-    var card = e.target.closest('.card');
-    if (!card || !card.dataset.url) return;
-    var ev = evMap[card.dataset.url];
-    if (ev) showEventModal(ev);
-  });
-
-})();
 </script>
 </body>
 </html>
