@@ -98,6 +98,23 @@
   .show-more-btn:hover { border-color: #555; color: #ccc; }
   #extra-events { display: none; }
   .extra-label  { font-size: 0.72rem; color: #555; font-style: italic; margin-left: 6px; }
+  .day-filter   { position: sticky; top: 0; z-index: 10; background: #0f0f0f;
+                   padding: 10px 0 8px; display: flex; gap: 6px; flex-wrap: wrap;
+                   border-bottom: 1px solid #222; margin-bottom: 16px; }
+  .day-pill     { background: #1a1a1a; border: 1px solid #333; border-radius: 99px;
+                   padding: 5px 12px; font-size: 0.78rem; color: #aaa; cursor: pointer;
+                   transition: all 0.15s; white-space: nowrap; }
+  .day-pill:hover { border-color: #555; color: #fff; }
+  .day-pill-today { border-color: #2a6e2a; }
+  .day-pill.hidden { background: #0f0f0f; border-color: #222; color: #444;
+                      text-decoration: line-through; }
+  .pill-count   { font-size: 0.65rem; color: #555; margin-left: 2px; }
+  .day-toggle   { font-size: 0.65rem; color: #555; margin-left: 6px; cursor: pointer;
+                   transition: transform 0.15s; display: inline-block; }
+  .day-section.collapsed .day-cards { display: none; }
+  .day-section.collapsed .day-toggle { transform: rotate(-90deg); }
+  .day-section.hidden-by-filter { display: none; }
+  .day-header   { cursor: pointer; user-select: none; }
   .nav          { display: flex; gap: 4px; margin-bottom: 20px; border-bottom: 1px solid #222; padding-bottom: 12px; }
   .nav-link     { padding: 6px 16px; border-radius: 6px; font-size: 0.85rem; color: #666;
                    text-decoration: none; border: 1px solid transparent; }
@@ -156,6 +173,7 @@
       <b>1–4</b> low priority
     </div>
 
+    <div class="day-filter" id="day-filter"></div>
     <div id="events-container"></div>
 
     <button class="show-more-btn" id="extra-btn" onclick="toggleExtra()" style="display:none"></button>
@@ -298,6 +316,17 @@
     var btn = document.getElementById('extra-btn');
     el.style.display = (el.style.display === 'none' || !el.style.display) ? 'block' : 'none';
     btn.textContent = el.style.display === 'block' ? '\u25B2 Hide lower-priority events' : btn.dataset.label;
+  };
+
+  window.toggleDay = function(pill) {
+    var dayId = pill.dataset.day;
+    var section = document.getElementById(dayId);
+    pill.classList.toggle('hidden');
+    section.classList.toggle('hidden-by-filter');
+  };
+
+  window.toggleDaySection = function(header) {
+    header.parentElement.classList.toggle('collapsed');
   };
 
   // ── Render ────────────────────────────────────────────────────────────────
@@ -618,18 +647,35 @@
     // Sort days chronologically
     order.sort();
 
+    // Day filter pills
+    var DAY_SHORT = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+    var pillsHtml = '';
+    order.forEach(function(key, i) {
+      var isToday = (key === today);
+      var dp = key.split('-');
+      var d = new Date(parseInt(dp[0],10), parseInt(dp[1],10)-1, parseInt(dp[2],10));
+      var short = DAY_SHORT[d.getDay()] + ' ' + (d.getMonth()+1) + '/' + d.getDate();
+      var count = groups[key].length;
+      var todayCls = isToday ? ' day-pill-today' : '';
+      pillsHtml += '<button class="day-pill' + todayCls + '" data-day="day-' + i + '" onclick="toggleDay(this)">' +
+        short + ' <span class="pill-count">' + count + '</span></button>';
+    });
+    document.getElementById('day-filter').innerHTML = pillsHtml;
+
     var eventsHtml = '';
-    order.forEach(function(key) {
+    order.forEach(function(key, i) {
       var label = fmtDate(key);
       var isToday = (key === today);
-      eventsHtml += '<div class="day-section">';
-      eventsHtml += '<div class="day-header">' + esc(label) +
+      eventsHtml += '<div class="day-section" id="day-' + i + '">';
+      eventsHtml += '<div class="day-header" onclick="toggleDaySection(this)">' + esc(label) +
         (isToday ? ' <span class="today-tag">TODAY</span>' : '') +
+        ' <span class="day-toggle">\u25BC</span>' +
       '</div>';
+      eventsHtml += '<div class="day-cards">';
       groups[key].forEach(function(ev) {
         eventsHtml += buildCard(ev);
       });
-      eventsHtml += '</div>';
+      eventsHtml += '</div></div>';
     });
     document.getElementById('events-container').innerHTML = eventsHtml;
 
