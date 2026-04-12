@@ -178,9 +178,18 @@ def generate(events: list[dict], today: datetime, days: int, persona: str = "bri
     # today label for highlighting
     today_label = today.strftime("%A, %B %-d")
 
+    # build day filter pills
+    day_pills = ""
+    for i, day in enumerate(date_order):
+        is_today = (day == today_label)
+        short = date_key.get(day, datetime.max).strftime("%a %-m/%-d") if date_key.get(day) != datetime.max else day[:10]
+        count = len(by_date[day])
+        today_cls = " day-pill-today" if is_today else ""
+        day_pills += f'<button class="day-pill{today_cls}" data-day="day-{i}" onclick="toggleDay(this)">{short} <span class="pill-count">{count}</span></button>'
+
     # build HTML
     sections = ""
-    for day in date_order:
+    for i, day in enumerate(date_order):
         day_events = by_date[day]
         day_events.sort(key=lambda x: -x.get("score", 0))
         is_today = (day == today_label)
@@ -197,9 +206,9 @@ def generate(events: list[dict], today: datetime, days: int, persona: str = "bri
             eid = url.replace("https://", "").replace("/", "_").replace(".", "_")[:40]
             feedback = f"""<div class="feedback" id="fb_{eid}">
                 <button class="fb-btn" onclick="sendFeedback(this,'brian','up','{url}','{e['name'].replace("'","")}')">👍 Brian</button>
-                <button class="fb-btn" onclick="sendFeedback(this,'chloe','up','{url}','{e['name'].replace("'","")}')">👍 Chloe</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','{url}','{e['name'].replace("'","")}')">👍 Dates</button>
                 <button class="fb-btn" onclick="sendFeedback(this,'brian','down','{url}','{e['name'].replace("'","")}')">👎 Brian</button>
-                <button class="fb-btn" onclick="sendFeedback(this,'chloe','down','{url}','{e['name'].replace("'","")}')">👎 Chloe</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','{url}','{e['name'].replace("'","")}')">👎 Dates</button>
             </div>""" if url else ""
             cards += f"""
             <div class="card">
@@ -211,16 +220,18 @@ def generate(events: list[dict], today: datetime, days: int, persona: str = "bri
             </div>"""
         today_tag = ' <span class="today-tag">TODAY</span>' if is_today else ""
         sections += f"""
-        <div class="day-section">
-            <div class="day-header">{day}{today_tag}</div>
+        <div class="day-section" id="day-{i}">
+            <div class="day-header" onclick="toggleDaySection(this)">{day}{today_tag} <span class="day-toggle">▼</span></div>
+            <div class="day-cards">
             {cards}
+            </div>
         </div>"""
 
-    is_chloe  = (persona == "chloe")
-    title_str = "Chloe's Boston" if is_chloe else "Boston Events"
-    accent    = "#c084fc" if is_chloe else "#f0a500"
-    nav_brian_cls = "nav-active" if not is_chloe else "nav-link"
-    nav_chloe_cls = "nav-active" if is_chloe else "nav-link"
+    from boston_finder.personas import PERSONAS, nav_html
+    p = PERSONAS.get(persona, PERSONAS["brian"])
+    title_str = p["title"]
+    accent    = p["accent"]
+    nav_markup = nav_html(persona)
 
     html = f"""<!DOCTYPE html>
 <html lang="en">
@@ -283,6 +294,23 @@ def generate(events: list[dict], today: datetime, days: int, persona: str = "bri
   .nav-active   {{ padding: 6px 16px; border-radius: 6px; font-size: 0.85rem; font-weight: 600;
                    color: {accent}; border: 1px solid {accent}33; background: {accent}11;
                    text-decoration: none; }}
+  .day-filter   {{ position: sticky; top: 0; z-index: 10; background: #0f0f0f;
+                   padding: 10px 0 8px; display: flex; gap: 6px; flex-wrap: wrap;
+                   border-bottom: 1px solid #222; margin-bottom: 16px; }}
+  .day-pill     {{ background: #1a1a1a; border: 1px solid #333; border-radius: 99px;
+                   padding: 5px 12px; font-size: 0.78rem; color: #aaa; cursor: pointer;
+                   transition: all 0.15s; white-space: nowrap; }}
+  .day-pill:hover {{ border-color: #555; color: #fff; }}
+  .day-pill-today {{ border-color: #2a6e2a; }}
+  .day-pill.hidden {{ background: #0f0f0f; border-color: #222; color: #444;
+                      text-decoration: line-through; }}
+  .pill-count   {{ font-size: 0.65rem; color: #555; margin-left: 2px; }}
+  .day-toggle   {{ font-size: 0.65rem; color: #555; margin-left: 6px; cursor: pointer;
+                   transition: transform 0.15s; display: inline-block; }}
+  .day-section.collapsed .day-cards {{ display: none; }}
+  .day-section.collapsed .day-toggle {{ transform: rotate(-90deg); }}
+  .day-section.hidden-by-filter {{ display: none; }}
+  .day-header   {{ cursor: pointer; user-select: none; }}
   .feedback     {{ margin-top: 8px; display: flex; gap: 6px; flex-wrap: wrap; }}
   .fb-btn       {{ background: none; border: 1px solid #2a2a2a; border-radius: 99px;
                    padding: 3px 10px; font-size: 0.7rem; color: #555; cursor: pointer; }}
@@ -293,13 +321,15 @@ def generate(events: list[dict], today: datetime, days: int, persona: str = "bri
 </head>
 <body>
   <nav class="nav">
-    <a href="https://highendeventfinder.netlify.app/" class="{nav_brian_cls}">Brian</a>
-    <a href="https://highendeventfinder.netlify.app/chloe" class="{nav_chloe_cls}">Chloe</a>
+    {nav_markup}
   </nav>
   <h1>{title_str}</h1>
   <div class="sub">{today.strftime('%B %-d')} – {end_date.strftime('%B %-d, %Y')} &nbsp;·&nbsp; {len(events)} events</div>
   {_cost_html()}
   {_oyster_html()}
+  <div class="day-filter">
+    {day_pills}
+  </div>
   <div class="legend">
     <b>Score 1–10</b> — how relevant this event is for you &nbsp;|&nbsp;
     <b>8–10</b> must consider &nbsp;·&nbsp;
@@ -316,6 +346,17 @@ def generate(events: list[dict], today: datetime, days: int, persona: str = "bri
 
   <div class="footer">Generated {datetime.now().strftime('%B %-d, %Y at %-I:%M %p')}</div>
 <script>
+  function toggleDay(pill) {{
+    var dayId = pill.dataset.day;
+    var section = document.getElementById(dayId);
+    pill.classList.toggle('hidden');
+    section.classList.toggle('hidden-by-filter');
+  }}
+
+  function toggleDaySection(header) {{
+    header.parentElement.classList.toggle('collapsed');
+  }}
+
   function toggleExtra() {{
     var el = document.getElementById('extra-events');
     var btn = document.getElementById('extra-btn');

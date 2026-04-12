@@ -86,22 +86,6 @@ def label(s: int) -> str:
     return "expedition"
 
 
-CHLOE_PROXIMITY: dict[str, int] = {
-    **PROXIMITY,
-    # Chloe is in Back Bay — adjust relative distances
-    "Back Bay":        10,
-    "South End":        9,
-    "Beacon Hill":      9,
-    "Newbury Street":  10,
-    "Fenway":           8,
-    "Kenmore":          8,
-    "Downtown":         8,
-    "Seaport":          6,  # a bit farther from Back Bay
-    "Cambridge":        5,
-    "Brookline":        6,  # closer for her than Brian
-    "Chestnut Hill":    3,  # still far
-}
-
 
 def _price_penalty(price_str: str, prox: int) -> int:
     """
@@ -135,7 +119,8 @@ def location_filter(events: list[dict], persona: str = "brian") -> list[dict]:
     - World class (score 9-10): always keep regardless of distance or price
     Events with no location info pass through (benefit of the doubt).
     """
-    prox_table = CHLOE_PROXIMITY if persona == "chloe" else PROXIMITY
+    from boston_finder.personas import get_proximity
+    prox_table = get_proximity(persona) or PROXIMITY
     kept, dropped = [], []
     for e in events:
         address = (e.get("venue", "") + " " + e.get("address", "")).strip()

@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
 """
-Chloe's Boston event digest.
-Art, food, drinks — fancy version.
+Date ideas digest for Boston.
+Restaurants, experiences, activities — curated for great dates.
 
 Usage:
-    python3 chloe_events.py
-    python3 chloe_events.py --days 14
+    python3 dates_events.py
+    python3 dates_events.py --days 14
 """
 
 import sys
@@ -21,53 +21,54 @@ from boston_finder.preferences  import hard_skip_filter
 from boston_finder.location     import location_filter
 from boston_finder               import costs
 
-CHLOE_PROMPT = """You are filtering Boston events for Chloe, who wants upscale, interesting things to do in Boston.
-She loves:
-- Art: gallery openings, museum events, art shows, artist talks, art fairs, photography exhibits, sculpture
-- Food & drink: wine tastings, wine dinners, chef's table experiences, cocktail classes, food festivals, upscale restaurant events, mixology
-- Fancy experiences: galas, benefit dinners, charity auctions, cultural receptions, film premieres, theater openings
-- Design, fashion, and aesthetics — runway shows, design events, interior/architecture tours
-- Wellness and beauty events that are upscale (spa launches, product launches, brand events)
-- Anything cultured, beautiful, or scene-y
+DATES_PROMPT = """You are filtering Boston events for date ideas — things two people would enjoy doing together.
 
-Lower priority for her:
-- Pure civic/government/policy events (unless they're glamorous)
-- Sports
-- Basic networking mixers with no food/drink/art angle
+Great date events:
+- Food & drink: wine tastings, prix fixe dinners, cocktail classes, food festivals, tasting menus, new restaurant openings
+- Arts & culture: gallery openings, museum exhibits, live music, jazz, comedy shows, theater, film screenings
+- Experiences: cooking classes, pottery, dance lessons, sunset cruises, rooftop events, seasonal markets
+- Outdoor: scenic walks, garden events, waterfront activities, bike tours
+- Nightlife: speakeasy events, live DJ sets, themed parties, rooftop bars
+
+Lower priority:
+- Kids/family-focused events
+- Pure networking or professional events
+- Large-scale sports (unless it's a unique experience like courtside)
+- Conferences, lectures, or panels with no social component
 
 Score 0-10. Only return events with score >= 5."""
 
 import boston_finder.html_output as _html_mod
 
-CHLOE_OUTPUT = "/Users/brian/chloe_events.html"
+DATES_OUTPUT = "/Users/brian/dates_events.html"
 
 
-def generate_chloe_html(events: list[dict], today: datetime, days: int):
+def generate_dates_html(events: list[dict], today: datetime, days: int):
     orig = _html_mod.OUTPUT_FILE
-    _html_mod.OUTPUT_FILE = CHLOE_OUTPUT
+    _html_mod.OUTPUT_FILE = DATES_OUTPUT
     try:
-        _html_mod.generate(events, today, days, persona="chloe")
+        _html_mod.generate(events, today, days, persona="dates")
     finally:
         _html_mod.OUTPUT_FILE = orig
 
-    # deploy chloe.html to Netlify alongside brian's index.html
+    # deploy dates.html to Netlify
     import os, shutil, subprocess
     repo = _html_mod.GITHUB_REPO
-    deploy_path = os.path.join(repo, "docs", "chloe.html")
-    if os.path.exists(CHLOE_OUTPUT) and os.path.isdir(repo):
-        shutil.copy(CHLOE_OUTPUT, deploy_path)
-        subprocess.run(["git", "-C", repo, "add", "docs/chloe.html"], check=True)
+    deploy_path = os.path.join(repo, "docs", "dates.html")
+    if os.path.exists(DATES_OUTPUT) and os.path.isdir(repo):
+        shutil.copy(DATES_OUTPUT, deploy_path)
+        subprocess.run(["git", "-C", repo, "add", "docs/dates.html"], check=True)
         result = subprocess.run(
             ["git", "-C", repo, "diff", "--cached", "--quiet"], capture_output=True
         )
         if result.returncode != 0:
             ts = datetime.now().strftime("%Y-%m-%d %-I:%M %p")
             subprocess.run(
-                ["git", "-C", repo, "commit", "-m", f"Deploy: Chloe events {ts}"],
+                ["git", "-C", repo, "commit", "-m", f"Deploy: Date ideas {ts}"],
                 check=True, capture_output=True
             )
             subprocess.run(["git", "-C", repo, "push"], check=True, capture_output=True)
-            print(f"  [deploy] → https://highendeventfinder.netlify.app/chloe")
+            print(f"  [deploy] → https://highendeventfinder.netlify.app/dates")
 
 
 def main():
@@ -86,7 +87,7 @@ def main():
 
     today = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
     end   = today + timedelta(days=args.days - 1)
-    print(f"\nSearching Boston events for Chloe: {today.strftime('%Y-%m-%d')} → {end.strftime('%Y-%m-%d')}")
+    print(f"\nSearching Boston date ideas: {today.strftime('%Y-%m-%d')} → {end.strftime('%Y-%m-%d')}")
 
     all_events: list[dict] = []
     seen_urls:  set[str]   = set()
@@ -103,26 +104,26 @@ def main():
 
     all_events = hard_skip_filter(sports_filter(deduplicate(all_events)))
     n_total = len(all_events)
-    print(f"\n  {n_total} events after filters. Scoring for Chloe...\n")
+    print(f"\n  {n_total} events after filters. Scoring for dates...\n")
 
     if not args.no_ai:
-        filtered, n_cached, n_scored = score(all_events, CHLOE_PROMPT, persona="chloe")
+        filtered, n_cached, n_scored = score(all_events, DATES_PROMPT, persona="dates")
     else:
         from boston_finder.ai_filter import _keyword_fallback
         filtered = _keyword_fallback(all_events, 1)
         n_cached, n_scored = 0, 0
 
-    filtered = location_filter(filtered, persona="chloe")
+    filtered = location_filter(filtered, persona="dates")
 
     print(f"\n  Enriching {len(filtered)} events (times + prices)...")
     enrich_events(filtered)
 
     costs.log_run(run_start, n_total, n_cached, n_scored)
 
-    print(f"\n  {len(filtered)} events for Chloe this week")
+    print(f"\n  {len(filtered)} date ideas this week")
     costs.print_summary()
 
-    generate_chloe_html(filtered, today, args.days)
+    generate_dates_html(filtered, today, args.days)
 
 
 if __name__ == "__main__":
