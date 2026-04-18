@@ -16,8 +16,11 @@ import os
 import argparse
 import subprocess
 from datetime import datetime
+from pathlib import Path
 
-sys.path.insert(0, "/Users/brian/python-projects")
+ROOT = Path(__file__).resolve().parent
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 FEEDBACK_FILE = os.path.expanduser("~/boston_finder_feedback.json")
 NETLIFY_SITE  = "highendeventfinder"

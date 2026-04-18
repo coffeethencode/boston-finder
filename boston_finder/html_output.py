@@ -11,6 +11,34 @@ OUTPUT_FILE  = os.path.expanduser("~/boston_events.html")
 DEPLOY_DIR   = os.path.expanduser("~/boston_events_site")
 DEPLOY_FILE  = os.path.join(DEPLOY_DIR, "index.html")
 
+SAFE_TEST_ENV = "BOSTON_FINDER_SAFE_TEST"
+DISABLE_OPEN_ENV = "BOSTON_FINDER_DISABLE_OPEN"
+DISABLE_DEPLOY_ENV = "BOSTON_FINDER_DISABLE_DEPLOY"
+OUTPUT_FILE_ENV = "BOSTON_FINDER_OUTPUT_FILE"
+
+
+def _env_flag(name: str) -> bool:
+    return os.environ.get(name, "").strip().lower() in {"1", "true", "yes", "on"}
+
+
+def _resolved_output_file() -> str:
+    return os.environ.get(OUTPUT_FILE_ENV, OUTPUT_FILE)
+
+
+def _placeholder_hits(events: list[dict]) -> list[str]:
+    hits: list[str] = []
+    for event in events:
+        name = (event.get("name") or "").strip()
+        url = (event.get("url") or "").strip().lower()
+        venue = (event.get("venue") or "").strip()
+        if name.startswith("Test Event"):
+            hits.append(f"name={name}")
+        elif "example.com/" in url:
+            hits.append(f"url={event.get('url', '')}")
+        elif venue == "Test Venue":
+            hits.append(f"venue={venue}")
+    return hits
+
 
 def _cost_html() -> str:
     try:
@@ -404,8 +432,27 @@ def generate(events: list[dict], today: datetime, days: int, persona: str = "bri
 </body>
 </html>"""
 
-    with open(OUTPUT_FILE, "w") as f:
+    output_file = _resolved_output_file()
+    with open(output_file, "w") as f:
         f.write(html)
 
-    subprocess.run(["open", OUTPUT_FILE])
+    safe_test = _env_flag(SAFE_TEST_ENV)
+    disable_open = safe_test or _env_flag(DISABLE_OPEN_ENV)
+    disable_deploy = safe_test or _env_flag(DISABLE_DEPLOY_ENV)
+
+    if disable_open:
+        print(f"  [open] skipped ({output_file})")
+    else:
+        subprocess.run(["open", output_file], check=False)
+
+    placeholder_hits = _placeholder_hits(events)
+    if placeholder_hits:
+        sample = "; ".join(placeholder_hits[:3])
+        print(f"  [deploy] blocked suspicious placeholder events: {sample}")
+        return
+
+    if disable_deploy:
+        print("  [deploy] skipped by test mode")
+        return
+
     _git_deploy(html, persona=persona)

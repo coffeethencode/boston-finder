@@ -12,8 +12,12 @@ import sys
 import time
 import argparse
 from datetime import datetime, timedelta
+from pathlib import Path
 
-sys.path.insert(0, "/Users/brian/python-projects")
+ROOT = Path(__file__).resolve().parent
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
 from boston_finder.sources      import get_sources
 from boston_finder.fetchers     import fetch_source, enrich_events
 from boston_finder.ai_filter    import sports_filter, deduplicate, score
