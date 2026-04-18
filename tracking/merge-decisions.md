@@ -40,10 +40,16 @@ For each file: strategy, what to preserve from stale, what to preserve from repo
 - **Notes:** Use stale as the base, port repo's do617 time-parse fix into stale's version. `fetch_source(source, start, end)` dispatcher likely exists in stale — verify it handles every `type:` value in `sources.py`.
 
 ## boston_finder/html_output.py
-- **Strategy:** REPO-NEWER (primarily) + spot-check for stale-only features
+- **Strategy:** REPO-NEWER (kept as-is at Phase 2)
 - **Preserve from repo:** persona-aware `_oyster_html(persona)` with JS rendering, `generate(events, today, days, persona)` pipeline, `_cost_html()`, `_extra_events_html()`, `_git_deploy(html, persona)`, `SAFE_TEST_ENV` / `DISABLE_OPEN_ENV` / `DISABLE_DEPLOY_ENV` / `OUTPUT_FILE_ENV` env flags, `_placeholder_hits()` deploy guard.
-- **Preserve from stale (if present):** any cost-dashboard additions that display the new `by_stage` / `netlify` / `efficiency` fields from costs.log_run — port them from stale if stale has them, otherwise skip.
-- **Notes:** Repo version is significantly more featured; merge direction should keep repo and cherry-pick any display improvements from stale. Review `tracking/diffs/html_output.py.diff` for any `netlify-credits` / `efficiency-note` blocks and port into repo's `_cost_html()`.
+- **Deferred to a Phase 2b session:**
+  1. Port stale's `build_json(events, today, days, persona)` — JSON serialization of events
+  2. Port stale's `_git_push_json(json_str, persona)` — pushes `data/<persona>.json` to separate `data` branch of `coffeethencode/boston-finder` repo (clone at `~/boston-finder-data/`). Avoids Netlify build credit burn on pure data updates.
+  3. Port stale's `_sources_html(events)` — source count pill bar
+  4. Constants: `DATA_REPO`, `NETLIFY_URL`, `PERSONA_PATHS`
+  5. Wire into `generate()` respecting `BOSTON_FINDER_DISABLE_DEPLOY` env flag
+- **Why deferred:** repo's current html_output.py works end-to-end (deployed live April 18 with oyster bar + real events). The JSON-push feature is an optimization, not a regression fix. Adding it requires careful integration (auth to separate repo, branch handling, env flag wiring) that's higher risk than the rest of Phase 2. Handled in its own session as Phase 2b.
+- **Smoke check verification only:** `python3 -c "from boston_finder.html_output import generate; print(generate.__name__)"` — no code change.
 
 ## boston_finder/location.py
 - **Strategy:** MERGE-ADDITIVE (small)
