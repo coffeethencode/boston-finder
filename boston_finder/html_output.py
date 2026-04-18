@@ -151,6 +151,13 @@ def _git_deploy(html: str, persona: str = "brian"):
 
 
 def generate(events: list[dict], today: datetime, days: int, persona: str = "brian"):
+    from boston_finder.personas import PERSONAS, nav_html, active_personas
+    p = PERSONAS.get(persona, PERSONAS["brian"])
+    title_str = p["title"]
+    accent    = p["accent"]
+    nav_markup = nav_html(persona)
+    active = active_personas()
+
     end_date = today + timedelta(days=days - 1)
 
     # group by date, sorted chronologically with today first
@@ -236,13 +243,6 @@ def generate(events: list[dict], today: datetime, days: int, persona: str = "bri
             {cards}
             </div>
         </div>"""
-
-    from boston_finder.personas import PERSONAS, nav_html, active_personas
-    p = PERSONAS.get(persona, PERSONAS["brian"])
-    title_str = p["title"]
-    accent    = p["accent"]
-    nav_markup = nav_html(persona)
-    active = active_personas()
 
     html = f"""<!DOCTYPE html>
 <html lang="en">
