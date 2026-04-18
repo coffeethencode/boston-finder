@@ -24,7 +24,7 @@
 ## Phase checklist
 
 - [x] Phase 0 — Safety net & branch setup
-- [ ] Phase 1 — Full diff & decision matrix
+- [x] Phase 1 — Full diff & decision matrix
 - [ ] Phase 2 — Merge package files bottom-up
 - [ ] Phase 3 — Port top-level scripts
 - [ ] Phase 4 — Rewire LaunchAgent wrappers
@@ -37,3 +37,4 @@
 | Date | Tool/model | Phase | Last task done | Branch state | Notes for next session |
 |------|------------|-------|----------------|--------------|------------------------|
 | 2026-04-18 | Claude Opus 4.7 (Claude Code) | Phase 0 complete | 0.3 (tag) | `codebase-unification` at `af6d4da` + tracker commit | Phase 1 starts with `tracking/diffs/` generation. The merge-decisions template is in the plan — fill it in by reading each diff. |
+| 2026-04-18 | Claude Opus 4.7 (Claude Code) | Phase 1 complete | 1.3 (tag) | `codebase-unification` at `e5d6f0c` | Decision matrix at `tracking/merge-decisions.md`. **Key finding:** repo's April 12 "unify" commit dropped major features (Luma/Ticketmaster/Meetup/Instagram fetchers, Netlify/efficiency tracking, Providence venues, extracted cache). Merge strategy = keep repo architecture + restore stale features. Revised Phase 2 order: personas.py BEFORE location.py because location.py now depends on personas.get_proximity. |
