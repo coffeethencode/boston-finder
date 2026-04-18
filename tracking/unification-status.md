@@ -25,7 +25,8 @@
 
 - [x] Phase 0 — Safety net & branch setup
 - [x] Phase 1 — Full diff & decision matrix
-- [ ] Phase 2 — Merge package files bottom-up
+- [x] Phase 2 — Merge package files bottom-up
+- [ ] Phase 2b — Port stale's JSON-push feature (deferred from 2.13; see merge-decisions.md)
 - [ ] Phase 3 — Port top-level scripts
 - [ ] Phase 4 — Rewire LaunchAgent wrappers
 - [ ] Phase 5 — Integration tests
@@ -38,3 +39,4 @@
 |------|------------|-------|----------------|--------------|------------------------|
 | 2026-04-18 | Claude Opus 4.7 (Claude Code) | Phase 0 complete | 0.3 (tag) | `codebase-unification` at `af6d4da` + tracker commit | Phase 1 starts with `tracking/diffs/` generation. The merge-decisions template is in the plan — fill it in by reading each diff. |
 | 2026-04-18 | Claude Opus 4.7 (Claude Code) | Phase 1 complete | 1.3 (tag) | `codebase-unification` at `e5d6f0c` | Decision matrix at `tracking/merge-decisions.md`. **Key finding:** repo's April 12 "unify" commit dropped major features (Luma/Ticketmaster/Meetup/Instagram fetchers, Netlify/efficiency tracking, Providence venues, extracted cache). Merge strategy = keep repo architecture + restore stale features. Revised Phase 2 order: personas.py BEFORE location.py because location.py now depends on personas.get_proximity. |
+| 2026-04-18 | Claude Opus 4.7 (Claude Code) | Phase 2 complete | 2.13 (tag) | `codebase-unification` at `379d6c1`, tag `unification-phase2` | All 12 package files merged. Integration smoke test passed (164 sources, all 11 types dispatchable, Kirk Providence=10 via persona proximity, default PROXIMITY has Providence=2). **Phase 2.13 deferred `build_json`/`_git_push_json`/`_sources_html` to new Phase 2b session** — documented in merge-decisions.md. **Phase 3 next (port oyster_deals.py/oyster_verify.py/oyster_triage.py).** See plan file for Phase 3 task template. **Note for Phase 3 oyster_deals.py port:** stale uses `persona["label"]` — repo schema uses `persona["nav_label"]` instead. Replace both references when porting. Also use `get_oyster_prompt()`/`get_min_score()` helpers added in Phase 2.8. |
