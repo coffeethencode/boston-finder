@@ -3,6 +3,7 @@ Generates an HTML digest of events and opens it in the browser.
 Much more reliable than macOS notifications.
 """
 
+import json
 import os
 import subprocess
 from datetime import datetime, timedelta
@@ -91,23 +92,252 @@ def _cost_html() -> str:
         return ""
 
 
-def _oyster_html() -> str:
+def _oyster_html(persona: str = "brian") -> str:
     try:
         from boston_finder.cache import get, age
-        deals = get("oyster_deals")
+        cache_key = f"oyster_deals_{persona}" if get(f"oyster_deals_{persona}") else "oyster_deals"
+        deals = get(cache_key)
         if not deals:
             return ""
-        checked = age("oyster_deals")
-        top = sorted(deals, key=lambda x: -x.get("score", 0))[:12]
-        items = ""
-        for d in top:
-            deal = d.get("deal", "")
-            name = d.get("name", "")
-            items += f'<span class="oyster-item"><b>{name}</b>{(" — " + deal) if deal else ""}</span>'
-        return f"""<div class="oyster-bar">
-          <div class="oyster-title">🦪 Oyster Deals <span style="font-weight:400;color:#555;font-size:0.72rem">(last checked {checked})</span></div>
-          {items}
-        </div>"""
+        checked = age(cache_key)
+        default_hood = {
+            "brian": "South End",
+            "dates": "Back Bay",
+            "kirk": "Cambridge",
+        }.get(persona)
+        deals_json = json.dumps(deals).replace("</", "<\\/")
+        checked_json = json.dumps(checked)
+        default_hood_json = json.dumps(default_hood)
+        show_providence = "true" if persona == "kirk" else "false"
+        return f"""<div class="oyster-bar" id="oyster-bar"></div>
+<script>
+(function() {{
+  var oysterBar = document.getElementById('oyster-bar');
+  if (!oysterBar) return;
+
+  var oysters = {deals_json};
+  if (!oysters.length) {{
+    oysterBar.style.display = 'none';
+    return;
+  }}
+
+  var checkedLabel = {checked_json};
+  var currentHood = {default_hood_json};
+  var showProvidence = {show_providence};
+  var hidePast = true;
+  var DAY_NAMES = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  var DAY_FULL = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var todayDow = new Date().getDay();
+  var activeDow = todayDow;
+  var HOODS = ['South End','Back Bay','Cambridge','North End','Seaport','Beacon Hill','Fenway','Somerville','South Boston'];
+  var HOOD_PROXIMITY = {{
+    'South End':     {{'South End':10,'Back Bay':9,'Beacon Hill':8,'Downtown':8,'Financial District':8,'West End':7,'North End':7,'Fenway':7,'Kenmore':6,'Mission Hill':6,'Seaport':5,'South Boston':5,'Southie':5,'Cambridge':5,'Brookline':5,'Roxbury':5,'Somerville':4,'Charlestown':4,'Jamaica Plain':4,'Allston':3,'Brighton':3,'Dorchester':3}},
+    'Back Bay':      {{'Back Bay':10,'Newbury Street':10,'South End':9,'Beacon Hill':9,'Fenway':8,'Kenmore':8,'Downtown':8,'Financial District':7,'North End':7,'West End':7,'Mission Hill':7,'Seaport':6,'Cambridge':5,'Brookline':6,'South Boston':5,'Somerville':4,'Charlestown':4,'Jamaica Plain':5,'Allston':4}},
+    'Cambridge':     {{'Cambridge':10,'Somerville':8,'Charlestown':7,'North End':7,'West End':6,'Beacon Hill':6,'Downtown':6,'Financial District':6,'Back Bay':5,'South End':5,'Fenway':5,'Allston':5,'Medford':5,'Brookline':4,'Seaport':4,'South Boston':4,'Jamaica Plain':4}},
+    'North End':     {{'North End':10,'West End':9,'Charlestown':8,'Beacon Hill':8,'Downtown':8,'Financial District':8,'Cambridge':6,'Back Bay':6,'Seaport':5,'South End':5,'Fenway':5,'Somerville':5}},
+    'Seaport':       {{'Seaport':10,'Financial District':8,'Downtown':8,'South Boston':7,'Southie':7,'South End':6,'Back Bay':5,'North End':5,'Beacon Hill':5,'Cambridge':4,'Fenway':4}},
+    'Beacon Hill':   {{'Beacon Hill':10,'West End':9,'Downtown':9,'Financial District':8,'Back Bay':8,'North End':7,'South End':7,'Cambridge':6,'Fenway':6,'Charlestown':6,'Seaport':5}},
+    'Fenway':        {{'Fenway':10,'Kenmore':10,'Back Bay':8,'Brookline':7,'South End':7,'Mission Hill':8,'Allston':6,'Cambridge':5,'Beacon Hill':6,'Jamaica Plain':6,'Downtown':6}},
+    'Somerville':    {{'Somerville':10,'Cambridge':8,'Medford':7,'Charlestown':7,'North End':6,'West End':5,'Beacon Hill':5,'Downtown':5,'Allston':5,'Back Bay':4,'Fenway':4,'South End':3}},
+    'South Boston':  {{'South Boston':10,'Southie':10,'Seaport':8,'Financial District':6,'Downtown':6,'South End':5,'Back Bay':4,'North End':4,'Beacon Hill':4,'Cambridge':3}}
+  }};
+
+  function esc(s) {{
+    return String(s || '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;');
+  }}
+
+  function oysterDays(o) {{
+    var desc = ((o.description || '') + ' ' + (o.reason || '')).toLowerCase();
+    var name = (o.name || '').toLowerCase();
+    if (/daily|every day|all week/i.test(desc + name)) return [0,1,2,3,4,5,6];
+    var days = [];
+    var map = {{sun:0,mon:1,tue:2,wed:3,thu:4,fri:5,sat:6,sunday:0,monday:1,tuesday:2,wednesday:3,thursday:4,friday:5,saturday:6}};
+    Object.keys(map).forEach(function(k) {{
+      if (desc.indexOf(k) !== -1) days.push(map[k]);
+    }});
+    var rangeMatch = desc.match(/([a-z]+)[–\\-]([a-z]+)/);
+    if (rangeMatch) {{
+      var start = map[rangeMatch[1]];
+      var end = map[rangeMatch[2]];
+      if (start !== undefined && end !== undefined) {{
+        days = [];
+        for (var d = start; d <= end; d++) days.push(d);
+      }}
+    }}
+    return days.length ? days : [0,1,2,3,4,5,6];
+  }}
+
+  function oysterHours(o) {{
+    var match = (o.description || '').match(/(\\d+(?::\\d+)?\\s*(?:AM|PM|am|pm)[^.,$]*)/i);
+    return match ? match[1].trim() : '';
+  }}
+
+  function bostonHour() {{
+    var fmt = new Intl.DateTimeFormat('en-US', {{timeZone: 'America/New_York', hour: 'numeric', hour12: false}});
+    return parseInt(fmt.format(new Date()), 10);
+  }}
+
+  function parseEndHour24(hoursStr) {{
+    if (!hoursStr) return null;
+    var s = hoursStr.toLowerCase();
+    var rangeMatch = s.match(/[–\\-]\\s*(\\d+)(?::\\d+)?\\s*(am|pm)/);
+    if (rangeMatch) {{
+      var h = parseInt(rangeMatch[1], 10);
+      if (rangeMatch[2] === 'pm' && h !== 12) h += 12;
+      if (rangeMatch[2] === 'am' && h === 12) h = 0;
+      return h;
+    }}
+    var singleMatch = s.match(/(\\d+)(?::\\d+)?\\s*(am|pm)/);
+    if (!singleMatch) return null;
+    var singleHour = parseInt(singleMatch[1], 10);
+    if (singleMatch[2] === 'pm' && singleHour !== 12) singleHour += 12;
+    if (singleMatch[2] === 'am' && singleHour === 12) singleHour = 0;
+    return singleHour;
+  }}
+
+  function proxScore(o) {{
+    if (!currentHood) return Number(o._proximity || 3);
+    var table = HOOD_PROXIMITY[currentHood] || {{}};
+    var addr = ((o.address || '') + ' ' + (o.venue || '')).toLowerCase();
+    var best = 3;
+    Object.keys(table).forEach(function(key) {{
+      if (addr.indexOf(key.toLowerCase()) !== -1) best = Math.max(best, table[key]);
+    }});
+    return best;
+  }}
+
+  function renderItem(o) {{
+    var venueName = esc(o.venue || String(o.name || '').split('—')[0].trim());
+    var hood = esc(o.address || '');
+    var hours = esc(oysterHours(o));
+    var parts = String(o.name || '').split('—');
+    var deal = esc(parts.length > 1 ? parts[1] : (o.reason || ''));
+    var left = '<div><b>' + venueName + '</b>' + (hood ? '<div class="oyster-meta">' + hood + (deal ? ' · ' + deal : '') + '</div>' : '') + '</div>';
+    var right = hours ? '<span class="oyster-hours">' + hours + '</span>' : '';
+    var inner = left + right;
+    return o.url
+      ? '<a class="oyster-item" href="' + esc(o.url) + '" target="_blank" style="text-decoration:none">' + inner + '</a>'
+      : '<div class="oyster-item">' + inner + '</div>';
+  }}
+
+  function renderOysterDay(dow) {{
+    var isToday = dow === todayDow;
+    var currentHour = isToday ? bostonHour() : -1;
+    var items = oysters.filter(function(o) {{
+      return oysterDays(o).indexOf(dow) !== -1 && (o.city || 'Boston') !== 'Providence';
+    }});
+    var pvdItems = oysters.filter(function(o) {{
+      return oysterDays(o).indexOf(dow) !== -1 && o.city === 'Providence';
+    }});
+    var pastItems = [];
+    if (isToday && hidePast) {{
+      var futureItems = [];
+      items.forEach(function(o) {{
+        var endHour = parseEndHour24(oysterHours(o));
+        if (endHour !== null && endHour <= currentHour) pastItems.push(o);
+        else futureItems.push(o);
+      }});
+      items = futureItems;
+    }}
+
+    items.sort(function(a, b) {{
+      return proxScore(b) - proxScore(a);
+    }});
+
+    if (!items.length && !pastItems.length) {{
+      return '<div style="color:#444;font-size:0.8rem;padding:8px 0">No deals on ' + DAY_FULL[dow] + '</div>';
+    }}
+    if (!items.length && isToday) {{
+      return '<div style="color:#556;font-size:0.8rem;padding:8px 0">All deals for today have ended. ' +
+        (pastItems.length ? pastItems.length + ' hidden.' : '') +
+        '</div>';
+    }}
+
+    var html = '';
+    if (currentHood) {{
+      [
+        {{label:'Nearby', min:9}},
+        {{label:'Easy', min:7}},
+        {{label:'Doable', min:5}},
+        {{label:'Hike', min:0}}
+      ].forEach(function(tier) {{
+        var tierItems = items.filter(function(o) {{
+          var score = proxScore(o);
+          if (tier.min === 9) return score >= 9;
+          if (tier.min === 7) return score >= 7 && score < 9;
+          if (tier.min === 5) return score >= 5 && score < 7;
+          return score < 5;
+        }});
+        if (!tierItems.length) return;
+        html += '<div class="oyster-tier">' + tier.label + '</div>';
+        html += '<div class="oyster-list" style="margin-bottom:8px">' + tierItems.map(renderItem).join('') + '</div>';
+      }});
+    }} else {{
+      html = '<div class="oyster-list">' + items.map(renderItem).join('') + '</div>';
+    }}
+
+    html = '<div class="oyster-scroll">' + html + '</div>';
+    if (isToday && pastItems.length > 0) {{
+      html += '<div style="font-size:0.72rem;color:#445;margin-top:6px;padding:4px 0">' +
+        pastItems.length + ' deal' + (pastItems.length > 1 ? 's' : '') +
+        ' ended today — <button onclick="togglePastOysters()" style="background:none;border:none;color:#557;font-size:0.72rem;cursor:pointer;padding:0">show all</button></div>';
+    }}
+    if (pvdItems.length) {{
+      pvdItems.sort(function(a, b) {{ return (b.score || 0) - (a.score || 0); }});
+      html += '<div style="margin-top:10px;border-top:1px solid #1a2e3a;padding-top:8px">' +
+        '<button onclick="toggleProvidence()" style="background:none;border:none;color:' + (showProvidence ? '#93c5fd' : '#2a4a6a') + ';font-size:0.72rem;cursor:pointer;padding:0;letter-spacing:0.04em">' +
+        (showProvidence ? '▼' : '▶') + ' Providence RI (' + pvdItems.length + ' deals)</button>' +
+        (showProvidence ? '<div class="oyster-list" style="margin-top:6px">' + pvdItems.map(renderItem).join('') + '</div>' : '') +
+        '</div>';
+    }}
+    return html;
+  }}
+
+  function buildOyster() {{
+    var tabs = '<div class="oyster-days">' + DAY_NAMES.map(function(dayName, idx) {{
+      var cls = 'oday-btn' + (idx === activeDow ? ' active' : '');
+      var todayMark = idx === todayDow ? ' ●' : '';
+      return '<button class="' + cls + '" onclick="setOysterDay(' + idx + ')">' + dayName + todayMark + '</button>';
+    }}).join('') + '</div>';
+
+    var hoodLabel = currentHood ? "I'm near:" : 'Filter by area:';
+    var hoodBtns = '<div class="oyster-location"><span>' + hoodLabel + '</span>' +
+      HOODS.map(function(hood) {{
+        var cls = 'ohood-btn' + (hood === currentHood ? ' active' : '');
+        return '<button class="' + cls + '" onclick="setOysterHood(' + JSON.stringify(hood) + ')">' + hood + '</button>';
+      }}).join('') +
+      (currentHood ? ' <button class="ohood-btn" onclick="setOysterHood(null)" style="opacity:0.5">× clear</button>' : '') +
+      '</div>';
+
+    oysterBar.innerHTML =
+      '<div class="oyster-title">🦪 Oyster Deals <span style="font-weight:400;color:#555;font-size:0.72rem">(last checked ' + esc(checkedLabel) + ')</span></div>' +
+      tabs + hoodBtns + renderOysterDay(activeDow);
+  }}
+
+  window.setOysterDay = function(dow) {{
+    activeDow = dow;
+    buildOyster();
+  }};
+  window.setOysterHood = function(hood) {{
+    currentHood = hood;
+    buildOyster();
+  }};
+  window.togglePastOysters = function() {{
+    hidePast = !hidePast;
+    buildOyster();
+  }};
+  window.toggleProvidence = function() {{
+    showProvidence = !showProvidence;
+    buildOyster();
+  }};
+
+  buildOyster();
+}})();
+</script>"""
     except Exception:
         return ""
 
@@ -316,10 +546,24 @@ def generate(events: list[dict], today: datetime, days: int, persona: str = "bri
   .footer      {{ margin-top: 40px; font-size: 0.75rem; color: #555; }}
   .oyster-bar  {{ background: #0a1a0a; border: 1px solid #1a3a1a; border-radius: 8px;
                   padding: 14px 16px; margin-bottom: 24px; }}
-  .oyster-title {{ font-size: 0.9rem; font-weight: 700; color: #7fff7f; margin-bottom: 8px; }}
-  .oyster-item {{ display: inline-block; background: #111; border: 1px solid #1e3a1e;
-                  border-radius: 6px; padding: 4px 10px; margin: 3px; font-size: 0.75rem; color: #aaa; }}
-  .oyster-item b {{ color: #7fff7f; }}
+  .oyster-title {{ font-size: 0.9rem; font-weight: 700; color: #7fff7f; margin-bottom: 10px; }}
+  .oyster-days  {{ display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 8px; }}
+  .oday-btn     {{ padding: 3px 10px; border-radius: 99px; border: 1px solid #1e3a1e;
+                   background: #0d200d; color: #4a8a4a; font-size: 0.72rem; cursor: pointer; }}
+  .oday-btn.active {{ background: #1a3a1a; color: #7fff7f; border-color: #3a6a3a; font-weight: 700; }}
+  .oyster-location {{ display: flex; align-items: center; gap: 4px; flex-wrap: wrap; margin-bottom: 12px; font-size: 0.7rem; color: #3a5a3a; }}
+  .ohood-btn   {{ padding: 2px 8px; border-radius: 99px; border: 1px solid #1a2e1a;
+                  background: #080f08; color: #3a6a3a; font-size: 0.7rem; cursor: pointer; }}
+  .ohood-btn.active {{ background: #1a3020; color: #afffaf; border-color: #2a5a3a; font-weight: 700; }}
+  .oyster-tier {{ font-size: 0.68rem; color: #3a5a3a; padding: 4px 0 2px; letter-spacing: 0.05em; text-transform: uppercase; }}
+  .oyster-list {{ display: flex; flex-direction: column; gap: 6px; }}
+  .oyster-item {{ display: flex; justify-content: space-between; align-items: baseline;
+                  background: #0d1a0d; border: 1px solid #1a2e1a; border-radius: 6px;
+                  padding: 7px 11px; font-size: 0.78rem; color: #aaa; }}
+  .oyster-item b {{ color: #7fff7f; font-size: 0.82rem; }}
+  .oyster-meta {{ font-size: 0.72rem; color: #556; margin-top: 2px; }}
+  .oyster-hours {{ font-size: 0.75rem; color: #7fff7f; opacity: 0.7; white-space: nowrap; margin-left: 12px; }}
+  .oyster-scroll {{ max-height: 300px; overflow-y: auto; padding-right: 2px; }}
   .show-more-btn {{ background: #1a1a1a; border: 1px solid #333; border-radius: 6px;
                     padding: 8px 16px; color: #888; font-size: 0.8rem; cursor: pointer;
                     margin-bottom: 24px; display: block; width: 100%; text-align: left; }}
@@ -365,7 +609,7 @@ def generate(events: list[dict], today: datetime, days: int, persona: str = "bri
   <h1>{title_str}</h1>
   <div class="sub">{today.strftime('%B %-d')} – {end_date.strftime('%B %-d, %Y')} &nbsp;·&nbsp; {len(events)} events</div>
   {_cost_html()}
-  {_oyster_html()}
+  {_oyster_html(persona)}
   <div class="day-filter">
     {day_pills}
   </div>

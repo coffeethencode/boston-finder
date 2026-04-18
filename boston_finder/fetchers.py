@@ -103,12 +103,20 @@ def fetch_do617_category(path: str, start_date: datetime, end_date: datetime) ->
                     parent = link.find_parent("article") or link.find_parent("li") or link.parent
                     venue_el = parent.select_one(".venue, .location, [class*=venue]") if parent else None
                     time_el  = parent.select_one(".time, [class*=time]") if parent else None
+                    time_suffix = ""
+                    if time_el:
+                        raw_time = time_el.get_text(strip=True)
+                        try:
+                            parsed = datetime.strptime(raw_time, "%I:%M%p")
+                            time_suffix = f"T{parsed.strftime('%H:%M:%S')}"
+                        except Exception:
+                            pass
                     events.append({
                         "source": f"do617:{path}",
                         "name": name,
                         "description": "",
                         "url": "https://do617.com" + href if href.startswith("/") else href,
-                        "start": current.strftime("%Y-%m-%d") + (f"T{time_el.get_text(strip=True)}" if time_el else ""),
+                        "start": current.strftime("%Y-%m-%d") + time_suffix,
                         "venue": venue_el.get_text(strip=True) if venue_el else "",
                         "address": "",
                     })
