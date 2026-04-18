@@ -1,0 +1,89 @@
+--- /Users/brian/python-projects/boston_finder/location.py	2026-03-28 17:37:55
++++ boston_finder/location.py	2026-04-12 11:37:02
+@@ -31,8 +31,6 @@
+     "Mission Hill":            6,
+     "Medford":                 2,
+     "Quincy":                  1,
+-    "Providence":              2,
+-    "Rhode Island":            2,
+     "Watertown":               3,
+     "Newton":                  2,
+     "Waltham":                 2,
+@@ -88,60 +86,7 @@
+     return "expedition"
+ 
+ 
+-KIRK_PROXIMITY: dict[str, int] = {
+-    # Kirk is in southern RI — Providence is home base, Boston is a trip worth making for quality.
+-    # Providence / RI scores highest. Boston/Cambridge scores high but requires a great event.
+-    # min_score is set to 7 so only genuinely good events surface.
+-    "Providence":          10,
+-    "Rhode Island":        10,
+-    "Brown University":    10,
+-    "Quonset":              8,
+-    "Warwick":              8,
+-    # Boston area — worth the drive for quality
+-    "Cambridge":            9,
+-    "Kendall":              9,
+-    "MIT":                  9,
+-    "Somerville":           8,
+-    "Central Square":       9,
+-    "Boston":               8,
+-    "Seaport":              8,  # major tech/startup hub
+-    "Financial District":   8,
+-    "Downtown":             8,
+-    "Beacon Hill":          7,
+-    "Back Bay":             7,
+-    "South End":            7,
+-    "North End":            7,
+-    "Fenway":               7,
+-    "Charlestown":          7,
+-    "Allston":              7,
+-    "South Boston":         6,
+-    "Brighton":             6,
+-    "Brookline":            6,
+-    "Medford":              6,
+-    "Watertown":            5,
+-    "Newton":               5,
+-    "Waltham":              5,
+-    "Burlington":           4,
+-    # Everything else defaults to 5
+-}
+ 
+-CHLOE_PROXIMITY: dict[str, int] = {
+-    **PROXIMITY,
+-    # Chloe is in Back Bay — adjust relative distances
+-    "Back Bay":        10,
+-    "South End":        9,
+-    "Beacon Hill":      9,
+-    "Newbury Street":  10,
+-    "Fenway":           8,
+-    "Kenmore":          8,
+-    "Downtown":         8,
+-    "Seaport":          6,  # a bit farther from Back Bay
+-    "Cambridge":        5,
+-    "Brookline":        6,  # closer for her than Brian
+-    "Chestnut Hill":    3,  # still far
+-}
+-
+-
+ def _price_penalty(price_str: str, prox: int) -> int:
+     """
+     Add to the required score when an event is both far and expensive.
+@@ -174,13 +119,12 @@
+     - World class (score 9-10): always keep regardless of distance or price
+     Events with no location info pass through (benefit of the doubt).
+     """
+-    prox_table = CHLOE_PROXIMITY if persona == "chloe" else KIRK_PROXIMITY if persona == "kirk" else PROXIMITY
+-    # Kirk has a car and travels for quality — use a high default so unknown locations pass through
+-    default_prox = 7 if persona == "kirk" else DEFAULT_SCORE
++    from boston_finder.personas import get_proximity
++    prox_table = get_proximity(persona) or PROXIMITY
+     kept, dropped = [], []
+     for e in events:
+         address = (e.get("venue", "") + " " + e.get("address", "")).strip()
+-        prox = score(address, prox_table) if address else default_prox
++        prox = score(address, prox_table)
+         event_score = e.get("score", 0)
+ 
+         # world class events always make the cut
