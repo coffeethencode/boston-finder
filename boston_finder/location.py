@@ -31,6 +31,8 @@ PROXIMITY: dict[str, int] = {
     "Mission Hill":            6,
     "Medford":                 2,
     "Quincy":                  1,
+    "Providence":              2,
+    "Rhode Island":            2,
     "Watertown":               3,
     "Newton":                  2,
     "Waltham":                 2,
