@@ -118,14 +118,48 @@ OYSTER_VENUES = [
         "specials_url": "https://www.legalseafoods.com/restaurants/boston-copley-place",
         "known_deal": "$1 oysters daily 3-6pm (bar area only)",
     },
+    # ── Providence, RI ───────────────────────────────────────────────────────
+    {
+        "name": "Providence Oyster Bar",
+        "neighborhood": "Federal Hill, Providence RI",
+        "url": "https://providenceoysterbar.com/",
+        "specials_url": "https://providenceoysterbar.com/",
+        "known_deal": "$1 oysters + $1 littlenecks daily 3–5:30pm",
+        "city": "Providence",
+    },
+    {
+        "name": "Mill's Tavern",
+        "neighborhood": "Downtown Providence RI",
+        "url": "https://www.millstavernrestaurant.com",
+        "specials_url": "https://www.millstavernrestaurant.com",
+        "known_deal": "Half-price oysters + $1 oysters daily 5–6:30pm",
+        "city": "Providence",
+    },
+    {
+        "name": "Pizzico Oyster Bar",
+        "neighborhood": "Hope Street, Providence RI",
+        "url": "https://www.pizzico.com",
+        "specials_url": "https://www.pizzico.com",
+        "known_deal": "Half-price raw bar oysters daily 4–6pm; 9–10pm weekends",
+        "city": "Providence",
+    },
+    {
+        "name": "Federal Taphouse",
+        "neighborhood": "Federal Hill, Providence RI",
+        "url": "https://www.federaltaphouse.com",
+        "specials_url": "https://www.federaltaphouse.com",
+        "known_deal": "$1 oysters daily 1–6:30pm",
+        "city": "Providence",
+    },
+    {
+        "name": "Hemenway's",
+        "neighborhood": "Downtown Providence RI",
+        "url": "https://www.hemenways.com",
+        "specials_url": "https://www.hemenways.com",
+        "known_deal": None,
+        "city": "Providence",
+    },
     # ── Add more here ────────────────────────────────────────────────────────
-    # {
-    #     "name": "Venue Name",
-    #     "neighborhood": "Neighborhood",
-    #     "url": "https://...",
-    #     "specials_url": "https://.../specials",
-    #     "known_deal": "description or None",
-    # },
 ]
 
 RESEARCH_FILE = os.path.expanduser("~/oyster_research.txt")
@@ -161,6 +195,7 @@ def get_all() -> list[dict]:
                 "start": "",
                 "venue": v["name"],
                 "address": v["neighborhood"],
+                "city": v.get("city", "Boston"),
             })
 
     # 2. Scrape specials pages for any mention of oyster deals
@@ -179,6 +214,7 @@ def get_all() -> list[dict]:
                 "start": "",
                 "venue": v["name"],
                 "address": v["neighborhood"],
+                "city": v.get("city", "Boston"),
                 "_raw": False,
             })
 
