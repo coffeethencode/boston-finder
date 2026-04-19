@@ -1,0 +1,751 @@
+--- /Users/brian/python-projects/boston_finder/html_output.py	2026-04-02 10:37:10
++++ boston_finder/html_output.py	2026-04-18 14:45:52
+@@ -12,7 +12,35 @@
+ DEPLOY_DIR   = os.path.expanduser("~/boston_events_site")
+ DEPLOY_FILE  = os.path.join(DEPLOY_DIR, "index.html")
+ 
++SAFE_TEST_ENV = "BOSTON_FINDER_SAFE_TEST"
++DISABLE_OPEN_ENV = "BOSTON_FINDER_DISABLE_OPEN"
++DISABLE_DEPLOY_ENV = "BOSTON_FINDER_DISABLE_DEPLOY"
++OUTPUT_FILE_ENV = "BOSTON_FINDER_OUTPUT_FILE"
+ 
++
++def _env_flag(name: str) -> bool:
++    return os.environ.get(name, "").strip().lower() in {"1", "true", "yes", "on"}
++
++
++def _resolved_output_file() -> str:
++    return os.environ.get(OUTPUT_FILE_ENV, OUTPUT_FILE)
++
++
++def _placeholder_hits(events: list[dict]) -> list[str]:
++    hits: list[str] = []
++    for event in events:
++        name = (event.get("name") or "").strip()
++        url = (event.get("url") or "").strip().lower()
++        venue = (event.get("venue") or "").strip()
++        if name.startswith("Test Event"):
++            hits.append(f"name={name}")
++        elif "example.com/" in url:
++            hits.append(f"url={event.get('url', '')}")
++        elif venue == "Test Venue":
++            hits.append(f"venue={venue}")
++    return hits
++
++
+ def _cost_html() -> str:
+     try:
+         from boston_finder.costs import get_stats, get_recent_runs
+@@ -67,21 +95,249 @@
+ def _oyster_html(persona: str = "brian") -> str:
+     try:
+         from boston_finder.cache import get, age
+-        deals = get(f"oyster_deals_{persona}") or get("oyster_deals")
++        cache_key = f"oyster_deals_{persona}" if get(f"oyster_deals_{persona}") else "oyster_deals"
++        deals = get(cache_key)
+         if not deals:
+             return ""
+-        cache_key = f"oyster_deals_{persona}" if get(f"oyster_deals_{persona}") else "oyster_deals"
+         checked = age(cache_key)
+-        top = sorted(deals, key=lambda x: -x.get("score", 0))[:12]
+-        items = ""
+-        for d in top:
+-            deal = d.get("deal", "")
+-            name = d.get("name", "")
+-            items += f'<span class="oyster-item"><b>{name}</b>{(" — " + deal) if deal else ""}</span>'
+-        return f"""<div class="oyster-bar">
+-          <div class="oyster-title">🦪 Oyster Deals <span style="font-weight:400;color:#555;font-size:0.72rem">(last checked {checked})</span></div>
+-          {items}
+-        </div>"""
++        default_hood = {
++            "brian": "South End",
++            "dates": "Back Bay",
++            "kirk": "Cambridge",
++        }.get(persona)
++        deals_json = json.dumps(deals).replace("</", "<\\/")
++        checked_json = json.dumps(checked)
++        default_hood_json = json.dumps(default_hood)
++        show_providence = "true" if persona == "kirk" else "false"
++        return f"""<div class="oyster-bar" id="oyster-bar"></div>
++<script>
++(function() {{
++  var oysterBar = document.getElementById('oyster-bar');
++  if (!oysterBar) return;
++
++  var oysters = {deals_json};
++  if (!oysters.length) {{
++    oysterBar.style.display = 'none';
++    return;
++  }}
++
++  var checkedLabel = {checked_json};
++  var currentHood = {default_hood_json};
++  var showProvidence = {show_providence};
++  var hidePast = true;
++  var DAY_NAMES = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
++  var DAY_FULL = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
++  var todayDow = new Date().getDay();
++  var activeDow = todayDow;
++  var HOODS = ['South End','Back Bay','Cambridge','North End','Seaport','Beacon Hill','Fenway','Somerville','South Boston'];
++  var HOOD_PROXIMITY = {{
++    'South End':     {{'South End':10,'Back Bay':9,'Beacon Hill':8,'Downtown':8,'Financial District':8,'West End':7,'North End':7,'Fenway':7,'Kenmore':6,'Mission Hill':6,'Seaport':5,'South Boston':5,'Southie':5,'Cambridge':5,'Brookline':5,'Roxbury':5,'Somerville':4,'Charlestown':4,'Jamaica Plain':4,'Allston':3,'Brighton':3,'Dorchester':3}},
++    'Back Bay':      {{'Back Bay':10,'Newbury Street':10,'South End':9,'Beacon Hill':9,'Fenway':8,'Kenmore':8,'Downtown':8,'Financial District':7,'North End':7,'West End':7,'Mission Hill':7,'Seaport':6,'Cambridge':5,'Brookline':6,'South Boston':5,'Somerville':4,'Charlestown':4,'Jamaica Plain':5,'Allston':4}},
++    'Cambridge':     {{'Cambridge':10,'Somerville':8,'Charlestown':7,'North End':7,'West End':6,'Beacon Hill':6,'Downtown':6,'Financial District':6,'Back Bay':5,'South End':5,'Fenway':5,'Allston':5,'Medford':5,'Brookline':4,'Seaport':4,'South Boston':4,'Jamaica Plain':4}},
++    'North End':     {{'North End':10,'West End':9,'Charlestown':8,'Beacon Hill':8,'Downtown':8,'Financial District':8,'Cambridge':6,'Back Bay':6,'Seaport':5,'South End':5,'Fenway':5,'Somerville':5}},
++    'Seaport':       {{'Seaport':10,'Financial District':8,'Downtown':8,'South Boston':7,'Southie':7,'South End':6,'Back Bay':5,'North End':5,'Beacon Hill':5,'Cambridge':4,'Fenway':4}},
++    'Beacon Hill':   {{'Beacon Hill':10,'West End':9,'Downtown':9,'Financial District':8,'Back Bay':8,'North End':7,'South End':7,'Cambridge':6,'Fenway':6,'Charlestown':6,'Seaport':5}},
++    'Fenway':        {{'Fenway':10,'Kenmore':10,'Back Bay':8,'Brookline':7,'South End':7,'Mission Hill':8,'Allston':6,'Cambridge':5,'Beacon Hill':6,'Jamaica Plain':6,'Downtown':6}},
++    'Somerville':    {{'Somerville':10,'Cambridge':8,'Medford':7,'Charlestown':7,'North End':6,'West End':5,'Beacon Hill':5,'Downtown':5,'Allston':5,'Back Bay':4,'Fenway':4,'South End':3}},
++    'South Boston':  {{'South Boston':10,'Southie':10,'Seaport':8,'Financial District':6,'Downtown':6,'South End':5,'Back Bay':4,'North End':4,'Beacon Hill':4,'Cambridge':3}}
++  }};
++
++  function esc(s) {{
++    return String(s || '')
++      .replace(/&/g, '&amp;')
++      .replace(/</g, '&lt;')
++      .replace(/>/g, '&gt;')
++      .replace(/"/g, '&quot;');
++  }}
++
++  function oysterDays(o) {{
++    var desc = ((o.description || '') + ' ' + (o.reason || '')).toLowerCase();
++    var name = (o.name || '').toLowerCase();
++    if (/daily|every day|all week/i.test(desc + name)) return [0,1,2,3,4,5,6];
++    var days = [];
++    var map = {{sun:0,mon:1,tue:2,wed:3,thu:4,fri:5,sat:6,sunday:0,monday:1,tuesday:2,wednesday:3,thursday:4,friday:5,saturday:6}};
++    Object.keys(map).forEach(function(k) {{
++      if (desc.indexOf(k) !== -1) days.push(map[k]);
++    }});
++    var rangeMatch = desc.match(/([a-z]+)[–\\-]([a-z]+)/);
++    if (rangeMatch) {{
++      var start = map[rangeMatch[1]];
++      var end = map[rangeMatch[2]];
++      if (start !== undefined && end !== undefined) {{
++        days = [];
++        for (var d = start; d <= end; d++) days.push(d);
++      }}
++    }}
++    return days.length ? days : [0,1,2,3,4,5,6];
++  }}
++
++  function oysterHours(o) {{
++    var match = (o.description || '').match(/(\\d+(?::\\d+)?\\s*(?:AM|PM|am|pm)[^.,$]*)/i);
++    return match ? match[1].trim() : '';
++  }}
++
++  function bostonHour() {{
++    var fmt = new Intl.DateTimeFormat('en-US', {{timeZone: 'America/New_York', hour: 'numeric', hour12: false}});
++    return parseInt(fmt.format(new Date()), 10);
++  }}
++
++  function parseEndHour24(hoursStr) {{
++    if (!hoursStr) return null;
++    var s = hoursStr.toLowerCase();
++    var rangeMatch = s.match(/[–\\-]\\s*(\\d+)(?::\\d+)?\\s*(am|pm)/);
++    if (rangeMatch) {{
++      var h = parseInt(rangeMatch[1], 10);
++      if (rangeMatch[2] === 'pm' && h !== 12) h += 12;
++      if (rangeMatch[2] === 'am' && h === 12) h = 0;
++      return h;
++    }}
++    var singleMatch = s.match(/(\\d+)(?::\\d+)?\\s*(am|pm)/);
++    if (!singleMatch) return null;
++    var singleHour = parseInt(singleMatch[1], 10);
++    if (singleMatch[2] === 'pm' && singleHour !== 12) singleHour += 12;
++    if (singleMatch[2] === 'am' && singleHour === 12) singleHour = 0;
++    return singleHour;
++  }}
++
++  function proxScore(o) {{
++    if (!currentHood) return Number(o._proximity || 3);
++    var table = HOOD_PROXIMITY[currentHood] || {{}};
++    var addr = ((o.address || '') + ' ' + (o.venue || '')).toLowerCase();
++    var best = 3;
++    Object.keys(table).forEach(function(key) {{
++      if (addr.indexOf(key.toLowerCase()) !== -1) best = Math.max(best, table[key]);
++    }});
++    return best;
++  }}
++
++  function renderItem(o) {{
++    var venueName = esc(o.venue || String(o.name || '').split('—')[0].trim());
++    var hood = esc(o.address || '');
++    var hours = esc(oysterHours(o));
++    var parts = String(o.name || '').split('—');
++    var deal = esc(parts.length > 1 ? parts[1] : (o.reason || ''));
++    var left = '<div><b>' + venueName + '</b>' + (hood ? '<div class="oyster-meta">' + hood + (deal ? ' · ' + deal : '') + '</div>' : '') + '</div>';
++    var right = hours ? '<span class="oyster-hours">' + hours + '</span>' : '';
++    var inner = left + right;
++    return o.url
++      ? '<a class="oyster-item" href="' + esc(o.url) + '" target="_blank" style="text-decoration:none">' + inner + '</a>'
++      : '<div class="oyster-item">' + inner + '</div>';
++  }}
++
++  function renderOysterDay(dow) {{
++    var isToday = dow === todayDow;
++    var currentHour = isToday ? bostonHour() : -1;
++    var items = oysters.filter(function(o) {{
++      return oysterDays(o).indexOf(dow) !== -1 && (o.city || 'Boston') !== 'Providence';
++    }});
++    var pvdItems = oysters.filter(function(o) {{
++      return oysterDays(o).indexOf(dow) !== -1 && o.city === 'Providence';
++    }});
++    var pastItems = [];
++    if (isToday && hidePast) {{
++      var futureItems = [];
++      items.forEach(function(o) {{
++        var endHour = parseEndHour24(oysterHours(o));
++        if (endHour !== null && endHour <= currentHour) pastItems.push(o);
++        else futureItems.push(o);
++      }});
++      items = futureItems;
++    }}
++
++    items.sort(function(a, b) {{
++      return proxScore(b) - proxScore(a);
++    }});
++
++    if (!items.length && !pastItems.length) {{
++      return '<div style="color:#444;font-size:0.8rem;padding:8px 0">No deals on ' + DAY_FULL[dow] + '</div>';
++    }}
++    if (!items.length && isToday) {{
++      return '<div style="color:#556;font-size:0.8rem;padding:8px 0">All deals for today have ended. ' +
++        (pastItems.length ? pastItems.length + ' hidden.' : '') +
++        '</div>';
++    }}
++
++    var html = '';
++    if (currentHood) {{
++      [
++        {{label:'Nearby', min:9}},
++        {{label:'Easy', min:7}},
++        {{label:'Doable', min:5}},
++        {{label:'Hike', min:0}}
++      ].forEach(function(tier) {{
++        var tierItems = items.filter(function(o) {{
++          var score = proxScore(o);
++          if (tier.min === 9) return score >= 9;
++          if (tier.min === 7) return score >= 7 && score < 9;
++          if (tier.min === 5) return score >= 5 && score < 7;
++          return score < 5;
++        }});
++        if (!tierItems.length) return;
++        html += '<div class="oyster-tier">' + tier.label + '</div>';
++        html += '<div class="oyster-list" style="margin-bottom:8px">' + tierItems.map(renderItem).join('') + '</div>';
++      }});
++    }} else {{
++      html = '<div class="oyster-list">' + items.map(renderItem).join('') + '</div>';
++    }}
++
++    html = '<div class="oyster-scroll">' + html + '</div>';
++    if (isToday && pastItems.length > 0) {{
++      html += '<div style="font-size:0.72rem;color:#445;margin-top:6px;padding:4px 0">' +
++        pastItems.length + ' deal' + (pastItems.length > 1 ? 's' : '') +
++        ' ended today — <button onclick="togglePastOysters()" style="background:none;border:none;color:#557;font-size:0.72rem;cursor:pointer;padding:0">show all</button></div>';
++    }}
++    if (pvdItems.length) {{
++      pvdItems.sort(function(a, b) {{ return (b.score || 0) - (a.score || 0); }});
++      html += '<div style="margin-top:10px;border-top:1px solid #1a2e3a;padding-top:8px">' +
++        '<button onclick="toggleProvidence()" style="background:none;border:none;color:' + (showProvidence ? '#93c5fd' : '#2a4a6a') + ';font-size:0.72rem;cursor:pointer;padding:0;letter-spacing:0.04em">' +
++        (showProvidence ? '▼' : '▶') + ' Providence RI (' + pvdItems.length + ' deals)</button>' +
++        (showProvidence ? '<div class="oyster-list" style="margin-top:6px">' + pvdItems.map(renderItem).join('') + '</div>' : '') +
++        '</div>';
++    }}
++    return html;
++  }}
++
++  function buildOyster() {{
++    var tabs = '<div class="oyster-days">' + DAY_NAMES.map(function(dayName, idx) {{
++      var cls = 'oday-btn' + (idx === activeDow ? ' active' : '');
++      var todayMark = idx === todayDow ? ' ●' : '';
++      return '<button class="' + cls + '" onclick="setOysterDay(' + idx + ')">' + dayName + todayMark + '</button>';
++    }}).join('') + '</div>';
++
++    var hoodLabel = currentHood ? "I'm near:" : 'Filter by area:';
++    var hoodBtns = '<div class="oyster-location"><span>' + hoodLabel + '</span>' +
++      HOODS.map(function(hood) {{
++        var cls = 'ohood-btn' + (hood === currentHood ? ' active' : '');
++        return '<button class="' + cls + '" onclick="setOysterHood(' + JSON.stringify(hood) + ')">' + hood + '</button>';
++      }}).join('') +
++      (currentHood ? ' <button class="ohood-btn" onclick="setOysterHood(null)" style="opacity:0.5">× clear</button>' : '') +
++      '</div>';
++
++    oysterBar.innerHTML =
++      '<div class="oyster-title">🦪 Oyster Deals <span style="font-weight:400;color:#555;font-size:0.72rem">(last checked ' + esc(checkedLabel) + ')</span></div>' +
++      tabs + hoodBtns + renderOysterDay(activeDow);
++  }}
++
++  window.setOysterDay = function(dow) {{
++    activeDow = dow;
++    buildOyster();
++  }};
++  window.setOysterHood = function(hood) {{
++    currentHood = hood;
++    buildOyster();
++  }};
++  window.togglePastOysters = function() {{
++    hidePast = !hidePast;
++    buildOyster();
++  }};
++  window.toggleProvidence = function() {{
++    showProvidence = !showProvidence;
++    buildOyster();
++  }};
++
++  buildOyster();
++}})();
++</script>"""
+     except Exception:
+         return ""
+ 
+@@ -116,178 +372,50 @@
+         return ""
+ 
+ 
+-GITHUB_REPO   = os.path.expanduser("~/python-projects/boston-finder-repo")
+-DATA_REPO     = os.path.expanduser("~/boston-finder-data")  # clone of data branch
+-PAGES_URL     = "https://coffeethencode.github.io/boston-finder"
+-RAW_DATA_BASE = "https://raw.githubusercontent.com/coffeethencode/boston-finder/data/data"
+-NETLIFY_URL   = "https://highendeventfinder.netlify.app"
++GITHUB_REPO  = os.path.expanduser("~/python-projects/boston-finder-repo")
+ 
+-PERSONA_PATHS = {
+-    "brian": "/",
+-    "chloe": "/chloe",
+-    "kirk":  "/kirk",
+-}
+ 
++def _git_deploy(html: str, persona: str = "brian"):
++    """Write HTML to the GitHub repo's docs/ folder and push — Netlify auto-deploys from there."""
++    from boston_finder.personas import PERSONAS, SITE_BASE
++    p = PERSONAS.get(persona, PERSONAS["brian"])
++    deploy_file = p["deploy_file"]
+ 
+-def build_json(events: list[dict], today: datetime, days: int, persona: str = "brian") -> str:
+-    """Serialize events + metadata to JSON for the data branch."""
+-    from collections import Counter
+-    from boston_finder import costs as _costs
+-    from boston_finder.cache import get as _cache_get
+-
+-    # extra (low-priority) events from score cache
+-    try:
+-        from boston_finder.cache import _load_scored
+-        all_scored = _load_scored()
+-        key_prefix = f"{persona}:"
+-        extra = [
+-            {"name": v["name"], "score": v["score"], "reason": v.get("reason",""), "url": k[len(key_prefix):]}
+-            for k, v in all_scored.items()
+-            if k.startswith(key_prefix) and 1 <= v.get("score",0) <= 4 and v.get("name")
+-        ]
+-        extra.sort(key=lambda x: -x["score"])
+-    except Exception:
+-        extra = []
+-
+-    # oyster deals
++    docs_dir = os.path.join(GITHUB_REPO, "docs")
++    if not os.path.isdir(docs_dir):
++        return  # repo not set up locally — skip silently
+     try:
+-        oyster = _cache_get(f"oyster_deals_{persona}") or _cache_get("oyster_deals") or []
+-    except Exception:
+-        oyster = []
+-
+-    # cost data
+-    try:
+-        s = _costs.get_stats()
+-        runs = _costs.get_recent_runs(5)
+-        netlify_credits = _costs._netlify_credits().strip().replace("🌐 Netlify: ", "")
+-        cost_data = {
+-            "week":    round(s["week"]["total_cost"], 4),
+-            "month":   round(s["month"]["total_cost"], 4),
+-            "total":   round(s["total"]["total_cost"], 4),
+-            "runs":    runs,
+-            "netlify": netlify_credits,
+-        }
+-    except Exception:
+-        cost_data = {}
+-
+-    # sources shown (events that passed scoring)
+-    sources_shown = dict(Counter(e.get("source","unknown").split(":")[0] for e in events))
+-    sources = sources_shown  # keep backward compat
+-
+-    # build source URL map for clickable pills in the UI
+-    try:
+-        from boston_finder.sources import SOURCES as _SOURCES
+-        _src_url_map: dict[str, str] = {}
+-        for _s in _SOURCES:
+-            if not _s.get("enabled"):
+-                continue
+-            _t = _s["type"]
+-            if _t == "do617_category":
+-                _src_url_map.setdefault("do617", f"https://do617.com/events/{_s['path']}")
+-            elif _t == "luma":
+-                _src_url_map.setdefault("luma", f"https://lu.ma/{_s['slug']}")
+-            elif _t == "allevents_category":
+-                _src_url_map.setdefault("allevents", f"https://allevents.in/boston/{_s['path']}")
+-            elif _t == "ticketmaster":
+-                _src_url_map["ticketmaster"] = "https://www.ticketmaster.com/discover/concerts/boston"
+-            elif _t in ("scrape_url", "jsonld_url"):
+-                _src_url_map[_s["name"]] = _s["url"]
+-            elif _t == "eventbrite_api":
+-                _src_url_map.setdefault("eventbrite", "https://www.eventbrite.com/d/ma--boston/all-events/")
+-        source_url_map = _src_url_map
+-    except Exception:
+-        source_url_map = {}
+-
+-    # include scoring prompt so persona pages can display it
+-    try:
+-        from boston_finder.personas import get_persona as _gp
+-        _p = _gp(persona)
+-        persona_prompt = _p.get("prompt", "")
+-    except Exception:
+-        persona_prompt = ""
+-
+-    # hot restaurants cache (shared across all personas)
+-    try:
+-        import os as _os
+-        _hr_path = _os.path.expanduser("~/boston_hot_restaurants.json")
+-        hot_restaurants = json.load(open(_hr_path)) if _os.path.exists(_hr_path) else {}
+-    except Exception:
+-        hot_restaurants = {}
+-
+-    payload = {
+-        "generated_at":   datetime.now().isoformat(),
+-        "today":          today.strftime("%Y-%m-%d"),
+-        "days":           days,
+-        "persona":        persona,
+-        "persona_prompt": persona_prompt,
+-        "events": [
+-            {k: v for k, v in e.items() if not k.startswith("_") or k in ("_proximity",)}
+-            for e in events
+-        ],
+-        "extra_events": extra[:50],
+-        "oyster_deals": oyster,
+-        "hot_restaurants": hot_restaurants,
+-        "costs":        cost_data,
+-        "sources":      sources,
+-        "source_urls":  source_url_map,
+-        "source_stats": sources_shown,
+-    }
+-    return json.dumps(payload, indent=2, default=str)
+-
+-
+-def _git_push_json(json_str: str, persona: str = "brian"):
+-    """Push persona.json to the data branch. No Netlify build triggered — zero credits."""
+-    if not os.path.isdir(DATA_REPO):
+-        print(f"  [data] data repo not found at {DATA_REPO} — skipping push")
+-        return
+-    try:
+-        data_dir = os.path.join(DATA_REPO, "data")
+-        os.makedirs(data_dir, exist_ok=True)
+-        fpath = os.path.join(data_dir, f"{persona}.json")
+-
+-        # skip if identical
+-        try:
+-            if open(fpath).read() == json_str:
+-                print(f"  [data] {persona}.json unchanged — skipping push")
+-                return
+-        except Exception:
+-            pass
+-
+-        with open(fpath, "w") as f:
+-            f.write(json_str)
+-
+-        subprocess.run(["git", "-C", DATA_REPO, "pull", "--ff-only", "--quiet"], check=False)
+-        subprocess.run(["git", "-C", DATA_REPO, "add", f"data/{persona}.json"], check=True)
++        with open(os.path.join(docs_dir, deploy_file), "w") as f:
++            f.write(html)
++        subprocess.run(["git", "-C", GITHUB_REPO, "add", f"docs/{deploy_file}"], check=True)
+         result = subprocess.run(
+-            ["git", "-C", DATA_REPO, "diff", "--cached", "--quiet"], capture_output=True
++            ["git", "-C", GITHUB_REPO, "diff", "--cached", "--quiet"],
++            capture_output=True
+         )
+-        if result.returncode != 0:
++        if result.returncode != 0:  # there are staged changes
++            from datetime import datetime
+             ts = datetime.now().strftime("%Y-%m-%d %-I:%M %p")
++            label = p.get("nav_label", persona)
+             subprocess.run(
+-                ["git", "-C", DATA_REPO, "commit", "-m", f"data: {persona} {ts}"],
++                ["git", "-C", GITHUB_REPO, "commit", "-m", f"Deploy: {label} events {ts}"],
+                 check=True, capture_output=True
+             )
+-            subprocess.run(["git", "-C", DATA_REPO, "push"], check=True, capture_output=True)
+-            print(f"  [data] pushed {persona}.json → data branch (0 deploy credits)")
++            subprocess.run(["git", "-C", GITHUB_REPO, "push"], check=True, capture_output=True)
++            print(f"  [deploy] → {SITE_BASE}{p['url_path']}")
+         else:
+-            print(f"  [data] {persona}.json no diff after write")
++            print("  [deploy] no changes to push")
+     except Exception as ex:
+-        print(f"  [data] push failed: {ex}")
++        print(f"  [deploy] failed: {ex}")
+ 
+ 
+-def _sources_html(events: list[dict]) -> str:
+-    from collections import Counter
+-    counts = Counter(e.get("source", "unknown").split(":")[0] for e in events)
+-    if not counts:
+-        return ""
+-    items = "".join(
+-        f'<span class="src-pill">{src} <b>{n}</b></span>'
+-        for src, n in counts.most_common()
+-    )
+-    return f'<div class="sources-bar">Sources: {items}</div>'
+-
+-
+ def generate(events: list[dict], today: datetime, days: int, persona: str = "brian"):
++    from boston_finder.personas import PERSONAS, nav_html, active_personas
++    p = PERSONAS.get(persona, PERSONAS["brian"])
++    title_str = p["title"]
++    accent    = p["accent"]
++    nav_markup = nav_html(persona)
++    active = active_personas()
++
+     end_date = today + timedelta(days=days - 1)
+ 
+     # group by date, sorted chronologically with today first
+@@ -320,9 +448,18 @@
+     # today label for highlighting
+     today_label = today.strftime("%A, %B %-d")
+ 
++    # build day filter pills
++    day_pills = ""
++    for i, day in enumerate(date_order):
++        is_today = (day == today_label)
++        short = date_key.get(day, datetime.max).strftime("%a %-m/%-d") if date_key.get(day) != datetime.max else day[:10]
++        count = len(by_date[day])
++        today_cls = " day-pill-today" if is_today else ""
++        day_pills += f'<button class="day-pill{today_cls}" data-day="day-{i}" onclick="toggleDay(this)">{short} <span class="pill-count">{count}</span></button>'
++
+     # build HTML
+     sections = ""
+-    for day in date_order:
++    for i, day in enumerate(date_order):
+         day_events = by_date[day]
+         day_events.sort(key=lambda x: -x.get("score", 0))
+         is_today = (day == today_label)
+@@ -336,16 +473,20 @@
+             url = e.get("url", "")
+             link = f'<a class="link" href="{url}" target="_blank">{url}</a>' if url else ""
+             score_badge = f'<span class="score" title="Relevance score 1-10">{score}</span>' if score else ""
+-            safe_name = e['name'].replace('"', '&quot;').replace("'", "&#39;")
+-            feedback = f"""<div class="feedback">
+-                <button class="fb-btn" data-p="brian" data-v="up">👍 Brian</button>
+-                <button class="fb-btn" data-p="chloe" data-v="up">👍 Chloe</button>
+-                <button class="fb-btn" data-p="brian" data-v="down">👎 Brian</button>
+-                <button class="fb-btn" data-p="chloe" data-v="down">👎 Chloe</button>
+-            </div>""" if url else ""
+-            data_attrs = f' data-url="{url}" data-name="{safe_name}"' if url else ""
++            eid = url.replace("https://", "").replace("/", "_").replace(".", "_")[:40]
++            safe_name = e['name'].replace("'", "")
++            fb_buttons = ""
++            for ap in active:
++                n, lb = ap["name"], ap["nav_label"]
++                fb_buttons += f"""
++                <button class="fb-btn" onclick="sendFeedback(this,'{n}','up','{url}','{safe_name}')">👍 {lb}</button>"""
++            for ap in active:
++                n, lb = ap["name"], ap["nav_label"]
++                fb_buttons += f"""
++                <button class="fb-btn" onclick="sendFeedback(this,'{n}','down','{url}','{safe_name}')">👎 {lb}</button>"""
++            feedback = f'<div class="feedback" id="fb_{eid}">{fb_buttons}\n            </div>' if url else ""
+             cards += f"""
+-            <div class="card"{data_attrs}>
++            <div class="card">
+                 <div class="card-title">{e['name']} {score_badge}</div>
+                 <div class="meta">{time_venue}</div>
+                 {reason}
+@@ -354,17 +495,13 @@
+             </div>"""
+         today_tag = ' <span class="today-tag">TODAY</span>' if is_today else ""
+         sections += f"""
+-        <div class="day-section">
+-            <div class="day-header">{day}{today_tag}</div>
++        <div class="day-section" id="day-{i}">
++            <div class="day-header" onclick="toggleDaySection(this)">{day}{today_tag} <span class="day-toggle">▼</span></div>
++            <div class="day-cards">
+             {cards}
++            </div>
+         </div>"""
+ 
+-    is_chloe  = (persona == "chloe")
+-    title_str = "Chloe's Boston" if is_chloe else "Boston Events"
+-    accent    = "#c084fc" if is_chloe else "#f0a500"
+-    nav_brian_cls = "nav-active" if not is_chloe else "nav-link"
+-    nav_chloe_cls = "nav-active" if is_chloe else "nav-link"
+-
+     html = f"""<!DOCTYPE html>
+ <html lang="en">
+ <head>
+@@ -409,10 +546,24 @@
+   .footer      {{ margin-top: 40px; font-size: 0.75rem; color: #555; }}
+   .oyster-bar  {{ background: #0a1a0a; border: 1px solid #1a3a1a; border-radius: 8px;
+                   padding: 14px 16px; margin-bottom: 24px; }}
+-  .oyster-title {{ font-size: 0.9rem; font-weight: 700; color: #7fff7f; margin-bottom: 8px; }}
+-  .oyster-item {{ display: inline-block; background: #111; border: 1px solid #1e3a1e;
+-                  border-radius: 6px; padding: 4px 10px; margin: 3px; font-size: 0.75rem; color: #aaa; }}
+-  .oyster-item b {{ color: #7fff7f; }}
++  .oyster-title {{ font-size: 0.9rem; font-weight: 700; color: #7fff7f; margin-bottom: 10px; }}
++  .oyster-days  {{ display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 8px; }}
++  .oday-btn     {{ padding: 3px 10px; border-radius: 99px; border: 1px solid #1e3a1e;
++                   background: #0d200d; color: #4a8a4a; font-size: 0.72rem; cursor: pointer; }}
++  .oday-btn.active {{ background: #1a3a1a; color: #7fff7f; border-color: #3a6a3a; font-weight: 700; }}
++  .oyster-location {{ display: flex; align-items: center; gap: 4px; flex-wrap: wrap; margin-bottom: 12px; font-size: 0.7rem; color: #3a5a3a; }}
++  .ohood-btn   {{ padding: 2px 8px; border-radius: 99px; border: 1px solid #1a2e1a;
++                  background: #080f08; color: #3a6a3a; font-size: 0.7rem; cursor: pointer; }}
++  .ohood-btn.active {{ background: #1a3020; color: #afffaf; border-color: #2a5a3a; font-weight: 700; }}
++  .oyster-tier {{ font-size: 0.68rem; color: #3a5a3a; padding: 4px 0 2px; letter-spacing: 0.05em; text-transform: uppercase; }}
++  .oyster-list {{ display: flex; flex-direction: column; gap: 6px; }}
++  .oyster-item {{ display: flex; justify-content: space-between; align-items: baseline;
++                  background: #0d1a0d; border: 1px solid #1a2e1a; border-radius: 6px;
++                  padding: 7px 11px; font-size: 0.78rem; color: #aaa; }}
++  .oyster-item b {{ color: #7fff7f; font-size: 0.82rem; }}
++  .oyster-meta {{ font-size: 0.72rem; color: #556; margin-top: 2px; }}
++  .oyster-hours {{ font-size: 0.75rem; color: #7fff7f; opacity: 0.7; white-space: nowrap; margin-left: 12px; }}
++  .oyster-scroll {{ max-height: 300px; overflow-y: auto; padding-right: 2px; }}
+   .show-more-btn {{ background: #1a1a1a; border: 1px solid #333; border-radius: 6px;
+                     padding: 8px 16px; color: #888; font-size: 0.8rem; cursor: pointer;
+                     margin-bottom: 24px; display: block; width: 100%; text-align: left; }}
+@@ -426,27 +577,42 @@
+   .nav-active   {{ padding: 6px 16px; border-radius: 6px; font-size: 0.85rem; font-weight: 600;
+                    color: {accent}; border: 1px solid {accent}33; background: {accent}11;
+                    text-decoration: none; }}
++  .day-filter   {{ position: sticky; top: 0; z-index: 10; background: #0f0f0f;
++                   padding: 10px 0 8px; display: flex; gap: 6px; flex-wrap: wrap;
++                   border-bottom: 1px solid #222; margin-bottom: 16px; }}
++  .day-pill     {{ background: #1a1a1a; border: 1px solid #333; border-radius: 99px;
++                   padding: 5px 12px; font-size: 0.78rem; color: #aaa; cursor: pointer;
++                   transition: all 0.15s; white-space: nowrap; }}
++  .day-pill:hover {{ border-color: #555; color: #fff; }}
++  .day-pill-today {{ border-color: #2a6e2a; }}
++  .day-pill.hidden {{ background: #0f0f0f; border-color: #222; color: #444;
++                      text-decoration: line-through; }}
++  .pill-count   {{ font-size: 0.65rem; color: #555; margin-left: 2px; }}
++  .day-toggle   {{ font-size: 0.65rem; color: #555; margin-left: 6px; cursor: pointer;
++                   transition: transform 0.15s; display: inline-block; }}
++  .day-section.collapsed .day-cards {{ display: none; }}
++  .day-section.collapsed .day-toggle {{ transform: rotate(-90deg); }}
++  .day-section.hidden-by-filter {{ display: none; }}
++  .day-header   {{ cursor: pointer; user-select: none; }}
+   .feedback     {{ margin-top: 8px; display: flex; gap: 6px; flex-wrap: wrap; }}
+   .fb-btn       {{ background: none; border: 1px solid #2a2a2a; border-radius: 99px;
+                    padding: 3px 10px; font-size: 0.7rem; color: #555; cursor: pointer; }}
+   .fb-btn:hover {{ border-color: #555; color: #aaa; }}
+   .fb-btn.done  {{ border-color: #444; color: #7fff7f; }}
+   .fb-btn.skip  {{ border-color: #444; color: #ff7070; }}
+-  .sources-bar  {{ font-size: 0.75rem; color: #555; margin-bottom: 20px; display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }}
+-  .src-pill     {{ background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 4px; padding: 2px 8px; }}
+-  .src-pill b   {{ color: #888; }}
+ </style>
+ </head>
+ <body>
+   <nav class="nav">
+-    <a href="{PAGES_URL}/" class="{nav_brian_cls}">Brian</a>
+-    <a href="{PAGES_URL}/chloe.html" class="{nav_chloe_cls}">Chloe</a>
++    {nav_markup}
+   </nav>
+   <h1>{title_str}</h1>
+   <div class="sub">{today.strftime('%B %-d')} – {end_date.strftime('%B %-d, %Y')} &nbsp;·&nbsp; {len(events)} events</div>
+   {_cost_html()}
+-  {_sources_html(events)}
+   {_oyster_html(persona)}
++  <div class="day-filter">
++    {day_pills}
++  </div>
+   <div class="legend">
+     <b>Score 1–10</b> — how relevant this event is for you &nbsp;|&nbsp;
+     <b>8–10</b> must consider &nbsp;·&nbsp;
+@@ -455,15 +621,25 @@
+   </div>
+   {sections}
+   {_extra_events_html(today, end_date)}
+-  <!-- Netlify form detector — must be visible to Netlify's scanner (use CSS to hide, not hidden attr) -->
+-  <form name="event-feedback" data-netlify="true" netlify-honeypot="bot-field" style="display:none;position:absolute">
++  <!-- Netlify form (hidden) — required for Netlify to detect and activate the form -->
++  <form name="event-feedback" netlify netlify-honeypot="bot-field" hidden>
+     <input name="bot-field">
+     <input name="persona"><input name="vote"><input name="event_url"><input name="event_name">
+   </form>
+ 
+-  <div class="footer" id="gen-footer"></div>
+-<script>document.getElementById('gen-footer').textContent = 'Generated ' + new Date().toLocaleDateString('en-US',{{month:'long',day:'numeric',year:'numeric'}}) + ' at ' + new Date().toLocaleTimeString('en-US',{{hour:'numeric',minute:'2-digit'}});</script>
++  <div class="footer">Generated {datetime.now().strftime('%B %-d, %Y at %-I:%M %p')}</div>
+ <script>
++  function toggleDay(pill) {{
++    var dayId = pill.dataset.day;
++    var section = document.getElementById(dayId);
++    pill.classList.toggle('hidden');
++    section.classList.toggle('hidden-by-filter');
++  }}
++
++  function toggleDaySection(header) {{
++    header.parentElement.classList.toggle('collapsed');
++  }}
++
+   function toggleExtra() {{
+     var el = document.getElementById('extra-events');
+     var btn = document.getElementById('extra-btn');
+@@ -476,13 +652,6 @@
+     }}
+   }}
+ 
+-  document.addEventListener('click', function(e) {{
+-    var btn = e.target.closest('.fb-btn');
+-    if (!btn) return;
+-    var card = btn.closest('.card');
+-    sendFeedback(btn, btn.dataset.p, btn.dataset.v, card.dataset.url, card.dataset.name);
+-  }});
+-
+   function sendFeedback(btn, persona, vote, url, name) {{
+     var cls = vote === 'up' ? 'done' : 'skip';
+     btn.classList.add(cls);
+@@ -494,24 +663,40 @@
+       'event_url': url,
+       'event_name': name
+     }});
+-    // post to whichever origin is serving this page (works local + netlify)
+-    fetch('/', {{
++    fetch('https://highendeventfinder.netlify.app/', {{
+       method: 'POST',
+       headers: {{'Content-Type': 'application/x-www-form-urlencoded'}},
+       body: body.toString()
+     }}).catch(function() {{
+-      // Netlify may be unavailable — button stays marked so feedback isn't lost visually
++      btn.classList.remove(cls);
++      btn.disabled = false;
+     }});
+   }}
+ </script>
+ </body>
+ </html>"""
+ 
+-    with open(OUTPUT_FILE, "w") as f:
++    output_file = _resolved_output_file()
++    with open(output_file, "w") as f:
+         f.write(html)
+ 
+-    _git_push_json(build_json(events, today, days, persona), persona)
++    safe_test = _env_flag(SAFE_TEST_ENV)
++    disable_open = safe_test or _env_flag(DISABLE_OPEN_ENV)
++    disable_deploy = safe_test or _env_flag(DISABLE_DEPLOY_ENV)
+ 
+-    # open the live Netlify page (data is now fresh)
+-    path = PERSONA_PATHS.get(persona, f"/{persona}")
+-    subprocess.run(["open", f"{NETLIFY_URL}{path}"])
++    if disable_open:
++        print(f"  [open] skipped ({output_file})")
++    else:
++        subprocess.run(["open", output_file], check=False)
++
++    placeholder_hits = _placeholder_hits(events)
++    if placeholder_hits:
++        sample = "; ".join(placeholder_hits[:3])
++        print(f"  [deploy] blocked suspicious placeholder events: {sample}")
++        return
++
++    if disable_deploy:
++        print("  [deploy] skipped by test mode")
++        return
++
++    _git_deploy(html, persona=persona)

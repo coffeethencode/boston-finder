@@ -27,6 +27,14 @@ def _save_scored(data: dict):
         json.dump(data, f, indent=2)
 
 
+def get_all_scored() -> dict:
+    """Public read of the full scored-events store.
+
+    Use this from external consumers (e.g. html_output.build_json) instead of
+    reaching into the private _load_scored()."""
+    return _load_scored()
+
+
 def get_scored(url: str, persona: str = "brian") -> dict | None:
     """Return cached score+reason for a URL, or None if unseen/expired."""
     store = _load_scored()
@@ -61,6 +69,46 @@ def prune_scored():
     }
     _save_scored(pruned)
     return len(store) - len(pruned)
+
+
+# ── Extracted raw events cache ─────────────────────────────────────────────────
+
+EXTRACTED_CACHE_FILE = os.path.expanduser("~/boston_finder_extracted.json")
+EXTRACTED_TTL_HOURS  = 12  # re-extract scrape_url pages every 12 hours
+
+
+def _load_extracted() -> dict:
+    if not os.path.exists(EXTRACTED_CACHE_FILE):
+        return {}
+    with open(EXTRACTED_CACHE_FILE) as f:
+        return json.load(f)
+
+
+def _save_extracted(data: dict):
+    with open(EXTRACTED_CACHE_FILE, "w") as f:
+        json.dump(data, f, indent=2)
+
+
+def get_extracted(source_url: str) -> list | None:
+    """Return cached extracted events for a source URL, or None if stale."""
+    store = _load_extracted()
+    entry = store.get(source_url)
+    if not entry:
+        return None
+    fetched_at = datetime.fromisoformat(entry["fetched_at"])
+    if datetime.now() - fetched_at > timedelta(hours=EXTRACTED_TTL_HOURS):
+        return None
+    return entry["events"]
+
+
+def save_extracted(source_url: str, events: list):
+    """Cache extracted events for a source URL."""
+    store = _load_extracted()
+    store[source_url] = {
+        "events": events,
+        "fetched_at": datetime.now().isoformat(),
+    }
+    _save_extracted(store)
 
 
 def _load() -> dict:

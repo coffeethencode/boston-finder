@@ -33,6 +33,22 @@ def fetch_source(source: dict, start_date: datetime, end_date: datetime) -> list
         return fetch_do617_category(source["path"], start_date, end_date)
     if t == "scrape_url":
         return fetch_scrape_url(source["name"], source["url"])
+    if t == "allevents_category":
+        return fetch_allevents_category(source["path"], start_date, end_date)
+    if t == "luma":
+        return fetch_luma(source["slug"], start_date, end_date)
+    if t == "ticketmaster":
+        return fetch_ticketmaster(start_date, end_date)
+    if t == "jsonld_url":
+        return fetch_jsonld_url(source["name"], source["url"], start_date, end_date)
+    if t == "eventbrite_api":
+        return fetch_eventbrite_api(source.get("term", ""), start_date, end_date)
+    if t == "microdata_url":
+        return fetch_microdata_url(source["name"], source["url"], start_date, end_date)
+    if t == "instagram":
+        return fetch_instagram(source["name"], source["username"], source.get("posts", 12))
+    if t == "meetup":
+        return fetch_meetup(source["name"], source.get("category_id"), source.get("query", ""), start_date, end_date)
     print(f"  [fetchers] unknown type: {t}")
     return []
 
@@ -92,7 +108,8 @@ def fetch_do617_category(path: str, start_date: datetime, end_date: datetime) ->
             r = requests.get(url, headers=HEADERS, timeout=10)
             if r.status_code == 200:
                 soup = BeautifulSoup(r.text, "html.parser")
-                for link in soup.select(f"a[href*='/events/{current.year}/']"):
+                date_prefix = f"/events/{current.year}/{current.month}/{current.day}/"
+                for link in soup.select(f"a[href*='/events/{current.year}/{current.month}/{current.day}/']"):
                     href = link["href"]
                     if href in seen or href.endswith(("/today", "/tomorrow", "/new")):
                         continue
@@ -103,20 +120,20 @@ def fetch_do617_category(path: str, start_date: datetime, end_date: datetime) ->
                     parent = link.find_parent("article") or link.find_parent("li") or link.parent
                     venue_el = parent.select_one(".venue, .location, [class*=venue]") if parent else None
                     time_el  = parent.select_one(".time, [class*=time]") if parent else None
-                    time_suffix = ""
+                    start_str = current.strftime("%Y-%m-%d")
                     if time_el:
-                        raw_time = time_el.get_text(strip=True)
+                        raw_t = time_el.get_text(strip=True).split("-")[0].strip()  # "8:00PM-10:00PM" → "8:00PM"
                         try:
-                            parsed = datetime.strptime(raw_time, "%I:%M%p")
-                            time_suffix = f"T{parsed.strftime('%H:%M:%S')}"
+                            parsed_t = datetime.strptime(raw_t, "%I:%M%p")
+                            start_str += parsed_t.strftime("T%H:%M")
                         except Exception:
-                            pass
+                            pass  # keep date-only if time can't be parsed
                     events.append({
                         "source": f"do617:{path}",
                         "name": name,
                         "description": "",
                         "url": "https://do617.com" + href if href.startswith("/") else href,
-                        "start": current.strftime("%Y-%m-%d") + time_suffix,
+                        "start": start_str,
                         "venue": venue_el.get_text(strip=True) if venue_el else "",
                         "address": "",
                     })
@@ -186,6 +203,101 @@ def enrich_events(events: list[dict]) -> list[dict]:
     return events
 
 
+# ── lu.ma ──────────────────────────────────────────────────────────────────────
+def fetch_luma(city_slug: str, start_date: datetime, end_date: datetime) -> list[dict]:
+    """Fetch events from lu.ma/<city_slug> via __NEXT_DATA__ JSON."""
+    import re as _re
+    events = []
+    url = f"https://lu.ma/{city_slug}"
+    try:
+        r = requests.get(url, headers=HEADERS, timeout=12, allow_redirects=True)
+        if r.status_code != 200:
+            return []
+        nd = _re.search(r'id="__NEXT_DATA__"[^>]*>(.*?)</script>', r.text, _re.DOTALL)
+        if not nd:
+            return []
+        data = json.loads(nd.group(1))
+        raw_events = data["props"]["pageProps"]["initialData"]["data"].get("events", [])
+        for item in raw_events:
+            ev = item.get("event", item)
+            raw_start = ev.get("start_at", "")
+            try:
+                edate = datetime.fromisoformat(raw_start[:10])
+                if not (start_date <= edate <= end_date):
+                    continue
+            except Exception:
+                continue
+            geo = ev.get("geo_address_info") or {}
+            venue = ev.get("venue") or {}
+            city = geo.get("city_state", "") if isinstance(geo, dict) else ""
+            event_url = f"https://lu.ma/{ev.get('url', ev.get('api_id', ''))}"
+            events.append({
+                "source": f"luma:{city_slug}",
+                "name": ev.get("name", ""),
+                "description": ev.get("description", "")[:300],
+                "url": event_url,
+                "start": raw_start[:16],  # already ISO: "2026-03-26T21:00"
+                "venue": venue.get("name", "") if isinstance(venue, dict) else "",
+                "address": city,
+            })
+    except Exception as ex:
+        print(f"  [luma:{city_slug}] {ex}")
+    return events
+
+
+# ── allevents.in ───────────────────────────────────────────────────────────────
+def fetch_allevents_category(path: str, start_date: datetime, end_date: datetime) -> list[dict]:
+    """Fetch events from an allevents.in/boston/<path> category page via JSON-LD."""
+    import re
+    events = []
+    url = f"https://allevents.in/boston/{path}"
+    try:
+        r = requests.get(url, headers=HEADERS, timeout=12)
+        if r.status_code != 200:
+            return []
+        # Extract all JSON-LD script blocks
+        scripts = re.findall(
+            r'<script type="application/ld\+json"[^>]*>(.*?)</script>',
+            r.text, re.DOTALL
+        )
+        for script in scripts:
+            try:
+                data = json.loads(script.replace("\\/", "/"))
+            except Exception:
+                continue
+            if not (isinstance(data, list) and data and data[0].get("@type") == "Event"):
+                continue
+            for item in data:
+                raw_start = item.get("startDate", "")
+                try:
+                    edate = datetime.fromisoformat(raw_start[:10])
+                    if not (start_date <= edate <= end_date):
+                        continue
+                except Exception:
+                    continue
+                loc = item.get("location", {})
+                addr = loc.get("address", {}) if isinstance(loc, dict) else {}
+                venue_name = loc.get("name", "") if isinstance(loc, dict) else ""
+                city = addr.get("addressLocality", "") if isinstance(addr, dict) else ""
+                state = addr.get("addressRegion", "") if isinstance(addr, dict) else ""
+                def _unescape(s: str) -> str:
+                    import html as _html
+                    return _html.unescape(s)
+                events.append({
+                    "source": f"allevents:{path}",
+                    "name": _unescape(item.get("name", "")),
+                    "description": _unescape(item.get("description", "")[:300]),
+                    "url": item.get("url", ""),
+                    "start": raw_start,
+                    "venue": _unescape(venue_name),
+                    "address": f"{city}, {state}".strip(", "),
+                })
+            break  # only parse the first Event list found
+    except Exception as ex:
+        print(f"  [allevents:{path}] {ex}")
+    return events
+
+
 # ── Generic URL scrape ─────────────────────────────────────────────────────────
 def fetch_scrape_url(name: str, url: str) -> list[dict]:
     """Fetch a page and return its text as a single pseudo-event for AI extraction."""
@@ -194,7 +306,10 @@ def fetch_scrape_url(name: str, url: str) -> list[dict]:
         if r.status_code != 200:
             return []
         soup = BeautifulSoup(r.text, "html.parser")
-        text = soup.get_text(separator="\n")[:4000]
+        # strip nav/footer/script noise before truncating
+        for tag in soup(["nav", "footer", "header", "script", "style", "aside"]):
+            tag.decompose()
+        text = soup.get_text(separator="\n", strip=True)[:10000]
         return [{
             "source": name,
             "name": f"[PAGE] {name}",
@@ -207,4 +322,420 @@ def fetch_scrape_url(name: str, url: str) -> list[dict]:
         }]
     except Exception as ex:
         print(f"  [{name}] {ex}")
+        return []
+
+
+# ── Ticketmaster ────────────────────────────────────────────────────────────────
+def _keychain_get(service: str) -> str:
+    """Read a secret from macOS Keychain. Returns empty string if not found."""
+    import subprocess, os
+    try:
+        r = subprocess.run(
+            ["security", "find-generic-password", "-a", os.environ.get("USER", ""), "-s", service, "-w"],
+            capture_output=True, text=True, timeout=5
+        )
+        return r.stdout.strip() if r.returncode == 0 else ""
+    except Exception:
+        return ""
+
+
+def fetch_ticketmaster(start_date: datetime, end_date: datetime) -> list[dict]:
+    """Fetch Boston events from Ticketmaster Discovery API.
+    Reads API key and secret from macOS Keychain — never stored elsewhere."""
+    api_key = _keychain_get("TICKETMASTER_API-KEY")
+    if not api_key:
+        print("  [ticketmaster] no API key in Keychain (TICKETMASTER_API-KEY)")
+        return []
+    try:
+        start_str = start_date.strftime("%Y-%m-%dT00:00:00Z")
+        end_str   = end_date.strftime("%Y-%m-%dT23:59:59Z")
+        url = "https://app.ticketmaster.com/discovery/v2/events.json"
+        params = {
+            "apikey": api_key,
+            "city": "Boston",
+            "stateCode": "MA",
+            "size": 50,
+            "sort": "date,asc",
+            "startDateTime": start_str,
+            "endDateTime": end_str,
+            "classificationName": "music,arts,theatre,comedy",
+        }
+        r = requests.get(url, params=params, headers=HEADERS, timeout=10)
+        if r.status_code != 200:
+            print(f"  [ticketmaster] HTTP {r.status_code}")
+            return []
+        body = r.json()
+        items = body.get("_embedded", {}).get("events", [])
+        out = []
+        for item in items:
+            name = item.get("name", "")
+            event_url = item.get("url", "")
+            start_dt = (item.get("dates", {}).get("start", {}).get("dateTime") or
+                        item.get("dates", {}).get("start", {}).get("localDate") or "")
+            venues = item.get("_embedded", {}).get("venues", [])
+            venue_name = venues[0].get("name", "") if venues else ""
+            city = venues[0].get("city", {}).get("name", "") if venues else "Boston"
+            price_ranges = item.get("priceRanges", [])
+            price_str = ""
+            if price_ranges:
+                low  = price_ranges[0].get("min")
+                high = price_ranges[0].get("max")
+                if low is not None:
+                    price_str = f"${int(low)}" if (high is None or int(low) == int(high)) else f"${int(low)}–${int(high)}"
+            out.append({
+                "source": "ticketmaster",
+                "name": name,
+                "description": item.get("info", "") or item.get("pleaseNote", ""),
+                "url": event_url,
+                "start": start_dt[:16] if start_dt else "",
+                "venue": venue_name,
+                "address": f"{city}, MA",
+                "price": price_str,
+            })
+        return out
+    except Exception as ex:
+        print(f"  [ticketmaster] {ex}")
+        return []
+
+
+def fetch_eventbrite_api(term: str, start_date: datetime, end_date: datetime) -> list[dict]:
+    """Fetch Boston events from the Eventbrite v3 API using a private token from Keychain.
+
+    Uses proper OAuth2 bearer auth — not web scraping.
+    Reads token from Keychain service EVENTBRITE_TOKEN.
+    """
+    token = _keychain_get("EVENTBRITE_TOKEN")
+    if not token:
+        print("  [eventbrite_api] no token in Keychain (EVENTBRITE_TOKEN)")
+        return []
+    headers = {**HEADERS, "Authorization": f"Bearer {token}"}
+    params = {
+        "location.address": "Boston, MA",
+        "location.within": "15mi",
+        "start_date.range_start": start_date.strftime("%Y-%m-%dT00:00:00"),
+        "start_date.range_end": end_date.strftime("%Y-%m-%dT23:59:59"),
+        "expand": "venue",
+        "page_size": 50,
+        "sort_by": "date",
+    }
+    if term:
+        params["q"] = term.replace("+", " ")
+    url = "https://www.eventbriteapi.com/v3/events/search/"
+    out = []
+    seen: set[str] = set()
+    page = 1
+    while True:
+        params["page"] = page
+        try:
+            r = requests.get(url, headers=headers, params=params, timeout=12)
+            if r.status_code == 401:
+                print("  [eventbrite_api] 401 — token invalid or app still under review at eventbrite.com/platform/api-keys")
+                break
+            if r.status_code == 403:
+                print("  [eventbrite_api] 403 — app may be pending Eventbrite review")
+                break
+            if r.status_code == 404:
+                print("  [eventbrite_api] 404 — endpoint not found (Eventbrite shut down /events/search/ in Dec 2019)")
+                break
+            if r.status_code != 200:
+                print(f"  [eventbrite_api] HTTP {r.status_code}")
+                break
+            body = r.json()
+            events = body.get("events", [])
+            for ev in events:
+                ev_url = ev.get("url", "")
+                ev_id  = ev.get("id", "")
+                key    = ev_url or ev_id
+                if key in seen:
+                    continue
+                seen.add(key)
+                name = (ev.get("name") or {}).get("text", "")
+                desc = (ev.get("description") or {}).get("text", "")[:300]
+                start_raw = (ev.get("start") or {}).get("local", "")
+                venue_obj = ev.get("venue") or {}
+                venue_name = venue_obj.get("name", "")
+                addr_obj   = venue_obj.get("address") or {}
+                city       = addr_obj.get("city", "")
+                state      = addr_obj.get("region", "")
+                street     = addr_obj.get("address_1", "")
+                address    = ", ".join(filter(None, [street, city, state])) if city else ""
+                out.append({
+                    "source": f"eventbrite:{term or 'boston'}",
+                    "name": name,
+                    "description": desc,
+                    "url": ev_url,
+                    "start": start_raw[:16] if start_raw else "",
+                    "venue": venue_name,
+                    "address": address,
+                })
+            pagination = body.get("pagination", {})
+            if not pagination.get("has_more_items"):
+                break
+            page += 1
+            if page > 3:  # cap at 150 events per term to stay well under rate limit
+                break
+            time.sleep(0.5)
+        except Exception as ex:
+            print(f"  [eventbrite_api:{term}] {ex}")
+            break
+    label = f"term={term}" if term else "all"
+    print(f"  [eventbrite_api:{label}] {len(out)} events")
+    return out
+
+
+def fetch_meetup(source_name: str, category_id: str = None, query: str = "",
+                 start_date: datetime = None, end_date: datetime = None) -> list[dict]:
+    """Fetch events from Meetup via their public GraphQL API (no auth needed).
+
+    category_id: Meetup topic category (546=Tech, 292=Career/Business, 633=Sci/Ed, etc.)
+    query: keyword search string (used when no category_id)
+    """
+    GQL = "https://www.meetup.com/gql2"
+    gql_query = """
+query RecommendedEvents($filter: RecommendedEventsFilter!) {
+  recommendedEvents(filter: $filter, first: 50) {
+    edges {
+      node {
+        id title dateTime endTime eventUrl description
+        venue { name address city }
+        group { name urlname }
+      }
+    }
+  }
+}
+"""
+    filter_args: dict = {
+        "lat": 42.36,
+        "lon": -71.06,
+        "startDateRange": (start_date or datetime.now()).strftime("%Y-%m-%dT00:00:00-04:00[US/Eastern]"),
+    }
+    if category_id:
+        filter_args["topicCategoryId"] = str(category_id)
+    try:
+        r = requests.post(GQL, json={"query": gql_query, "variables": {"filter": filter_args}},
+                          headers={"Content-Type": "application/json", "User-Agent": "Mozilla/5.0"},
+                          timeout=12)
+        if r.status_code != 200:
+            print(f"  [{source_name}] Meetup HTTP {r.status_code}")
+            return []
+        edges = r.json().get("data", {}).get("recommendedEvents", {}).get("edges", [])
+        out = []
+        for e in edges:
+            node = e.get("node", {})
+            dt = node.get("dateTime", "")[:10]
+            if end_date and dt > end_date.strftime("%Y-%m-%d"):
+                continue
+            venue = node.get("venue") or {}
+            out.append({
+                "source":      source_name,
+                "name":        node.get("title", ""),
+                "description": (node.get("description") or "")[:500],
+                "url":         node.get("eventUrl", ""),
+                "start":       node.get("dateTime", "")[:16],
+                "date":        dt,
+                "venue":       venue.get("name", ""),
+                "address":     venue.get("city", ""),
+            })
+        print(f"  [{source_name}] {len(out)} meetup events")
+        return out
+    except Exception as ex:
+        print(f"  [{source_name}] Meetup error: {ex}")
+        return []
+
+
+def fetch_instagram(source_name: str, username: str, max_posts: int = 12) -> list[dict]:
+    """Fetch recent posts from a public Instagram profile using a headless browser.
+
+    Uses Playwright to load the page exactly like Chrome incognito — no login needed
+    for public profiles. Intercepts the web_profile_info API response to get captions.
+    Returns a [PAGE] blob for AI extraction — same pipeline as scrape_url.
+    """
+    try:
+        from playwright.sync_api import sync_playwright
+        from datetime import datetime as _dt
+        posts_data = []
+
+        def _handle(response):
+            if "web_profile_info" in response.url:
+                try:
+                    posts_data.append(response.json())
+                except Exception:
+                    pass
+
+        with sync_playwright() as p:
+            browser = p.chromium.launch(headless=True)
+            page = browser.new_page()
+            page.on("response", _handle)
+            page.goto(
+                f"https://www.instagram.com/{username}/",
+                wait_until="networkidle",
+                timeout=25000,
+            )
+            browser.close()
+
+        if not posts_data:
+            print(f"  [{source_name}] no data intercepted for @{username}")
+            return []
+
+        user = posts_data[0].get("data", {}).get("user", {})
+        edges = user.get("edge_owner_to_timeline_media", {}).get("edges", [])
+        captions = []
+        for e in edges[:max_posts]:
+            node = e.get("node", {})
+            cap_edges = node.get("edge_media_to_caption", {}).get("edges", [])
+            caption = cap_edges[0].get("node", {}).get("text", "") if cap_edges else ""
+            if not caption:
+                continue
+            ts = node.get("taken_at_timestamp", 0)
+            date_str = _dt.fromtimestamp(ts).strftime("%Y-%m-%d") if ts else ""
+            shortcode = node.get("shortcode", "")
+            post_url = f"https://www.instagram.com/p/{shortcode}/" if shortcode else ""
+            captions.append(f"[Post {date_str} {post_url}]\n{caption.strip()}")
+
+        if not captions:
+            print(f"  [{source_name}] no captions found for @{username}")
+            return []
+
+        combined = f"Instagram @{username} recent posts:\n\n" + "\n\n---\n\n".join(captions)
+        print(f"  [{source_name}] {len(captions)} posts from @{username}")
+        return [{
+            "source":      source_name,
+            "name":        f"[PAGE] {source_name}",
+            "description": combined[:12000],
+            "url":         f"https://www.instagram.com/{username}/",
+            "start":       "",
+            "venue":       "",
+            "address":     "",
+            "_raw":        True,
+        }]
+    except Exception as ex:
+        print(f"  [{source_name}] Instagram error: {ex}")
+        return []
+
+
+def fetch_microdata_url(source_name: str, url: str, start_date: datetime, end_date: datetime) -> list[dict]:
+    """Fetch a page and extract schema.org Event microdata (itemprop attributes).
+
+    Used for sites like thebostoncalendar.com that embed structured data via
+    itemscope/itemprop instead of JSON-LD.  No AI needed — deterministic, free.
+    """
+    import re as _re
+    try:
+        r = requests.get(url, headers=HEADERS, timeout=15)
+        if r.status_code != 200:
+            print(f"  [{source_name}] HTTP {r.status_code}")
+            return []
+        html = r.text
+        from urllib.parse import urljoin
+
+        # thebostoncalendar.com uses:
+        #   <h3 itemprop="name"><a href="/events/slug">NAME</a></h3>
+        #   <meta itemprop="startDate" content="YYYY-MM-DD" />
+        #   <a style="display:none" itemprop="url" href="FULL_URL" />
+        #   <meta itemprop="name" content="VENUE" />  (inside location block)
+        names  = _re.findall(r'<(?:h\d)[^>]*itemprop=["\']name["\'][^>]*>\s*<a[^>]*>([^<]+)</a>', html)
+        dates  = _re.findall(r'itemprop=["\']startDate["\']\s+content=["\']([^"\']+)["\']', html)
+        urls   = _re.findall(r'itemprop=["\']url["\']\s+href=["\']([^"\']+)["\']', html)
+        venues = _re.findall(r'itemprop=["\']location["\'][^>]*>.*?itemprop=["\']name["\']\s+content=["\']([^"\']+)["\']', html)
+
+        out = []
+        for i, (name, date_str) in enumerate(zip(names, dates)):
+            name = name.strip()
+            if not name:
+                continue
+            try:
+                event_date = datetime.fromisoformat(date_str[:10]).date()
+                if event_date < start_date.date() or event_date > end_date.date():
+                    continue
+            except Exception:
+                continue
+            event_url = urls[i] if i < len(urls) else url
+            if event_url and not event_url.startswith("http"):
+                event_url = urljoin(url, event_url)
+            out.append({
+                "source":      source_name,
+                "name":        name,
+                "description": "",
+                "url":         event_url,
+                "start":       date_str[:16],
+                "date":        date_str[:10],
+                "venue":       venues[i].strip() if i < len(venues) else "",
+                "address":     "",
+            })
+        print(f"  [{source_name}] {len(out)} events (microdata)")
+        return out
+    except Exception as ex:
+        print(f"  [{source_name}] {ex}")
+        return []
+
+
+def fetch_jsonld_url(source_name: str, url: str, start_date: datetime, end_date: datetime) -> list[dict]:
+    """Fetch a page and extract schema.org Event/MusicEvent JSON-LD blocks directly.
+    
+    More reliable than AI extraction — no tokens spent, deterministic.
+    Good for: Concertful, Boston Hassle calendar, any site with structured data.
+    """
+    import re as _re
+    try:
+        r = requests.get(url, headers=HEADERS, timeout=10)
+        if r.status_code != 200:
+            print(f"  [{source_name}] HTTP {r.status_code}")
+            return []
+        ld_blocks = _re.findall(r'application/ld\+json[^>]*>(.*?)</script>', r.text, _re.DOTALL)
+        out = []
+        for block in ld_blocks:
+            try:
+                data = json.loads(block.strip())
+                items = data if isinstance(data, list) else [data]
+                for item in items:
+                    if item.get("@type") not in ("Event", "MusicEvent", "TheaterEvent",
+                                                  "SocialEvent", "FoodEvent", "EducationEvent"):
+                        continue
+                    name = item.get("name", "")
+                    if not name:
+                        continue
+                    start_raw = item.get("startDate", "")
+                    if not start_raw:
+                        continue
+                    start_str = start_raw[:16]  # ISO truncate
+                    # date filter
+                    try:
+                        event_date = datetime.fromisoformat(start_str[:10])
+                        if event_date < start_date or event_date > end_date:
+                            continue
+                    except Exception:
+                        pass
+                    # location
+                    loc = item.get("location", {})
+                    venue_name = loc.get("name", "") if isinstance(loc, dict) else ""
+                    addr = loc.get("address", {}) if isinstance(loc, dict) else {}
+                    if isinstance(addr, dict):
+                        city  = addr.get("addressLocality", "")
+                        state = addr.get("addressRegion", "")
+                        address_str = f"{city}, {state}" if city else ""
+                    else:
+                        address_str = str(addr)
+                    # skip non-Boston events (for sites that mix locations)
+                    city_lower = (city if isinstance(city, str) else "").lower()
+                    state_lower = (state if isinstance(state, str) else "").lower()
+                    if state_lower and state_lower not in ("ma", "massachusetts", ""):
+                        continue
+                    if city_lower and city_lower not in ("boston", "cambridge", "somerville",
+                                                          "brookline", "allston", "brighton", ""):
+                        continue
+                    out.append({
+                        "source": source_name,
+                        "name": name,
+                        "description": item.get("description", ""),
+                        "url": item.get("url", url),
+                        "start": start_str,
+                        "venue": venue_name,
+                        "address": address_str,
+                    })
+            except Exception:
+                continue
+        print(f"  [{source_name}] {len(out)} events (JSON-LD)")
+        return out
+    except Exception as ex:
+        print(f"  [{source_name}] {ex}")
         return []

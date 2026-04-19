@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kirk's Boston</title>
+<title>Kirk's Boston — April 19, 2026</title>
 <style>
   body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
           background: #0f0f0f; color: #e8e8e8; margin: 0; padding: 24px; }
@@ -39,65 +39,45 @@
   .cost-models { margin-top: 6px; display: flex; flex-wrap: wrap; gap: 8px; }
   .cost-model  { background: #1e1e1e; border: 1px solid #2a2a2a; border-radius: 4px;
                   padding: 2px 8px; font-size: 0.72rem; color: #666; }
+  .sources-bar { font-size: 0.75rem; color: #555; margin-bottom: 20px;
+                  display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+  .src-pill    { background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 4px;
+                  padding: 2px 8px; }
+  .src-pill b  { color: #888; }
   .footer      { margin-top: 40px; font-size: 0.75rem; color: #555; }
   .oyster-bar  { background: #0a1a0a; border: 1px solid #1a3a1a; border-radius: 8px;
                   padding: 14px 16px; margin-bottom: 24px; }
   .oyster-title { font-size: 0.9rem; font-weight: 700; color: #7fff7f; margin-bottom: 10px; }
   .oyster-days  { display: flex; gap: 4px; flex-wrap: wrap; margin-bottom: 8px; }
-  .oday-btn    { padding: 3px 10px; border-radius: 99px; border: 1px solid #1e3a1e;
-                  background: #0d200d; color: #4a8a4a; font-size: 0.72rem; cursor: pointer; }
+  .oday-btn     { padding: 3px 10px; border-radius: 99px; border: 1px solid #1e3a1e;
+                   background: #0d200d; color: #4a8a4a; font-size: 0.72rem; cursor: pointer; }
   .oday-btn.active { background: #1a3a1a; color: #7fff7f; border-color: #3a6a3a; font-weight: 700; }
   .oyster-location { display: flex; align-items: center; gap: 4px; flex-wrap: wrap; margin-bottom: 12px; font-size: 0.7rem; color: #3a5a3a; }
   .ohood-btn   { padding: 2px 8px; border-radius: 99px; border: 1px solid #1a2e1a;
                   background: #080f08; color: #3a6a3a; font-size: 0.7rem; cursor: pointer; }
   .ohood-btn.active { background: #1a3020; color: #afffaf; border-color: #2a5a3a; font-weight: 700; }
-  .oyster-tier  { font-size: 0.68rem; color: #3a5a3a; padding: 4px 0 2px; letter-spacing: 0.05em; text-transform: uppercase; }
-  .oyster-list  { display: flex; flex-direction: column; gap: 6px; }
+  .oyster-tier { font-size: 0.68rem; color: #3a5a3a; padding: 4px 0 2px; letter-spacing: 0.05em; text-transform: uppercase; }
+  .oyster-list { display: flex; flex-direction: column; gap: 6px; }
   .oyster-item { display: flex; justify-content: space-between; align-items: baseline;
                   background: #0d1a0d; border: 1px solid #1a2e1a; border-radius: 6px;
                   padding: 7px 11px; font-size: 0.78rem; color: #aaa; }
   .oyster-item b { color: #7fff7f; font-size: 0.82rem; }
-  .oyster-meta  { font-size: 0.72rem; color: #556; margin-top: 2px; }
+  .oyster-meta { font-size: 0.72rem; color: #556; margin-top: 2px; }
   .oyster-hours { font-size: 0.75rem; color: #7fff7f; opacity: 0.7; white-space: nowrap; margin-left: 12px; }
   .oyster-scroll { max-height: 300px; overflow-y: auto; padding-right: 2px; }
-  .ev-modal-bg  { position:fixed; inset:0; background:rgba(0,0,0,0.75); z-index:200;
-                   display:flex; align-items:flex-end; justify-content:center; }
-  @media(min-width:600px){ .ev-modal-bg { align-items:center; } }
-  .ev-modal     { background:#1c1c1c; border:1px solid #333; border-radius:16px 16px 0 0;
-                   width:100%; max-width:580px; max-height:85vh; overflow-y:auto;
-                   padding:20px; box-sizing:border-box; }
-  @media(min-width:600px){ .ev-modal { border-radius:12px; } }
-  .ev-modal-x   { float:right; background:none; border:none; color:#666; font-size:1.3rem;
-                   cursor:pointer; padding:0; line-height:1; margin-left:8px; }
-  .ev-modal h2  { font-size:1rem; font-weight:700; color:#fff; margin:0 0 10px; }
-  .ev-modal-meta { font-size:0.8rem; color:#888; margin-bottom:6px; line-height:1.6; }
-  .ev-modal-reason { font-size:0.82rem; color:#c8c8c8; margin-bottom:8px; padding:6px 10px;
-                      background:#222; border-radius:4px; }
-  .ev-modal-desc { font-size:0.76rem; color:#666; margin-bottom:12px; max-height:100px;
-                    overflow-y:auto; line-height:1.5; white-space:pre-wrap; }
-  .ev-modal-footer { display:flex; gap:8px; flex-wrap:wrap; margin-top:12px; padding-top:12px; border-top:1px solid #2a2a2a; }
-  .ev-modal-link { display:inline-block; background:#38bdf8; color:#000; font-size:0.82rem;
-                    font-weight:700; padding:8px 18px; border-radius:6px; text-decoration:none; }
-  .ev-modal-src  { font-size:0.72rem; color:#555; align-self:center; }
-  .sources-bar { background: #111; border: 1px solid #222; border-radius: 8px;
-                  padding: 10px 16px; margin-bottom: 20px; font-size: 0.78rem; color: #666; }
-  .hotrest-bar  { background: #0d0d1a; border: 1px solid #1a1a3a; border-radius: 8px;
-                  padding: 10px 16px; margin-bottom: 20px; }
-  .hotrest-title { font-size: 0.9rem; font-weight: 700; color: #9ab; margin-bottom: 8px; cursor: pointer; user-select: none; }
-  .hotrest-grid  { display: flex; flex-wrap: wrap; gap: 8px; }
-  .hotrest-card  { background: #111; border: 1px solid #1e1e3a; border-radius: 6px;
-                   padding: 8px 12px; min-width: 200px; max-width: 280px; flex: 1; }
-  .hotrest-name  { font-size: 0.85rem; font-weight: 600; color: #ccd; }
-  .hotrest-vibe  { font-size: 0.72rem; color: #667; margin-top: 2px; }
-  .hotrest-meta  { font-size: 0.7rem; color: #9ab; margin-top: 4px; }
-  .src-pill    { display: inline-block; background: #1e1e1e; border: 1px solid #2a2a2a;
-                  border-radius: 99px; padding: 2px 10px; margin: 2px; font-size: 0.75rem; color: #aaa; }
   .show-more-btn { background: #1a1a1a; border: 1px solid #333; border-radius: 6px;
                     padding: 8px 16px; color: #888; font-size: 0.8rem; cursor: pointer;
                     margin-bottom: 24px; display: block; width: 100%; text-align: left; }
   .show-more-btn:hover { border-color: #555; color: #ccc; }
   #extra-events { display: none; }
   .extra-label  { font-size: 0.72rem; color: #555; font-style: italic; margin-left: 6px; }
+  .nav          { display: flex; gap: 4px; margin-bottom: 20px; border-bottom: 1px solid #222; padding-bottom: 12px; }
+  .nav-link     { padding: 6px 16px; border-radius: 6px; font-size: 0.85rem; color: #666;
+                   text-decoration: none; border: 1px solid transparent; }
+  .nav-link:hover { color: #aaa; border-color: #333; }
+  .nav-active   { padding: 6px 16px; border-radius: 6px; font-size: 0.85rem; font-weight: 600;
+                   color: #38bdf8; border: 1px solid #38bdf833; background: #38bdf811;
+                   text-decoration: none; }
   .day-filter   { position: sticky; top: 0; z-index: 10; background: #0f0f0f;
                    padding: 10px 0 8px; display: flex; gap: 6px; flex-wrap: wrap;
                    border-bottom: 1px solid #222; margin-bottom: 16px; }
@@ -115,708 +95,1047 @@
   .day-section.collapsed .day-toggle { transform: rotate(-90deg); }
   .day-section.hidden-by-filter { display: none; }
   .day-header   { cursor: pointer; user-select: none; }
-  .nav          { display: flex; gap: 4px; margin-bottom: 20px; border-bottom: 1px solid #222; padding-bottom: 12px; }
-  .nav-link     { padding: 6px 16px; border-radius: 6px; font-size: 0.85rem; color: #666;
-                   text-decoration: none; border: 1px solid transparent; }
-  .nav-link:hover { color: #aaa; border-color: #333; }
-  .nav-active   { padding: 6px 16px; border-radius: 6px; font-size: 0.85rem; font-weight: 600;
-                   color: #38bdf8; border: 1px solid #38bdf833; background: #38bdf811;
-                   text-decoration: none; }
   .feedback     { margin-top: 8px; display: flex; gap: 6px; flex-wrap: wrap; }
   .fb-btn       { background: none; border: 1px solid #2a2a2a; border-radius: 99px;
                    padding: 3px 10px; font-size: 0.7rem; color: #555; cursor: pointer; }
   .fb-btn:hover { border-color: #555; color: #aaa; }
   .fb-btn.done  { border-color: #444; color: #7fff7f; }
   .fb-btn.skip  { border-color: #444; color: #ff7070; }
-  #loading      { color: #555; font-size: 0.9rem; padding: 40px 0; }
 </style>
 </head>
 <body>
-
   <nav class="nav">
     <a href="https://highendeventfinder.netlify.app/" class="nav-link">Brian</a>
     <a href="https://highendeventfinder.netlify.app/dates" class="nav-link">Dates</a>
     <a href="https://highendeventfinder.netlify.app/kirk" class="nav-active">Kirk</a>
   </nav>
-
-  <div id="loading">Loading events…</div>
-  <div id="main" style="display:none">
-    <h1>Kirk's Boston</h1>
-    <div class="sub" id="subtitle"></div>
-
-    <div class="cost-bar" id="cost-bar"></div>
-
-    <div class="sources-bar" id="sources-bar"></div>
-
-    <div style="background:#0a0f1a;border:1px solid #1a2a3a;border-radius:8px;padding:14px 16px;margin-bottom:20px;font-size:0.8rem;color:#888">
-      <div style="font-weight:700;color:#38bdf8;margin-bottom:6px">&#128100; Kirk Brown &mdash; Sales Engineer</div>
-      <div style="line-height:1.7">
-        <span style="color:#aaa">Background:</span> Mapbox (SoftBank), Bit Flow &nbsp;&middot;&nbsp; Finishing master&rsquo;s &nbsp;&middot;&nbsp; Has a car, travels for quality events<br>
-        <span style="color:#aaa">Hunting for:</span> VC &amp; startup events, tech meetups, SE/presales community, founder dinners, demo days<br>
-        <span style="color:#aaa">Range:</span> Boston &middot; Cambridge &middot; Somerville &middot; Providence RI<br>
-        <span style="color:#aaa">Scoring:</span> Event caliber &gt; location &mdash; high-company-quality events score highest regardless of distance
-      </div>
-      <details style="margin-top:10px">
-        <summary style="cursor:pointer;color:#38bdf8;font-size:0.75rem;user-select:none">&#9660; View full scoring prompt</summary>
-        <pre id="kirk-prompt" style="margin-top:8px;font-size:0.7rem;color:#666;white-space:pre-wrap;font-family:inherit;line-height:1.6"></pre>
-      </details>
-    </div>
-
-    <div class="oyster-bar" id="oyster-bar"></div>
-
-    <div class="hotrest-bar" id="hotrest-bar" style="display:none"></div>
-
-    <div class="legend">
-      <b>Score 1–10</b> — how relevant this event is for you &nbsp;|&nbsp;
-      <b>8–10</b> must consider &nbsp;·&nbsp;
-      <b>5–7</b> worth knowing &nbsp;·&nbsp;
-      <b>1–4</b> low priority
-    </div>
-
-    <div class="day-filter" id="day-filter"></div>
-    <div id="events-container"></div>
-
-    <button class="show-more-btn" id="extra-btn" onclick="toggleExtra()" style="display:none"></button>
-    <div id="extra-events"></div>
-
-    <div class="footer" id="footer"></div>
-  </div>
-
-  <!-- Netlify form stub (hidden, required for form detection) -->
-  <form name="event-feedback" data-netlify="true" netlify-honeypot="bot-field" style="display:none;position:absolute">
-    <input type="hidden" name="form-name" value="event-feedback">
-    <input name="bot-field">
-    <input name="persona">
-    <input name="vote">
-    <input name="event_url">
-    <input name="event_name">
-  </form>
-
+  <h1>Kirk's Boston</h1>
+  <div class="sub">April 19 – April 25, 2026 &nbsp;·&nbsp; 39 events</div>
+  <div class="cost-bar">
+          <div style="display:flex;gap:20px;margin-bottom:10px">
+            <span class="cost-item">Week: <b>$1.3218</b></span>
+            <span class="cost-item">Month: <b>$3.0882</b></span>
+            <span class="cost-item">Total: <b>$4.3622</b></span>
+          </div>
+          <table style="width:100%;border-collapse:collapse;font-size:0.75rem;color:#888">
+            <thead>
+              <tr style="color:#555;text-align:left;border-bottom:1px solid #222">
+                <th style="padding:4px 8px 4px 0">Run</th>
+                <th style="padding:4px 8px">Events</th>
+                <th style="padding:4px 8px">Model</th>
+                <th style="padding:4px 8px">Cost</th>
+                <th style="padding:4px 8px">Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="background:#1e2a1e">
+                <td>4/19 8:16 AM <b style='color:#7fff7f;font-size:0.65rem'>LATEST</b></td>
+                <td style="color:#aaa">38 cached / 364 scored</td>
+                <td style="color:#aaa">claude-haiku-4-5-20251001 $0.0456</td>
+                <td style="color:#e8e8e8;font-weight:600">$0.0456</td>
+                <td style="color:#666">50.2s</td>
+              </tr>
+              <tr>
+                <td>4/19 8:12 AM</td>
+                <td style="color:#aaa">216 cached / 368 scored</td>
+                <td style="color:#aaa">claude-haiku-4-5-20251001 $0.0555</td>
+                <td style="color:#e8e8e8;font-weight:600">$0.0555</td>
+                <td style="color:#666">59.4s</td>
+              </tr>
+              <tr>
+                <td>4/19 8:11 AM</td>
+                <td style="color:#aaa">107 cached / 196 scored</td>
+                <td style="color:#aaa">claude-haiku-4-5-20251001 $0.0197</td>
+                <td style="color:#e8e8e8;font-weight:600">$0.0197</td>
+                <td style="color:#666">20.4s</td>
+              </tr>
+              <tr>
+                <td>4/18 11:21 PM</td>
+                <td style="color:#aaa">166 cached / 8 scored</td>
+                <td style="color:#aaa">claude-haiku-4-5-20251001 $0.0242</td>
+                <td style="color:#e8e8e8;font-weight:600">$0.0242</td>
+                <td style="color:#666">26.5s</td>
+              </tr>
+              <tr>
+                <td>4/18 2:56 PM</td>
+                <td style="color:#aaa">0 cached / 658 scored</td>
+                <td style="color:#aaa">claude-haiku-4-5-20251001 $0.0712</td>
+                <td style="color:#e8e8e8;font-weight:600">$0.0712</td>
+                <td style="color:#666">67.7s</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+  <div class="sources-bar">Sources: <span class="src-pill">Boston Bar Assoc <b>12</b></span><span class="src-pill">WBUR Events <b>11</b></span><span class="src-pill">MassRobotics events <b>4</b></span><span class="src-pill">do617 <b>4</b></span><span class="src-pill">Meetup <b>4</b></span><span class="src-pill">luma <b>2</b></span><span class="src-pill">Boston Calendar <b>2</b></span></div>
+  <div class="oyster-bar" id="oyster-bar"></div>
 <script>
 (function() {
+  var oysterBar = document.getElementById('oyster-bar');
+  if (!oysterBar) return;
 
-  // ── Helpers ──────────────────────────────────────────────────────────────
+  var oysters = [{"source": "known_venue", "name": "Providence Oyster Bar \u2014 $1 oysters + $1 littlenecks daily 3\u20135:30pm", "description": "Federal Hill, Providence RI. Standing deal: $1 oysters + $1 littlenecks daily 3\u20135:30pm", "url": "https://providenceoysterbar.com/", "start": "", "venue": "Providence Oyster Bar", "address": "Federal Hill, Providence RI", "city": "Providence", "score": 8, "reason": "$1 oysters + $1 littlenecks daily 3\u20135:30pm in Providence, acceptable per user preferences", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 10, "_proximity_label": "nearby"}, {"source": "known_venue", "name": "Mill's Tavern \u2014 Half-price oysters + $1 oysters daily 5\u20136:30pm", "description": "Downtown Providence RI. Standing deal: Half-price oysters + $1 oysters daily 5\u20136:30pm", "url": "https://www.millstavernrestaurant.com", "start": "", "venue": "Mill's Tavern", "address": "Downtown Providence RI", "city": "Providence", "score": 8, "reason": "Half-price + $1 oysters daily 5\u20136:30pm in Providence, excellent deal", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 10, "_proximity_label": "nearby"}, {"source": "known_venue", "name": "Pizzico Oyster Bar \u2014 Half-price raw bar oysters daily 4\u20136pm; 9\u201310pm weekends", "description": "Hope Street, Providence RI. Standing deal: Half-price raw bar oysters daily 4\u20136pm; 9\u201310pm weekends", "url": "https://www.pizzico.com", "start": "", "venue": "Pizzico Oyster Bar", "address": "Hope Street, Providence RI", "city": "Providence", "score": 8, "reason": "Half-price oysters daily 4\u20136pm and 9\u201310pm weekends in Providence", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 10, "_proximity_label": "nearby"}, {"source": "known_venue", "name": "Federal Taphouse \u2014 $1 oysters daily 1\u20136:30pm", "description": "Federal Hill, Providence RI. Standing deal: $1 oysters daily 1\u20136:30pm", "url": "https://www.federaltaphouse.com", "start": "", "venue": "Federal Taphouse", "address": "Federal Hill, Providence RI", "city": "Providence", "score": 8, "reason": "$1 oysters daily 1\u20136:30pm in Providence, long happy hour window", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 10, "_proximity_label": "nearby"}, {"source": "deep_research", "name": "Batifol \u2014 $1 oysters", "description": "Kendall Square. $1 oysters, Daily, 4:00 PM - 6:00 PM.", "url": "", "start": "", "venue": "Batifol", "address": "Kendall Square", "score": 9, "reason": "Perfect for Kirk: $1 oysters in Kendall Square (his home area), daily 4-6 PM, buzzy bar scene", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 9, "_proximity_label": "nearby"}, {"source": "deep_research", "name": "Bambara Kitchen \u2014 $1 oysters", "description": "East Cambridge. $1 oysters, Daily, 5:00 PM - 7:00 PM.", "url": "", "start": "", "venue": "Bambara Kitchen", "address": "East Cambridge", "score": 9, "reason": "$1 oysters in East Cambridge, daily 5-7 PM, walkable from Cambridge, solid deal", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 9, "_proximity_label": "nearby"}, {"source": "deep_research", "name": "Viale \u2014 $1 oysters", "description": "Central Square. $1 oysters, Sat-Thu 5:00-7:00 PM; Fridays 4:00-7:00 PM.", "url": "", "start": "", "venue": "Viale", "address": "Central Square", "score": 9, "reason": "$1 oysters in Central Square, extended hours (Sat-Thu 5-7 PM, Fri 4-7 PM), great neighborhood bar scene", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 9, "_proximity_label": "nearby"}, {"source": "deep_research", "name": "Althea \u2014 $1 oysters", "description": "Central Square. $1 oysters, Daily, 2:00 PM - 5:00 PM.", "url": "", "start": "", "venue": "Althea", "address": "Central Square", "score": 9, "reason": "$1 oysters in Central Square, daily 2-5 PM, prime location for Kirk, excellent deal", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 9, "_proximity_label": "nearby"}, {"source": "deep_research", "name": "Caf\u00e9 Saint-Germain \u2014 $1 oysters", "description": "Cambridge. $1 oysters, Daily, 4:00 PM - 6:00 PM.", "url": "", "start": "", "venue": "Caf\u00e9 Saint-Germain", "address": "Cambridge", "score": 7, "reason": "$1 oysters in Cambridge, daily 4-6 PM, reliable neighborhood deal", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 9, "_proximity_label": "nearby"}, {"source": "known_venue", "name": "Woods Hill Pier 4 \u2014 Dollar oysters Mon\u2013Wed 5\u20136pm", "description": "Seaport. Standing deal: Dollar oysters Mon\u2013Wed 5\u20136pm", "url": "https://www.woodshillpier4.com", "start": "", "venue": "Woods Hill Pier 4", "address": "Seaport", "city": "Boston", "score": 9, "reason": "Dollar oysters Mon\u2013Wed 5\u20136pm at Seaport, excellent location and time", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 8, "_proximity_label": "easy"}, {"source": "known_venue", "name": "Legal Sea Foods Long Wharf \u2014 $1 oysters daily 3-6pm (bar area only)", "description": "Downtown/Waterfront. Standing deal: $1 oysters daily 3-6pm (bar area only)", "url": "https://www.legalseafoods.com/restaurants/boston-long-wharf", "start": "", "venue": "Legal Sea Foods Long Wharf", "address": "Downtown/Waterfront", "city": "Boston", "score": 8, "reason": "$1 oysters daily 3\u20136pm at Long Wharf, bar area only, solid deal", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 8, "_proximity_label": "easy"}, {"source": "known_venue", "name": "Legal Harborside \u2014 $1 oysters daily 3-6pm (bar area only)", "description": "Seaport. Standing deal: $1 oysters daily 3-6pm (bar area only)", "url": "https://www.legalseafoods.com/restaurants/boston-legal-harborside", "start": "", "venue": "Legal Harborside", "address": "Seaport", "city": "Boston", "score": 8, "reason": "$1 oysters daily 3\u20136pm at Seaport location, bar area only", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 8, "_proximity_label": "easy"}, {"source": "deep_research", "name": "Fin Point Oyster Bar + Grille \u2014 $1 oysters", "description": "Financial District. $1 oysters, Thursday \u2013 Sunday, 2:00 PM - 5:00 PM.", "url": "", "start": "", "venue": "Fin Point Oyster Bar + Grille", "address": "Financial District", "score": 8, "reason": "$1 oysters Thu\u2013Sun 2\u20135pm Financial District, buzzy bar scene", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 8, "_proximity_label": "easy"}, {"source": "deep_research", "name": "State Street Provisions \u2014 $1 oysters", "description": "Downtown/Waterfront. $1 oysters, Monday \u2013 Friday, 3:00 PM - 5:00 PM.", "url": "", "start": "", "venue": "State Street Provisions", "address": "Downtown/Waterfront", "score": 8, "reason": "$1 oysters Mon\u2013Fri 3\u20135pm Downtown/Waterfront, solid daily deal", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 8, "_proximity_label": "easy"}, {"source": "deep_research", "name": "The Bosworth \u2014 $1 oysters", "description": "Downtown. $1 oysters, Daily, starting at 5:00 PM (while supplies last).", "url": "", "start": "", "venue": "The Bosworth", "address": "Downtown", "score": 8, "reason": "$1 oysters daily from 5pm Downtown, while supplies last", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 8, "_proximity_label": "easy"}, {"source": "deep_research", "name": "Joe's Waterfront \u2014 $1 oysters", "description": "Downtown/Waterfront. $1 oysters, Daily, 5:00 PM to close (Seasonal through March).", "url": "", "start": "", "venue": "Joe's Waterfront", "address": "Downtown/Waterfront", "score": 8, "reason": "$1 oysters daily 5pm\u2013close Downtown/Waterfront, seasonal through March", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 8, "_proximity_label": "easy"}, {"source": "deep_research", "name": "Bostonia Public House \u2014 $1 oysters", "description": "Financial District. $1 oysters, Monday \u2013 Friday, 3:00 PM - 6:00 PM.", "url": "", "start": "", "venue": "Bostonia Public House", "address": "Financial District", "score": 8, "reason": "$1 oysters Mon\u2013Fri 3\u20136pm Financial District, long happy hour", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 8, "_proximity_label": "easy"}, {"source": "deep_research", "name": "Woods Hill Pier \u2014 $1 oysters (Bar only, limit 1 dozen)", "description": "Seaport. $1 oysters (Bar only, limit 1 dozen), Sunday & Monday, 5:00 PM - 10:00 PM.", "url": "", "start": "", "venue": "Woods Hill Pier", "address": "Seaport", "score": 8, "reason": "$1 oysters (bar only, 1 dozen limit) Sun & Mon 5\u201310pm Seaport", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 8, "_proximity_label": "easy"}, {"source": "deep_research", "name": "Limani \u2014 $1 oysters", "description": "Seaport. $1 oysters, Monday \u2013 Friday, 4:00 PM - 6:00 PM.", "url": "", "start": "", "venue": "Limani", "address": "Seaport", "score": 8, "reason": "$1 oysters Mon\u2013Fri 4\u20136pm Seaport, solid weekday happy hour", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 8, "_proximity_label": "easy"}, {"source": "deep_research", "name": "Lincoln Tavern & Restaurant \u2014 $1 oysters & $1 shrimp", "description": "South Boston. $1 oysters & $1 shrimp, Tuesdays, 10:00 AM - 10:00 PM (Summer Fri 1-4 PM).", "url": "", "start": "", "venue": "Lincoln Tavern & Restaurant", "address": "South Boston", "score": 8, "reason": "$1 oysters & shrimp Tue all day South Boston, long availability", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 8, "_proximity_label": "easy"}, {"source": "deep_research", "name": "The Broadway \u2014 $1 oysters", "description": "South Boston. $1 oysters, Wednesdays 11:30 AM - 1:00 AM; Daily 2:00 PM - 6:00 PM.", "url": "", "start": "", "venue": "The Broadway", "address": "South Boston", "score": 8, "reason": "$1 oysters Wed 11:30am\u20131am and daily 2\u20136pm South Boston", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 8, "_proximity_label": "easy"}, {"source": "deep_research", "name": "Publico Street Bistro & Garden \u2014 $1 oysters & shrimp", "description": "South Boston. $1 oysters & shrimp, Mondays & Tuesdays, 11:00 AM to close (or until sold out); Thursdays.", "url": "", "start": "", "venue": "Publico Street Bistro & Garden", "address": "South Boston", "score": 8, "reason": "$1 oysters & shrimp Mon\u2013Tue all day, Thu South Boston", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 8, "_proximity_label": "easy"}, {"source": "deep_research", "name": "The Merchant \u2014 $1 oysters", "description": "Downtown. $1 oysters, Monday & Friday, 4:00 PM - 7:00 PM.", "url": "", "start": "", "venue": "The Merchant", "address": "Downtown", "score": 7, "reason": "$1 oysters Mon & Fri 4\u20137pm Downtown, selective but good value", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 8, "_proximity_label": "easy"}, {"source": "deep_research", "name": "Matria \u2014 $1 oysters", "description": "Seaport. $1 oysters, Thursdays, 4:00 PM - 7:00 PM.", "url": "", "start": "", "venue": "Matria", "address": "Seaport", "score": 7, "reason": "$1 oysters Thu 4\u20137pm Seaport, good Thursday option", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 8, "_proximity_label": "easy"}, {"source": "deep_research", "name": "Loco Taqueria & Oyster Bar \u2014 $1 oysters", "description": "South Boston. $1 oysters, Mondays, 11:00 AM - 12:30 AM.", "url": "", "start": "", "venue": "Loco Taqueria & Oyster Bar", "address": "South Boston", "score": 7, "reason": "$1 oysters Mon 11am\u201312:30am South Boston, full-day deal", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 8, "_proximity_label": "easy"}, {"source": "deep_research", "name": "Gray's Hall \u2014 $1 oysters", "description": "South Boston. $1 oysters, Tuesdays, open until sold out.", "url": "", "start": "", "venue": "Gray's Hall", "address": "South Boston", "score": 7, "reason": "$1 oysters Tue until sold out South Boston", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 8, "_proximity_label": "easy"}, {"source": "deep_research", "name": "Rochambeau \u2014 $1 oysters", "description": "Back Bay. $1 oysters, Daily, 3:00 PM - 6:00 PM.", "url": "", "start": "", "venue": "Rochambeau", "address": "Back Bay", "score": 8, "reason": "$1 oysters daily 3\u20136pm Back Bay, consistent daily deal", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 7, "_proximity_label": "easy"}, {"source": "deep_research", "name": "Carrie Nation Cocktail Club \u2014 $1 oysters", "description": "Beacon Hill. $1 oysters, Tuesday \u2013 Thursday, 4:00 PM - 7:00 PM.", "url": "", "start": "", "venue": "Carrie Nation Cocktail Club", "address": "Beacon Hill", "score": 8, "reason": "$1 oysters Tue\u2013Thu 4\u20137pm Beacon Hill, good timing and neighborhood", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 7, "_proximity_label": "easy"}, {"source": "deep_research", "name": "Bootleg Special \u2014 $1 oysters", "description": "Back Bay. $1 oysters, Thursdays 5:00-10:00 PM; Fri-Sat late-night 10:00 PM.", "url": "", "start": "", "venue": "Bootleg Special", "address": "Back Bay", "score": 8, "reason": "$1 oysters Thu 5\u201310pm and Fri\u2013Sat late-night 10pm Back Bay", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 7, "_proximity_label": "easy"}, {"source": "known_venue", "name": "Legal Sea Foods Prudential \u2014 $1 oysters daily 3-6pm (bar area only)", "description": "Back Bay. Standing deal: $1 oysters daily 3-6pm (bar area only)", "url": "https://www.legalseafoods.com/restaurants/boston-prudential-center", "start": "", "venue": "Legal Sea Foods Prudential", "address": "Back Bay", "city": "Boston", "score": 7, "reason": "$1 oysters daily 3\u20136pm at Prudential, bar area only, Back Bay location", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 7, "_proximity_label": "easy"}, {"source": "known_venue", "name": "Legal Sea Foods Copley \u2014 $1 oysters daily 3-6pm (bar area only)", "description": "Back Bay. Standing deal: $1 oysters daily 3-6pm (bar area only)", "url": "https://www.legalseafoods.com/restaurants/boston-copley-place", "start": "", "venue": "Legal Sea Foods Copley", "address": "Back Bay", "city": "Boston", "score": 7, "reason": "$1 oysters daily 3\u20136pm at Copley, bar area only", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 7, "_proximity_label": "easy"}, {"source": "deep_research", "name": "Rebel's Guild \u2014 $1 oysters (Bar only)", "description": "Back Bay. $1 oysters (Bar only), Tuesdays, 5:00 PM until sold out.", "url": "", "start": "", "venue": "Rebel's Guild", "address": "Back Bay", "score": 7, "reason": "$1 oysters Tuesdays 5pm\u2013sold out Back Bay bar only", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 7, "_proximity_label": "easy"}, {"source": "deep_research", "name": "Sonsie \u2014 $1 oysters", "description": "Back Bay. $1 oysters, Wednesday \u2013 Sunday, 3:00 PM - 4:00 PM.", "url": "", "start": "", "venue": "Sonsie", "address": "Back Bay", "score": 7, "reason": "$1 oysters Wed\u2013Sun 3\u20134pm Back Bay, tight window but daily option", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 7, "_proximity_label": "easy"}, {"source": "deep_research", "name": "Prezza \u2014 $1 oysters (with beverage or app purchase)", "description": "North End. $1 oysters (with beverage or app purchase), Daily, 4:00 PM - 5:00 PM.", "url": "", "start": "", "venue": "Prezza", "address": "North End", "score": 7, "reason": "$1 oysters in North End (short trip), daily 4-5 PM, classic Boston bar neighborhood", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 7, "_proximity_label": "easy"}, {"source": "deep_research", "name": "Ilona \u2014 $1 oysters", "description": "South End. $1 oysters, Thursdays 5:00 PM - 1:00 AM; Fri-Sat 4:00 PM - 7:00 PM.", "url": "", "start": "", "venue": "Ilona", "address": "South End", "score": 7, "reason": "$1 oysters in South End, generous hours (Thu 5 PM-1 AM, Fri-Sat 4-7 PM), buzzy venue", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 7, "_proximity_label": "easy"}, {"source": "deep_research", "name": "Petit Robert Bistro \u2014 $1 oysters (limit 16 pp)", "description": "South End. $1 oysters (limit 16 pp), Monday \u2013 Thursday, 3:00 PM - 6:00 PM.", "url": "", "start": "", "venue": "Petit Robert Bistro", "address": "South End", "score": 7, "reason": "$1 oysters in South End, Mon-Thu 3-6 PM, upscale bistro scene, good deal", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 7, "_proximity_label": "easy"}, {"source": "deep_research", "name": "Warren Tavern \u2014 $1 oysters", "description": "Charlestown. $1 oysters, Monday \u2013 Friday, 3:00 PM - 6:00 PM.", "url": "", "start": "", "venue": "Warren Tavern", "address": "Charlestown", "score": 7, "reason": "$1 oysters in Charlestown, Mon-Fri 3-6 PM, historic bar neighborhood, reasonable trip", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 7, "_proximity_label": "easy"}, {"source": "deep_research", "name": "Tradesman \u2014 $1 Duxbury oysters", "description": "Charlestown. $1 Duxbury oysters, Saturday & Sunday, 11:00 AM - 3:00 PM.", "url": "", "start": "", "venue": "Tradesman", "address": "Charlestown", "score": 7, "reason": "$1 Duxbury oysters in Charlestown, weekend brunch/lunch (11 AM-3 PM), premium oysters at bargain", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 7, "_proximity_label": "easy"}, {"source": "known_venue", "name": "Island Creek Oyster Bar \u2014 $1 oysters at the bar, select hours", "description": "Kenmore. Standing deal: $1 oysters at the bar, select hours", "url": "https://islandcreekoysters.com/pages/boston", "start": "", "venue": "Island Creek Oyster Bar", "address": "Kenmore", "city": "Boston", "score": 9, "reason": "$1 oysters at the bar, Kenmore location, standing deal with buzzy bar scene", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 3, "_proximity_label": "hike"}, {"source": "known_venue", "name": "Row 34 \u2014 Dollar oysters Mon\u2013Wed 5\u20136pm", "description": "Fort Point. Standing deal: Dollar oysters Mon\u2013Wed 5\u20136pm", "url": "https://www.row34.com", "start": "", "venue": "Row 34", "address": "Fort Point", "city": "Boston", "score": 9, "reason": "Dollar oysters Mon\u2013Wed 5\u20136pm at Fort Point, perfect happy hour timing", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "https://maps.google.com/?q=Row%2034%20Fort%20Point%20Boston%20MA", "_inactive": false, "_proximity": 3, "_proximity_label": "hike"}, {"source": "known_venue", "name": "Russell House Tavern \u2014 $1 oysters 9\u201310pm Sun & Mon", "description": "Harvard Square. Standing deal: $1 oysters 9\u201310pm Sun & Mon", "url": "https://www.russellhouserestaurant.com", "start": "", "venue": "Russell House Tavern", "address": "Harvard Square", "city": "Boston", "score": 9, "reason": "$1 oysters 9\u201310pm Sun & Mon at Harvard Square, in Cambridge, ideal for Kirk", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 3, "_proximity_label": "hike"}, {"source": "deep_research", "name": "Russell House Tavern \u2014 $1 oysters", "description": "Harvard Square. $1 oysters, Sun-Thu 9:00-11:00 PM; Fri-Sat 10:00 PM-12:00 AM.", "url": "", "start": "", "venue": "Russell House Tavern", "address": "Harvard Square", "score": 8, "reason": "$1 oysters in Harvard Square (nearby), late-night hours (9 PM+), social bar atmosphere", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 3, "_proximity_label": "hike"}, {"source": "deep_research", "name": "Grafton Street Pub \u2014 $1 oysters", "description": "Harvard Square. $1 oysters, Monday \u2013 Friday, 5:00 PM - 7:00 PM.", "url": "", "start": "", "venue": "Grafton Street Pub", "address": "Harvard Square", "score": 8, "reason": "$1 oysters in Harvard Square, Mon-Fri 5-7 PM, walkable from Cambridge, good bar scene", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 3, "_proximity_label": "hike"}, {"source": "deep_research", "name": "Charlie's Kitchen \u2014 $1 oysters ($2 normally)", "description": "Harvard Square. $1 oysters ($2 normally), Sundays, 12:00 PM - 4:00 PM & 6:00-8:00 PM.", "url": "", "start": "", "venue": "Charlie's Kitchen", "address": "Harvard Square", "score": 8, "reason": "$1 oysters in Harvard Square, Sundays (full day coverage), 50% discount off normal price", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 3, "_proximity_label": "hike"}, {"source": "deep_research", "name": "Alcove \u2014 $1 oysters (with beverage purchase)", "description": "West End. $1 oysters (with beverage purchase), Monday \u2013 Friday, 3:00 PM - 5:00 PM.", "url": "", "start": "", "venue": "Alcove", "address": "West End", "score": 7, "reason": "$1 oysters (beverage purchase) Mon\u2013Fri 3\u20135pm West End", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 3, "_proximity_label": "hike"}, {"source": "deep_research", "name": "Trillium Brewing Co. \u2014 $1 oysters", "description": "Fort Point. $1 oysters, Monday \u2013 Friday, 2:00 PM - 4:00 PM.", "url": "", "start": "", "venue": "Trillium Brewing Co.", "address": "Fort Point", "score": 7, "reason": "$1 oysters at Trillium Brewing, Fort Point, Mon-Fri 2-4 PM, solid brewery bar scene", "verify_status": "\u26a0\ufe0f Unverified", "maps_url": "", "_inactive": false, "_proximity": 3, "_proximity_label": "hike"}];
+  if (!oysters.length) {
+    oysterBar.style.display = 'none';
+    return;
+  }
 
-  var evMap = {}; // populated by renderAll for modal lookups
+  var checkedLabel = "8h ago";
+  var currentHood = "Cambridge";
+  var showProvidence = true;
+  var hidePast = true;
+  var DAY_NAMES = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+  var DAY_FULL = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  var todayDow = new Date().getDay();
+  var activeDow = todayDow;
+  var HOODS = ['South End','Back Bay','Cambridge','North End','Seaport','Beacon Hill','Fenway','Somerville','South Boston'];
+  var HOOD_PROXIMITY = {
+    'South End':     {'South End':10,'Back Bay':9,'Beacon Hill':8,'Downtown':8,'Financial District':8,'West End':7,'North End':7,'Fenway':7,'Kenmore':6,'Mission Hill':6,'Seaport':5,'South Boston':5,'Southie':5,'Cambridge':5,'Brookline':5,'Roxbury':5,'Somerville':4,'Charlestown':4,'Jamaica Plain':4,'Allston':3,'Brighton':3,'Dorchester':3},
+    'Back Bay':      {'Back Bay':10,'Newbury Street':10,'South End':9,'Beacon Hill':9,'Fenway':8,'Kenmore':8,'Downtown':8,'Financial District':7,'North End':7,'West End':7,'Mission Hill':7,'Seaport':6,'Cambridge':5,'Brookline':6,'South Boston':5,'Somerville':4,'Charlestown':4,'Jamaica Plain':5,'Allston':4},
+    'Cambridge':     {'Cambridge':10,'Somerville':8,'Charlestown':7,'North End':7,'West End':6,'Beacon Hill':6,'Downtown':6,'Financial District':6,'Back Bay':5,'South End':5,'Fenway':5,'Allston':5,'Medford':5,'Brookline':4,'Seaport':4,'South Boston':4,'Jamaica Plain':4},
+    'North End':     {'North End':10,'West End':9,'Charlestown':8,'Beacon Hill':8,'Downtown':8,'Financial District':8,'Cambridge':6,'Back Bay':6,'Seaport':5,'South End':5,'Fenway':5,'Somerville':5},
+    'Seaport':       {'Seaport':10,'Financial District':8,'Downtown':8,'South Boston':7,'Southie':7,'South End':6,'Back Bay':5,'North End':5,'Beacon Hill':5,'Cambridge':4,'Fenway':4},
+    'Beacon Hill':   {'Beacon Hill':10,'West End':9,'Downtown':9,'Financial District':8,'Back Bay':8,'North End':7,'South End':7,'Cambridge':6,'Fenway':6,'Charlestown':6,'Seaport':5},
+    'Fenway':        {'Fenway':10,'Kenmore':10,'Back Bay':8,'Brookline':7,'South End':7,'Mission Hill':8,'Allston':6,'Cambridge':5,'Beacon Hill':6,'Jamaica Plain':6,'Downtown':6},
+    'Somerville':    {'Somerville':10,'Cambridge':8,'Medford':7,'Charlestown':7,'North End':6,'West End':5,'Beacon Hill':5,'Downtown':5,'Allston':5,'Back Bay':4,'Fenway':4,'South End':3},
+    'South Boston':  {'South Boston':10,'Southie':10,'Seaport':8,'Financial District':6,'Downtown':6,'South End':5,'Back Bay':4,'North End':4,'Beacon Hill':4,'Cambridge':3}
+  };
 
   function esc(s) {
-    return String(s)
+    return String(s || '')
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;');
   }
 
-  function fmtTime(isoStr) {
-    if (!isoStr || isoStr.indexOf('T') === -1) return '';
-    var timePart = isoStr.split('T')[1].substring(0, 5); // "HH:MM"
-    var parts = timePart.split(':');
-    var h = parseInt(parts[0], 10);
-    var m = parts[1];
-    var ampm = h >= 12 ? 'PM' : 'AM';
-    h = h % 12 || 12;
-    return h + ':' + m + ' ' + ampm;
-  }
-
-  function fmtDate(isoStr) {
-    // Returns "Monday, March 24" from "2026-03-24T..." or "2026-03-24"
-    var datePart = isoStr.split('T')[0];
-    var parts = datePart.split('-');
-    var d = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
-    var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-    var months = ['January','February','March','April','May','June',
-                  'July','August','September','October','November','December'];
-    return days[d.getDay()] + ', ' + months[d.getMonth()] + ' ' + d.getDate();
-  }
-
-  function dateKey(isoStr) {
-    return isoStr.split('T')[0];
-  }
-
-  function fmtRunTs(ts) {
-    // ts like "2026-03-24T08:00" → "3/24 8:00 AM"
-    var datePart = ts.split('T')[0];
-    var dp = datePart.split('-');
-    var m = parseInt(dp[1], 10);
-    var d = parseInt(dp[2], 10);
-    var time = ts.indexOf('T') !== -1 ? ts.split('T')[1].substring(0, 5) : '';
-    var timeFmt = '';
-    if (time) {
-      var tp = time.split(':');
-      var hh = parseInt(tp[0], 10);
-      var mm = tp[1];
-      var ampm = hh >= 12 ? 'PM' : 'AM';
-      hh = hh % 12 || 12;
-      timeFmt = hh + ':' + mm + ' ' + ampm;
+  function oysterDays(o) {
+    var desc = ((o.description || '') + ' ' + (o.reason || '')).toLowerCase();
+    var name = (o.name || '').toLowerCase();
+    if (/daily|every day|all week/i.test(desc + name)) return [0,1,2,3,4,5,6];
+    var days = [];
+    var map = {sun:0,mon:1,tue:2,wed:3,thu:4,fri:5,sat:6,sunday:0,monday:1,tuesday:2,wednesday:3,thursday:4,friday:5,saturday:6};
+    Object.keys(map).forEach(function(k) {
+      if (desc.indexOf(k) !== -1) days.push(map[k]);
+    });
+    var rangeMatch = desc.match(/([a-z]+)[–\-]([a-z]+)/);
+    if (rangeMatch) {
+      var start = map[rangeMatch[1]];
+      var end = map[rangeMatch[2]];
+      if (start !== undefined && end !== undefined) {
+        days = [];
+        for (var d = start; d <= end; d++) days.push(d);
+      }
     }
-    return m + '/' + d + (timeFmt ? ' ' + timeFmt : '');
+    return days.length ? days : [0,1,2,3,4,5,6];
   }
 
-  function fmtDuration(ms) {
-    if (!ms && ms !== 0) return '—';
-    return (ms / 1000).toFixed(1) + 's';
+  function oysterHours(o) {
+    var match = (o.description || '').match(/(\d+(?::\d+)?\s*(?:AM|PM|am|pm)[^.,$]*)/i);
+    return match ? match[1].trim() : '';
   }
 
-  function fmtMoney(n) {
-    if (n === undefined || n === null) return '$0.0000';
-    return '$' + n.toFixed(4);
+  function bostonHour() {
+    var fmt = new Intl.DateTimeFormat('en-US', {timeZone: 'America/New_York', hour: 'numeric', hour12: false});
+    return parseInt(fmt.format(new Date()), 10);
   }
 
-  function buildMeta(ev) {
-    var parts = [];
-    var time = fmtTime(ev.start || '');
-    if (time) parts.push(time);
-    if (ev.price) parts.push(ev.price);
-    if (ev.venue) parts.push(ev.venue);
-    if (ev.address) parts.push(ev.address);
-    return parts.join(' &nbsp;|&nbsp; ');
+  function parseEndHour24(hoursStr) {
+    if (!hoursStr) return null;
+    var s = hoursStr.toLowerCase();
+    var rangeMatch = s.match(/[–\-]\s*(\d+)(?::\d+)?\s*(am|pm)/);
+    if (rangeMatch) {
+      var h = parseInt(rangeMatch[1], 10);
+      if (rangeMatch[2] === 'pm' && h !== 12) h += 12;
+      if (rangeMatch[2] === 'am' && h === 12) h = 0;
+      return h;
+    }
+    var singleMatch = s.match(/(\d+)(?::\d+)?\s*(am|pm)/);
+    if (!singleMatch) return null;
+    var singleHour = parseInt(singleMatch[1], 10);
+    if (singleMatch[2] === 'pm' && singleHour !== 12) singleHour += 12;
+    if (singleMatch[2] === 'am' && singleHour === 12) singleHour = 0;
+    return singleHour;
   }
 
-  function buildCard(ev) {
-    var meta = buildMeta(ev);
-    var url = esc(ev.url || '');
-    var name = esc(ev.name || '');
-    return '<div class="card" data-url="' + url + '" data-name="' + name + '">' +
-      '<div class="card-title">' + name +
-        ' <span class="score" title="Relevance score 1-10">' + esc(ev.score) + '</span>' +
-      '</div>' +
-      (meta ? '<div class="meta">' + meta + '</div>' : '') +
-      (ev.reason ? '<div class="reason">→ ' + esc(ev.reason) + '</div>' : '') +
-      (ev.url ? '<a class="link" href="' + url + '" target="_blank">' + url + '</a>' : '') +
-      '<div class="feedback">' +
-        '<button class="fb-btn" data-p="kirk" data-v="up">\uD83D\uDC4D Kirk</button>' +
-        '<button class="fb-btn" data-p="brian" data-v="up">\uD83D\uDC4D Brian</button>' +
-        '<button class="fb-btn" data-p="kirk" data-v="down">\uD83D\uDC4E Kirk</button>' +
-        '<button class="fb-btn" data-p="brian" data-v="down">\uD83D\uDC4E Brian</button>' +
-      '</div>' +
-    '</div>';
+  function proxScore(o) {
+    if (!currentHood) return Number(o._proximity || 3);
+    var table = HOOD_PROXIMITY[currentHood] || {};
+    var addr = ((o.address || '') + ' ' + (o.venue || '')).toLowerCase();
+    var best = 3;
+    Object.keys(table).forEach(function(key) {
+      if (addr.indexOf(key.toLowerCase()) !== -1) best = Math.max(best, table[key]);
+    });
+    return best;
   }
 
-  // ── Feedback ─────────────────────────────────────────────────────────────
-
-  document.addEventListener('click', function(e) {
-    var btn = e.target.closest('.fb-btn');
-    if (!btn) return;
-    var card = btn.closest('.card');
-    sendFeedback(btn, btn.dataset.p, btn.dataset.v, card.dataset.url, card.dataset.name);
-  });
-
-  function sendFeedback(btn, persona, vote, url, name) {
-    btn.classList.add(vote === 'up' ? 'done' : 'skip');
-    btn.disabled = true;
-    fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'},
-      body: new URLSearchParams({'form-name':'event-feedback','persona':persona,'vote':vote,'event_url':url,'event_name':name}).toString()
-    }).catch(function(){});
+  function renderItem(o) {
+    var venueName = esc(o.venue || String(o.name || '').split('—')[0].trim());
+    var hood = esc(o.address || '');
+    var hours = esc(oysterHours(o));
+    var parts = String(o.name || '').split('—');
+    var deal = esc(parts.length > 1 ? parts[1] : (o.reason || ''));
+    var left = '<div><b>' + venueName + '</b>' + (hood ? '<div class="oyster-meta">' + hood + (deal ? ' · ' + deal : '') + '</div>' : '') + '</div>';
+    var right = hours ? '<span class="oyster-hours">' + hours + '</span>' : '';
+    var inner = left + right;
+    return o.url
+      ? '<a class="oyster-item" href="' + esc(o.url) + '" target="_blank" style="text-decoration:none">' + inner + '</a>'
+      : '<div class="oyster-item">' + inner + '</div>';
   }
 
-  // ── Extra events toggle ───────────────────────────────────────────────────
+  function renderOysterDay(dow) {
+    var isToday = dow === todayDow;
+    var currentHour = isToday ? bostonHour() : -1;
+    var items = oysters.filter(function(o) {
+      return oysterDays(o).indexOf(dow) !== -1 && (o.city || 'Boston') !== 'Providence';
+    });
+    var pvdItems = oysters.filter(function(o) {
+      return oysterDays(o).indexOf(dow) !== -1 && o.city === 'Providence';
+    });
+    var pastItems = [];
+    if (isToday && hidePast) {
+      var futureItems = [];
+      items.forEach(function(o) {
+        var endHour = parseEndHour24(oysterHours(o));
+        if (endHour !== null && endHour <= currentHour) pastItems.push(o);
+        else futureItems.push(o);
+      });
+      items = futureItems;
+    }
 
-  window.toggleExtra = function() {
-    var el = document.getElementById('extra-events');
-    var btn = document.getElementById('extra-btn');
-    el.style.display = (el.style.display === 'none' || !el.style.display) ? 'block' : 'none';
-    btn.textContent = el.style.display === 'block' ? '\u25B2 Hide lower-priority events' : btn.dataset.label;
+    items.sort(function(a, b) {
+      return proxScore(b) - proxScore(a);
+    });
+
+    if (!items.length && !pastItems.length) {
+      return '<div style="color:#444;font-size:0.8rem;padding:8px 0">No deals on ' + DAY_FULL[dow] + '</div>';
+    }
+    if (!items.length && isToday) {
+      return '<div style="color:#556;font-size:0.8rem;padding:8px 0">All deals for today have ended. ' +
+        (pastItems.length ? pastItems.length + ' hidden.' : '') +
+        '</div>';
+    }
+
+    var html = '';
+    if (currentHood) {
+      [
+        {label:'Nearby', min:9},
+        {label:'Easy', min:7},
+        {label:'Doable', min:5},
+        {label:'Hike', min:0}
+      ].forEach(function(tier) {
+        var tierItems = items.filter(function(o) {
+          var score = proxScore(o);
+          if (tier.min === 9) return score >= 9;
+          if (tier.min === 7) return score >= 7 && score < 9;
+          if (tier.min === 5) return score >= 5 && score < 7;
+          return score < 5;
+        });
+        if (!tierItems.length) return;
+        html += '<div class="oyster-tier">' + tier.label + '</div>';
+        html += '<div class="oyster-list" style="margin-bottom:8px">' + tierItems.map(renderItem).join('') + '</div>';
+      });
+    } else {
+      html = '<div class="oyster-list">' + items.map(renderItem).join('') + '</div>';
+    }
+
+    html = '<div class="oyster-scroll">' + html + '</div>';
+    if (isToday && pastItems.length > 0) {
+      html += '<div style="font-size:0.72rem;color:#445;margin-top:6px;padding:4px 0">' +
+        pastItems.length + ' deal' + (pastItems.length > 1 ? 's' : '') +
+        ' ended today — <button onclick="togglePastOysters()" style="background:none;border:none;color:#557;font-size:0.72rem;cursor:pointer;padding:0">show all</button></div>';
+    }
+    if (pvdItems.length) {
+      pvdItems.sort(function(a, b) { return (b.score || 0) - (a.score || 0); });
+      html += '<div style="margin-top:10px;border-top:1px solid #1a2e3a;padding-top:8px">' +
+        '<button onclick="toggleProvidence()" style="background:none;border:none;color:' + (showProvidence ? '#93c5fd' : '#2a4a6a') + ';font-size:0.72rem;cursor:pointer;padding:0;letter-spacing:0.04em">' +
+        (showProvidence ? '▼' : '▶') + ' Providence RI (' + pvdItems.length + ' deals)</button>' +
+        (showProvidence ? '<div class="oyster-list" style="margin-top:6px">' + pvdItems.map(renderItem).join('') + '</div>' : '') +
+        '</div>';
+    }
+    return html;
+  }
+
+  function buildOyster() {
+    var tabs = '<div class="oyster-days">' + DAY_NAMES.map(function(dayName, idx) {
+      var cls = 'oday-btn' + (idx === activeDow ? ' active' : '');
+      var todayMark = idx === todayDow ? ' ●' : '';
+      return '<button class="' + cls + '" onclick="setOysterDay(' + idx + ')">' + dayName + todayMark + '</button>';
+    }).join('') + '</div>';
+
+    var hoodLabel = currentHood ? "I'm near:" : 'Filter by area:';
+    var hoodBtns = '<div class="oyster-location"><span>' + hoodLabel + '</span>' +
+      HOODS.map(function(hood) {
+        var cls = 'ohood-btn' + (hood === currentHood ? ' active' : '');
+        return '<button class="' + cls + '" onclick="setOysterHood(' + JSON.stringify(hood) + ')">' + hood + '</button>';
+      }).join('') +
+      (currentHood ? ' <button class="ohood-btn" onclick="setOysterHood(null)" style="opacity:0.5">× clear</button>' : '') +
+      '</div>';
+
+    oysterBar.innerHTML =
+      '<div class="oyster-title">🦪 Oyster Deals <span style="font-weight:400;color:#555;font-size:0.72rem">(last checked ' + esc(checkedLabel) + ')</span></div>' +
+      tabs + hoodBtns + renderOysterDay(activeDow);
+  }
+
+  window.setOysterDay = function(dow) {
+    activeDow = dow;
+    buildOyster();
+  };
+  window.setOysterHood = function(hood) {
+    currentHood = hood;
+    buildOyster();
+  };
+  window.togglePastOysters = function() {
+    hidePast = !hidePast;
+    buildOyster();
+  };
+  window.toggleProvidence = function() {
+    showProvidence = !showProvidence;
+    buildOyster();
   };
 
-  window.toggleDay = function(pill) {
+  buildOyster();
+})();
+</script>
+  <div class="day-filter">
+    <button class="day-pill" data-day="day-0" onclick="toggleDay(this)">Thu 4/2 <span class="pill-count">1</span></button><button class="day-pill" data-day="day-1" onclick="toggleDay(this)">Sun 4/5 <span class="pill-count">1</span></button><button class="day-pill" data-day="day-2" onclick="toggleDay(this)">Mon 4/6 <span class="pill-count">1</span></button><button class="day-pill" data-day="day-3" onclick="toggleDay(this)">Wed 4/8 <span class="pill-count">1</span></button><button class="day-pill day-pill-today" data-day="day-4" onclick="toggleDay(this)">Sun 4/19 <span class="pill-count">4</span></button><button class="day-pill" data-day="day-5" onclick="toggleDay(this)">Mon 4/20 <span class="pill-count">1</span></button><button class="day-pill" data-day="day-6" onclick="toggleDay(this)">Tue 4/21 <span class="pill-count">5</span></button><button class="day-pill" data-day="day-7" onclick="toggleDay(this)">Wed 4/22 <span class="pill-count">2</span></button><button class="day-pill" data-day="day-8" onclick="toggleDay(this)">Thu 4/23 <span class="pill-count">4</span></button><button class="day-pill" data-day="day-9" onclick="toggleDay(this)">Sat 4/25 <span class="pill-count">2</span></button><button class="day-pill" data-day="day-10" onclick="toggleDay(this)">Mon 4/27 <span class="pill-count">2</span></button><button class="day-pill" data-day="day-11" onclick="toggleDay(this)">Tue 4/28 <span class="pill-count">3</span></button><button class="day-pill" data-day="day-12" onclick="toggleDay(this)">Wed 4/29 <span class="pill-count">3</span></button><button class="day-pill" data-day="day-13" onclick="toggleDay(this)">Thu 4/30 <span class="pill-count">1</span></button><button class="day-pill" data-day="day-14" onclick="toggleDay(this)">Fri 5/1 <span class="pill-count">1</span></button><button class="day-pill" data-day="day-15" onclick="toggleDay(this)">Mon 5/4 <span class="pill-count">1</span></button><button class="day-pill" data-day="day-16" onclick="toggleDay(this)">Fri 5/8 <span class="pill-count">1</span></button><button class="day-pill" data-day="day-17" onclick="toggleDay(this)">Tue 5/12 <span class="pill-count">1</span></button><button class="day-pill" data-day="day-18" onclick="toggleDay(this)">Wed 5/13 <span class="pill-count">1</span></button><button class="day-pill" data-day="day-19" onclick="toggleDay(this)">Fri 5/29 <span class="pill-count">1</span></button><button class="day-pill" data-day="day-20" onclick="toggleDay(this)">Thu 6/4 <span class="pill-count">1</span></button><button class="day-pill" data-day="day-21" onclick="toggleDay(this)">Tue 7/7 <span class="pill-count">1</span></button>
+  </div>
+  <div class="legend">
+    <b>Score 1–10</b> — how relevant this event is for you &nbsp;|&nbsp;
+    <b>8–10</b> must consider &nbsp;·&nbsp;
+    <b>5–7</b> worth knowing &nbsp;·&nbsp;
+    <b>1–4</b> low priority
+  </div>
+  
+        <div class="day-section" id="day-0">
+            <div class="day-header" onclick="toggleDaySection(this)">Thursday, April 2 <span class="day-toggle">▼</span></div>
+            <div class="day-cards">
+            
+            <div class="card">
+                <div class="card-title">Boston Robot Hackers – Kalman Filters <span class="score" title="Relevance score 1-10">8</span></div>
+                <div class="meta">7:00 PM</div>
+                <div class="reason">→ Boston Robot Hackers event on Kalman Filters — advanced guidance, navigation, and control systems directly relevant to Kirk's hardware/robotics/embedded systems expertise. Technical depth, hands-on community, MassRobotics adjacent.</div>
+                <a class="link" href="https://www.massrobotics.org/events/" target="_blank">https://www.massrobotics.org/events/</a>
+                <div class="feedback" id="fb_www_massrobotics_org_events_">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://www.massrobotics.org/events/','Boston Robot Hackers – Kalman Filters')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://www.massrobotics.org/events/','Boston Robot Hackers – Kalman Filters')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://www.massrobotics.org/events/','Boston Robot Hackers – Kalman Filters')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://www.massrobotics.org/events/','Boston Robot Hackers – Kalman Filters')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://www.massrobotics.org/events/','Boston Robot Hackers – Kalman Filters')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://www.massrobotics.org/events/','Boston Robot Hackers – Kalman Filters')">👎 Kirk</button>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div class="day-section" id="day-1">
+            <div class="day-header" onclick="toggleDaySection(this)">Sunday, April 5 <span class="day-toggle">▼</span></div>
+            <div class="day-cards">
+            
+            <div class="card">
+                <div class="card-title">RoboNexus <span class="score" title="Relevance score 1-10">8</span></div>
+                <div class="meta">King Fahd University of Petroleum & Minerals (KFUPM) &nbsp;|&nbsp; Saudi Arabia</div>
+                <div class="reason">→ RoboNexus — international robotics festival with teams, tech companies, solution providers, startups. Perfect venue for a senior SE to network with technical founders, CTOs, and industry players in robotics. Real products, not pitch-focused.</div>
+                <a class="link" href="https://www.massrobotics.org/events/" target="_blank">https://www.massrobotics.org/events/</a>
+                <div class="feedback" id="fb_www_massrobotics_org_events_">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://www.massrobotics.org/events/','RoboNexus')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://www.massrobotics.org/events/','RoboNexus')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://www.massrobotics.org/events/','RoboNexus')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://www.massrobotics.org/events/','RoboNexus')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://www.massrobotics.org/events/','RoboNexus')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://www.massrobotics.org/events/','RoboNexus')">👎 Kirk</button>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div class="day-section" id="day-2">
+            <div class="day-header" onclick="toggleDaySection(this)">Monday, April 6 <span class="day-toggle">▼</span></div>
+            <div class="day-cards">
+            
+            <div class="card">
+                <div class="card-title">Live recording of Automated with Brian Heater Feat Daniela Rus <span class="score" title="Relevance score 1-10">7</span></div>
+                <div class="meta">10:00 AM</div>
+                <div class="reason">→ Live Automated podcast with Daniela Rus — MIT robotics leader, industry networking opportunity. Limited seats, professional audience, strong technical credibility. Good for senior-level presence and GTM/product discussion.</div>
+                <a class="link" href="https://www.massrobotics.org/events/" target="_blank">https://www.massrobotics.org/events/</a>
+                <div class="feedback" id="fb_www_massrobotics_org_events_">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://www.massrobotics.org/events/','Live recording of Automated with Brian Heater Feat Daniela Rus')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://www.massrobotics.org/events/','Live recording of Automated with Brian Heater Feat Daniela Rus')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://www.massrobotics.org/events/','Live recording of Automated with Brian Heater Feat Daniela Rus')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://www.massrobotics.org/events/','Live recording of Automated with Brian Heater Feat Daniela Rus')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://www.massrobotics.org/events/','Live recording of Automated with Brian Heater Feat Daniela Rus')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://www.massrobotics.org/events/','Live recording of Automated with Brian Heater Feat Daniela Rus')">👎 Kirk</button>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div class="day-section" id="day-3">
+            <div class="day-header" onclick="toggleDaySection(this)">Wednesday, April 8 <span class="day-toggle">▼</span></div>
+            <div class="day-cards">
+            
+            <div class="card">
+                <div class="card-title">Automated with Brian Heater Happy Hour <span class="score" title="Relevance score 1-10">7</span></div>
+                <div class="meta">4:30 PM &nbsp;|&nbsp; MassRobotics &nbsp;|&nbsp; Boston</div>
+                <div class="reason">→ Automated Happy Hour for robotics startups and industry professionals — intentionally targets the senior operator crowd Kirk needs (founders, CTOs, product leaders). Robotics focus aligns with Kirk's domain expertise.</div>
+                <a class="link" href="https://www.massrobotics.org/events/" target="_blank">https://www.massrobotics.org/events/</a>
+                <div class="feedback" id="fb_www_massrobotics_org_events_">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://www.massrobotics.org/events/','Automated with Brian Heater Happy Hour')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://www.massrobotics.org/events/','Automated with Brian Heater Happy Hour')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://www.massrobotics.org/events/','Automated with Brian Heater Happy Hour')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://www.massrobotics.org/events/','Automated with Brian Heater Happy Hour')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://www.massrobotics.org/events/','Automated with Brian Heater Happy Hour')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://www.massrobotics.org/events/','Automated with Brian Heater Happy Hour')">👎 Kirk</button>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div class="day-section" id="day-4">
+            <div class="day-header" onclick="toggleDaySection(this)">Sunday, April 19 <span class="today-tag">TODAY</span> <span class="day-toggle">▼</span></div>
+            <div class="day-cards">
+            
+            <div class="card">
+                <div class="card-title">Professional Robotics League (ProRL) Combine <span class="score" title="Relevance score 1-10">8</span></div>
+                <div class="meta">3:00 PM &nbsp;|&nbsp; Boston, Massachusetts</div>
+                <div class="reason">→ Professional Robotics League event—directly aligned with Kirk's robotics/hardware expertise and industry networking. Senior operators and technical founders in attendance.</div>
+                <a class="link" href="https://lu.ma/pro-rlcombine" target="_blank">https://lu.ma/pro-rlcombine</a>
+                <div class="feedback" id="fb_lu_ma_pro-rlcombine">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://lu.ma/pro-rlcombine','Professional Robotics League (ProRL) Combine')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://lu.ma/pro-rlcombine','Professional Robotics League (ProRL) Combine')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://lu.ma/pro-rlcombine','Professional Robotics League (ProRL) Combine')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://lu.ma/pro-rlcombine','Professional Robotics League (ProRL) Combine')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://lu.ma/pro-rlcombine','Professional Robotics League (ProRL) Combine')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://lu.ma/pro-rlcombine','Professional Robotics League (ProRL) Combine')">👎 Kirk</button>
+            </div>
+            </div>
+            <div class="card">
+                <div class="card-title">PMs in AI (Boston): PM Hackathon #2 <span class="score" title="Relevance score 1-10">7</span></div>
+                <div class="meta">11:00 AM &nbsp;|&nbsp; 63 Court St</div>
+                <div class="reason">→ PM Hackathon in AI — directly relevant to product/tech career, hands-on learning opportunity with high-caliber attendees</div>
+                <a class="link" href="https://do617.com/events/2026/4/19/pms-in-ai-boston-pm-hackathon-2-tickets" target="_blank">https://do617.com/events/2026/4/19/pms-in-ai-boston-pm-hackathon-2-tickets</a>
+                <div class="feedback" id="fb_do617_com_events_2026_4_19_pms-in-ai-bos">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://do617.com/events/2026/4/19/pms-in-ai-boston-pm-hackathon-2-tickets','PMs in AI (Boston): PM Hackathon #2')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://do617.com/events/2026/4/19/pms-in-ai-boston-pm-hackathon-2-tickets','PMs in AI (Boston): PM Hackathon #2')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://do617.com/events/2026/4/19/pms-in-ai-boston-pm-hackathon-2-tickets','PMs in AI (Boston): PM Hackathon #2')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://do617.com/events/2026/4/19/pms-in-ai-boston-pm-hackathon-2-tickets','PMs in AI (Boston): PM Hackathon #2')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://do617.com/events/2026/4/19/pms-in-ai-boston-pm-hackathon-2-tickets','PMs in AI (Boston): PM Hackathon #2')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://do617.com/events/2026/4/19/pms-in-ai-boston-pm-hackathon-2-tickets','PMs in AI (Boston): PM Hackathon #2')">👎 Kirk</button>
+            </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Intro to Welding - MIG, TIG, &amp; Stick <span class="score" title="Relevance score 1-10">6</span></div>
+                <div class="meta"></div>
+                <div class="reason">→ Intro to Welding covers hands-on technical skills (MIG, TIG, stick) relevant to hardware engineering and industrial manufacturing. Kirk's deep engineering background makes this valuable for staying current on fabrication techniques used in robotics and hardware prototyping.</div>
+                <a class="link" href="https://www.thebostoncalendar.com/events/intro-to-welding-mig-tig-stick--2" target="_blank">https://www.thebostoncalendar.com/events/intro-to-welding-mig-tig-stick--2</a>
+                <div class="feedback" id="fb_www_thebostoncalendar_com_events_intro-t">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://www.thebostoncalendar.com/events/intro-to-welding-mig-tig-stick--2','Intro to Welding - MIG, TIG, &amp; Stick')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://www.thebostoncalendar.com/events/intro-to-welding-mig-tig-stick--2','Intro to Welding - MIG, TIG, &amp; Stick')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://www.thebostoncalendar.com/events/intro-to-welding-mig-tig-stick--2','Intro to Welding - MIG, TIG, &amp; Stick')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://www.thebostoncalendar.com/events/intro-to-welding-mig-tig-stick--2','Intro to Welding - MIG, TIG, &amp; Stick')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://www.thebostoncalendar.com/events/intro-to-welding-mig-tig-stick--2','Intro to Welding - MIG, TIG, &amp; Stick')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://www.thebostoncalendar.com/events/intro-to-welding-mig-tig-stick--2','Intro to Welding - MIG, TIG, &amp; Stick')">👎 Kirk</button>
+            </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Drink Your History! Tour of Historic Sites and Taverns (with beer or cider) <span class="score" title="Relevance score 1-10">5</span></div>
+                <div class="meta"></div>
+                <div class="reason">→ Upscale food and drink event (historic sites + beverage) in the Boston area. Fits Kirk's geographic preference and the 'keep these even if niche' category for upscale food/drink events. Reasonable networking opportunity.</div>
+                <a class="link" href="https://www.thebostoncalendar.com/events/drink-your-history-tour-of-historic-sites-and-taverns-with-beer-or-cider--61" target="_blank">https://www.thebostoncalendar.com/events/drink-your-history-tour-of-historic-sites-and-taverns-with-beer-or-cider--61</a>
+                <div class="feedback" id="fb_www_thebostoncalendar_com_events_drink-y">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://www.thebostoncalendar.com/events/drink-your-history-tour-of-historic-sites-and-taverns-with-beer-or-cider--61','Drink Your History! Tour of Historic Sites and Taverns (with beer or cider)')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://www.thebostoncalendar.com/events/drink-your-history-tour-of-historic-sites-and-taverns-with-beer-or-cider--61','Drink Your History! Tour of Historic Sites and Taverns (with beer or cider)')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://www.thebostoncalendar.com/events/drink-your-history-tour-of-historic-sites-and-taverns-with-beer-or-cider--61','Drink Your History! Tour of Historic Sites and Taverns (with beer or cider)')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://www.thebostoncalendar.com/events/drink-your-history-tour-of-historic-sites-and-taverns-with-beer-or-cider--61','Drink Your History! Tour of Historic Sites and Taverns (with beer or cider)')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://www.thebostoncalendar.com/events/drink-your-history-tour-of-historic-sites-and-taverns-with-beer-or-cider--61','Drink Your History! Tour of Historic Sites and Taverns (with beer or cider)')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://www.thebostoncalendar.com/events/drink-your-history-tour-of-historic-sites-and-taverns-with-beer-or-cider--61','Drink Your History! Tour of Historic Sites and Taverns (with beer or cider)')">👎 Kirk</button>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div class="day-section" id="day-5">
+            <div class="day-header" onclick="toggleDaySection(this)">Monday, April 20 <span class="day-toggle">▼</span></div>
+            <div class="day-cards">
+            
+            <div class="card">
+                <div class="card-title">Boston AI Agents Night 2 — Agents That Actually Do Stuff 🦞 <span class="score" title="Relevance score 1-10">5</span></div>
+                <div class="meta">6:30 PM &nbsp;|&nbsp; 1 Memorial Dr, Cambridge, MA 02142 &nbsp;|&nbsp; Cambridge</div>
+                <div class="reason">→ Boston AI Agents Night with live demos of autonomous agents doing real tasks. Shows practical AI applications and attracts practitioners. However, unclear if audience includes VCs, CTOs, or technical buyers—Kirk's ideal ecosystem. Food/networking angle is present.</div>
+                <a class="link" href="https://www.meetup.com/boston-openclaw-meetup/events/314167844/" target="_blank">https://www.meetup.com/boston-openclaw-meetup/events/314167844/</a>
+                <div class="feedback" id="fb_www_meetup_com_boston-openclaw-meetup_ev">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://www.meetup.com/boston-openclaw-meetup/events/314167844/','Boston AI Agents Night 2 — Agents That Actually Do Stuff 🦞')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://www.meetup.com/boston-openclaw-meetup/events/314167844/','Boston AI Agents Night 2 — Agents That Actually Do Stuff 🦞')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://www.meetup.com/boston-openclaw-meetup/events/314167844/','Boston AI Agents Night 2 — Agents That Actually Do Stuff 🦞')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://www.meetup.com/boston-openclaw-meetup/events/314167844/','Boston AI Agents Night 2 — Agents That Actually Do Stuff 🦞')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://www.meetup.com/boston-openclaw-meetup/events/314167844/','Boston AI Agents Night 2 — Agents That Actually Do Stuff 🦞')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://www.meetup.com/boston-openclaw-meetup/events/314167844/','Boston AI Agents Night 2 — Agents That Actually Do Stuff 🦞')">👎 Kirk</button>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div class="day-section" id="day-6">
+            <div class="day-header" onclick="toggleDaySection(this)">Tuesday, April 21 <span class="day-toggle">▼</span></div>
+            <div class="day-cards">
+            
+            <div class="card">
+                <div class="card-title">AI in Legal Practice: Managing Risk and Professional Liability <span class="score" title="Relevance score 1-10">7</span></div>
+                <div class="meta">12:00 PM &nbsp;|&nbsp; Boston Bar Association &nbsp;|&nbsp; Boston, MA</div>
+                <div class="reason">→ Boston Bar Association events. Professional legal/law community networking with high-caliber attendees. Sections cover business law, civil rights, leadership networks. Strong value for career development and professional connections, though page shows limited specific event details.</div>
+                <a class="link" href="https://www.bostonbar.org/events/" target="_blank">https://www.bostonbar.org/events/</a>
+                <div class="feedback" id="fb_www_bostonbar_org_events_">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://www.bostonbar.org/events/','AI in Legal Practice: Managing Risk and Professional Liability')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://www.bostonbar.org/events/','AI in Legal Practice: Managing Risk and Professional Liability')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://www.bostonbar.org/events/','AI in Legal Practice: Managing Risk and Professional Liability')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://www.bostonbar.org/events/','AI in Legal Practice: Managing Risk and Professional Liability')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://www.bostonbar.org/events/','AI in Legal Practice: Managing Risk and Professional Liability')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://www.bostonbar.org/events/','AI in Legal Practice: Managing Risk and Professional Liability')">👎 Kirk</button>
+            </div>
+            </div>
+            <div class="card">
+                <div class="card-title">'London Falling': New Yorker writer Patrick Radden Keefe on a tragic death in a transformed city <span class="score" title="Relevance score 1-10">6</span></div>
+                <div class="meta"></div>
+                <div class="reason">→ WBUR CitySpace events including 'The WBUR Breakfast Club: JetBlue CEO Joanna Geraghty' and journalism/media talks. Civic/journalism value and CEO-level speakers. High-caliber professional development but primarily media/journalism focus rather than Kirk's core tech/sales engineering interests.</div>
+                <a class="link" href="https://www.wbur.org/events" target="_blank">https://www.wbur.org/events</a>
+                <div class="feedback" id="fb_www_wbur_org_events">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://www.wbur.org/events','London Falling: New Yorker writer Patrick Radden Keefe on a tragic death in a transformed city')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://www.wbur.org/events','London Falling: New Yorker writer Patrick Radden Keefe on a tragic death in a transformed city')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://www.wbur.org/events','London Falling: New Yorker writer Patrick Radden Keefe on a tragic death in a transformed city')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://www.wbur.org/events','London Falling: New Yorker writer Patrick Radden Keefe on a tragic death in a transformed city')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://www.wbur.org/events','London Falling: New Yorker writer Patrick Radden Keefe on a tragic death in a transformed city')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://www.wbur.org/events','London Falling: New Yorker writer Patrick Radden Keefe on a tragic death in a transformed city')">👎 Kirk</button>
+            </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Blueberry Latté Tasting at George Howell Coffee <span class="score" title="Relevance score 1-10">5</span></div>
+                <div class="meta">12:00 PM &nbsp;|&nbsp; Boston Public Market</div>
+                <div class="reason">→ Upscale coffee tasting event; professional casual networking opportunity</div>
+                <a class="link" href="https://do617.com/events/2026/4/21/blueberry-latte-tasting-at-george-howell-coffee-tickets" target="_blank">https://do617.com/events/2026/4/21/blueberry-latte-tasting-at-george-howell-coffee-tickets</a>
+                <div class="feedback" id="fb_do617_com_events_2026_4_21_blueberry-lat">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://do617.com/events/2026/4/21/blueberry-latte-tasting-at-george-howell-coffee-tickets','Blueberry Latté Tasting at George Howell Coffee')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://do617.com/events/2026/4/21/blueberry-latte-tasting-at-george-howell-coffee-tickets','Blueberry Latté Tasting at George Howell Coffee')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://do617.com/events/2026/4/21/blueberry-latte-tasting-at-george-howell-coffee-tickets','Blueberry Latté Tasting at George Howell Coffee')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://do617.com/events/2026/4/21/blueberry-latte-tasting-at-george-howell-coffee-tickets','Blueberry Latté Tasting at George Howell Coffee')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://do617.com/events/2026/4/21/blueberry-latte-tasting-at-george-howell-coffee-tickets','Blueberry Latté Tasting at George Howell Coffee')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://do617.com/events/2026/4/21/blueberry-latte-tasting-at-george-howell-coffee-tickets','Blueberry Latté Tasting at George Howell Coffee')">👎 Kirk</button>
+            </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Biotech Networking at Naco Taco in Cambridge <span class="score" title="Relevance score 1-10">5</span></div>
+                <div class="meta">6:30 PM &nbsp;|&nbsp; Naco Taco &nbsp;|&nbsp; Cambridge</div>
+                <div class="reason">→ Biotech networking event. Kirk's domain expertise includes semiconductors and data infrastructure, and this brings together biotech innovators. However, it's a casual happy-hour style mixer without clear technical depth or senior operator focus—borderline for a Sales Engineer.</div>
+                <a class="link" href="https://www.meetup.com/cambridge-biotech-meetup/events/314187218/" target="_blank">https://www.meetup.com/cambridge-biotech-meetup/events/314187218/</a>
+                <div class="feedback" id="fb_www_meetup_com_cambridge-biotech-meetup_">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://www.meetup.com/cambridge-biotech-meetup/events/314187218/','Biotech Networking at Naco Taco in Cambridge')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://www.meetup.com/cambridge-biotech-meetup/events/314187218/','Biotech Networking at Naco Taco in Cambridge')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://www.meetup.com/cambridge-biotech-meetup/events/314187218/','Biotech Networking at Naco Taco in Cambridge')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://www.meetup.com/cambridge-biotech-meetup/events/314187218/','Biotech Networking at Naco Taco in Cambridge')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://www.meetup.com/cambridge-biotech-meetup/events/314187218/','Biotech Networking at Naco Taco in Cambridge')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://www.meetup.com/cambridge-biotech-meetup/events/314187218/','Biotech Networking at Naco Taco in Cambridge')">👎 Kirk</button>
+            </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Open Project Night - Every Tuesday, In Person!  <span class="score" title="Relevance score 1-10">5</span></div>
+                <div class="meta">6:30 PM &nbsp;|&nbsp; Cambridge Hackspace &nbsp;|&nbsp; Somerville</div>
+                <div class="reason">→ Cambridge Hackspace open project night. Hardware and making focus aligns with Kirk's robotics/embedded systems interest. However, positioned as beginner-friendly maker community rather than senior technical professionals or industry practitioners—may skew hobbyist.</div>
+                <a class="link" href="https://www.meetup.com/cambridge-hackspace/events/314079454/" target="_blank">https://www.meetup.com/cambridge-hackspace/events/314079454/</a>
+                <div class="feedback" id="fb_www_meetup_com_cambridge-hackspace_event">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://www.meetup.com/cambridge-hackspace/events/314079454/','Open Project Night - Every Tuesday, In Person! ')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://www.meetup.com/cambridge-hackspace/events/314079454/','Open Project Night - Every Tuesday, In Person! ')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://www.meetup.com/cambridge-hackspace/events/314079454/','Open Project Night - Every Tuesday, In Person! ')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://www.meetup.com/cambridge-hackspace/events/314079454/','Open Project Night - Every Tuesday, In Person! ')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://www.meetup.com/cambridge-hackspace/events/314079454/','Open Project Night - Every Tuesday, In Person! ')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://www.meetup.com/cambridge-hackspace/events/314079454/','Open Project Night - Every Tuesday, In Person! ')">👎 Kirk</button>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div class="day-section" id="day-7">
+            <div class="day-header" onclick="toggleDaySection(this)">Wednesday, April 22 <span class="day-toggle">▼</span></div>
+            <div class="day-cards">
+            
+            <div class="card">
+                <div class="card-title">Finance and Business Networking | Elevating Your Potential - Boston <span class="score" title="Relevance score 1-10">7</span></div>
+                <div class="meta">6:00 PM &nbsp;|&nbsp; Grafton Street Pub & Grill</div>
+                <div class="reason">→ Finance and business networking event; highly relevant for startup/VC ecosystem, strong professional networking</div>
+                <a class="link" href="https://do617.com/events/2026/4/22/finance-and-business-networking-elevating-your-potential-boston-tickets" target="_blank">https://do617.com/events/2026/4/22/finance-and-business-networking-elevating-your-potential-boston-tickets</a>
+                <div class="feedback" id="fb_do617_com_events_2026_4_22_finance-and-b">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://do617.com/events/2026/4/22/finance-and-business-networking-elevating-your-potential-boston-tickets','Finance and Business Networking | Elevating Your Potential - Boston')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://do617.com/events/2026/4/22/finance-and-business-networking-elevating-your-potential-boston-tickets','Finance and Business Networking | Elevating Your Potential - Boston')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://do617.com/events/2026/4/22/finance-and-business-networking-elevating-your-potential-boston-tickets','Finance and Business Networking | Elevating Your Potential - Boston')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://do617.com/events/2026/4/22/finance-and-business-networking-elevating-your-potential-boston-tickets','Finance and Business Networking | Elevating Your Potential - Boston')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://do617.com/events/2026/4/22/finance-and-business-networking-elevating-your-potential-boston-tickets','Finance and Business Networking | Elevating Your Potential - Boston')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://do617.com/events/2026/4/22/finance-and-business-networking-elevating-your-potential-boston-tickets','Finance and Business Networking | Elevating Your Potential - Boston')">👎 Kirk</button>
+            </div>
+            </div>
+            <div class="card">
+                <div class="card-title">SABA GB's Navigating Law Firm Life as a Woman of Color <span class="score" title="Relevance score 1-10">7</span></div>
+                <div class="meta">5:30 PM &nbsp;|&nbsp; Boston Bar Association &nbsp;|&nbsp; Boston, MA</div>
+                <div class="reason">→ Boston Bar Association events. Professional legal/law community networking with high-caliber attendees. Sections cover business law, civil rights, leadership networks. Strong value for career development and professional connections, though page shows limited specific event details.</div>
+                <a class="link" href="https://www.bostonbar.org/events/" target="_blank">https://www.bostonbar.org/events/</a>
+                <div class="feedback" id="fb_www_bostonbar_org_events_">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://www.bostonbar.org/events/','SABA GBs Navigating Law Firm Life as a Woman of Color')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://www.bostonbar.org/events/','SABA GBs Navigating Law Firm Life as a Woman of Color')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://www.bostonbar.org/events/','SABA GBs Navigating Law Firm Life as a Woman of Color')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://www.bostonbar.org/events/','SABA GBs Navigating Law Firm Life as a Woman of Color')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://www.bostonbar.org/events/','SABA GBs Navigating Law Firm Life as a Woman of Color')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://www.bostonbar.org/events/','SABA GBs Navigating Law Firm Life as a Woman of Color')">👎 Kirk</button>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div class="day-section" id="day-8">
+            <div class="day-header" onclick="toggleDaySection(this)">Thursday, April 23 <span class="day-toggle">▼</span></div>
+            <div class="day-cards">
+            
+            <div class="card">
+                <div class="card-title">BBA Partner Webinar: How Litigators Use AI to Supplement Staff <span class="score" title="Relevance score 1-10">7</span></div>
+                <div class="meta">12:00 PM &nbsp;|&nbsp; Boston Bar Association &nbsp;|&nbsp; Boston, MA</div>
+                <div class="reason">→ Boston Bar Association events. Professional legal/law community networking with high-caliber attendees. Sections cover business law, civil rights, leadership networks. Strong value for career development and professional connections, though page shows limited specific event details.</div>
+                <a class="link" href="https://www.bostonbar.org/events/" target="_blank">https://www.bostonbar.org/events/</a>
+                <div class="feedback" id="fb_www_bostonbar_org_events_">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://www.bostonbar.org/events/','BBA Partner Webinar: How Litigators Use AI to Supplement Staff')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://www.bostonbar.org/events/','BBA Partner Webinar: How Litigators Use AI to Supplement Staff')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://www.bostonbar.org/events/','BBA Partner Webinar: How Litigators Use AI to Supplement Staff')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://www.bostonbar.org/events/','BBA Partner Webinar: How Litigators Use AI to Supplement Staff')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://www.bostonbar.org/events/','BBA Partner Webinar: How Litigators Use AI to Supplement Staff')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://www.bostonbar.org/events/','BBA Partner Webinar: How Litigators Use AI to Supplement Staff')">👎 Kirk</button>
+            </div>
+            </div>
+            <div class="card">
+                <div class="card-title">PHYSICAL AI HAPPY HOUR, BOSTON <span class="score" title="Relevance score 1-10">7</span></div>
+                <div class="meta">9:30 PM &nbsp;|&nbsp; Somerville, Massachusetts</div>
+                <div class="reason">→ Physical AI happy hour in Boston—robotics/AI community with likely mix of founders, engineers, and technical operators. Good venue for SE and presales networking in deep tech.</div>
+                <a class="link" href="https://lu.ma/elebmd85" target="_blank">https://lu.ma/elebmd85</a>
+                <div class="feedback" id="fb_lu_ma_elebmd85">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://lu.ma/elebmd85','PHYSICAL AI HAPPY HOUR, BOSTON')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://lu.ma/elebmd85','PHYSICAL AI HAPPY HOUR, BOSTON')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://lu.ma/elebmd85','PHYSICAL AI HAPPY HOUR, BOSTON')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://lu.ma/elebmd85','PHYSICAL AI HAPPY HOUR, BOSTON')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://lu.ma/elebmd85','PHYSICAL AI HAPPY HOUR, BOSTON')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://lu.ma/elebmd85','PHYSICAL AI HAPPY HOUR, BOSTON')">👎 Kirk</button>
+            </div>
+            </div>
+            <div class="card">
+                <div class="card-title">April 23rd - bAWSton User Group! <span class="score" title="Relevance score 1-10">6</span></div>
+                <div class="meta">6:00 PM &nbsp;|&nbsp; 399 Boylston St &nbsp;|&nbsp; Boston</div>
+                <div class="reason">→ AWS User Group with interactive Terraform/Gameday challenge. Technical depth and hands-on learning appeal to Kirk's engineering background, though this skews developer-focused rather than sales/GTM. Useful for staying sharp on infrastructure but not primary networking value.</div>
+                <a class="link" href="https://www.meetup.com/the-boston-amazon-web-services-meetup-group/events/314077673/" target="_blank">https://www.meetup.com/the-boston-amazon-web-services-meetup-group/events/314077673/</a>
+                <div class="feedback" id="fb_www_meetup_com_the-boston-amazon-web-ser">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://www.meetup.com/the-boston-amazon-web-services-meetup-group/events/314077673/','April 23rd - bAWSton User Group!')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://www.meetup.com/the-boston-amazon-web-services-meetup-group/events/314077673/','April 23rd - bAWSton User Group!')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://www.meetup.com/the-boston-amazon-web-services-meetup-group/events/314077673/','April 23rd - bAWSton User Group!')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://www.meetup.com/the-boston-amazon-web-services-meetup-group/events/314077673/','April 23rd - bAWSton User Group!')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://www.meetup.com/the-boston-amazon-web-services-meetup-group/events/314077673/','April 23rd - bAWSton User Group!')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://www.meetup.com/the-boston-amazon-web-services-meetup-group/events/314077673/','April 23rd - bAWSton User Group!')">👎 Kirk</button>
+            </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Kentucky Derby Cocktail Class <span class="score" title="Relevance score 1-10">5</span></div>
+                <div class="meta">5:30 PM &nbsp;|&nbsp; The Newbury Boston</div>
+                <div class="reason">→ Upscale cocktail class; professional social event with quality attendees</div>
+                <a class="link" href="https://do617.com/events/2026/4/23/kentucky-derby-cocktail-class-tickets" target="_blank">https://do617.com/events/2026/4/23/kentucky-derby-cocktail-class-tickets</a>
+                <div class="feedback" id="fb_do617_com_events_2026_4_23_kentucky-derb">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://do617.com/events/2026/4/23/kentucky-derby-cocktail-class-tickets','Kentucky Derby Cocktail Class')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://do617.com/events/2026/4/23/kentucky-derby-cocktail-class-tickets','Kentucky Derby Cocktail Class')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://do617.com/events/2026/4/23/kentucky-derby-cocktail-class-tickets','Kentucky Derby Cocktail Class')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://do617.com/events/2026/4/23/kentucky-derby-cocktail-class-tickets','Kentucky Derby Cocktail Class')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://do617.com/events/2026/4/23/kentucky-derby-cocktail-class-tickets','Kentucky Derby Cocktail Class')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://do617.com/events/2026/4/23/kentucky-derby-cocktail-class-tickets','Kentucky Derby Cocktail Class')">👎 Kirk</button>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div class="day-section" id="day-9">
+            <div class="day-header" onclick="toggleDaySection(this)">Saturday, April 25 <span class="day-toggle">▼</span></div>
+            <div class="day-cards">
+            
+            <div class="card">
+                <div class="card-title">Earth Day Service Opportunity: Charles River Cleanup <span class="score" title="Relevance score 1-10">7</span></div>
+                <div class="meta">10:00 AM &nbsp;|&nbsp; Charles River &nbsp;|&nbsp; Boston, MA</div>
+                <div class="reason">→ Boston Bar Association events. Professional legal/law community networking with high-caliber attendees. Sections cover business law, civil rights, leadership networks. Strong value for career development and professional connections, though page shows limited specific event details.</div>
+                <a class="link" href="https://www.bostonbar.org/events/" target="_blank">https://www.bostonbar.org/events/</a>
+                <div class="feedback" id="fb_www_bostonbar_org_events_">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://www.bostonbar.org/events/','Earth Day Service Opportunity: Charles River Cleanup')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://www.bostonbar.org/events/','Earth Day Service Opportunity: Charles River Cleanup')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://www.bostonbar.org/events/','Earth Day Service Opportunity: Charles River Cleanup')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://www.bostonbar.org/events/','Earth Day Service Opportunity: Charles River Cleanup')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://www.bostonbar.org/events/','Earth Day Service Opportunity: Charles River Cleanup')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://www.bostonbar.org/events/','Earth Day Service Opportunity: Charles River Cleanup')">👎 Kirk</button>
+            </div>
+            </div>
+            <div class="card">
+                <div class="card-title">The Mega Awesome Super Huge Wicked Fun Podcast Playdate <span class="score" title="Relevance score 1-10">6</span></div>
+                <div class="meta"></div>
+                <div class="reason">→ WBUR CitySpace events including 'The WBUR Breakfast Club: JetBlue CEO Joanna Geraghty' and journalism/media talks. Civic/journalism value and CEO-level speakers. High-caliber professional development but primarily media/journalism focus rather than Kirk's core tech/sales engineering interests.</div>
+                <a class="link" href="https://www.wbur.org/events" target="_blank">https://www.wbur.org/events</a>
+                <div class="feedback" id="fb_www_wbur_org_events">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://www.wbur.org/events','The Mega Awesome Super Huge Wicked Fun Podcast Playdate')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://www.wbur.org/events','The Mega Awesome Super Huge Wicked Fun Podcast Playdate')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://www.wbur.org/events','The Mega Awesome Super Huge Wicked Fun Podcast Playdate')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://www.wbur.org/events','The Mega Awesome Super Huge Wicked Fun Podcast Playdate')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://www.wbur.org/events','The Mega Awesome Super Huge Wicked Fun Podcast Playdate')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://www.wbur.org/events','The Mega Awesome Super Huge Wicked Fun Podcast Playdate')">👎 Kirk</button>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div class="day-section" id="day-10">
+            <div class="day-header" onclick="toggleDaySection(this)">Monday, April 27 <span class="day-toggle">▼</span></div>
+            <div class="day-cards">
+            
+            <div class="card">
+                <div class="card-title">Advocating for Survivors of Human Trafficking: Pursuing Criminal Record Vacaturs <span class="score" title="Relevance score 1-10">7</span></div>
+                <div class="meta">12:00 PM &nbsp;|&nbsp; Boston Bar Association &nbsp;|&nbsp; Boston, MA</div>
+                <div class="reason">→ Boston Bar Association events. Professional legal/law community networking with high-caliber attendees. Sections cover business law, civil rights, leadership networks. Strong value for career development and professional connections, though page shows limited specific event details.</div>
+                <a class="link" href="https://www.bostonbar.org/events/" target="_blank">https://www.bostonbar.org/events/</a>
+                <div class="feedback" id="fb_www_bostonbar_org_events_">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://www.bostonbar.org/events/','Advocating for Survivors of Human Trafficking: Pursuing Criminal Record Vacaturs')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://www.bostonbar.org/events/','Advocating for Survivors of Human Trafficking: Pursuing Criminal Record Vacaturs')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://www.bostonbar.org/events/','Advocating for Survivors of Human Trafficking: Pursuing Criminal Record Vacaturs')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://www.bostonbar.org/events/','Advocating for Survivors of Human Trafficking: Pursuing Criminal Record Vacaturs')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://www.bostonbar.org/events/','Advocating for Survivors of Human Trafficking: Pursuing Criminal Record Vacaturs')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://www.bostonbar.org/events/','Advocating for Survivors of Human Trafficking: Pursuing Criminal Record Vacaturs')">👎 Kirk</button>
+            </div>
+            </div>
+            <div class="card">
+                <div class="card-title">From First Call to First Court Appearance: Litigation Essentials for New Lawyers <span class="score" title="Relevance score 1-10">7</span></div>
+                <div class="meta">2:00 PM &nbsp;|&nbsp; Boston Bar Association &nbsp;|&nbsp; Boston, MA</div>
+                <div class="reason">→ Boston Bar Association events. Professional legal/law community networking with high-caliber attendees. Sections cover business law, civil rights, leadership networks. Strong value for career development and professional connections, though page shows limited specific event details.</div>
+                <a class="link" href="https://www.bostonbar.org/events/" target="_blank">https://www.bostonbar.org/events/</a>
+                <div class="feedback" id="fb_www_bostonbar_org_events_">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://www.bostonbar.org/events/','From First Call to First Court Appearance: Litigation Essentials for New Lawyers')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://www.bostonbar.org/events/','From First Call to First Court Appearance: Litigation Essentials for New Lawyers')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://www.bostonbar.org/events/','From First Call to First Court Appearance: Litigation Essentials for New Lawyers')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://www.bostonbar.org/events/','From First Call to First Court Appearance: Litigation Essentials for New Lawyers')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://www.bostonbar.org/events/','From First Call to First Court Appearance: Litigation Essentials for New Lawyers')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://www.bostonbar.org/events/','From First Call to First Court Appearance: Litigation Essentials for New Lawyers')">👎 Kirk</button>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div class="day-section" id="day-11">
+            <div class="day-header" onclick="toggleDaySection(this)">Tuesday, April 28 <span class="day-toggle">▼</span></div>
+            <div class="day-cards">
+            
+            <div class="card">
+                <div class="card-title">Charitable Board Service Series: Board Service & Ethics: What Every Attorney Needs to Know <span class="score" title="Relevance score 1-10">7</span></div>
+                <div class="meta">12:00 PM &nbsp;|&nbsp; Boston Bar Association &nbsp;|&nbsp; Boston, MA</div>
+                <div class="reason">→ Boston Bar Association events. Professional legal/law community networking with high-caliber attendees. Sections cover business law, civil rights, leadership networks. Strong value for career development and professional connections, though page shows limited specific event details.</div>
+                <a class="link" href="https://www.bostonbar.org/events/" target="_blank">https://www.bostonbar.org/events/</a>
+                <div class="feedback" id="fb_www_bostonbar_org_events_">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://www.bostonbar.org/events/','Charitable Board Service Series: Board Service & Ethics: What Every Attorney Needs to Know')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://www.bostonbar.org/events/','Charitable Board Service Series: Board Service & Ethics: What Every Attorney Needs to Know')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://www.bostonbar.org/events/','Charitable Board Service Series: Board Service & Ethics: What Every Attorney Needs to Know')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://www.bostonbar.org/events/','Charitable Board Service Series: Board Service & Ethics: What Every Attorney Needs to Know')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://www.bostonbar.org/events/','Charitable Board Service Series: Board Service & Ethics: What Every Attorney Needs to Know')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://www.bostonbar.org/events/','Charitable Board Service Series: Board Service & Ethics: What Every Attorney Needs to Know')">👎 Kirk</button>
+            </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Not Selected in the Lottery? Visa Options Beyond the H-1B Cap <span class="score" title="Relevance score 1-10">7</span></div>
+                <div class="meta">12:00 PM &nbsp;|&nbsp; Boston Bar Association &nbsp;|&nbsp; Boston, MA</div>
+                <div class="reason">→ Boston Bar Association events. Professional legal/law community networking with high-caliber attendees. Sections cover business law, civil rights, leadership networks. Strong value for career development and professional connections, though page shows limited specific event details.</div>
+                <a class="link" href="https://www.bostonbar.org/events/" target="_blank">https://www.bostonbar.org/events/</a>
+                <div class="feedback" id="fb_www_bostonbar_org_events_">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://www.bostonbar.org/events/','Not Selected in the Lottery? Visa Options Beyond the H-1B Cap')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://www.bostonbar.org/events/','Not Selected in the Lottery? Visa Options Beyond the H-1B Cap')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://www.bostonbar.org/events/','Not Selected in the Lottery? Visa Options Beyond the H-1B Cap')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://www.bostonbar.org/events/','Not Selected in the Lottery? Visa Options Beyond the H-1B Cap')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://www.bostonbar.org/events/','Not Selected in the Lottery? Visa Options Beyond the H-1B Cap')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://www.bostonbar.org/events/','Not Selected in the Lottery? Visa Options Beyond the H-1B Cap')">👎 Kirk</button>
+            </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Navigating Privacy Risks That Spark Litigation <span class="score" title="Relevance score 1-10">7</span></div>
+                <div class="meta">2:00 PM &nbsp;|&nbsp; Boston Bar Association &nbsp;|&nbsp; Boston, MA</div>
+                <div class="reason">→ Boston Bar Association events. Professional legal/law community networking with high-caliber attendees. Sections cover business law, civil rights, leadership networks. Strong value for career development and professional connections, though page shows limited specific event details.</div>
+                <a class="link" href="https://www.bostonbar.org/events/" target="_blank">https://www.bostonbar.org/events/</a>
+                <div class="feedback" id="fb_www_bostonbar_org_events_">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://www.bostonbar.org/events/','Navigating Privacy Risks That Spark Litigation')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://www.bostonbar.org/events/','Navigating Privacy Risks That Spark Litigation')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://www.bostonbar.org/events/','Navigating Privacy Risks That Spark Litigation')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://www.bostonbar.org/events/','Navigating Privacy Risks That Spark Litigation')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://www.bostonbar.org/events/','Navigating Privacy Risks That Spark Litigation')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://www.bostonbar.org/events/','Navigating Privacy Risks That Spark Litigation')">👎 Kirk</button>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div class="day-section" id="day-12">
+            <div class="day-header" onclick="toggleDaySection(this)">Wednesday, April 29 <span class="day-toggle">▼</span></div>
+            <div class="day-cards">
+            
+            <div class="card">
+                <div class="card-title">Client Intake in Consumer Bankruptcy <span class="score" title="Relevance score 1-10">7</span></div>
+                <div class="meta">12:00 PM &nbsp;|&nbsp; Boston Bar Association &nbsp;|&nbsp; Boston, MA</div>
+                <div class="reason">→ Boston Bar Association events. Professional legal/law community networking with high-caliber attendees. Sections cover business law, civil rights, leadership networks. Strong value for career development and professional connections, though page shows limited specific event details.</div>
+                <a class="link" href="https://www.bostonbar.org/events/" target="_blank">https://www.bostonbar.org/events/</a>
+                <div class="feedback" id="fb_www_bostonbar_org_events_">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://www.bostonbar.org/events/','Client Intake in Consumer Bankruptcy')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://www.bostonbar.org/events/','Client Intake in Consumer Bankruptcy')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://www.bostonbar.org/events/','Client Intake in Consumer Bankruptcy')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://www.bostonbar.org/events/','Client Intake in Consumer Bankruptcy')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://www.bostonbar.org/events/','Client Intake in Consumer Bankruptcy')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://www.bostonbar.org/events/','Client Intake in Consumer Bankruptcy')">👎 Kirk</button>
+            </div>
+            </div>
+            <div class="card">
+                <div class="card-title">Advancing Into Nonprofit Leadership: A Roadmap for Legal Aid Attorneys <span class="score" title="Relevance score 1-10">7</span></div>
+                <div class="meta">12:00 PM &nbsp;|&nbsp; Boston Bar Association &nbsp;|&nbsp; Boston, MA</div>
+                <div class="reason">→ Boston Bar Association events. Professional legal/law community networking with high-caliber attendees. Sections cover business law, civil rights, leadership networks. Strong value for career development and professional connections, though page shows limited specific event details.</div>
+                <a class="link" href="https://www.bostonbar.org/events/" target="_blank">https://www.bostonbar.org/events/</a>
+                <div class="feedback" id="fb_www_bostonbar_org_events_">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://www.bostonbar.org/events/','Advancing Into Nonprofit Leadership: A Roadmap for Legal Aid Attorneys')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://www.bostonbar.org/events/','Advancing Into Nonprofit Leadership: A Roadmap for Legal Aid Attorneys')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://www.bostonbar.org/events/','Advancing Into Nonprofit Leadership: A Roadmap for Legal Aid Attorneys')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://www.bostonbar.org/events/','Advancing Into Nonprofit Leadership: A Roadmap for Legal Aid Attorneys')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://www.bostonbar.org/events/','Advancing Into Nonprofit Leadership: A Roadmap for Legal Aid Attorneys')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://www.bostonbar.org/events/','Advancing Into Nonprofit Leadership: A Roadmap for Legal Aid Attorneys')">👎 Kirk</button>
+            </div>
+            </div>
+            <div class="card">
+                <div class="card-title">BBA Exchange: Solo & Small Firm Attorneys Virtual Roundtable <span class="score" title="Relevance score 1-10">7</span></div>
+                <div class="meta">12:00 PM &nbsp;|&nbsp; Boston Bar Association &nbsp;|&nbsp; Boston, MA</div>
+                <div class="reason">→ Boston Bar Association events. Professional legal/law community networking with high-caliber attendees. Sections cover business law, civil rights, leadership networks. Strong value for career development and professional connections, though page shows limited specific event details.</div>
+                <a class="link" href="https://www.bostonbar.org/events/" target="_blank">https://www.bostonbar.org/events/</a>
+                <div class="feedback" id="fb_www_bostonbar_org_events_">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://www.bostonbar.org/events/','BBA Exchange: Solo & Small Firm Attorneys Virtual Roundtable')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://www.bostonbar.org/events/','BBA Exchange: Solo & Small Firm Attorneys Virtual Roundtable')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://www.bostonbar.org/events/','BBA Exchange: Solo & Small Firm Attorneys Virtual Roundtable')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://www.bostonbar.org/events/','BBA Exchange: Solo & Small Firm Attorneys Virtual Roundtable')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://www.bostonbar.org/events/','BBA Exchange: Solo & Small Firm Attorneys Virtual Roundtable')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://www.bostonbar.org/events/','BBA Exchange: Solo & Small Firm Attorneys Virtual Roundtable')">👎 Kirk</button>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div class="day-section" id="day-13">
+            <div class="day-header" onclick="toggleDaySection(this)">Thursday, April 30 <span class="day-toggle">▼</span></div>
+            <div class="day-cards">
+            
+            <div class="card">
+                <div class="card-title">'This Is Not About Running': running phenom Mary Cain tells her story <span class="score" title="Relevance score 1-10">6</span></div>
+                <div class="meta"></div>
+                <div class="reason">→ WBUR CitySpace events including 'The WBUR Breakfast Club: JetBlue CEO Joanna Geraghty' and journalism/media talks. Civic/journalism value and CEO-level speakers. High-caliber professional development but primarily media/journalism focus rather than Kirk's core tech/sales engineering interests.</div>
+                <a class="link" href="https://www.wbur.org/events" target="_blank">https://www.wbur.org/events</a>
+                <div class="feedback" id="fb_www_wbur_org_events">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://www.wbur.org/events','This Is Not About Running: running phenom Mary Cain tells her story')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://www.wbur.org/events','This Is Not About Running: running phenom Mary Cain tells her story')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://www.wbur.org/events','This Is Not About Running: running phenom Mary Cain tells her story')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://www.wbur.org/events','This Is Not About Running: running phenom Mary Cain tells her story')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://www.wbur.org/events','This Is Not About Running: running phenom Mary Cain tells her story')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://www.wbur.org/events','This Is Not About Running: running phenom Mary Cain tells her story')">👎 Kirk</button>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div class="day-section" id="day-14">
+            <div class="day-header" onclick="toggleDaySection(this)">Friday, May 1 <span class="day-toggle">▼</span></div>
+            <div class="day-cards">
+            
+            <div class="card">
+                <div class="card-title">'The Sporkful' live <span class="score" title="Relevance score 1-10">6</span></div>
+                <div class="meta"></div>
+                <div class="reason">→ WBUR CitySpace events including 'The WBUR Breakfast Club: JetBlue CEO Joanna Geraghty' and journalism/media talks. Civic/journalism value and CEO-level speakers. High-caliber professional development but primarily media/journalism focus rather than Kirk's core tech/sales engineering interests.</div>
+                <a class="link" href="https://www.wbur.org/events" target="_blank">https://www.wbur.org/events</a>
+                <div class="feedback" id="fb_www_wbur_org_events">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://www.wbur.org/events','The Sporkful live')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://www.wbur.org/events','The Sporkful live')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://www.wbur.org/events','The Sporkful live')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://www.wbur.org/events','The Sporkful live')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://www.wbur.org/events','The Sporkful live')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://www.wbur.org/events','The Sporkful live')">👎 Kirk</button>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div class="day-section" id="day-15">
+            <div class="day-header" onclick="toggleDaySection(this)">Monday, May 4 <span class="day-toggle">▼</span></div>
+            <div class="day-cards">
+            
+            <div class="card">
+                <div class="card-title">'Science Friday' live with Ira Flatow <span class="score" title="Relevance score 1-10">6</span></div>
+                <div class="meta"></div>
+                <div class="reason">→ WBUR CitySpace events including 'The WBUR Breakfast Club: JetBlue CEO Joanna Geraghty' and journalism/media talks. Civic/journalism value and CEO-level speakers. High-caliber professional development but primarily media/journalism focus rather than Kirk's core tech/sales engineering interests.</div>
+                <a class="link" href="https://www.wbur.org/events" target="_blank">https://www.wbur.org/events</a>
+                <div class="feedback" id="fb_www_wbur_org_events">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://www.wbur.org/events','Science Friday live with Ira Flatow')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://www.wbur.org/events','Science Friday live with Ira Flatow')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://www.wbur.org/events','Science Friday live with Ira Flatow')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://www.wbur.org/events','Science Friday live with Ira Flatow')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://www.wbur.org/events','Science Friday live with Ira Flatow')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://www.wbur.org/events','Science Friday live with Ira Flatow')">👎 Kirk</button>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div class="day-section" id="day-16">
+            <div class="day-header" onclick="toggleDaySection(this)">Friday, May 8 <span class="day-toggle">▼</span></div>
+            <div class="day-cards">
+            
+            <div class="card">
+                <div class="card-title">FOUND Magazine's 25th anniversary tour with Davy Rothbart and Peter Rothbart <span class="score" title="Relevance score 1-10">6</span></div>
+                <div class="meta"></div>
+                <div class="reason">→ WBUR CitySpace events including 'The WBUR Breakfast Club: JetBlue CEO Joanna Geraghty' and journalism/media talks. Civic/journalism value and CEO-level speakers. High-caliber professional development but primarily media/journalism focus rather than Kirk's core tech/sales engineering interests.</div>
+                <a class="link" href="https://www.wbur.org/events" target="_blank">https://www.wbur.org/events</a>
+                <div class="feedback" id="fb_www_wbur_org_events">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://www.wbur.org/events','FOUND Magazines 25th anniversary tour with Davy Rothbart and Peter Rothbart')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://www.wbur.org/events','FOUND Magazines 25th anniversary tour with Davy Rothbart and Peter Rothbart')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://www.wbur.org/events','FOUND Magazines 25th anniversary tour with Davy Rothbart and Peter Rothbart')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://www.wbur.org/events','FOUND Magazines 25th anniversary tour with Davy Rothbart and Peter Rothbart')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://www.wbur.org/events','FOUND Magazines 25th anniversary tour with Davy Rothbart and Peter Rothbart')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://www.wbur.org/events','FOUND Magazines 25th anniversary tour with Davy Rothbart and Peter Rothbart')">👎 Kirk</button>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div class="day-section" id="day-17">
+            <div class="day-header" onclick="toggleDaySection(this)">Tuesday, May 12 <span class="day-toggle">▼</span></div>
+            <div class="day-cards">
+            
+            <div class="card">
+                <div class="card-title">The WBUR Breakfast Club: JetBlue CEO Joanna Geraghty in conversation with Tiziana Dearing <span class="score" title="Relevance score 1-10">6</span></div>
+                <div class="meta"></div>
+                <div class="reason">→ WBUR CitySpace events including 'The WBUR Breakfast Club: JetBlue CEO Joanna Geraghty' and journalism/media talks. Civic/journalism value and CEO-level speakers. High-caliber professional development but primarily media/journalism focus rather than Kirk's core tech/sales engineering interests.</div>
+                <a class="link" href="https://www.wbur.org/events" target="_blank">https://www.wbur.org/events</a>
+                <div class="feedback" id="fb_www_wbur_org_events">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://www.wbur.org/events','The WBUR Breakfast Club: JetBlue CEO Joanna Geraghty in conversation with Tiziana Dearing')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://www.wbur.org/events','The WBUR Breakfast Club: JetBlue CEO Joanna Geraghty in conversation with Tiziana Dearing')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://www.wbur.org/events','The WBUR Breakfast Club: JetBlue CEO Joanna Geraghty in conversation with Tiziana Dearing')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://www.wbur.org/events','The WBUR Breakfast Club: JetBlue CEO Joanna Geraghty in conversation with Tiziana Dearing')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://www.wbur.org/events','The WBUR Breakfast Club: JetBlue CEO Joanna Geraghty in conversation with Tiziana Dearing')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://www.wbur.org/events','The WBUR Breakfast Club: JetBlue CEO Joanna Geraghty in conversation with Tiziana Dearing')">👎 Kirk</button>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div class="day-section" id="day-18">
+            <div class="day-header" onclick="toggleDaySection(this)">Wednesday, May 13 <span class="day-toggle">▼</span></div>
+            <div class="day-cards">
+            
+            <div class="card">
+                <div class="card-title">Stories from a warming world <span class="score" title="Relevance score 1-10">6</span></div>
+                <div class="meta"></div>
+                <div class="reason">→ WBUR CitySpace events including 'The WBUR Breakfast Club: JetBlue CEO Joanna Geraghty' and journalism/media talks. Civic/journalism value and CEO-level speakers. High-caliber professional development but primarily media/journalism focus rather than Kirk's core tech/sales engineering interests.</div>
+                <a class="link" href="https://www.wbur.org/events" target="_blank">https://www.wbur.org/events</a>
+                <div class="feedback" id="fb_www_wbur_org_events">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://www.wbur.org/events','Stories from a warming world')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://www.wbur.org/events','Stories from a warming world')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://www.wbur.org/events','Stories from a warming world')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://www.wbur.org/events','Stories from a warming world')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://www.wbur.org/events','Stories from a warming world')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://www.wbur.org/events','Stories from a warming world')">👎 Kirk</button>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div class="day-section" id="day-19">
+            <div class="day-header" onclick="toggleDaySection(this)">Friday, May 29 <span class="day-toggle">▼</span></div>
+            <div class="day-cards">
+            
+            <div class="card">
+                <div class="card-title">The WBUR Festival <span class="score" title="Relevance score 1-10">6</span></div>
+                <div class="meta"></div>
+                <div class="reason">→ WBUR CitySpace events including 'The WBUR Breakfast Club: JetBlue CEO Joanna Geraghty' and journalism/media talks. Civic/journalism value and CEO-level speakers. High-caliber professional development but primarily media/journalism focus rather than Kirk's core tech/sales engineering interests.</div>
+                <a class="link" href="https://www.wbur.org/events" target="_blank">https://www.wbur.org/events</a>
+                <div class="feedback" id="fb_www_wbur_org_events">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://www.wbur.org/events','The WBUR Festival')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://www.wbur.org/events','The WBUR Festival')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://www.wbur.org/events','The WBUR Festival')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://www.wbur.org/events','The WBUR Festival')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://www.wbur.org/events','The WBUR Festival')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://www.wbur.org/events','The WBUR Festival')">👎 Kirk</button>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div class="day-section" id="day-20">
+            <div class="day-header" onclick="toggleDaySection(this)">Thursday, June 4 <span class="day-toggle">▼</span></div>
+            <div class="day-cards">
+            
+            <div class="card">
+                <div class="card-title">AMERICAN DREAMS: The Moth Mainstage at Somerville Theatre <span class="score" title="Relevance score 1-10">6</span></div>
+                <div class="meta">Somerville Theatre</div>
+                <div class="reason">→ WBUR CitySpace events including 'The WBUR Breakfast Club: JetBlue CEO Joanna Geraghty' and journalism/media talks. Civic/journalism value and CEO-level speakers. High-caliber professional development but primarily media/journalism focus rather than Kirk's core tech/sales engineering interests.</div>
+                <a class="link" href="https://www.wbur.org/events" target="_blank">https://www.wbur.org/events</a>
+                <div class="feedback" id="fb_www_wbur_org_events">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://www.wbur.org/events','AMERICAN DREAMS: The Moth Mainstage at Somerville Theatre')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://www.wbur.org/events','AMERICAN DREAMS: The Moth Mainstage at Somerville Theatre')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://www.wbur.org/events','AMERICAN DREAMS: The Moth Mainstage at Somerville Theatre')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://www.wbur.org/events','AMERICAN DREAMS: The Moth Mainstage at Somerville Theatre')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://www.wbur.org/events','AMERICAN DREAMS: The Moth Mainstage at Somerville Theatre')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://www.wbur.org/events','AMERICAN DREAMS: The Moth Mainstage at Somerville Theatre')">👎 Kirk</button>
+            </div>
+            </div>
+            </div>
+        </div>
+        <div class="day-section" id="day-21">
+            <div class="day-header" onclick="toggleDaySection(this)">Tuesday, July 7 <span class="day-toggle">▼</span></div>
+            <div class="day-cards">
+            
+            <div class="card">
+                <div class="card-title">Tiny Desk Contest On The Road tour <span class="score" title="Relevance score 1-10">6</span></div>
+                <div class="meta"></div>
+                <div class="reason">→ WBUR CitySpace events including 'The WBUR Breakfast Club: JetBlue CEO Joanna Geraghty' and journalism/media talks. Civic/journalism value and CEO-level speakers. High-caliber professional development but primarily media/journalism focus rather than Kirk's core tech/sales engineering interests.</div>
+                <a class="link" href="https://www.wbur.org/events" target="_blank">https://www.wbur.org/events</a>
+                <div class="feedback" id="fb_www_wbur_org_events">
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','up','https://www.wbur.org/events','Tiny Desk Contest On The Road tour')">👍 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','up','https://www.wbur.org/events','Tiny Desk Contest On The Road tour')">👍 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','up','https://www.wbur.org/events','Tiny Desk Contest On The Road tour')">👍 Kirk</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'brian','down','https://www.wbur.org/events','Tiny Desk Contest On The Road tour')">👎 Brian</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'dates','down','https://www.wbur.org/events','Tiny Desk Contest On The Road tour')">👎 Dates</button>
+                <button class="fb-btn" onclick="sendFeedback(this,'kirk','down','https://www.wbur.org/events','Tiny Desk Contest On The Road tour')">👎 Kirk</button>
+            </div>
+            </div>
+            </div>
+        </div>
+  
+  <!-- Netlify form (hidden) — required for Netlify to detect and activate the form -->
+  <form name="event-feedback" netlify netlify-honeypot="bot-field" hidden>
+    <input name="bot-field">
+    <input name="persona"><input name="vote"><input name="event_url"><input name="event_name">
+  </form>
+
+  <div class="footer">Generated April 19, 2026 at 8:18 AM</div>
+<script>
+  function toggleDay(pill) {
     var dayId = pill.dataset.day;
     var section = document.getElementById(dayId);
     pill.classList.toggle('hidden');
     section.classList.toggle('hidden-by-filter');
-  };
+  }
 
-  window.toggleDaySection = function(header) {
+  function toggleDaySection(header) {
     header.parentElement.classList.toggle('collapsed');
-  };
+  }
 
-  // ── Render ────────────────────────────────────────────────────────────────
-
-  function renderAll(data) {
-    document.getElementById('loading').style.display = 'none';
-    document.getElementById('main').style.display = '';
-
-    // Inject scoring prompt into profile panel
-    var promptEl = document.getElementById('kirk-prompt');
-    if (promptEl && data.persona_prompt) promptEl.textContent = data.persona_prompt;
-
-    // Subtitle
-    var events = data.events || [];
-    // index events by URL for modal lookup
-    events.forEach(function(ev) { if (ev.url) evMap[ev.url] = ev; });
-    var today = data.today || '';
-    var days = data.days || 7;
-    var startDate = today;
-    var endDateObj = new Date(today.split('-')[0], parseInt(today.split('-')[1],10)-1, parseInt(today.split('-')[2],10) + days - 1);
-    var months = ['January','February','March','April','May','June',
-                  'July','August','September','October','November','December'];
-    var endLabel = months[endDateObj.getMonth()] + ' ' + endDateObj.getDate();
-    var startParts = today.split('-');
-    var startLabel = months[parseInt(startParts[1],10)-1] + ' ' + parseInt(startParts[2],10);
-    document.getElementById('subtitle').innerHTML =
-      startLabel + ' \u2013 ' + endLabel + ', ' + startParts[0] +
-      ' &nbsp;\u00B7&nbsp; ' + events.length + ' events';
-
-    // Cost bar
-    var costs = data.costs || {};
-    var runs = (costs.runs || []).slice(-5).reverse();
-    var costHtml = '<div style="display:flex;gap:20px;margin-bottom:10px">' +
-      '<span class="cost-item">Week: <b>$' + (costs.week || 0).toFixed(4) + '</b></span>' +
-      '<span class="cost-item">Month: <b>$' + (costs.month || 0).toFixed(4) + '</b></span>' +
-      '<span class="cost-item">Total: <b>$' + (costs.total || 0).toFixed(4) + '</b></span>' +
-    '</div>';
-    if (runs.length) {
-      costHtml += '<table style="width:100%;border-collapse:collapse;font-size:0.75rem;color:#888">' +
-        '<thead><tr style="color:#555;text-align:left;border-bottom:1px solid #222">' +
-          '<th style="padding:4px 8px 4px 0">Run</th>' +
-          '<th style="padding:4px 8px">Persona</th>' +
-          '<th style="padding:4px 8px">Events</th>' +
-          '<th style="padding:4px 8px">Where cost went</th>' +
-          '<th style="padding:4px 8px">Cost</th>' +
-          '<th style="padding:4px 8px">Time</th>' +
-        '</tr></thead><tbody>';
-      runs.forEach(function(run, i) {
-        var isLatest = (i === 0);
-        var stages = run.by_stage || {};
-        var STAGE_ORDER = ['fetch','score','restaurants'];
-        var stageStr = STAGE_ORDER.filter(function(s){ return stages[s] > 0; })
-          .map(function(s){ return '<span style="color:#667">' + s + '</span> ' + fmtMoney(stages[s]); })
-          .join(' &nbsp;+&nbsp; ');
-        if (!stageStr) {
-          var models = run.models || {};
-          stageStr = Object.keys(models).map(function(k) {
-            return esc(k.replace('claude-','').replace('-20251001','')) + ' ' + fmtMoney(models[k]);
-          }).join(', ') || '\u2014';
-        }
-        var srcCounts = run.source_counts || {};
-        var srcKeys = Object.keys(srcCounts).sort(function(a,b){ return srcCounts[b]-srcCounts[a]; });
-        var srcStr = srcKeys.slice(0,5).map(function(k){ return esc(k)+'&thinsp;'+srcCounts[k]; }).join(' &middot; ');
-        costHtml += '<tr' + (isLatest ? ' style="background:#1e2a1e"' : '') + '>' +
-          '<td style="padding:4px 8px 4px 0">' + esc(fmtRunTs(run.ts || '')) +
-            (isLatest ? ' <b style="color:#7fff7f;font-size:0.65rem">LATEST</b>' : '') +
-          '</td>' +
-          '<td style="color:#9ab;padding:4px 8px;text-transform:capitalize">' + esc(run.persona || '\u2014') + '</td>' +
-          '<td style="color:#aaa;padding:4px 8px">' +
-            (run.events_cached||0) + ' cached&thinsp;/&thinsp;' + (run.events_scored||0) + ' scored' +
-            (srcStr ? '<br><span style="color:#445;font-size:0.67rem">' + srcStr + '</span>' : '') +
-          '</td>' +
-          '<td style="padding:4px 8px">' + stageStr + '</td>' +
-          '<td style="color:#e8e8e8;font-weight:600;padding:4px 8px">' + fmtMoney(run.cost_usd) + '</td>' +
-          '<td style="color:#666;padding:4px 8px">' + fmtDuration(run.duration_ms) + '</td>' +
-        '</tr>';
-      });
-      costHtml += '</tbody></table>';
-      // Efficiency notes for latest run
-      var latestRun = runs[0];
-      if (latestRun && latestRun.efficiency) {
-        var eff = latestRun.efficiency;
-        var effColor = eff.cache_hit_rate >= 0.7 ? '#4a8a4a' : eff.cache_hit_rate >= 0.4 ? '#8a7a3a' : '#8a4a4a';
-        var notesHtml = (eff.notes || []).map(function(n){ return esc(n); }).join('<br>');
-        costHtml += '<div style="margin-top:8px;padding:6px 8px;background:#111;border-radius:4px;font-size:0.72rem;color:' + effColor + '">' +
-          '\u26a1 ' + notesHtml +
-          (latestRun.deploy_why && latestRun.deploy_why !== 'run' ? '<br><span style="color:#555">run: ' + esc(latestRun.deploy_why) + '</span>' : '') +
-          '</div>';
-      }
-      // Netlify credits — find most recent run that has valid credit data
-      var netlify = null;
-      for (var ri = 0; ri < runs.length; ri++) {
-        if (runs[ri].netlify && runs[ri].netlify.total) { netlify = runs[ri].netlify; break; }
-      }
-      if (netlify && netlify.total) {
-        var dashUrl = netlify.dashboard_url || 'https://app.netlify.com/billing';
-        costHtml += '<div style="margin-top:4px;font-size:0.72rem;color:#556">' +
-          '\uD83C\uDF10 Netlify: ' + netlify.total + ' credit pack &mdash; ' +
-          '<a href="' + dashUrl + '" target="_blank" style="color:#4a9eff;text-decoration:none">check balance in dashboard</a>' +
-          ' (API doesn\'t expose usage)</div>';
-      }
-    }
-    document.getElementById('cost-bar').innerHTML = costHtml;
-
-    // Sources bar
-    var sources    = data.sources || {};
-    var srcUrls    = data.source_urls || {};
-    var srcKeys    = Object.keys(sources);
-    var srcHtml    = '';
-    if (srcKeys.length) {
-      var totalShown = srcKeys.reduce(function(a, k) { return a + sources[k]; }, 0);
-      srcHtml = 'Sources: ' + srcKeys.map(function(k) {
-        var inner = esc(k) + ' <b>' + sources[k] + '</b>';
-        var u = srcUrls[k];
-        return u
-          ? '<a class="src-pill" href="' + esc(u) + '" target="_blank" style="text-decoration:none;color:inherit">' + inner + '</a>'
-          : '<span class="src-pill">' + inner + '</span>';
-      }).join(' ') +
-      ' <span style="color:#444;margin-left:8px">\u2192 ' + totalShown + ' shown</span>';
-    }
-    var srcBar = document.getElementById('sources-bar');
-    if (srcHtml) {
-      srcBar.innerHTML = srcHtml;
+  function toggleExtra() {
+    var el = document.getElementById('extra-events');
+    var btn = document.getElementById('extra-btn');
+    if (el.style.display === 'none' || !el.style.display) {
+      el.style.display = 'block';
+      btn.textContent = '▲ Hide lower-priority events';
     } else {
-      srcBar.style.display = 'none';
-    }
-
-    // Oyster bar — day-of-week view
-    var oysters = data.oyster_deals || [];
-    var oysterBar = document.getElementById('oyster-bar');
-    if (oysters.length) {
-      var DAY_NAMES = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-      var DAY_FULL  = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-      var todayDow  = new Date().getDay();
-      function oysterDays(o) {
-        var desc = ((o.description || '') + ' ' + (o.reason || '')).toLowerCase();
-        var name = (o.name || '').toLowerCase();
-        if (/daily|every day|all week/i.test(desc + name)) return [0,1,2,3,4,5,6];
-        var days = [];
-        var map = {sun:0,mon:1,tue:2,wed:3,thu:4,fri:5,sat:6,
-                   sunday:0,monday:1,tuesday:2,wednesday:3,thursday:4,friday:5,saturday:6};
-        Object.keys(map).forEach(function(k){ if(desc.indexOf(k)!==-1) days.push(map[k]); });
-        var rangeMatch = desc.match(/([a-z]+)[–\-]([a-z]+)/);
-        if (rangeMatch) {
-          var s = map[rangeMatch[1]], e = map[rangeMatch[2]];
-          if (s !== undefined && e !== undefined) { days = []; for(var d=s; d<=e; d++) days.push(d); }
-        }
-        return days.length ? days : [0,1,2,3,4,5,6];
-      }
-      function oysterHours(o) {
-        var m = (o.description||'').match(/(\d+(?::\d+)?\s*(?:AM|PM|am|pm)[^.,$]*)/i);
-        return m ? m[1].trim() : '';
-      }
-
-      function bostonHour() {
-        // Current hour (0-23) in Boston time (handles EST/EDT automatically)
-        var d = new Date();
-        var fmt = new Intl.DateTimeFormat('en-US', {
-          timeZone: 'America/New_York', hour: 'numeric', hour12: false
-        });
-        return parseInt(fmt.format(d), 10);
-      }
-
-      function parseEndHour24(hoursStr) {
-        // Parse "5-7pm", "5:00 PM–7:00 PM" → end hour in 24h. Returns null if can't parse.
-        if (!hoursStr) return null;
-        var s = hoursStr.toLowerCase();
-        // look for end time in ranges: "5-7pm", "5–7pm", "5:00-7:00 pm"
-        var m = s.match(/[–\-]\s*(\d+)(?::\d+)?\s*(am|pm)/);
-        if (m) {
-          var h = parseInt(m[1], 10);
-          if (m[2] === 'pm' && h !== 12) h += 12;
-          if (m[2] === 'am' && h === 12) h = 0;
-          return h;
-        }
-        // single time — treat it as end time
-        var s2 = s.match(/(\d+)(?::\d+)?\s*(am|pm)/);
-        if (s2) {
-          var h2 = parseInt(s2[1], 10);
-          if (s2[2] === 'pm' && h2 !== 12) h2 += 12;
-          if (s2[2] === 'am' && h2 === 12) h2 = 0;
-          return h2;
-        }
-        return null;
-      }
-
-      // Neighborhood proximity tables — each hood maps to scores from that location
-      var HOOD_PROXIMITY = {
-        'South End':     {'South End':10,'Back Bay':9,'Beacon Hill':8,'Downtown':8,'Financial District':8,'West End':7,'North End':7,'Fenway':7,'Kenmore':6,'Mission Hill':6,'Seaport':5,'South Boston':5,'Southie':5,'Cambridge':5,'Brookline':5,'Roxbury':5,'Somerville':4,'Charlestown':4,'Jamaica Plain':4,'Allston':3,'Brighton':3,'Dorchester':3},
-        'Back Bay':      {'Back Bay':10,'Newbury Street':10,'South End':9,'Beacon Hill':9,'Fenway':8,'Kenmore':8,'Downtown':8,'Financial District':7,'North End':7,'West End':7,'Mission Hill':7,'Seaport':6,'Cambridge':5,'Brookline':6,'South Boston':5,'Somerville':4,'Charlestown':4,'Jamaica Plain':5,'Allston':4},
-        'Cambridge':     {'Cambridge':10,'Somerville':8,'Charlestown':7,'North End':7,'West End':6,'Beacon Hill':6,'Downtown':6,'Financial District':6,'Back Bay':5,'South End':5,'Fenway':5,'Allston':5,'Medford':5,'Brookline':4,'Seaport':4,'South Boston':4,'Jamaica Plain':4},
-        'North End':     {'North End':10,'West End':9,'Charlestown':8,'Beacon Hill':8,'Downtown':8,'Financial District':8,'Cambridge':6,'Back Bay':6,'Seaport':5,'South End':5,'Fenway':5,'Somerville':5},
-        'Seaport':       {'Seaport':10,'Financial District':8,'Downtown':8,'South Boston':7,'Southie':7,'South End':6,'Back Bay':5,'North End':5,'Beacon Hill':5,'Cambridge':4,'Fenway':4},
-        'Beacon Hill':   {'Beacon Hill':10,'West End':9,'Downtown':9,'Financial District':8,'Back Bay':8,'North End':7,'South End':7,'Cambridge':6,'Fenway':6,'Charlestown':6,'Seaport':5},
-        'Fenway':        {'Fenway':10,'Kenmore':10,'Back Bay':8,'Brookline':7,'South End':7,'Mission Hill':8,'Allston':6,'Cambridge':5,'Beacon Hill':6,'Jamaica Plain':6,'Downtown':6},
-        'Somerville':    {'Somerville':10,'Cambridge':8,'Medford':7,'Charlestown':7,'North End':6,'West End':5,'Beacon Hill':5,'Downtown':5,'Allston':5,'Back Bay':4,'Fenway':4,'South End':3},
-        'South Boston':  {'South Boston':10,'Southie':10,'Seaport':8,'Financial District':6,'Downtown':6,'South End':5,'Back Bay':4,'North End':4,'Beacon Hill':4,'Cambridge':3},
-      };
-      var HOODS = ['South End','Back Bay','Cambridge','North End','Seaport','Beacon Hill','Fenway','Somerville','South Boston'];
-
-      var currentHood = null; // null = use server-side _proximity field
-      var showProvidence = true; // Kirk goes to Providence
-
-      function proxScore(o) {
-        if (!currentHood) return (o._proximity || 3);
-        var table = HOOD_PROXIMITY[currentHood] || {};
-        var addr = ((o.address || '') + ' ' + (o.venue || '')).toLowerCase();
-        var best = 3;
-        Object.keys(table).forEach(function(k) {
-          if (addr.indexOf(k.toLowerCase()) !== -1) best = Math.max(best, table[k]);
-        });
-        return best;
-      }
-
-      var hidePast = true;
-      function renderOysterDay(dow) {
-        var isToday = (dow === todayDow);
-        var currentH = isToday ? bostonHour() : -1;
-        var items = oysters.filter(function(o){ return oysterDays(o).indexOf(dow) !== -1 && (o.city || 'Boston') !== 'Providence'; });
-        var pvdItems = oysters.filter(function(o){ return oysterDays(o).indexOf(dow) !== -1 && o.city === 'Providence'; });
-        var pastItems = [];
-        var futureItems = [];
-        if (isToday && hidePast) {
-          items.forEach(function(o) {
-            var endH = parseEndHour24(oysterHours(o));
-            if (endH !== null && endH <= currentH) { pastItems.push(o); } else { futureItems.push(o); }
-          });
-          items = futureItems;
-        }
-        // Sort by proximity from selected hood
-        items.sort(function(a, b) { return proxScore(b) - proxScore(a); });
-
-        if (!items.length && !pastItems.length) return '<div style="color:#444;font-size:0.8rem;padding:8px 0">No deals on ' + DAY_FULL[dow] + '</div>';
-        if (!items.length && isToday) return '<div style="color:#556;font-size:0.8rem;padding:8px 0">All deals for today have ended. ' + (pastItems.length ? pastItems.length + ' hidden.' : '') + '</div>';
-
-        var renderItem = function(o) {
-          var venueName = esc(o.venue || o.name.split('\u2014')[0].trim());
-          var hood  = esc(o.address || '');
-          var hours = esc(oysterHours(o));
-          var deal  = esc((o.name||'').split('\u2014')[1] || o.reason || '');
-          var left  = '<div><b>' + venueName + '</b>' +
-                      (hood ? '<div class="oyster-meta">' + hood + (deal ? ' \u00b7 ' + deal : '') + '</div>' : '') +
-                      '</div>';
-          var right = hours ? '<span class="oyster-hours">' + hours + '</span>' : '';
-          var inner = left + right;
-          return o.url
-            ? '<a class="oyster-item" href="' + esc(o.url) + '" target="_blank" style="text-decoration:none">' + inner + '</a>'
-            : '<div class="oyster-item">' + inner + '</div>';
-        };
-
-        // Group by tier when a hood is selected
-        var html = '';
-        if (currentHood) {
-          var tiers = [{label:'Nearby',min:9},{label:'Easy',min:7},{label:'Doable',min:5},{label:'Hike',min:0}];
-          tiers.forEach(function(t) {
-            var tier = items.filter(function(o){ var s=proxScore(o); return s>=t.min && (t.min===9?s>=9:t.min===7?s>=7&&s<9:t.min===5?s>=5&&s<7:s<5); });
-            if (!tier.length) return;
-            html += '<div class="oyster-tier">' + t.label + '</div>';
-            html += '<div class="oyster-list" style="margin-bottom:8px">' + tier.map(renderItem).join('') + '</div>';
-          });
-        } else {
-          html = '<div class="oyster-list">' + items.map(renderItem).join('') + '</div>';
-        }
-        html = '<div class="oyster-scroll">' + html + '</div>';
-        if (isToday && pastItems.length > 0) {
-          html += '<div style="font-size:0.72rem;color:#445;margin-top:6px;padding:4px 0">' + pastItems.length + ' deal' + (pastItems.length > 1 ? 's' : '') + ' ended today \u2014 <button onclick="togglePastOysters()" style="background:none;border:none;color:#557;font-size:0.72rem;cursor:pointer;padding:0">show all</button></div>';
-        }
-        // Providence — expanded by default for Kirk
-        if (pvdItems.length) {
-          pvdItems.sort(function(a, b) { return (b.score||0) - (a.score||0); });
-          var pvdToggle = '<div style="margin-top:10px;border-top:1px solid #1a2e3a;padding-top:8px">' +
-            '<button onclick="toggleProvidence()" style="background:none;border:none;color:' + (showProvidence ? '#93c5fd' : '#2a4a6a') + ';font-size:0.72rem;cursor:pointer;padding:0;letter-spacing:0.04em">' +
-            (showProvidence ? '\u25bc' : '\u25b6') + ' Providence RI (' + pvdItems.length + ' deals)</button>' +
-            (showProvidence ? '<div class="oyster-list" style="margin-top:6px">' + pvdItems.map(renderItem).join('') + '</div>' : '') +
-            '</div>';
-          html += pvdToggle;
-        }
-        return html;
-      }
-
-      var activeDow = todayDow;
-      function buildOyster() {
-        var tabs = '<div class="oyster-days">' +
-          DAY_NAMES.map(function(d,i) {
-            var cls = 'oday-btn' + (i===activeDow ? ' active' : '');
-            var todayMark = i===todayDow ? ' \u25cf' : '';
-            return '<button class="' + cls + '" onclick="setOysterDay(' + i + ')">' + d + todayMark + '</button>';
-          }).join('') + '</div>';
-        var hoodBtns = '<div class="oyster-location"><span>I\'m in:</span>' +
-          HOODS.map(function(h) {
-            var cls = 'ohood-btn' + (h===currentHood ? ' active' : '');
-            return '<button class="' + cls + '" onclick="setOysterHood(\'' + h + '\')">' + h + '</button>';
-          }).join('') +
-          (currentHood ? ' <button class="ohood-btn" onclick="setOysterHood(null)" style="opacity:0.5">\u00d7 clear</button>' : '') +
-          '</div>';
-        oysterBar.innerHTML = '<div class="oyster-title">\uD83E\uDDAA Oyster Deals</div>' + tabs + hoodBtns + renderOysterDay(activeDow);
-      }
-      window.setOysterDay  = function(dow)  { activeDow = dow; buildOyster(); };
-      window.setOysterHood = function(hood) { currentHood = hood; buildOyster(); };
-      window.togglePastOysters = function() { hidePast = !hidePast; buildOyster(); };
-      window.toggleProvidence  = function() { showProvidence = !showProvidence; buildOyster(); };
-      buildOyster();
-    } else {
-      oysterBar.style.display = 'none';
-    }
-
-    // Group events by date
-    var groups = {};
-    var order = [];
-    events.forEach(function(ev) {
-      var key = ev.start ? dateKey(ev.start) : (today || 'unknown');
-      if (!groups[key]) {
-        groups[key] = [];
-        order.push(key);
-      }
-      groups[key].push(ev);
-    });
-    // Sort days chronologically
-    order.sort();
-
-    // Day filter pills
-    var DAY_SHORT = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
-    var pillsHtml = '';
-    order.forEach(function(key, i) {
-      var isToday = (key === today);
-      var dp = key.split('-');
-      var d = new Date(parseInt(dp[0],10), parseInt(dp[1],10)-1, parseInt(dp[2],10));
-      var short = DAY_SHORT[d.getDay()] + ' ' + (d.getMonth()+1) + '/' + d.getDate();
-      var count = groups[key].length;
-      var todayCls = isToday ? ' day-pill-today' : '';
-      pillsHtml += '<button class="day-pill' + todayCls + '" data-day="day-' + i + '" onclick="toggleDay(this)">' +
-        short + ' <span class="pill-count">' + count + '</span></button>';
-    });
-    document.getElementById('day-filter').innerHTML = pillsHtml;
-
-    var eventsHtml = '';
-    order.forEach(function(key, i) {
-      var label = fmtDate(key);
-      var isToday = (key === today);
-      eventsHtml += '<div class="day-section" id="day-' + i + '">';
-      eventsHtml += '<div class="day-header" onclick="toggleDaySection(this)">' + esc(label) +
-        (isToday ? ' <span class="today-tag">TODAY</span>' : '') +
-        ' <span class="day-toggle">\u25BC</span>' +
-      '</div>';
-      eventsHtml += '<div class="day-cards">';
-      groups[key].forEach(function(ev) {
-        eventsHtml += buildCard(ev);
-      });
-      eventsHtml += '</div></div>';
-    });
-    document.getElementById('events-container').innerHTML = eventsHtml;
-
-    // Extra events toggle
-    var extra = data.extra_events || [];
-    var extraBtn = document.getElementById('extra-btn');
-    var extraContainer = document.getElementById('extra-events');
-    if (extra.length) {
-      var label = '\u25BC Show lower-priority events (' + extra.length + ')';
-      extraBtn.textContent = label;
-      extraBtn.dataset.label = label;
-      extraBtn.style.display = 'block';
-      var extraHtml = '<div class="day-section">';
-      extraHtml += '<div class="day-header">Lower Priority <span class="extra-label">score 1\u20134</span></div>';
-      extra.forEach(function(ev) {
-        extraHtml += buildCard(ev);
-      });
-      extraHtml += '</div>';
-      extraContainer.innerHTML = extraHtml;
-    }
-
-    // Footer
-    var genAt = data.generated_at || '';
-    var footerText = '';
-    if (genAt) {
-      var datePart2 = genAt.split('T')[0];
-      var timePart2 = genAt.indexOf('T') !== -1 ? genAt.split('T')[1].substring(0,5) : '';
-      var dp2 = datePart2.split('-');
-      var d2 = new Date(parseInt(dp2[0],10), parseInt(dp2[1],10)-1, parseInt(dp2[2],10));
-      var months2 = ['January','February','March','April','May','June',
-                     'July','August','September','October','November','December'];
-      var dateStr2 = months2[d2.getMonth()] + ' ' + d2.getDate() + ', ' + dp2[0];
-      var timeStr2 = '';
-      if (timePart2) {
-        var tp2 = timePart2.split(':');
-        var hh2 = parseInt(tp2[0],10);
-        var mm2 = tp2[1];
-        var ampm2 = hh2 >= 12 ? 'PM' : 'AM';
-        hh2 = hh2 % 12 || 12;
-        timeStr2 = hh2 + ':' + mm2 + ' ' + ampm2;
-      }
-      footerText = 'Generated ' + dateStr2 + (timeStr2 ? ' at ' + timeStr2 : '');
-    }
-    document.getElementById('footer').innerHTML = '<div class="footer">' + esc(footerText) + '</div>';
-
-    // Hot restaurants
-    var hrData = (data.hot_restaurants || {}).restaurants || [];
-    var hrBar  = document.getElementById('hotrest-bar');
-    if (hrData.length) {
-      hrBar.style.display = '';
-      var hrUpdated = (data.hot_restaurants || {}).updated || '';
-      var hrAge = hrUpdated ? ' <span style="font-weight:400;color:#445;font-size:0.72rem">(updated ' + fmtRunTs(hrUpdated) + ')</span>' : '';
-      var hrOpen = false;
-      function renderHotRest() {
-        if (!hrOpen) {
-          hrBar.innerHTML = '<div class="hotrest-title" onclick="toggleHotRest()">🍽 Buzzy Restaurants <span style="font-size:0.75rem;color:#445">▶ ' + hrData.length + ' spots</span>' + hrAge + '</div>';
-          return;
-        }
-        var cards = hrData.slice(0, 20).map(function(r) {
-          var buzz   = r.buzz_score ? '★' + r.buzz_score + '/10' : '';
-          var night  = r.hot_night ? '🔥 ' + r.hot_night + (r.hot_hours ? ' ' + r.hot_hours : '') : '';
-          var flags  = (r.good_for_brian ? ' ✓B' : '') + (r.good_for_chloe ? ' ✓C' : '');
-          var vibe   = esc(r.vibe || r.summary || '');
-          var price  = r.price ? esc(r.price) + ' · ' : '';
-          var addr   = esc((r.address || '').split(',')[0]);
-          var meta   = [price + addr, night, buzz + flags].filter(Boolean).join(' &nbsp;·&nbsp; ');
-          var link   = r.website ? ' <a href="' + esc(r.website) + '" target="_blank" style="color:#4a9eff;text-decoration:none;font-size:0.7rem">↗</a>' : '';
-          return '<div class="hotrest-card">' +
-            '<div class="hotrest-name">' + esc(r.google_name || r.name) + link + '</div>' +
-            (vibe ? '<div class="hotrest-vibe">' + vibe + '</div>' : '') +
-            (meta ? '<div class="hotrest-meta">' + meta + '</div>' : '') +
-            '</div>';
-        }).join('');
-        hrBar.innerHTML = '<div class="hotrest-title" onclick="toggleHotRest()">🍽 Buzzy Restaurants ▼' + hrAge + '</div>' +
-          '<div class="hotrest-grid">' + cards + '</div>';
-      }
-      window.toggleHotRest = function() { hrOpen = !hrOpen; renderHotRest(); };
-      renderHotRest();
+      el.style.display = 'none';
+      btn.textContent = btn.dataset.label;
     }
   }
 
-  // ── Fetch ─────────────────────────────────────────────────────────────────
-
-  fetch('https://raw.githubusercontent.com/coffeethencode/boston-finder/data/data/kirk.json?t=' + Math.floor(Date.now() / 300000))
-    .then(function(r) { return r.json(); })
-    .then(function(data) { renderAll(data); })
-    .catch(function(err) {
-      document.getElementById('loading').style.display = 'none';
-      document.body.innerHTML += '<p style="color:#f00">Failed to load events: ' + err + '</p>';
+  function sendFeedback(btn, persona, vote, url, name) {
+    var cls = vote === 'up' ? 'done' : 'skip';
+    btn.classList.add(cls);
+    btn.disabled = true;
+    var body = new URLSearchParams({
+      'form-name': 'event-feedback',
+      'persona': persona,
+      'vote': vote,
+      'event_url': url,
+      'event_name': name
     });
-
-  // ── Event detail modal ────────────────────────────────────────────────────
-
-  var _modalBg = null;
-  function showEventModal(ev) {
-    closeEventModal();
-    var meta = [];
-    if (ev.start && ev.start.indexOf('T') !== -1) meta.push(fmtDate(ev.start) + ' at ' + fmtTime(ev.start));
-    else if (ev.start) meta.push(fmtDate(ev.start));
-    if (ev.price) meta.push(ev.price);
-    if (ev.venue) meta.push(ev.venue);
-    if (ev.address) meta.push(ev.address);
-    if (ev.source) meta.push('via ' + ev.source);
-    var scoreHtml = ev.score ? ' <span class="score">' + ev.score + '</span>' : '';
-    var linkHtml = ev.url
-      ? '<a class="ev-modal-link" href="' + esc(ev.url) + '" target="_blank">View event \u2192</a>'
-      : '';
-    var inner = '<button class="ev-modal-x" onclick="closeEventModal()">\u00d7</button>' +
-      '<h2>' + esc(ev.name || '') + scoreHtml + '</h2>' +
-      (meta.length ? '<div class="ev-modal-meta">' + meta.map(esc).join('<br>') + '</div>' : '') +
-      (ev.reason ? '<div class="ev-modal-reason">\u2192 ' + esc(ev.reason) + '</div>' : '') +
-      (ev.description ? '<div class="ev-modal-desc">' + esc(ev.description) + '</div>' : '') +
-      '<div class="ev-modal-footer">' + linkHtml + '</div>';
-    var modal = document.createElement('div');
-    modal.className = 'ev-modal';
-    modal.innerHTML = inner;
-    var bg = document.createElement('div');
-    bg.className = 'ev-modal-bg';
-    bg.appendChild(modal);
-    bg.addEventListener('click', function(e) { if (e.target === bg) closeEventModal(); });
-    document.body.appendChild(bg);
-    _modalBg = bg;
-    document.addEventListener('keydown', _escListener);
+    fetch('https://highendeventfinder.netlify.app/', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+      body: body.toString()
+    }).catch(function() {
+      btn.classList.remove(cls);
+      btn.disabled = false;
+    });
   }
-  function _escListener(e) { if (e.key === 'Escape') closeEventModal(); }
-  window.closeEventModal = function() {
-    if (_modalBg) { _modalBg.remove(); _modalBg = null; }
-    document.removeEventListener('keydown', _escListener);
-  };
-
-  document.addEventListener('click', function(e) {
-    if (e.target.closest('.fb-btn')) return;
-    if (e.target.closest('a')) return;
-    if (e.target.closest('.ev-modal')) return;
-    var card = e.target.closest('.card');
-    if (!card || !card.dataset.url) return;
-    var ev = evMap[card.dataset.url];
-    if (ev) showEventModal(ev);
-  });
-
-})();
 </script>
 </body>
 </html>

@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# ruff: noqa: E402  # deliberate: sys.path.insert must run before package imports
 """
 Boston oyster deals finder.
 Runs weekly — builds a ranked list of where to get dollar/cheap oysters,
@@ -16,23 +15,16 @@ import sys
 import os
 import argparse
 from datetime import datetime, timedelta
-from pathlib import Path
 
-ROOT = Path(__file__).resolve().parent
-if str(ROOT) not in sys.path:
-    sys.path.insert(0, str(ROOT))
-
+sys.path.insert(0, "/Users/brian/python-projects")
 from boston_finder.sources        import get_sources
 from boston_finder.fetchers       import fetch_source
 from boston_finder.ai_filter      import deduplicate, score
 from boston_finder.oyster_sources import get_all as get_oyster_candidates
 from boston_finder.notify         import send
 from boston_finder.cache          import get as cache_get, set as cache_set, age as cache_age
-from boston_finder.location       import score as proximity_score, label as proximity_label, PROXIMITY
-from boston_finder.personas       import (
-    get_persona, active_personas,
-    get_proximity, get_oyster_prompt, get_min_score,
-)
+from boston_finder.location       import score as proximity_score, label as proximity_label, location_filter
+from boston_finder.personas       import get_persona, PERSONAS
 from boston_finder                import costs
 
 CACHE_KEY_BASE = "oyster_deals"
@@ -54,21 +46,15 @@ def load_verify_status() -> dict:
 
 def sort_by_proximity(deals: list[dict], persona: str = "brian") -> list[dict]:
     """Sort deals by proximity score for a given persona (highest first)."""
-    # `is not None` instead of `or` so a persona can explicitly opt into an
-    # empty proximity table (= "no custom bonuses") without falling back to
-    # the default one. Today no persona does this, but the semantics matter.
-    persona_prox = get_proximity(persona)
-    prox_table = persona_prox if persona_prox is not None else PROXIMITY
+    from boston_finder.location import CHLOE_PROXIMITY, KIRK_PROXIMITY, PROXIMITY
+    prox_table = CHLOE_PROXIMITY if persona == "chloe" else KIRK_PROXIMITY if persona == "kirk" else PROXIMITY
 
     def rank_key(d):
         address = (d.get("venue", "") + " " + d.get("address", "")).strip()
         prox = proximity_score(address, prox_table)
         d["_proximity"] = prox
         d["_proximity_label"] = proximity_label(prox)
-        # Sort key is (inactive, -prox, -score) and ascending. Translation:
-        #   active before inactive (0 < 1)
-        #   higher proximity first (negated → bigger prox sorts lower)
-        #   higher AI score first (negated below → bigger score sorts lower)
+        # secondary sort: inactive to bottom, then by AI score
         inactive = 1 if d.get("_inactive") else 0
         ai_score = -(d.get("score") or 0)
         return (inactive, -prox, ai_score)
@@ -128,9 +114,9 @@ def display(deals: list[dict], persona_label: str, from_cache: bool, cache_age_s
 
 def run_persona(persona_name: str, all_events: list[dict], force: bool):
     persona  = get_persona(persona_name)
-    label    = persona["nav_label"]
-    prompt   = get_oyster_prompt(persona_name)
-    min_score = get_min_score(persona_name)
+    label    = persona["label"]
+    prompt   = persona.get("oyster_prompt", persona["prompt"])
+    min_score = persona.get("min_score", 5)
     cache_key = f"{CACHE_KEY_BASE}_{persona_name}"
 
     if not force:
@@ -182,16 +168,12 @@ def run_persona(persona_name: str, all_events: list[dict], force: bool):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--force",   action="store_true", help="Ignore cache and re-fetch")
-    parser.add_argument("--persona", default="all",
-                        help="persona name (e.g. brian) or 'all' for every active persona (default: all)")
+    parser.add_argument("--persona", default="all",       help="brian | chloe | all (default: all)")
     args = parser.parse_args()
 
-    if args.persona == "all":
-        persona_names = [p["name"] for p in active_personas()]
-    else:
-        persona_names = [args.persona]
+    persona_names = list(PERSONAS.keys()) if args.persona == "all" else [args.persona]
 
-    print("\n[oyster_deals] Fetching fresh oyster deal data...")
+    print(f"\n[oyster_deals] Fetching fresh oyster deal data...")
 
     today = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
     end   = today + timedelta(days=14)

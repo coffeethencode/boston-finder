@@ -31,6 +31,8 @@ PROXIMITY: dict[str, int] = {
     "Mission Hill":            6,
     "Medford":                 2,
     "Quincy":                  1,
+    "Providence":              2,
+    "Rhode Island":            2,
     "Watertown":               3,
     "Newton":                  2,
     "Waltham":                 2,
@@ -120,7 +122,11 @@ def location_filter(events: list[dict], persona: str = "brian") -> list[dict]:
     Events with no location info pass through (benefit of the doubt).
     """
     from boston_finder.personas import get_proximity
-    prox_table = get_proximity(persona) or PROXIMITY
+    # `is not None` so a persona can set `proximity: {}` to mean "no custom
+    # bonuses, don't fall back to the default either". Today none do, but the
+    # sentinel is now honored.
+    persona_prox = get_proximity(persona)
+    prox_table = persona_prox if persona_prox is not None else PROXIMITY
     kept, dropped = [], []
     for e in events:
         address = (e.get("venue", "") + " " + e.get("address", "")).strip()

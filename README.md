@@ -1,5 +1,12 @@
 # Boston Finder
 
+> **🚧 Active multi-session project in progress: codebase unification.**
+> Any AI tool (Claude Code, Codex, Gemini CLI) picking up work here should:
+> 1. Read **[tracking/unification-status.md](tracking/unification-status.md)** — the canonical progress log.
+> 2. Read the plan: **[tracking/2026-04-18-codebase-unification.md](tracking/2026-04-18-codebase-unification.md)**.
+> 3. Work on branch `codebase-unification` (Phases 0-5) or `main` (Phases 6-7) per the status file.
+> 4. Update `tracking/unification-status.md` when you stop.
+
 Daily Boston event digest. Runs every morning, finds high-status events for the next 7 days, scores them with AI, and opens an HTML digest in your browser.
 
 ## What it finds
