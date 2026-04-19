@@ -27,8 +27,11 @@ from boston_finder.ai_filter      import deduplicate, score
 from boston_finder.oyster_sources import get_all as get_oyster_candidates
 from boston_finder.notify         import send
 from boston_finder.cache          import get as cache_get, set as cache_set, age as cache_age
-from boston_finder.location       import score as proximity_score, label as proximity_label, location_filter, PROXIMITY
-from boston_finder.personas       import get_persona, PERSONAS, get_proximity, get_oyster_prompt, get_min_score
+from boston_finder.location       import score as proximity_score, label as proximity_label, PROXIMITY
+from boston_finder.personas       import (
+    get_persona, PERSONAS, active_personas,
+    get_proximity, get_oyster_prompt, get_min_score,
+)
 from boston_finder                import costs
 
 CACHE_KEY_BASE = "oyster_deals"
@@ -171,12 +174,16 @@ def run_persona(persona_name: str, all_events: list[dict], force: bool):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--force",   action="store_true", help="Ignore cache and re-fetch")
-    parser.add_argument("--persona", default="all",       help="brian | chloe | all (default: all)")
+    parser.add_argument("--persona", default="all",
+                        help="persona name (e.g. brian) or 'all' for every active persona (default: all)")
     args = parser.parse_args()
 
-    persona_names = list(PERSONAS.keys()) if args.persona == "all" else [args.persona]
+    if args.persona == "all":
+        persona_names = [p["name"] for p in active_personas()]
+    else:
+        persona_names = [args.persona]
 
-    print(f"\n[oyster_deals] Fetching fresh oyster deal data...")
+    print("\n[oyster_deals] Fetching fresh oyster deal data...")
 
     today = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
     end   = today + timedelta(days=14)
