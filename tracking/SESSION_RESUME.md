@@ -1,31 +1,24 @@
 # Session resume — codebase-unification
 
-Last updated: 2026-04-19 (post-fix state)
+Last updated: 2026-04-19 (post-Phase-6 state)
 
 ## Where we are
 
-**Branch:** `codebase-unification` @ `c4e580a` (pushed)
-**Tags on branch:** `unification-phase0` through `unification-phase5`
-**Fixes since phase-5 tag:** 5 commits, not yet tagged
+**Branch:** `main` @ `b06c6be` (pushed) — unification merged via `git merge --no-ff`
+**Tags:** `unification-phase0` through `unification-phase6`
 
 **Phase status:**
-- ✅ Phases 0-5 complete (Phase 5 tag reflects pre-fix state)
-- ✅ Code review round 1 complete (Codex + Gemini + runtime + ruff)
-- ✅ Fix plan applied — all 5 BUGs and related smells addressed
-- ✅ Code review round 2 — Codex + Gemini done. Reviewers split on whether the residuals blocked merge.
-  - Codex v2 (`review-codex-v2.md`): flagged 4 residuals (P1 venue clobber, P2 pre-pull short-circuit, P3 `_load_scored` import, unused PERSONAS).
-  - Gemini v2 (`review-gemini-v2.md`): signed off. Missed the 4 residuals.
-  - Verified all 4 and patched in a polish commit. Ruff clean on touched files. SAFE_TEST smoke produced 93 events with deploy+open correctly skipped.
-- 🛑 Phase 6 (merge to main + production deploy) **pending** — ready to merge; round-3 tiebreaker with Grok optional.
-- 🛑 Phase 7 (soft-delete stale) **pending** — one week after Phase 6
+- ✅ Phases 0-5 complete
+- ✅ Code review round 1 + round 2 complete (Codex + Gemini)
+- ✅ Round-2 residuals patched in `849465d` (P1 venue guard, P2 pull-first short-circuit, P3 public cache API, unused import)
+- ✅ Phase 6 complete: merged to main, pushed, production-deployed all 3 personas, live site verified, tagged `unification-phase6`. Net cost $0.0098 (morning cache absorbed most of it).
+- 🛑 Phase 7 (soft-delete stale `/Users/brian/python-projects/boston_finder/` + sibling `oyster_*.py`) **pending** — one week after Phase 6 (earliest: 2026-04-26)
 
 ## To pick up next session
 
-1. `cd /Users/brian/python-projects/boston-finder-repo && git fetch --all --tags && git checkout codebase-unification`
+1. `cd /Users/brian/python-projects/boston-finder-repo && git fetch --all --tags && git checkout main`
 2. Read this file.
-3. Decide: run v2 review first, or skip straight to Phase 6?
-   - If v2 review: copy prompt from `tracking/review-prompt-v2.md` into a different AI (Codex/Gemini already used; try Claude or Grok)
-   - If skipping: proceed with Phase 6 per `tracking/2026-04-18-codebase-unification.md` §"PHASE 6"
+3. If date ≥ 2026-04-26, execute Phase 7 per `tracking/2026-04-18-codebase-unification.md` §"PHASE 7": `mv /Users/brian/python-projects/{boston_finder,oyster_*.py} /Users/brian/python-projects/_deprecated_boston_finder/` — then delete the `_deprecated_*` directory a week later if nothing has broken.
 
 ## If going straight to Phase 6
 
