@@ -40,11 +40,14 @@ CACHE_TTL      = 168  # 7 days in hours
 STATUS_FILE = os.path.expanduser("~/boston_finder_oyster_status.json")
 
 
-def collect_event_feed_candidates() -> list[dict]:
+def collect_event_feed_candidates(known_candidates: list[dict] | None = None) -> list[dict]:
     """
     Read the daily event store, apply binary oyster filter, extract venue
     for each candidate, dedupe against OYSTER_VENUES + discoveries log,
     run verify on each unique venue, log to discoveries.
+
+    known_candidates: pre-built list from get_oyster_candidates() so we can
+    dedupe against research.txt rows (not just OYSTER_VENUES hardcoded list).
 
     Returns: list of candidate deal records in the same shape oyster_sources
     produces (source, name, description, url, start, venue, address).
@@ -58,8 +61,18 @@ def collect_event_feed_candidates() -> list[dict]:
     oyster_events = [e for e in events if oyster_filter.is_oyster_candidate(e)]
     print(f"  {len(oyster_events)} oyster candidates from event store")
 
-    # build set of known-venue normalized names (OYSTER_VENUES)
-    known_normalized = {venue_extractor.normalize(v["name"]) for v in OYSTER_VENUES}
+    # build set of known-venue normalized names (OYSTER_VENUES hardcoded list)
+    known_from_registry = {venue_extractor.normalize(v["name"]) for v in OYSTER_VENUES}
+    # also include research.txt rows and any other pre-built candidates
+    known_from_candidates = set()
+    if known_candidates:
+        for c in known_candidates:
+            name = c.get("venue") or c.get("name", "")
+            if name:
+                # strip deal suffix like " — $1 Duxbury oysters" if present
+                base = name.split("—")[0].split(" - ")[0].strip() if ("—" in name or " - " in name) else name
+                known_from_candidates.add(venue_extractor.normalize(base))
+    known_normalized = known_from_registry | known_from_candidates
 
     # prior discoveries
     discoveries = oyster_discoveries.load_all()
@@ -71,8 +84,21 @@ def collect_event_feed_candidates() -> list[dict]:
     for evt in oyster_events:
         venue = venue_extractor.extract_venue(evt, use_llm_fallback=True)
         if not venue:
-            # drop with a note — will surface as Needs Review via the verify layer
-            # when we pass the event anyway. For now, skip venueless events.
+            # all 5 extraction strategies failed → surface for manual review
+            candidates.append({
+                "source": f"discovery:{evt.get('source', '')}",
+                "name": f"{evt.get('name', '(untitled)')[:60]} — venue unclear",
+                "description": evt.get("description", "")[:200],
+                "url": evt.get("url", ""),
+                "start": evt.get("start", ""),
+                "venue": "",
+                "address": "",
+                "verify_status": "⚠️ Unverified",
+                "price": None,
+                "hours": None,
+                "_tentative": True,
+                "_needs_review": True,
+            })
             continue
 
         normalized = venue_extractor.normalize(venue)
@@ -239,6 +265,12 @@ def run_persona(persona_name: str, force: bool):
             # re-attach verify status in case oyster_verify.py ran since caching
             vstatus = load_verify_status()
             for d in cached:
+                src = d.get("source", "")
+                if src.startswith("discovery:"):
+                    # verify_status + maps_url already baked in from collect_event_feed_candidates()
+                    # under event:<url> key — venue-name lookup would overwrite with ⚠️ Unverified
+                    d["_inactive"] = "Inactive" in d.get("verify_status", "")
+                    continue
                 venue_key = (d.get("venue") or d.get("name", "")).lower().replace(" ", "_")
                 entry = vstatus.get(venue_key, {})
                 d["verify_status"] = entry.get("status", "⚠️ Unverified")
@@ -251,7 +283,8 @@ def run_persona(persona_name: str, force: bool):
     # known-venue path (hardcoded OYSTER_VENUES + research.txt) — unchanged
     known = get_oyster_candidates()
     # event-feed path — binary filter + venue extraction + verify
-    event_feed = collect_event_feed_candidates()
+    # pass known so dedupe covers research.txt rows, not just OYSTER_VENUES
+    event_feed = collect_event_feed_candidates(known)
     deals = known + event_feed
 
     print(f"\n  {len(known)} known-venue + {len(event_feed)} event-feed candidates for {label}")
@@ -259,11 +292,32 @@ def run_persona(persona_name: str, force: bool):
     # attach verification status + maps links
     status = load_verify_status()
     for d in deals:
+        src = d.get("source", "")
+        if src.startswith("discovery:"):
+            # verify_status + maps_url already baked in from collect_event_feed_candidates()
+            # stored under event:<url> key — venue-name lookup would overwrite with ⚠️ Unverified
+            d["_inactive"] = "Inactive" in d.get("verify_status", "")
+            continue
         venue_key = (d.get("venue") or d.get("name", "")).lower().replace(" ", "_")
         entry = status.get(venue_key, {})
         d["verify_status"] = entry.get("status", "⚠️ Unverified")
         d["maps_url"]      = entry.get("maps_url", "")
         d["_inactive"]     = "Inactive" in d.get("verify_status", "")
+
+    # Fix 1: gate venue_scrape rows behind price verification.
+    # Without an AI scorer to filter weak keyword signals, require a verified
+    # price before rendering venue_scrape rows as confirmed deals.
+    for d in deals:
+        src = d.get("source", "")
+        if src == "venue_scrape":
+            price = d.get("price")
+            if not price:
+                # try the verify status file — may have a price from oyster_verify.py
+                venue_key = (d.get("venue") or d.get("name", "")).lower().replace(" ", "_")
+                price = status.get(venue_key, {}).get("price")
+            if not price:
+                d["_needs_review"] = True
+                d["_tentative"] = True  # same treatment as event-feed uncertain candidates
 
     # sort by proximity
     sorted_deals = sort_by_proximity(deals, persona_name)
