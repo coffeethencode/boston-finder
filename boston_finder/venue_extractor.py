@@ -244,3 +244,63 @@ def _strategy5_llm(event: dict) -> str | None:
     _save_cache(_CACHE_FILE, cache)
 
     return result if result != "UNKNOWN" else None
+
+
+# ── normalization + alias handling ────────────────────────────────────────────
+
+NEIGHBORHOODS = {
+    "charlestown", "cambridge", "back bay", "south end", "north end",
+    "fort point", "seaport", "fenway", "allston", "brighton", "somerville",
+    "providence", "kendall", "harvard square", "beacon hill", "jamaica plain",
+    "downtown", "kenmore", "waterfront", "chinatown", "east boston",
+}
+
+ALIAS_MAP = {
+    "woods hill pier": "woods hill pier 4",
+    # add observed aliases here as they surface
+}
+
+
+def normalize(name: str) -> str:
+    """Lowercase, strip punctuation (keep digits + spaces), collapse whitespace."""
+    s = name.lower()
+    s = re.sub(r"[^\w\s]", "", s)  # strip non-word non-space (keeps digits, letters)
+    s = re.sub(r"_+", "", s)        # strip underscores (regex \w keeps them)
+    s = re.sub(r"\s+", " ", s).strip()
+    return s
+
+
+def match_existing(incoming_name: str, existing_normalized: list[str]) -> str | None:
+    """
+    Try to match incoming name to an existing normalized name.
+    Returns the matched existing normalized name, or None.
+
+    Match order:
+      1. Exact normalized match
+      2. Alias map
+      3. Prefix match where added suffix is a recognized neighborhood
+      4. No match (chain branches with non-neighborhood suffixes stay distinct)
+    """
+    norm = normalize(incoming_name)
+    existing_set = set(existing_normalized)
+
+    # 1. exact
+    if norm in existing_set:
+        return norm
+
+    # 2. alias map both directions
+    if norm in ALIAS_MAP and ALIAS_MAP[norm] in existing_set:
+        return ALIAS_MAP[norm]
+    for alias_key, alias_val in ALIAS_MAP.items():
+        if norm == alias_val and alias_key in existing_set:
+            return alias_key
+
+    # 3. prefix + neighborhood
+    for existing in existing_normalized:
+        longer, shorter = (norm, existing) if len(norm) > len(existing) else (existing, norm)
+        if longer.startswith(shorter + " "):
+            suffix = longer[len(shorter) + 1:].strip()
+            if suffix in NEIGHBORHOODS:
+                return existing
+
+    return None
