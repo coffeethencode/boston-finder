@@ -284,7 +284,13 @@ def main():
         })
         time.sleep(0.3)
 
-    generate_md(results)
+    # Only regenerate the full registry when we checked every venue. A
+    # single-venue run (--venue "Row 34") has `results` narrowed to that
+    # match, and writing it to oyster/venues.md would wipe the registry.
+    if not args.venue:
+        generate_md(results)
+    else:
+        print(f"\n  → Skipped venues.md rewrite (single-venue run: {args.venue})")
 
     # summary
     active   = [r for r in results if "Active" in r["verify_status"]]

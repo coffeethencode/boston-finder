@@ -345,9 +345,8 @@ def _oyster_html(persona: str = "brian") -> str:
 def _extra_events_html(today: datetime, end_date: datetime) -> str:
     """Show events scored 1-4 behind a toggle button."""
     try:
-        from boston_finder.cache import _load_scored
-        import json, os
-        scored = _load_scored()
+        from boston_finder.cache import get_all_scored
+        scored = get_all_scored()
         low = [(url, v) for url, v in scored.items() if 1 <= v.get("score", 0) <= 4]
         if not low:
             return ""
@@ -536,18 +535,8 @@ def _git_push_json(json_str: str, persona: str = "brian"):
     data_dir = os.path.join(DATA_REPO, "data")
     fpath = os.path.join(data_dir, f"{persona}.json")
 
-    # short-circuit: if the payload is identical to what's already on disk AND
-    # the clone is up-to-date, there's nothing to do
-    try:
-        if os.path.exists(fpath) and open(fpath).read() == json_str:
-            print(f"  [data] {persona}.json unchanged — skipping push")
-            return
-    except OSError:
-        pass  # unreadable file means we'll overwrite anyway
-
-    # pull BEFORE writing so an upstream update doesn't collide with our
-    # fresh local write (which would turn --ff-only pull into a silent no-op
-    # with an uncommitted local modification sitting in the worktree).
+    # pull FIRST so disk reflects origin — a stale clone where somebody pushed
+    # from another machine shouldn't fool the short-circuit below.
     pull = subprocess.run(
         ["git", "-C", DATA_REPO, "pull", "--ff-only", "--quiet"],
         capture_output=True, text=True,
@@ -556,6 +545,20 @@ def _git_push_json(json_str: str, persona: str = "brian"):
         print(f"  [data] pull failed ({pull.returncode}); pushing anyway may fail")
         if pull.stderr.strip():
             print(f"  [data] pull stderr: {pull.stderr.strip()}")
+
+    # Short-circuit AFTER pull: payload matches disk AND no unpushed local
+    # commits waiting to go out. The ahead-check covers the scenario where a
+    # prior run committed locally but the push failed.
+    try:
+        ahead = subprocess.run(
+            ["git", "-C", DATA_REPO, "rev-list", "--count", "@{u}..HEAD"],
+            capture_output=True, text=True,
+        ).stdout.strip() or "0"
+        if ahead == "0" and os.path.exists(fpath) and open(fpath).read() == json_str:
+            print(f"  [data] {persona}.json unchanged — skipping push")
+            return
+    except OSError:
+        pass  # unreadable file means we'll overwrite anyway
 
     try:
         os.makedirs(data_dir, exist_ok=True)

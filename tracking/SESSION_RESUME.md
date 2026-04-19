@@ -12,8 +12,11 @@ Last updated: 2026-04-19 (post-fix state)
 - ✅ Phases 0-5 complete (Phase 5 tag reflects pre-fix state)
 - ✅ Code review round 1 complete (Codex + Gemini + runtime + ruff)
 - ✅ Fix plan applied — all 5 BUGs and related smells addressed
-- 🟡 Code review round 2 **pending** (prompt ready at `tracking/review-prompt-v2.md`)
-- 🛑 Phase 6 (merge to main + production deploy) **pending** — needs round-2 signoff
+- ✅ Code review round 2 — Codex + Gemini done. Reviewers split on whether the residuals blocked merge.
+  - Codex v2 (`review-codex-v2.md`): flagged 4 residuals (P1 venue clobber, P2 pre-pull short-circuit, P3 `_load_scored` import, unused PERSONAS).
+  - Gemini v2 (`review-gemini-v2.md`): signed off. Missed the 4 residuals.
+  - Verified all 4 and patched in a polish commit. Ruff clean on touched files. SAFE_TEST smoke produced 93 events with deploy+open correctly skipped.
+- 🛑 Phase 6 (merge to main + production deploy) **pending** — ready to merge; round-3 tiebreaker with Grok optional.
 - 🛑 Phase 7 (soft-delete stale) **pending** — one week after Phase 6
 
 ## To pick up next session

@@ -30,7 +30,7 @@ from boston_finder.notify         import send
 from boston_finder.cache          import get as cache_get, set as cache_set, age as cache_age
 from boston_finder.location       import score as proximity_score, label as proximity_label, PROXIMITY
 from boston_finder.personas       import (
-    get_persona, PERSONAS, active_personas,
+    get_persona, active_personas,
     get_proximity, get_oyster_prompt, get_min_score,
 )
 from boston_finder                import costs
