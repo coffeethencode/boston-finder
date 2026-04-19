@@ -15,31 +15,157 @@ Usage:
 import sys
 import os
 import argparse
-from datetime import datetime, timedelta
+from datetime import datetime
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 if str(ROOT) not in sys.path:
     sys.path.insert(0, str(ROOT))
 
-from boston_finder.sources        import get_sources
-from boston_finder.fetchers       import fetch_source
-from boston_finder.ai_filter      import deduplicate, score
-from boston_finder.oyster_sources import get_all as get_oyster_candidates
+from boston_finder.oyster_sources import get_all as get_oyster_candidates, OYSTER_VENUES
 from boston_finder.notify         import send
 from boston_finder.cache          import get as cache_get, set as cache_set, age as cache_age
 from boston_finder.location       import score as proximity_score, label as proximity_label, PROXIMITY
 from boston_finder.personas       import (
     get_persona, active_personas,
-    get_proximity, get_oyster_prompt, get_min_score,
+    get_proximity,
 )
 from boston_finder                import costs
+from boston_finder                import event_store, oyster_filter, venue_extractor, oyster_discoveries
 
 CACHE_KEY_BASE = "oyster_deals"
 CACHE_TTL      = 168  # 7 days in hours
 
 # Verification status file (written by oyster_verify.py)
 STATUS_FILE = os.path.expanduser("~/boston_finder_oyster_status.json")
+
+
+def collect_event_feed_candidates(known_candidates: list[dict] | None = None) -> list[dict]:
+    """
+    Read the daily event store, apply binary oyster filter, extract venue
+    for each candidate, dedupe against OYSTER_VENUES + discoveries log,
+    run verify on each unique venue, log to discoveries.
+
+    known_candidates: pre-built list from get_oyster_candidates() so we can
+    dedupe against research.txt rows (not just OYSTER_VENUES hardcoded list).
+
+    Returns: list of candidate deal records in the same shape oyster_sources
+    produces (source, name, description, url, start, venue, address).
+    """
+    try:
+        events = event_store.read_events(max_age_hours=48)
+    except event_store.EventStoreError as ex:
+        print(f"  event store read failed — skipping event-feed candidates: {ex}")
+        return []
+
+    oyster_events = [e for e in events if oyster_filter.is_oyster_candidate(e)]
+    print(f"  {len(oyster_events)} oyster candidates from event store")
+
+    # build set of known-venue normalized names (OYSTER_VENUES hardcoded list)
+    known_from_registry = {venue_extractor.normalize(v["name"]) for v in OYSTER_VENUES}
+    # also include research.txt rows and any other pre-built candidates
+    known_from_candidates = set()
+    if known_candidates:
+        for c in known_candidates:
+            name = c.get("venue") or c.get("name", "")
+            if name:
+                # strip deal suffix like " — $1 Duxbury oysters" if present
+                base = name.split("—")[0].split(" - ")[0].strip() if ("—" in name or " - " in name) else name
+                known_from_candidates.add(venue_extractor.normalize(base))
+    known_normalized = known_from_registry | known_from_candidates
+
+    # prior discoveries
+    discoveries = oyster_discoveries.load_all()
+    discovered_normalized = set(discoveries.keys())
+
+    import oyster_verify
+
+    candidates = []
+    for evt in oyster_events:
+        venue = venue_extractor.extract_venue(evt, use_llm_fallback=True)
+        if not venue:
+            # all 5 extraction strategies failed → surface for manual review
+            candidates.append({
+                "source": f"discovery:{evt.get('source', '')}",
+                "name": f"{evt.get('name', '(untitled)')[:60]} — venue unclear",
+                "description": evt.get("description", "")[:200],
+                "url": evt.get("url", ""),
+                "start": evt.get("start", ""),
+                "venue": "",
+                "address": "",
+                "verify_status": "⚠️ Unverified",
+                "price": None,
+                "hours": None,
+                "_tentative": True,
+                "_needs_review": True,
+            })
+            continue
+
+        normalized = venue_extractor.normalize(venue)
+
+        # known-venue match → skip (already covered by OYSTER_VENUES scrape)
+        if normalized in known_normalized:
+            continue
+
+        # try to match existing discovery (alias / prefix rules)
+        matched = venue_extractor.match_existing(venue, list(discovered_normalized) + list(known_normalized))
+
+        if matched in known_normalized:
+            continue
+
+        verify_result = oyster_verify.verify_event(evt, force=False)
+
+        if matched and matched in discovered_normalized:
+            oyster_discoveries.upsert_with_match(
+                venue_canonical=venue,
+                venue_normalized=normalized,
+                matched_key=matched,
+                event=evt,
+                verify_result=verify_result,
+                extraction_strategy="mixed",
+            )
+        else:
+            oyster_discoveries.upsert(
+                venue_canonical=venue,
+                venue_normalized=normalized,
+                event=evt,
+                verify_result=verify_result,
+                extraction_strategy="mixed",
+            )
+            discovered_normalized.add(normalized)
+
+        if verify_result.get("price"):
+            candidates.append({
+                "source": f"discovery:{evt.get('source', '')}",
+                "name": f"{venue} — {verify_result['price']} oysters",
+                "description": evt.get("name", ""),
+                "url": evt.get("url", ""),
+                "start": evt.get("start", ""),
+                "venue": venue,
+                "address": "",
+                "verify_status": verify_result.get("status", ""),
+                "price": verify_result.get("price"),
+                "hours": verify_result.get("hours"),
+                "_tentative": True,
+            })
+        else:
+            # verify couldn't extract price → render as "Needs Review"
+            candidates.append({
+                "source": f"discovery:{evt.get('source', '')}",
+                "name": f"{venue} — oysters mentioned, verify manually",
+                "description": evt.get("name", ""),
+                "url": evt.get("url", ""),
+                "start": evt.get("start", ""),
+                "venue": venue,
+                "address": "",
+                "verify_status": verify_result.get("status", "⚠️ Unverified"),
+                "price": None,
+                "hours": None,
+                "_tentative": True,
+                "_needs_review": True,
+            })
+
+    return candidates
 
 
 def load_verify_status() -> dict:
@@ -126,11 +252,9 @@ def display(deals: list[dict], persona_label: str, from_cache: bool, cache_age_s
     print(f"{'═'*65}\n")
 
 
-def run_persona(persona_name: str, all_events: list[dict], force: bool):
-    persona  = get_persona(persona_name)
-    label    = persona["nav_label"]
-    prompt   = get_oyster_prompt(persona_name)
-    min_score = get_min_score(persona_name)
+def run_persona(persona_name: str, force: bool):
+    persona   = get_persona(persona_name)
+    label     = persona["nav_label"]
     cache_key = f"{CACHE_KEY_BASE}_{persona_name}"
 
     if not force:
@@ -141,6 +265,12 @@ def run_persona(persona_name: str, all_events: list[dict], force: bool):
             # re-attach verify status in case oyster_verify.py ran since caching
             vstatus = load_verify_status()
             for d in cached:
+                src = d.get("source", "")
+                if src.startswith("discovery:"):
+                    # verify_status + maps_url already baked in from collect_event_feed_candidates()
+                    # under event:<url> key — venue-name lookup would overwrite with ⚠️ Unverified
+                    d["_inactive"] = "Inactive" in d.get("verify_status", "")
+                    continue
                 venue_key = (d.get("venue") or d.get("name", "")).lower().replace(" ", "_")
                 entry = vstatus.get(venue_key, {})
                 d["verify_status"] = entry.get("status", "⚠️ Unverified")
@@ -150,23 +280,44 @@ def run_persona(persona_name: str, all_events: list[dict], force: bool):
             display(sorted_deals, label, from_cache=True, cache_age_str=age_str)
             return
 
-    oyster_events = [
-        e for e in all_events
-        if any(k in (e["name"] + e.get("description", "")).lower()
-               for k in ["oyster", "raw bar", "seafood", "happy hour", "half price", "dollar", "$1"])
-    ] or all_events
+    # known-venue path (hardcoded OYSTER_VENUES + research.txt) — unchanged
+    known = get_oyster_candidates()
+    # event-feed path — binary filter + venue extraction + verify
+    # pass known so dedupe covers research.txt rows, not just OYSTER_VENUES
+    event_feed = collect_event_feed_candidates(known)
+    deals = known + event_feed
 
-    print(f"\n  {len(oyster_events)} candidates for {label}. Scoring...")
-    deals, _, _ = score(oyster_events, prompt, min_score=min_score, persona=persona_name)
+    print(f"\n  {len(known)} known-venue + {len(event_feed)} event-feed candidates for {label}")
 
     # attach verification status + maps links
     status = load_verify_status()
     for d in deals:
+        src = d.get("source", "")
+        if src.startswith("discovery:"):
+            # verify_status + maps_url already baked in from collect_event_feed_candidates()
+            # stored under event:<url> key — venue-name lookup would overwrite with ⚠️ Unverified
+            d["_inactive"] = "Inactive" in d.get("verify_status", "")
+            continue
         venue_key = (d.get("venue") or d.get("name", "")).lower().replace(" ", "_")
         entry = status.get(venue_key, {})
         d["verify_status"] = entry.get("status", "⚠️ Unverified")
         d["maps_url"]      = entry.get("maps_url", "")
         d["_inactive"]     = "Inactive" in d.get("verify_status", "")
+
+    # Fix 1: gate venue_scrape rows behind price verification.
+    # Without an AI scorer to filter weak keyword signals, require a verified
+    # price before rendering venue_scrape rows as confirmed deals.
+    for d in deals:
+        src = d.get("source", "")
+        if src == "venue_scrape":
+            price = d.get("price")
+            if not price:
+                # try the verify status file — may have a price from oyster_verify.py
+                venue_key = (d.get("venue") or d.get("name", "")).lower().replace(" ", "_")
+                price = status.get(venue_key, {}).get("price")
+            if not price:
+                d["_needs_review"] = True
+                d["_tentative"] = True  # same treatment as event-feed uncertain candidates
 
     # sort by proximity
     sorted_deals = sort_by_proximity(deals, persona_name)
@@ -191,31 +342,10 @@ def main():
     else:
         persona_names = [args.persona]
 
-    print("\n[oyster_deals] Fetching fresh oyster deal data...")
-
-    today = datetime.now().replace(hour=0, minute=0, second=0, microsecond=0)
-    end   = today + timedelta(days=14)
-
-    all_events: list[dict] = []
-    seen_urls:  set[str]   = set()
-
-    print("  [Known venues + research file]")
-    all_events += get_oyster_candidates()
-
-    for source in get_sources("food"):
-        print(f"  [{source['name']}]")
-        for e in fetch_source(source, today, end):
-            if e.get("url") and e["url"] not in seen_urls:
-                seen_urls.add(e["url"])
-                all_events.append(e)
-            elif not e.get("url"):
-                all_events.append(e)
-
-    all_events = deduplicate(all_events)
-    print(f"\n  {len(all_events)} total candidates from all sources")
+    print("\n[oyster_deals] Running oyster deals pipeline...")
 
     for persona_name in persona_names:
-        run_persona(persona_name, all_events, force=args.force)
+        run_persona(persona_name, force=args.force)
 
 
 if __name__ == "__main__":

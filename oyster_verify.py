@@ -127,6 +127,8 @@ def verify_venue(venue: dict, force: bool = False) -> dict:
             return result
 
         found = [k for k in DEAL_KEYWORDS if k in text]
+        price = extract_price(text)
+        hours = extract_hours(text)
         if found:
             result = {
                 "status": "✅ Active",
@@ -134,6 +136,8 @@ def verify_venue(venue: dict, force: bool = False) -> dict:
                 "found_keywords": found,
                 "maps_url": maps_url,
                 "notes": f"Found: {', '.join(found[:3])}",
+                "price": price,
+                "hours": hours,
             }
         else:
             result = {
@@ -142,6 +146,8 @@ def verify_venue(venue: dict, force: bool = False) -> dict:
                 "found_keywords": [],
                 "maps_url": maps_url,
                 "notes": "No deal keywords found on specials page — check manually",
+                "price": price,
+                "hours": hours,
             }
 
         status[key] = result
@@ -161,6 +167,94 @@ def verify_venue(venue: dict, force: bool = False) -> dict:
         save_status(status)
         print(f"  {name}: error — {ex}")
         return result
+
+
+def verify_event(event: dict, force: bool = False) -> dict:
+    """
+    Verify an event-derived candidate by scraping its URL and extracting price/hours.
+
+    Parallel to verify_venue() but accepts event dicts (no specials_url).
+    Writes into the same STATUS_FILE keyed by event URL.
+    """
+    name = event.get("venue") or event.get("name") or ""
+    url = event.get("url", "")
+    status = load_status()
+    key = f"event:{url}"
+
+    if not force and key in status:
+        entry = status[key]
+        verified_at = datetime.fromisoformat(entry["verified_at"])
+        if datetime.now() - verified_at < timedelta(days=VERIFY_TTL):
+            return entry
+
+    maps_url = maps_link(name, "")
+
+    try:
+        r = requests.get(url, headers=HEADERS, timeout=10)
+    except Exception as ex:
+        result = {
+            "status": "⚠️ Unverified",
+            "verified_at": datetime.now().isoformat(),
+            "price": None,
+            "hours": None,
+            "closed": False,
+            "source_url": url,
+            "maps_url": maps_url,
+            "notes": f"fetch failed: {ex}",
+        }
+        status[key] = result
+        save_status(status)
+        return result
+
+    if r.status_code != 200:
+        result = {
+            "status": "⚠️ Unverified",
+            "verified_at": datetime.now().isoformat(),
+            "price": None,
+            "hours": None,
+            "closed": False,
+            "source_url": url,
+            "maps_url": maps_url,
+            "notes": f"HTTP {r.status_code}",
+        }
+        status[key] = result
+        save_status(status)
+        return result
+
+    soup = BeautifulSoup(r.text, "html.parser")
+    page_text = soup.get_text(separator=" ")
+
+    # combine with event text so extractors see both
+    combined = " ".join([
+        event.get("name", ""),
+        event.get("description", ""),
+        page_text[:5000],
+    ])
+
+    price = extract_price(combined)
+    hours = extract_hours(combined)
+    closed = any(sig in page_text.lower() for sig in CLOSED_SIGNALS)
+
+    if closed:
+        status_label = "❌ closed"
+    elif price:
+        status_label = "✅ verified"
+    else:
+        status_label = "⚠️ Unverified"
+
+    result = {
+        "status": status_label,
+        "verified_at": datetime.now().isoformat(),
+        "price": price,
+        "hours": hours,
+        "closed": closed,
+        "source_url": url,
+        "maps_url": maps_url,
+        "notes": "",
+    }
+    status[key] = result
+    save_status(status)
+    return result
 
 
 # ── Markdown generation ────────────────────────────────────────────────────────
@@ -322,3 +416,175 @@ def _extract_hours(deal_str: str) -> str:
 
 if __name__ == "__main__":
     main()
+
+
+# ── deal extractors ────────────────────────────────────────────────────────────
+
+_PRICE_PATTERNS = [
+    # ranges: $1 - $2 oysters (en/em dashes, optional variety words before oysters)
+    (r"\$(\d+(?:\.\d+)?)\s*[-\u2013\u2014]\s*\$(\d+(?:\.\d+)?)\s+(?:\w+\s+)*oysters?",
+     lambda m: f"${m.group(1)}-${m.group(2)}"),
+    # simple: $1 oysters, $1.50 each oyster, $1 Duxbury oysters, $1.50 Island Creek oysters
+    # allow up to 3 words between price and oysters (variety names, "each", etc.)
+    (r"\$(\d+(?:\.\d+)?)\s+(?:\w+\s+){0,3}oysters?",
+     lambda m: f"${m.group(1)}"),
+    # half-price oysters / half price raw bar
+    (r"(?i)half[- ]?price\s+(?:\w+\s+)*(?:oysters?|raw\s+bar)",
+     lambda m: "half-price"),
+    # BOGO
+    (r"(?i)\bBOGO\s+(?:\w+\s+)*oysters?",
+     lambda m: "BOGO"),
+    # 2 for 1
+    (r"(?i)\b2\s+for\s+1\s+(?:\w+\s+)*oysters?",
+     lambda m: "2-for-1"),
+    # dollar oysters
+    (r"(?i)\bdollar\s+oysters?",
+     lambda m: "dollar"),
+    # buck a shuck
+    (r"(?i)\bbuck[- ]?a[- ]?shuck\b",
+     lambda m: "buck-a-shuck"),
+]
+
+
+_DAY_ABBR = {
+    "mon": "Mon", "monday": "Mon", "mondays": "Mon",
+    "tue": "Tue", "tues": "Tue", "tuesday": "Tue", "tuesdays": "Tue",
+    "wed": "Wed", "weds": "Wed", "wednesday": "Wed", "wednesdays": "Wed",
+    "thu": "Thu", "thur": "Thu", "thurs": "Thu", "thursday": "Thu", "thursdays": "Thu",
+    "fri": "Fri", "friday": "Fri", "fridays": "Fri",
+    "sat": "Sat", "saturday": "Sat", "saturdays": "Sat",
+    "sun": "Sun", "sunday": "Sun", "sundays": "Sun",
+}
+_DAY_ORDER = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+_ALL_DAYS = list(_DAY_ORDER)
+
+
+def _expand_day_range(start: str, end: str) -> list[str]:
+    s, e = _DAY_ABBR[start.lower()], _DAY_ABBR[end.lower()]
+    si, ei = _DAY_ORDER.index(s), _DAY_ORDER.index(e)
+    if si <= ei:
+        return _DAY_ORDER[si: ei + 1]
+    return _DAY_ORDER[si:] + _DAY_ORDER[: ei + 1]
+
+
+def _parse_time(time_str: str, fallback_ampm: str = "") -> str | None:
+    """Parse '5pm' / '5 PM' / '9:30pm' / '17:00' → 'HH:MM' 24h.
+
+    fallback_ampm is used when time_str has no AM/PM suffix of its own
+    (e.g. the start of '5-6pm' where only the end carries the suffix).
+
+    When no AM/PM can be determined and the hour is 1-8, we assume PM
+    (happy hour heuristic: nobody drinks oysters at 4 AM).
+    """
+    m = re.match(r"\s*(\d{1,2})(?::(\d{2}))?\s*([apAP]\.?[mM]\.?)?\s*$", time_str.strip())
+    if not m:
+        return None
+    hour = int(m.group(1))
+    minute = int(m.group(2) or "0")
+    ampm = (m.group(3) or fallback_ampm).lower().replace(".", "")
+    if not ampm and 1 <= hour <= 8:
+        ampm = "pm"  # happy-hour heuristic
+    if ampm == "pm" and hour < 12:
+        hour += 12
+    elif ampm == "am" and hour == 12:
+        hour = 0
+    return f"{hour:02d}:{minute:02d}"
+
+
+def _extract_ampm(time_str: str) -> str:
+    """Return 'am' or 'pm' if time_str ends with an AM/PM suffix, else ''."""
+    m = re.search(r"([apAP]\.?[mM]\.?)\s*$", time_str.strip())
+    if m:
+        return m.group(1).lower().replace(".", "")
+    return ""
+
+
+# Recognize day tokens separated by ' ', '-', '\u2013', or '\u2014'
+_DAY_TOKEN = r"(?:mon|tues?|tue|wed(?:nes)?|thur?s?|fri|sat|sun)(?:day)?(?:s)?"
+_TIME_TOKEN = r"\d{1,2}(?::\d{2})?\s*[apAP]?\.?[mM]?\.?"
+
+_RANGE_RE = re.compile(
+    rf"(?i)({_DAY_TOKEN})\s*[-\u2013\u2014to]+\s*({_DAY_TOKEN})\s+({_TIME_TOKEN})\s*[-\u2013\u2014]\s*({_TIME_TOKEN})"
+)
+_LIST_RE = re.compile(
+    rf"(?i)({_DAY_TOKEN})\s+({_DAY_TOKEN})\s+({_DAY_TOKEN})\s+({_TIME_TOKEN})\s*[-\u2013\u2014]\s*({_TIME_TOKEN})"
+)
+_SINGLE_RE = re.compile(
+    rf"(?i)({_DAY_TOKEN})\s+({_TIME_TOKEN})\s*[-\u2013\u2014]\s*({_TIME_TOKEN})"
+)
+_DAILY_RE = re.compile(rf"(?i)\bdaily\s+({_TIME_TOKEN})\s*[-\u2013\u2014]\s*({_TIME_TOKEN})")
+_OPEN_SOLDOUT_RE = re.compile(
+    rf"(?i)({_DAY_TOKEN})\s+({_TIME_TOKEN})\s+until\s+sold\s+out"
+)
+_DAILY_STARTING_RE = re.compile(rf"(?i)\bdaily\s+starting\s+at\s+({_TIME_TOKEN})")
+
+
+def _parse_window(text: str) -> dict | None:
+    """Attempt to parse a single window. Return {{days, start, end}} or None."""
+    # _DAILY_STARTING_RE before _DAILY_RE (more specific)
+    m = _DAILY_STARTING_RE.search(text)
+    if m:
+        return {"days": list(_ALL_DAYS), "start": _parse_time(m.group(1)), "end": None}
+
+    m = _DAILY_RE.search(text)
+    if m:
+        end_str = m.group(2)
+        fallback = _extract_ampm(end_str)
+        return {"days": list(_ALL_DAYS),
+                "start": _parse_time(m.group(1), fallback),
+                "end": _parse_time(end_str)}
+
+    # _OPEN_SOLDOUT_RE before _SINGLE_RE (open-ended, no end time)
+    m = _OPEN_SOLDOUT_RE.search(text)
+    if m:
+        return {"days": [_DAY_ABBR[m.group(1).lower()]], "start": _parse_time(m.group(2)), "end": None}
+
+    # _RANGE_RE before _SINGLE_RE (day ranges take priority)
+    m = _RANGE_RE.search(text)
+    if m:
+        days = _expand_day_range(m.group(1), m.group(2))
+        end_str = m.group(4)
+        fallback = _extract_ampm(end_str)
+        return {"days": days,
+                "start": _parse_time(m.group(3), fallback),
+                "end": _parse_time(end_str)}
+
+    # _LIST_RE: explicit 3-day lists like "Tue Wed Thu 4-6"
+    m = _LIST_RE.search(text)
+    if m:
+        days = [_DAY_ABBR[m.group(i).lower()] for i in range(1, 4)]
+        end_str = m.group(5)
+        fallback = _extract_ampm(end_str)
+        return {"days": days,
+                "start": _parse_time(m.group(4), fallback),
+                "end": _parse_time(end_str)}
+
+    m = _SINGLE_RE.search(text)
+    if m:
+        end_str = m.group(3)
+        fallback = _extract_ampm(end_str)
+        return {"days": [_DAY_ABBR[m.group(1).lower()]],
+                "start": _parse_time(m.group(2), fallback),
+                "end": _parse_time(end_str)}
+
+    return None
+
+
+def extract_hours(text: str) -> dict | None:
+    """Return {'windows': [...]} or None if no window found."""
+    segments = re.split(r"[;\n]", text)
+    windows = []
+    for seg in segments:
+        w = _parse_window(seg)
+        if w and w["start"]:
+            windows.append(w)
+    return {"windows": windows} if windows else None
+
+
+def extract_price(text: str) -> str | None:
+    """Return a normalized price label from oyster-deal text, or None."""
+    for pattern, formatter in _PRICE_PATTERNS:
+        m = re.search(pattern, text)
+        if m:
+            return formatter(m)
+    return None

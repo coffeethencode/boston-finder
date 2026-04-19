@@ -33,17 +33,6 @@ PERSONAS: dict[str, dict] = {
             "- Anything exclusive, influential, or scene-y\n\n"
             "NOT wanted: pure sports games, road races, youth sports, basic trivia nights at chains."
         ),
-        "oyster_prompt": """Score Boston oyster deals for Brian, who lives in the South End.
-Priorities:
-- Value: dollar oysters or half-price deals score highest (9–10)
-- Location: South End > Back Bay > Fort Point/North End > Seaport > Cambridge
-- Vibe: he likes buzzy bar scenes, not quiet fine dining rooms
-- Known great venues: B&G Oysters (his neighborhood), Row 34, Island Creek, Neptune
-- Skip: tourist traps, chains with no vibe, anything in Cambridge unless extraordinary
-
-Score 9–10: $1 oysters at a great scene-y bar within walking distance of South End
-Score 5–6: decent deal at a good venue but a trip required or deal is modest
-Score 1–4: tourist chain, no deal, or requires an Uber""",
     },
     "dates": {
         "active": True,
@@ -87,18 +76,6 @@ Score 1–4: tourist chain, no deal, or requires an Uber""",
             "- Conferences, lectures, or panels with no social component\n\n"
             "Score 0-10. Only return events with score >= 5."
         ),
-        # Dates persona inherits Brian's oyster_prompt style — date-appropriate oyster venues.
-        "oyster_prompt": """Score Boston oyster deals for someone looking for date-night oyster spots.
-Priorities:
-- Atmosphere: beautiful rooms, great wine lists, romantic vibe (9–10)
-- Location: Back Bay > South End > North End/Beacon Hill > Seaport > Cambridge
-- Prefers: upscale but approachable — not intimidating fine dining
-- Known great venues: Neptune Oyster (iconic), Eventide, Saltie Girl, Ostra, B&G
-- Skip: noisy sports bars, chains, anything too casual for a date
-
-Score 9–10: oysters at a beautiful/upscale venue perfect for a date
-Score 5–6: decent deal at a good-enough venue, not a destination
-Score 1–4: chain restaurant, no atmosphere, or a dive bar vibe""",
     },
     "kirk": {
         "active": True,
@@ -190,16 +167,6 @@ Score 1–4: chain restaurant, no atmosphere, or a dive bar vibe""",
             "- Sports, arts-only, food/drink without tech angle\n"
             "- Basic networking mixers with no engineering or sales focus"
         ),
-        "oyster_prompt": """Score Boston/Cambridge oyster deals for Kirk, based in Cambridge.
-Priorities:
-- Any good bar scene near Cambridge/Kendall/Central is ideal
-- He's social and fine with a trip into Boston proper for a great deal
-- Providence RI is acceptable if extraordinary (he goes there occasionally)
-- Skip: tourist traps, quiet fine dining rooms
-
-Score 9–10: dollar or half-price oysters at a buzzy bar in Cambridge or Boston
-Score 5–6: decent deal at a solid venue, worth the trip
-Score 1–4: no deal, overpriced, or too far""",
     },
     "chloe": {
         "active": False,
@@ -245,18 +212,6 @@ Score 1–4: no deal, overpriced, or too far""",
             "- Basic networking mixers with no food/drink/art angle\n\n"
             "Score 0-10. Only return events with score >= 5."
         ),
-        "oyster_prompt": """Score Boston oyster deals for Chloe, who is based in Back Bay and wants upscale experiences.
-Priorities:
-- Atmosphere matters more than deal size — she'll pay $3 for oysters somewhere beautiful
-- Location: Back Bay > South End > North End/Beacon Hill > Seaport > Kenmore
-- Prefers: beautiful rooms, great wine lists, scene-y/upscale crowds
-- Top picks: Saltie Girl (stunning wine bar), Neptune Oyster (iconic North End), Ostra, Eventide
-- Acceptable: deals at high-quality seafood-focused restaurants
-- Skip: noisy sports bars, chains, anything that feels casual or touristy
-
-Score 9–10: oysters at a beautiful/upscale venue she'd be proud to bring someone to
-Score 5–6: decent deal at a good-enough venue, not a destination
-Score 1–4: chain restaurant, no atmosphere, or a dive bar vibe""",
     },
 }
 
@@ -281,24 +236,12 @@ def get_prompt(name: str) -> str:
     return p.get("prompt", "")
 
 
-def get_oyster_prompt(name: str) -> str:
-    """Return the oyster-specific scoring prompt for a persona, falling back to event prompt."""
-    p = PERSONAS.get(name, {})
-    return p.get("oyster_prompt") or p.get("prompt", "")
-
-
 def get_proximity(name: str) -> dict | None:
     """Return proximity table for a persona, or None for default."""
     p = PERSONAS.get(name)
     if p is None:
         return None
     return p.get("proximity")
-
-
-def get_min_score(name: str, default: int = 5) -> int:
-    """Return the minimum score threshold for a persona."""
-    p = PERSONAS.get(name, {})
-    return p.get("min_score", default)
 
 
 def active_personas() -> list[dict]:

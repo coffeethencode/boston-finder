@@ -1,8 +1,24 @@
 # Session resume — codebase-unification
 
-Last updated: 2026-04-19 (post-Phase-6 state)
+Last updated: 2026-04-19 (oyster pipeline simplification landed on feature branch)
 
 ## Where we are
+
+**Active feature branch:** `oyster-pipeline-simplify` (15 commits ahead of main). All 13 plan tasks complete, 74 pytest tests passing, ready to merge into `main`.
+
+**Oyster pipeline simplification status:**
+- Spec: `tracking/specs/2026-04-19-oyster-pipeline-unification-design.md` (commit `acaf57f`)
+- Plan: `tracking/plans/2026-04-19-oyster-pipeline-unification.md` (commit `a00e40d`)
+- 15 implementation commits from `1f11df2` through `b93e6a9`
+- Both spec bugs fixed end-to-end, verified with live run:
+  - Park 9 Dog Bar: no longer appears (binary filter drops "Everett Happy Hour")
+  - Tradesman Charlestown + 224 Boston: both discovered via Boston Calendar, venue extracted from title, verified price "dollar", logged in `~/boston_finder_oyster_discoveries.json`
+- Phase 2 (unified scoring tagging pass) + Phase 3 (auto-promotion rules) explicitly deferred to later specs
+- Watch list post-merge: regex miss rate, LLM fallback cost via `costs.py` (source=`venue_extract`), discoveries log growth
+
+**To merge:** `git checkout main && git merge --no-ff oyster-pipeline-simplify && git push`. First push to main will trigger Netlify deploy — the event finder's daily cron will run against the new code next morning at 8:07 AM.
+
+---
 
 **Branch:** `main` @ `b06c6be` (pushed) — unification merged via `git merge --no-ff`
 **Tags:** `unification-phase0` through `unification-phase6`

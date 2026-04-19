@@ -212,11 +212,12 @@ def _oyster_html(persona: str = "brian") -> str:
 
   function renderItem(o) {{
     var venueName = esc(o.venue || String(o.name || '').split('—')[0].trim());
+    var badge = (o._tentative && !o._needs_review) ? ' <span class="new-badge">\U0001F195 new</span>' : '';
     var hood = esc(o.address || '');
     var hours = esc(oysterHours(o));
     var parts = String(o.name || '').split('—');
     var deal = esc(parts.length > 1 ? parts[1] : (o.reason || ''));
-    var left = '<div><b>' + venueName + '</b>' + (hood ? '<div class="oyster-meta">' + hood + (deal ? ' · ' + deal : '') + '</div>' : '') + '</div>';
+    var left = '<div><b>' + venueName + '</b>' + badge + (hood ? '<div class="oyster-meta">' + hood + (deal ? ' · ' + deal : '') + '</div>' : '') + '</div>';
     var right = hours ? '<span class="oyster-hours">' + hours + '</span>' : '';
     var inner = left + right;
     return o.url
@@ -227,9 +228,11 @@ def _oyster_html(persona: str = "brian") -> str:
   function renderOysterDay(dow) {{
     var isToday = dow === todayDow;
     var currentHour = isToday ? bostonHour() : -1;
-    var items = oysters.filter(function(o) {{
+    var allBostonItems = oysters.filter(function(o) {{
       return oysterDays(o).indexOf(dow) !== -1 && (o.city || 'Boston') !== 'Providence';
     }});
+    var needsReviewItems = allBostonItems.filter(function(o) {{ return !!o._needs_review; }});
+    var items = allBostonItems.filter(function(o) {{ return !o._needs_review; }});
     var pvdItems = oysters.filter(function(o) {{
       return oysterDays(o).indexOf(dow) !== -1 && o.city === 'Providence';
     }});
@@ -248,10 +251,10 @@ def _oyster_html(persona: str = "brian") -> str:
       return proxScore(b) - proxScore(a);
     }});
 
-    if (!items.length && !pastItems.length) {{
+    if (!items.length && !pastItems.length && !needsReviewItems.length) {{
       return '<div style="color:#444;font-size:0.8rem;padding:8px 0">No deals on ' + DAY_FULL[dow] + '</div>';
     }}
-    if (!items.length && isToday) {{
+    if (!items.length && isToday && !needsReviewItems.length) {{
       return '<div style="color:#556;font-size:0.8rem;padding:8px 0">All deals for today have ended. ' +
         (pastItems.length ? pastItems.length + ' hidden.' : '') +
         '</div>';
@@ -292,6 +295,13 @@ def _oyster_html(persona: str = "brian") -> str:
         '<button onclick="toggleProvidence()" style="background:none;border:none;color:' + (showProvidence ? '#93c5fd' : '#2a4a6a') + ';font-size:0.72rem;cursor:pointer;padding:0;letter-spacing:0.04em">' +
         (showProvidence ? '▼' : '▶') + ' Providence RI (' + pvdItems.length + ' deals)</button>' +
         (showProvidence ? '<div class="oyster-list" style="margin-top:6px">' + pvdItems.map(renderItem).join('') + '</div>' : '') +
+        '</div>';
+    }}
+    if (needsReviewItems.length) {{
+      html += '<div class="needs-review-strip"><div class="nr-title">\u26a0\ufe0f Needs Review \u2014 oyster keyword found, price unclear</div>' +
+        needsReviewItems.map(function(d) {{
+          return '<a href="' + esc(d.url || '') + '" target="_blank">' + esc(d.venue || d.name || '') + ': ' + esc(d.description || '') + '</a>';
+        }}).join('<br>') +
         '</div>';
     }}
     return html;
@@ -772,6 +782,11 @@ def generate(events: list[dict], today: datetime, days: int, persona: str = "bri
   .oyster-meta {{ font-size: 0.72rem; color: #556; margin-top: 2px; }}
   .oyster-hours {{ font-size: 0.75rem; color: #7fff7f; opacity: 0.7; white-space: nowrap; margin-left: 12px; }}
   .oyster-scroll {{ max-height: 300px; overflow-y: auto; padding-right: 2px; }}
+  .new-badge {{ font-size: 0.65rem; color: #fff; background: #3a7; padding: 1px 5px; border-radius: 3px; margin-left: 5px; }}
+  .needs-review-strip {{ margin-top: 12px; padding: 10px; background: rgba(255,180,60,0.08); border-left: 3px solid #e0a040; border-radius: 4px; font-size: 0.75rem; }}
+  .needs-review-strip .nr-title {{ font-weight: 600; margin-bottom: 6px; color: #c0802d; }}
+  .needs-review-strip a {{ color: #aaa; text-decoration: none; }}
+  .needs-review-strip a:hover {{ color: #eee; text-decoration: underline; }}
   .show-more-btn {{ background: #1a1a1a; border: 1px solid #333; border-radius: 6px;
                     padding: 8px 16px; color: #888; font-size: 0.8rem; cursor: pointer;
                     margin-bottom: 24px; display: block; width: 100%; text-align: left; }}
