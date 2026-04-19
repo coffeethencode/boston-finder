@@ -41,13 +41,11 @@ OYSTER_VENUES = [
         "specials_url": "https://www.neptuneoyster.com",
         "known_deal": None,  # no standing happy hour, but excellent raw bar
     },
-    {
-        "name": "B&G Oysters",
-        "neighborhood": "South End",
-        "url": "https://www.bandgoysters.com",
-        "specials_url": "https://www.bandgoysters.com",
-        "known_deal": None,
-    },
+    # B&G Oysters — removed 2026-04-19. Business is permanently closed per
+    # Google Maps; domain was hijacked into a crypto-scam page, which our
+    # keyword-based scraper was matching on ("oyster" still appears in the
+    # junk content). Phase 2 headless-browser venue-status probe will
+    # auto-detect closures — see tracking/specs/2026-04-19-venue-status-probe.md.
     {
         "name": "Saltie Girl",
         "neighborhood": "Back Bay",
