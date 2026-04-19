@@ -40,16 +40,17 @@ For each file: strategy, what to preserve from stale, what to preserve from repo
 - **Notes:** Use stale as the base, port repo's do617 time-parse fix into stale's version. `fetch_source(source, start, end)` dispatcher likely exists in stale — verify it handles every `type:` value in `sources.py`.
 
 ## boston_finder/html_output.py
-- **Strategy:** REPO-NEWER (kept as-is at Phase 2)
+- **Strategy:** REPO-NEWER at Phase 2, MERGE-ADDITIVE at Phase 2b.
 - **Preserve from repo:** persona-aware `_oyster_html(persona)` with JS rendering, `generate(events, today, days, persona)` pipeline, `_cost_html()`, `_extra_events_html()`, `_git_deploy(html, persona)`, `SAFE_TEST_ENV` / `DISABLE_OPEN_ENV` / `DISABLE_DEPLOY_ENV` / `OUTPUT_FILE_ENV` env flags, `_placeholder_hits()` deploy guard.
-- **Deferred to a Phase 2b session:**
-  1. Port stale's `build_json(events, today, days, persona)` — JSON serialization of events
-  2. Port stale's `_git_push_json(json_str, persona)` — pushes `data/<persona>.json` to separate `data` branch of `coffeethencode/boston-finder` repo (clone at `~/boston-finder-data/`). Avoids Netlify build credit burn on pure data updates.
-  3. Port stale's `_sources_html(events)` — source count pill bar
-  4. Constants: `DATA_REPO`, `NETLIFY_URL`, `PERSONA_PATHS`
-  5. Wire into `generate()` respecting `BOSTON_FINDER_DISABLE_DEPLOY` env flag
-- **Why deferred:** repo's current html_output.py works end-to-end (deployed live April 18 with oyster bar + real events). The JSON-push feature is an optimization, not a regression fix. Adding it requires careful integration (auth to separate repo, branch handling, env flag wiring) that's higher risk than the rest of Phase 2. Handled in its own session as Phase 2b.
-- **Smoke check verification only:** `python3 -c "from boston_finder.html_output import generate; print(generate.__name__)"` — no code change.
+- **Phase 2b (2026-04-18, commit `4d3b052`, tag `unification-phase2b`) — DONE:**
+  1. ✅ Ported `build_json(events, today, days, persona)` — JSON serialization of events. (`html_output.py:416-515`)
+  2. ✅ Ported `_git_push_json(json_str, persona)` — pushes `data/<persona>.json` to separate `data` branch of `coffeethencode/boston-finder` (clone at `~/boston-finder-data/`). Avoids Netlify build credit burn on pure data updates. (`html_output.py:518-554`)
+  3. ✅ Ported `_sources_html(events)` — source count pill bar. Rendered between `{_cost_html()}` and `{_oyster_html(persona)}` in the template (`html_output.py:614`).
+  4. ✅ Added `DATA_REPO` + `PERSONA_PATHS` constants next to `GITHUB_REPO`. **Did NOT add `NETLIFY_URL`** — `boston_finder.personas.SITE_BASE` already holds the same value, so duplication was unnecessary.
+  5. ✅ Wired `_git_push_json(build_json(...), persona)` into `generate()` right before `_git_deploy(...)`, gated by the existing `BOSTON_FINDER_DISABLE_DEPLOY` / SAFE_TEST / placeholder_hits early-return (`html_output.py:737-741`).
+  6. ✅ Added `.sources-bar` + `.src-pill` + `.src-pill b` CSS after `.cost-model` in the main CSS block (`html_output.py:545-550`).
+- **Verification:** import smoke, `build_json` unit test on fake events, `generate()` smoke with placeholder + real URLs, full `boston_events.py --persona brian --days 7` in Phase 5.2 (113 events, sources bar rendered, 0 "Date unknown", SAFE_TEST gating confirmed).
+- **See** `tracking/code-review-context.md` §"Phase 2b" for rationale per decision and open questions for reviewer.
 
 ## boston_finder/location.py
 - **Strategy:** MERGE-ADDITIVE (small)
@@ -70,12 +71,12 @@ For each file: strategy, what to preserve from stale, what to preserve from repo
 ## boston_finder/personas.py
 - **Strategy:** MERGE-SCHEMA (most complex single-file merge)
 - **Preserve from repo:** entire new schema with `active`, `title`, `nav_label`, `accent`, `url_path`, `deploy_file`, `proximity`, `prompt`. Keep `PERSONAS` dict layout + helper functions (`get_persona`, `nav_html`, `active_personas`).
-- **Additions required:**
-  1. Add `oyster_prompt` (optional string) per persona. Port text from stale's per-persona oyster_prompt.
-  2. Add `min_score` (optional int, default 5) per persona.
-  3. Add `label` attribute aliased to `nav_label` (either via property, dict key, or helper function `label_for(persona)`) — so stale oyster_deals.py doesn't need big rewrites.
-  4. Add `get_proximity(persona) -> dict` function that returns the per-persona proximity table. Embed CHLOE_PROXIMITY and KIRK_PROXIMITY from stale location.py as dicts in personas (e.g., each persona has a `proximity: dict | None` field; `get_proximity()` returns that or default).
-- **Notes:** `location.py` calls `from boston_finder.personas import get_proximity` — that import must work before location.py Task 2.6 is run, OR location.py uses a try/except fallback. Simplest: write `get_proximity()` first in this task, then Task 2.6's location.py will work. Plan should do personas.py BEFORE location.py. **Update Phase 2 order: do 2.13 before 2.6.**
+- **Additions required (Phase 2.8 — DONE at commit `f9e35b4`):**
+  1. ✅ Added `oyster_prompt` (optional string) per persona. Text ported from stale.
+  2. ✅ Added `min_score` (optional int, default 5) per persona.
+  3. ❌ Did NOT add a `label` alias to `nav_label`. Instead, Phase 3.1 updated the one stale consumer (`oyster_deals.py`) to use `persona["nav_label"]` directly. Rationale: keeping one canonical label key is cleaner than carrying an alias indefinitely. See `tracking/code-review-context.md` §"Phase 3.1" for details.
+  4. ✅ Added `get_proximity(name) -> dict | None` (`personas.py:290-295`). Per-persona proximity tables embedded as `proximity: dict | None` on each persona record (brian=None→default, chloe/kirk have custom dicts). Also added `get_oyster_prompt(name)` (`personas.py:284-287`) and `get_min_score(name, default=5)` (`personas.py:298-301`) helper functions — consumed by `oyster_deals.py` in Phase 3.1.
+- **Notes:** `location.py` imports `get_proximity` from personas → Phase 2.8 was executed BEFORE Phase 2.9 (location.py). Plan order was updated at Phase 1 to reflect this; actual order on disk reflects the revised order.
 
 ## boston_finder/preferences.py
 - **Strategy:** REPO-NEWER (deliberate policy change)

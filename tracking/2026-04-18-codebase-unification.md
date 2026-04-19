@@ -2,6 +2,20 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
+## Execution status (as of 2026-04-18 evening session)
+
+- ✅ **Phases 0, 1, 2, 2b, 3, 4, 5 complete** — tags `unification-phase0` through `unification-phase5` pushed to origin.
+- 🛑 **Phase 6 pending** — merge to main + production deploy. Requires user confirmation before executing (production-impact).
+- 🛑 **Phase 7 pending** — soft-delete stale to `/Users/brian/python-projects/_deprecated_boston_finder/`, hard-delete one week later.
+- **Branch tip:** `codebase-unification` @ `161a866`
+- **What was done and why:** see `tracking/code-review-context.md` (written for AI code review — explains rationale, verification, and untested paths per commit).
+- **Session-by-session log:** see `tracking/unification-status.md`.
+- **Per-file merge strategy (spec that Phase 2+ implemented):** `tracking/merge-decisions.md`.
+
+The individual `- [ ]` sub-task checkboxes below are the ORIGINAL plan as written on 2026-04-18 morning. They are preserved as-is rather than retroactively flipped, because the review-context doc + git log are the authoritative record of what was actually done. Use those for review; use these sub-tasks only if resuming a half-done phase.
+
+---
+
 **Goal:** Eliminate the forked `/Users/brian/python-projects/boston_finder/` package (and its stale top-level scripts) by merging every feature back into `/Users/brian/python-projects/boston-finder-repo/`, making the repo the sole source of truth for events + oyster pipelines.
 
 **Architecture:** Work on a dedicated `codebase-unification` branch. Tag a pre-work backup point. Merge bottom-up (leaf modules first → dependents last → top-level scripts) so each commit is testable in isolation. Each phase ends with a git tag so any phase can be rolled back independently. LaunchAgents keep running the stale copy until Phase 6 (merge to main + rewire). Stale files go to `/Users/brian/python-projects/_deprecated_boston_finder/` for one week before hard-delete (Phase 7).
