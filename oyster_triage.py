@@ -18,8 +18,12 @@ import argparse
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
+from pathlib import Path
 
-sys.path.insert(0, "/Users/brian/python-projects")
+ROOT = Path(__file__).resolve().parent
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
 from boston_finder.cache    import get as cache_get
 from boston_finder.location import score as proximity_score, label as proximity_label
 from boston_finder.ratings  import score as personal_score, is_skipped, summary as ratings_summary
