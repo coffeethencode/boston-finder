@@ -1,5 +1,16 @@
 # Code review context — Phases 2b through 5
 
+> **UPDATE 2026-04-19:** This doc describes the state at tag
+> `unification-phase5` (commit `161a866`). Since then, fixes from the
+> Codex + Gemini + third-pass reviews have landed in 5 commits:
+> `5438b28`, `072acd6`, `b76b755`, `f559e9d`, `c4e580a`. The "Targeted
+> questions for the reviewer" section at the bottom of THIS file is now
+> partially answered — see `tracking/review-codex.md`,
+> `tracking/review-gemini.md`, and `tracking/review-third-pass.md` for
+> the actual findings + triage. For a v2 review of the post-fix code,
+> use the copy-paste prompt at `tracking/review-prompt-v2.md`. This
+> file stays intact to preserve the pre-fix context.
+
 **Purpose:** This doc is written FOR an AI reviewer to study the code and flag
 bugs. It explains **what** each change does, **why** it was chosen, **how it
 was verified**, and **what remains untested**. Pair this with `git log
