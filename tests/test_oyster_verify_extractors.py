@@ -101,3 +101,28 @@ def test_hours_multi_window():
 
 def test_hours_no_match():
     assert ov.extract_hours("tickets available at the door") is None
+
+
+def test_verify_event_dict(monkeypatch):
+    """Verify an event dict that has url but no specials_url."""
+    event = {
+        "name": "Dollar Oysters at Tradesman Charlestown",
+        "url": "https://fake.example/tradesman",
+        "venue": "Tradesman Charlestown",
+    }
+
+    def fake_fetch(url, headers=None, timeout=10):
+        class FakeResp:
+            status_code = 200
+            text = "<html><body>$1 oysters Mon-Wed 5-6pm at Tradesman</body></html>"
+        return FakeResp()
+
+    monkeypatch.setattr(ov.requests, "get", fake_fetch)
+    # point status file to tmp dir via monkeypatch to avoid polluting real file
+    import tempfile, os
+    monkeypatch.setattr(ov, "STATUS_FILE", os.path.join(tempfile.mkdtemp(), "status.json"))
+
+    result = ov.verify_event(event, force=True)
+    assert result["price"] == "$1"
+    assert result["hours"]["windows"][0]["start"] == "17:00"
+    assert result["status"].startswith("✅")

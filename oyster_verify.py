@@ -127,6 +127,8 @@ def verify_venue(venue: dict, force: bool = False) -> dict:
             return result
 
         found = [k for k in DEAL_KEYWORDS if k in text]
+        price = extract_price(text)
+        hours = extract_hours(text)
         if found:
             result = {
                 "status": "✅ Active",
@@ -134,6 +136,8 @@ def verify_venue(venue: dict, force: bool = False) -> dict:
                 "found_keywords": found,
                 "maps_url": maps_url,
                 "notes": f"Found: {', '.join(found[:3])}",
+                "price": price,
+                "hours": hours,
             }
         else:
             result = {
@@ -142,6 +146,8 @@ def verify_venue(venue: dict, force: bool = False) -> dict:
                 "found_keywords": [],
                 "maps_url": maps_url,
                 "notes": "No deal keywords found on specials page — check manually",
+                "price": price,
+                "hours": hours,
             }
 
         status[key] = result
@@ -161,6 +167,94 @@ def verify_venue(venue: dict, force: bool = False) -> dict:
         save_status(status)
         print(f"  {name}: error — {ex}")
         return result
+
+
+def verify_event(event: dict, force: bool = False) -> dict:
+    """
+    Verify an event-derived candidate by scraping its URL and extracting price/hours.
+
+    Parallel to verify_venue() but accepts event dicts (no specials_url).
+    Writes into the same STATUS_FILE keyed by event URL.
+    """
+    name = event.get("venue") or event.get("name") or ""
+    url = event.get("url", "")
+    status = load_status()
+    key = f"event:{url}"
+
+    if not force and key in status:
+        entry = status[key]
+        verified_at = datetime.fromisoformat(entry["verified_at"])
+        if datetime.now() - verified_at < timedelta(days=VERIFY_TTL):
+            return entry
+
+    maps_url = maps_link(name, "")
+
+    try:
+        r = requests.get(url, headers=HEADERS, timeout=10)
+    except Exception as ex:
+        result = {
+            "status": "⚠️ Unverified",
+            "verified_at": datetime.now().isoformat(),
+            "price": None,
+            "hours": None,
+            "closed": False,
+            "source_url": url,
+            "maps_url": maps_url,
+            "notes": f"fetch failed: {ex}",
+        }
+        status[key] = result
+        save_status(status)
+        return result
+
+    if r.status_code != 200:
+        result = {
+            "status": "⚠️ Unverified",
+            "verified_at": datetime.now().isoformat(),
+            "price": None,
+            "hours": None,
+            "closed": False,
+            "source_url": url,
+            "maps_url": maps_url,
+            "notes": f"HTTP {r.status_code}",
+        }
+        status[key] = result
+        save_status(status)
+        return result
+
+    soup = BeautifulSoup(r.text, "html.parser")
+    page_text = soup.get_text(separator=" ")
+
+    # combine with event text so extractors see both
+    combined = " ".join([
+        event.get("name", ""),
+        event.get("description", ""),
+        page_text[:5000],
+    ])
+
+    price = extract_price(combined)
+    hours = extract_hours(combined)
+    closed = any(sig in page_text.lower() for sig in CLOSED_SIGNALS)
+
+    if closed:
+        status_label = "❌ closed"
+    elif price:
+        status_label = "✅ verified"
+    else:
+        status_label = "⚠️ Unverified"
+
+    result = {
+        "status": status_label,
+        "verified_at": datetime.now().isoformat(),
+        "price": price,
+        "hours": hours,
+        "closed": closed,
+        "source_url": url,
+        "maps_url": maps_url,
+        "notes": "",
+    }
+    status[key] = result
+    save_status(status)
+    return result
 
 
 # ── Markdown generation ────────────────────────────────────────────────────────
