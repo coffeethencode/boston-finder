@@ -374,11 +374,6 @@ def _extra_events_html(today: datetime, end_date: datetime) -> str:
 
 GITHUB_REPO  = os.path.expanduser("~/python-projects/boston-finder-repo")
 DATA_REPO    = os.path.expanduser("~/boston-finder-data")  # clone of data branch
-PERSONA_PATHS = {
-    "brian": "/",
-    "chloe": "/chloe",
-    "kirk":  "/kirk",
-}
 
 
 def _git_deploy(html: str, persona: str = "brian"):
@@ -518,51 +513,87 @@ def build_json(events: list[dict], today: datetime, days: int, persona: str = "b
 
 
 def _git_push_json(json_str: str, persona: str = "brian"):
-    """Push persona.json to the data branch. No Netlify build triggered — zero credits."""
+    """Push persona.json to the data branch. No Netlify build triggered — zero credits.
+
+    A failure here never aborts the HTML deploy that follows — the data branch
+    is an optimization, the primary path is the docs/ push in _git_deploy().
+    But we surface stderr so a reviewer skimming logs can tell when the data
+    branch has drifted instead of seeing a bare "push failed".
+    """
     if not os.path.isdir(DATA_REPO):
         print(f"  [data] data repo not found at {DATA_REPO} — skipping push")
         return
+
+    data_dir = os.path.join(DATA_REPO, "data")
+    fpath = os.path.join(data_dir, f"{persona}.json")
+
+    # short-circuit: if the payload is identical to what's already on disk AND
+    # the clone is up-to-date, there's nothing to do
     try:
-        data_dir = os.path.join(DATA_REPO, "data")
+        if os.path.exists(fpath) and open(fpath).read() == json_str:
+            print(f"  [data] {persona}.json unchanged — skipping push")
+            return
+    except OSError:
+        pass  # unreadable file means we'll overwrite anyway
+
+    # pull BEFORE writing so an upstream update doesn't collide with our
+    # fresh local write (which would turn --ff-only pull into a silent no-op
+    # with an uncommitted local modification sitting in the worktree).
+    pull = subprocess.run(
+        ["git", "-C", DATA_REPO, "pull", "--ff-only", "--quiet"],
+        capture_output=True, text=True,
+    )
+    if pull.returncode != 0:
+        print(f"  [data] pull failed ({pull.returncode}); pushing anyway may fail")
+        if pull.stderr.strip():
+            print(f"  [data] pull stderr: {pull.stderr.strip()}")
+
+    try:
         os.makedirs(data_dir, exist_ok=True)
-        fpath = os.path.join(data_dir, f"{persona}.json")
-
-        try:
-            if open(fpath).read() == json_str:
-                print(f"  [data] {persona}.json unchanged — skipping push")
-                return
-        except Exception:
-            pass
-
         with open(fpath, "w") as f:
             f.write(json_str)
 
-        subprocess.run(["git", "-C", DATA_REPO, "pull", "--ff-only", "--quiet"], check=False)
         subprocess.run(["git", "-C", DATA_REPO, "add", f"data/{persona}.json"], check=True)
-        result = subprocess.run(
-            ["git", "-C", DATA_REPO, "diff", "--cached", "--quiet"], capture_output=True
+        diff = subprocess.run(
+            ["git", "-C", DATA_REPO, "diff", "--cached", "--quiet"],
+            capture_output=True,
         )
-        if result.returncode != 0:
-            ts = datetime.now().strftime("%Y-%m-%d %-I:%M %p")
-            subprocess.run(
-                ["git", "-C", DATA_REPO, "commit", "-m", f"data: {persona} {ts}"],
-                check=True, capture_output=True
-            )
-            subprocess.run(["git", "-C", DATA_REPO, "push"], check=True, capture_output=True)
-            print(f"  [data] pushed {persona}.json → data branch (0 deploy credits)")
-        else:
+        if diff.returncode == 0:
             print(f"  [data] {persona}.json no diff after write")
+            return
+
+        ts = datetime.now().strftime("%Y-%m-%d %-I:%M %p")
+        subprocess.run(
+            ["git", "-C", DATA_REPO, "commit", "-m", f"data: {persona} {ts}"],
+            check=True, capture_output=True,
+        )
+        push = subprocess.run(
+            ["git", "-C", DATA_REPO, "push"],
+            capture_output=True, text=True,
+        )
+        if push.returncode != 0:
+            print(f"  [data] push failed ({push.returncode}) — HTML deploy will still run")
+            if push.stderr.strip():
+                print(f"  [data] push stderr: {push.stderr.strip()}")
+            return
+        print(f"  [data] pushed {persona}.json → data branch (0 deploy credits)")
+    except subprocess.CalledProcessError as ex:
+        stderr = ex.stderr.decode("utf-8", "replace").strip() if ex.stderr else ""
+        print(f"  [data] git command failed: {ex.cmd} exit={ex.returncode}")
+        if stderr:
+            print(f"  [data] stderr: {stderr}")
     except Exception as ex:
-        print(f"  [data] push failed: {ex}")
+        print(f"  [data] unexpected error: {ex!r}")
 
 
 def _sources_html(events: list[dict]) -> str:
     from collections import Counter
+    from html import escape as _esc
     counts = Counter(e.get("source", "unknown").split(":")[0] for e in events)
     if not counts:
         return ""
     items = "".join(
-        f'<span class="src-pill">{src} <b>{n}</b></span>'
+        f'<span class="src-pill">{_esc(src)} <b>{n}</b></span>'
         for src, n in counts.most_common()
     )
     return f'<div class="sources-bar">Sources: {items}</div>'
