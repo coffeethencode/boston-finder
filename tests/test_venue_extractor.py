@@ -62,3 +62,40 @@ def test_no_match_returns_none():
 def test_strategy3_rejects_stopword_only_result():
     evt = {"name": "RAW BAR HAPPY HOUR SUNDAY SPECIAL", "venue": None}
     assert venue_extractor.extract_venue(evt, use_llm_fallback=False) is None
+
+
+# Strategy 5: LLM fallback
+def test_strategy5_llm_returns_venue(monkeypatch):
+    evt = {"name": "$1 Oyster Night", "venue": None, "url": "https://example.com/x"}
+
+    def fake_haiku(prompt: str) -> str:
+        return "Neptune Oyster"
+
+    monkeypatch.setattr(venue_extractor, "_call_haiku_for_venue", fake_haiku)
+    assert venue_extractor.extract_venue(evt) == "Neptune Oyster"
+
+
+def test_strategy5_llm_unknown_returns_none(monkeypatch):
+    evt = {"name": "$1 Oyster Night", "venue": None, "url": "https://example.com/x"}
+
+    monkeypatch.setattr(
+        venue_extractor, "_call_haiku_for_venue", lambda prompt: "UNKNOWN"
+    )
+    assert venue_extractor.extract_venue(evt) is None
+
+
+def test_strategy5_llm_cached_per_url(monkeypatch, tmp_path):
+    evt = {"name": "$1 Oyster Night", "venue": None, "url": "https://example.com/unique"}
+
+    calls = []
+
+    def counting_haiku(prompt: str) -> str:
+        calls.append(prompt)
+        return "Somewhere Bar"
+
+    monkeypatch.setattr(venue_extractor, "_call_haiku_for_venue", counting_haiku)
+    monkeypatch.setattr(venue_extractor, "_CACHE_FILE", str(tmp_path / "cache.json"))
+
+    assert venue_extractor.extract_venue(evt) == "Somewhere Bar"
+    assert venue_extractor.extract_venue(evt) == "Somewhere Bar"
+    assert len(calls) == 1  # second call hit the cache
