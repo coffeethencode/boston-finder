@@ -140,9 +140,8 @@ def _strategy4_url_slug(url: str) -> str | None:
     slug = _SLUG_TRAILING_COUNTER_RE.sub("", slug)
 
     # split on hyphens; apply same stopword filter as strategy 3
-    # require at least 2 meaningful parts — single-word slugs are too ambiguous
     parts = [p for p in slug.split("-") if p and p.lower() not in _STOPWORDS]
-    if len(parts) < 2:
+    if not parts:
         return None
 
     # require at least one alphabetic part (reject pure-numeric slugs like "123")
@@ -157,7 +156,6 @@ def _strategy4_url_slug(url: str) -> str | None:
 
 # ── strategy 5 ────────────────────────────────────────────────────────────────
 _CACHE_FILE = os.path.expanduser("~/boston_finder_venue_extraction_cache.json")
-_ORIGINAL_CACHE_FILE = _CACHE_FILE  # sentinel for monkeypatch detection
 
 _LLM_PROMPT = """Given this event, return ONLY the venue name (restaurant, bar, shop, or building). No extra text, no punctuation, no explanation. If unclear, return exactly: UNKNOWN
 
@@ -223,49 +221,26 @@ def _call_haiku_for_venue(prompt: str) -> str:
     return body["content"][0]["text"].strip()
 
 
-# Set after function definition so _strategy5_llm can detect monkeypatching.
-_ORIGINAL_CALL_HAIKU = _call_haiku_for_venue
-
-
 def _strategy5_llm(event: dict) -> str | None:
     """
     Narrow Haiku call: given title/description/url, return venue name or 'UNKNOWN'.
-    Cached per (url, title) in ~/boston_finder_venue_extraction_cache.json so each
-    unique event is charged at most once.
-
-    Cache behaviour under test:
-    - If only _call_haiku_for_venue is patched (but not _CACHE_FILE), the cache is
-      bypassed entirely so tests don't contaminate the real on-disk cache or each other.
-    - If _CACHE_FILE is also patched to a temp path (as in the caching test), the
-      cache is used normally against that temp file, exercising real cache logic.
+    Cached per (url, title) in _CACHE_FILE so each unique event is charged at most once.
+    Tests monkeypatch _CACHE_FILE to a tmp_path to avoid touching the real on-disk cache.
     """
-    import boston_finder.venue_extractor as _self
-
-    # use_cache = real LLM in use, OR caller explicitly redirected _CACHE_FILE
-    using_real_llm = _self._call_haiku_for_venue is _ORIGINAL_CALL_HAIKU
-    cache_redirected = _self._CACHE_FILE != _ORIGINAL_CACHE_FILE
-    use_cache = using_real_llm or cache_redirected
-
-    cache_path = _self._CACHE_FILE
     key = _cache_key(event)
-
-    if use_cache:
-        cache = _load_cache(cache_path)
-        if key in cache:
-            cached = cache[key]
-            return cached if cached != "UNKNOWN" else None
-    else:
-        cache = {}
+    cache = _load_cache(_CACHE_FILE)
+    if key in cache:
+        cached = cache[key]
+        return cached if cached != "UNKNOWN" else None
 
     prompt = _LLM_PROMPT.format(
         title=event.get("name", ""),
         description=event.get("description", ""),
         url=event.get("url", ""),
     )
-    result = (_self._call_haiku_for_venue(prompt) or "UNKNOWN").strip()
+    result = (_call_haiku_for_venue(prompt) or "UNKNOWN").strip()
 
-    if use_cache:
-        cache[key] = result
-        _save_cache(cache_path, cache)
+    cache[key] = result
+    _save_cache(_CACHE_FILE, cache)
 
     return result if result != "UNKNOWN" else None

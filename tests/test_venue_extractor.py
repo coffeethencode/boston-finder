@@ -65,27 +65,32 @@ def test_strategy3_rejects_stopword_only_result():
 
 
 # Strategy 5: LLM fallback
-def test_strategy5_llm_returns_venue(monkeypatch):
-    evt = {"name": "$1 Oyster Night", "venue": None, "url": "https://example.com/x"}
+def test_strategy5_llm_returns_venue(monkeypatch, tmp_path):
+    # URL slug is all stopwords so strategy 4 returns None, strategy 5 fires.
+    evt = {"name": "$1 Oyster Night", "venue": None, "url": "https://example.com/oyster-happy-hour"}
 
     def fake_haiku(prompt: str) -> str:
         return "Neptune Oyster"
 
     monkeypatch.setattr(venue_extractor, "_call_haiku_for_venue", fake_haiku)
+    monkeypatch.setattr(venue_extractor, "_CACHE_FILE", str(tmp_path / "cache.json"))
     assert venue_extractor.extract_venue(evt) == "Neptune Oyster"
 
 
-def test_strategy5_llm_unknown_returns_none(monkeypatch):
-    evt = {"name": "$1 Oyster Night", "venue": None, "url": "https://example.com/x"}
+def test_strategy5_llm_unknown_returns_none(monkeypatch, tmp_path):
+    # URL slug is all stopwords so strategy 4 returns None, strategy 5 fires.
+    evt = {"name": "$1 Oyster Night", "venue": None, "url": "https://example.com/oyster-happy-hour"}
 
     monkeypatch.setattr(
         venue_extractor, "_call_haiku_for_venue", lambda prompt: "UNKNOWN"
     )
+    monkeypatch.setattr(venue_extractor, "_CACHE_FILE", str(tmp_path / "cache.json"))
     assert venue_extractor.extract_venue(evt) is None
 
 
 def test_strategy5_llm_cached_per_url(monkeypatch, tmp_path):
-    evt = {"name": "$1 Oyster Night", "venue": None, "url": "https://example.com/unique"}
+    # URL slug is all stopwords so strategy 4 returns None, strategy 5 fires.
+    evt = {"name": "$1 Oyster Night", "venue": None, "url": "https://example.com/oyster-happy-hour"}
 
     calls = []
 
