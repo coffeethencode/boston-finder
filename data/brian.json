@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-19T08:12:41.132587",
+  "generated_at": "2026-04-19T12:21:37.447072",
   "today": "2026-04-19",
   "days": 7,
   "persona": "brian",
@@ -32,7 +32,7 @@
     {
       "source": "Liberty Hotel events",
       "name": "Fashionably LATE Thursdays - Lavish Living Clothing",
-      "description": "Fashion show featuring Lavish Living Clothing with models strutting through the lobby catwalk, music by DJ Skoolyahd starting at 8:30pm, and runway from 9pm-10pm.",
+      "description": "Fashion show featuring Lavish Living Clothing with models on catwalk, music by DJ Skoolyahd starting at 8:30pm, and runway from 9pm-10pm.",
       "url": "https://libertyhotel.com/liberty-affairs/fashionably-late/",
       "start": "2026-04-23",
       "venue": "The Liberty Hotel",
@@ -44,7 +44,7 @@
     {
       "source": "Liberty Hotel events",
       "name": "Fashionably LATE Thursdays - Kaybea Collection",
-      "description": "Fashion show featuring Kaybea Collection with models strutting through the lobby catwalk, music by DJ Skoolyahd starting at 8:30pm, and runway from 9pm-10pm.",
+      "description": "Fashion show featuring Kaybea Collection with models on catwalk, music by DJ Skoolyahd starting at 8:30pm, and runway from 9pm-10pm.",
       "url": "https://libertyhotel.com/liberty-affairs/fashionably-late/",
       "start": "2026-04-30",
       "venue": "The Liberty Hotel",
@@ -56,7 +56,7 @@
     {
       "source": "Liberty Hotel events",
       "name": "Fashionably LATE Thursdays - Thornpetal",
-      "description": "Fashion show featuring Thornpetal with models strutting through the lobby catwalk, music by DJ Skoolyahd starting at 8:30pm, and runway from 9pm-10pm.",
+      "description": "Fashion show featuring Thornpetal with models on catwalk, music by DJ Skoolyahd starting at 8:30pm, and runway from 9pm-10pm.",
       "url": "https://libertyhotel.com/liberty-affairs/fashionably-late/",
       "start": "2026-05-07",
       "venue": "The Liberty Hotel",
@@ -68,7 +68,7 @@
     {
       "source": "Liberty Hotel events",
       "name": "Fashionably LATE Thursdays - Akmaral Bridal",
-      "description": "Fashion show featuring Akmaral Bridal with models strutting through the lobby catwalk, music by DJ Skoolyahd starting at 8:30pm, and runway from 9pm-10pm.",
+      "description": "Fashion show featuring Akmaral Bridal with models on catwalk, music by DJ Skoolyahd starting at 8:30pm, and runway from 9pm-10pm.",
       "url": "https://libertyhotel.com/liberty-affairs/fashionably-late/",
       "start": "2026-05-14",
       "venue": "The Liberty Hotel",
@@ -80,37 +80,13 @@
     {
       "source": "Liberty Hotel events",
       "name": "Fashionably LATE Thursdays - Max & Riley",
-      "description": "Fashion show featuring Max & Riley with models strutting through the lobby catwalk, music by DJ Skoolyahd starting at 8:30pm, and runway from 9pm-10pm.",
+      "description": "Fashion show featuring Max & Riley with models on catwalk, music by DJ Skoolyahd starting at 8:30pm, and runway from 9pm-10pm.",
       "url": "https://libertyhotel.com/liberty-affairs/fashionably-late/",
       "start": "2026-05-21",
       "venue": "The Liberty Hotel",
       "address": "Boston, Massachusetts",
       "score": 9,
       "reason": "Fashionably LATE Thursdays at Liberty Hotel \u2014 recurring interactive runway with models, free admission, high-status scene-y nightlife",
-      "_proximity": 3
-    },
-    {
-      "source": "Boston Fashion Week",
-      "name": "32nd Annual Boston Fashion Week",
-      "description": "The official Boston Fashion Week event running October 4-10, 2026. The fall fashion season runs September through November with various designer shows, events, and fashion experiences.",
-      "url": "https://www.bostonfashionweek.com/",
-      "start": "2026-10-04",
-      "venue": "Multiple venues",
-      "address": "Boston, Massachusetts",
-      "score": 9,
-      "reason": "Boston Fashion Week \u2014 directly matches high-status fashion event preference; major annual event with runway shows and designer presentations",
-      "_proximity": 3
-    },
-    {
-      "source": "IG: Royale Boston",
-      "name": "Party Pupils - Yacht House Summer",
-      "description": "Party Pupils brings Yacht House Summer to Boston.",
-      "url": "https://www.instagram.com/p/DXPf4pgkdGy/",
-      "start": "2026-07-17",
-      "venue": "Royale",
-      "address": "Boston, MA",
-      "score": 9,
-      "reason": "Party Pupils Yacht House Summer on Boston harbor boat \u2014 upscale summer nightlife, boat cruise experience, influencer/VIP energy",
       "_proximity": 3
     },
     {
@@ -198,150 +174,6 @@
       "_proximity": 3
     },
     {
-      "source": "Harvard Kennedy School",
-      "name": "Fireside Chat with former Prime Minister of the Ivory Coast",
-      "description": "H.E. Patrick Achi, former Prime Minister of the Ivory Coast, discusses how African countries can pursue inclusive growth and strengthen state capacity.",
-      "url": "https://www.hks.harvard.edu/events",
-      "start": "2026-04-20T11:00",
-      "venue": "Harvard Kennedy School",
-      "address": "Cambridge, MA",
-      "score": 8,
-      "reason": "Mitt Romney at JFK Jr. Forum\u2014high-profile political figure, governance/democracy discussion, prestigious venue",
-      "_proximity": 5
-    },
-    {
-      "source": "Harvard Kennedy School",
-      "name": "Stone Inequality & Social Policy Seminar: Doron Shiffer-Sebba",
-      "description": "Sociologist Doron Shiffer-Sebba from Northwestern presents recent research.",
-      "url": "https://www.hks.harvard.edu/events",
-      "start": "2026-04-20T12:00",
-      "venue": "Harvard Kennedy School",
-      "address": "Cambridge, MA",
-      "score": 8,
-      "reason": "Mitt Romney at JFK Jr. Forum\u2014high-profile political figure, governance/democracy discussion, prestigious venue",
-      "_proximity": 5
-    },
-    {
-      "source": "Harvard Kennedy School",
-      "name": "DOGE Revisited: The State of Public Institutions and the Civil Service",
-      "description": "Dave Lebryk, former Fiscal Assistant Secretary of the U.S. Treasury, explores the current state of public institutions in the wake of DOGE's attempted spending cuts.",
-      "url": "https://www.hks.harvard.edu/events",
-      "start": "2026-04-20T12:00",
-      "venue": "Harvard Kennedy School",
-      "address": "Cambridge, MA",
-      "score": 8,
-      "reason": "Mitt Romney at JFK Jr. Forum\u2014high-profile political figure, governance/democracy discussion, prestigious venue",
-      "_proximity": 5
-    },
-    {
-      "source": "Harvard Kennedy School",
-      "name": "Organizing Tips for Public Speaking",
-      "description": "Hands-on workshop teaching essential techniques to structure thoughts, ideas, and content for maximum impact when speaking in public.",
-      "url": "https://www.hks.harvard.edu/events",
-      "start": "2026-04-20T13:00",
-      "venue": "Harvard Kennedy School",
-      "address": "Cambridge, MA",
-      "score": 8,
-      "reason": "Mitt Romney at JFK Jr. Forum\u2014high-profile political figure, governance/democracy discussion, prestigious venue",
-      "_proximity": 5
-    },
-    {
-      "source": "Harvard Kennedy School",
-      "name": "Pakistan Symposium @ HKS: Emerging Technologies & their Implications",
-      "description": "Explore emerging technologies shaping Pakistan featuring a keynote by the Pakistan Crypto Czar and panels on fintech and AI.",
-      "url": "https://www.hks.harvard.edu/events",
-      "start": "2026-04-20T13:00",
-      "venue": "Harvard Kennedy School",
-      "address": "Cambridge, MA",
-      "score": 8,
-      "reason": "Mitt Romney at JFK Jr. Forum\u2014high-profile political figure, governance/democracy discussion, prestigious venue",
-      "_proximity": 5
-    },
-    {
-      "source": "Harvard Kennedy School",
-      "name": "France's Changing Nuclear Posture: Implications for European Security",
-      "description": "MTA Seminar with Heloise Fayet on France's nuclear posture and its European security implications.",
-      "url": "https://www.hks.harvard.edu/events",
-      "start": "2026-04-20T13:30",
-      "venue": "Harvard Kennedy School",
-      "address": "Cambridge, MA",
-      "score": 8,
-      "reason": "Mitt Romney at JFK Jr. Forum\u2014high-profile political figure, governance/democracy discussion, prestigious venue",
-      "_proximity": 5
-    },
-    {
-      "source": "Harvard Kennedy School",
-      "name": "How \"Wallpaper\" Creates Inequality: An Approach to Change It with Buju Dasgupta",
-      "description": "Seminar with UMass Amherst professor Nilanjana (Buju) Dasgupta offering a science-driven approach to culture change in service of greater equality and justice.",
-      "url": "https://www.hks.harvard.edu/events",
-      "start": "2026-04-20T15:00",
-      "venue": "Harvard Kennedy School",
-      "address": "Cambridge, MA",
-      "score": 8,
-      "reason": "Mitt Romney at JFK Jr. Forum\u2014high-profile political figure, governance/democracy discussion, prestigious venue",
-      "_proximity": 5
-    },
-    {
-      "source": "Harvard Kennedy School",
-      "name": "Speaking Truth to Power - Ashley Judd on Human Rights",
-      "description": "Conversation with Ashley Judd, author, actor and humanitarian activist, about human rights.",
-      "url": "https://www.hks.harvard.edu/events",
-      "start": "2026-04-20T16:30",
-      "venue": "Harvard Kennedy School",
-      "address": "Cambridge, MA",
-      "score": 8,
-      "reason": "Mitt Romney at JFK Jr. Forum\u2014high-profile political figure, governance/democracy discussion, prestigious venue",
-      "_proximity": 5
-    },
-    {
-      "source": "Harvard Kennedy School",
-      "name": "AI in Healthcare: Global and Local Adoption Cases from the USA & Hungary",
-      "description": "Session exploring real-world AI use in healthcare and comparing U.S. and EU approaches, highlighting opportunities, risks, and implications.",
-      "url": "https://www.hks.harvard.edu/events",
-      "start": "2026-04-20T16:30",
-      "venue": "Harvard Kennedy School",
-      "address": "Cambridge, MA",
-      "score": 8,
-      "reason": "Mitt Romney at JFK Jr. Forum\u2014high-profile political figure, governance/democracy discussion, prestigious venue",
-      "_proximity": 5
-    },
-    {
-      "source": "Harvard Kennedy School",
-      "name": "Workshop: How To Reach More People on Social Media",
-      "description": "Learn how to reach more people on social media.",
-      "url": "https://www.hks.harvard.edu/events",
-      "start": "2026-04-21T12:00",
-      "venue": "Harvard Kennedy School",
-      "address": "Cambridge, MA",
-      "score": 8,
-      "reason": "Mitt Romney at JFK Jr. Forum\u2014high-profile political figure, governance/democracy discussion, prestigious venue",
-      "_proximity": 5
-    },
-    {
-      "source": "Mass Fashion Week",
-      "name": "MAFW: In Full Bloom",
-      "description": "A night where creatives rise, confidence blossoms, and vision turns into reality. An evening celebrating fashion and creativity.",
-      "url": "https://www.massfashionweek.com/",
-      "start": "2026-05-23T17:30",
-      "venue": "Plymouth Memorial Hall",
-      "address": "Plymouth, MA",
-      "score": 8,
-      "reason": "Mass Fashion Week event celebrating emerging designers \u2014 upscale fashion event aligns with profile",
-      "_proximity": 3
-    },
-    {
-      "source": "IG: Royale Boston",
-      "name": "hol.mp3",
-      "description": "hol.mp3 brings the bass to Royale after performing at Ultra.",
-      "url": "https://www.instagram.com/p/DXPGoAMgEei/",
-      "start": "2026-06-05",
-      "venue": "Royale",
-      "address": "Boston, MA",
-      "score": 8,
-      "reason": "Hol.mp3 at Royale (post-Ultra performance) \u2014 exclusive nightlife at a premier Boston venue, scene-y electronic music crowd",
-      "_proximity": 3
-    },
-    {
       "source": "Boston Calendar",
       "name": "$1 Oysters at 224 Boston",
       "description": "",
@@ -376,6 +208,138 @@
       "address": "",
       "score": 8,
       "reason": "Oyster brunch event - directly matches user's interest in oyster happy hours and upscale dining"
+    },
+    {
+      "source": "Harvard Kennedy School",
+      "name": "Fireside Chat with former Prime Minister of the Ivory Coast",
+      "description": "A candid discussion with H.E. Patrick Achi, former Prime Minister of the Ivory Coast, on how African countries can pursue inclusive growth and strengthen state capacity.",
+      "url": "https://www.hks.harvard.edu/events",
+      "start": "2026-04-20T11:00",
+      "venue": "Harvard Kennedy School",
+      "address": "Cambridge, Massachusetts",
+      "score": 8,
+      "reason": "Mitt Romney at JFK Jr. Forum\u2014high-profile political figure, governance/democracy discussion, prestigious venue",
+      "_proximity": 5
+    },
+    {
+      "source": "Harvard Kennedy School",
+      "name": "Stone Inequality & Social Policy Seminar: Doron Shiffer-Sebba",
+      "description": "Sociologist Doron Shiffer-Sebba from Northwestern presents recent research on inequality and social policy.",
+      "url": "https://www.hks.harvard.edu/events",
+      "start": "2026-04-20T12:00",
+      "venue": "Harvard Kennedy School",
+      "address": "Cambridge, Massachusetts",
+      "score": 8,
+      "reason": "Mitt Romney at JFK Jr. Forum\u2014high-profile political figure, governance/democracy discussion, prestigious venue",
+      "_proximity": 5
+    },
+    {
+      "source": "Harvard Kennedy School",
+      "name": "DOGE Revisited: The State of Public Institutions and the Civil Service",
+      "description": "Dave Lebryk, former Fiscal Assistant Secretary of the U.S. Treasury, explores the current state of public institutions following DOGE's attempted spending cuts.",
+      "url": "https://www.hks.harvard.edu/events",
+      "start": "2026-04-20T12:00",
+      "venue": "Harvard Kennedy School",
+      "address": "Cambridge, Massachusetts",
+      "score": 8,
+      "reason": "Mitt Romney at JFK Jr. Forum\u2014high-profile political figure, governance/democracy discussion, prestigious venue",
+      "_proximity": 5
+    },
+    {
+      "source": "Harvard Kennedy School",
+      "name": "Organizing Tips for Public Speaking",
+      "description": "A hands-on workshop teaching essential techniques to structure thoughts and ideas for maximum impact when speaking in public.",
+      "url": "https://www.hks.harvard.edu/events",
+      "start": "2026-04-20T13:00",
+      "venue": "Harvard Kennedy School",
+      "address": "Cambridge, Massachusetts",
+      "score": 8,
+      "reason": "Mitt Romney at JFK Jr. Forum\u2014high-profile political figure, governance/democracy discussion, prestigious venue",
+      "_proximity": 5
+    },
+    {
+      "source": "Harvard Kennedy School",
+      "name": "Pakistan Symposium @ HKS: Emerging Technologies & their Implications",
+      "description": "Explore emerging technologies shaping Pakistan with a keynote by the Pakistan Crypto Czar and panels on fintech, AI, and related topics.",
+      "url": "https://www.hks.harvard.edu/events",
+      "start": "2026-04-20T13:00",
+      "venue": "Harvard Kennedy School",
+      "address": "Cambridge, Massachusetts",
+      "score": 8,
+      "reason": "Mitt Romney at JFK Jr. Forum\u2014high-profile political figure, governance/democracy discussion, prestigious venue",
+      "_proximity": 5
+    },
+    {
+      "source": "Harvard Kennedy School",
+      "name": "France's Changing Nuclear Posture: Implications for European Security",
+      "description": "MTA Seminar with Heloise Fayet examining France's evolving nuclear posture and its implications for European security.",
+      "url": "https://www.hks.harvard.edu/events",
+      "start": "2026-04-20T13:30",
+      "venue": "Harvard Kennedy School",
+      "address": "Cambridge, Massachusetts",
+      "score": 8,
+      "reason": "Mitt Romney at JFK Jr. Forum\u2014high-profile political figure, governance/democracy discussion, prestigious venue",
+      "_proximity": 5
+    },
+    {
+      "source": "Harvard Kennedy School",
+      "name": "How \"Wallpaper\" Creates Inequality: An Approach to Change It with Buju Dasgupta",
+      "description": "Seminar with UMass Amherst professor Nilanjana Dasgupta offering a science-driven approach to culture change in service of greater equality and justice.",
+      "url": "https://www.hks.harvard.edu/events",
+      "start": "2026-04-20T15:00",
+      "venue": "Harvard Kennedy School",
+      "address": "Cambridge, Massachusetts",
+      "score": 8,
+      "reason": "Mitt Romney at JFK Jr. Forum\u2014high-profile political figure, governance/democracy discussion, prestigious venue",
+      "_proximity": 5
+    },
+    {
+      "source": "Harvard Kennedy School",
+      "name": "Speaking Truth to Power - Ashley Judd on Human Rights",
+      "description": "Conversation with Ashley Judd, author, actor and humanitarian activist, discussing human rights issues.",
+      "url": "https://www.hks.harvard.edu/events",
+      "start": "2026-04-20T16:30",
+      "venue": "Harvard Kennedy School",
+      "address": "Cambridge, Massachusetts",
+      "score": 8,
+      "reason": "Mitt Romney at JFK Jr. Forum\u2014high-profile political figure, governance/democracy discussion, prestigious venue",
+      "_proximity": 5
+    },
+    {
+      "source": "Harvard Kennedy School",
+      "name": "AI in Healthcare: Global and Local Adoption Cases from the USA & Hungary",
+      "description": "Explores real-world AI use in healthcare from prediction and diagnosis to drug discovery, comparing U.S. and EU approaches.",
+      "url": "https://www.hks.harvard.edu/events",
+      "start": "2026-04-20T16:30",
+      "venue": "Harvard Kennedy School",
+      "address": "Cambridge, Massachusetts",
+      "score": 8,
+      "reason": "Mitt Romney at JFK Jr. Forum\u2014high-profile political figure, governance/democracy discussion, prestigious venue",
+      "_proximity": 5
+    },
+    {
+      "source": "Harvard Kennedy School",
+      "name": "Workshop: How To Reach More People on Social Media",
+      "description": "Learn strategies and techniques to reach more people on social media platforms.",
+      "url": "https://www.hks.harvard.edu/events",
+      "start": "2026-04-21T12:00",
+      "venue": "Harvard Kennedy School",
+      "address": "Cambridge, Massachusetts",
+      "score": 8,
+      "reason": "Mitt Romney at JFK Jr. Forum\u2014high-profile political figure, governance/democracy discussion, prestigious venue",
+      "_proximity": 5
+    },
+    {
+      "source": "Mass Fashion Week",
+      "name": "MAFW: In Full Bloom",
+      "description": "A night where creatives rise, confidence blossoms, and vision turns into reality. An event celebrating fashion, creativity, and community.",
+      "url": "https://www.massfashionweek.com/",
+      "start": "2026-05-23T17:30",
+      "venue": "Plymouth Memorial Hall",
+      "address": "Plymouth, MA",
+      "score": 8,
+      "reason": "Mass Fashion Week event celebrating emerging designers \u2014 upscale fashion event aligns with profile",
+      "_proximity": 3
     },
     {
       "source": "do617:food-drink",
@@ -424,6 +388,42 @@
       "score": 7,
       "reason": "Surf & Turf Dinner \u2014 upscale food event, fits preference for oyster happy hours and high-end dining experiences",
       "_proximity": 9
+    },
+    {
+      "source": "do617:food-drink",
+      "name": "Class: Hand-Pulled Noodles",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/25/class-hand-pulled-noodles-tickets",
+      "start": "2026-04-25T10:00",
+      "venue": "Pagu",
+      "address": "",
+      "score": 7,
+      "reason": "Upscale culinary class (hand-pulled noodles)\u2014educational food experience",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:food-drink",
+      "name": "saturday brunch \u2013 Rich Graiko Quartet \u2013 in the performance space",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/25/saturday-brunch-rich-graiko-quartet-in-the-performance-space-tickets",
+      "start": "2026-04-25T11:30",
+      "venue": "Lou's",
+      "address": "",
+      "score": 7,
+      "reason": "Upscale Saturday brunch with live jazz quartet\u2014high-status dining experience",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:food-drink",
+      "name": "Hands On: Tiramis\u00f9 al Limoncello",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/25/hands-on-tiramisu-al-limoncello-tickets",
+      "start": "2026-04-25T15:30",
+      "venue": "Eataly Boston",
+      "address": "",
+      "score": 7,
+      "reason": "Upscale culinary workshop (tiramisu)\u2014fine dining skill-building experience",
+      "_proximity": 3
     },
     {
       "source": "do617:film-theatre-performing-arts",
@@ -522,262 +522,6 @@
       "_proximity": 3
     },
     {
-      "source": "Meetup: Tech Boston",
-      "name": "Biotech Networking at Naco Taco in Cambridge",
-      "description": "We are excited to have our next networking event at Naco Taco in Cambridge! \ud83c\udf2e\ud83c\udf79\n\nThis evening is all about bringing together biotech innovators in a fun and relaxed setting. Expect engaging conversations that spark new ideas, opportunities to build lasting connections, and plenty of chances to share insights on the latest biotech trends. It is also a great space to brainstorm collaborations and explore opportunities that can help take your career to the next level.\n\nWhether you are hoping to meet",
-      "url": "https://www.meetup.com/cambridge-biotech-meetup/events/314187218/",
-      "start": "2026-04-21T18:30",
-      "date": "2026-04-21",
-      "venue": "Naco Taco",
-      "address": "Cambridge",
-      "score": 7,
-      "reason": "Biotech Networking at Naco Taco \u2014 professional networking in biotech/life sciences with casual venue, good for Brian's circles",
-      "_proximity": 5
-    },
-    {
-      "source": "Meetup: Tech Boston",
-      "name": "Boston AI Agents Night 2 \u2014 Agents That Actually Do Stuff \ud83e\udd9e",
-      "description": "Night 1 we built them. Night 2 we put them to work.\n\nWe're at the Nerd Center for a deeper dive \u2014 real agents running real tasks, live demos and the stuff nobody posts on LinkedIn.\n\n\ud83d\udd25 WHAT'S HAPPENING:\n\n6:30 PM \u2014 Doors open, food & drinks, networking\n7:00 PM \u2014 \"What We've Learned Since Night 1\" \u2014 what worked, what broke, what surprised us\n7:15 PM \u2014 LIVE DEMO: An agent that manages email, schedules meetings, and takes action autonomously\n7:45 PM \u2014 \"Agents in the Wild\" \u2014 real professionals share h",
-      "url": "https://www.meetup.com/boston-openclaw-meetup/events/314167844/",
-      "start": "2026-04-20T18:30",
-      "date": "2026-04-20",
-      "venue": "1 Memorial Dr, Cambridge, MA 02142",
-      "address": "Cambridge",
-      "score": 7,
-      "reason": "AI startup/tech networking with food, drinks, live demos, and real professional speakers; strong venue and innovative focus",
-      "_proximity": 5
-    },
-    {
-      "source": "Meetup: Tech Boston",
-      "name": "In-Person Weekly Hack Night - Third Tuesday",
-      "description": "Code for Boston is now running In-Person meetups every first and third Tuesday, with Zoom option. Other Tuesdays, we convene in Zoom. We also offer new member orientation both in-person and on Zoom.\nJoin us for civic volunteering with project champions from local government, non-profits, and the like!\nIf you are going to attend the virtual event, please make sure to do the following, and then join us on Zoom at 7pm EST:\n\n* Join our Slack: [http://slack.codeforboston.org](http://slack.codeforbost",
-      "url": "https://www.meetup.com/code-for-boston/events/313524331/",
-      "start": "2026-04-21T19:00",
-      "date": "2026-04-21",
-      "venue": "Cambridge Innovation Center, 4th Floor Cafe",
-      "address": "Cambridge",
-      "score": 7,
-      "reason": "Civic volunteering with government and nonprofit leaders aligns with Brian's expertise in public records/government transparency. Good networking with people in civic sector.",
-      "_proximity": 5
-    },
-    {
-      "source": "luma:boston",
-      "name": "Vibe Code for Finance \u2014 Boston",
-      "description": "",
-      "url": "https://lu.ma/e20il724",
-      "start": "2026-04-21T20:00",
-      "venue": "",
-      "address": "Boston, Massachusetts",
-      "score": 7,
-      "reason": "Finance-focused networking event \u2014 directly relevant to Brian's professional interests and high-status crowd",
-      "_proximity": 3
-    },
-    {
-      "source": "luma:boston",
-      "name": "Underscore VC Pitch Competition",
-      "description": "",
-      "url": "https://lu.ma/b3ilabz0",
-      "start": "2026-04-23T22:00",
-      "venue": "",
-      "address": "Boston, Massachusetts",
-      "score": 7,
-      "reason": "Underscore VC Pitch Competition; high-status startup/VC event; excellent for networking with founders and investors",
-      "_proximity": 3
-    },
-    {
-      "source": "ticketmaster",
-      "name": "Berklee Popular Music Institute Showcase (18+)",
-      "description": "THIS EVENT IS 18+ WITH A VALID I.D. DOORS: 6:00 PM SHOW: 7:00 PM Will you go to prom with us? Experience a night of nostalgia, ?80s glamour, and unforgettable live performances at the Berklee Popular Music Institute?s (BPMI) 24th annual showcase, featuring eight artists handpicked by its 2026 student cohort. Soundtracking this year?s dance floor will be Beno, Good Sleepy, Jazz Cuti, JimmyBoy, Leila Lamb, Nico Welsh, Pat Kennedy, and Sophie?s Body. Representing genres ranging from reggaeton to pop-punk and indie to country, these artists have displayed extraordinary talent, securing spots at Governors Ball, Lollapalooza, Southside, and other major festivals to be announced soon. It?s going to be a night to remember! Brighton Music Hall is a GA, standing room only venue. There is a seating area available for those with mobility limitations. If you require accommodation, we encourage you to reach out to information@crossroadspresents.com as soon as you have purchased your GA tickets.",
-      "url": "https://www.ticketmaster.com/berklee-popular-music-institute-showcase-18-boston-massachusetts-04-24-2026/event/01006444BD63D4A4",
-      "start": "2026-04-24T22:00",
-      "venue": "Brighton Music Hall presented by Citizens",
-      "address": "Boston, MA",
-      "price": "",
-      "score": 7,
-      "reason": "Berklee showcase with emerging artists heading to major festivals (Governors Ball, Lollapalooza); 18+ at Brighton Music Hall; great emerging talent scene",
-      "_proximity": 3
-    },
-    {
-      "source": "SoWa Boston",
-      "name": "First Friday",
-      "description": "On the First Friday of every month, the artists, galleries, shops and showrooms of the SoWa Art + Design District in the South End open their doors to the public for an evening of art, culture and community.",
-      "url": "https://www.sowaboston.com/events/",
-      "start": "2026-05-01T17:00",
-      "venue": "SoWa Art + Design District",
-      "address": "Boston, Massachusetts",
-      "score": 7,
-      "reason": "First Friday SoWa Art + Design District opening\u2014recurring upscale art scene event, networking and gallery culture",
-      "_proximity": 3
-    },
-    {
-      "source": "SoWa Boston",
-      "name": "SoWa Open Market",
-      "description": "Open Markets run every Sunday from 11AM-5PM through November 15th.",
-      "url": "https://www.sowaboston.com/events/",
-      "start": "2026-05-03",
-      "venue": "SoWa Boston",
-      "address": "Boston, Massachusetts",
-      "score": 7,
-      "reason": "First Friday SoWa Art + Design District opening\u2014recurring upscale art scene event, networking and gallery culture",
-      "_proximity": 3
-    },
-    {
-      "source": "VENU Boston",
-      "name": "Venu Saturdays",
-      "description": "Weekly Saturday night event at Venu nightclub featuring music and dancing.",
-      "url": "https://www.venuboston.com/events/",
-      "start": "2026-04-18",
-      "venue": "Venu Nightclub",
-      "address": "Boston, Massachusetts",
-      "score": 7,
-      "reason": "Venu Saturdays \u2014 weekly VIP nightlife at scene-y venue",
-      "_proximity": 3
-    },
-    {
-      "source": "VENU Boston",
-      "name": "Venu Saturdays",
-      "description": "Weekly Saturday night event at Venu nightclub featuring music and dancing.",
-      "url": "https://www.venuboston.com/events/",
-      "start": "2026-04-25",
-      "venue": "Venu Nightclub",
-      "address": "Boston, Massachusetts",
-      "score": 7,
-      "reason": "Venu Saturdays \u2014 weekly VIP nightlife at scene-y venue",
-      "_proximity": 3
-    },
-    {
-      "source": "VENU Boston",
-      "name": "Venu Saturdays",
-      "description": "Weekly Saturday night event at Venu nightclub featuring music and dancing.",
-      "url": "https://www.venuboston.com/events/",
-      "start": "2026-05-02",
-      "venue": "Venu Nightclub",
-      "address": "Boston, Massachusetts",
-      "score": 7,
-      "reason": "Venu Saturdays \u2014 weekly VIP nightlife at scene-y venue",
-      "_proximity": 3
-    },
-    {
-      "source": "VENU Boston",
-      "name": "Venu Saturdays",
-      "description": "Weekly Saturday night event at Venu nightclub featuring music and dancing.",
-      "url": "https://www.venuboston.com/events/",
-      "start": "2026-05-09",
-      "venue": "Venu Nightclub",
-      "address": "Boston, Massachusetts",
-      "score": 7,
-      "reason": "Venu Saturdays \u2014 weekly VIP nightlife at scene-y venue",
-      "_proximity": 3
-    },
-    {
-      "source": "VENU Boston",
-      "name": "Venu Saturdays",
-      "description": "Weekly Saturday night event at Venu nightclub featuring music and dancing.",
-      "url": "https://www.venuboston.com/events/",
-      "start": "2026-05-16",
-      "venue": "Venu Nightclub",
-      "address": "Boston, Massachusetts",
-      "score": 7,
-      "reason": "Venu Saturdays \u2014 weekly VIP nightlife at scene-y venue",
-      "_proximity": 3
-    },
-    {
-      "source": "VENU Boston",
-      "name": "Venu Saturdays",
-      "description": "Weekly Saturday night event at Venu nightclub featuring music and dancing.",
-      "url": "https://www.venuboston.com/events/",
-      "start": "2026-05-23",
-      "venue": "Venu Nightclub",
-      "address": "Boston, Massachusetts",
-      "score": 7,
-      "reason": "Venu Saturdays \u2014 weekly VIP nightlife at scene-y venue",
-      "_proximity": 3
-    },
-    {
-      "source": "VENU Boston",
-      "name": "Venu Saturdays",
-      "description": "Weekly Saturday night event at Venu nightclub featuring music and dancing.",
-      "url": "https://www.venuboston.com/events/",
-      "start": "2026-05-30",
-      "venue": "Venu Nightclub",
-      "address": "Boston, Massachusetts",
-      "score": 7,
-      "reason": "Venu Saturdays \u2014 weekly VIP nightlife at scene-y venue",
-      "_proximity": 3
-    },
-    {
-      "source": "VENU Boston",
-      "name": "Venu Saturdays",
-      "description": "Weekly Saturday night event at Venu nightclub featuring music and dancing.",
-      "url": "https://www.venuboston.com/events/",
-      "start": "2026-06-06",
-      "venue": "Venu Nightclub",
-      "address": "Boston, Massachusetts",
-      "score": 7,
-      "reason": "Venu Saturdays \u2014 weekly VIP nightlife at scene-y venue",
-      "_proximity": 3
-    },
-    {
-      "source": "IG: Royale Boston",
-      "name": "Maddix",
-      "description": "Maddix returns with unmatched energy and fire drops.",
-      "url": "https://www.instagram.com/p/DXE3fN1gJ6z/",
-      "start": "2026-06-27",
-      "venue": "Royale",
-      "address": "Boston, MA",
-      "score": 7,
-      "reason": "Maddix at Royale Boston \u2014 venue is known for scene-y nightlife and high-energy dance events; fits recurring upscale nightlife preference",
-      "_proximity": 3
-    },
-    {
-      "source": "IG: Gardner Museum",
-      "name": "Rachel Barton Pine plays viola d'amore on WCRB In Concert",
-      "description": "Rachel Barton Pine performs on an 18th Century viola d'amore from the Isabella Stewart Gardner Museum's collection, originally gifted to Isabella by composer Charles Loeffler in 1903.",
-      "url": "https://classical.org/inconcert",
-      "start": "2026-04-12",
-      "venue": "WCRB In Concert",
-      "address": "",
-      "score": 7,
-      "reason": "High-status cultural event featuring rare 18th century instrument from Isabella Stewart Gardner Museum; prestigious venue and classical music appeal",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Class: Hand-Pulled Noodles",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/25/class-hand-pulled-noodles-tickets",
-      "start": "2026-04-25T10:00",
-      "venue": "Pagu",
-      "address": "",
-      "score": 7,
-      "reason": "Upscale culinary class (hand-pulled noodles)\u2014educational food experience",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "saturday brunch \u2013 Rich Graiko Quartet \u2013 in the performance space",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/25/saturday-brunch-rich-graiko-quartet-in-the-performance-space-tickets",
-      "start": "2026-04-25T11:30",
-      "venue": "Lou's",
-      "address": "",
-      "score": 7,
-      "reason": "Upscale Saturday brunch with live jazz quartet\u2014high-status dining experience",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Hands On: Tiramis\u00f9 al Limoncello",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/25/hands-on-tiramisu-al-limoncello-tickets",
-      "start": "2026-04-25T15:30",
-      "venue": "Eataly Boston",
-      "address": "",
-      "score": 7,
-      "reason": "Upscale culinary workshop (tiramisu)\u2014fine dining skill-building experience",
-      "_proximity": 3
-    },
-    {
       "source": "Boston Calendar",
       "name": "PAGU: Sushi &amp; Hand-Roll Class",
       "description": "",
@@ -838,6 +582,45 @@
       "reason": "Major concert \u2014 high-status entertainment event"
     },
     {
+      "source": "Meetup: Tech Boston",
+      "name": "Biotech Networking at Naco Taco in Cambridge",
+      "description": "We are excited to have our next networking event at Naco Taco in Cambridge! \ud83c\udf2e\ud83c\udf79\n\nThis evening is all about bringing together biotech innovators in a fun and relaxed setting. Expect engaging conversations that spark new ideas, opportunities to build lasting connections, and plenty of chances to share insights on the latest biotech trends. It is also a great space to brainstorm collaborations and explore opportunities that can help take your career to the next level.\n\nWhether you are hoping to meet",
+      "url": "https://www.meetup.com/cambridge-biotech-meetup/events/314187218/",
+      "start": "2026-04-21T18:30",
+      "date": "2026-04-21",
+      "venue": "Naco Taco",
+      "address": "Cambridge",
+      "score": 7,
+      "reason": "Biotech Networking at Naco Taco \u2014 professional networking in biotech/life sciences with casual venue, good for Brian's circles",
+      "_proximity": 5
+    },
+    {
+      "source": "Meetup: Tech Boston",
+      "name": "Boston AI Agents Night 2 \u2014 Agents That Actually Do Stuff \ud83e\udd9e",
+      "description": "Night 1 we built them. Night 2 we put them to work.\n\nWe're at the Nerd Center for a deeper dive \u2014 real agents running real tasks, live demos and the stuff nobody posts on LinkedIn.\n\n\ud83d\udd25 WHAT'S HAPPENING:\n\n6:30 PM \u2014 Doors open, food & drinks, networking\n7:00 PM \u2014 \"What We've Learned Since Night 1\" \u2014 what worked, what broke, what surprised us\n7:15 PM \u2014 LIVE DEMO: An agent that manages email, schedules meetings, and takes action autonomously\n7:45 PM \u2014 \"Agents in the Wild\" \u2014 real professionals share h",
+      "url": "https://www.meetup.com/boston-openclaw-meetup/events/314167844/",
+      "start": "2026-04-20T18:30",
+      "date": "2026-04-20",
+      "venue": "1 Memorial Dr, Cambridge, MA 02142",
+      "address": "Cambridge",
+      "score": 7,
+      "reason": "AI startup/tech networking with food, drinks, live demos, and real professional speakers; strong venue and innovative focus",
+      "_proximity": 5
+    },
+    {
+      "source": "Meetup: Tech Boston",
+      "name": "In-Person Weekly Hack Night - Third Tuesday",
+      "description": "Code for Boston is now running In-Person meetups every first and third Tuesday, with Zoom option. Other Tuesdays, we convene in Zoom. We also offer new member orientation both in-person and on Zoom.\nJoin us for civic volunteering with project champions from local government, non-profits, and the like!\nIf you are going to attend the virtual event, please make sure to do the following, and then join us on Zoom at 7pm EST:\n\n* Join our Slack: [http://slack.codeforboston.org](http://slack.codeforbost",
+      "url": "https://www.meetup.com/code-for-boston/events/313524331/",
+      "start": "2026-04-21T19:00",
+      "date": "2026-04-21",
+      "venue": "Cambridge Innovation Center, 4th Floor Cafe",
+      "address": "Cambridge",
+      "score": 7,
+      "reason": "Civic volunteering with government and nonprofit leaders aligns with Brian's expertise in public records/government transparency. Good networking with people in civic sector.",
+      "_proximity": 5
+    },
+    {
       "source": "Meetup: Career/Business",
       "name": "Aristotles Politics, Books 1 & 2",
       "description": "Platos\u2019 student Aristotle lays out his classification of political regimes and what the aims of any regime should be. It is in this philosophical work that Aristotle comes up with the term \u201cmixed regime\u201d, which has caused so much debate among philosophers of justice and political theorists down the centuries. Is only a mixed regime just because raw Oligarchy, Democracy, or Tyranny each neglect justice in some fundamental form?\n\nWe will read the first two books- a short and sweet 50 pages. Here i",
@@ -851,28 +634,149 @@
       "_proximity": 3
     },
     {
-      "source": "IG: Harvard Art Museums",
-      "name": "P\u0131nar \u00d6\u011frenci: Gl\u00fcck auf in Deutschland",
-      "description": "The first major U.S. installation by Berlin-based artist P\u0131nar \u00d6\u011frenci, featuring her 2024 film and five related collages addressing postwar German identity and immigrant experiences. Displayed alongside historical photographs from the Busch-Reisinger Museum's collection.",
-      "url": "https://www.instagram.com/p/DXPSxAblHbo/",
-      "start": "2026-04-17",
-      "venue": "Harvard Art Museums, Gallery 1120",
-      "address": "Cambridge, MA",
-      "score": 6,
-      "reason": "Contemporary art installation at museum \u2014 first major U.S. installation by Berlin-based artist addressing immigration/identity, strong intellectual appeal",
-      "_proximity": 5
+      "source": "luma:boston",
+      "name": "Vibe Code for Finance \u2014 Boston",
+      "description": "",
+      "url": "https://lu.ma/e20il724",
+      "start": "2026-04-21T20:00",
+      "venue": "",
+      "address": "Boston, Massachusetts",
+      "score": 7,
+      "reason": "Finance-focused networking event \u2014 directly relevant to Brian's professional interests and high-status crowd",
+      "_proximity": 3
     },
     {
-      "source": "IG: Gardner Museum",
-      "name": "Picturing Isabella exhibition",
-      "description": "Exhibition featuring photographs and artwork related to the life and legacy of founder Isabella Stewart Gardner, on view through June 28, 2026.",
-      "url": "https://www.instagram.com/gardnermuseum/",
-      "start": "2026-04-18",
-      "venue": "Isabella Stewart Gardner Museum - Fenway Gallery",
+      "source": "luma:boston",
+      "name": "Underscore VC Pitch Competition",
+      "description": "",
+      "url": "https://lu.ma/b3ilabz0",
+      "start": "2026-04-23T22:00",
+      "venue": "",
       "address": "Boston, Massachusetts",
-      "score": 6,
-      "reason": "Art exhibition at prestigious cultural institution (Isabella Stewart Gardner Museum); aligns with interest in upscale cultural events and art",
-      "_proximity": 7
+      "score": 7,
+      "reason": "Underscore VC Pitch Competition; high-status startup/VC event; excellent for networking with founders and investors",
+      "_proximity": 3
+    },
+    {
+      "source": "ticketmaster",
+      "name": "Berklee Popular Music Institute Showcase (18+)",
+      "description": "THIS EVENT IS 18+ WITH A VALID I.D. DOORS: 6:00 PM SHOW: 7:00 PM Will you go to prom with us? Experience a night of nostalgia, ?80s glamour, and unforgettable live performances at the Berklee Popular Music Institute?s (BPMI) 24th annual showcase, featuring eight artists handpicked by its 2026 student cohort. Soundtracking this year?s dance floor will be Beno, Good Sleepy, Jazz Cuti, JimmyBoy, Leila Lamb, Nico Welsh, Pat Kennedy, and Sophie?s Body. Representing genres ranging from reggaeton to pop-punk and indie to country, these artists have displayed extraordinary talent, securing spots at Governors Ball, Lollapalooza, Southside, and other major festivals to be announced soon. It?s going to be a night to remember! Brighton Music Hall is a GA, standing room only venue. There is a seating area available for those with mobility limitations. If you require accommodation, we encourage you to reach out to information@crossroadspresents.com as soon as you have purchased your GA tickets.",
+      "url": "https://www.ticketmaster.com/berklee-popular-music-institute-showcase-18-boston-massachusetts-04-24-2026/event/01006444BD63D4A4",
+      "start": "2026-04-24T22:00",
+      "venue": "Brighton Music Hall presented by Citizens",
+      "address": "Boston, MA",
+      "price": "",
+      "score": 7,
+      "reason": "Berklee showcase with emerging artists heading to major festivals (Governors Ball, Lollapalooza); 18+ at Brighton Music Hall; great emerging talent scene",
+      "_proximity": 3
+    },
+    {
+      "source": "SoWa Boston",
+      "name": "First Friday",
+      "description": "On the First Friday of every month, the artists, galleries, shops and showrooms of the SoWa Art + Design District in the South End open their doors to the public for an evening of art, culture and community.",
+      "url": "https://www.sowaboston.com/events/",
+      "start": "2026-05-01T17:00",
+      "venue": "SoWa Art + Design District",
+      "address": "Boston, Massachusetts",
+      "score": 7,
+      "reason": "First Friday SoWa Art + Design District opening\u2014recurring upscale art scene event, networking and gallery culture",
+      "_proximity": 3
+    },
+    {
+      "source": "SoWa Boston",
+      "name": "SoWa Open Market",
+      "description": "Open Markets run every Sunday from 11AM-5PM.",
+      "url": "https://www.sowaboston.com/events/",
+      "start": "2026-05-03",
+      "venue": "SoWa Boston",
+      "address": "Boston, Massachusetts",
+      "score": 7,
+      "reason": "First Friday SoWa Art + Design District opening\u2014recurring upscale art scene event, networking and gallery culture",
+      "_proximity": 3
+    },
+    {
+      "source": "VENU Boston",
+      "name": "Venu Saturdays",
+      "description": "Weekly Saturday night event at Venu nightclub.",
+      "url": "https://www.venuboston.com/events/",
+      "start": "2026-04-25",
+      "venue": "Venu Boston",
+      "address": "Boston, MA",
+      "score": 7,
+      "reason": "Venu Saturdays \u2014 weekly VIP nightlife at scene-y venue",
+      "_proximity": 3
+    },
+    {
+      "source": "VENU Boston",
+      "name": "Venu Saturdays",
+      "description": "Weekly Saturday night event at Venu nightclub.",
+      "url": "https://www.venuboston.com/events/",
+      "start": "2026-05-02",
+      "venue": "Venu Boston",
+      "address": "Boston, MA",
+      "score": 7,
+      "reason": "Venu Saturdays \u2014 weekly VIP nightlife at scene-y venue",
+      "_proximity": 3
+    },
+    {
+      "source": "VENU Boston",
+      "name": "Venu Saturdays",
+      "description": "Weekly Saturday night event at Venu nightclub.",
+      "url": "https://www.venuboston.com/events/",
+      "start": "2026-05-09",
+      "venue": "Venu Boston",
+      "address": "Boston, MA",
+      "score": 7,
+      "reason": "Venu Saturdays \u2014 weekly VIP nightlife at scene-y venue",
+      "_proximity": 3
+    },
+    {
+      "source": "VENU Boston",
+      "name": "Venu Saturdays",
+      "description": "Weekly Saturday night event at Venu nightclub.",
+      "url": "https://www.venuboston.com/events/",
+      "start": "2026-05-16",
+      "venue": "Venu Boston",
+      "address": "Boston, MA",
+      "score": 7,
+      "reason": "Venu Saturdays \u2014 weekly VIP nightlife at scene-y venue",
+      "_proximity": 3
+    },
+    {
+      "source": "VENU Boston",
+      "name": "Venu Saturdays",
+      "description": "Weekly Saturday night event at Venu nightclub.",
+      "url": "https://www.venuboston.com/events/",
+      "start": "2026-05-23",
+      "venue": "Venu Boston",
+      "address": "Boston, MA",
+      "score": 7,
+      "reason": "Venu Saturdays \u2014 weekly VIP nightlife at scene-y venue",
+      "_proximity": 3
+    },
+    {
+      "source": "VENU Boston",
+      "name": "Venu Saturdays",
+      "description": "Weekly Saturday night event at Venu nightclub.",
+      "url": "https://www.venuboston.com/events/",
+      "start": "2026-05-30",
+      "venue": "Venu Boston",
+      "address": "Boston, MA",
+      "score": 7,
+      "reason": "Venu Saturdays \u2014 weekly VIP nightlife at scene-y venue",
+      "_proximity": 3
+    },
+    {
+      "source": "VENU Boston",
+      "name": "Venu Saturdays",
+      "description": "Weekly Saturday night event at Venu nightclub.",
+      "url": "https://www.venuboston.com/events/",
+      "start": "2026-06-06",
+      "venue": "Venu Boston",
+      "address": "Boston, MA",
+      "score": 7,
+      "reason": "Venu Saturdays \u2014 weekly VIP nightlife at scene-y venue",
+      "_proximity": 3
     },
     {
       "source": "Boston Calendar",
@@ -1417,57 +1321,23 @@
     ]
   },
   "costs": {
-    "week": 1.2207,
-    "month": 2.9872,
-    "total": 4.2611,
+    "week": 1.4195,
+    "month": 3.1859,
+    "total": 4.4599,
     "runs": [
       {
-        "ts": "2026-04-18T14:52:53.042760",
-        "events_total": 658,
-        "events_cached": 141,
-        "events_scored": 1,
-        "cost_usd": 0.000769,
-        "duration_ms": 1493,
-        "models": {
-          "claude-haiku-4-5-20251001": 0.000769
-        }
-      },
-      {
-        "ts": "2026-04-18T14:52:59.787663",
-        "events_total": 658,
-        "events_cached": 0,
-        "events_scored": 658,
-        "cost_usd": 0.097353,
-        "duration_ms": 99213,
-        "models": {
-          "claude-haiku-4-5-20251001": 0.097353
-        }
-      },
-      {
-        "ts": "2026-04-18T14:56:46.352350",
-        "events_total": 658,
-        "events_cached": 0,
-        "events_scored": 658,
-        "cost_usd": 0.071198,
-        "duration_ms": 67676,
-        "models": {
-          "claude-haiku-4-5-20251001": 0.071198
-        }
-      },
-      {
-        "ts": "2026-04-18T23:21:29.232179",
+        "ts": "2026-04-19T08:12:45.135422",
         "persona": "unknown",
-        "events_total": 725,
-        "events_cached": 166,
-        "events_scored": 8,
-        "cost_usd": 0.02424,
-        "duration_ms": 26457,
+        "events_total": 657,
+        "events_cached": 216,
+        "events_scored": 368,
+        "cost_usd": 0.055509,
+        "duration_ms": 59412,
         "models": {
-          "claude-haiku-4-5-20251001": 0.02424
+          "claude-haiku-4-5-20251001": 0.055509
         },
         "by_stage": {
-          "fetch": 0.023288,
-          "score": 0.000952
+          "score": 0.055509
         },
         "source_counts": {},
         "deploy_why": "run",
@@ -1476,27 +1346,28 @@
           "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
         },
         "efficiency": {
-          "cache_hit_rate": 0.954,
-          "avg_hit_rate": 0.465,
-          "cost_per_scored_event": 0.00303,
+          "cache_hit_rate": 0.37,
+          "avg_hit_rate": 0.46,
+          "cost_per_scored_event": 0.00015,
           "notes": [
-            "Efficient \u2014 95% cache (166 cached, 8 scored), $0.0242"
+            "Cache 37% hit (216 cached, 368 scored) \u2014 many new events, normal on first daily run",
+            "High scoring volume (368 scored) \u2014 consider raising min_score to cut costs"
           ]
         }
       },
       {
-        "ts": "2026-04-19T08:11:00.637463",
+        "ts": "2026-04-19T08:16:34.229643",
         "persona": "unknown",
         "events_total": 657,
-        "events_cached": 107,
-        "events_scored": 196,
-        "cost_usd": 0.019686,
-        "duration_ms": 20420,
+        "events_cached": 38,
+        "events_scored": 364,
+        "cost_usd": 0.045561,
+        "duration_ms": 50159,
         "models": {
-          "claude-haiku-4-5-20251001": 0.019686
+          "claude-haiku-4-5-20251001": 0.045561
         },
         "by_stage": {
-          "score": 0.019686
+          "score": 0.045561
         },
         "source_counts": {},
         "deploy_why": "run",
@@ -1505,12 +1376,97 @@
           "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
         },
         "efficiency": {
-          "cache_hit_rate": 0.353,
-          "avg_hit_rate": 0.589,
-          "cost_per_scored_event": 0.0001,
+          "cache_hit_rate": 0.095,
+          "avg_hit_rate": 0.335,
+          "cost_per_scored_event": 0.00013,
           "notes": [
-            "Cache 35% hit (107 cached, 196 scored) \u2014 many new events, normal on first daily run",
-            "Cache hit rate 35% vs recent avg 59% (107 cached / 196 scored) \u2014 possible new sources added or score cache cleared"
+            "Cache 9% hit (38 cached, 364 scored) \u2014 many new events, normal on first daily run",
+            "High scoring volume (364 scored) \u2014 consider raising min_score to cut costs",
+            "Cache hit rate 9% vs recent avg 34% (38 cached / 364 scored) \u2014 possible new sources added or score cache cleared"
+          ]
+        }
+      },
+      {
+        "ts": "2026-04-19T09:45:13.885780",
+        "persona": "unknown",
+        "events_total": 642,
+        "events_cached": 162,
+        "events_scored": 0,
+        "cost_usd": 0,
+        "duration_ms": 0,
+        "models": {},
+        "by_stage": {},
+        "source_counts": {},
+        "deploy_why": "run",
+        "netlify": {
+          "total": 1000,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 1.0,
+          "avg_hit_rate": 0.354,
+          "cost_per_scored_event": 0.0,
+          "notes": [
+            "Efficient \u2014 100% cache (162 cached, 0 scored), $0.0000"
+          ]
+        }
+      },
+      {
+        "ts": "2026-04-19T11:05:02.816777",
+        "persona": "unknown",
+        "events_total": 658,
+        "events_cached": 159,
+        "events_scored": 1,
+        "cost_usd": 0.08783,
+        "duration_ms": 107376,
+        "models": {
+          "claude-haiku-4-5-20251001": 0.08783
+        },
+        "by_stage": {
+          "fetch": 0.08704,
+          "score": 0.00079
+        },
+        "source_counts": {},
+        "deploy_why": "run",
+        "netlify": {
+          "total": 1000,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.994,
+          "avg_hit_rate": 0.554,
+          "cost_per_scored_event": 0.08783,
+          "notes": [
+            "Efficient \u2014 99% cache (159 cached, 1 scored), $0.0878"
+          ]
+        }
+      },
+      {
+        "ts": "2026-04-19T12:20:26.142694",
+        "persona": "unknown",
+        "events_total": 648,
+        "events_cached": 145,
+        "events_scored": 0,
+        "cost_usd": 0.009846,
+        "duration_ms": 11573,
+        "models": {
+          "claude-haiku-4-5-20251001": 0.009846
+        },
+        "by_stage": {
+          "fetch": 0.009846
+        },
+        "source_counts": {},
+        "deploy_why": "run",
+        "netlify": {
+          "total": 1000,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 1.0,
+          "avg_hit_rate": 0.562,
+          "cost_per_scored_event": 0.00985,
+          "notes": [
+            "Efficient \u2014 100% cache (145 cached, 0 scored), $0.0098"
           ]
         }
       }
@@ -1520,16 +1476,14 @@
   "sources": {
     "do617": 24,
     "Liberty Hotel events": 5,
-    "Boston Fashion Week": 1,
-    "IG": 6,
+    "Boston Calendar": 29,
     "Harvard Kennedy School": 10,
     "Mass Fashion Week": 1,
-    "Boston Calendar": 29,
     "Meetup": 4,
     "luma": 2,
     "ticketmaster": 1,
     "SoWa Boston": 2,
-    "VENU Boston": 8
+    "VENU Boston": 7
   },
   "source_urls": {
     "do617": "https://do617.com/events/food-drink",
@@ -1585,15 +1539,13 @@
   "source_stats": {
     "do617": 24,
     "Liberty Hotel events": 5,
-    "Boston Fashion Week": 1,
-    "IG": 6,
+    "Boston Calendar": 29,
     "Harvard Kennedy School": 10,
     "Mass Fashion Week": 1,
-    "Boston Calendar": 29,
     "Meetup": 4,
     "luma": 2,
     "ticketmaster": 1,
     "SoWa Boston": 2,
-    "VENU Boston": 8
+    "VENU Boston": 7
   }
 }
