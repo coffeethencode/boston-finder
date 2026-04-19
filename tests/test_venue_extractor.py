@@ -104,3 +104,65 @@ def test_strategy5_llm_cached_per_url(monkeypatch, tmp_path):
     assert venue_extractor.extract_venue(evt) == "Somewhere Bar"
     assert venue_extractor.extract_venue(evt) == "Somewhere Bar"
     assert len(calls) == 1  # second call hit the cache
+
+
+def test_strategy5_uses_fetched_page_text_when_description_is_thin(monkeypatch, tmp_path):
+    """When metadata is thin, strategy 5 should fetch the page and give its text to Haiku."""
+    monkeypatch.setattr(venue_extractor, "_CACHE_FILE", str(tmp_path / "cache.json"))
+
+    evt = {
+        "name": "$1 OYSTER BRUNCH",
+        "description": "",
+        "venue": None,
+        "url": "https://example.com/events/1-oyster-brunch--29",
+    }
+
+    captured_desc = []
+
+    def fake_fetch(url, max_chars=3000):
+        assert url == evt["url"]
+        return "Join us at Tradesman Charlestown! Every Saturday 11am-3pm. $1 Buck a Shuck Oyster Brunch."
+
+    def fake_haiku(prompt):
+        # verify the page text reached the prompt
+        captured_desc.append(prompt)
+        assert "Tradesman Charlestown" in prompt
+        return "Tradesman Charlestown"
+
+    monkeypatch.setattr(venue_extractor, "_fetch_page_text", fake_fetch)
+    monkeypatch.setattr(venue_extractor, "_call_haiku_for_venue", fake_haiku)
+
+    assert venue_extractor.extract_venue(evt) == "Tradesman Charlestown"
+    assert len(captured_desc) == 1
+
+
+def test_strategy5_skips_fetch_when_description_is_substantial(monkeypatch, tmp_path):
+    """If the event's own description is already substantial, skip the HTTP fetch."""
+    monkeypatch.setattr(venue_extractor, "_CACHE_FILE", str(tmp_path / "cache.json"))
+
+    evt = {
+        "name": "$1 OYSTER BRUNCH",
+        "description": "A wonderful oyster brunch at Neptune Oyster with live music and a full raw bar every weekend starting at 11am" * 3,
+        "venue": None,
+        "url": "https://example.com/x",
+    }
+
+    def fetch_should_not_run(url, max_chars=3000):
+        raise AssertionError("fetch should not run when description is substantial")
+
+    monkeypatch.setattr(venue_extractor, "_fetch_page_text", fetch_should_not_run)
+    monkeypatch.setattr(venue_extractor, "_call_haiku_for_venue", lambda p: "Neptune Oyster")
+
+    assert venue_extractor.extract_venue(evt) == "Neptune Oyster"
+
+
+def test_strategy5_fetch_failure_falls_back_to_metadata(monkeypatch, tmp_path):
+    """If page fetch fails, strategy 5 still calls Haiku with just metadata."""
+    monkeypatch.setattr(venue_extractor, "_CACHE_FILE", str(tmp_path / "cache.json"))
+
+    evt = {"name": "$1 Oyster Night", "description": "", "venue": None, "url": "https://down.example/x"}
+
+    monkeypatch.setattr(venue_extractor, "_fetch_page_text", lambda *a, **kw: None)
+    monkeypatch.setattr(venue_extractor, "_call_haiku_for_venue", lambda p: "UNKNOWN")
+
+    assert venue_extractor.extract_venue(evt) is None  # UNKNOWN returned → None

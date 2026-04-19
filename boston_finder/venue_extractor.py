@@ -157,10 +157,14 @@ def _strategy4_url_slug(url: str) -> str | None:
 # ── strategy 5 ────────────────────────────────────────────────────────────────
 _CACHE_FILE = os.path.expanduser("~/boston_finder_venue_extraction_cache.json")
 
-_LLM_PROMPT = """Given this event, return ONLY the venue name (restaurant, bar, shop, or building). No extra text, no punctuation, no explanation. If unclear, return exactly: UNKNOWN
+_LLM_PROMPT = """You are given an oyster-deal event. Return ONLY the name of the venue (restaurant, bar, or brewery) where the deal is offered. No prefix, no suffix, no punctuation, no explanation. If the venue cannot be determined, return exactly: UNKNOWN
+
+Guidance:
+- If the page mentions both a parent chain and a specific location (e.g. "Legal Sea Foods Copley"), prefer the specific location name.
+- If the page lists multiple venues, pick the one hosting the deal.
 
 Title: {title}
-Description: {description}
+Description / page text: {description}
 URL: {url}
 """
 
@@ -221,11 +225,37 @@ def _call_haiku_for_venue(prompt: str) -> str:
     return body["content"][0]["text"].strip()
 
 
+def _fetch_page_text(url: str, max_chars: int = 3000) -> str | None:
+    """
+    Fetch the event page and return its visible text (up to max_chars).
+    Returns None on any failure — caller handles fallback.
+    """
+    if not url:
+        return None
+    try:
+        import requests
+        from bs4 import BeautifulSoup
+        r = requests.get(
+            url,
+            headers={"User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36"},
+            timeout=10,
+        )
+        if r.status_code != 200:
+            return None
+        soup = BeautifulSoup(r.text, "html.parser")
+        return soup.get_text(separator=" ", strip=True)[:max_chars]
+    except Exception:
+        return None
+
+
 def _strategy5_llm(event: dict) -> str | None:
     """
     Narrow Haiku call: given title/description/url, return venue name or 'UNKNOWN'.
     Cached per (url, title) in _CACHE_FILE so each unique event is charged at most once.
     Tests monkeypatch _CACHE_FILE to a tmp_path to avoid touching the real on-disk cache.
+
+    When the event's own description is thin (<100 chars), fetches the event page
+    so Haiku has real content to work with.
     """
     key = _cache_key(event)
     cache = _load_cache(_CACHE_FILE)
@@ -233,9 +263,16 @@ def _strategy5_llm(event: dict) -> str | None:
         cached = cache[key]
         return cached if cached != "UNKNOWN" else None
 
+    # If the event's metadata description is thin, fetch the page so Haiku has context.
+    desc = event.get("description") or ""
+    if len(desc) < 100:
+        page_text = _fetch_page_text(event.get("url", ""))
+        if page_text:
+            desc = page_text
+
     prompt = _LLM_PROMPT.format(
         title=event.get("name", ""),
-        description=event.get("description", ""),
+        description=desc[:2500],
         url=event.get("url", ""),
     )
     result = (_call_haiku_for_venue(prompt) or "UNKNOWN").strip()
