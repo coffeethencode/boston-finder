@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-19T08:16:30.505280",
+  "generated_at": "2026-04-19T12:23:18.576380",
   "today": "2026-04-19",
   "days": 7,
   "persona": "dates",
@@ -114,6 +114,66 @@
       "_proximity": 10
     },
     {
+      "source": "do617:food-drink",
+      "name": "Class: Hand-Pulled Noodles",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/25/class-hand-pulled-noodles-tickets",
+      "start": "2026-04-25T10:00",
+      "venue": "Pagu",
+      "address": "",
+      "score": 8,
+      "reason": "Hands-on cooking class (noodles) - excellent interactive date activity",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:food-drink",
+      "name": "saturday brunch \u2013 Rich Graiko Quartet \u2013 in the performance space",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/25/saturday-brunch-rich-graiko-quartet-in-the-performance-space-tickets",
+      "start": "2026-04-25T11:30",
+      "venue": "Lou's",
+      "address": "",
+      "score": 8,
+      "reason": "Brunch with live jazz quartet - classic date combination",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:food-drink",
+      "name": "Hands-On: Traditions From Rome",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/25/hands-on-traditions-from-rome-tickets",
+      "start": "2026-04-25T12:00",
+      "venue": "Eataly Boston",
+      "address": "",
+      "score": 8,
+      "reason": "Hands-on Italian cooking class - great date experience",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:food-drink",
+      "name": "Class: Bao",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/25/class-bao-tickets",
+      "start": "2026-04-25T13:00",
+      "venue": "Pagu",
+      "address": "",
+      "score": 8,
+      "reason": "Cooking class (bao) - interactive food date",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:food-drink",
+      "name": "Hands On: Tiramis\u00f9 al Limoncello",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/25/hands-on-tiramisu-al-limoncello-tickets",
+      "start": "2026-04-25T15:30",
+      "venue": "Eataly Boston",
+      "address": "",
+      "score": 8,
+      "reason": "Hands-on Italian dessert class - fun interactive date",
+      "_proximity": 3
+    },
+    {
       "source": "do617:film-theatre-performing-arts",
       "name": "Presented by Lexus Broadway In BostonDisney's Beauty and the Beast",
       "description": "",
@@ -159,6 +219,42 @@
       "address": "",
       "score": 8,
       "reason": "Broadway musical theater - classic date night activity",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:film-theatre-performing-arts",
+      "name": "Bat Out Of Hell \u2013 The Musical",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/25/bat-out-of-hell-the-musical-tickets",
+      "start": "2026-04-25T19:30",
+      "venue": "Boch Center Wang Theatre",
+      "address": "",
+      "score": 8,
+      "reason": "Broadway musical - classic theater date",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:film-theatre-performing-arts",
+      "name": "Presented by Lexus Broadway In BostonDisney's Beauty and the Beast",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/25/disney-s-beauty-and-the-beast-tickets",
+      "start": "2026-04-25T20:00",
+      "venue": "Citizens Bank Opera House",
+      "address": "",
+      "score": 8,
+      "reason": "Broadway show (Beauty and the Beast) - excellent date activity",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:film-theatre-performing-arts",
+      "name": "Shen Yun",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/25/shen-yun-tickets",
+      "start": "2026-04-25T13:30",
+      "venue": "Hanover Theatre for the Performing Arts",
+      "address": "",
+      "score": 8,
+      "reason": "Shen Yun performance - high-quality cultural entertainment",
       "_proximity": 3
     },
     {
@@ -270,126 +366,6 @@
       "_proximity": 3
     },
     {
-      "source": "do617:comedy",
-      "name": "Kathleen Madigan",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/24/kathleen-madigan-tickets",
-      "start": "2026-04-24T19:30",
-      "venue": "The Wilbur",
-      "address": "",
-      "score": 8,
-      "reason": "Kathleen Madigan - established comedian, excellent date",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:comedy",
-      "name": "Kathleen Madigan",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/25/kathleen-madigan-tickets",
-      "start": "2026-04-25T19:00",
-      "venue": "The Wilbur",
-      "address": "",
-      "score": 8,
-      "reason": "Kathleen Madigan repeat - established comedian",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Class: Hand-Pulled Noodles",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/25/class-hand-pulled-noodles-tickets",
-      "start": "2026-04-25T10:00",
-      "venue": "Pagu",
-      "address": "",
-      "score": 8,
-      "reason": "Hands-on cooking class (noodles) - excellent interactive date activity",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "saturday brunch \u2013 Rich Graiko Quartet \u2013 in the performance space",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/25/saturday-brunch-rich-graiko-quartet-in-the-performance-space-tickets",
-      "start": "2026-04-25T11:30",
-      "venue": "Lou's",
-      "address": "",
-      "score": 8,
-      "reason": "Brunch with live jazz quartet - classic date combination",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Hands-On: Traditions From Rome",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/25/hands-on-traditions-from-rome-tickets",
-      "start": "2026-04-25T12:00",
-      "venue": "Eataly Boston",
-      "address": "",
-      "score": 8,
-      "reason": "Hands-on Italian cooking class - great date experience",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Class: Bao",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/25/class-bao-tickets",
-      "start": "2026-04-25T13:00",
-      "venue": "Pagu",
-      "address": "",
-      "score": 8,
-      "reason": "Cooking class (bao) - interactive food date",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Hands On: Tiramis\u00f9 al Limoncello",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/25/hands-on-tiramisu-al-limoncello-tickets",
-      "start": "2026-04-25T15:30",
-      "venue": "Eataly Boston",
-      "address": "",
-      "score": 8,
-      "reason": "Hands-on Italian dessert class - fun interactive date",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Bat Out Of Hell \u2013 The Musical",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/25/bat-out-of-hell-the-musical-tickets",
-      "start": "2026-04-25T19:30",
-      "venue": "Boch Center Wang Theatre",
-      "address": "",
-      "score": 8,
-      "reason": "Broadway musical - classic theater date",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Presented by Lexus Broadway In BostonDisney's Beauty and the Beast",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/25/disney-s-beauty-and-the-beast-tickets",
-      "start": "2026-04-25T20:00",
-      "venue": "Citizens Bank Opera House",
-      "address": "",
-      "score": 8,
-      "reason": "Broadway show (Beauty and the Beast) - excellent date activity",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Shen Yun",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/25/shen-yun-tickets",
-      "start": "2026-04-25T13:30",
-      "venue": "Hanover Theatre for the Performing Arts",
-      "address": "",
-      "score": 8,
-      "reason": "Shen Yun performance - high-quality cultural entertainment",
-      "_proximity": 3
-    },
-    {
       "source": "do617:concerts",
       "name": "Calum Scott - The Avenoir Tour 2026",
       "description": "",
@@ -411,6 +387,30 @@
       "address": "",
       "score": 8,
       "reason": "Bingo Loco (21+) - fun, social, adult-oriented date activity",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:comedy",
+      "name": "Kathleen Madigan",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/24/kathleen-madigan-tickets",
+      "start": "2026-04-24T19:30",
+      "venue": "The Wilbur",
+      "address": "",
+      "score": 8,
+      "reason": "Kathleen Madigan - established comedian, excellent date",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:comedy",
+      "name": "Kathleen Madigan",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/25/kathleen-madigan-tickets",
+      "start": "2026-04-25T19:00",
+      "venue": "The Wilbur",
+      "address": "",
+      "score": 8,
+      "reason": "Kathleen Madigan repeat - established comedian",
       "_proximity": 3
     },
     {
@@ -644,54 +644,6 @@
       "_proximity": 8
     },
     {
-      "source": "IG: Boston Calendar",
-      "name": "Swan Boats Opening Weekend",
-      "description": "Boston's iconic Swan Boats open for their 149th season, coinciding with peak cherry blossom season across the city.",
-      "url": "https://www.instagram.com/thebostoncal/",
-      "start": "2026-04-18",
-      "venue": "Public Garden Swan Boats",
-      "address": "Boston, MA",
-      "score": 8,
-      "reason": "Iconic scenic outdoor experience during peak cherry blossoms \u2014 romantic date activity",
-      "_proximity": 3
-    },
-    {
-      "source": "IG: Boston Calendar",
-      "name": "Cisco Seaport Opening Weekend",
-      "description": "Seaport's legendary beer garden returns for its 9th season with an all-new look, bookable beach shacks, and free live music daily.",
-      "url": "https://www.instagram.com/thebostoncal/",
-      "start": "2026-04-17",
-      "venue": "Cisco Beer Garden",
-      "address": "Boston, MA",
-      "score": 8,
-      "reason": "Seaport beer garden with live music daily \u2014 excellent food/drink and entertainment combination",
-      "_proximity": 3
-    },
-    {
-      "source": "IG: MFA Boston",
-      "name": "Framing Nature: Gardens and Imagination",
-      "description": "Major spring exhibition exploring how gardens have found a place in the visual arts across history and around the globe, featuring works by artists including John Singer Sargent and Claude Monet.",
-      "url": "https://www.mfaboston.org",
-      "start": "2026-04-18",
-      "venue": "Museum of Fine Arts Boston",
-      "address": "Boston, Massachusetts",
-      "score": 8,
-      "reason": "Major spring garden art exhibition with works by Sargent and Monet \u2014 excellent arts date",
-      "_proximity": 3
-    },
-    {
-      "source": "IG: SoWa Boston",
-      "name": "SoWa Open Market",
-      "description": "Vibrant outdoor market featuring art, food, crafts, and local business vendors every Sunday from May to November. Free event with live music, food trucks, and craft brewery takeovers.",
-      "url": "https://www.instagram.com/sowaboston/",
-      "start": "2026-05-03",
-      "venue": "SoWa Open Market",
-      "address": "Boston, MA",
-      "score": 8,
-      "reason": "Weekly outdoor market with food, crafts, live music, and brewery takeovers \u2014 great food/experience date",
-      "_proximity": 3
-    },
-    {
       "source": "do617:food-drink",
       "name": ", 2026 - Drag Me To Bunch @ Carrie Nation",
       "description": "",
@@ -913,6 +865,78 @@
       "description": "",
       "url": "https://do617.com/events/2026/4/24/live-music-brian-rojik-duo-tickets",
       "start": "2026-04-24T18:30",
+      "venue": "Break Rock Brewing",
+      "address": "",
+      "score": 7,
+      "reason": "Live music performance - good date activity",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:food-drink",
+      "name": "Stronger Together: A Night of Music for Mental Health",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/25/stronger-together-a-night-of-music-for-mental-health-tickets",
+      "start": "2026-04-25T17:00",
+      "venue": "High Street Place",
+      "address": "",
+      "score": 7,
+      "reason": "Live music event with charitable purpose - good for a date",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:food-drink",
+      "name": "Saturday Live Music With Robert Thackery",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/25/saturday-live-music-with-robert-thackery-tickets",
+      "start": "2026-04-25T20:00",
+      "venue": "Mighty Squirrel Brewing Co.",
+      "address": "",
+      "score": 7,
+      "reason": "Live music performance - solid date activity",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:food-drink",
+      "name": "Coverstory Band",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/25/coverstory-band-tickets",
+      "start": "2026-04-25T21:00",
+      "venue": "Great American Beer Hall",
+      "address": "",
+      "score": 7,
+      "reason": "Live band performance - good date experience",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:food-drink",
+      "name": "Food Pop Up: Mei Mei Dumplings",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/25/food-pop-up-mei-mei-dumplings-tickets",
+      "start": "2026-04-25T13:00",
+      "venue": "Break Rock Brewing",
+      "address": "",
+      "score": 7,
+      "reason": "Food pop-up event - casual food-focused date",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:food-drink",
+      "name": "The Sunset Series @ Cisco Fenway",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/25/the-sunset-series-cisco-fenway-tickets",
+      "start": "2026-04-25T14:00",
+      "venue": "Game On!",
+      "address": "",
+      "score": 7,
+      "reason": "Sunset series with likely music/entertainment - scenic date vibe",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:food-drink",
+      "name": "Live Music: Keith Crocker",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/25/live-music-keith-crocker-tickets",
+      "start": "2026-04-25T15:00",
       "venue": "Break Rock Brewing",
       "address": "",
       "score": 7,
@@ -1181,6 +1205,42 @@
       "address": "",
       "score": 7,
       "reason": "Live chamber music with visual art - unique cultural experience",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:film-theatre-performing-arts",
+      "name": "Japan Festival",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/25/japan-festival-1775052147",
+      "start": "2026-04-25T11:00",
+      "venue": "Boston Common",
+      "address": "",
+      "score": 7,
+      "reason": "Cultural festival - interesting shared experience",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:film-theatre-performing-arts",
+      "name": "Portrait Drawing (Galleries) Two-Day Workshop",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/25/portrait-drawing-galleries-two-day-workshop-tickets",
+      "start": "2026-04-25T12:30",
+      "venue": "Museum of Fine Arts Boston",
+      "address": "",
+      "score": 7,
+      "reason": "Art workshop - creative date experience",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:film-theatre-performing-arts",
+      "name": "Saturday Open Studios",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/25/saturday-open-studios-tickets",
+      "start": "2026-04-25T13:00",
+      "venue": "Isabella Stewart Gardner Museum",
+      "address": "",
+      "score": 7,
+      "reason": "Open studio event - artistic/cultural date experience",
       "_proximity": 3
     },
     {
@@ -1652,320 +1712,6 @@
       "_proximity": 3
     },
     {
-      "source": "do617:comedy",
-      "name": "Rhys Darby",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/19/rhys-darby-tickets",
-      "start": "2026-04-19T19:00",
-      "venue": "The Wilbur",
-      "address": "",
-      "score": 7,
-      "reason": "Known comedian (Rhys Darby) - good date show",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:comedy",
-      "name": "Jim Breuer: Find The Funny",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/23/jim-breuer-find-the-funny-tickets",
-      "start": "2026-04-23T19:30",
-      "venue": "The Chevalier Theatre",
-      "address": "",
-      "score": 7,
-      "reason": "Jim Breuer comedy tour - established comedian date show",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:comedy",
-      "name": "Comedy at Back Bay Social ($10) - Boston, MA",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/23/comedy-at-back-bay-social-10-boston-ma-tickets",
-      "start": "2026-04-23T19:00",
-      "venue": "Back Bay Social",
-      "address": "",
-      "score": 7,
-      "reason": "Comedy show at Back Bay Social with affordable entry - great date",
-      "_proximity": 10
-    },
-    {
-      "source": "do617:comedy",
-      "name": "Psyched Out Comedy at The Rockwell",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/24/psyched-out-comedy-at-the-rockwell-tickets",
-      "start": "2026-04-24T19:00",
-      "venue": "The Rockwell",
-      "address": "",
-      "score": 7,
-      "reason": "Comedy show at The Rockwell - good venue and entertainment",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:comedy",
-      "name": "Overtime Comedy at The Substation \u2013 Live Stand-Up Show in Roslindale",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/24/overtime-comedy-at-the-substation-live-stand-up-show-in-roslindale-tickets",
-      "start": "2026-04-24T20:00",
-      "venue": "The Substation",
-      "address": "",
-      "score": 7,
-      "reason": "Live stand-up at The Substation - local comedy date",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:comedy",
-      "name": "Woolen Mill Comedy At Harpoon - Boston!",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/25/woolen-mill-comedy-at-harpoon-boston-tickets",
-      "start": "2026-04-25T19:00",
-      "venue": "Harpoon Brewery & Beer Hall",
-      "address": "",
-      "score": 7,
-      "reason": "Comedy at Harpoon brewery - good combination of comedy and casual venue",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:comedy",
-      "name": "Downtown Comedy Club",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/25/downtown-comedy-club-tickets",
-      "start": "2026-04-25T20:00",
-      "venue": "Democracy Brewing",
-      "address": "",
-      "score": 7,
-      "reason": "Comedy club show - classic date venue",
-      "_proximity": 3
-    },
-    {
-      "source": "WBUR Events",
-      "name": "'London Falling': New Yorker writer Patrick Radden Keefe on a tragic death in a transformed city",
-      "description": "New Yorker writer Patrick Radden Keefe discusses a tragic death in a transformed city.",
-      "url": "https://www.wbur.org/events",
-      "start": "2026-04-21",
-      "venue": "",
-      "address": "",
-      "score": 7,
-      "reason": "WBUR CitySpace has upscale literary, music, and cultural events perfect for date nights - includes author talks, live music, podcast recordings"
-    },
-    {
-      "source": "WBUR Events",
-      "name": "The Mega Awesome Super Huge Wicked Fun Podcast Playdate",
-      "description": "",
-      "url": "https://www.wbur.org/events",
-      "start": "2026-04-25",
-      "venue": "",
-      "address": "",
-      "score": 7,
-      "reason": "WBUR CitySpace has upscale literary, music, and cultural events perfect for date nights - includes author talks, live music, podcast recordings"
-    },
-    {
-      "source": "WBUR Events",
-      "name": "'This Is Not About Running': running phenom Mary Cain tells her story",
-      "description": "Running phenom Mary Cain tells her story.",
-      "url": "https://www.wbur.org/events",
-      "start": "2026-04-30",
-      "venue": "",
-      "address": "",
-      "score": 7,
-      "reason": "WBUR CitySpace has upscale literary, music, and cultural events perfect for date nights - includes author talks, live music, podcast recordings"
-    },
-    {
-      "source": "WBUR Events",
-      "name": "'The Sporkful' live",
-      "description": "",
-      "url": "https://www.wbur.org/events",
-      "start": "2026-05-01",
-      "venue": "",
-      "address": "",
-      "score": 7,
-      "reason": "WBUR CitySpace has upscale literary, music, and cultural events perfect for date nights - includes author talks, live music, podcast recordings"
-    },
-    {
-      "source": "WBUR Events",
-      "name": "'Science Friday' live with Ira Flatow",
-      "description": "",
-      "url": "https://www.wbur.org/events",
-      "start": "2026-05-04",
-      "venue": "",
-      "address": "",
-      "score": 7,
-      "reason": "WBUR CitySpace has upscale literary, music, and cultural events perfect for date nights - includes author talks, live music, podcast recordings"
-    },
-    {
-      "source": "WBUR Events",
-      "name": "FOUND Magazine's 25th anniversary tour with Davy Rothbart and Peter Rothbart",
-      "description": "FOUND Magazine celebrates its 25th anniversary with founders Davy Rothbart and Peter Rothbart.",
-      "url": "https://www.wbur.org/events",
-      "start": "2026-05-08",
-      "venue": "",
-      "address": "",
-      "score": 7,
-      "reason": "WBUR CitySpace has upscale literary, music, and cultural events perfect for date nights - includes author talks, live music, podcast recordings"
-    },
-    {
-      "source": "WBUR Events",
-      "name": "The WBUR Breakfast Club: JetBlue CEO Joanna Geraghty in conversation with Tiziana Dearing",
-      "description": "JetBlue CEO Joanna Geraghty in conversation with Tiziana Dearing.",
-      "url": "https://www.wbur.org/events",
-      "start": "2026-05-12",
-      "venue": "",
-      "address": "",
-      "score": 7,
-      "reason": "WBUR CitySpace has upscale literary, music, and cultural events perfect for date nights - includes author talks, live music, podcast recordings"
-    },
-    {
-      "source": "WBUR Events",
-      "name": "Stories from a warming world",
-      "description": "",
-      "url": "https://www.wbur.org/events",
-      "start": "2026-05-13",
-      "venue": "",
-      "address": "",
-      "score": 7,
-      "reason": "WBUR CitySpace has upscale literary, music, and cultural events perfect for date nights - includes author talks, live music, podcast recordings"
-    },
-    {
-      "source": "WBUR Events",
-      "name": "The WBUR Festival",
-      "description": "Lively conversations, podcast tapings and musical performances on Friday, May 29 and Saturday, May 30.",
-      "url": "https://www.wbur.org/events",
-      "start": "2026-05-29",
-      "venue": "",
-      "address": "",
-      "score": 7,
-      "reason": "WBUR CitySpace has upscale literary, music, and cultural events perfect for date nights - includes author talks, live music, podcast recordings"
-    },
-    {
-      "source": "WBUR Events",
-      "name": "AMERICAN DREAMS: The Moth Mainstage at Somerville Theatre",
-      "description": "Five seasoned storytellers share extraordinary, true stories that dig deep into the idea of the American Dream.",
-      "url": "https://www.wbur.org/events",
-      "start": "2026-06-04",
-      "venue": "Somerville Theatre",
-      "address": "",
-      "score": 7,
-      "reason": "WBUR CitySpace has upscale literary, music, and cultural events perfect for date nights - includes author talks, live music, podcast recordings",
-      "_proximity": 4
-    },
-    {
-      "source": "WBUR Events",
-      "name": "Tiny Desk Contest On The Road tour",
-      "description": "",
-      "url": "https://www.wbur.org/events",
-      "start": "2026-07-07",
-      "venue": "",
-      "address": "",
-      "score": 7,
-      "reason": "WBUR CitySpace has upscale literary, music, and cultural events perfect for date nights - includes author talks, live music, podcast recordings"
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Stronger Together: A Night of Music for Mental Health",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/25/stronger-together-a-night-of-music-for-mental-health-tickets",
-      "start": "2026-04-25T17:00",
-      "venue": "High Street Place",
-      "address": "",
-      "score": 7,
-      "reason": "Live music event with charitable purpose - good for a date",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Saturday Live Music With Robert Thackery",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/25/saturday-live-music-with-robert-thackery-tickets",
-      "start": "2026-04-25T20:00",
-      "venue": "Mighty Squirrel Brewing Co.",
-      "address": "",
-      "score": 7,
-      "reason": "Live music performance - solid date activity",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Coverstory Band",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/25/coverstory-band-tickets",
-      "start": "2026-04-25T21:00",
-      "venue": "Great American Beer Hall",
-      "address": "",
-      "score": 7,
-      "reason": "Live band performance - good date experience",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Food Pop Up: Mei Mei Dumplings",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/25/food-pop-up-mei-mei-dumplings-tickets",
-      "start": "2026-04-25T13:00",
-      "venue": "Break Rock Brewing",
-      "address": "",
-      "score": 7,
-      "reason": "Food pop-up event - casual food-focused date",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "The Sunset Series @ Cisco Fenway",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/25/the-sunset-series-cisco-fenway-tickets",
-      "start": "2026-04-25T14:00",
-      "venue": "Game On!",
-      "address": "",
-      "score": 7,
-      "reason": "Sunset series with likely music/entertainment - scenic date vibe",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Live Music: Keith Crocker",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/25/live-music-keith-crocker-tickets",
-      "start": "2026-04-25T15:00",
-      "venue": "Break Rock Brewing",
-      "address": "",
-      "score": 7,
-      "reason": "Live music performance - good date activity",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Japan Festival",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/25/japan-festival-1775052147",
-      "start": "2026-04-25T11:00",
-      "venue": "Boston Common",
-      "address": "",
-      "score": 7,
-      "reason": "Cultural festival - interesting shared experience",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Portrait Drawing (Galleries) Two-Day Workshop",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/25/portrait-drawing-galleries-two-day-workshop-tickets",
-      "start": "2026-04-25T12:30",
-      "venue": "Museum of Fine Arts Boston",
-      "address": "",
-      "score": 7,
-      "reason": "Art workshop - creative date experience",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Saturday Open Studios",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/25/saturday-open-studios-tickets",
-      "start": "2026-04-25T13:00",
-      "venue": "Isabella Stewart Gardner Museum",
-      "address": "",
-      "score": 7,
-      "reason": "Open studio event - artistic/cultural date experience",
-      "_proximity": 3
-    },
-    {
       "source": "do617:concerts",
       "name": "Ashley Kutcher",
       "description": "",
@@ -2071,6 +1817,90 @@
       "address": "",
       "score": 7,
       "reason": "Kym Whitley - comedy performance, great date entertainment",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:comedy",
+      "name": "Rhys Darby",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/19/rhys-darby-tickets",
+      "start": "2026-04-19T19:00",
+      "venue": "The Wilbur",
+      "address": "",
+      "score": 7,
+      "reason": "Known comedian (Rhys Darby) - good date show",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:comedy",
+      "name": "Jim Breuer: Find The Funny",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/23/jim-breuer-find-the-funny-tickets",
+      "start": "2026-04-23T19:30",
+      "venue": "The Chevalier Theatre",
+      "address": "",
+      "score": 7,
+      "reason": "Jim Breuer comedy tour - established comedian date show",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:comedy",
+      "name": "Comedy at Back Bay Social ($10) - Boston, MA",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/23/comedy-at-back-bay-social-10-boston-ma-tickets",
+      "start": "2026-04-23T19:00",
+      "venue": "Back Bay Social",
+      "address": "",
+      "score": 7,
+      "reason": "Comedy show at Back Bay Social with affordable entry - great date",
+      "_proximity": 10
+    },
+    {
+      "source": "do617:comedy",
+      "name": "Psyched Out Comedy at The Rockwell",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/24/psyched-out-comedy-at-the-rockwell-tickets",
+      "start": "2026-04-24T19:00",
+      "venue": "The Rockwell",
+      "address": "",
+      "score": 7,
+      "reason": "Comedy show at The Rockwell - good venue and entertainment",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:comedy",
+      "name": "Overtime Comedy at The Substation \u2013 Live Stand-Up Show in Roslindale",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/24/overtime-comedy-at-the-substation-live-stand-up-show-in-roslindale-tickets",
+      "start": "2026-04-24T20:00",
+      "venue": "The Substation",
+      "address": "",
+      "score": 7,
+      "reason": "Live stand-up at The Substation - local comedy date",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:comedy",
+      "name": "Woolen Mill Comedy At Harpoon - Boston!",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/25/woolen-mill-comedy-at-harpoon-boston-tickets",
+      "start": "2026-04-25T19:00",
+      "venue": "Harpoon Brewery & Beer Hall",
+      "address": "",
+      "score": 7,
+      "reason": "Comedy at Harpoon brewery - good combination of comedy and casual venue",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:comedy",
+      "name": "Downtown Comedy Club",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/25/downtown-comedy-club-tickets",
+      "start": "2026-04-25T20:00",
+      "venue": "Democracy Brewing",
+      "address": "",
+      "score": 7,
+      "reason": "Comedy club show - classic date venue",
       "_proximity": 3
     },
     {
@@ -2656,184 +2486,160 @@
       "_proximity": 3
     },
     {
-      "source": "Gardner Museum",
-      "name": "You Are What You Collect: Cyanotype Portraits",
-      "description": "Polly Thayer Starr Visiting Studio Artist Ally Schmaling invites you to explore cyanotypes, one of the earliest photographic techniques, as you create images of small collections that might tell a puzzle of a story about you. Free with Museum Admission.",
-      "url": "https://www.gardnermuseum.org/calendar",
-      "start": "2026-04-18",
-      "venue": "Isabella Stewart Gardner Museum",
-      "address": "Boston, MA",
-      "score": 7,
-      "reason": "Interactive art workshop experience, creative date activity",
-      "_proximity": 3
-    },
-    {
-      "source": "Gardner Museum",
-      "name": "You Are What You Collect: Cyanotype Portraits",
-      "description": "Polly Thayer Starr Visiting Studio Artist Ally Schmaling invites you to explore cyanotypes, one of the earliest photographic techniques, as you create images of small collections that might tell a puzzle of a story about you. Free with Museum Admission.",
-      "url": "https://www.gardnermuseum.org/calendar",
-      "start": "2026-04-25",
-      "venue": "Isabella Stewart Gardner Museum",
-      "address": "Boston, MA",
-      "score": 7,
-      "reason": "Interactive art workshop experience, creative date activity",
-      "_proximity": 3
-    },
-    {
-      "source": "Gardner Museum",
-      "name": "Butter Quartet",
-      "description": "Butter Quartet, a period-instrument string quartet, presents a program exploring the origins of the Classical period string quartet.",
-      "url": "https://www.gardnermuseum.org/calendar",
-      "start": "2026-04-26",
-      "venue": "Isabella Stewart Gardner Museum",
-      "address": "Boston, MA",
-      "score": 7,
-      "reason": "Chamber music performance, intimate cultural date",
-      "_proximity": 3
-    },
-    {
-      "source": "Gardner Museum",
-      "name": "Botanical Talk & Tour",
-      "description": "Join a member of the Isabella Stewart Gardner Museum horticulture staff for a presentation about the role of plants at the Museum, past and present, followed by an hour-long guided experience through the galleries.",
-      "url": "https://www.gardnermuseum.org/calendar",
-      "start": "2026-05-04",
-      "venue": "Isabella Stewart Gardner Museum",
-      "address": "Boston, MA",
-      "score": 7,
-      "reason": "Guided museum tour with horticulture focus, cultured date experience",
-      "_proximity": 3
-    },
-    {
-      "source": "SoWa Boston",
-      "name": "First Friday",
-      "description": "On the First Friday of every month, the artists, galleries, shops and showrooms of the SoWa Art + Design District in the South End open their doors to the public for an evening of art, culture and community.",
-      "url": "https://www.sowaboston.com/events/",
-      "start": "2026-05-01T17:00",
-      "venue": "SoWa Art + Design District",
-      "address": "Boston, Massachusetts",
-      "score": 7,
-      "reason": "First Friday gallery district event, art browsing and culture ideal for date",
-      "_proximity": 3
-    },
-    {
-      "source": "Harvard Kennedy School",
-      "name": "DOGE Revisited: The State of Public Institutions and the Civil Service",
-      "description": "Dave Lebryk, former Fiscal Assistant Secretary of the U.S. Treasury, explores the current state of public institutions in the wake of DOGE's attempted spending cuts.",
-      "url": "https://www.hks.harvard.edu/events",
-      "start": "2026-04-20T12:00",
-      "venue": "Harvard Kennedy School",
-      "address": "Cambridge, MA",
-      "score": 7,
-      "reason": "Government/public institutions expertise event with notable speaker (former Treasury official). Fits civic/government category as valuable date conversation.",
-      "_proximity": 5
-    },
-    {
-      "source": "Harvard Kennedy School",
-      "name": "Speaking Truth to Power - Ashley Judd on Human Rights",
-      "description": "Conversation with Ashley Judd, author, actor and humanitarian activist, about human rights.",
-      "url": "https://www.hks.harvard.edu/events",
-      "start": "2026-04-20T16:30",
-      "venue": "Harvard Kennedy School",
-      "address": "Cambridge, MA",
-      "score": 7,
-      "reason": "Celebrity conversation on human rights with actress Ashley Judd. Engaging cultural/intellectual event suitable for a date.",
-      "_proximity": 5
-    },
-    {
-      "source": "Boston Fashion Week",
-      "name": "32nd Annual Boston Fashion Week",
-      "description": "The official Boston Fashion Week event running October 4-10, 2026. The fall fashion season runs September through November with various designer shows, events, and fashion experiences.",
-      "url": "https://www.bostonfashionweek.com/",
-      "start": "2026-10-04",
-      "venue": "Multiple venues",
-      "address": "Boston, Massachusetts",
-      "score": 7,
-      "reason": "Major fashion week event. Upscale cultural/fashion experience suitable for date activity.",
-      "_proximity": 3
-    },
-    {
-      "source": "IG: Royale Boston",
-      "name": "Party Pupils - Yacht House Summer",
-      "description": "Party Pupils brings Yacht House Summer to Boston.",
-      "url": "https://www.instagram.com/p/DXPf4pgkdGy/",
-      "start": "2026-07-17",
-      "venue": "Royale",
-      "address": "Boston, MA",
-      "score": 7,
-      "reason": "Summer rooftop party with yacht theme \u2014 good nightlife/social date event",
-      "_proximity": 3
-    },
-    {
-      "source": "IG: Boston Calendar",
-      "name": "Thai Market (Songkran Festival)",
-      "description": "The 2nd annual Thai Market celebrating Songkran (Thai New Year) with artisan vendors, street food, live performances, and costume contests. Free and open to the public.",
-      "url": "https://www.instagram.com/thebostoncal/",
-      "start": "2026-04-18",
-      "venue": "Brattle Street",
-      "address": "Cambridge, MA",
-      "score": 7,
-      "reason": "Thai cultural festival with food, vendors, and live performances \u2014 fun experiential date",
-      "_proximity": 5
-    },
-    {
-      "source": "IG: Boston Calendar",
-      "name": "Avra Estiatorio Boston Grand Opening",
-      "description": "Grand opening of this Greek coastal cuisine restaurant, opening at 4pm. Concept inspired by simple Greek cooking and relaxed meals by the water.",
-      "url": "https://www.instagram.com/thebostoncal/",
-      "start": "2026-04-15",
-      "venue": "Avra Estiatorio",
-      "address": "Boston, MA",
-      "score": 7,
-      "reason": "Upscale Greek restaurant grand opening \u2014 good food & drink date opportunity",
-      "_proximity": 3
-    },
-    {
-      "source": "IG: Harvard Art Museums",
-      "name": "P\u0131nar \u00d6\u011frenci: Gl\u00fcck auf in Deutschland",
-      "description": "The first major U.S. installation by Berlin-based artist P\u0131nar \u00d6\u011frenci, featuring her 2024 film and five related collages addressing postwar German identity and immigrant experiences. Displayed alongside historical photographs from the Busch-Reisinger Museum's collection.",
-      "url": "https://www.instagram.com/p/DXPSxAblHbo/",
-      "start": "2026-04-17",
-      "venue": "Harvard Art Museums, Gallery 1120",
-      "address": "Cambridge, MA",
-      "score": 7,
-      "reason": "Contemporary art exhibition on identity and immigration \u2014 museum date with culturally significant work",
-      "_proximity": 5
-    },
-    {
-      "source": "IG: Gardner Museum",
-      "name": "Rachel Barton Pine plays viola d'amore on WCRB In Concert",
-      "description": "Rachel Barton Pine performs on an 18th Century viola d'amore from the Isabella Stewart Gardner Museum's collection, originally gifted to Isabella by composer Charles Loeffler in 1903.",
-      "url": "https://classical.org/inconcert",
-      "start": "2026-04-12",
-      "venue": "WCRB In Concert",
+      "source": "WBUR Events",
+      "name": "'London Falling': New Yorker writer Patrick Radden Keefe on a tragic death in a transformed city",
+      "description": "New Yorker writer Patrick Radden Keefe discusses a tragic death in a transformed city.",
+      "url": "https://www.wbur.org/events",
+      "start": "2026-04-21",
+      "venue": "",
       "address": "",
       "score": 7,
-      "reason": "Live classical music performance with rare 18th-century instrument \u2014 quality arts & culture date",
-      "_proximity": 3
+      "reason": "WBUR CitySpace has upscale literary, music, and cultural events perfect for date nights - includes author talks, live music, podcast recordings"
     },
     {
-      "source": "IG: MFA Boston",
-      "name": "Art in Bloom",
-      "description": "50th anniversary celebration featuring stunning floral arrangements, floral workshops, talks, and special dining and shopping. Includes free admission for Boston students and families on Family Day Sunday, May 3.",
-      "url": "https://www.mfaboston.org",
+      "source": "WBUR Events",
+      "name": "The Mega Awesome Super Huge Wicked Fun Podcast Playdate",
+      "description": "A podcast playdate event.",
+      "url": "https://www.wbur.org/events",
+      "start": "2026-04-25",
+      "venue": "",
+      "address": "",
+      "score": 7,
+      "reason": "WBUR CitySpace has upscale literary, music, and cultural events perfect for date nights - includes author talks, live music, podcast recordings"
+    },
+    {
+      "source": "WBUR Events",
+      "name": "'This Is Not About Running': running phenom Mary Cain tells her story",
+      "description": "Running phenom Mary Cain shares her story.",
+      "url": "https://www.wbur.org/events",
+      "start": "2026-04-30",
+      "venue": "",
+      "address": "",
+      "score": 7,
+      "reason": "WBUR CitySpace has upscale literary, music, and cultural events perfect for date nights - includes author talks, live music, podcast recordings"
+    },
+    {
+      "source": "WBUR Events",
+      "name": "'The Sporkful' live",
+      "description": "Live performance of The Sporkful podcast.",
+      "url": "https://www.wbur.org/events",
       "start": "2026-05-01",
-      "venue": "Museum of Fine Arts Boston",
-      "address": "Boston, Massachusetts",
+      "venue": "",
+      "address": "",
       "score": 7,
-      "reason": "Art in Bloom with floral arrangements, workshops, and special dining \u2014 multi-activity spring date",
+      "reason": "WBUR CitySpace has upscale literary, music, and cultural events perfect for date nights - includes author talks, live music, podcast recordings"
+    },
+    {
+      "source": "WBUR Events",
+      "name": "'Science Friday' live with Ira Flatow",
+      "description": "Science Friday live event hosted by Ira Flatow.",
+      "url": "https://www.wbur.org/events",
+      "start": "2026-05-04",
+      "venue": "",
+      "address": "",
+      "score": 7,
+      "reason": "WBUR CitySpace has upscale literary, music, and cultural events perfect for date nights - includes author talks, live music, podcast recordings"
+    },
+    {
+      "source": "WBUR Events",
+      "name": "FOUND Magazine's 25th anniversary tour with Davy Rothbart and Peter Rothbart",
+      "description": "FOUND Magazine celebrates its 25th anniversary with a tour featuring Davy Rothbart and Peter Rothbart.",
+      "url": "https://www.wbur.org/events",
+      "start": "2026-05-08",
+      "venue": "",
+      "address": "",
+      "score": 7,
+      "reason": "WBUR CitySpace has upscale literary, music, and cultural events perfect for date nights - includes author talks, live music, podcast recordings"
+    },
+    {
+      "source": "WBUR Events",
+      "name": "The WBUR Breakfast Club: JetBlue CEO Joanna Geraghty in conversation with Tiziana Dearing",
+      "description": "JetBlue CEO Joanna Geraghty in conversation with Tiziana Dearing.",
+      "url": "https://www.wbur.org/events",
+      "start": "2026-05-12",
+      "venue": "",
+      "address": "",
+      "score": 7,
+      "reason": "WBUR CitySpace has upscale literary, music, and cultural events perfect for date nights - includes author talks, live music, podcast recordings"
+    },
+    {
+      "source": "WBUR Events",
+      "name": "Stories from a warming world",
+      "description": "Event featuring stories from a warming world.",
+      "url": "https://www.wbur.org/events",
+      "start": "2026-05-13",
+      "venue": "",
+      "address": "",
+      "score": 7,
+      "reason": "WBUR CitySpace has upscale literary, music, and cultural events perfect for date nights - includes author talks, live music, podcast recordings"
+    },
+    {
+      "source": "WBUR Events",
+      "name": "The WBUR Festival",
+      "description": "Join WBUR for lively conversations, podcast tapings and musical performances on Friday, May 29 and Saturday, May 30.",
+      "url": "https://www.wbur.org/events",
+      "start": "2026-05-29",
+      "venue": "",
+      "address": "",
+      "score": 7,
+      "reason": "WBUR CitySpace has upscale literary, music, and cultural events perfect for date nights - includes author talks, live music, podcast recordings"
+    },
+    {
+      "source": "WBUR Events",
+      "name": "AMERICAN DREAMS: The Moth Mainstage at Somerville Theatre",
+      "description": "Five seasoned storytellers will share extraordinary, true stories that dig deep into the idea of the American Dream.",
+      "url": "https://www.wbur.org/events",
+      "start": "2026-06-04",
+      "venue": "Somerville Theatre",
+      "address": "",
+      "score": 7,
+      "reason": "WBUR CitySpace has upscale literary, music, and cultural events perfect for date nights - includes author talks, live music, podcast recordings",
+      "_proximity": 4
+    },
+    {
+      "source": "WBUR Events",
+      "name": "Innovating with Integrity: The Future of AI in Health Care",
+      "description": "Event focused on the future of AI in health care.",
+      "url": "https://www.wbur.org/events",
+      "start": "2026-04-29",
+      "venue": "",
+      "address": "",
+      "score": 7,
+      "reason": "WBUR CitySpace has upscale literary, music, and cultural events perfect for date nights - includes author talks, live music, podcast recordings"
+    },
+    {
+      "source": "WBUR Events",
+      "name": "Independent Film Festival Boston 2026",
+      "description": "Independent Film Festival Boston 2026.",
+      "url": "https://www.wbur.org/events",
+      "start": "2026-04-22",
+      "venue": "",
+      "address": "",
+      "score": 7,
+      "reason": "WBUR CitySpace has upscale literary, music, and cultural events perfect for date nights - includes author talks, live music, podcast recordings"
+    },
+    {
+      "source": "WBUR Events",
+      "name": "Theo Baker: 'How to Rule the World' at Harvard Book Store",
+      "description": "Theo Baker discusses 'How to Rule the World' at Harvard Book Store.",
+      "url": "https://www.wbur.org/events",
+      "start": "2026-05-21",
+      "venue": "Harvard Book Store",
+      "address": "",
+      "score": 7,
+      "reason": "WBUR CitySpace has upscale literary, music, and cultural events perfect for date nights - includes author talks, live music, podcast recordings",
       "_proximity": 3
     },
     {
-      "source": "IG: SoWa Boston",
-      "name": "SoWa First Friday Open Gallery Night",
-      "description": "Free monthly event featuring artist galleries, shops, and vintage market. Explore SoWa Artists Guild galleries and celebrate the vintage market.",
-      "url": "https://www.instagram.com/sowaboston/",
-      "start": "2026-05-01T17:00",
-      "venue": "SoWa Centre",
-      "address": "Boston, MA",
+      "source": "WBUR Events",
+      "name": "Tiny Desk Contest On The Road tour",
+      "description": "Tiny Desk Contest On The Road tour.",
+      "url": "https://www.wbur.org/events",
+      "start": "2026-07-07",
+      "venue": "",
+      "address": "",
       "score": 7,
-      "reason": "Gallery night with artist galleries and vintage market \u2014 cultural/art date activity",
-      "_proximity": 3
+      "reason": "WBUR CitySpace has upscale literary, music, and cultural events perfect for date nights - includes author talks, live music, podcast recordings"
     },
     {
       "source": "do617:film-theatre-performing-arts",
@@ -3222,66 +3028,6 @@
       "_proximity": 8
     },
     {
-      "source": "MIT List Visual Arts",
-      "name": "Lea Bertucci With Norbert Rodenkirchen and Olivia Block",
-      "description": "Special program featuring Lea Bertucci with Norbert Rodenkirchen and Olivia Block.",
-      "url": "https://listart.mit.edu/events-programs",
-      "start": "2026-04-18T19:30",
-      "venue": "MIT List Visual Arts Center",
-      "address": "Cambridge, MA",
-      "score": 6,
-      "reason": "Experimental music performance, cultured date for music lovers",
-      "_proximity": 5
-    },
-    {
-      "source": "MIT List Visual Arts",
-      "name": "The Lumpen and the Miscreant: Mary Walling Blackburn presents Cream Psychosis, in conversation with David Levine",
-      "description": "Public program featuring Mary Walling Blackburn presenting Cream Psychosis in conversation with David Levine.",
-      "url": "https://listart.mit.edu/events-programs",
-      "start": "2026-05-14T18:00",
-      "venue": "MIT List Visual Arts Center",
-      "address": "Cambridge, MA",
-      "score": 6,
-      "reason": "Art talk and conversation, cultured date experience",
-      "_proximity": 5
-    },
-    {
-      "source": "IG: Harvard Art Museums",
-      "name": "Celtic Art Across the Ages Symposium",
-      "description": "A daylong symposium featuring five guest speakers exploring Celtic art objects in the exhibition, discussing materials, making, contexts of use, and encounters between Iron Age populations and the Roman Empire. Free and open to all.",
-      "url": "https://www.instagram.com/harvardartmuseums/",
-      "start": "2026-04-11",
-      "venue": "Harvard Art Museums",
-      "address": "Cambridge, MA",
-      "score": 6,
-      "reason": "Free symposium on Celtic art with expert speakers \u2014 cultural/intellectual date for art-interested couple",
-      "_proximity": 5
-    },
-    {
-      "source": "IG: Harvard Art Museums",
-      "name": "Archaeological Exploration of Sardis Exhibition",
-      "description": "Exhibition featuring artful documentation, archival and contemporary photography, mosaic reconstructions, and a video exploring the Synagogue of Sardis, the largest ancient Jewish diaspora synagogue known to date. On view through June 7, 2026.",
-      "url": "https://www.instagram.com/p/DW6ymaIDUbS/",
-      "start": "2026-04-09",
-      "venue": "Harvard Art Museums, Gallery 3440",
-      "address": "Cambridge, MA",
-      "score": 6,
-      "reason": "Archaeological exhibition with photography and mosaics \u2014 museum date for history/art lovers",
-      "_proximity": 5
-    },
-    {
-      "source": "IG: Gardner Museum",
-      "name": "Picturing Isabella exhibition",
-      "description": "Exhibition featuring photographs and artwork related to the life and legacy of founder Isabella Stewart Gardner, on view through June 28, 2026.",
-      "url": "https://www.instagram.com/gardnermuseum/",
-      "start": "2026-04-18",
-      "venue": "Isabella Stewart Gardner Museum - Fenway Gallery",
-      "address": "Boston, Massachusetts",
-      "score": 6,
-      "reason": "Biographical photography exhibition \u2014 museum date through June 2026",
-      "_proximity": 8
-    },
-    {
       "source": "Boston Calendar",
       "name": "Posto South End- Happy Hour Deals!",
       "description": "",
@@ -3629,46 +3375,23 @@
     ]
   },
   "costs": {
-    "week": 1.2762,
-    "month": 3.0427,
-    "total": 4.3166,
+    "week": 1.4195,
+    "month": 3.1859,
+    "total": 4.4599,
     "runs": [
       {
-        "ts": "2026-04-18T14:52:59.787663",
-        "events_total": 658,
-        "events_cached": 0,
-        "events_scored": 658,
-        "cost_usd": 0.097353,
-        "duration_ms": 99213,
-        "models": {
-          "claude-haiku-4-5-20251001": 0.097353
-        }
-      },
-      {
-        "ts": "2026-04-18T14:56:46.352350",
-        "events_total": 658,
-        "events_cached": 0,
-        "events_scored": 658,
-        "cost_usd": 0.071198,
-        "duration_ms": 67676,
-        "models": {
-          "claude-haiku-4-5-20251001": 0.071198
-        }
-      },
-      {
-        "ts": "2026-04-18T23:21:29.232179",
+        "ts": "2026-04-19T08:16:34.229643",
         "persona": "unknown",
-        "events_total": 725,
-        "events_cached": 166,
-        "events_scored": 8,
-        "cost_usd": 0.02424,
-        "duration_ms": 26457,
+        "events_total": 657,
+        "events_cached": 38,
+        "events_scored": 364,
+        "cost_usd": 0.045561,
+        "duration_ms": 50159,
         "models": {
-          "claude-haiku-4-5-20251001": 0.02424
+          "claude-haiku-4-5-20251001": 0.045561
         },
         "by_stage": {
-          "fetch": 0.023288,
-          "score": 0.000952
+          "score": 0.045561
         },
         "source_counts": {},
         "deploy_why": "run",
@@ -3677,28 +3400,26 @@
           "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
         },
         "efficiency": {
-          "cache_hit_rate": 0.954,
-          "avg_hit_rate": 0.465,
-          "cost_per_scored_event": 0.00303,
+          "cache_hit_rate": 0.095,
+          "avg_hit_rate": 0.335,
+          "cost_per_scored_event": 0.00013,
           "notes": [
-            "Efficient \u2014 95% cache (166 cached, 8 scored), $0.0242"
+            "Cache 9% hit (38 cached, 364 scored) \u2014 many new events, normal on first daily run",
+            "High scoring volume (364 scored) \u2014 consider raising min_score to cut costs",
+            "Cache hit rate 9% vs recent avg 34% (38 cached / 364 scored) \u2014 possible new sources added or score cache cleared"
           ]
         }
       },
       {
-        "ts": "2026-04-19T08:11:00.637463",
+        "ts": "2026-04-19T09:45:13.885780",
         "persona": "unknown",
-        "events_total": 657,
-        "events_cached": 107,
-        "events_scored": 196,
-        "cost_usd": 0.019686,
-        "duration_ms": 20420,
-        "models": {
-          "claude-haiku-4-5-20251001": 0.019686
-        },
-        "by_stage": {
-          "score": 0.019686
-        },
+        "events_total": 642,
+        "events_cached": 162,
+        "events_scored": 0,
+        "cost_usd": 0,
+        "duration_ms": 0,
+        "models": {},
+        "by_stage": {},
         "source_counts": {},
         "deploy_why": "run",
         "netlify": {
@@ -3706,28 +3427,28 @@
           "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
         },
         "efficiency": {
-          "cache_hit_rate": 0.353,
-          "avg_hit_rate": 0.589,
-          "cost_per_scored_event": 0.0001,
+          "cache_hit_rate": 1.0,
+          "avg_hit_rate": 0.354,
+          "cost_per_scored_event": 0.0,
           "notes": [
-            "Cache 35% hit (107 cached, 196 scored) \u2014 many new events, normal on first daily run",
-            "Cache hit rate 35% vs recent avg 59% (107 cached / 196 scored) \u2014 possible new sources added or score cache cleared"
+            "Efficient \u2014 100% cache (162 cached, 0 scored), $0.0000"
           ]
         }
       },
       {
-        "ts": "2026-04-19T08:12:45.135422",
+        "ts": "2026-04-19T11:05:02.816777",
         "persona": "unknown",
-        "events_total": 657,
-        "events_cached": 216,
-        "events_scored": 368,
-        "cost_usd": 0.055509,
-        "duration_ms": 59412,
+        "events_total": 658,
+        "events_cached": 159,
+        "events_scored": 1,
+        "cost_usd": 0.08783,
+        "duration_ms": 107376,
         "models": {
-          "claude-haiku-4-5-20251001": 0.055509
+          "claude-haiku-4-5-20251001": 0.08783
         },
         "by_stage": {
-          "score": 0.055509
+          "fetch": 0.08704,
+          "score": 0.00079
         },
         "source_counts": {},
         "deploy_why": "run",
@@ -3736,12 +3457,65 @@
           "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
         },
         "efficiency": {
-          "cache_hit_rate": 0.37,
-          "avg_hit_rate": 0.46,
-          "cost_per_scored_event": 0.00015,
+          "cache_hit_rate": 0.994,
+          "avg_hit_rate": 0.554,
+          "cost_per_scored_event": 0.08783,
           "notes": [
-            "Cache 37% hit (216 cached, 368 scored) \u2014 many new events, normal on first daily run",
-            "High scoring volume (368 scored) \u2014 consider raising min_score to cut costs"
+            "Efficient \u2014 99% cache (159 cached, 1 scored), $0.0878"
+          ]
+        }
+      },
+      {
+        "ts": "2026-04-19T12:20:26.142694",
+        "persona": "unknown",
+        "events_total": 648,
+        "events_cached": 145,
+        "events_scored": 0,
+        "cost_usd": 0.009846,
+        "duration_ms": 11573,
+        "models": {
+          "claude-haiku-4-5-20251001": 0.009846
+        },
+        "by_stage": {
+          "fetch": 0.009846
+        },
+        "source_counts": {},
+        "deploy_why": "run",
+        "netlify": {
+          "total": 1000,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 1.0,
+          "avg_hit_rate": 0.562,
+          "cost_per_scored_event": 0.00985,
+          "notes": [
+            "Efficient \u2014 100% cache (145 cached, 0 scored), $0.0098"
+          ]
+        }
+      },
+      {
+        "ts": "2026-04-19T12:21:41.143257",
+        "persona": "unknown",
+        "events_total": 648,
+        "events_cached": 394,
+        "events_scored": 0,
+        "cost_usd": 0,
+        "duration_ms": 0,
+        "models": {},
+        "by_stage": {},
+        "source_counts": {},
+        "deploy_why": "run",
+        "netlify": {
+          "total": 1000,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 1.0,
+          "avg_hit_rate": 0.692,
+          "cost_per_scored_event": 0.0,
+          "notes": [
+            "Efficient \u2014 100% cache (394 cached, 0 scored), $0.0000"
           ]
         }
       }
@@ -3754,13 +3528,7 @@
     "Meetup": 4,
     "ticketmaster": 18,
     "Concertful Boston": 2,
-    "IG": 14,
-    "WBUR Events": 11,
-    "Gardner Museum": 4,
-    "SoWa Boston": 1,
-    "Harvard Kennedy School": 2,
-    "Boston Fashion Week": 1,
-    "MIT List Visual Arts": 2
+    "WBUR Events": 14
   },
   "source_urls": {
     "do617": "https://do617.com/events/food-drink",
@@ -3819,12 +3587,6 @@
     "Meetup": 4,
     "ticketmaster": 18,
     "Concertful Boston": 2,
-    "IG": 14,
-    "WBUR Events": 11,
-    "Gardner Museum": 4,
-    "SoWa Boston": 1,
-    "Harvard Kennedy School": 2,
-    "Boston Fashion Week": 1,
-    "MIT List Visual Arts": 2
+    "WBUR Events": 14
   }
 }
