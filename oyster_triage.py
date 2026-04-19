@@ -178,6 +178,8 @@ def display(deals: list[dict]):
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--rank", action="store_true", help="Re-rank existing triage data without re-researching")
+    parser.add_argument("--persona", default="brian",
+                        help="persona whose cached oyster_deals to read (default: brian)")
     args = parser.parse_args()
 
     if args.rank:
@@ -186,10 +188,12 @@ def main():
             print("No triage data yet. Run without --rank first.")
             sys.exit(1)
     else:
-        # load from oyster deals cache
-        cached = cache_get("oyster_deals")
+        # load from oyster deals cache — persona-scoped since the refactor,
+        # with legacy fallback for caches written by the pre-unification script
+        cached = cache_get(f"oyster_deals_{args.persona}") or cache_get("oyster_deals")
         if not cached:
-            print("No cached oyster deals. Run oyster_deals.py first.")
+            print(f"No cached oyster deals for persona '{args.persona}'. "
+                  f"Run `python3 oyster_deals.py --persona {args.persona} --force` first.")
             sys.exit(1)
 
         print(f"\nResearching {len(cached)} venues for quality + vibe...\n")
