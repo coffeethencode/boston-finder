@@ -373,6 +373,12 @@ def _extra_events_html(today: datetime, end_date: datetime) -> str:
 
 
 GITHUB_REPO  = os.path.expanduser("~/python-projects/boston-finder-repo")
+DATA_REPO    = os.path.expanduser("~/boston-finder-data")  # clone of data branch
+PERSONA_PATHS = {
+    "brian": "/",
+    "chloe": "/chloe",
+    "kirk":  "/kirk",
+}
 
 
 def _git_deploy(html: str, persona: str = "brian"):
@@ -406,6 +412,160 @@ def _git_deploy(html: str, persona: str = "brian"):
             print("  [deploy] no changes to push")
     except Exception as ex:
         print(f"  [deploy] failed: {ex}")
+
+
+def build_json(events: list[dict], today: datetime, days: int, persona: str = "brian") -> str:
+    """Serialize events + metadata to JSON for the data branch."""
+    from collections import Counter
+    from boston_finder import costs as _costs
+    from boston_finder.cache import get as _cache_get
+
+    # extra (low-priority) events from score cache
+    try:
+        from boston_finder.cache import _load_scored
+        all_scored = _load_scored()
+        key_prefix = f"{persona}:"
+        extra = [
+            {"name": v["name"], "score": v["score"], "reason": v.get("reason", ""), "url": k[len(key_prefix):]}
+            for k, v in all_scored.items()
+            if k.startswith(key_prefix) and 1 <= v.get("score", 0) <= 4 and v.get("name")
+        ]
+        extra.sort(key=lambda x: -x["score"])
+    except Exception:
+        extra = []
+
+    # oyster deals
+    try:
+        oyster = _cache_get(f"oyster_deals_{persona}") or _cache_get("oyster_deals") or []
+    except Exception:
+        oyster = []
+
+    # cost data
+    try:
+        s = _costs.get_stats()
+        runs = _costs.get_recent_runs(5)
+        netlify_credits = _costs._netlify_credits().strip().replace("🌐 Netlify: ", "")
+        cost_data = {
+            "week":    round(s["week"]["total_cost"], 4),
+            "month":   round(s["month"]["total_cost"], 4),
+            "total":   round(s["total"]["total_cost"], 4),
+            "runs":    runs,
+            "netlify": netlify_credits,
+        }
+    except Exception:
+        cost_data = {}
+
+    sources_shown = dict(Counter(e.get("source", "unknown").split(":")[0] for e in events))
+    sources = sources_shown  # backward compat
+
+    # source URL map for clickable pills in downstream UIs
+    try:
+        from boston_finder.sources import SOURCES as _SOURCES
+        _src_url_map: dict[str, str] = {}
+        for _s in _SOURCES:
+            if not _s.get("enabled"):
+                continue
+            _t = _s["type"]
+            if _t == "do617_category":
+                _src_url_map.setdefault("do617", f"https://do617.com/events/{_s['path']}")
+            elif _t == "luma":
+                _src_url_map.setdefault("luma", f"https://lu.ma/{_s['slug']}")
+            elif _t == "allevents_category":
+                _src_url_map.setdefault("allevents", f"https://allevents.in/boston/{_s['path']}")
+            elif _t == "ticketmaster":
+                _src_url_map["ticketmaster"] = "https://www.ticketmaster.com/discover/concerts/boston"
+            elif _t in ("scrape_url", "jsonld_url"):
+                _src_url_map[_s["name"]] = _s["url"]
+            elif _t == "eventbrite_api":
+                _src_url_map.setdefault("eventbrite", "https://www.eventbrite.com/d/ma--boston/all-events/")
+        source_url_map = _src_url_map
+    except Exception:
+        source_url_map = {}
+
+    try:
+        from boston_finder.personas import get_persona as _gp
+        _p = _gp(persona)
+        persona_prompt = _p.get("prompt", "")
+    except Exception:
+        persona_prompt = ""
+
+    # hot restaurants cache (shared across personas)
+    try:
+        _hr_path = os.path.expanduser("~/boston_hot_restaurants.json")
+        hot_restaurants = json.load(open(_hr_path)) if os.path.exists(_hr_path) else {}
+    except Exception:
+        hot_restaurants = {}
+
+    payload = {
+        "generated_at":   datetime.now().isoformat(),
+        "today":          today.strftime("%Y-%m-%d"),
+        "days":           days,
+        "persona":        persona,
+        "persona_prompt": persona_prompt,
+        "events": [
+            {k: v for k, v in e.items() if not k.startswith("_") or k in ("_proximity",)}
+            for e in events
+        ],
+        "extra_events":    extra[:50],
+        "oyster_deals":    oyster,
+        "hot_restaurants": hot_restaurants,
+        "costs":           cost_data,
+        "sources":         sources,
+        "source_urls":     source_url_map,
+        "source_stats":    sources_shown,
+    }
+    return json.dumps(payload, indent=2, default=str)
+
+
+def _git_push_json(json_str: str, persona: str = "brian"):
+    """Push persona.json to the data branch. No Netlify build triggered — zero credits."""
+    if not os.path.isdir(DATA_REPO):
+        print(f"  [data] data repo not found at {DATA_REPO} — skipping push")
+        return
+    try:
+        data_dir = os.path.join(DATA_REPO, "data")
+        os.makedirs(data_dir, exist_ok=True)
+        fpath = os.path.join(data_dir, f"{persona}.json")
+
+        try:
+            if open(fpath).read() == json_str:
+                print(f"  [data] {persona}.json unchanged — skipping push")
+                return
+        except Exception:
+            pass
+
+        with open(fpath, "w") as f:
+            f.write(json_str)
+
+        subprocess.run(["git", "-C", DATA_REPO, "pull", "--ff-only", "--quiet"], check=False)
+        subprocess.run(["git", "-C", DATA_REPO, "add", f"data/{persona}.json"], check=True)
+        result = subprocess.run(
+            ["git", "-C", DATA_REPO, "diff", "--cached", "--quiet"], capture_output=True
+        )
+        if result.returncode != 0:
+            ts = datetime.now().strftime("%Y-%m-%d %-I:%M %p")
+            subprocess.run(
+                ["git", "-C", DATA_REPO, "commit", "-m", f"data: {persona} {ts}"],
+                check=True, capture_output=True
+            )
+            subprocess.run(["git", "-C", DATA_REPO, "push"], check=True, capture_output=True)
+            print(f"  [data] pushed {persona}.json → data branch (0 deploy credits)")
+        else:
+            print(f"  [data] {persona}.json no diff after write")
+    except Exception as ex:
+        print(f"  [data] push failed: {ex}")
+
+
+def _sources_html(events: list[dict]) -> str:
+    from collections import Counter
+    counts = Counter(e.get("source", "unknown").split(":")[0] for e in events)
+    if not counts:
+        return ""
+    items = "".join(
+        f'<span class="src-pill">{src} <b>{n}</b></span>'
+        for src, n in counts.most_common()
+    )
+    return f'<div class="sources-bar">Sources: {items}</div>'
 
 
 def generate(events: list[dict], today: datetime, days: int, persona: str = "brian"):
@@ -543,6 +703,11 @@ def generate(events: list[dict], today: datetime, days: int, persona: str = "bri
   .cost-models {{ margin-top: 6px; display: flex; flex-wrap: wrap; gap: 8px; }}
   .cost-model  {{ background: #1e1e1e; border: 1px solid #2a2a2a; border-radius: 4px;
                   padding: 2px 8px; font-size: 0.72rem; color: #666; }}
+  .sources-bar {{ font-size: 0.75rem; color: #555; margin-bottom: 20px;
+                  display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }}
+  .src-pill    {{ background: #1a1a1a; border: 1px solid #2a2a2a; border-radius: 4px;
+                  padding: 2px 8px; }}
+  .src-pill b  {{ color: #888; }}
   .footer      {{ margin-top: 40px; font-size: 0.75rem; color: #555; }}
   .oyster-bar  {{ background: #0a1a0a; border: 1px solid #1a3a1a; border-radius: 8px;
                   padding: 14px 16px; margin-bottom: 24px; }}
@@ -609,6 +774,7 @@ def generate(events: list[dict], today: datetime, days: int, persona: str = "bri
   <h1>{title_str}</h1>
   <div class="sub">{today.strftime('%B %-d')} – {end_date.strftime('%B %-d, %Y')} &nbsp;·&nbsp; {len(events)} events</div>
   {_cost_html()}
+  {_sources_html(events)}
   {_oyster_html(persona)}
   <div class="day-filter">
     {day_pills}
@@ -699,4 +865,5 @@ def generate(events: list[dict], today: datetime, days: int, persona: str = "bri
         print("  [deploy] skipped by test mode")
         return
 
+    _git_push_json(build_json(events, today, days, persona), persona)
     _git_deploy(html, persona=persona)
