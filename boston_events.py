@@ -29,6 +29,7 @@ from boston_finder.preferences  import hard_skip_filter
 from boston_finder.location     import location_filter
 from boston_finder.personas     import active_personas, get_persona, get_prompt
 from boston_finder               import costs
+from boston_finder               import event_store
 
 LOCAL_OUTPUTS = {
     "brian": os.path.expanduser("~/boston_events.html"),
@@ -107,7 +108,13 @@ def fetch_shared(days: int) -> list[dict]:
                 all_events.append(e)
         time.sleep(0.3)
 
-    return hard_skip_filter(sports_filter(deduplicate(all_events)))
+    all_events = hard_skip_filter(sports_filter(deduplicate(all_events)))
+    try:
+        event_store.write_events(all_events, fetched_at=datetime.now())
+        print(f"  → persisted {len(all_events)} events to event store")
+    except Exception as ex:
+        print(f"  ⚠️  event_store.write_events failed: {ex}")
+    return all_events
 
 
 def run_persona(persona_name: str, days: int, no_ai: bool, shared_events: list[dict] | None = None):
