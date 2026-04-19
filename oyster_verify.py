@@ -322,3 +322,175 @@ def _extract_hours(deal_str: str) -> str:
 
 if __name__ == "__main__":
     main()
+
+
+# ── deal extractors ────────────────────────────────────────────────────────────
+
+_PRICE_PATTERNS = [
+    # ranges: $1 - $2 oysters (en/em dashes, optional variety words before oysters)
+    (r"\$(\d+(?:\.\d+)?)\s*[-\u2013\u2014]\s*\$(\d+(?:\.\d+)?)\s+(?:\w+\s+)*oysters?",
+     lambda m: f"${m.group(1)}-${m.group(2)}"),
+    # simple: $1 oysters, $1.50 each oyster, $1 Duxbury oysters, $1.50 Island Creek oysters
+    # allow up to 3 words between price and oysters (variety names, "each", etc.)
+    (r"\$(\d+(?:\.\d+)?)\s+(?:\w+\s+){0,3}oysters?",
+     lambda m: f"${m.group(1)}"),
+    # half-price oysters / half price raw bar
+    (r"(?i)half[- ]?price\s+(?:\w+\s+)*(?:oysters?|raw\s+bar)",
+     lambda m: "half-price"),
+    # BOGO
+    (r"(?i)\bBOGO\s+(?:\w+\s+)*oysters?",
+     lambda m: "BOGO"),
+    # 2 for 1
+    (r"(?i)\b2\s+for\s+1\s+(?:\w+\s+)*oysters?",
+     lambda m: "2-for-1"),
+    # dollar oysters
+    (r"(?i)\bdollar\s+oysters?",
+     lambda m: "dollar"),
+    # buck a shuck
+    (r"(?i)\bbuck[- ]?a[- ]?shuck\b",
+     lambda m: "buck-a-shuck"),
+]
+
+
+_DAY_ABBR = {
+    "mon": "Mon", "monday": "Mon", "mondays": "Mon",
+    "tue": "Tue", "tues": "Tue", "tuesday": "Tue", "tuesdays": "Tue",
+    "wed": "Wed", "weds": "Wed", "wednesday": "Wed", "wednesdays": "Wed",
+    "thu": "Thu", "thur": "Thu", "thurs": "Thu", "thursday": "Thu", "thursdays": "Thu",
+    "fri": "Fri", "friday": "Fri", "fridays": "Fri",
+    "sat": "Sat", "saturday": "Sat", "saturdays": "Sat",
+    "sun": "Sun", "sunday": "Sun", "sundays": "Sun",
+}
+_DAY_ORDER = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"]
+_ALL_DAYS = list(_DAY_ORDER)
+
+
+def _expand_day_range(start: str, end: str) -> list[str]:
+    s, e = _DAY_ABBR[start.lower()], _DAY_ABBR[end.lower()]
+    si, ei = _DAY_ORDER.index(s), _DAY_ORDER.index(e)
+    if si <= ei:
+        return _DAY_ORDER[si: ei + 1]
+    return _DAY_ORDER[si:] + _DAY_ORDER[: ei + 1]
+
+
+def _parse_time(time_str: str, fallback_ampm: str = "") -> str | None:
+    """Parse '5pm' / '5 PM' / '9:30pm' / '17:00' → 'HH:MM' 24h.
+
+    fallback_ampm is used when time_str has no AM/PM suffix of its own
+    (e.g. the start of '5-6pm' where only the end carries the suffix).
+
+    When no AM/PM can be determined and the hour is 1-8, we assume PM
+    (happy hour heuristic: nobody drinks oysters at 4 AM).
+    """
+    m = re.match(r"\s*(\d{1,2})(?::(\d{2}))?\s*([apAP]\.?[mM]\.?)?\s*$", time_str.strip())
+    if not m:
+        return None
+    hour = int(m.group(1))
+    minute = int(m.group(2) or "0")
+    ampm = (m.group(3) or fallback_ampm).lower().replace(".", "")
+    if not ampm and 1 <= hour <= 8:
+        ampm = "pm"  # happy-hour heuristic
+    if ampm == "pm" and hour < 12:
+        hour += 12
+    elif ampm == "am" and hour == 12:
+        hour = 0
+    return f"{hour:02d}:{minute:02d}"
+
+
+def _extract_ampm(time_str: str) -> str:
+    """Return 'am' or 'pm' if time_str ends with an AM/PM suffix, else ''."""
+    m = re.search(r"([apAP]\.?[mM]\.?)\s*$", time_str.strip())
+    if m:
+        return m.group(1).lower().replace(".", "")
+    return ""
+
+
+# Recognize day tokens separated by ' ', '-', '\u2013', or '\u2014'
+_DAY_TOKEN = r"(?:mon|tues?|tue|wed(?:nes)?|thur?s?|fri|sat|sun)(?:day)?(?:s)?"
+_TIME_TOKEN = r"\d{1,2}(?::\d{2})?\s*[apAP]?\.?[mM]?\.?"
+
+_RANGE_RE = re.compile(
+    rf"(?i)({_DAY_TOKEN})\s*[-\u2013\u2014to]+\s*({_DAY_TOKEN})\s+({_TIME_TOKEN})\s*[-\u2013\u2014]\s*({_TIME_TOKEN})"
+)
+_LIST_RE = re.compile(
+    rf"(?i)({_DAY_TOKEN})\s+({_DAY_TOKEN})\s+({_DAY_TOKEN})\s+({_TIME_TOKEN})\s*[-\u2013\u2014]\s*({_TIME_TOKEN})"
+)
+_SINGLE_RE = re.compile(
+    rf"(?i)({_DAY_TOKEN})\s+({_TIME_TOKEN})\s*[-\u2013\u2014]\s*({_TIME_TOKEN})"
+)
+_DAILY_RE = re.compile(rf"(?i)\bdaily\s+({_TIME_TOKEN})\s*[-\u2013\u2014]\s*({_TIME_TOKEN})")
+_OPEN_SOLDOUT_RE = re.compile(
+    rf"(?i)({_DAY_TOKEN})\s+({_TIME_TOKEN})\s+until\s+sold\s+out"
+)
+_DAILY_STARTING_RE = re.compile(rf"(?i)\bdaily\s+starting\s+at\s+({_TIME_TOKEN})")
+
+
+def _parse_window(text: str) -> dict | None:
+    """Attempt to parse a single window. Return {{days, start, end}} or None."""
+    # _DAILY_STARTING_RE before _DAILY_RE (more specific)
+    m = _DAILY_STARTING_RE.search(text)
+    if m:
+        return {"days": list(_ALL_DAYS), "start": _parse_time(m.group(1)), "end": None}
+
+    m = _DAILY_RE.search(text)
+    if m:
+        end_str = m.group(2)
+        fallback = _extract_ampm(end_str)
+        return {"days": list(_ALL_DAYS),
+                "start": _parse_time(m.group(1), fallback),
+                "end": _parse_time(end_str)}
+
+    # _OPEN_SOLDOUT_RE before _SINGLE_RE (open-ended, no end time)
+    m = _OPEN_SOLDOUT_RE.search(text)
+    if m:
+        return {"days": [_DAY_ABBR[m.group(1).lower()]], "start": _parse_time(m.group(2)), "end": None}
+
+    # _RANGE_RE before _SINGLE_RE (day ranges take priority)
+    m = _RANGE_RE.search(text)
+    if m:
+        days = _expand_day_range(m.group(1), m.group(2))
+        end_str = m.group(4)
+        fallback = _extract_ampm(end_str)
+        return {"days": days,
+                "start": _parse_time(m.group(3), fallback),
+                "end": _parse_time(end_str)}
+
+    # _LIST_RE: explicit 3-day lists like "Tue Wed Thu 4-6"
+    m = _LIST_RE.search(text)
+    if m:
+        days = [_DAY_ABBR[m.group(i).lower()] for i in range(1, 4)]
+        end_str = m.group(5)
+        fallback = _extract_ampm(end_str)
+        return {"days": days,
+                "start": _parse_time(m.group(4), fallback),
+                "end": _parse_time(end_str)}
+
+    m = _SINGLE_RE.search(text)
+    if m:
+        end_str = m.group(3)
+        fallback = _extract_ampm(end_str)
+        return {"days": [_DAY_ABBR[m.group(1).lower()]],
+                "start": _parse_time(m.group(2), fallback),
+                "end": _parse_time(end_str)}
+
+    return None
+
+
+def extract_hours(text: str) -> dict | None:
+    """Return {'windows': [...]} or None if no window found."""
+    segments = re.split(r"[;\n]", text)
+    windows = []
+    for seg in segments:
+        w = _parse_window(seg)
+        if w and w["start"]:
+            windows.append(w)
+    return {"windows": windows} if windows else None
+
+
+def extract_price(text: str) -> str | None:
+    """Return a normalized price label from oyster-deal text, or None."""
+    for pattern, formatter in _PRICE_PATTERNS:
+        m = re.search(pattern, text)
+        if m:
+            return formatter(m)
+    return None
