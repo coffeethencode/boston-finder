@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# ruff: noqa: E402  # deliberate: sys.path.insert must run before package imports
 """
 Oyster deal triage — combines deal score, venue quality, proximity, and your ratings
 into a single ranked list sorted by what's actually worth going to.

@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# ruff: noqa: E402  # deliberate: sys.path.insert must run before package imports
 """
 Oyster venue verification.
 

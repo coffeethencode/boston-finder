@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# ruff: noqa: E402  # deliberate: sys.path.insert must run before package imports
 """
 Boston oyster deals finder.
 Runs weekly — builds a ranked list of where to get dollar/cheap oysters,
@@ -53,14 +54,21 @@ def load_verify_status() -> dict:
 
 def sort_by_proximity(deals: list[dict], persona: str = "brian") -> list[dict]:
     """Sort deals by proximity score for a given persona (highest first)."""
-    prox_table = get_proximity(persona) or PROXIMITY
+    # `is not None` instead of `or` so a persona can explicitly opt into an
+    # empty proximity table (= "no custom bonuses") without falling back to
+    # the default one. Today no persona does this, but the semantics matter.
+    persona_prox = get_proximity(persona)
+    prox_table = persona_prox if persona_prox is not None else PROXIMITY
 
     def rank_key(d):
         address = (d.get("venue", "") + " " + d.get("address", "")).strip()
         prox = proximity_score(address, prox_table)
         d["_proximity"] = prox
         d["_proximity_label"] = proximity_label(prox)
-        # secondary sort: inactive to bottom, then by AI score
+        # Sort key is (inactive, -prox, -score) and ascending. Translation:
+        #   active before inactive (0 < 1)
+        #   higher proximity first (negated → bigger prox sorts lower)
+        #   higher AI score first (negated below → bigger score sorts lower)
         inactive = 1 if d.get("_inactive") else 0
         ai_score = -(d.get("score") or 0)
         return (inactive, -prox, ai_score)

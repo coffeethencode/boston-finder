@@ -411,14 +411,17 @@ def _git_deploy(html: str, persona: str = "brian"):
 
 def build_json(events: list[dict], today: datetime, days: int, persona: str = "brian") -> str:
     """Serialize events + metadata to JSON for the data branch."""
+    import sys as _sys
     from collections import Counter
     from boston_finder import costs as _costs
-    from boston_finder.cache import get as _cache_get
+    from boston_finder.cache import get as _cache_get, get_all_scored as _get_all_scored
+
+    def _warn(section: str, ex: Exception):
+        _sys.stderr.write(f"  [build_json] {section} fallback: {type(ex).__name__}: {ex}\n")
 
     # extra (low-priority) events from score cache
     try:
-        from boston_finder.cache import _load_scored
-        all_scored = _load_scored()
+        all_scored = _get_all_scored()
         key_prefix = f"{persona}:"
         extra = [
             {"name": v["name"], "score": v["score"], "reason": v.get("reason", ""), "url": k[len(key_prefix):]}
@@ -426,13 +429,15 @@ def build_json(events: list[dict], today: datetime, days: int, persona: str = "b
             if k.startswith(key_prefix) and 1 <= v.get("score", 0) <= 4 and v.get("name")
         ]
         extra.sort(key=lambda x: -x["score"])
-    except Exception:
+    except Exception as ex:
+        _warn("extra_events", ex)
         extra = []
 
     # oyster deals
     try:
         oyster = _cache_get(f"oyster_deals_{persona}") or _cache_get("oyster_deals") or []
-    except Exception:
+    except Exception as ex:
+        _warn("oyster_deals", ex)
         oyster = []
 
     # cost data
@@ -447,7 +452,8 @@ def build_json(events: list[dict], today: datetime, days: int, persona: str = "b
             "runs":    runs,
             "netlify": netlify_credits,
         }
-    except Exception:
+    except Exception as ex:
+        _warn("cost_data", ex)
         cost_data = {}
 
     sources_shown = dict(Counter(e.get("source", "unknown").split(":")[0] for e in events))
@@ -474,21 +480,24 @@ def build_json(events: list[dict], today: datetime, days: int, persona: str = "b
             elif _t == "eventbrite_api":
                 _src_url_map.setdefault("eventbrite", "https://www.eventbrite.com/d/ma--boston/all-events/")
         source_url_map = _src_url_map
-    except Exception:
+    except Exception as ex:
+        _warn("source_url_map", ex)
         source_url_map = {}
 
     try:
         from boston_finder.personas import get_persona as _gp
         _p = _gp(persona)
         persona_prompt = _p.get("prompt", "")
-    except Exception:
+    except Exception as ex:
+        _warn("persona_prompt", ex)
         persona_prompt = ""
 
     # hot restaurants cache (shared across personas)
     try:
         _hr_path = os.path.expanduser("~/boston_hot_restaurants.json")
         hot_restaurants = json.load(open(_hr_path)) if os.path.exists(_hr_path) else {}
-    except Exception:
+    except Exception as ex:
+        _warn("hot_restaurants", ex)
         hot_restaurants = {}
 
     payload = {

@@ -27,6 +27,14 @@ def _save_scored(data: dict):
         json.dump(data, f, indent=2)
 
 
+def get_all_scored() -> dict:
+    """Public read of the full scored-events store.
+
+    Use this from external consumers (e.g. html_output.build_json) instead of
+    reaching into the private _load_scored()."""
+    return _load_scored()
+
+
 def get_scored(url: str, persona: str = "brian") -> dict | None:
     """Return cached score+reason for a URL, or None if unseen/expired."""
     store = _load_scored()
