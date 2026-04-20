@@ -1,7 +1,7 @@
 {
-  "generated_at": "2026-04-19T19:00:24.684884",
-  "today": "2026-04-19",
-  "days": 14,
+  "generated_at": "2026-04-20T08:40:42.556098",
+  "today": "2026-04-20",
+  "days": 7,
   "persona": "brian",
   "persona_prompt": "You are filtering Boston events for someone who wants high-status, interesting things to attend:\n- Oyster happy hours or upscale food/drink (wine dinners, tastings, chef's tables)\n- Galas, fundraisers, charity benefits, receptions, award ceremonies\n- Events where they can attend as a subject matter expert: public records law, open meeting law, FOIA, government transparency, civic accountability, journalism\n- High-status professional networking, panels, policy forums\n- Fashion/model events, press events, media events, bikini/swimwear shows, fitness model showcases, promotional model events\n- Recurring upscale nightlife events, scene-y bar/club nights, influencer events\n- Anything exclusive, influential, or scene-y\n\nNOT wanted: pure sports games, road races, youth sports, basic trivia nights at chains.",
   "events": [
@@ -45,9 +45,9 @@
     {
       "source": "Liberty Hotel events",
       "name": "Fashionably LATE Thursdays - Lavish Living Clothing",
-      "description": "Fashion show featuring Lavish Living Clothing with models on catwalk, music by DJ Skoolyahd starting at 8:30pm, and runway from 9pm-10pm.",
+      "description": "Interactive fashion show featuring models on catwalk and throughout lobby, with DJ music starting at 8:30pm. 3 rounds and 12 looks from designer Lavish Living Clothing.",
       "url": "https://libertyhotel.com/liberty-affairs/fashionably-late/",
-      "start": "2026-04-23",
+      "start": "2026-04-23T21:00",
       "venue": "The Liberty Hotel",
       "address": "Boston, Massachusetts",
       "score": 9,
@@ -57,9 +57,9 @@
     {
       "source": "Liberty Hotel events",
       "name": "Fashionably LATE Thursdays - Kaybea Collection",
-      "description": "Fashion show featuring Kaybea Collection with models on catwalk, music by DJ Skoolyahd starting at 8:30pm, and runway from 9pm-10pm.",
+      "description": "Interactive fashion show featuring models on catwalk and throughout lobby, with DJ music starting at 8:30pm. 3 rounds and 12 looks from designer Kaybea Collection.",
       "url": "https://libertyhotel.com/liberty-affairs/fashionably-late/",
-      "start": "2026-04-30",
+      "start": "2026-04-30T21:00",
       "venue": "The Liberty Hotel",
       "address": "Boston, Massachusetts",
       "score": 9,
@@ -69,9 +69,9 @@
     {
       "source": "Liberty Hotel events",
       "name": "Fashionably LATE Thursdays - Thornpetal",
-      "description": "Fashion show featuring Thornpetal with models on catwalk, music by DJ Skoolyahd starting at 8:30pm, and runway from 9pm-10pm.",
+      "description": "Interactive fashion show featuring models on catwalk and throughout lobby, with DJ music starting at 8:30pm. 3 rounds and 12 looks from designer Thornpetal.",
       "url": "https://libertyhotel.com/liberty-affairs/fashionably-late/",
-      "start": "2026-05-07",
+      "start": "2026-05-07T21:00",
       "venue": "The Liberty Hotel",
       "address": "Boston, Massachusetts",
       "score": 9,
@@ -81,9 +81,9 @@
     {
       "source": "Liberty Hotel events",
       "name": "Fashionably LATE Thursdays - Akmaral Bridal",
-      "description": "Fashion show featuring Akmaral Bridal with models on catwalk, music by DJ Skoolyahd starting at 8:30pm, and runway from 9pm-10pm.",
+      "description": "Interactive fashion show featuring models on catwalk and throughout lobby, with DJ music starting at 8:30pm. 3 rounds and 12 looks from designer Akmaral Bridal.",
       "url": "https://libertyhotel.com/liberty-affairs/fashionably-late/",
-      "start": "2026-05-14",
+      "start": "2026-05-14T21:00",
       "venue": "The Liberty Hotel",
       "address": "Boston, Massachusetts",
       "score": 9,
@@ -93,9 +93,9 @@
     {
       "source": "Liberty Hotel events",
       "name": "Fashionably LATE Thursdays - Max & Riley",
-      "description": "Fashion show featuring Max & Riley with models on catwalk, music by DJ Skoolyahd starting at 8:30pm, and runway from 9pm-10pm.",
+      "description": "Interactive fashion show featuring models on catwalk and throughout lobby, with DJ music starting at 8:30pm. 3 rounds and 12 looks from designer Max & Riley.",
       "url": "https://libertyhotel.com/liberty-affairs/fashionably-late/",
-      "start": "2026-05-21",
+      "start": "2026-05-21T21:00",
       "venue": "The Liberty Hotel",
       "address": "Boston, Massachusetts",
       "score": 9,
@@ -103,9 +103,21 @@
       "_proximity": 3
     },
     {
+      "source": "Boston Fashion Week",
+      "name": "32nd Annual Boston Fashion Week",
+      "description": "The official Boston Fashion Week event running October 4-10, 2026, featuring designer shows, events, and fashion industry activities throughout the week.",
+      "url": "https://www.bostonfashionweek.com/",
+      "start": "2026-10-04",
+      "venue": "Multiple venues",
+      "address": "Boston, Massachusetts",
+      "score": 9,
+      "reason": "Boston Fashion Week \u2014 directly matches high-status fashion event preference; major annual event with runway shows and designer presentations",
+      "_proximity": 3
+    },
+    {
       "source": "IG: Royale Boston",
       "name": "Party Pupils - Yacht House Summer",
-      "description": "Party Pupils brings Yacht House Summer to Boston.",
+      "description": "Party Pupils is bringing Yacht House Summer to Boston on the boat.",
       "url": "https://www.instagram.com/p/DXPf4pgkdGy/",
       "start": "2026-07-17",
       "venue": "Royale",
@@ -155,30 +167,6 @@
     },
     {
       "source": "do617:food-drink",
-      "name": "DIAMONDS DINE IN w/ DJ MAXINE HARRISON",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/19/diamonds-dine-in-w-dj-maxine-harrison-tickets",
-      "start": "2026-04-19T14:00",
-      "venue": "Gulu-Gulu Cafe",
-      "address": "",
-      "score": 8,
-      "reason": "DIAMONDS DINE IN with DJ\u2014upscale dining/nightlife, scene-y, DJ entertainment, networking atmosphere",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Sunday dinner JAZZ \u2013 Mike Mele/Joe McMahon DUO \u2013 in the lounge",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/19/sunday-dinner-jazz-mike-mele-joe-mcmahon-duo-in-the-lounge-tickets",
-      "start": "2026-04-19T18:00",
-      "venue": "Lou's",
-      "address": "",
-      "score": 8,
-      "reason": "Sunday dinner jazz\u2014upscale lounge setting, live jazz performance, intimate networking-friendly vibe",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
       "name": "Wine & Charcuterie Class",
       "description": "",
       "url": "https://do617.com/events/2026/4/23/wine-charcuterie-class-tickets",
@@ -187,42 +175,6 @@
       "address": "",
       "score": 8,
       "reason": "Wine & charcuterie class. Upscale food/drink pairing experience; hands-on; perfect for entertaining and culinary interests.",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Martini Dinner @Standard Italian",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/30/martini-dinner-standard-italian-tickets",
-      "start": "2026-04-30T18:00",
-      "venue": "Eastern Standard Kitchen and Drinks",
-      "address": "",
-      "score": 8,
-      "reason": "Martini Dinner at Standard Italian - upscale Italian dining experience",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Whatever You Do, Don't Make News: How to Survive Your Senate Confirmation Hearing (Simulation)",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/27/whatever-you-do-don-t-make-news-how-to-survive-your-senate-confirmation-hearing-simulation-tickets",
-      "start": "2026-04-27T17:30",
-      "venue": "John F. Kennedy Jr. Forum at the Institute of Politics",
-      "address": "",
-      "score": 8,
-      "reason": "Government/civic event about Senate confirmation hearings - directly aligned with public accountability and government expertise interests",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "From Primaries to Presidential Campaigns: A Conversation with Robby Mook",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/28/from-primaries-to-presidential-campaigns-a-conversation-with-robby-mook-tickets",
-      "start": "2026-04-28T12:00",
-      "venue": "John F. Kennedy Jr. Forum at the Institute of Politics",
-      "address": "",
-      "score": 8,
-      "reason": "Political/media panel with campaign strategist Robby Mook - directly relevant to government, politics, and media expertise",
       "_proximity": 3
     },
     {
@@ -262,66 +214,6 @@
       "_proximity": 3
     },
     {
-      "source": "do617:comedy",
-      "name": "Susan Rice",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/19/susan-rice-tickets",
-      "start": "2026-04-19T19:00",
-      "venue": "Laugh Boston",
-      "address": "",
-      "score": 8,
-      "reason": "Susan Rice \u2014 high-profile political/policy figure; excellent for civic engagement and professional networking around government and international affairs",
-      "_proximity": 3
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "$1 Oysters at 224 Boston",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/1-oysters-at-224-boston--162",
-      "start": "2026-04-19",
-      "date": "2026-04-19",
-      "venue": "",
-      "address": "",
-      "score": 8,
-      "reason": "Upscale oyster happy hour - exactly the type of high-status food/drink event requested"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "DOLLAR OYSTERS BUCK A SHUCK TRADESMAN CHARLESTOWN",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/dollar-oysters-buck-a-shuck-tradesman-charlestown--84",
-      "start": "2026-04-19",
-      "date": "2026-04-19",
-      "venue": "",
-      "address": "",
-      "score": 8,
-      "reason": "Oyster happy hour event - exactly matches user's interest in oyster events and upscale food/drink"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "$1 OYSTER BRUNCH",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/1-oyster-brunch--29",
-      "start": "2026-04-19",
-      "date": "2026-04-19",
-      "venue": "",
-      "address": "",
-      "score": 8,
-      "reason": "Oyster brunch event - directly matches user's interest in oyster happy hours and upscale dining"
-    },
-    {
-      "source": "luma:boston",
-      "name": "Fireside w/ Bumble and Slack CEO Lidiane Jones",
-      "description": "",
-      "url": "https://lu.ma/s1supwbc",
-      "start": "2026-05-02T20:00",
-      "venue": "",
-      "address": "Cambridge, Massachusetts",
-      "score": 8,
-      "reason": "Fireside chat with Slack CEO is high-status, exclusive professional networking with influential tech leader",
-      "_proximity": 5
-    },
-    {
       "source": "Eventbrite:defense+tech",
       "name": "Boston Tech Mixer and Social (Tech / AI / Data / IT) \u2728",
       "description": "Join us at our TECH MIXER AND SOCIAL for afterwork drinks, networking with tech / IT workers in and connect with others in tech",
@@ -337,7 +229,7 @@
     {
       "source": "Harvard Kennedy School",
       "name": "Fireside Chat with former Prime Minister of the Ivory Coast",
-      "description": "A candid discussion with H.E. Patrick Achi, former Prime Minister of the Ivory Coast, on how African countries can pursue inclusive growth and strengthen state capacity.",
+      "description": "Candid discussion with H.E. Patrick Achi, former Prime Minister of the Ivory Coast, on how African countries can pursue inclusive growth and strengthen state capacity.",
       "url": "https://www.hks.harvard.edu/events",
       "start": "2026-04-20T11:00",
       "venue": "Harvard Kennedy School",
@@ -349,7 +241,7 @@
     {
       "source": "Harvard Kennedy School",
       "name": "Stone Inequality & Social Policy Seminar: Doron Shiffer-Sebba",
-      "description": "Sociologist Doron Shiffer-Sebba from Northwestern presents recent research on inequality and social policy.",
+      "description": "Sociologist Doron Shiffer-Sebba from Northwestern presents recent research.",
       "url": "https://www.hks.harvard.edu/events",
       "start": "2026-04-20T12:00",
       "venue": "Harvard Kennedy School",
@@ -361,7 +253,7 @@
     {
       "source": "Harvard Kennedy School",
       "name": "DOGE Revisited: The State of Public Institutions and the Civil Service",
-      "description": "Dave Lebryk, former Fiscal Assistant Secretary of the U.S. Treasury, explores the current state of public institutions following DOGE's attempted spending cuts.",
+      "description": "Discussion with Dave Lebryk, former Fiscal Assistant Secretary of the U.S. Treasury, exploring the current state of public institutions in the wake of DOGE's attempted spending cuts.",
       "url": "https://www.hks.harvard.edu/events",
       "start": "2026-04-20T12:00",
       "venue": "Harvard Kennedy School",
@@ -373,7 +265,7 @@
     {
       "source": "Harvard Kennedy School",
       "name": "Organizing Tips for Public Speaking",
-      "description": "A hands-on workshop teaching essential techniques to structure thoughts and ideas for maximum impact when speaking in public.",
+      "description": "Hands-on workshop teaching essential techniques to structure thoughts, ideas, and content for maximum impact when speaking in public.",
       "url": "https://www.hks.harvard.edu/events",
       "start": "2026-04-20T13:00",
       "venue": "Harvard Kennedy School",
@@ -385,7 +277,7 @@
     {
       "source": "Harvard Kennedy School",
       "name": "Pakistan Symposium @ HKS: Emerging Technologies & their Implications",
-      "description": "Explore emerging technologies shaping Pakistan with a keynote by the Pakistan Crypto Czar and panels on fintech, AI, and related topics.",
+      "description": "Symposium exploring emerging technologies shaping Pakistan, featuring a keynote by the Pakistan Crypto Czar and panels on fintech, AI, and related topics.",
       "url": "https://www.hks.harvard.edu/events",
       "start": "2026-04-20T13:00",
       "venue": "Harvard Kennedy School",
@@ -397,7 +289,7 @@
     {
       "source": "Harvard Kennedy School",
       "name": "France's Changing Nuclear Posture: Implications for European Security",
-      "description": "MTA Seminar with Heloise Fayet examining France's evolving nuclear posture and its implications for European security.",
+      "description": "MTA Seminar with Heloise Fayet discussing France's nuclear posture and its implications for European security.",
       "url": "https://www.hks.harvard.edu/events",
       "start": "2026-04-20T13:30",
       "venue": "Harvard Kennedy School",
@@ -421,7 +313,7 @@
     {
       "source": "Harvard Kennedy School",
       "name": "Speaking Truth to Power - Ashley Judd on Human Rights",
-      "description": "Conversation with Ashley Judd, author, actor and humanitarian activist, discussing human rights issues.",
+      "description": "Conversation with Ashley Judd, author, actor and humanitarian activist, discussing human rights.",
       "url": "https://www.hks.harvard.edu/events",
       "start": "2026-04-20T16:30",
       "venue": "Harvard Kennedy School",
@@ -433,7 +325,7 @@
     {
       "source": "Harvard Kennedy School",
       "name": "AI in Healthcare: Global and Local Adoption Cases from the USA & Hungary",
-      "description": "Explores real-world AI use in healthcare from prediction and diagnosis to drug discovery, comparing U.S. and EU approaches.",
+      "description": "Session exploring real-world AI use in healthcare from prediction and diagnosis to drug discovery, comparing U.S. and EU approaches.",
       "url": "https://www.hks.harvard.edu/events",
       "start": "2026-04-20T16:30",
       "venue": "Harvard Kennedy School",
@@ -445,7 +337,7 @@
     {
       "source": "Harvard Kennedy School",
       "name": "Workshop: How To Reach More People on Social Media",
-      "description": "Learn strategies and techniques to reach more people on social media platforms.",
+      "description": "Workshop teaching strategies to reach more people on social media.",
       "url": "https://www.hks.harvard.edu/events",
       "start": "2026-04-21T12:00",
       "venue": "Harvard Kennedy School",
@@ -457,7 +349,7 @@
     {
       "source": "Mass Fashion Week",
       "name": "MAFW: In Full Bloom",
-      "description": "A night where creatives rise, confidence blossoms, and vision turns into reality. An event celebrating fashion, creativity, and community.",
+      "description": "A night where creatives rise, confidence blossoms, and vision turns into reality. An event celebrating New England fashion and emerging designers.",
       "url": "https://www.massfashionweek.com/",
       "start": "2026-05-23T17:30",
       "venue": "Plymouth Memorial Hall",
@@ -469,13 +361,39 @@
     {
       "source": "IG: Royale Boston",
       "name": "hol.mp3",
-      "description": "hol.mp3 brings the bass to Royale after performing at Ultra.",
+      "description": "hol.mp3 just brought the bass to Ultra and is about to do the same at Royale.",
       "url": "https://www.instagram.com/p/DXPGoAMgEei/",
       "start": "2026-06-05",
       "venue": "Royale",
       "address": "Boston, MA",
       "score": 8,
       "reason": "Hol.mp3 at Royale (post-Ultra performance) \u2014 exclusive nightlife at a premier Boston venue, scene-y electronic music crowd",
+      "_proximity": 3
+    },
+    {
+      "source": "ticketmaster",
+      "name": "Boston Symphony Orchestra",
+      "description": "",
+      "url": "https://www.ticketmaster.com/event/Z7r9jZ1A7r9_V",
+      "start": "2026-04-26T00:00",
+      "venue": "Boston Symphony Hall",
+      "address": "Boston, MA",
+      "price": "",
+      "score": 8,
+      "reason": "Boston Symphony Orchestra \u2014 high-status classical music venue, upscale cultural event",
+      "_proximity": 3
+    },
+    {
+      "source": "ticketmaster",
+      "name": "Joshua Bell",
+      "description": "",
+      "url": "https://www.ticketmaster.com/event/Z7r9jZ1A7ra7-",
+      "start": "2026-04-26T19:00",
+      "venue": "Boston Symphony Hall",
+      "address": "Boston, MA",
+      "price": "",
+      "score": 8,
+      "reason": "Joshua Bell \u2014 world-renowned classical violinist, prestigious concert event",
       "_proximity": 3
     },
     {
@@ -489,19 +407,6 @@
       "score": 7,
       "reason": "Charity gala with global impact focus \u2014 upscale annual event, good networking and cause alignment",
       "_proximity": 8,
-      "price": "$0"
-    },
-    {
-      "source": "Eventbrite:gala",
-      "name": "HDS Solidarity Ball 2026: Plato's Allegory of the Rave",
-      "description": "This year all proceeds received from the event will be donated to LUCE Immigrant Justice Network of Massachusetts.",
-      "url": "https://www.eventbrite.com/e/hds-solidarity-ball-2026-platos-allegory-of-the-rave-tickets-1987749649711",
-      "start": "2026-04-22",
-      "venue": "Swartz Hall",
-      "address": "45 Francis Avenue, Cambridge",
-      "score": 7,
-      "reason": "Charity gala/ball fundraiser for immigrant justice\u2014upscale event with social impact and high-status atmosphere",
-      "_proximity": 5,
       "price": "$0"
     },
     {
@@ -519,19 +424,6 @@
     },
     {
       "source": "Eventbrite:reception",
-      "name": "ODSC AI East 2026 Conference | Group 2+",
-      "description": "Discover what\u2019s next for AI with the latest tools, topics, and ideas, for the future of AI with cutting-edge tools, themes, and concepts!",
-      "url": "https://www.eventbrite.com/e/odsc-ai-east-2026-conference-group-2-tickets-1856520385449",
-      "start": "2026-04-28",
-      "venue": "Hynes Convention Center",
-      "address": "900 Boylston Street, Boston",
-      "score": 7,
-      "reason": "Professional conference on AI with cutting-edge tools and ideas\u2014high-status professional development",
-      "_proximity": 3,
-      "price": "$218\u2013$1780"
-    },
-    {
-      "source": "Eventbrite:reception",
       "name": "Mz. Icar Opening Reception + Street Theory Sounds feat. Rich Medina",
       "description": "An exhibition opening and sound experience unfolding across one night.\nApril 25th | 5\u201311 PM | Street Theory Gallery & Collective",
       "url": "https://www.eventbrite.com/e/mz-icar-opening-reception-street-theory-sounds-feat-rich-medina-tickets-1987531228407",
@@ -542,32 +434,6 @@
       "reason": "Art gallery opening reception with live music\u2014cultural event, scene-y, opening night appeal",
       "_proximity": 5,
       "price": "$0\u2013$23"
-    },
-    {
-      "source": "Eventbrite:reception",
-      "name": "AI  X Leadership Summit | ODSC AI East 2026",
-      "description": "FLASH SALE ENDS FRIDAY, Apr 17th!  Secure your spot with like-minded individuals, practitioners, business leaders, or reskilling into AI.",
-      "url": "https://www.eventbrite.com/e/ai-x-leadership-summit-odsc-ai-east-2026-tickets-1781799232469",
-      "start": "2026-04-28",
-      "venue": "Hynes Convention Center",
-      "address": "900 Boylston St, Boston",
-      "score": 7,
-      "reason": "Leadership summit attracting business leaders and practitioners\u2014high-status professional networking",
-      "_proximity": 3,
-      "price": "$53\u2013$1137"
-    },
-    {
-      "source": "Eventbrite:launch+party",
-      "name": "Rooftop@Revere Summer Kickoff: Campari Aperitivo Party",
-      "description": "Kick off patio season at Rooftop@Revere with Campari cocktails, Aperol Spritz tree tower, bites, views & live music.",
-      "url": "https://www.eventbrite.com/e/rooftoprevere-summer-kickoff-campari-aperitivo-party-tickets-1986996663509",
-      "start": "2026-05-02",
-      "venue": "200 Stuart St",
-      "address": "200 Stuart Street, Boston",
-      "score": 7,
-      "reason": "Upscale rooftop aperitivo party with Campari cocktails, bites, live music, and views\u2014premium drinks/food event",
-      "_proximity": 3,
-      "price": "$30"
     },
     {
       "source": "Eventbrite:launch+party",
@@ -582,31 +448,6 @@
       "_proximity": 3
     },
     {
-      "source": "Eventbrite:launch+party",
-      "name": "Go-To-Market Blueprint: Hands-On 1 Day Workshop in Boston, MA",
-      "description": "Want to turn your product into a market winner? Learn how to craft, launch, and measure GTM strategies that accelerate business growth.",
-      "url": "https://www.eventbrite.sg/e/go-to-market-blueprint-hands-on-1-day-workshop-in-boston-ma-tickets-1974575683022",
-      "start": "2026-04-22",
-      "venue": "regus MA, Boston - Federal Street",
-      "address": "101 Federal Street #Suite 1900, Boston",
-      "score": 7,
-      "reason": "Go-to-market strategy workshop. Directly relevant to startup/business interests; hands-on, actionable.",
-      "_proximity": 3
-    },
-    {
-      "source": "Eventbrite:model+showcase",
-      "name": "Fashion Show & Market featuring Emerging Brands & Small Businesses",
-      "description": "Step in a immersive fashion experience where runway energy meets curated pop-up shopping, live creativity, and emerging international brands",
-      "url": "https://www.eventbrite.com/e/fashion-show-market-featuring-emerging-brands-small-businesses-tickets-1987792243109",
-      "start": "2026-05-02",
-      "venue": "TBA",
-      "address": "TBA, Boston",
-      "score": 7,
-      "reason": "Fashion show with emerging brands and runway energy\u2014upscale fashion event open to public",
-      "_proximity": 3,
-      "price": "$40\u2013$60"
-    },
-    {
       "source": "Eventbrite:model+showcase",
       "name": "AI AGENTS SHOWCASE (INDUSTRY-SPECIFIC CUSTOMIZED DEMO-DAY)",
       "description": "Witness the convergence of cutting-edge technology and visionary minds",
@@ -618,32 +459,6 @@
       "reason": "AI/tech demo day \u2014 innovation showcase, industry networking, cutting-edge tech focus",
       "_proximity": 3,
       "price": "$589"
-    },
-    {
-      "source": "Eventbrite:model+showcase",
-      "name": "International Runway Show & Pop Up Shop  by Fashion SB Global",
-      "description": "Join us for fashion's top open to the public event for independent brands featuring our award winning runway show & pop up market",
-      "url": "https://www.eventbrite.com/e/international-runway-show-pop-up-shop-by-fashion-sb-global-tickets-1971489045807",
-      "start": "2026-05-02",
-      "venue": "64 C St",
-      "address": "64 C Street, Boston",
-      "score": 7,
-      "reason": "Award-winning runway show with pop-up market for independent brands\u2014stylish fashion event",
-      "_proximity": 3,
-      "price": "$0\u2013$50"
-    },
-    {
-      "source": "Eventbrite:royale+boston",
-      "name": "CLASSIC 1804  SPRING FLING WITH KENNY HAITI-VAYB-5LAN AT ROYALE BOSTON",
-      "description": "Dance the night away with Kenny Haiti-Vayb-5lan at Royale Boston\u2019s Spring Fling\u2014fun vibes guaranteed!",
-      "url": "https://www.eventbrite.com/e/classic-1804-spring-fling-with-kenny-haiti-vayb-5lan-at-royale-boston-tickets-1984576167741",
-      "start": "2026-04-19",
-      "venue": "Royale",
-      "address": "279 Tremont Street, Boston",
-      "score": 7,
-      "reason": "Recurring nightlife at Royale Boston (known venue for VIP/scene-y events); Spring Fling with live music, fun energy, good crowd.",
-      "_proximity": 3,
-      "price": "$77\u2013$135"
     },
     {
       "source": "Eventbrite:venu+boston",
@@ -711,19 +526,6 @@
       "price": "$13"
     },
     {
-      "source": "Eventbrite:fashion+show",
-      "name": "Emerging Brands Runway Show",
-      "description": "Experience the next wave of style\u2014secure your front-row seat for Fashion\u2019s most exclusive independent runway shows before tickets are gone.",
-      "url": "https://www.eventbrite.com/e/emerging-brands-runway-show-tickets-1987792129770",
-      "start": "2026-05-02",
-      "venue": "TBA",
-      "address": "TBA, Boston",
-      "score": 7,
-      "reason": "Exclusive front-row runway show for emerging brands\u2014high-status fashion event",
-      "_proximity": 3,
-      "price": "$40\u2013$60"
-    },
-    {
       "source": "Eventbrite:swimwear",
       "name": "Cocktail Class",
       "description": "Shake up your night by learning how to mix killer cocktails like a pro in this fun, hands-on class!",
@@ -735,19 +537,6 @@
       "reason": "Cocktail class. Upscale hands-on drink experience; mixology/bartender-level knowledge; good for entertaining and networking.",
       "_proximity": 3,
       "price": "$43"
-    },
-    {
-      "source": "Eventbrite:swimwear",
-      "name": "Johnnie Walker Better With Black Label Cocktail Competition - Boston",
-      "description": "Mix, shake, and sip your way to victory at the Johnnie Walker Better With Black Label Cocktail Competition!",
-      "url": "https://www.eventbrite.com/e/johnnie-walker-better-with-black-label-cocktail-competition-boston-tickets-1980025405288",
-      "start": "2026-04-27",
-      "venue": "My Girl",
-      "address": "10 Post Office Square, Boston",
-      "score": 7,
-      "reason": "Upscale cocktail competition with premium spirits brand - fits high-status food/drink events",
-      "_proximity": 3,
-      "price": "$0"
     },
     {
       "source": "do617:food-drink",
@@ -798,174 +587,6 @@
       "_proximity": 9
     },
     {
-      "source": "do617:food-drink",
-      "name": "Class: Hand-Pulled Noodles",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/25/class-hand-pulled-noodles-tickets",
-      "start": "2026-04-25T10:00",
-      "venue": "Pagu",
-      "address": "",
-      "score": 7,
-      "reason": "Upscale culinary class (hand-pulled noodles)\u2014educational food experience",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "saturday brunch \u2013 Rich Graiko Quartet \u2013 in the performance space",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/25/saturday-brunch-rich-graiko-quartet-in-the-performance-space-tickets",
-      "start": "2026-04-25T11:30",
-      "venue": "Lou's",
-      "address": "",
-      "score": 7,
-      "reason": "Upscale Saturday brunch with live jazz quartet\u2014high-status dining experience",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Hands On: Tiramis\u00f9 al Limoncello",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/25/hands-on-tiramisu-al-limoncello-tickets",
-      "start": "2026-04-25T15:30",
-      "venue": "Eataly Boston",
-      "address": "",
-      "score": 7,
-      "reason": "Upscale culinary workshop (tiramisu)\u2014fine dining skill-building experience",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Martini Dinner",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/30/martini-dinner-tickets",
-      "start": "2026-04-30T18:00",
-      "venue": "Standard Italian",
-      "address": "",
-      "score": 7,
-      "reason": "Martini Dinner - upscale food/drink event fits profile",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Hands-On: Pasta alla Norcina al Tartufo",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/30/hands-on-pasta-alla-norcina-al-tartufo-tickets",
-      "start": "2026-04-30T15:00",
-      "venue": "Eataly Boston",
-      "address": "",
-      "score": 7,
-      "reason": "Hands-on pasta cooking class with truffle - upscale culinary experience",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Hands-On: Fresh Egg Pasta Shapes",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/30/hands-on-fresh-egg-pasta-shapes-tickets",
-      "start": "2026-04-30T18:00",
-      "venue": "Eataly Boston",
-      "address": "",
-      "score": 7,
-      "reason": "Hands-on fresh pasta class - upscale food experience",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Hands-On: Pizza al Padellino",
-      "description": "",
-      "url": "https://do617.com/events/2026/5/1/hands-on-pizza-al-padellino-tickets",
-      "start": "2026-05-01T12:00",
-      "venue": "Eataly Boston",
-      "address": "",
-      "score": 7,
-      "reason": "Hands-On: Pizza al Padellino - upscale Italian cooking class",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Hands-On: Pasta alla Carbonara",
-      "description": "",
-      "url": "https://do617.com/events/2026/5/1/hands-on-pasta-alla-carbonara-tickets",
-      "start": "2026-05-01T15:00",
-      "venue": "Eataly Boston",
-      "address": "",
-      "score": 7,
-      "reason": "Hands-On: Pasta alla Carbonara - upscale culinary class",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Bottomless Dumplings",
-      "description": "",
-      "url": "https://do617.com/events/2026/5/2/bottomless-dumplings-1775220259",
-      "start": "2026-05-02T12:00",
-      "venue": "Mei Mei",
-      "address": "",
-      "score": 7,
-      "reason": "Bottomless dumplings - upscale food/drink experience",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Boston's Fashion Derby",
-      "description": "",
-      "url": "https://do617.com/events/2026/5/2/bostons-fashion-derby-tickets",
-      "start": "2026-05-02T14:00",
-      "venue": "Omni Boston Hotel at the Seaport",
-      "address": "",
-      "score": 7,
-      "reason": "Boston's Fashion Derby - fashion event with high-status appeal",
-      "_proximity": 5
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Derby Day Soiree",
-      "description": "",
-      "url": "https://do617.com/events/2026/5/2/derby-day-soiree-tickets",
-      "start": "2026-05-02T12:00",
-      "venue": "LUCIE",
-      "address": "",
-      "score": 7,
-      "reason": "Derby Day Soiree - upscale soir\u00e9e, fashion/scene event",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Boston\u2019s Most Stylish Spring Affair",
-      "description": "",
-      "url": "https://do617.com/events/2026/5/2/bostons-most-stylish-spring-affair-tickets",
-      "start": "2026-05-02T15:00",
-      "venue": "Mixx 360",
-      "address": "",
-      "score": 7,
-      "reason": "Boston's Most Stylish Spring Affair - upscale, high-status fashion event",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Imani Winds",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/19/imani-winds-tickets",
-      "start": "2026-04-19T13:30",
-      "venue": "Isabella Stewart Gardner Museum",
-      "address": "",
-      "score": 7,
-      "reason": "Imani Winds concert \u2014 acclaimed classical/wind ensemble, upscale cultural evening, good networking crowd",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Cirque Us! \u2013 Cirque Cabaret",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/19/cirque-us-cirque-cabaret-tickets",
-      "start": "2026-04-19T15:00",
-      "venue": "Arts At The Armory",
-      "address": "",
-      "score": 7,
-      "reason": "Cirque Us! Cirque Cabaret \u2014 cabaret-style entertainment, upscale scene-y venue, social atmosphere",
-      "_proximity": 3
-    },
-    {
       "source": "do617:film-theatre-performing-arts",
       "name": "The Empire Strips Back: A Burlesque Parody",
       "description": "",
@@ -999,54 +620,6 @@
       "address": "",
       "score": 7,
       "reason": "Independent Film Festival Boston \u2014 media/film industry event, aligns with journalism interests",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Chanda Prescod-Weinstein with David Kaiser: The Edge of Space-Time",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/28/chanda-prescod-weinstein-with-david-kaiser-the-edge-of-space-time-tickets",
-      "start": "2026-04-28T19:00",
-      "venue": "Brookline Booksmith",
-      "address": "",
-      "score": 7,
-      "reason": "Intellectual panel with physicist on space-time - high-status educational event",
-      "_proximity": 5
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Alvin Ailey American Dance Theater",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/30/alvin-ailey-american-dance-theater-tickets",
-      "start": "2026-04-30T20:00",
-      "venue": "Boch Center Wang Theatre",
-      "address": "",
-      "score": 7,
-      "reason": "Major dance company performance; high-status cultural event",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Alvin Ailey American Dance Theater",
-      "description": "",
-      "url": "https://do617.com/events/2026/5/1/alvin-ailey-american-dance-theater-tickets",
-      "start": "2026-05-01T20:00",
-      "venue": "Boch Center Wang Theatre",
-      "address": "",
-      "score": 7,
-      "reason": "Alvin Ailey American Dance Theater - prestigious dance performance",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Alvin Ailey American Dance Theater",
-      "description": "",
-      "url": "https://do617.com/events/2026/5/2/alvin-ailey-american-dance-theater-tickets-keoobvw",
-      "start": "2026-05-02T14:00",
-      "venue": "Boch Center Wang Theatre",
-      "address": "",
-      "score": 7,
-      "reason": "Alvin Ailey American Dance Theater - prestigious dance performance",
       "_proximity": 3
     },
     {
@@ -1110,102 +683,6 @@
       "_proximity": 3
     },
     {
-      "source": "do617:concerts",
-      "name": "Boston Speaker Series\u2013Lynsey Addario",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/27/boston-speaker-series-lynsey-addario-tickets",
-      "start": "2026-04-27T20:00",
-      "venue": "Symphony Hall, Boston, MA",
-      "address": "",
-      "score": 7,
-      "reason": "Boston Speaker Series with journalist Lynsey Addario\u2014high-status media/journalism event",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
-      "name": "LCD Soundsystem",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/30/lcd-soundsystem-tickets",
-      "start": "2026-04-30T20:00",
-      "venue": "Roadrunner",
-      "address": "",
-      "score": 7,
-      "reason": "LCD Soundsystem\u2014major indie/electronic artist, influential and scene-relevant",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
-      "name": "Boston Lyric OperaDaughter of the Regiment",
-      "description": "",
-      "url": "https://do617.com/events/2026/5/1/daughter-of-the-regiment-tickets",
-      "start": "2026-05-01T18:30",
-      "venue": "Emerson Colonial Theatre",
-      "address": "",
-      "score": 7,
-      "reason": "Boston Lyric Opera production; upscale performing arts, cultural prestige",
-      "_proximity": 3
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "PAGU: Sushi &amp; Hand-Roll Class",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/pagu-sushi-hand-roll-class--24",
-      "start": "2026-04-19",
-      "date": "2026-04-19",
-      "venue": "",
-      "address": "",
-      "score": 7,
-      "reason": "Sushi and hand-roll culinary class - upscale food/drink expertise development"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Isabella Stewart Gardner Museum: Imani Winds",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/isabella-stewart-gardner-museum-imani-winds",
-      "start": "2026-04-19",
-      "date": "2026-04-19",
-      "venue": "",
-      "address": "",
-      "score": 7,
-      "reason": "Concert at prestigious Isabella Stewart Gardner Museum - high-status cultural event"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Drink Your History! Tour of Historic Sites and Taverns (with beer or cider)",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/drink-your-history-tour-of-historic-sites-and-taverns-with-beer-or-cider--61",
-      "start": "2026-04-19",
-      "date": "2026-04-19",
-      "venue": "",
-      "address": "",
-      "score": 7,
-      "reason": "Historic tavern tour with beer/cider - combines civic/historical interest with upscale beverage experience"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "BOTTOMLESS STEAK FRITES at Batifol | Kendall Square",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/bottomless-steak-frites-at-batifol-kendall-square--109",
-      "start": "2026-04-19",
-      "date": "2026-04-19",
-      "venue": "",
-      "address": "",
-      "score": 7,
-      "reason": "Bottomless steak frites at upscale venue \u2014 luxury food/drink experience"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Florence + The Machine Live In Boston - Everybody Scream 2026 Tour",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/florence-the-machine-live-in-boston-everybody-scream-2026-tour",
-      "start": "2026-04-19",
-      "date": "2026-04-19",
-      "venue": "",
-      "address": "",
-      "score": 7,
-      "reason": "Major concert \u2014 high-status entertainment event"
-    },
-    {
       "source": "Meetup: Tech Boston",
       "name": "Biotech Networking at Naco Taco in Cambridge",
       "description": "We are excited to have our next networking event at Naco Taco in Cambridge! \ud83c\udf2e\ud83c\udf79\n\nThis evening is all about bringing together biotech innovators in a fun and relaxed setting. Expect engaging conversations that spark new ideas, opportunities to build lasting connections, and plenty of chances to share insights on the latest biotech trends. It is also a great space to brainstorm collaborations and explore opportunities that can help take your career to the next level.\n\nWhether you are hoping to meet",
@@ -1245,32 +722,6 @@
       "_proximity": 5
     },
     {
-      "source": "Meetup: Tech Boston",
-      "name": "The AI X Leadership Summit | Boston 2026",
-      "description": "**This is PAID event. Register for this event here -** [https://luma.com/u4pmy7bc](https://luma.com/u4pmy7bc)\nUse code - **COMMUNITYEAST2026** \\- for an extra discount\\.\n\n**[AI X Leadership Summit](https://odsc.ai/east/aix-east/) \\- co\\-located event with ODSC AI East Conference\\.**\n\n## **Summit is the place for enterprise leaders refining and scaling real-world AI strategy**\n\nMove beyond the hype. This is a dedicated space for 250 exclusive enterprise leaders to validate governance and AI opera",
-      "url": "https://www.meetup.com/open-data-science-ny-odsc/events/312786347/",
-      "start": "2026-04-28T09:00",
-      "date": "2026-04-28",
-      "venue": "Hynes Convention Center",
-      "address": "Boston",
-      "score": 7,
-      "reason": "AI X Leadership Summit for enterprise leaders \u2014 exclusive (250 attendees), high-status executive networking on governance and AI strategy",
-      "_proximity": 3
-    },
-    {
-      "source": "Meetup: Career/Business",
-      "name": "Data-Driven Strategies with an Edge: A Fireside Chat ",
-      "description": "\\*YOU must **REGISTER HERE: https://luma.com/4zxxhw76**\n\nJoin us for an insightful fireside chat featuring **Derek Burleton**, Vice President and Deputy Chief Economist at TD Bank Group, and **Jacob Weinstein**, SVP Asset Allocation Research at Fidelity Investments as they unpack the forces reshaping global markets and financial innovation.\n\u200b\nThis conversation will explore the **macroeconomic trends driving investment behavior, emerging risks and opportunities for fintech**, and how data-driven ",
-      "url": "https://www.meetup.com/boston-fintech/events/314138921/",
-      "start": "2026-04-28T16:00",
-      "date": "2026-04-28",
-      "venue": "Fidelity Investments",
-      "address": "Boston",
-      "score": 7,
-      "reason": "Fireside chat with VP/Deputy Chief Economist (TD Bank) and SVP (Fidelity) on financial markets and fintech \u2014 high-status expert panel with influential speakers",
-      "_proximity": 3
-    },
-    {
       "source": "Meetup: Career/Business",
       "name": "Aristotles Politics, Books 1 & 2",
       "description": "Platos\u2019 student Aristotle lays out his classification of political regimes and what the aims of any regime should be. It is in this philosophical work that Aristotle comes up with the term \u201cmixed regime\u201d, which has caused so much debate among philosophers of justice and political theorists down the centuries. Is only a mixed regime just because raw Oligarchy, Democracy, or Tyranny each neglect justice in some fundamental form?\n\nWe will read the first two books- a short and sweet 50 pages. Here i",
@@ -1305,42 +756,6 @@
       "address": "Boston, Massachusetts",
       "score": 7,
       "reason": "Underscore VC Pitch Competition; high-status startup/VC event; excellent for networking with founders and investors",
-      "_proximity": 3
-    },
-    {
-      "source": "luma:boston",
-      "name": "Investor Breakfast: Tips for Successfully Transitioning Along the Pathway from Angel to VC to PE",
-      "description": "",
-      "url": "https://lu.ma/xb9uj5te",
-      "start": "2026-04-28T13:00",
-      "venue": "",
-      "address": "Boston, Massachusetts",
-      "score": 7,
-      "reason": "Investor breakfast on angel-to-VC-to-PE pathway is high-status professional networking aligned with finance/investment interests",
-      "_proximity": 3
-    },
-    {
-      "source": "luma:boston",
-      "name": "Whiskey, Wine & Whiteboards - April 2026",
-      "description": "",
-      "url": "https://lu.ma/qwulxoid",
-      "start": "2026-04-28T21:30",
-      "venue": "",
-      "address": "Boston, Massachusetts",
-      "score": 7,
-      "reason": "Whiskey, Wine & Whiteboards suggests upscale drink event with creative/professional networking component",
-      "_proximity": 3
-    },
-    {
-      "source": "allevents:fashion",
-      "name": "Celebrate Lidiya Romanchuk - FASHION DESIGNER OF THE YEAR",
-      "description": "",
-      "url": "https://allevents.in/boston/celebrate-lidiya-romanchuk-fashion-designer-of-the-year/100001987182140275",
-      "start": "2026-05-01",
-      "venue": "Fairmont Copley Plaza",
-      "address": "Boston, MA",
-      "score": 7,
-      "reason": "Fashion designer of the year celebration is exclusive, upscale fashion event",
       "_proximity": 3
     },
     {
@@ -1383,58 +798,6 @@
       "price": "$0\u2013$68"
     },
     {
-      "source": "Eventbrite:machine+vision",
-      "name": "The Eric and Wendy Schmidt Center Symposium: Biomedical Science and AI",
-      "description": "***One ticket provides access to both symposium days (April 28th and April 29th)***",
-      "url": "https://www.eventbrite.com/e/the-eric-and-wendy-schmidt-center-symposium-biomedical-science-and-ai-tickets-1980720990803",
-      "start": "2026-04-28",
-      "venue": "Broad Institute",
-      "address": "415 Main Street, Cambridge",
-      "score": 7,
-      "reason": "Eric & Wendy Schmidt Center symposium on biomedical science and AI is prestigious, high-status professional forum",
-      "_proximity": 5,
-      "price": "$0"
-    },
-    {
-      "source": "Eventbrite:presales+engineer",
-      "name": "ODSC AI East 2026 Conference | AI Engineering Accelerator",
-      "description": "FLASH SALE ENDS FRIDAY,  Apr 17th! Secure your spot with like-minded individuals, practitioners, business leaders, or reskilling into AI.",
-      "url": "https://www.eventbrite.com/e/odsc-ai-east-2026-conference-ai-engineering-accelerator-tickets-1979347249907",
-      "start": "2026-04-27",
-      "venue": "Hynes Convention Center",
-      "address": "900 Boylston Street, Boston",
-      "score": 7,
-      "reason": "Major AI conference with business leaders and practitioners; high-status professional networking and learning opportunity",
-      "_proximity": 3,
-      "price": "$53\u2013$3403"
-    },
-    {
-      "source": "Eventbrite:presales+engineer",
-      "name": "Chanda Prescod-Weinstein at the Harvard Science Center",
-      "description": "presenting The Edge of Space-Time: Particles, Poetry, and the Cosmic Dream Boogie in conversation with\u00a0Evelynn M. Hammonds",
-      "url": "https://www.eventbrite.com/e/chanda-prescod-weinstein-at-the-harvard-science-center-tickets-1983282603656",
-      "start": "2026-04-27",
-      "venue": "Science Center",
-      "address": "1 Oxford Street, Cambridge",
-      "score": 7,
-      "reason": "Harvard Science Center event with prominent physicist; intellectual and high-status public forum",
-      "_proximity": 5,
-      "price": "$0\u2013$37"
-    },
-    {
-      "source": "Eventbrite:venture+capital+boston",
-      "name": "Startups & Investors Pitch Night   Boston",
-      "description": "Meet investors and promising startups in  Boston. Pitch your idea, discover deals, and connect with the venture community.",
-      "url": "https://www.eventbrite.com/e/startups-investors-pitch-night-boston-tickets-1986913855829",
-      "start": "2026-04-29",
-      "venue": "Bar Moxy",
-      "address": "240 Tremont Street, Boston",
-      "score": 7,
-      "reason": "Startup investor pitch night; exclusive professional networking with venture capital and entrepreneurs",
-      "_proximity": 3,
-      "price": "$0\u2013$23"
-    },
-    {
       "source": "Eventbrite:venture+capital+boston",
       "name": "Founder \u00d7 Investor: Get Real Feedback Warm Intros & Fundraising Signal",
       "description": "A high-signal founder \u00d7 investor session focused on feedback, warm intros, and fundraising readines: powered by the Venture Signal Room",
@@ -1462,9 +825,9 @@
     {
       "source": "SoWa Boston",
       "name": "SoWa Open Market",
-      "description": "Open Markets run every Sunday from 11AM-5PM.",
+      "description": "Open Markets run every Sunday from 11AM-5PM. Regular weekly market featuring local vendors.",
       "url": "https://www.sowaboston.com/events/",
-      "start": "2026-05-03",
+      "start": "2026-05-03T11:00",
       "venue": "SoWa Boston",
       "address": "Boston, Massachusetts",
       "score": 7,
@@ -1474,11 +837,11 @@
     {
       "source": "VENU Boston",
       "name": "Venu Saturdays",
-      "description": "Weekly Saturday night event at Venu nightclub.",
+      "description": "Weekly Saturday night event at Venu Nightclub.",
       "url": "https://www.venuboston.com/events/",
       "start": "2026-04-25",
-      "venue": "Venu Boston",
-      "address": "Boston, MA",
+      "venue": "Venu Nightclub",
+      "address": "Boston, Massachusetts",
       "score": 7,
       "reason": "Venu Saturdays \u2014 weekly VIP nightlife at scene-y venue",
       "_proximity": 3
@@ -1486,11 +849,11 @@
     {
       "source": "VENU Boston",
       "name": "Venu Saturdays",
-      "description": "Weekly Saturday night event at Venu nightclub.",
+      "description": "Weekly Saturday night event at Venu Nightclub.",
       "url": "https://www.venuboston.com/events/",
       "start": "2026-05-02",
-      "venue": "Venu Boston",
-      "address": "Boston, MA",
+      "venue": "Venu Nightclub",
+      "address": "Boston, Massachusetts",
       "score": 7,
       "reason": "Venu Saturdays \u2014 weekly VIP nightlife at scene-y venue",
       "_proximity": 3
@@ -1498,11 +861,11 @@
     {
       "source": "VENU Boston",
       "name": "Venu Saturdays",
-      "description": "Weekly Saturday night event at Venu nightclub.",
+      "description": "Weekly Saturday night event at Venu Nightclub.",
       "url": "https://www.venuboston.com/events/",
       "start": "2026-05-09",
-      "venue": "Venu Boston",
-      "address": "Boston, MA",
+      "venue": "Venu Nightclub",
+      "address": "Boston, Massachusetts",
       "score": 7,
       "reason": "Venu Saturdays \u2014 weekly VIP nightlife at scene-y venue",
       "_proximity": 3
@@ -1510,11 +873,11 @@
     {
       "source": "VENU Boston",
       "name": "Venu Saturdays",
-      "description": "Weekly Saturday night event at Venu nightclub.",
+      "description": "Weekly Saturday night event at Venu Nightclub.",
       "url": "https://www.venuboston.com/events/",
       "start": "2026-05-16",
-      "venue": "Venu Boston",
-      "address": "Boston, MA",
+      "venue": "Venu Nightclub",
+      "address": "Boston, Massachusetts",
       "score": 7,
       "reason": "Venu Saturdays \u2014 weekly VIP nightlife at scene-y venue",
       "_proximity": 3
@@ -1522,11 +885,11 @@
     {
       "source": "VENU Boston",
       "name": "Venu Saturdays",
-      "description": "Weekly Saturday night event at Venu nightclub.",
+      "description": "Weekly Saturday night event at Venu Nightclub.",
       "url": "https://www.venuboston.com/events/",
       "start": "2026-05-23",
-      "venue": "Venu Boston",
-      "address": "Boston, MA",
+      "venue": "Venu Nightclub",
+      "address": "Boston, Massachusetts",
       "score": 7,
       "reason": "Venu Saturdays \u2014 weekly VIP nightlife at scene-y venue",
       "_proximity": 3
@@ -1534,11 +897,11 @@
     {
       "source": "VENU Boston",
       "name": "Venu Saturdays",
-      "description": "Weekly Saturday night event at Venu nightclub.",
+      "description": "Weekly Saturday night event at Venu Nightclub.",
       "url": "https://www.venuboston.com/events/",
       "start": "2026-05-30",
-      "venue": "Venu Boston",
-      "address": "Boston, MA",
+      "venue": "Venu Nightclub",
+      "address": "Boston, Massachusetts",
       "score": 7,
       "reason": "Venu Saturdays \u2014 weekly VIP nightlife at scene-y venue",
       "_proximity": 3
@@ -1546,11 +909,11 @@
     {
       "source": "VENU Boston",
       "name": "Venu Saturdays",
-      "description": "Weekly Saturday night event at Venu nightclub.",
+      "description": "Weekly Saturday night event at Venu Nightclub.",
       "url": "https://www.venuboston.com/events/",
       "start": "2026-06-06",
-      "venue": "Venu Boston",
-      "address": "Boston, MA",
+      "venue": "Venu Nightclub",
+      "address": "Boston, Massachusetts",
       "score": 7,
       "reason": "Venu Saturdays \u2014 weekly VIP nightlife at scene-y venue",
       "_proximity": 3
@@ -1558,7 +921,7 @@
     {
       "source": "IG: Royale Boston",
       "name": "Maddix",
-      "description": "Maddix returns to Royale with unmatched energy.",
+      "description": "Maddix is back and the energy is about to be unmatched.",
       "url": "https://www.instagram.com/p/DXE3fN1gJ6z/",
       "start": "2026-06-27",
       "venue": "Royale",
@@ -1570,64 +933,146 @@
     {
       "source": "IG: VENU Boston",
       "name": "SNAX O'CLOCK - Perreo x Hip Hop",
-      "description": "Perreo x Hip Hop night with @gimmesnax featuring PR anthems and club bangers. VIP available.",
+      "description": "Perreo x Hip Hop night bringing together PR anthems and club bangers with @gimmesnax running it all night.",
       "url": "https://www.instagram.com/p/DXKYqIdCfc0/",
       "start": "2026-04-18",
       "venue": "Venu",
-      "address": "Boston, MA",
+      "address": "Boston, Massachusetts",
       "score": 7,
       "reason": "Perreo x Hip Hop with quality promoter (@gimmesnax) \u2014 cultural nightlife event with strong Latin/Caribbean music scene energy",
       "_proximity": 3
     },
     {
       "source": "IG: VENU Boston",
-      "name": "VENU SATURDAYS",
-      "description": "Hip Hop & Latin night featuring Perreo x Hip Hop takeover with @gimmesnax.",
-      "url": "https://www.instagram.com/p/DXKYqIdCfc0/",
+      "name": "777 FRIDAYS at Venu",
+      "description": "Hip Hop and Latin night with DJ Jay Roc and DJ Lu. Ladies free before 11PM with RSVP.",
+      "url": "https://www.instagram.com/p/DXPt5-miZ0I/",
+      "start": "2026-04-24",
+      "venue": "Venu",
+      "address": "Boston, Massachusetts",
+      "score": 7,
+      "reason": "777 Fridays at Venu celebrating Cambodian New Year with DJs \u2014 cultural affinity event with upscale nightlife venue and good energy",
+      "_proximity": 3
+    },
+    {
+      "source": "IG: VENU Boston",
+      "name": "Perreo x Hip Hop Takeover with Gimme Snax",
+      "description": "Saturday night takeover featuring Perreo and Hip Hop with DJ Gimme Snax all night.",
+      "url": "https://www.instagram.com/p/DXPfu7XCdE0/",
       "start": "2026-04-25",
       "venue": "Venu",
-      "address": "Boston, MA",
+      "address": "Boston, Massachusetts",
       "score": 7,
-      "reason": "Perreo x Hip Hop with quality promoter (@gimmesnax) \u2014 cultural nightlife event with strong Latin/Caribbean music scene energy",
+      "reason": "Saturday Perreo x Hip Hop takeover with dynamic bartenders \u2014 scene-y nightlife event with cultural focus and quality production",
       "_proximity": 3
     },
     {
       "source": "IG: Gardner Museum",
-      "name": "Rachel Barton Pine plays viola d'amore on WCRB In Concert",
-      "description": "Rachel Barton Pine performs on an 18th Century viola d'amore from the Isabella Stewart Gardner Museum's collection, originally gifted by composer Charles Loeffler in 1903.",
+      "name": "WCRB In Concert: Rachel Barton Pine",
+      "description": "Rachel Barton Pine performs on an 18th Century viola d'amore from the Isabella Stewart Gardner Museum's collection. Broadcast available on WCRB In Concert.",
       "url": "https://classical.org/inconcert",
       "start": "2026-04-12",
-      "venue": "WCRB In Concert",
-      "address": "",
+      "venue": "WCRB Radio",
+      "address": "Boston, Massachusetts",
       "score": 7,
       "reason": "High-status cultural event featuring rare 18th century instrument from Isabella Stewart Gardner Museum; prestigious venue and classical music appeal",
       "_proximity": 3
     },
     {
-      "source": "Eventbrite:fashion+show",
-      "name": "Fashion Show Pop Up Market",
-      "description": "Join us for fashion's top open to the public event for independent brands featuring our award winning runway show & pop up market",
-      "url": "https://www.eventbrite.com/e/fashion-show-pop-up-market-tickets-1987793346409",
-      "start": "2026-05-02",
-      "venue": "TBA",
-      "address": "TBA, Boston",
+      "source": "Boston Calendar",
+      "name": "Abe &amp; Louie\u2019s Celebrates 130th Boston Marathon Along the Finish Line",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/abe-louie-s-celebrates-130th-boston-marathon-along-the-finish-line--2",
+      "start": "2026-04-20",
+      "date": "2026-04-20",
+      "venue": "",
+      "address": "",
       "score": 7,
-      "reason": "Public fashion event with runway show and pop-up market from independent brands\u2014fits upscale scene-y event profile",
-      "_proximity": 3,
-      "price": "$45\u2013$66"
+      "reason": "Abe & Louie's is an upscale steakhouse; Marathon Monday celebration at finish line creates high-status dining experience"
     },
     {
-      "source": "Eventbrite:reception",
-      "name": "Small Works Reception",
-      "description": "Join this year's cohort of Small Works Artists for a social reception and showing of their work, ranging painting, photography, and ceramics",
-      "url": "https://www.eventbrite.com/e/small-works-reception-tickets-1987654543245",
-      "start": "2026-05-01",
-      "venue": "Gallery 263",
-      "address": "263 Pearl Street, Cambridge",
-      "score": 6,
-      "reason": "Art reception with artists present, spanning painting, photography, and ceramics\u2014cultural/art event",
-      "_proximity": 5,
-      "price": "$0"
+      "source": "Boston Calendar",
+      "name": "Atlantic Fish Co. Celebrates 130th Boston Marathon Along the Finish Line",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/atlantic-fish-co-celebrates-130th-boston-marathon-along-the-finish-line--2",
+      "start": "2026-04-20",
+      "date": "2026-04-20",
+      "venue": "",
+      "address": "",
+      "score": 7,
+      "reason": "Atlantic Fish Co. is an upscale seafood restaurant; Marathon Monday celebration at finish line is scene-y and exclusive"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "Democracy and Distraction Beer Garden at Boston City Hall Plaza 2026",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/democracy-and-distraction-beer-garden-at-boston-city-hall-plaza-2024",
+      "start": "2026-04-20",
+      "date": "2026-04-20",
+      "venue": "",
+      "address": "",
+      "score": 7,
+      "reason": "Democracy-themed beer garden at City Hall Plaza; civic/government focus aligns with expertise in public accountability and governance"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "$1 Oysters at Lower Mills Tavern",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/1-oysters-at-lower-mills-tavern--166",
+      "start": "2026-04-20",
+      "date": "2026-04-20",
+      "venue": "",
+      "address": "",
+      "score": 7,
+      "reason": "Oyster happy hour - upscale food/drink event"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "$1 Oysters at The Independent",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/1-oysters-at-the-independent--120",
+      "start": "2026-04-20",
+      "date": "2026-04-20",
+      "venue": "",
+      "address": "",
+      "score": 7,
+      "reason": "Oyster happy hour - upscale food/drink event"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "So Close at Nook: $12 experimental cocktails",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/so-close--126",
+      "start": "2026-04-20",
+      "date": "2026-04-20",
+      "venue": "",
+      "address": "",
+      "score": 7,
+      "reason": "Experimental cocktails at upscale venue - craft drink event"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "$1 Oysters in Downtown Boston",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/1-oysters-in-downtown-boston--20",
+      "start": "2026-04-20",
+      "date": "2026-04-20",
+      "venue": "",
+      "address": "",
+      "score": 7,
+      "reason": "Oyster happy hour - upscale food/drink event"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "Major Mondays at the Liberty Hotel",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/major-mondays-at-the-liberty-hotel--217",
+      "start": "2026-04-20",
+      "date": "2026-04-20",
+      "venue": "",
+      "address": "",
+      "score": 7,
+      "reason": "Major event at high-status Liberty Hotel - upscale nightlife"
     },
     {
       "source": "Eventbrite:launch+party",
@@ -1667,259 +1112,6 @@
       "reason": "Opening reception for Negro History Week exhibit. Cultural, civic, and historical significance; opening reception format with curator.",
       "_proximity": 5,
       "price": "$0"
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Jazz Night!",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/30/jazz-night-tickets",
-      "start": "2026-04-30T18:00",
-      "venue": "Long Live Roxbury",
-      "address": "",
-      "score": 6,
-      "reason": "Jazz Night - upscale entertainment venue",
-      "_proximity": 5
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Caroline Bicks with Elizabeth Graver: Monsters in the Archives",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/30/caroline-bicks-with-elizabeth-graver-monsters-in-the-archives-tickets",
-      "start": "2026-04-30T19:00",
-      "venue": "Brookline Booksmith",
-      "address": "",
-      "score": 6,
-      "reason": "Literary panel/discussion; journalism/archives topic aligned with expertise",
-      "_proximity": 5
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Painted Burro Waltham Bottomless Brunch!!",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/painted-burro-waltham-bottomless-brunch--13",
-      "start": "2026-04-19",
-      "date": "2026-04-19",
-      "venue": "",
-      "address": "",
-      "score": 6,
-      "reason": "Bottomless brunch at upscale venue - fits high-status food/drink category"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Painted Burro Davis Square Bottomless Brunch!!",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/painted-burro-davis-square-bottomless-brunch--13",
-      "start": "2026-04-19",
-      "date": "2026-04-19",
-      "venue": "",
-      "address": "",
-      "score": 6,
-      "reason": "Bottomless brunch at upscale venue - fits high-status food/drink category"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Painted Burro Harvard Square Square Bottomless Brunch!!",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/painted-burro-harvard-square-square-bottomless-brunch--13",
-      "start": "2026-04-19",
-      "date": "2026-04-19",
-      "venue": "",
-      "address": "",
-      "score": 6,
-      "reason": "Bottomless brunch at upscale venue - fits high-status food/drink category"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Boston Chocolate Tour - Beacon Hill to Boston Public Market",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/boston-chocolate-tour-beacon-hill-to-boston-public-market--54",
-      "start": "2026-04-19",
-      "date": "2026-04-19",
-      "venue": "",
-      "address": "",
-      "score": 6,
-      "reason": "Upscale food tour in prestigious Beacon Hill and Boston Public Market area"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "90&#39;s Drag Brunch at Lou&#39;s",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/90-s-drag-brunch-at-lou-s",
-      "start": "2026-04-19",
-      "date": "2026-04-19",
-      "venue": "",
-      "address": "",
-      "score": 6,
-      "reason": "Scene-y brunch with drag entertainment at upscale venue - cultural event with dining"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Lou&#39;s Drag Brunch: 90s Party!",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/lou-s-drag-brunch",
-      "start": "2026-04-19",
-      "date": "2026-04-19",
-      "venue": "",
-      "address": "",
-      "score": 6,
-      "reason": "Scene-y drag brunch with 90s party theme - cultural event with upscale dining"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Sunday Jazz Brunch",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/sunday-jazz-brunch--26",
-      "start": "2026-04-19",
-      "date": "2026-04-19",
-      "venue": "",
-      "address": "",
-      "score": 6,
-      "reason": "Jazz brunch - upscale dining and entertainment experience"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Sunday Sauce: $35 three-course family meal at Tuscan Kitchen",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/sunday-sauce-35-three-course-family-meal-at-tuscan-kitchen--10",
-      "start": "2026-04-19",
-      "date": "2026-04-19",
-      "venue": "",
-      "address": "",
-      "score": 6,
-      "reason": "Upscale three-course family meal at Tuscan Kitchen - high-quality dining experience"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Quincy MA Presidential Food Tour",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/quincy-ma-presidential-food-tour--25",
-      "start": "2026-04-19",
-      "date": "2026-04-19",
-      "venue": "",
-      "address": "",
-      "score": 6,
-      "reason": "Presidential-themed food tour - combines upscale culinary with historical/civic interest"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Posto South End- Happy Hour Deals!",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/posto-south-end-happy-hour-deals--300",
-      "start": "2026-04-19",
-      "date": "2026-04-19",
-      "venue": "",
-      "address": "",
-      "score": 6,
-      "reason": "Upscale happy hour at South End restaurant"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Film Screening of Queen of Hearts: Audrey Flack",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/film-screening-of-queen-of-hearts-audrey-flack",
-      "start": "2026-04-19",
-      "date": "2026-04-19",
-      "venue": "",
-      "address": "",
-      "score": 6,
-      "reason": "Art film screening \u2014 cultural event with intellectual appeal"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Painted Burro Davis Square- Happy Hour Deals!",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/painted-burro-davis-square-happy-hour-deals--108",
-      "start": "2026-04-19",
-      "date": "2026-04-19",
-      "venue": "",
-      "address": "",
-      "score": 6,
-      "reason": "Happy hour at upscale restaurant in Somerville"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Unlimited Steak &amp; Frites Sundays",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/unlimited-steak-frites-sundays--24",
-      "start": "2026-04-19",
-      "date": "2026-04-19",
-      "venue": "",
-      "address": "",
-      "score": 6,
-      "reason": "Upscale steak frites dining special"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "\u201cOnce Upon My Mother\u201d at National Center for Jewish Film\u2019s Annual Film Festival 2026",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/once-upon-my-mother-at-national-center-for-jewish-film-s-annual-film-festival-2026",
-      "start": "2026-04-19",
-      "date": "2026-04-19",
-      "venue": "",
-      "address": "",
-      "score": 6,
-      "reason": "Festival film screening \u2014 cultural event open to public"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Fallen Stars Book Celebration with Imani Erriu",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/fallen-stars-book-celebration-with-imani-erriu",
-      "start": "2026-04-19",
-      "date": "2026-04-19",
-      "venue": "",
-      "address": "",
-      "score": 6,
-      "reason": "Author event and book celebration \u2014 literary and cultural gathering"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Rhys Darby: The Legend Returns",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/rhys-darby-the-legend-returns",
-      "start": "2026-04-19",
-      "date": "2026-04-19",
-      "venue": "",
-      "address": "",
-      "score": 6,
-      "reason": "Comedy show \u2014 entertainment at professional venue"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Jazz Sunday: Nicholas Brust Quartet / Dominique Eade &amp; John Lockwood Duo",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/jazz-sunday-nicholas-brust-quartet-dominique-eade-john-lockwood-duo",
-      "start": "2026-04-19",
-      "date": "2026-04-19",
-      "venue": "",
-      "address": "",
-      "score": 6,
-      "reason": "Live jazz performance at upscale venue\u2014fits high-status cultural entertainment preference"
-    },
-    {
-      "source": "Meetup: Tech Boston",
-      "name": "PyCon preview: The Exceptions We Don't Catch in Technical Conversations",
-      "description": "We write try/except blocks. We write unit tests. We handle edge cases. But what about the exceptions we throw at *each other* in technical conversations? Emin Martinian is here to debug that.\n\nJoin us for a preview and rehearsal of Emin's upcoming **PyCon US 2026** **talk**, *\"The Exceptions We Don't Catch in Technical Conversations\"*. He digs into the sociological bugs hiding in our supposedly objective feedback, our technically correct but totally unconvincing arguments, and our well-meaning t",
-      "url": "https://www.meetup.com/bostonpython/events/314284388/",
-      "start": "2026-04-28T18:00",
-      "date": "2026-04-28",
-      "venue": "Microsoft New England Research and Development Center",
-      "address": "Cambridge",
-      "score": 6,
-      "reason": "PyCon preview talk on technical communication \u2014 professional development and conference-level content",
-      "_proximity": 5
-    },
-    {
-      "source": "luma:boston",
-      "name": "Future of Higher Ed (Boston): Lunch Discussion with Kathleen deLaski",
-      "description": "",
-      "url": "https://lu.ma/j781ol5o",
-      "start": "2026-04-30T15:30",
-      "venue": "",
-      "address": "Cambridge, Massachusetts",
-      "score": 6,
-      "reason": "Lunch discussion with notable speaker on higher ed policy; good professional networking and policy forum",
-      "_proximity": 5
     },
     {
       "source": "Eventbrite:embedded+systems",
@@ -1974,36 +1166,11 @@
       "price": "$0\u2013$23"
     },
     {
-      "source": "Eventbrite:pavilion+revenue",
-      "name": "MIT Water, Food, & Agriculture Innovation Prize 2026",
-      "description": "Attend MIT's nationwide pitch competition for early-stage, student-run startups transforming the water, food, & agriculture sector!",
-      "url": "https://www.eventbrite.com/e/mit-water-food-agriculture-innovation-prize-2026-tickets-1979199882126",
-      "start": "2026-04-29",
-      "venue": "MIT E38",
-      "address": "292 Main Street, Cambridge",
-      "score": 6,
-      "reason": "MIT pitch competition; high-status innovation event with startup founders and investors",
-      "_proximity": 5,
-      "price": "$25"
-    },
-    {
-      "source": "IG: Harvard Art Museums",
-      "name": "P\u0131nar \u00d6\u011frenci: Gl\u00fcck auf in Deutschland",
-      "description": "The first major U.S. installation by Berlin-based artist P\u0131nar \u00d6\u011frenci featuring a 2024 film and five related collages addressing postwar German identity and immigrant experiences in contemporary Germany.",
-      "url": "https://www.instagram.com/p/DXPSxAblHbo/",
-      "start": "2026-04-19",
-      "venue": "Harvard Art Museums, Gallery 1120",
-      "address": "Cambridge, Massachusetts",
-      "score": 6,
-      "reason": "Contemporary art installation at museum \u2014 first major U.S. installation by Berlin-based artist addressing immigration/identity, strong intellectual appeal",
-      "_proximity": 5
-    },
-    {
       "source": "IG: Gardner Museum",
-      "name": "Picturing Isabella exhibition",
-      "description": "Exhibition featuring images of Isabella Stewart Gardner on view through June 28, 2026.",
+      "name": "Picturing Isabella Exhibition",
+      "description": "Exhibition featuring works related to the life and legacy of Isabella Stewart Gardner, the museum's founder.",
       "url": "https://www.instagram.com/gardnermuseum/",
-      "start": "2026-04-19",
+      "start": "2026-04-14",
       "venue": "Isabella Stewart Gardner Museum - Fenway Gallery",
       "address": "Boston, Massachusetts",
       "score": 6,
@@ -2011,64 +1178,112 @@
       "_proximity": 7
     },
     {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Salem Horror Festival",
+      "source": "Boston Calendar",
+      "name": "$1 Oysters at Loco Taqueria &amp; Oyster Bar",
       "description": "",
-      "url": "https://do617.com/events/2026/5/1/salem-horror-festival-tickets",
-      "start": "2026-05-01T10:00",
-      "venue": "Downtown Salem",
+      "url": "https://www.thebostoncalendar.com/events/1-oysters-at-loco-taqueria-oyster-bar--166",
+      "start": "2026-04-20",
+      "date": "2026-04-20",
+      "venue": "",
       "address": "",
-      "score": 5,
-      "reason": "Salem Horror Festival - specialized cultural/film festival",
-      "_proximity": 8
+      "score": 6,
+      "reason": "$1 oysters at Loco Taqueria & Oyster Bar; upscale food happy hour event"
     },
     {
       "source": "Boston Calendar",
-      "name": "P\u00e2te \u00e0 Choux: Eclairs and Cream Puffs *In-Person* *NEW*",
+      "name": "Bottomless Maki for $32 at Fat Baby",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/pate-a-choux-eclairs-and-cream-puffs-in-person-new",
-      "start": "2026-04-19",
-      "date": "2026-04-19",
+      "url": "https://www.thebostoncalendar.com/events/bottomless-maki-for-32-at-fat-baby--90",
+      "start": "2026-04-20",
+      "date": "2026-04-20",
       "venue": "",
       "address": "",
-      "score": 5,
-      "reason": "Culinary workshop on French pastry - upscale food/drink interest"
+      "score": 6,
+      "reason": "Bottomless sushi special - upscale dining experience"
     },
     {
       "source": "Boston Calendar",
-      "name": "\u201cAda \u2013 My Mother the Architect\u201d at National Center for Jewish Film\u2019s Annual Film Festival 2026",
+      "name": "$10 Martinis at Petula&#39;s",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/ada-my-mother-the-architect-at-national-center-for-jewish-film-s-annual-film-festival-2026",
-      "start": "2026-04-19",
-      "date": "2026-04-19",
+      "url": "https://www.thebostoncalendar.com/events/10-martinis-at-petula-s--90",
+      "start": "2026-04-20",
+      "date": "2026-04-20",
       "venue": "",
       "address": "",
-      "score": 5,
-      "reason": "Film festival screening - cultural/arts event at prestigious institution"
+      "score": 6,
+      "reason": "Martini special at upscale lounge"
     },
     {
       "source": "Boston Calendar",
-      "name": "Introduction to Tea",
+      "name": "$7 Martinis at Rebel&#39;s Guild",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/introduction-to-tea",
-      "start": "2026-04-19",
-      "date": "2026-04-19",
+      "url": "https://www.thebostoncalendar.com/events/7-martinis-at-rebel-s-guild--39",
+      "start": "2026-04-20",
+      "date": "2026-04-20",
       "venue": "",
       "address": "",
-      "score": 5,
-      "reason": "Introduction to Tea \u2014 upscale beverage education/tasting event"
+      "score": 6,
+      "reason": "Martini special at upscale venue"
     },
     {
       "source": "Boston Calendar",
-      "name": "Union Comedy Improv Shows",
+      "name": "Mai Seaport Handroll Happy Hour Special",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/union-comedy-improv-shows--53",
-      "start": "2026-04-19",
-      "date": "2026-04-19",
+      "url": "https://www.thebostoncalendar.com/events/mai-seaport-handroll-happy-hour-special--6",
+      "start": "2026-04-20",
+      "date": "2026-04-20",
       "venue": "",
       "address": "",
-      "score": 5,
-      "reason": "Comedy improv \u2014 entertainment at Union venue"
+      "score": 6,
+      "reason": "Handroll happy hour at upscale Seaport venue"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "The Gravewood Release Celebration with Kelly Andrew",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/the-gravewood-release-celebration-with-kelly-andrew",
+      "start": "2026-04-20",
+      "date": "2026-04-20",
+      "venue": "",
+      "address": "",
+      "score": 6,
+      "reason": "Release celebration with artist - media/cultural event"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "Belmont World Film&#39;s 24th International Film Series",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/belmont-world-film-s-24th-international-film-series--4",
+      "start": "2026-04-20",
+      "date": "2026-04-20",
+      "venue": "",
+      "address": "",
+      "score": 6,
+      "reason": "International film series - cultural/arts event"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "Raye - This Tour May Contain New Music",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/raye-this-tour-may-contain-new-music",
+      "start": "2026-04-20",
+      "date": "2026-04-20",
+      "venue": "",
+      "address": "",
+      "score": 6,
+      "reason": "Concert by established artist - cultural event"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "IN THE LAND OF ARTO: East Coast premiere @ Belmont World Film&#39;s 24th International Film Series",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/in-the-land-of-arto-east-coast-premiere-belmont-world-film-s-24th-international-film-series",
+      "start": "2026-04-20",
+      "date": "2026-04-20",
+      "venue": "",
+      "address": "",
+      "score": 6,
+      "reason": "East Coast film premiere - cultural/media event"
     }
   ],
   "extra_events": [
@@ -3071,95 +2286,10 @@
     ]
   },
   "costs": {
-    "week": 1.4924,
-    "month": 3.2589,
-    "total": 4.5328,
+    "week": 0.1185,
+    "month": 3.5283,
+    "total": 4.8023,
     "runs": [
-      {
-        "ts": "2026-04-19T16:49:36.482768",
-        "persona": "unknown",
-        "events_total": 214,
-        "events_cached": 81,
-        "events_scored": 1,
-        "cost_usd": 0.006632,
-        "duration_ms": 8049,
-        "models": {
-          "claude-haiku-4-5-20251001": 0.006632
-        },
-        "by_stage": {
-          "fetch": 0.005807,
-          "score": 0.000825
-        },
-        "source_counts": {},
-        "deploy_why": "run",
-        "netlify": {
-          "total": 1000,
-          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
-        },
-        "efficiency": {
-          "cache_hit_rate": 0.988,
-          "avg_hit_rate": 0.999,
-          "cost_per_scored_event": 0.00663,
-          "notes": [
-            "Efficient \u2014 99% cache (81 cached, 1 scored), $0.0066"
-          ]
-        }
-      },
-      {
-        "ts": "2026-04-19T17:04:04.058071",
-        "persona": "unknown",
-        "events_total": 770,
-        "events_cached": 196,
-        "events_scored": 50,
-        "cost_usd": 0.016129,
-        "duration_ms": 18265,
-        "models": {
-          "claude-haiku-4-5-20251001": 0.016129
-        },
-        "by_stage": {
-          "fetch": 0.008585,
-          "score": 0.007544
-        },
-        "source_counts": {},
-        "deploy_why": "run",
-        "netlify": {
-          "total": 1000,
-          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
-        },
-        "efficiency": {
-          "cache_hit_rate": 0.797,
-          "avg_hit_rate": 0.996,
-          "cost_per_scored_event": 0.00032,
-          "notes": [
-            "Efficient \u2014 80% cache (196 cached, 50 scored), $0.0161"
-          ]
-        }
-      },
-      {
-        "ts": "2026-04-19T17:28:52.046379",
-        "persona": "unknown",
-        "events_total": 767,
-        "events_cached": 213,
-        "events_scored": 0,
-        "cost_usd": 0,
-        "duration_ms": 0,
-        "models": {},
-        "by_stage": {},
-        "source_counts": {},
-        "deploy_why": "run",
-        "netlify": {
-          "total": 1000,
-          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
-        },
-        "efficiency": {
-          "cache_hit_rate": 1.0,
-          "avg_hit_rate": 0.957,
-          "cost_per_scored_event": 0.0,
-          "notes": [
-            "Efficient \u2014 100% cache (213 cached, 0 scored), $0.0000"
-          ]
-        }
-      },
       {
         "ts": "2026-04-19T18:15:10.675310",
         "persona": "unknown",
@@ -3219,24 +2349,116 @@
             "Efficient \u2014 99% cache (332 cached, 3 scored), $0.0014"
           ]
         }
+      },
+      {
+        "ts": "2026-04-19T19:00:27.688287",
+        "persona": "unknown",
+        "events_total": 1322,
+        "events_cached": 425,
+        "events_scored": 655,
+        "cost_usd": 0.080759,
+        "duration_ms": 92495,
+        "models": {
+          "claude-haiku-4-5-20251001": 0.080759
+        },
+        "by_stage": {
+          "score": 0.080759
+        },
+        "source_counts": {},
+        "deploy_why": "run",
+        "netlify": {
+          "total": 1000,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.394,
+          "avg_hit_rate": 0.809,
+          "cost_per_scored_event": 0.00012,
+          "notes": [
+            "Cache 39% hit (425 cached, 655 scored) \u2014 many new events, normal on first daily run",
+            "High scoring volume (655 scored) \u2014 consider raising min_score to cut costs",
+            "Cache hit rate 39% vs recent avg 81% (425 cached / 655 scored) \u2014 possible new sources added or score cache cleared"
+          ]
+        }
+      },
+      {
+        "ts": "2026-04-19T19:05:22.656429",
+        "persona": "unknown",
+        "events_total": 1322,
+        "events_cached": 60,
+        "events_scored": 655,
+        "cost_usd": 0.070214,
+        "duration_ms": 87398,
+        "models": {
+          "claude-haiku-4-5-20251001": 0.070214
+        },
+        "by_stage": {
+          "score": 0.070214
+        },
+        "source_counts": {},
+        "deploy_why": "run",
+        "netlify": {
+          "total": 1000,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.084,
+          "avg_hit_rate": 0.691,
+          "cost_per_scored_event": 0.00011,
+          "notes": [
+            "Cache 8% hit (60 cached, 655 scored) \u2014 many new events, normal on first daily run",
+            "High scoring volume (655 scored) \u2014 consider raising min_score to cut costs",
+            "Cache hit rate 8% vs recent avg 69% (60 cached / 655 scored) \u2014 possible new sources added or score cache cleared"
+          ]
+        }
+      },
+      {
+        "ts": "2026-04-20T08:37:08.075257",
+        "persona": "unknown",
+        "events_total": 724,
+        "events_cached": 169,
+        "events_scored": 97,
+        "cost_usd": 0.118481,
+        "duration_ms": 137663,
+        "models": {
+          "claude-haiku-4-5-20251001": 0.118481
+        },
+        "by_stage": {
+          "fetch": 0.109312,
+          "score": 0.009169
+        },
+        "source_counts": {},
+        "deploy_why": "run",
+        "netlify": {
+          "total": 1000,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.635,
+          "avg_hit_rate": 0.548,
+          "cost_per_scored_event": 0.00122,
+          "notes": [
+            "High cost $0.1185 \u2014 check for new uncached scrape_url sources burning tokens"
+          ]
+        }
       }
     ],
     "netlify": "1000 credit pack \u2014 check balance at app.netlify.com/billing"
   },
   "sources": {
-    "Eventbrite": 43,
-    "do617": 48,
+    "Eventbrite": 26,
+    "do617": 18,
     "Liberty Hotel events": 5,
+    "Boston Fashion Week": 1,
     "IG": 8,
-    "Boston Calendar": 29,
-    "luma": 6,
     "Harvard Kennedy School": 10,
     "Mass Fashion Week": 1,
-    "Meetup": 7,
-    "allevents": 1,
-    "ticketmaster": 1,
+    "ticketmaster": 3,
+    "Meetup": 4,
+    "luma": 2,
     "SoWa Boston": 2,
-    "VENU Boston": 7
+    "VENU Boston": 7,
+    "Boston Calendar": 17
   },
   "source_urls": {
     "do617": "https://do617.com/events/food-drink",
@@ -3290,18 +2512,18 @@
     "Venture Lane events": "https://www.venturelane.co/events"
   },
   "source_stats": {
-    "Eventbrite": 43,
-    "do617": 48,
+    "Eventbrite": 26,
+    "do617": 18,
     "Liberty Hotel events": 5,
+    "Boston Fashion Week": 1,
     "IG": 8,
-    "Boston Calendar": 29,
-    "luma": 6,
     "Harvard Kennedy School": 10,
     "Mass Fashion Week": 1,
-    "Meetup": 7,
-    "allevents": 1,
-    "ticketmaster": 1,
+    "ticketmaster": 3,
+    "Meetup": 4,
+    "luma": 2,
     "SoWa Boston": 2,
-    "VENU Boston": 7
+    "VENU Boston": 7,
+    "Boston Calendar": 17
   }
 }
