@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-20T08:42:15.010806",
-  "today": "2026-04-20",
+  "generated_at": "2026-04-21T08:18:42.084965",
+  "today": "2026-04-21",
   "days": 7,
   "persona": "dates",
   "persona_prompt": "You are filtering Boston events for date ideas \u2014 things two people would enjoy doing together.\n\nGreat date events:\n- Food & drink: wine tastings, prix fixe dinners, cocktail classes, food festivals, tasting menus, new restaurant openings\n- Arts & culture: gallery openings, museum exhibits, live music, jazz, comedy shows, theater, film screenings\n- Experiences: cooking classes, pottery, dance lessons, sunset cruises, rooftop events, seasonal markets\n- Outdoor: scenic walks, garden events, waterfront activities, bike tours\n- Nightlife: speakeasy events, live DJ sets, themed parties, rooftop bars\n\nLower priority:\n- Kids/family-focused events\n- Pure networking or professional events\n- Large-scale sports (unless it's a unique experience like courtside)\n- Conferences, lectures, or panels with no social component\n\nScore 0-10. Only return events with score >= 5.",
@@ -56,6 +56,19 @@
       "reason": "Vinyl & wine pairing experience at art gallery \u2014 perfect date activity",
       "_proximity": 3,
       "price": "$13"
+    },
+    {
+      "source": "Eventbrite:swimwear",
+      "name": "Johnnie Walker Better With Black Label Cocktail Competition - Boston",
+      "description": "Mix, shake, and sip your way to victory at the Johnnie Walker Better With Black Label Cocktail Competition!",
+      "url": "https://www.eventbrite.com/e/johnnie-walker-better-with-black-label-cocktail-competition-boston-tickets-1980025405288",
+      "start": "2026-04-27",
+      "venue": "My Girl",
+      "address": "10 Post Office Square, Boston",
+      "score": 8,
+      "reason": "Cocktail competition is an upscale, interactive food/drink experience perfect for a date",
+      "_proximity": 3,
+      "price": "$0"
     },
     {
       "source": "do617:food-drink",
@@ -154,6 +167,66 @@
       "_proximity": 10
     },
     {
+      "source": "do617:food-drink",
+      "name": "Class: Hand-Pulled Noodles",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/25/class-hand-pulled-noodles-tickets",
+      "start": "2026-04-25T10:00",
+      "venue": "Pagu",
+      "address": "",
+      "score": 8,
+      "reason": "Hands-on cooking class (noodles) - excellent interactive date activity",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:food-drink",
+      "name": "saturday brunch \u2013 Rich Graiko Quartet \u2013 in the performance space",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/25/saturday-brunch-rich-graiko-quartet-in-the-performance-space-tickets",
+      "start": "2026-04-25T11:30",
+      "venue": "Lou's",
+      "address": "",
+      "score": 8,
+      "reason": "Brunch with live jazz quartet - classic date combination",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:food-drink",
+      "name": "Hands-On: Traditions From Rome",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/25/hands-on-traditions-from-rome-tickets",
+      "start": "2026-04-25T12:00",
+      "venue": "Eataly Boston",
+      "address": "",
+      "score": 8,
+      "reason": "Hands-on Italian cooking class - great date experience",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:food-drink",
+      "name": "Class: Bao",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/25/class-bao-tickets",
+      "start": "2026-04-25T13:00",
+      "venue": "Pagu",
+      "address": "",
+      "score": 8,
+      "reason": "Cooking class (bao) - interactive food date",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:food-drink",
+      "name": "Hands On: Tiramis\u00f9 al Limoncello",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/25/hands-on-tiramisu-al-limoncello-tickets",
+      "start": "2026-04-25T15:30",
+      "venue": "Eataly Boston",
+      "address": "",
+      "score": 8,
+      "reason": "Hands-on Italian dessert class - fun interactive date",
+      "_proximity": 3
+    },
+    {
       "source": "do617:film-theatre-performing-arts",
       "name": "Presented by Lexus Broadway In BostonDisney's Beauty and the Beast",
       "description": "",
@@ -247,18 +320,6 @@
       "address": "",
       "score": 8,
       "reason": "Broadway theater production \u2014 classic date night",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
-      "name": "Florence + The Machine, SOFIA ISELLA",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/20/florence-the-machine-sofia-isella-tickets",
-      "start": "2026-04-20T19:30",
-      "venue": "TD Garden",
-      "address": "",
-      "score": 8,
-      "reason": "Florence + The Machine is a major artist, excellent concert date",
       "_proximity": 3
     },
     {
@@ -456,67 +517,6 @@
       "_proximity": 3
     },
     {
-      "source": "Boston Calendar",
-      "name": "So Close at Nook: $12 experimental cocktails",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/so-close--126",
-      "start": "2026-04-20",
-      "date": "2026-04-20",
-      "venue": "",
-      "address": "",
-      "score": 8,
-      "reason": "Experimental cocktails at upscale bar, perfect date experience"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Bachata Fundamentals",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/bachata-fundamentals--39",
-      "start": "2026-04-20",
-      "date": "2026-04-20",
-      "venue": "",
-      "address": "",
-      "score": 8,
-      "reason": "Dance lesson, interactive and fun couple activity"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Partner Swing Dancing at Loretta&#39;s",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/partner-swing-dancing-at-loretta-s",
-      "start": "2026-04-20",
-      "date": "2026-04-20",
-      "venue": "",
-      "address": "",
-      "score": 8,
-      "reason": "Partner swing dancing, ideal interactive date"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Weekly Queer Line &amp; Partner Dancing",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/weekly-queer-line-partner-dancing--25",
-      "start": "2026-04-20",
-      "date": "2026-04-20",
-      "venue": "",
-      "address": "",
-      "score": 8,
-      "reason": "Partner dancing event, inclusive and fun date activity"
-    },
-    {
-      "source": "Meetup: Career/Business",
-      "name": "Candlelight: The Lord of the Rings",
-      "description": "You can get your tickets [here](https://feverup.com/m/529182). My seat is Zone C if you want to seat close by.\n\n**Disclaimer:** I am not affiliated with Candlelight Concerts in any way. All attendees are responsible for purchasing their own tickets, preferably in advance, to ensure entry. Please make sure to check the official event page for ticket availability and details.\n\n**\\#\\#\\# About The Event \\#\\#\\#**\n**The Fellowship lives on through the music from The Lord of the Rings trilogy.** Celebr",
-      "url": "https://www.meetup.com/boston-random-acts-of-connection/events/313597778/",
-      "start": "2026-04-25T20:30",
-      "date": "2026-04-25",
-      "venue": "Old South Church",
-      "address": "Boston",
-      "score": 8,
-      "reason": "Candlelight concert is upscale arts experience with beloved IP; perfect romantic date activity",
-      "_proximity": 3
-    },
-    {
       "source": "ticketmaster",
       "name": "Boston Symphony Orchestra",
       "description": "",
@@ -541,6 +541,55 @@
       "score": 8,
       "reason": "Joshua Bell is world-renowned classical musician; premium live music date experience",
       "_proximity": 3
+    },
+    {
+      "source": "Eventbrite:venu+boston",
+      "name": "The Best of Boston - Food Tours by Cozymeal\u2122",
+      "description": "Learn all about Boston's incredible culture while enjoying the city's favorite fare with Cozymeal! Join the upcoming food tour, \u201cThe Best of Boston\u201d, with Guide Bobby or Local Guide for a fun 3-hour experience with 6 tastings along the way.Cozymeal offers a variety of culinary experiences, including",
+      "url": "https://www.eventbrite.com/e/the-best-of-boston-food-tours-by-cozymealtm-tickets-1981247059288",
+      "start": "2026-04-21",
+      "venue": "Location provided after booking",
+      "address": "Boston",
+      "score": 8,
+      "reason": "Food tour with tastings - excellent date experience combining culture and cuisine",
+      "_proximity": 3,
+      "price": "$0"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "Wine Dinners at Forage",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/wine-dinners-at-forage--27",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
+      "venue": "",
+      "address": "",
+      "score": 8,
+      "reason": "Wine dinners - upscale food and drink experience perfect for couples"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "Cheese and Beer Pairing *In-Person* *NEW*",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/oktoberfest-cheese-and-beer-pairing-in-person",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
+      "venue": "",
+      "address": "",
+      "score": 8,
+      "reason": "Upscale food & drink pairing event, ideal date activity"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "Channing Daughters Wine Dinner",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/channing-daughters-wine-dinner",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
+      "venue": "",
+      "address": "",
+      "score": 8,
+      "reason": "Wine dinner pairing event, upscale food & drink experience"
     },
     {
       "source": "Eventbrite:reception",
@@ -608,32 +657,6 @@
       "price": "$19\u2013$24"
     },
     {
-      "source": "Eventbrite:venu+boston",
-      "name": "The Best of Boston - Food Tours by Cozymeal\u2122",
-      "description": "Learn all about Boston's incredible culture while enjoying the city's favorite fare with Cozymeal! Join the upcoming food tour, \u201cThe Best of Boston\u201d, with Guide Bobby or Local Guide for a fun 3-hour experience with 6 tastings along the way.Cozymeal offers a variety of culinary experiences, including",
-      "url": "https://www.eventbrite.com/e/the-best-of-boston-food-tours-by-cozymealtm-tickets-1981040692038",
-      "start": "2026-04-20",
-      "venue": "Location provided after booking",
-      "address": "Boston",
-      "score": 7,
-      "reason": "Guided Boston food tour with multiple tastings \u2014 curated culinary date experience",
-      "_proximity": 3,
-      "price": "$0"
-    },
-    {
-      "source": "Eventbrite:gallery+opening",
-      "name": "Art & Architectural Historic Tour of Beacon Hill",
-      "description": "Group  Tour | Uncovering & Discovering Hidden Art Vestibules, Art Atelier, Art Galleries, Architecture  of Beacon Hill and its History",
-      "url": "https://www.eventbrite.com/e/art-architectural-historic-tour-of-beacon-hill-tickets-1977401655582",
-      "start": "2026-04-20",
-      "venue": "The Hidden Art Gallery",
-      "address": "25 Myrtle Street, Boston",
-      "score": 7,
-      "reason": "Historic architecture and art tour of Beacon Hill - cultural date activity",
-      "_proximity": 3,
-      "price": "$50\u2013$301"
-    },
-    {
       "source": "Eventbrite:gallery+opening",
       "name": "The Art & Color Of Wine @ The Diana Stelin Gallery",
       "description": "Wine is science that we talk about like art, and just like art, color is a fundamental component of wine's style, message, and personality.",
@@ -673,7 +696,7 @@
       "price": "$0"
     },
     {
-      "source": "Eventbrite:fashion+show",
+      "source": "Eventbrite:runway+show",
       "name": "Werkin Girls Drag Queen Show Boston-An Unforgettable Boston Drag Experience",
       "description": "Boston's #1 Drag Queen Show - Werkin Girls",
       "url": "https://www.eventbrite.com/e/werkin-girls-drag-queen-show-boston-an-unforgettable-boston-drag-experience-tickets-1325344183129",
@@ -917,6 +940,78 @@
     },
     {
       "source": "do617:food-drink",
+      "name": "Stronger Together: A Night of Music for Mental Health",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/25/stronger-together-a-night-of-music-for-mental-health-tickets",
+      "start": "2026-04-25T17:00",
+      "venue": "High Street Place",
+      "address": "",
+      "score": 7,
+      "reason": "Live music event with charitable purpose - good for a date",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:food-drink",
+      "name": "Saturday Live Music With Robert Thackery",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/25/saturday-live-music-with-robert-thackery-tickets",
+      "start": "2026-04-25T20:00",
+      "venue": "Mighty Squirrel Brewing Co.",
+      "address": "",
+      "score": 7,
+      "reason": "Live music performance - solid date activity",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:food-drink",
+      "name": "Coverstory Band",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/25/coverstory-band-tickets",
+      "start": "2026-04-25T21:00",
+      "venue": "Great American Beer Hall",
+      "address": "",
+      "score": 7,
+      "reason": "Live band performance - good date experience",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:food-drink",
+      "name": "Food Pop Up: Mei Mei Dumplings",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/25/food-pop-up-mei-mei-dumplings-tickets",
+      "start": "2026-04-25T13:00",
+      "venue": "Break Rock Brewing",
+      "address": "",
+      "score": 7,
+      "reason": "Food pop-up event - casual food-focused date",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:food-drink",
+      "name": "The Sunset Series @ Cisco Fenway",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/25/the-sunset-series-cisco-fenway-tickets",
+      "start": "2026-04-25T14:00",
+      "venue": "Game On!",
+      "address": "",
+      "score": 7,
+      "reason": "Sunset series with likely music/entertainment - scenic date vibe",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:food-drink",
+      "name": "Live Music: Keith Crocker",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/25/live-music-keith-crocker-tickets",
+      "start": "2026-04-25T15:00",
+      "venue": "Break Rock Brewing",
+      "address": "",
+      "score": 7,
+      "reason": "Live music performance - good date activity",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:food-drink",
       "name": ", 2026 - Drag Me To Bunch @ Carrie Nation",
       "description": "",
       "url": "https://do617.com/events/2026/4/26/2026-drag-me-to-bunch-carrie-nation-tickets",
@@ -952,39 +1047,15 @@
       "_proximity": 3
     },
     {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Labyrinth (Click for Showtimes)",
+      "source": "do617:food-drink",
+      "name": "Jazz Dinner w/ Jordan Gravel!",
       "description": "",
-      "url": "https://do617.com/events/2026/4/20/labyrinth-click-for-showtimes-tickets",
-      "start": "2026-04-20T16:30",
-      "venue": "The Brattle Theatre",
+      "url": "https://do617.com/events/2026/4/27/jazz-dinner-w-jordan-gravel-tickets",
+      "start": "2026-04-27T19:00",
+      "venue": "Gulu-Gulu Cafe",
       "address": "",
       "score": 7,
-      "reason": "Classic film screening - beloved cult film, great date conversation starter",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "West Coast Swing Training",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/20/west-coast-swing-training-tickets",
-      "start": "2026-04-20T19:00",
-      "venue": "Arts At The Armory",
-      "address": "",
-      "score": 7,
-      "reason": "Dance lessons - interactive experience perfect for couples",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Learn to Sew - How to Use A Sewing Machine",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/20/learn-to-sew-how-to-use-a-sewing-machine-tickets",
-      "start": "2026-04-20T18:00",
-      "venue": "Craft Loft",
-      "address": "",
-      "score": 7,
-      "reason": "Hands-on creative class - shared learning experience, good date activity",
+      "reason": "Jazz dinner is a sophisticated date combining live music and dining",
       "_proximity": 3
     },
     {
@@ -1336,75 +1407,27 @@
       "_proximity": 3
     },
     {
-      "source": "do617:concerts",
-      "name": "The Antlers",
+      "source": "do617:film-theatre-performing-arts",
+      "name": "West Coast Swing Training",
       "description": "",
-      "url": "https://do617.com/events/2026/4/20/the-antlers-tickets",
-      "start": "2026-04-20T19:00",
-      "venue": "Brighton Music Hall",
+      "url": "https://do617.com/events/2026/4/27/west-coast-swing-training-tickets",
+      "start": "2026-04-27T19:00",
+      "venue": "Arts At The Armory",
       "address": "",
       "score": 7,
-      "reason": "Live music - indie rock band, great for a date",
+      "reason": "Dance lesson/training - interactive date experience",
       "_proximity": 3
     },
     {
-      "source": "do617:concerts",
-      "name": "Feid",
+      "source": "do617:film-theatre-performing-arts",
+      "name": "Whatever You Do, Don't Make News: How to Survive Your Senate Confirmation Hearing (Simulation)",
       "description": "",
-      "url": "https://do617.com/events/2026/4/20/feid-tickets",
-      "start": "2026-04-20T19:00",
-      "venue": "Citizens House of Blues",
+      "url": "https://do617.com/events/2026/4/27/whatever-you-do-don-t-make-news-how-to-survive-your-senate-confirmation-hearing-simulation-tickets",
+      "start": "2026-04-27T17:30",
+      "venue": "John F. Kennedy Jr. Forum at the Institute of Politics",
       "address": "",
       "score": 7,
-      "reason": "Feid is a popular reggaeton/Latin artist, fun live music experience",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
-      "name": "Raye   This Tour May Contain New Music",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/20/raye-this-tour-may-contain-new-music-tickets",
-      "start": "2026-04-20T20:00",
-      "venue": "MGM Music Hall at Fenway",
-      "address": "",
-      "score": 7,
-      "reason": "Raye concert - live music date with potential new material",
-      "_proximity": 8
-    },
-    {
-      "source": "do617:concerts",
-      "name": "Pure Soul Presents: A Bob Marley Celebration",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/20/pure-soul-presents-a-bob-marley-celebration-tickets",
-      "start": "2026-04-20T19:30",
-      "venue": "City Winery",
-      "address": "",
-      "score": 7,
-      "reason": "Bob Marley tribute celebration - cultural music event, fun date experience",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
-      "name": "Elan Mehler Trio",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/20/elan-mehler-trio-tickets",
-      "start": "2026-04-20T19:00",
-      "venue": "The Lilypad",
-      "address": "",
-      "score": 7,
-      "reason": "Jazz trio - live jazz is a classic romantic date experience",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
-      "name": "Jerry Bergonzi Quartet",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/20/jerry-bergonzi-quartet-tickets",
-      "start": "2026-04-20T20:30",
-      "venue": "The Lilypad",
-      "address": "",
-      "score": 7,
-      "reason": "Jazz quartet - intimate live jazz, perfect for a date",
+      "reason": "Unique civic/government simulation event - engaging and educational",
       "_proximity": 3
     },
     {
@@ -1876,6 +1899,78 @@
       "_proximity": 3
     },
     {
+      "source": "do617:concerts",
+      "name": "In Your Face 40th Anniversary TourFishbone",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/27/fishbone-tickets",
+      "start": "2026-04-27T19:00",
+      "venue": "The Sinclair",
+      "address": "",
+      "score": 7,
+      "reason": "Anniversary tour of notable funk band",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:concerts",
+      "name": "The Afghan Whigs Whigs 40th Anniversary Tour",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/27/the-afghan-whigs-whigs-40th-anniversary-tour-tickets",
+      "start": "2026-04-27T19:30",
+      "venue": "Royale Boston",
+      "address": "",
+      "score": 7,
+      "reason": "40th Anniversary tour - established indie rock band",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:concerts",
+      "name": "Fish and the Folk Five | Woodfern | Shotgun Waltz | Pat Fant",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/27/fish-and-the-folk-five-woodfern-shotgun-waltz-pat-fant-tickets",
+      "start": "2026-04-27T19:30",
+      "venue": "The Midway Caf\u00e9",
+      "address": "",
+      "score": 7,
+      "reason": "Live folk music event - great for a date",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:concerts",
+      "name": "Elan Mehler Trio",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/27/elan-mehler-trio-tickets",
+      "start": "2026-04-27T19:00",
+      "venue": "The Lilypad",
+      "address": "",
+      "score": 7,
+      "reason": "Jazz trio performance - excellent date activity",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:concerts",
+      "name": "Boston Speaker Series\u2013Lynsey Addario",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/27/boston-speaker-series-lynsey-addario-tickets",
+      "start": "2026-04-27T20:00",
+      "venue": "Symphony Hall, Boston, MA",
+      "address": "",
+      "score": 7,
+      "reason": "Speaker series with accomplished photojournalist - engaging cultural event",
+      "_proximity": 3
+    },
+    {
+      "source": "do617:concerts",
+      "name": "Jerry Bergonzi Quartet",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/27/jerry-bergonzi-quartet-tickets",
+      "start": "2026-04-27T20:30",
+      "venue": "The Lilypad",
+      "address": "",
+      "score": 7,
+      "reason": "Jazz quartet - great live music date",
+      "_proximity": 3
+    },
+    {
       "source": "do617:comedy",
       "name": "Jim Breuer: Find The Funny",
       "description": "",
@@ -1996,32 +2091,6 @@
       "score": 7,
       "reason": "Board games and D&D in a casual setting is a fun, interactive date experience",
       "_proximity": 5
-    },
-    {
-      "source": "ticketmaster",
-      "name": "THE ANTLERS (18+)",
-      "description": "THIS EVENT IS 18+ WITH A VALID ID. DOORS: 7:00 PM SHOW: 8:00 PM ALL TIMES AND SUPPORT BANDS ARE SUBJECT TO CHANGE WITHOUT NOTICE OR REFUND. Tickets purchased from unofficial third-party outlets CANNOT be verified by our Box Office. If you sell or purchase your tickets from a third-party, we are not liable for any entry issues you may have. Any disputes involving third-party ticket purchases must be settled with the third-party outlet directly. The Paradise Rock Club Box Office is open from 12:00 PM - 6:00 PM, Monday - Friday. We offer ticket purchases for Brighton Music Hall, Paradise Rock Club, Citizens House of Blues Boston, Orpheum Theatre, & MGM Music Hall at Fenway. If traveling from out of town, please call the customer line at 617-562-8801 to verify hours. There is a seating area available for those with mobility limitations. If you require accommodation, we encourage you to reach out to information@crossroadspresents.com as soon as you have purchased your GA ticket.",
-      "url": "https://www.ticketmaster.com/the-antlers-18-boston-massachusetts-04-20-2026/event/01006358110EA1FA",
-      "start": "2026-04-20T23:00",
-      "venue": "Brighton Music Hall presented by Citizens",
-      "address": "Boston, MA",
-      "price": "",
-      "score": 7,
-      "reason": "Live music concert (The Antlers); intimate venue setting suitable for a date night",
-      "_proximity": 3
-    },
-    {
-      "source": "ticketmaster",
-      "name": "Florence + The Machine - Everybody Scream Tour",
-      "description": "Guests attending TD Garden events are advised that only small bags, clutches, crossbodies, and wristlets measuring 6\"x4\"x1.5\" or smaller are permitted into the arena. Laptops, tablets, backpacks, luggage, briefcases, outside food/beverages, professional cameras, and like articles will be strictly prohibited from the facility. All guests may be subject to search of their person and/or possessions. Please review the TD Garden Policies before coming to the arena: https://www.tdgarden.com/policies",
-      "url": "https://www.ticketmaster.com/florence-the-machine-everybody-scream-tour-boston-massachusetts-04-20-2026/event/01006355079CA6A4",
-      "start": "2026-04-20T23:30",
-      "venue": "TD Garden",
-      "address": "Boston, MA",
-      "price": "",
-      "score": 7,
-      "reason": "Major concert (Florence + The Machine); high-energy live music experience perfect for a date",
-      "_proximity": 3
     },
     {
       "source": "ticketmaster",
@@ -2167,6 +2236,32 @@
       "_proximity": 3
     },
     {
+      "source": "ticketmaster",
+      "name": "Calum Scott - The Avenoir Tour 2026",
+      "description": "All supports acts are subject to change without notice. Doors: 7pm Show: 8pm",
+      "url": "https://www.ticketmaster.com/calum-scott-the-avenoir-tour-2026-boston-massachusetts-04-25-2026/event/010062839A9F6EEC",
+      "start": "2026-04-26T00:00",
+      "venue": "Orpheum Theatre presented by Citizens",
+      "address": "Boston, MA",
+      "price": "",
+      "score": 7,
+      "reason": "Live music concert; good date if both enjoy the artist",
+      "_proximity": 3
+    },
+    {
+      "source": "ticketmaster",
+      "name": "Galantis ( 21+ )",
+      "description": "This is a 21+ Event with valid form of identification. For US citizens, a valid DMV-issued photo ID or USA passport is required. For international guests, a valid passport is required. Doors 930pm All items brought onto the property are subject to inspection. Lighters, Cigarettes & Vapes are prohibited in the venue, there is NO SMOKING OR VAPING allowed at the venue per the city of Boston Ordinances. All bags larger than 10 in x 9 in, backpacks, professional cameras (i.e detachable lenses), video equipment, luggage, & like articles are strictly prohibited. Any medication must be accompanied with proof of prescription. Guests are prohibited from bringing weapons. Weapons include, but are not limited to, the following: firearms, explosives, stun guns, handcuffs, brass knuckles, sticks, clubs, batons, & knives. Patrons with prohibited articles will be turned away at the entrances and no storage or check area will be provided. Violation of the above will result in EJECTION.",
+      "url": "https://www.ticketmaster.com/galantis-21-boston-massachusetts-04-25-2026/event/0100646399F3B6B2",
+      "start": "2026-04-26T01:30",
+      "venue": "Big Night Live",
+      "address": "Boston, MA",
+      "price": "",
+      "score": 7,
+      "reason": "Electronic music DJ set (21+) in nightlife setting; good date for music-loving couples",
+      "_proximity": 3
+    },
+    {
       "source": "Eventbrite:robotics+boston",
       "name": "Drag Bingo Boston- Ultimate Drag Queen Bingo & Drag Show in Boston",
       "description": "Drag Bingo Boston - The Ultimate Drag Queen Bingo & Drag Queen Show in Boston",
@@ -2180,7 +2275,7 @@
       "price": "$36"
     },
     {
-      "source": "Eventbrite:robotics+boston",
+      "source": "Eventbrite:IoT+boston",
       "name": "Boston 101 History Tour",
       "description": "Boston's humble beginnings in the 1630s, its growth through the 1600s. the colonial times of the 1700s & its role in the American Revolution",
       "url": "https://www.eventbrite.com/e/boston-101-history-tour-tickets-1983730215475",
@@ -2191,19 +2286,6 @@
       "reason": "Historical walking tour of Boston \u2014 scenic, educational, and ideal for a date. Great conversation starter.",
       "_proximity": 3,
       "price": "$23\u2013$32"
-    },
-    {
-      "source": "Eventbrite:machine+vision",
-      "name": "Learn to Use a Sewing Machine",
-      "description": "Come join us and learn how to use a sewing machine like a pro!",
-      "url": "https://www.eventbrite.com/e/learn-to-use-a-sewing-machine-tickets-1983989411738",
-      "start": "2026-04-20",
-      "venue": "Craft Loft (Cambridge Store)",
-      "address": "100 Cambridgeside Place, Cambridge",
-      "score": 7,
-      "reason": "Fun, hands-on experience class perfect for a date. Learning a new skill together is engaging and collaborative.",
-      "_proximity": 5,
-      "price": "$61\u2013$71"
     },
     {
       "source": "Eventbrite:vision+fund",
@@ -2217,6 +2299,19 @@
       "reason": "Live classical music concert by Boston College ensemble \u2014 upscale cultural experience perfect for a date, benefits charity.",
       "_proximity": 6,
       "price": "$0\u2013$162"
+    },
+    {
+      "source": "Eventbrite:ARM+semiconductor",
+      "name": "Sand Casting 101",
+      "description": "Learn the ancient art of Sand Casting metal! Take home a small bronze item such as a medal, pendant, or bottle opener, plus casting skills!",
+      "url": "https://www.eventbrite.com/e/sand-casting-101-tickets-1982375309916",
+      "start": "2026-04-27",
+      "venue": "Artisan's Asylum",
+      "address": "96 Holton Street, Boston",
+      "score": 7,
+      "reason": "Creative hands-on class where you take home a bronze item\u2014excellent date experience",
+      "_proximity": 3,
+      "price": "$95"
     },
     {
       "source": "Eventbrite:ARM+semiconductor",
@@ -2243,6 +2338,19 @@
       "reason": "Live music at venue\u2014classic date night activity",
       "_proximity": 4,
       "price": "$12\u2013$17"
+    },
+    {
+      "source": "Eventbrite:presales+engineer",
+      "name": "Chanda Prescod-Weinstein at the Harvard Science Center",
+      "description": "presenting The Edge of Space-Time: Particles, Poetry, and the Cosmic Dream Boogie in conversation with\u00a0Evelynn M. Hammonds",
+      "url": "https://www.eventbrite.com/e/chanda-prescod-weinstein-at-the-harvard-science-center-tickets-1983282603656",
+      "start": "2026-04-27",
+      "venue": "Science Center",
+      "address": "1 Oxford Street, Cambridge",
+      "score": 7,
+      "reason": "Public lecture on space-time and physics with poetic elements\u2014intellectual date for curious couples",
+      "_proximity": 5,
+      "price": "$0\u2013$37"
     },
     {
       "source": "Eventbrite:pavilion+revenue",
@@ -2295,7 +2403,7 @@
     {
       "source": "WBUR Events",
       "name": "'This Is Not About Running': running phenom Mary Cain tells her story",
-      "description": "Running phenom Mary Cain tells her story in this event.",
+      "description": "Running phenom Mary Cain shares her story.",
       "url": "https://www.wbur.org/events",
       "start": "2026-04-30",
       "venue": "",
@@ -2317,7 +2425,7 @@
     {
       "source": "WBUR Events",
       "name": "'Science Friday' live with Ira Flatow",
-      "description": "Science Friday live event hosted by Ira Flatow.",
+      "description": "Live Science Friday event hosted by Ira Flatow.",
       "url": "https://www.wbur.org/events",
       "start": "2026-05-04",
       "venue": "",
@@ -2328,7 +2436,7 @@
     {
       "source": "WBUR Events",
       "name": "FOUND Magazine's 25th anniversary tour with Davy Rothbart and Peter Rothbart",
-      "description": "FOUND Magazine celebrates 25 years with a tour featuring Davy Rothbart and Peter Rothbart.",
+      "description": "FOUND Magazine celebrates its 25th anniversary with founders Davy Rothbart and Peter Rothbart.",
       "url": "https://www.wbur.org/events",
       "start": "2026-05-08",
       "venue": "",
@@ -2339,7 +2447,7 @@
     {
       "source": "WBUR Events",
       "name": "The WBUR Breakfast Club: JetBlue CEO Joanna Geraghty in conversation with Tiziana Dearing",
-      "description": "JetBlue CEO Joanna Geraghty in conversation with Tiziana Dearing at The WBUR Breakfast Club.",
+      "description": "JetBlue CEO Joanna Geraghty discusses business and leadership with Tiziana Dearing.",
       "url": "https://www.wbur.org/events",
       "start": "2026-05-12",
       "venue": "",
@@ -2350,7 +2458,7 @@
     {
       "source": "WBUR Events",
       "name": "Stories from a warming world",
-      "description": "Event featuring stories from a warming world.",
+      "description": "Stories about climate change and its impacts.",
       "url": "https://www.wbur.org/events",
       "start": "2026-05-13",
       "venue": "",
@@ -2361,7 +2469,7 @@
     {
       "source": "WBUR Events",
       "name": "The WBUR Festival",
-      "description": "Join WBUR Friday, May 29 and Saturday, May 30 for lively conversations, podcast tapings and musical performances.",
+      "description": "Lively conversations, podcast tapings and musical performances on Friday, May 29 and Saturday, May 30.",
       "url": "https://www.wbur.org/events",
       "start": "2026-05-29",
       "venue": "",
@@ -2372,11 +2480,11 @@
     {
       "source": "WBUR Events",
       "name": "AMERICAN DREAMS: The Moth Mainstage at Somerville Theatre",
-      "description": "Five seasoned storytellers share extraordinary, true stories that dig deep into the idea of the American Dream.",
+      "description": "Five seasoned storytellers share extraordinary, true stories about the American Dream.",
       "url": "https://www.wbur.org/events",
       "start": "2026-06-04",
       "venue": "Somerville Theatre",
-      "address": "",
+      "address": "Somerville, Massachusetts",
       "score": 7,
       "reason": "WBUR CitySpace has upscale literary, music, and cultural events perfect for date nights - includes author talks, live music, podcast recordings",
       "_proximity": 4
@@ -2384,7 +2492,7 @@
     {
       "source": "WBUR Events",
       "name": "Tiny Desk Contest On The Road tour",
-      "description": "Tiny Desk Contest On The Road tour event.",
+      "description": "NPR's Tiny Desk Contest tour event.",
       "url": "https://www.wbur.org/events",
       "start": "2026-07-07",
       "venue": "",
@@ -2395,10 +2503,10 @@
     {
       "source": "Boston Fashion Week",
       "name": "32nd Annual Boston Fashion Week",
-      "description": "The official Boston Fashion Week event running October 4-10, 2026, featuring designer shows, events, and fashion industry activities throughout the week.",
+      "description": "The official Boston Fashion Week event running October 4-10, 2026, featuring designer shows, events, and fashion presentations throughout the week.",
       "url": "https://www.bostonfashionweek.com/",
       "start": "2026-10-04",
-      "venue": "Multiple venues",
+      "venue": "Boston Fashion Week",
       "address": "Boston, Massachusetts",
       "score": 7,
       "reason": "Major fashion week event. Upscale cultural/fashion experience suitable for date activity.",
@@ -2406,8 +2514,8 @@
     },
     {
       "source": "IG: Royale Boston",
-      "name": "Party Pupils - Yacht House Summer",
-      "description": "Party Pupils is bringing Yacht House Summer to Boston on the boat.",
+      "name": "Yacht House Summer - Party Pupils",
+      "description": "Party Pupils is bringing Yacht House Summer to Boston on a boat.",
       "url": "https://www.instagram.com/p/DXPf4pgkdGy/",
       "start": "2026-07-17",
       "venue": "Royale",
@@ -2419,328 +2527,293 @@
     {
       "source": "IG: VENU Boston",
       "name": "SNAX O'CLOCK - Perreo x Hip Hop",
-      "description": "Perreo x Hip Hop night bringing together PR anthems and club bangers with @gimmesnax running it all night.",
+      "description": "Perreo x Hip Hop night featuring PR anthems and club bangers with @gimmesnax running the event all night.",
       "url": "https://www.instagram.com/p/DXKYqIdCfc0/",
-      "start": "2026-04-18",
+      "start": "2026-04-25",
       "venue": "Venu",
-      "address": "Boston, Massachusetts",
+      "address": "Boston, MA",
       "score": 7,
       "reason": "Hip hop and Latin music night with perreo; good nightlife date experience.",
       "_proximity": 3
     },
     {
+      "source": "IG: VENU Boston",
+      "name": "Issa Vibe - Afrobeats, Amapiano & Caribbean",
+      "description": "Ladies night featuring Afrobeats, Amapiano, and Caribbean music all night with vibrant energy and vibes.",
+      "url": "https://www.instagram.com/p/DXKayLtiYxS/",
+      "start": "2026-04-25",
+      "venue": "Venu",
+      "address": "Boston, MA",
+      "score": 7,
+      "reason": "Afrobeats/Amapiano night is vibrant music/dance experience; fun social date",
+      "_proximity": 3
+    },
+    {
       "source": "IG: Gardner Museum",
       "name": "WCRB In Concert: Rachel Barton Pine",
-      "description": "Rachel Barton Pine performs on an 18th Century viola d'amore from the Isabella Stewart Gardner Museum's collection. Broadcast available on WCRB In Concert.",
+      "description": "Rachel Barton Pine performs on an 18th Century viola d'amore from the Isabella Stewart Gardner Museum's collection, which was a gift to Isabella from composer Charles Loeffler in 1903.",
       "url": "https://classical.org/inconcert",
       "start": "2026-04-12",
-      "venue": "WCRB Radio",
-      "address": "Boston, Massachusetts",
+      "venue": "WCRB",
+      "address": "",
       "score": 7,
       "reason": "Live classical music performance with rare 18th-century instrument \u2014 quality arts & culture date",
       "_proximity": 3
     },
     {
-      "source": "Boston Calendar",
-      "name": "Abe &amp; Louie\u2019s Celebrates 130th Boston Marathon Along the Finish Line",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/abe-louie-s-celebrates-130th-boston-marathon-along-the-finish-line--2",
-      "start": "2026-04-20",
-      "date": "2026-04-20",
-      "venue": "",
-      "address": "",
+      "source": "Eventbrite:gallery+opening",
+      "name": "Art & Architectural Historic Tour of Beacon Hill",
+      "description": "Group  Tour | Uncovering & Discovering Hidden Art Vestibules, Art Atelier, Art Galleries, Architecture  of Beacon Hill and its History",
+      "url": "https://www.eventbrite.com/e/art-architectural-historic-tour-of-beacon-hill-tickets-1977401658591",
+      "start": "2026-04-21",
+      "venue": "The Hidden Art Gallery",
+      "address": "25 Myrtle Street, Boston",
       "score": 7,
-      "reason": "Upscale restaurant (Abe & Louie's) celebrating Marathon with finish line view\u2014good food/drink date experience"
+      "reason": "Art and architectural historic tour - engaging cultural/outdoor experience for two",
+      "_proximity": 3,
+      "price": "$50\u2013$301"
+    },
+    {
+      "source": "Eventbrite:fashion+show",
+      "name": "Andaaz 2026",
+      "description": "Andaaz is SAA\u2019s annual South Asian Fashion and Arts celebration, featuring Person of the Year Sayani Gupta and South Asian Designers",
+      "url": "https://www.eventbrite.com/e/andaaz-2026-tickets-1987698293102",
+      "start": "2026-04-24",
+      "venue": "Richard A. and Susan F. Smith Campus Center",
+      "address": "1350 Massachusetts Avenue, Cambridge",
+      "score": 7,
+      "reason": "South Asian fashion and arts celebration - cultural event open to public with entertainment",
+      "_proximity": 5,
+      "price": "$0\u2013$25"
     },
     {
       "source": "Boston Calendar",
-      "name": "Atlantic Fish Co. Celebrates 130th Boston Marathon Along the Finish Line",
+      "name": "Spring Class: Intro to Slab Handbuilding",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/atlantic-fish-co-celebrates-130th-boston-marathon-along-the-finish-line--2",
-      "start": "2026-04-20",
-      "date": "2026-04-20",
+      "url": "https://www.thebostoncalendar.com/events/spring-class-intro-to-slab-handbuilding--4",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
       "venue": "",
       "address": "",
       "score": 7,
-      "reason": "Upscale seafood restaurant (Atlantic Fish Co.) with Marathon finish line celebration\u2014strong food date option"
+      "reason": "Pottery/slab handbuilding class - hands-on creative experience perfect for couples"
     },
     {
       "source": "Boston Calendar",
-      "name": "Muppet Madness! THE MUPPET MOVIE \u2022\u00a0Screening on 35mm!",
+      "name": "A Taste of the Freedom Trail: Boston&#39;s Iconic Food &amp; History Tour",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/muppet-madness-the-muppet-movie-screening-on-35mm",
-      "start": "2026-04-20",
-      "date": "2026-04-20",
+      "url": "https://www.thebostoncalendar.com/events/a-taste-of-the-freedom-trail-boston-s-iconic-food-history-tour--39",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
       "venue": "",
       "address": "",
       "score": 7,
-      "reason": "35mm film screening of classic Muppet Movie\u2014unique cinema experience for a date"
+      "reason": "Food and history tour on Freedom Trail - combines food experience with sightseeing"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "Two&#39;sDay Night Dinner Date",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/two-sday-night-dinner-date--13",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
+      "venue": "",
+      "address": "",
+      "score": 7,
+      "reason": "Two's Day dinner date - explicitly designed for couples"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "Drinking + Drawing at Zone 3",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/drinking-drawing-at-zone-3--21",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
+      "venue": "",
+      "address": "",
+      "score": 7,
+      "reason": "Creative drinking + drawing experience, perfect for a couple"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "3-Week Stained Glass Session",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/3-week-stained-glass-session",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
+      "venue": "",
+      "address": "",
+      "score": 7,
+      "reason": "Hands-on art class (stained glass), engaging shared experience"
     },
     {
       "source": "Boston Calendar",
       "name": "Muppet Madness! THE DARK CRYSTAL \u2022 Screening on 35mm",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/muppet-madness-the-dark-crystal-screening-on-35mm",
-      "start": "2026-04-20",
-      "date": "2026-04-20",
+      "url": "https://www.thebostoncalendar.com/events/muppet-madness-the-dark-crystal-screening-on-35mm--2",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
       "venue": "",
       "address": "",
       "score": 7,
-      "reason": "35mm film screening of cult classic The Dark Crystal\u2014unique cinema experience for a date"
+      "reason": "Film screening (cult classic on 35mm), unique cultural experience"
     },
     {
       "source": "Boston Calendar",
-      "name": "$1 Oysters at Lower Mills Tavern",
+      "name": "Latin Night! Learn Salsa",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/1-oysters-at-lower-mills-tavern--166",
-      "start": "2026-04-20",
-      "date": "2026-04-20",
+      "url": "https://www.thebostoncalendar.com/events/latin-night-learn-salsa--6",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
       "venue": "",
       "address": "",
       "score": 7,
-      "reason": "Affordable oyster special, classic date food & drink"
+      "reason": "Salsa dancing lesson, cultural and romantic date activity"
     },
     {
       "source": "Boston Calendar",
-      "name": "$1 Oysters at The Independent",
+      "name": "Central Square Food and Mural Arts Tour",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/1-oysters-at-the-independent--120",
-      "start": "2026-04-20",
-      "date": "2026-04-20",
+      "url": "https://www.thebostoncalendar.com/events/central-square-food-and-mural-arts-tour--137",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
       "venue": "",
       "address": "",
       "score": 7,
-      "reason": "Affordable oyster special, great for casual date"
+      "reason": "Food and art tour, engaging shared cultural experience"
     },
     {
       "source": "Boston Calendar",
-      "name": "Bottomless Maki for $32 at Fat Baby",
+      "name": "Boulet Brothers&#39; Dragula: Titans 2 Tour",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/bottomless-maki-for-32-at-fat-baby--90",
-      "start": "2026-04-20",
-      "date": "2026-04-20",
+      "url": "https://www.thebostoncalendar.com/events/boulet-brothers-dragula-titans-2-tour",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
       "venue": "",
       "address": "",
       "score": 7,
-      "reason": "Bottomless sushi special, fun interactive dining"
+      "reason": "Live drag performance tour, entertaining and culturally engaging"
     },
     {
       "source": "Boston Calendar",
-      "name": "Cheese Fondue Mondays at  PRB",
+      "name": "Kowloon Karaoke",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/cheese-fondue-mondays-at-prb--14",
-      "start": "2026-04-20",
-      "date": "2026-04-20",
+      "url": "https://www.thebostoncalendar.com/events/kowloon-karaoke--2",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
       "venue": "",
       "address": "",
       "score": 7,
-      "reason": "Cheese fondue, interactive and romantic dining"
+      "reason": "Karaoke, fun and interactive date activity"
     },
     {
       "source": "Boston Calendar",
-      "name": "$1 Oysters in Downtown Boston",
+      "name": "GEORGE MARTIN: THE SCORES - A LIVE IMMERSIVE EXPERIENCE",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/1-oysters-in-downtown-boston--20",
-      "start": "2026-04-20",
-      "date": "2026-04-20",
+      "url": "https://www.thebostoncalendar.com/events/george-martin-the-scores-a-live-immersive-experience",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
       "venue": "",
       "address": "",
       "score": 7,
-      "reason": "Affordable oyster special in downtown location"
+      "reason": "Live immersive music experience, unique cultural entertainment"
     },
     {
       "source": "Boston Calendar",
-      "name": "Mai Seaport Handroll Happy Hour Special",
+      "name": "Blues Dance Lesson and Social - Bluesy Tuesy",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/mai-seaport-handroll-happy-hour-special--6",
-      "start": "2026-04-20",
-      "date": "2026-04-20",
+      "url": "https://www.thebostoncalendar.com/events/blues-dance-lesson-and-social-blusey-tuesy--129",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
       "venue": "",
       "address": "",
       "score": 7,
-      "reason": "Hand roll happy hour, upscale food & drink"
+      "reason": "Dance lesson with social component - great interactive experience for couples"
     },
     {
       "source": "Boston Calendar",
-      "name": "Learn to Use Your Sewing Machine",
+      "name": "Draft Picks Stand-Up Comedy",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/learn-to-use-your-sewing-machine--11",
-      "start": "2026-04-20",
-      "date": "2026-04-20",
+      "url": "https://www.thebostoncalendar.com/events/draft-picks-stand-up-comedy--12",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
       "venue": "",
       "address": "",
       "score": 7,
-      "reason": "Couples-friendly skill-building experience"
+      "reason": "Stand-up comedy at a venue - classic date activity with entertainment"
     },
     {
       "source": "Boston Calendar",
-      "name": "Live Demo: Oil Painting with Vincent Crotty",
+      "name": "Jos\u00e9 Gonz\u00e1lez",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/live-demo-oil-painting-with-vincent-crotty",
-      "start": "2026-04-20",
-      "date": "2026-04-20",
+      "url": "https://www.thebostoncalendar.com/events/jose-gonzalez",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
       "venue": "",
       "address": "",
       "score": 7,
-      "reason": "Live art demonstration, cultural date activity"
+      "reason": "Live music performance (Jos\u00e9 Gonz\u00e1lez is a folk/indie artist) - great for music-loving couples"
     },
     {
       "source": "Boston Calendar",
-      "name": "The Gravewood Release Celebration with Kelly Andrew",
+      "name": "The People&#39;s Karaoke at Vera&#39;s",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/the-gravewood-release-celebration-with-kelly-andrew",
-      "start": "2026-04-20",
-      "date": "2026-04-20",
+      "url": "https://www.thebostoncalendar.com/events/the-people-s-karaoke-at-vera-s--3",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
       "venue": "",
       "address": "",
       "score": 7,
-      "reason": "Music release celebration, live entertainment"
+      "reason": "Karaoke with social vibe - fun, interactive activity for couples"
     },
     {
-      "source": "Boston Calendar",
-      "name": "McCarthys Cambridge Irish Session",
+      "source": "luma:boston",
+      "name": "The Ten: Alex Drexler",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/mccarthys-cambridge-irish-session--319",
-      "start": "2026-04-20",
-      "date": "2026-04-20",
+      "url": "https://lu.ma/w2oocccs",
+      "start": "2026-04-23T21:00",
       "venue": "",
-      "address": "",
+      "address": "Cambridge, Massachusetts",
       "score": 7,
-      "reason": "Live Irish music session, cultural nightlife"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Belmont World Film&#39;s 24th International Film Series",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/belmont-world-film-s-24th-international-film-series--4",
-      "start": "2026-04-20",
-      "date": "2026-04-20",
-      "venue": "",
-      "address": "",
-      "score": 7,
-      "reason": "International film series, cultural date experience"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Capoeira class in Somerville",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/capoeira-class-in-somerville--97",
-      "start": "2026-04-20",
-      "date": "2026-04-20",
-      "venue": "",
-      "address": "",
-      "score": 7,
-      "reason": "Capoeira class, unique movement experience"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Raye - This Tour May Contain New Music",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/raye-this-tour-may-contain-new-music",
-      "start": "2026-04-20",
-      "date": "2026-04-20",
-      "venue": "",
-      "address": "",
-      "score": 7,
-      "reason": "Live music concert by Raye"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "IN THE LAND OF ARTO: East Coast premiere @ Belmont World Film&#39;s 24th International Film Series",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/in-the-land-of-arto-east-coast-premiere-belmont-world-film-s-24th-international-film-series",
-      "start": "2026-04-20",
-      "date": "2026-04-20",
-      "venue": "",
-      "address": "",
-      "score": 7,
-      "reason": "Film premiere at festival, upscale cultural experience"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Free Comedy Show at Lucky\u2019s Lounge",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/free-comedy-show-at-lucky-s-lounge--115",
-      "start": "2026-04-20",
-      "date": "2026-04-20",
-      "venue": "",
-      "address": "",
-      "score": 7,
-      "reason": "Free comedy show, entertaining date activity"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "&quot;I&#39;m Right&quot; Drag Trivia Night at Roxy&#39;s Arcade",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/i-m-right-drag-trivia-night-at-roxy-s-arcade--141",
-      "start": "2026-04-20",
-      "date": "2026-04-20",
-      "venue": "",
-      "address": "",
-      "score": 7,
-      "reason": "Drag trivia night is entertaining and social \u2014 fun date activity with live performance element and casual venue"
-    },
-    {
-      "source": "Meetup: Career/Business",
-      "name": "Pitch-a-Friend @ Aeronaut",
-      "description": "Let's go watch Pitch-a-Friend! I've gone once before and the slide presentations people put together to pitch their single friends can be fun, humorous, or heartwarming.\n\nNo need to be single to attend, it's just fun to watch. But for those who are single, there is an opportunity to mingle in the middle and after the presentations. The event is free and LGBTQ+ friendly.\n\n***I recommend arriving as close to 7pm as possible since the event can reach capacity.\n\n\\~\\~\\~\n\nOfficial event description:\n\n",
-      "url": "https://www.meetup.com/arlington-30-somethings-meetup/events/314290362/",
-      "start": "2026-04-20T19:00",
-      "date": "2026-04-20",
-      "venue": "Aeronaut Brewing Company",
-      "address": "Somerville",
-      "score": 7,
-      "reason": "Pitch-a-Friend is entertaining, humorous, and social with mingling opportunities \u2014 unique date experience",
-      "_proximity": 4
+      "reason": "Live music performance - engaging entertainment for a date",
+      "_proximity": 5
     },
     {
       "source": "ticketmaster",
-      "name": "Calum Scott - The Avenoir Tour 2026",
-      "description": "All supports acts are subject to change without notice. Doors: 7pm Show: 8pm",
-      "url": "https://www.ticketmaster.com/calum-scott-the-avenoir-tour-2026-boston-massachusetts-04-25-2026/event/010062839A9F6EEC",
-      "start": "2026-04-26T00:00",
-      "venue": "Orpheum Theatre presented by Citizens",
+      "name": "Khayal",
+      "description": "THIS EVENT IS ALL AGES. DOORS: 7:00 PM SHOW: 8:00 PM ALL TIMES AND SUPPORT BANDS ARE SUBJECT TO CHANGE WITHOUT NOTICE OR REFUND. Tickets purchased from third-party outlets CANNOT be verified by our Box Office. If you sell/purchase your tickets from a third-party, we are not liable for any entry issues you may have. Any disputes involving third-party ticket purchases must be settled with the third-party outlet directly. The Paradise Rock Club Box Office is open for ticket purchases from 12 PM to 6 PM, Monday through Friday. If traveling from out of town, please call the customer line at 617-562-8801 to verify hours. There is a seating area available for those with mobility limitations. If you require accommodation, we encourage you to reach out to information@crossroadspresents.com as soon as you have purchased your GA ticket.",
+      "url": "https://www.ticketmaster.com/khayal-boston-massachusetts-04-26-2026/event/010064529291BE2E",
+      "start": "2026-04-26T23:00",
+      "venue": "Brighton Music Hall presented by Citizens",
       "address": "Boston, MA",
       "price": "",
       "score": 7,
-      "reason": "Live music concert; good date if both enjoy the artist",
+      "reason": "Live music concert (Khayal) - all-ages music venue experience",
       "_proximity": 3
     },
     {
       "source": "ticketmaster",
-      "name": "Galantis ( 21+ )",
-      "description": "This is a 21+ Event with valid form of identification. For US citizens, a valid DMV-issued photo ID or USA passport is required. For international guests, a valid passport is required. Doors 930pm All items brought onto the property are subject to inspection. Lighters, Cigarettes & Vapes are prohibited in the venue, there is NO SMOKING OR VAPING allowed at the venue per the city of Boston Ordinances. All bags larger than 10 in x 9 in, backpacks, professional cameras (i.e detachable lenses), video equipment, luggage, & like articles are strictly prohibited. Any medication must be accompanied with proof of prescription. Guests are prohibited from bringing weapons. Weapons include, but are not limited to, the following: firearms, explosives, stun guns, handcuffs, brass knuckles, sticks, clubs, batons, & knives. Patrons with prohibited articles will be turned away at the entrances and no storage or check area will be provided. Violation of the above will result in EJECTION.",
-      "url": "https://www.ticketmaster.com/galantis-21-boston-massachusetts-04-25-2026/event/0100646399F3B6B2",
-      "start": "2026-04-26T01:30",
-      "venue": "Big Night Live",
+      "name": "St. Paul & the Broken Bones",
+      "description": "Door Time: 7:00pm Show Time: 8:00pm All Ages *All support acts are subject to change without notice.* Bags must not exceed a maximum size of 12\" x6\" x12\". All bags, regardless of size, are subject to search by security. Lighters are not allowed in the venue and there is absolutely NO SMOKING OR VAPING allowed per the city of Boston Ordinances. Any smoking or vaping will result in IMMEDIATE EJECTION from the event. Any medication must be accompanied with proof of prescription. This list of prohibited items is subject to change at the discretion of venue management.",
+      "url": "https://www.ticketmaster.com/st-paul-the-broken-bones-boston-massachusetts-04-26-2026/event/0100633ED8D1A7E7",
+      "start": "2026-04-26T23:00",
+      "venue": "Citizens House of Blues Boston",
       "address": "Boston, MA",
       "price": "",
       "score": 7,
-      "reason": "Electronic music DJ set (21+) in nightlife setting; good date for music-loving couples",
+      "reason": "Live music concert (St. Paul & the Broken Bones) - soul/funk music for couples who enjoy live performances",
       "_proximity": 3
     },
     {
-      "source": "Concertful Boston",
-      "name": "Raye",
-      "description": "Raye in Boston at MGM Music Hall at Fenway on Apr 20, 2026.",
-      "url": "https://concertful.com/event/921115",
-      "start": "2026-04-20T20:00",
-      "venue": "MGM Music Hall at Fenway",
-      "address": "Boston, MA",
+      "source": "IG: SoWa Boston",
+      "name": "SoWa First Friday Open Gallery Night",
+      "description": "Free event featuring artist galleries, shops, and vintage market. Every First Friday of the month from 5-9pm.",
+      "url": "https://www.instagram.com/p/DWo6QX8DkP2/",
+      "start": "2026-05-02T17:00",
+      "venue": "SoWa Centre",
+      "address": "450-460 Harrison Ave (Thayer St), Boston, MA",
       "score": 7,
-      "reason": "Live music concert at established venue; good date if both enjoy the artist",
-      "_proximity": 8
-    },
-    {
-      "source": "IG: VENU Boston",
-      "name": "Issa Vibe - Afrobeats & Amapiano Night",
-      "description": "Ladies night featuring Afrobeats, Amapiano, and Caribbean music all night with vibes and energy.",
-      "url": "https://www.instagram.com/p/DXKayLtiYxS/",
-      "start": "2026-04-19",
-      "venue": "Venu",
-      "address": "Boston, Massachusetts",
-      "score": 7,
-      "reason": "Afrobeats/Amapiano night is vibrant music/dance experience; fun social date",
+      "reason": "Gallery night with free entry - art, shopping, and exploration for culturally-minded couples",
       "_proximity": 3
     },
     {
@@ -2783,19 +2856,6 @@
       "price": "$0"
     },
     {
-      "source": "Eventbrite:swimwear",
-      "name": "Beginner Sewing - Soft Flannel PJ Pants",
-      "description": "These stylish PJ Pants are super comfortable and perfect for lounging around during the Winter months!",
-      "url": "https://www.eventbrite.com/e/beginner-sewing-soft-flannel-pj-pants-tickets-1984151251806",
-      "start": "2026-04-22",
-      "venue": "Craft Loft (Cambridge Store)",
-      "address": "100 Cambridgeside Place, Cambridge",
-      "score": 6,
-      "reason": "Beginner sewing class is a collaborative, hands-on experience couples can enjoy together",
-      "_proximity": 5,
-      "price": "$92"
-    },
-    {
       "source": "do617:film-theatre-performing-arts",
       "name": "Rick Steves: On the Hippie Trail",
       "description": "",
@@ -2820,137 +2880,258 @@
       "_proximity": 6
     },
     {
+      "source": "do617:film-theatre-performing-arts",
+      "name": "Joe Abercrombie: The Devils",
+      "description": "",
+      "url": "https://do617.com/events/2026/4/27/joe-abercrombie-the-devils-tickets",
+      "start": "2026-04-27T18:00",
+      "venue": "Brookline Booksmith",
+      "address": "",
+      "score": 6,
+      "reason": "Author event/reading - cultural date experience",
+      "_proximity": 6
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "$1 Oysters at Lincoln Tavern &amp; Restaurant",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/1-oysters-at-lincoln-tavern-restaurant--117",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
+      "venue": "",
+      "address": "",
+      "score": 6,
+      "reason": "$1 oyster special at restaurant - affordable food/drink date"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "Taco &amp; Tequila Tuesday at Reunion BBQ \u2013 South End",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/taco-tequila-tuesday-at-reunion-bbq-south-end--8",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
+      "venue": "",
+      "address": "",
+      "score": 6,
+      "reason": "Taco and tequila night - casual food and drink date"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "Outdoors @ The Harpoon Beer Hall 2026",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/outdoors-the-harpoon-beer-hall-2021",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
+      "venue": "",
+      "address": "",
+      "score": 6,
+      "reason": "Outdoor event at brewery - casual drink and outdoor experience"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "$1 Oysters at Gray&#39;s Hall",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/1-oysters-at-gray-s-hall--166",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
+      "venue": "",
+      "address": "",
+      "score": 6,
+      "reason": "$1 oyster special at bar - affordable food/drink date option"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "Muppet Madness! THE MUPPET MOVIE \u2022\u00a0Screening on 35mm",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/muppet-madness-the-muppet-movie-screening-on-35mm--2",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
+      "venue": "",
+      "address": "",
+      "score": 6,
+      "reason": "Muppet Movie screening on 35mm - unique film experience for a date"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "Faux Stain Glass Resin Sun Catchers Class",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/art-class-hosted-by-all-ways-arts--37",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
+      "venue": "",
+      "address": "",
+      "score": 6,
+      "reason": "Creative craft class, fun date activity"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "Build a Charcuterie Board or Cutting Board",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/build-a-charcuterie-board-or-cutting-board",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
+      "venue": "",
+      "address": "",
+      "score": 6,
+      "reason": "Fun, interactive food experience perfect for couples"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "Cozy Winter Candle Making &amp; Trivia",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/cozy-winter-candle-making-trivia--20",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
+      "venue": "",
+      "address": "",
+      "score": 6,
+      "reason": "Creative workshop with social component (candle making + trivia)"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "Local Favorite Female-Owned Tavern in Sherborn Hosts Free Musical Bingo on Tuesday Evenings",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/local-favorite-female-owned-tavern-in-sherborn-hosts-free-musical-bingo-on-tuesday-evenings--40",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
+      "venue": "",
+      "address": "",
+      "score": 6,
+      "reason": "Live music at tavern, casual date-friendly venue"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "McCarthys Cambridge Irish Session",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/mccarthys-cambridge-irish-session--29",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
+      "venue": "",
+      "address": "",
+      "score": 6,
+      "reason": "Live Irish music session, cultural and social atmosphere"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "London Falling: New Yorker writer Patrick Radden Keefe\u2019s investigation into a tragic death in a transformed city",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/london-falling-new-yorker-writer-patrick-radden-keefe-s-investigation-into-a-tragic-death-in-a-transformed-city",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
+      "venue": "",
+      "address": "",
+      "score": 6,
+      "reason": "Author talk on journalism/investigation, intellectual cultural event"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "Dani&#39;s Queer Bar x All She Wrote Books Book Club: Mac Crane&#39;s A SHARP ENDLESS NEED",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/dani-s-queer-bar-x-all-she-wrote-books-book-club-mac-crane-s-a-sharp-endless-need",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
+      "venue": "",
+      "address": "",
+      "score": 6,
+      "reason": "Queer book club event, cultural gathering in welcoming space"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "Live Music Tuesdays at Telegraph Hill",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/live-music-tuesdays-at-telegraph-hill--167",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
+      "venue": "",
+      "address": "",
+      "score": 6,
+      "reason": "Live music venue, casual and social date setting"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "Broadway Trivia",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/broadway-trivia--12",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
+      "venue": "",
+      "address": "",
+      "score": 6,
+      "reason": "Broadway trivia appeals to theater lovers; fun competitive activity for two people"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "FREE Live Standup - Laugh Giraffe",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/standup-comedy-show-laugh-giraffe--125",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
+      "venue": "",
+      "address": "",
+      "score": 6,
+      "reason": "Free live standup comedy - accessible and entertaining for a date"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "INDIE TRIVIA at Aeronaut Brewing Co.",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/indie-trivia-at-aeronaut-brewing-co--404",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
+      "venue": "",
+      "address": "",
+      "score": 6,
+      "reason": "Indie trivia at brewery - combines drinks, music knowledge, and social atmosphere"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "Karaoke at Bell in Hand Tavern",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/karaoke-at-bell-in-hand-tavern--26",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
+      "venue": "",
+      "address": "",
+      "score": 6,
+      "reason": "Karaoke at bar - entertaining date activity with drinks"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "Drop The Mic Karaoke",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/drop-the-mic-karaoke--104",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
+      "venue": "",
+      "address": "",
+      "score": 6,
+      "reason": "Karaoke venue - playful interactive experience for couples"
+    },
+    {
       "source": "Eventbrite:embedded+systems",
       "name": "Deep Blue: The Global Glimpse of Indigo",
       "description": "Indigo tapestries from the collection of Maria Tavares",
-      "url": "https://www.eventbrite.com/e/deep-blue-the-global-glimpse-of-indigo-tickets-1986085678729",
-      "start": "2026-04-20",
+      "url": "https://www.eventbrite.com/e/deep-blue-the-global-glimpse-of-indigo-tickets-1986085679732",
+      "start": "2026-04-21",
       "venue": "Howard Thurman Center for Common Ground",
       "address": "808 Commonwealth Avenue, Brookline",
       "score": 6,
-      "reason": "Art exhibition featuring indigo tapestries is a cultural date activity for couples interested in art and textiles.",
+      "reason": "Art exhibition (indigo textiles) - cultural/artistic experience for couples",
       "_proximity": 6,
       "price": "$0"
     },
     {
-      "source": "IG: Harvard Art Museums",
-      "name": "Celtic Art Across the Ages Symposium",
-      "description": "A daylong symposium with five guest speakers exploring Celtic art, focusing on intricately decorated objects from the exhibition. Topics include materials, making, contexts of use, and encounters between Iron Age populations and the Roman Empire.",
-      "url": "https://www.instagram.com/harvardartmuseums/",
-      "start": "2026-04-11",
-      "venue": "Harvard Art Museums",
-      "address": "Cambridge, Massachusetts",
+      "source": "Eventbrite:machine+vision",
+      "name": "Learn to Use a Sewing Machine",
+      "description": "Come join us and learn how to use a sewing machine like a pro!",
+      "url": "https://www.eventbrite.com/e/learn-to-use-a-sewing-machine-tickets-1983989421768",
+      "start": "2026-04-27",
+      "venue": "Craft Loft (Cambridge Store)",
+      "address": "100 Cambridgeside Place, Cambridge",
       "score": 6,
-      "reason": "Free symposium on Celtic art with expert speakers \u2014 cultural/intellectual date for art-interested couple",
-      "_proximity": 5
-    },
-    {
-      "source": "IG: Harvard Art Museums",
-      "name": "P\u0131nar \u00d6\u011frenci: Gl\u00fcck auf in Deutschland",
-      "description": "The first major installation in the United States by Berlin-based artist P\u0131nar \u00d6\u011frenci, featuring her 2024 film addressing the construction of postwar German identity and five related collages displayed alongside historical photographs.",
-      "url": "https://www.instagram.com/harvardartmuseums/",
-      "start": "2026-04-20",
-      "venue": "Gallery 1120, Harvard Art Museums",
-      "address": "Cambridge, Massachusetts",
-      "score": 6,
-      "reason": "Free symposium on Celtic art with expert speakers \u2014 cultural/intellectual date for art-interested couple",
-      "_proximity": 5
-    },
-    {
-      "source": "IG: Harvard Art Museums",
-      "name": "Synagogue of Sardis Exhibition",
-      "description": "Exhibition featuring artful documentation of the Synagogue of Sardis including archival and contemporary photography, mosaic reconstructions, and a video exploring the ancient site.",
-      "url": "https://www.instagram.com/harvardartmuseums/",
-      "start": "2026-04-20",
-      "venue": "Gallery 3440, Harvard Art Museums",
-      "address": "Cambridge, Massachusetts",
-      "score": 6,
-      "reason": "Free symposium on Celtic art with expert speakers \u2014 cultural/intellectual date for art-interested couple",
-      "_proximity": 5
-    },
-    {
-      "source": "IG: Gardner Museum",
-      "name": "Picturing Isabella Exhibition",
-      "description": "Exhibition featuring works related to the life and legacy of Isabella Stewart Gardner, the museum's founder.",
-      "url": "https://www.instagram.com/gardnermuseum/",
-      "start": "2026-04-14",
-      "venue": "Isabella Stewart Gardner Museum - Fenway Gallery",
-      "address": "Boston, Massachusetts",
-      "score": 6,
-      "reason": "Biographical photography exhibition \u2014 museum date through June 2026",
-      "_proximity": 8
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "$1 Oysters at Loco Taqueria &amp; Oyster Bar",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/1-oysters-at-loco-taqueria-oyster-bar--166",
-      "start": "2026-04-20",
-      "date": "2026-04-20",
-      "venue": "",
-      "address": "",
-      "score": 6,
-      "reason": "Food & drink special ($1 oysters) at casual taqueria\u2014fun date for oyster lovers on a budget"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Democracy and Distraction Beer Garden at Boston City Hall Plaza 2026",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/democracy-and-distraction-beer-garden-at-boston-city-hall-plaza-2024",
-      "start": "2026-04-20",
-      "date": "2026-04-20",
-      "venue": "",
-      "address": "",
-      "score": 6,
-      "reason": "Beer garden at historic City Hall Plaza with civic angle\u2014good casual date with social/civic interest"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Muppet Madness! LABYRINTH",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/muppet-madness-labyrinth",
-      "start": "2026-04-20",
-      "date": "2026-04-20",
-      "venue": "",
-      "address": "",
-      "score": 6,
-      "reason": "Film screening (Labyrinth), good cultural date activity"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "$10 Martinis at Petula&#39;s",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/10-martinis-at-petula-s--90",
-      "start": "2026-04-20",
-      "date": "2026-04-20",
-      "venue": "",
-      "address": "",
-      "score": 6,
-      "reason": "Discounted martinis at cocktail bar, date-friendly"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "$7 Martinis at Rebel&#39;s Guild",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/7-martinis-at-rebel-s-guild--39",
-      "start": "2026-04-20",
-      "date": "2026-04-20",
-      "venue": "",
-      "address": "",
-      "score": 6,
-      "reason": "Discounted martinis at bar, casual date option"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Trivia Nights at The Burren",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/trivia-nights-at-the-burren--219",
-      "start": "2026-04-20",
-      "date": "2026-04-20",
-      "venue": "",
-      "address": "",
-      "score": 6,
-      "reason": "Trivia nights are classic date activities; The Burren is a good pub venue for social engagement"
+      "reason": "Sewing class - hands-on creative experience and skill-building for couples",
+      "_proximity": 5,
+      "price": "$61\u2013$71"
     },
     {
       "source": "do617:concerts",
@@ -2963,6 +3144,54 @@
       "score": 5,
       "reason": "Metal band live music",
       "_proximity": 8
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "Painted Burro Davis Square- Happy Hour Deals!",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/painted-burro-davis-square-happy-hour-deals--204",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
+      "venue": "",
+      "address": "",
+      "score": 5,
+      "reason": "Happy hour deals - casual drink and food option"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "Posto South End- Happy Hour Deals!",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/posto-south-end-happy-hour-deals--206",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
+      "venue": "",
+      "address": "",
+      "score": 5,
+      "reason": "Happy hour deals at restaurant - casual drink and food date"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "Geeks Who Drink Trivia Night at Sam Adams Downtown Boston Taproom",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/geeks-who-drink-trivia-night-at-sam-adams-downtown-boston-taproom--134",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
+      "venue": "",
+      "address": "",
+      "score": 5,
+      "reason": "Trivia night with good venue (Sam Adams taproom), social and fun"
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "Muppet Madness! LABYRINTH",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/muppet-madness-labyrinth--2",
+      "start": "2026-04-21",
+      "date": "2026-04-21",
+      "venue": "",
+      "address": "",
+      "score": 5,
+      "reason": "Film screening (Labyrinth) - shared entertainment experience for a date"
     }
   ],
   "extra_events": [],
@@ -3288,101 +3517,10 @@
     ]
   },
   "costs": {
-    "week": 0.1406,
-    "month": 3.5504,
-    "total": 4.8244,
+    "week": 0.2962,
+    "month": 3.706,
+    "total": 4.98,
     "runs": [
-      {
-        "ts": "2026-04-19T18:59:21.311417",
-        "persona": "unknown",
-        "events_total": 1322,
-        "events_cached": 332,
-        "events_scored": 3,
-        "cost_usd": 0.001408,
-        "duration_ms": 2469,
-        "models": {
-          "claude-haiku-4-5-20251001": 0.001408
-        },
-        "by_stage": {
-          "score": 0.001408
-        },
-        "source_counts": {},
-        "deploy_why": "run",
-        "netlify": {
-          "total": 1000,
-          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
-        },
-        "efficiency": {
-          "cache_hit_rate": 0.991,
-          "avg_hit_rate": 0.811,
-          "cost_per_scored_event": 0.00047,
-          "notes": [
-            "Efficient \u2014 99% cache (332 cached, 3 scored), $0.0014"
-          ]
-        }
-      },
-      {
-        "ts": "2026-04-19T19:00:27.688287",
-        "persona": "unknown",
-        "events_total": 1322,
-        "events_cached": 425,
-        "events_scored": 655,
-        "cost_usd": 0.080759,
-        "duration_ms": 92495,
-        "models": {
-          "claude-haiku-4-5-20251001": 0.080759
-        },
-        "by_stage": {
-          "score": 0.080759
-        },
-        "source_counts": {},
-        "deploy_why": "run",
-        "netlify": {
-          "total": 1000,
-          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
-        },
-        "efficiency": {
-          "cache_hit_rate": 0.394,
-          "avg_hit_rate": 0.809,
-          "cost_per_scored_event": 0.00012,
-          "notes": [
-            "Cache 39% hit (425 cached, 655 scored) \u2014 many new events, normal on first daily run",
-            "High scoring volume (655 scored) \u2014 consider raising min_score to cut costs",
-            "Cache hit rate 39% vs recent avg 81% (425 cached / 655 scored) \u2014 possible new sources added or score cache cleared"
-          ]
-        }
-      },
-      {
-        "ts": "2026-04-19T19:05:22.656429",
-        "persona": "unknown",
-        "events_total": 1322,
-        "events_cached": 60,
-        "events_scored": 655,
-        "cost_usd": 0.070214,
-        "duration_ms": 87398,
-        "models": {
-          "claude-haiku-4-5-20251001": 0.070214
-        },
-        "by_stage": {
-          "score": 0.070214
-        },
-        "source_counts": {},
-        "deploy_why": "run",
-        "netlify": {
-          "total": 1000,
-          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
-        },
-        "efficiency": {
-          "cache_hit_rate": 0.084,
-          "avg_hit_rate": 0.691,
-          "cost_per_scored_event": 0.00011,
-          "notes": [
-            "Cache 8% hit (60 cached, 655 scored) \u2014 many new events, normal on first daily run",
-            "High scoring volume (655 scored) \u2014 consider raising min_score to cut costs",
-            "Cache hit rate 8% vs recent avg 69% (60 cached / 655 scored) \u2014 possible new sources added or score cache cleared"
-          ]
-        }
-      },
       {
         "ts": "2026-04-20T08:37:08.075257",
         "persona": "unknown",
@@ -3442,20 +3580,111 @@
             "Efficient \u2014 79% cache (373 cached, 101 scored), $0.0221"
           ]
         }
+      },
+      {
+        "ts": "2026-04-20T08:42:18.972485",
+        "persona": "unknown",
+        "events_total": 724,
+        "events_cached": 53,
+        "events_scored": 101,
+        "cost_usd": 0.02036,
+        "duration_ms": 25450,
+        "models": {
+          "claude-haiku-4-5-20251001": 0.02036
+        },
+        "by_stage": {
+          "fetch": 0.009334,
+          "score": 0.011026
+        },
+        "source_counts": {},
+        "deploy_why": "run",
+        "netlify": {
+          "total": 1000,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.344,
+          "avg_hit_rate": 0.578,
+          "cost_per_scored_event": 0.0002,
+          "notes": [
+            "Cache 34% hit (53 cached, 101 scored) \u2014 many new events, normal on first daily run",
+            "Cache hit rate 34% vs recent avg 58% (53 cached / 101 scored) \u2014 possible new sources added or score cache cleared"
+          ]
+        }
+      },
+      {
+        "ts": "2026-04-21T08:12:02.978527",
+        "persona": "unknown",
+        "events_total": 754,
+        "events_cached": 181,
+        "events_scored": 109,
+        "cost_usd": 0.11141,
+        "duration_ms": 134381,
+        "models": {
+          "claude-haiku-4-5-20251001": 0.11141
+        },
+        "by_stage": {
+          "fetch": 0.101428,
+          "score": 0.009982
+        },
+        "source_counts": {},
+        "deploy_why": "run",
+        "netlify": {
+          "total": 1000,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.624,
+          "avg_hit_rate": 0.449,
+          "cost_per_scored_event": 0.00102,
+          "notes": [
+            "High cost $0.1114 \u2014 check for new uncached scrape_url sources burning tokens"
+          ]
+        }
+      },
+      {
+        "ts": "2026-04-21T08:16:48.065859",
+        "persona": "unknown",
+        "events_total": 754,
+        "events_cached": 387,
+        "events_scored": 116,
+        "cost_usd": 0.023845,
+        "duration_ms": 27786,
+        "models": {
+          "claude-haiku-4-5-20251001": 0.023845
+        },
+        "by_stage": {
+          "fetch": 0.009334,
+          "score": 0.014511
+        },
+        "source_counts": {},
+        "deploy_why": "run",
+        "netlify": {
+          "total": 1000,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.769,
+          "avg_hit_rate": 0.495,
+          "cost_per_scored_event": 0.00021,
+          "notes": [
+            "Efficient \u2014 77% cache (387 cached, 116 scored), $0.0238"
+          ]
+        }
       }
     ],
     "netlify": "1000 credit pack \u2014 check balance at app.netlify.com/billing"
   },
   "sources": {
-    "Eventbrite": 30,
-    "do617": 139,
-    "Meetup": 5,
+    "Eventbrite": 33,
+    "do617": 150,
+    "Meetup": 3,
     "ticketmaster": 18,
-    "Boston Calendar": 30,
+    "Boston Calendar": 40,
     "WBUR Events": 11,
     "Boston Fashion Week": 1,
-    "IG": 8,
-    "Concertful Boston": 1
+    "IG": 5,
+    "luma": 1
   },
   "source_urls": {
     "do617": "https://do617.com/events/food-drink",
@@ -3509,14 +3738,14 @@
     "Venture Lane events": "https://www.venturelane.co/events"
   },
   "source_stats": {
-    "Eventbrite": 30,
-    "do617": 139,
-    "Meetup": 5,
+    "Eventbrite": 33,
+    "do617": 150,
+    "Meetup": 3,
     "ticketmaster": 18,
-    "Boston Calendar": 30,
+    "Boston Calendar": 40,
     "WBUR Events": 11,
     "Boston Fashion Week": 1,
-    "IG": 8,
-    "Concertful Boston": 1
+    "IG": 5,
+    "luma": 1
   }
 }
