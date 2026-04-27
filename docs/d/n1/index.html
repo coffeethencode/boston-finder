@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="referrer" content="no-referrer">
+<title>Tonight</title>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+  integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+<style>
+  :root { --bg: #0f0f0f; --card: #1a1a1a; --border: #2a2a2a; --text: #e8e8e8; --dim: #888; --gold: #f0a500; --green: #7fff7f; --warm: #ff8a65; --cool: #4a9eff; --pink: #ec4899; }
+  * { box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+         background: var(--bg); color: var(--text); margin: 0; padding: 0;
+         padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left); }
+  header { padding: 14px 16px 10px; border-bottom: 1px solid var(--border); position: sticky; top: 0; background: var(--bg); z-index: 1000; }
+  h1 { font-size: 1rem; font-weight: 700; color: #fff; margin: 0 0 2px; letter-spacing: 0.02em; }
+  .anchor { font-size: 0.85rem; color: var(--gold); margin-bottom: 2px; }
+  .sub { font-size: 0.72rem; color: var(--dim); }
+  #map { width: 100%; height: 50vh; min-height: 280px; background: #111; }
+  .leaflet-container { background: #1a1a1a; }
+  .list { padding: 8px 12px 32px; }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 10px;
+          padding: 12px 14px; margin-bottom: 10px; cursor: pointer;
+          -webkit-tap-highlight-color: transparent; }
+  .card:active { background: #222; }
+  .card.active { border-color: var(--gold); }
+  .row1 { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+  .name { font-size: 0.98rem; font-weight: 700; color: #fff; }
+  .walk { font-size: 0.72rem; color: var(--gold); font-weight: 700; white-space: nowrap; }
+  .why { font-size: 0.84rem; color: #ccc; margin-top: 4px; line-height: 1.3; }
+  .meta { font-size: 0.72rem; color: var(--dim); margin-top: 5px; }
+  .tag { display: inline-block; font-size: 0.65rem; font-weight: 700; padding: 2px 7px; border-radius: 99px;
+         margin-right: 5px; vertical-align: middle; letter-spacing: 0.04em; text-transform: uppercase; }
+  .t-cozy { background: #3a2614; color: var(--warm); }
+  .t-walk { background: #14283a; color: var(--cool); }
+  .t-bite { background: #2a3a14; color: var(--green); }
+  .t-vibe { background: #3a1a2a; color: var(--pink); }
+  .t-anchor { background: #3a2a08; color: var(--gold); }
+  .leaflet-popup-content-wrapper { background: #1a1a1a; color: var(--text); border-radius: 8px; }
+  .leaflet-popup-tip { background: #1a1a1a; }
+  .leaflet-popup-content { margin: 10px 14px; font-size: 0.85rem; }
+  .leaflet-popup-content b { color: var(--gold); }
+  .leaflet-popup-close-button { color: var(--dim) !important; }
+  /* tile filter for dark theme */
+  .leaflet-tile { filter: brightness(0.6) invert(1) contrast(3) hue-rotate(200deg) saturate(0.3) brightness(0.7); }
+  .leaflet-control-attribution { background: rgba(0,0,0,0.6) !important; color: #555 !important; font-size: 9px; }
+  .leaflet-control-attribution a { color: #777 !important; }
+  /* anchor pin override */
+  .pin-anchor { filter: hue-rotate(45deg) brightness(1.3) saturate(2); }
+  .legend { display: flex; gap: 6px; padding: 6px 16px 10px; flex-wrap: wrap; font-size: 0.65rem; color: var(--dim); }
+  .legend .tag { font-size: 0.62rem; }
+  footer { padding: 16px; font-size: 0.7rem; color: #555; text-align: center; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Tonight</h1>
+  <div class="anchor">★ Black Lamb · 6:00 PM</div>
+  <div class="sub">571 Tremont St · dinner 5–10pm · res confirmed</div>
+</header>
+
+<div class="legend">
+  <span class="tag t-anchor">★ Anchor</span>
+  <span class="tag t-bite">Bite</span>
+  <span class="tag t-cozy">Cozy</span>
+  <span class="tag t-walk">Walk</span>
+  <span class="tag t-vibe">Vibe</span>
+</div>
+
+<div id="map"></div>
+
+<div class="list" id="list"></div>
+
+<footer>noindex · private · tap a card to fly the map</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+  integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script>
+const SPOTS = [
+  {
+    id: "anchor", name: "Black Lamb", tag: "anchor", tagLabel: "★ Anchor",
+    lat: 42.34701, lng: -71.07285,
+    walk: "0 min", walkMin: 0,
+    why: "Where you're meeting at 6. American brasserie + raw bar. Mocktails on menu, food carries the night.",
+    meta: "571 Tremont · 5–10pm",
+    isAnchor: true,
+  },
+  {
+    id: "picco", name: "Picco", tag: "bite", tagLabel: "Bite",
+    lat: 42.34780, lng: -71.07320,
+    walk: "1 min", walkMin: 1,
+    why: "Housemade ice cream + sourdough pizza four doors down. The opposite of pretentious — pure value play. Easy 'want to keep going?' move.",
+    meta: "513 Tremont · open till ~10pm Mon",
+  },
+  {
+    id: "madeleine", name: "Café Madeleine", tag: "cozy", tagLabel: "Cozy",
+    lat: 42.34581, lng: -71.07549,
+    walk: "5 min", walkMin: 5,
+    why: "Pastries + late coffee, dim and small. Better for talk than a loud bar. Cozy fallback if she's getting quiet.",
+    meta: "517 Columbus Ave · check Mon hours",
+  },
+  {
+    id: "bpl", name: "BPL McKim Courtyard", tag: "walk", tagLabel: "Walk",
+    lat: 42.34944, lng: -71.07795,
+    walk: "12 min", walkMin: 12,
+    why: "FREE. Romantic at night, gravity that says 'I know cool stuff.' Closes 9pm Mon — go early in the bounce. Skip if cold.",
+    meta: "700 Boylston · closes 9pm Mon",
+  },
+  {
+    id: "shojo", name: "Shojo", tag: "vibe", tagLabel: "Vibe",
+    lat: 42.35178, lng: -71.06093,
+    walk: "12 min", walkMin: 12,
+    why: "Asian-American fusion in Chinatown — vibe-y, fun, mid-tier. Late-night dumplings move if she's still on. Read it: own move or stereotype trap? She tells you.",
+    meta: "9A Tyler St · open late Mon",
+  },
+  {
+    id: "home", name: "881 Harrison (your place)", tag: "walk", tagLabel: "Walk",
+    lat: 42.34037, lng: -71.07165,
+    walk: "12 min", walkMin: 12,
+    why: "South via Tremont/Berkeley. Walk her back here at end of night — natural close, not awkward.",
+    meta: "Reference pin only",
+  },
+];
+
+const map = L.map('map', { zoomControl: true, attributionControl: true })
+  .setView([42.3475, -71.072], 15);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  maxZoom: 19,
+  attribution: '© OpenStreetMap',
+}).addTo(map);
+
+const markers = {};
+const cardEls = {};
+
+const list = document.getElementById('list');
+SPOTS.forEach(s => {
+  // marker
+  const marker = L.marker([s.lat, s.lng], {
+    title: s.name,
+    riseOnHover: true,
+  }).addTo(map);
+  if (s.isAnchor) {
+    marker._icon && marker._icon.classList.add('pin-anchor');
+  }
+  marker.bindPopup(
+    `<b>${s.name}</b><br>${s.walk} from anchor<br><br>${s.why}<br><br><small>${s.meta}</small>`
+  );
+  markers[s.id] = marker;
+
+  // card
+  const card = document.createElement('div');
+  card.className = 'card' + (s.isAnchor ? ' active' : '');
+  card.innerHTML = `
+    <div class="row1">
+      <div class="name"><span class="tag t-${s.tag}">${s.tagLabel}</span> ${s.name}</div>
+      <div class="walk">${s.walk}</div>
+    </div>
+    <div class="why">${s.why}</div>
+    <div class="meta">${s.meta}</div>
+  `;
+  card.addEventListener('click', () => {
+    map.flyTo([s.lat, s.lng], 17, { duration: 0.6 });
+    marker.openPopup();
+    document.querySelectorAll('.card').forEach(c => c.classList.remove('active'));
+    card.classList.add('active');
+  });
+  list.appendChild(card);
+  cardEls[s.id] = card;
+});
+
+// open anchor popup on load (after a beat)
+setTimeout(() => markers.anchor.openPopup(), 400);
+</script>
+</body>
+</html>
