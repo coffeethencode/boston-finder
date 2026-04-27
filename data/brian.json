@@ -1,22 +1,10 @@
 {
-  "generated_at": "2026-04-26T08:11:42.536373",
-  "today": "2026-04-26",
+  "generated_at": "2026-04-27T11:58:57.360817",
+  "today": "2026-04-27",
   "days": 7,
   "persona": "brian",
   "persona_prompt": "You are filtering Boston events for someone who wants high-status, interesting things to attend:\n- Oyster happy hours or upscale food/drink (wine dinners, tastings, chef's tables)\n- Galas, fundraisers, charity benefits, receptions, award ceremonies\n- Events where they can attend as a subject matter expert: public records law, open meeting law, FOIA, government transparency, civic accountability, journalism\n- High-status professional networking, panels, policy forums\n- Fashion/model events, press events, media events, bikini/swimwear shows, fitness model showcases, promotional model events\n- Recurring upscale nightlife events, scene-y bar/club nights, influencer events\n- Anything exclusive, influential, or scene-y\n\nNOT wanted: pure sports games, road races, youth sports, basic trivia nights at chains.",
   "events": [
-    {
-      "source": "do617:food-drink",
-      "name": "Spring Oyster Roast",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/26/spring-oyster-roast-tickets",
-      "start": "2026-04-26T14:00",
-      "venue": "Viale",
-      "address": "",
-      "score": 8,
-      "reason": "Spring Oyster Roast\u2014directly matches stated preference for oyster events and upscale food/drink",
-      "_proximity": 3
-    },
     {
       "source": "do617:food-drink",
       "name": "Martini Dinner @Standard Italian",
@@ -75,8 +63,7 @@
       "address": "900 Boylston Street, Boston",
       "score": 7,
       "reason": "Professional conference on AI with cutting-edge tools and ideas\u2014high-status professional development",
-      "_proximity": 3,
-      "price": "$245\u2013$1851"
+      "_proximity": 3
     },
     {
       "source": "Eventbrite:reception",
@@ -88,8 +75,7 @@
       "address": "900 Boylston St, Boston",
       "score": 7,
       "reason": "Leadership summit attracting business leaders and practitioners\u2014high-status professional networking",
-      "_proximity": 3,
-      "price": "$53\u2013$1005"
+      "_proximity": 3
     },
     {
       "source": "Eventbrite:launch+party",
@@ -114,8 +100,7 @@
       "address": "900 Boylston Street, Boston",
       "score": 7,
       "reason": "Major AI conference with business leaders and practitioners; high-status professional networking and learning opportunity",
-      "_proximity": 3,
-      "price": "$53\u2013$2948"
+      "_proximity": 3
     },
     {
       "source": "Eventbrite:model+showcase",
@@ -168,19 +153,6 @@
       "reason": "Exclusive front-row runway show for emerging brands\u2014high-status fashion event",
       "_proximity": 3,
       "price": "$40\u2013$60"
-    },
-    {
-      "source": "Eventbrite:swimwear",
-      "name": "Johnnie Walker Better With Black Label Cocktail Competition - Boston",
-      "description": "Mix, shake, and sip your way to victory at the Johnnie Walker Better With Black Label Cocktail Competition!",
-      "url": "https://www.eventbrite.com/e/johnnie-walker-better-with-black-label-cocktail-competition-boston-tickets-1980025405288",
-      "start": "2026-04-27",
-      "venue": "My Girl",
-      "address": "10 Post Office Square, Boston",
-      "score": 7,
-      "reason": "Upscale cocktail competition with premium spirits brand - fits high-status food/drink events",
-      "_proximity": 3,
-      "price": "$0"
     },
     {
       "source": "do617:food-drink",
@@ -340,30 +312,6 @@
     },
     {
       "source": "do617:concerts",
-      "name": "Frankie Valli & The Four Seasons: The Last Encores",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/26/frankie-valli-the-four-seasons-the-last-encores-tickets",
-      "start": "2026-04-26T19:00",
-      "venue": "The Chevalier Theatre",
-      "address": "",
-      "score": 7,
-      "reason": "Classic rock nostalgia tour with iconic group - high-profile entertainment",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
-      "name": "Boston Lyric OperaDaughter of the Regiment",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/26/daughter-of-the-regiment-tickets",
-      "start": "2026-04-26T14:00",
-      "venue": "Emerson Colonial Theatre",
-      "address": "",
-      "score": 7,
-      "reason": "Boston Lyric Opera production - high-status cultural event",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
       "name": "Boston Speaker Series\u2013Lynsey Addario",
       "description": "",
       "url": "https://do617.com/events/2026/4/27/boston-speaker-series-lynsey-addario-tickets",
@@ -412,7 +360,7 @@
       "_proximity": 3
     },
     {
-      "source": "Meetup: Career/Business",
+      "source": "Meetup: Social",
       "name": "Data-Driven Strategies with an Edge: A Fireside Chat ",
       "description": "\\*YOU must **REGISTER HERE: https://luma.com/4zxxhw76**\n\nJoin us for an insightful fireside chat featuring **Derek Burleton**, Vice President and Deputy Chief Economist at TD Bank Group, and **Jacob Weinstein**, SVP Asset Allocation Research at Fidelity Investments as they unpack the forces reshaping global markets and financial innovation.\n\u200b\nThis conversation will explore the **macroeconomic trends driving investment behavior, emerging risks and opportunities for fintech**, and how data-driven ",
       "url": "https://www.meetup.com/boston-fintech/events/314138921/",
@@ -471,19 +419,6 @@
       "score": 7,
       "reason": "Fashion designer of the year celebration is exclusive, upscale fashion event",
       "_proximity": 3
-    },
-    {
-      "source": "Eventbrite:presales+engineer",
-      "name": "Chanda Prescod-Weinstein at the Harvard Science Center",
-      "description": "presenting The Edge of Space-Time: Particles, Poetry, and the Cosmic Dream Boogie in conversation with\u00a0Evelynn M. Hammonds",
-      "url": "https://www.eventbrite.com/e/chanda-prescod-weinstein-at-the-harvard-science-center-tickets-1983282603656",
-      "start": "2026-04-27",
-      "venue": "Science Center",
-      "address": "1 Oxford Street, Cambridge",
-      "score": 7,
-      "reason": "Harvard Science Center event with prominent physicist; intellectual and high-status public forum",
-      "_proximity": 5,
-      "price": "$0\u2013$37"
     },
     {
       "source": "Eventbrite:reception",
@@ -548,19 +483,6 @@
       "_proximity": 5
     },
     {
-      "source": "Eventbrite:pavilion+revenue",
-      "name": "MIT Water, Food, & Agriculture Innovation Prize 2026",
-      "description": "Attend MIT's nationwide pitch competition for early-stage, student-run startups transforming the water, food, & agriculture sector!",
-      "url": "https://www.eventbrite.com/e/mit-water-food-agriculture-innovation-prize-2026-tickets-1979199882126",
-      "start": "2026-04-29",
-      "venue": "MIT E38",
-      "address": "292 Main Street, Cambridge",
-      "score": 6,
-      "reason": "MIT pitch competition; high-status innovation event with startup founders and investors",
-      "_proximity": 5,
-      "price": "$25"
-    },
-    {
       "source": "do617:film-theatre-performing-arts",
       "name": "Salem Horror Festival",
       "description": "",
@@ -574,11 +496,11 @@
     },
     {
       "source": "Boston Calendar",
-      "name": "$1 Oysters at 224 Boston",
+      "name": "$1 Oysters at Loco Taqueria &amp; Oyster Bar",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/1-oysters-at-224-boston--163",
-      "start": "2026-04-26",
-      "date": "2026-04-26",
+      "url": "https://www.thebostoncalendar.com/events/1-oysters-at-loco-taqueria-oyster-bar--167",
+      "start": "2026-04-27",
+      "date": "2026-04-27",
       "venue": "",
       "address": "",
       "score": 1,
@@ -586,11 +508,11 @@
     },
     {
       "source": "Boston Calendar",
-      "name": "DOLLAR OYSTERS BUCK A SHUCK TRADESMAN CHARLESTOWN",
+      "name": "Painted Burro Waltham- Happy Hour Deals!",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/dollar-oysters-buck-a-shuck-tradesman-charlestown--85",
-      "start": "2026-04-26",
-      "date": "2026-04-26",
+      "url": "https://www.thebostoncalendar.com/events/painted-burro-waltham-weekly-happy-hour-deals--13",
+      "start": "2026-04-27",
+      "date": "2026-04-27",
       "venue": "",
       "address": "",
       "score": 1,
@@ -598,11 +520,11 @@
     },
     {
       "source": "Boston Calendar",
-      "name": "$1 OYSTER BRUNCH",
+      "name": "$1 Oysters at The Independent",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/1-oyster-brunch--30",
-      "start": "2026-04-26",
-      "date": "2026-04-26",
+      "url": "https://www.thebostoncalendar.com/events/1-oysters-at-the-independent--121",
+      "start": "2026-04-27",
+      "date": "2026-04-27",
       "venue": "",
       "address": "",
       "score": 1,
@@ -610,11 +532,11 @@
     },
     {
       "source": "Boston Calendar",
-      "name": "Boston Civic Symphony classical concert",
+      "name": "$1 Oysters at Lower Mills Tavern",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/boston-civic-symphony-classical-concert--3",
-      "start": "2026-04-26",
-      "date": "2026-04-26",
+      "url": "https://www.thebostoncalendar.com/events/1-oysters-at-lower-mills-tavern--167",
+      "start": "2026-04-27",
+      "date": "2026-04-27",
       "venue": "",
       "address": "",
       "score": 1,
@@ -622,11 +544,23 @@
     },
     {
       "source": "Boston Calendar",
-      "name": "Posto South End- Happy Hour Deals!",
+      "name": "So Close at Nook: $12 experimental cocktails",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/posto-south-end-happy-hour-deals--301",
-      "start": "2026-04-26",
-      "date": "2026-04-26",
+      "url": "https://www.thebostoncalendar.com/events/so-close--127",
+      "start": "2026-04-27",
+      "date": "2026-04-27",
+      "venue": "",
+      "address": "",
+      "score": 1,
+      "reason": ""
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "GIRL DINNER!",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/girl-dinner--14",
+      "start": "2026-04-27",
+      "date": "2026-04-27",
       "venue": "",
       "address": "",
       "score": 1,
@@ -636,9 +570,69 @@
       "source": "Boston Calendar",
       "name": "Painted Burro Davis Square- Happy Hour Deals!",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/painted-burro-davis-square-happy-hour-deals--109",
-      "start": "2026-04-26",
-      "date": "2026-04-26",
+      "url": "https://www.thebostoncalendar.com/events/painted-burro-davis-square-happy-hour-deals--157",
+      "start": "2026-04-27",
+      "date": "2026-04-27",
+      "venue": "",
+      "address": "",
+      "score": 1,
+      "reason": ""
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "$1 Oysters in Downtown Boston",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/1-oysters-in-downtown-boston--21",
+      "start": "2026-04-27",
+      "date": "2026-04-27",
+      "venue": "",
+      "address": "",
+      "score": 1,
+      "reason": ""
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "Posto South End- Happy Hour Deals!",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/posto-south-end-happy-hour-deals--254",
+      "start": "2026-04-27",
+      "date": "2026-04-27",
+      "venue": "",
+      "address": "",
+      "score": 1,
+      "reason": ""
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "Mai Seaport Handroll Happy Hour Special",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/mai-seaport-handroll-happy-hour-special--7",
+      "start": "2026-04-27",
+      "date": "2026-04-27",
+      "venue": "",
+      "address": "",
+      "score": 1,
+      "reason": ""
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "Murder Mystery Fundraiser for Para Rowing Foundation",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/murder-mystery-fundraiser-for-para-rowing-foundation",
+      "start": "2026-04-27",
+      "date": "2026-04-27",
+      "venue": "",
+      "address": "",
+      "score": 1,
+      "reason": ""
+    },
+    {
+      "source": "Boston Calendar",
+      "name": "\ud83c\udf89 FREE Now After Work Business Connect Networking Great Food &amp; Drinks!\ud83c\udf79\ud83c\udf55(Multi-Group Event)",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/5-early-bird-after-work-south-shore-business-networking-great-food-drinks-multi-group-event",
+      "start": "2026-04-27",
+      "date": "2026-04-27",
       "venue": "",
       "address": "",
       "score": 1,
@@ -729,7 +723,7 @@
     {
       "source": "venue_scrape",
       "name": "Eventide (possible deal found)",
-      "description": "\n \n \n \n \n \n \n \n Eventide Fenway | Oyster Bar & Seafood | Boston, MA  \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n                        Intro\n                       \n \n \n \n                        Eventide Locations\n                       \n \n \n \n                        Shop\n                       \n \n \n \n                        Goldbelly\n        ",
+      "description": "\n \n \n \n \n \n \n \n Eventide Fenway | Oyster Bar & Seafood | Boston, MA  \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n                        Intro\n                       \n \n \n \n                        Eventide Locations\n                       \n \n \n \n                        Shop\n                       \n \n \n \n                        Goldbelly\n      ",
       "url": "https://www.eventideboston.com",
       "start": "",
       "venue": "Eventide",
@@ -945,7 +939,7 @@
     {
       "source": "venue_scrape",
       "name": "Neptune Oyster (possible deal found)",
-      "description": "\n \n \n \n \n \n \n \n Neptune Oyster \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n 0 \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n        Skip to Content\n       \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n        Welcome\n       \n \n \n \n        Menu\n       \n ",
+      "description": "\n \n \n \n \n \n \n \n Neptune Oyster \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n 0 \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n        Skip to Content\n       \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n        Welcome\n       \n \n \n \n        Menu\n       ",
       "url": "https://www.neptuneoyster.com",
       "start": "",
       "venue": "Neptune Oyster",
@@ -1303,28 +1297,12 @@
       "source": "discovery:Boston Calendar",
       "name": "Tradesman Charlestown \u2014 dollar oysters",
       "description": "DOLLAR OYSTERS BUCK A SHUCK TRADESMAN CHARLESTOWN",
-      "url": "https://www.thebostoncalendar.com/events/dollar-oysters-buck-a-shuck-tradesman-charlestown--84",
-      "start": "2026-04-19",
+      "url": "https://www.thebostoncalendar.com/events/dollar-oysters-buck-a-shuck-tradesman-charlestown--85",
+      "start": "2026-04-26",
       "venue": "Tradesman Charlestown",
       "address": "",
       "verify_status": "\u2705 verified",
       "price": "dollar",
-      "hours": null,
-      "_tentative": true,
-      "_inactive": false,
-      "_proximity": 4,
-      "_proximity_label": "hike"
-    },
-    {
-      "source": "discovery:Boston Calendar",
-      "name": "Tradesman Charlestown \u2014 buck-a-shuck oysters",
-      "description": "$1 OYSTER BRUNCH",
-      "url": "https://www.thebostoncalendar.com/events/1-oyster-brunch--29",
-      "start": "2026-04-19",
-      "venue": "Tradesman Charlestown",
-      "address": "",
-      "verify_status": "\u2705 verified",
-      "price": "buck-a-shuck",
       "hours": null,
       "_tentative": true,
       "_inactive": false,
@@ -1572,6 +1550,23 @@
       "_proximity_label": "hike"
     },
     {
+      "source": "discovery:Boston Calendar",
+      "name": "$1 OYSTER BRUNCH \u2014 venue unclear",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/1-oyster-brunch--30",
+      "start": "2026-04-26",
+      "venue": "",
+      "address": "",
+      "verify_status": "\u26a0\ufe0f Unverified",
+      "price": null,
+      "hours": null,
+      "_tentative": true,
+      "_needs_review": true,
+      "_inactive": false,
+      "_proximity": 3,
+      "_proximity_label": "hike"
+    },
+    {
       "source": "known_venue",
       "name": "Providence Oyster Bar \u2014 $1 oysters + $1 littlenecks daily 3\u20135:30pm",
       "description": "Federal Hill, Providence RI. Standing deal: $1 oysters + $1 littlenecks daily 3\u20135:30pm",
@@ -1645,84 +1640,10 @@
     ]
   },
   "costs": {
-    "week": 0.6294,
+    "week": 0,
     "month": 4.0392,
     "total": 5.3132,
     "runs": [
-      {
-        "ts": "2026-04-24T08:46:27.334217",
-        "persona": "unknown",
-        "events_total": 781,
-        "events_cached": 27,
-        "events_scored": 162,
-        "cost_usd": 0,
-        "duration_ms": 0,
-        "models": {},
-        "by_stage": {},
-        "source_counts": {},
-        "deploy_why": "run",
-        "netlify": {},
-        "efficiency": {
-          "cache_hit_rate": 0.143,
-          "avg_hit_rate": 0.497,
-          "cost_per_scored_event": 0.0,
-          "notes": [
-            "Cache 14% hit (27 cached, 162 scored) \u2014 many new events, normal on first daily run",
-            "Cache hit rate 14% vs recent avg 50% (27 cached / 162 scored) \u2014 possible new sources added or score cache cleared"
-          ]
-        }
-      },
-      {
-        "ts": "2026-04-25T08:11:09.374279",
-        "persona": "unknown",
-        "events_total": 873,
-        "events_cached": 126,
-        "events_scored": 284,
-        "cost_usd": 0,
-        "duration_ms": 0,
-        "models": {},
-        "by_stage": {},
-        "source_counts": {},
-        "deploy_why": "run",
-        "netlify": {
-          "total": 300,
-          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
-        },
-        "efficiency": {
-          "cache_hit_rate": 0.307,
-          "avg_hit_rate": 0.434,
-          "cost_per_scored_event": 0.0,
-          "notes": [
-            "Cache 31% hit (126 cached, 284 scored) \u2014 many new events, normal on first daily run",
-            "High scoring volume (284 scored) \u2014 consider raising min_score to cut costs"
-          ]
-        }
-      },
-      {
-        "ts": "2026-04-25T08:11:47.808232",
-        "persona": "unknown",
-        "events_total": 873,
-        "events_cached": 286,
-        "events_scored": 285,
-        "cost_usd": 0,
-        "duration_ms": 0,
-        "models": {},
-        "by_stage": {},
-        "source_counts": {},
-        "deploy_why": "run",
-        "netlify": {
-          "total": 300,
-          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
-        },
-        "efficiency": {
-          "cache_hit_rate": 0.501,
-          "avg_hit_rate": 0.357,
-          "cost_per_scored_event": 0.0,
-          "notes": [
-            "High scoring volume (285 scored) \u2014 consider raising min_score to cut costs"
-          ]
-        }
-      },
       {
         "ts": "2026-04-25T08:12:40.825005",
         "persona": "unknown",
@@ -1775,17 +1696,92 @@
             "High scoring volume (230 scored) \u2014 consider raising min_score to cut costs"
           ]
         }
+      },
+      {
+        "ts": "2026-04-26T08:11:45.055467",
+        "persona": "unknown",
+        "events_total": 808,
+        "events_cached": 273,
+        "events_scored": 229,
+        "cost_usd": 0,
+        "duration_ms": 0,
+        "models": {},
+        "by_stage": {},
+        "source_counts": {},
+        "deploy_why": "run",
+        "netlify": {
+          "total": 300,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.544,
+          "avg_hit_rate": 0.273,
+          "cost_per_scored_event": 0.0,
+          "notes": [
+            "High scoring volume (229 scored) \u2014 consider raising min_score to cut costs"
+          ]
+        }
+      },
+      {
+        "ts": "2026-04-26T08:12:27.717951",
+        "persona": "unknown",
+        "events_total": 808,
+        "events_cached": 26,
+        "events_scored": 229,
+        "cost_usd": 0,
+        "duration_ms": 0,
+        "models": {},
+        "by_stage": {},
+        "source_counts": {},
+        "deploy_why": "run",
+        "netlify": {
+          "total": 300,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.102,
+          "avg_hit_rate": 0.354,
+          "cost_per_scored_event": 0.0,
+          "notes": [
+            "Cache 10% hit (26 cached, 229 scored) \u2014 many new events, normal on first daily run",
+            "High scoring volume (229 scored) \u2014 consider raising min_score to cut costs",
+            "Cache hit rate 10% vs recent avg 35% (26 cached / 229 scored) \u2014 possible new sources added or score cache cleared"
+          ]
+        }
+      },
+      {
+        "ts": "2026-04-27T11:58:36.357581",
+        "persona": "unknown",
+        "events_total": 703,
+        "events_cached": 95,
+        "events_scored": 255,
+        "cost_usd": 0,
+        "duration_ms": 0,
+        "models": {},
+        "by_stage": {},
+        "source_counts": {},
+        "deploy_why": "run",
+        "netlify": {},
+        "efficiency": {
+          "cache_hit_rate": 0.271,
+          "avg_hit_rate": 0.313,
+          "cost_per_scored_event": 0.0,
+          "notes": [
+            "Cache 27% hit (95 cached, 255 scored) \u2014 many new events, normal on first daily run",
+            "High scoring volume (255 scored) \u2014 consider raising min_score to cut costs"
+          ]
+        }
       }
     ],
-    "netlify": "300 credit pack \u2014 check balance at app.netlify.com/billing"
+    "netlify": ""
   },
   "sources": {
-    "do617": 24,
+    "do617": 21,
     "luma": 5,
-    "Eventbrite": 12,
+    "Eventbrite": 9,
     "Meetup": 3,
     "allevents": 2,
-    "Boston Calendar": 6
+    "Boston Calendar": 12
   },
   "source_urls": {
     "do617": "https://do617.com/events/food-drink",
@@ -1839,11 +1835,11 @@
     "Venture Lane events": "https://www.venturelane.co/events"
   },
   "source_stats": {
-    "do617": 24,
+    "do617": 21,
     "luma": 5,
-    "Eventbrite": 12,
+    "Eventbrite": 9,
     "Meetup": 3,
     "allevents": 2,
-    "Boston Calendar": 6
+    "Boston Calendar": 12
   }
 }
