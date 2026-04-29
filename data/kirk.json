@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-28T08:14:55.535477",
-  "today": "2026-04-28",
+  "generated_at": "2026-04-29T08:12:34.379900",
+  "today": "2026-04-29",
   "days": 7,
   "persona": "kirk",
   "persona_prompt": "You are filtering Boston, Cambridge, and Providence RI events for Kirk Brown.\n\nKirk's background:\n- Senior Sales Engineer \u2014 sells and demos complex technical products to technical buyers\n- SE at Mapbox (SoftBank-backed geo/spatial tech) and Bit Flow (machine vision / industrial hardware)\n- Deep hands-on expertise: hardware engineering, software engineering, and technical sales\n- Finishing his master's degree\n- Domain expertise: geo/spatial tech, machine vision, industrial automation, semiconductors, data infrastructure\n\nKirk needs events where a senior technical sales person is VALUED \u2014 not events aimed at founders pitching VCs, and not job fairs that attract mostly junior candidates. The ideal room has:\n- VCs, CTOs, and technical founders who need someone like Kirk to help sell or evaluate products\n- Senior operators at startups (not entry-level), people building and shipping real products\n- Events where deep product knowledge and demo skills matter\n\nWhat Kirk wants:\n- Deep tech product launches and demos: hardware, robotics, embedded systems, IoT, machine vision, industrial tech, semiconductors \u2014 events where the product is the star and technical sales people belong\n- GTM & revenue leadership: CRO panels, VP Sales roundtables, technical sales strategy, B2B go-to-market\n- Sales Engineer / presales community: SE community events, Pavilion SE chapter, SE Collective, PreSales Collective\n- Defense & deep tech: defense tech startups, dual-use hardware, MIT Lincoln Lab adjacent, Draper Lab, MITRE\n- VC-hosted portfolio events: ecosystem mixers (not pitch competitions)\n- Partner ecosystem events: Salesforce/HubSpot ecosystem events where SEs network with other SEs\n- University research-to-industry: MIT, Harvard, Brown, Northeastern, WPI \u2014 hardware/robotics/EE events\n- Geographic range: Boston, Cambridge, Somerville, Providence RI \u2014 has a car, will travel for quality\n\nSCORE 9-10 (must attend):\n- Hardware/deep tech product demo events (Greentown Labs showcases, MassRobotics demos, MIT hardware)\n- Semiconductor or chip design events with industry networking (ARM, Analog Devices, MIT MTL, IEEE Boston)\n- Sales Engineer or presales community events (Pavilion SE chapter, SE Collective, PreSales Collective)\n- Defense tech or dual-use hardware events open to industry (Draper, MITRE, DIU)\n- GTM/revenue leadership panels with VP+ speakers \u2014 technical sales focus\n- VC portfolio company mixers or deep tech ecosystem events (not pitch competitions)\n- Robotics showcases with real industry participation (MassRobotics, Boston Dynamics adjacent)\n\nSCORE 5-7 (worth knowing):\n- Senior tech networking with solid company mix \u2014 startups with real products, not just ideas\n- University EE/CS/robotics showcases with industry crossover\n- CTO or engineering leadership panels at companies in Kirk's domains\n- SaaS or hardware product launches in relevant sectors\n- Maker/hardware community events (Artisan's Asylum) if the crowd skews professional\n\nLOWER PRIORITY (score \u2264 4):\n- Pitch nights and demo days aimed at founders pitching investors (Kirk isn't pitching)\n- Job fairs, career fairs, or 'hiring mixer' events (attract too many junior candidates)\n- Generic startup networking or 'founder meetups' with no technical depth\n- Events clearly targeted at undergrads or early-career with no senior presence\n- Pure academic lectures with no networking or industry angle\n- Sports, arts-only, food/drink without tech angle\n- Basic networking mixers with no engineering or sales focus",
@@ -43,32 +43,6 @@
       "_proximity": 9
     },
     {
-      "source": "Eventbrite:reception",
-      "name": "ODSC AI East 2026 Conference | Group 2+",
-      "description": "Discover what\u2019s next for AI with the latest tools, topics, and ideas, for the future of AI with cutting-edge tools, themes, and concepts!",
-      "url": "https://www.eventbrite.com/e/odsc-ai-east-2026-conference-group-2-tickets-1856520385449",
-      "start": "2026-04-28",
-      "venue": "Hynes Convention Center",
-      "address": "900 Boylston Street, Boston",
-      "score": 6,
-      "reason": "ODSC AI East 2026 is a major AI/ML conference with industry practitioners and technical leaders. Kirk's deep tech background and GTM interests make this relevant, though it's broad and not narrowly focused on his hardware/sales engineering niche.",
-      "_proximity": 8,
-      "price": "$245\u2013$1851"
-    },
-    {
-      "source": "Eventbrite:reception",
-      "name": "AI  X Leadership Summit | ODSC AI East 2026",
-      "description": "LAST CHANCE TO REGISTER! Secure your spot with like-minded individuals, practitioners, business leaders, or reskilling into AI.",
-      "url": "https://www.eventbrite.com/e/ai-x-leadership-summit-odsc-ai-east-2026-tickets-1781799232469",
-      "start": "2026-04-28",
-      "venue": "Hynes Convention Center",
-      "address": "900 Boylston St, Boston",
-      "score": 6,
-      "reason": "AI X Leadership Summit targets business leaders and practitioners in AI. Has potential for GTM/leadership networking, though again broader than Kirk's core hardware/robotics/semiconductor focus.",
-      "_proximity": 8,
-      "price": "$53\u2013$1005"
-    },
-    {
       "source": "Meetup: Tech Boston",
       "name": "Training Day 2: AI networking on K8s",
       "description": "**Training Day 2: AI networking on K8s**\n\nLast year (Sept 2025) was a big success. This time the content is more advanced: AI networking on K8s. Again this will include:\n\n* **Awesome content**: Kubernetes training with HANDS ON labs\n* **Instructor-led**: Michael O'Leary and Benjamin Hautefeuille\n* **Amazing location**: Microsoft NERD Center, Cambridge\n* **Food/bev:** Breakfast, lunch & snacks provided\n* **Cost:** $40 pp ($25 if you register early)\n* **Limit**: 60 people\n* **Date**: Saturday, May",
@@ -80,31 +54,6 @@
       "score": 6,
       "reason": "Kubernetes and AI networking hands-on training at Microsoft NERD Center. Technical depth, instructor-led, limited size (60 people). Relevant to infrastructure and modern deployment practices Kirk encounters in sales engineer conversations.",
       "_proximity": 9
-    },
-    {
-      "source": "Meetup: Tech Boston",
-      "name": "Open Project Night - Every Tuesday, In Person! ",
-      "description": "Welcome to Cambridge Hackspace!\n\nBring yourself, your ideas, and your projects\u2014any projects!\u2014to the Hackspace and hang out with kindred spirits who like to tinker, learn, and share ideas about making stuff!\n\nNo experience necessary, and no existing project required! We're a place and a community when you can explore and develop your curiosity and interest in making things. Come try things out, learn new skills, and meet folks who want to do the same.\n\nOur door can be hard to find! There are [dir",
-      "url": "https://www.meetup.com/cambridge-hackspace/events/314187809/",
-      "start": "2026-04-28T18:30",
-      "date": "2026-04-28",
-      "venue": "Cambridge Hackspace",
-      "address": "Somerville",
-      "score": 6,
-      "reason": "Cambridge Hackspace open project night. Hardware/making focus, hands-on tinkering culture. Kirk's background in hardware engineering aligns; community skews toward serious makers. Good for product demos and hardware discussion.",
-      "_proximity": 9
-    },
-    {
-      "source": "luma:boston",
-      "name": "Whiskey, Wine & Whiteboards - April 2026",
-      "description": "",
-      "url": "https://lu.ma/qwulxoid",
-      "start": "2026-04-28T21:30",
-      "venue": "",
-      "address": "Boston, Massachusetts",
-      "score": 6,
-      "reason": "Whiteboard + networking format suggests technical problem-solving with strong attendee mix; title implies B2B/technical audience",
-      "_proximity": 8
     },
     {
       "source": "luma:boston",
@@ -119,31 +68,6 @@
       "_proximity": 8
     },
     {
-      "source": "allevents:arts",
-      "name": "ODSC AI East 2026 Conference | BLACK FRIDAY SALE",
-      "description": "",
-      "url": "https://allevents.in/boston/odsc-ai-east-2026-conference-|-black-friday-sale/100001973130900639",
-      "start": "2026-04-28",
-      "venue": "Hynes Convention Center",
-      "address": "Boston, MA",
-      "score": 6,
-      "reason": "ODSC AI East 2026 \u2014 major AI/data conference; strong technical audience, vendor ecosystem, sales engineer visibility",
-      "_proximity": 8
-    },
-    {
-      "source": "Meetup: Tech Boston",
-      "name": "AI Boston Tech Meetup 2026",
-      "description": "JOIN US FOR THE BEST NETWORKING EVENT IN BOSTON!\n\n**YOU MUST RSVP AT THIS LINK >> https://tinyurl.com/ysjxs7c7 <<**\n**YOU MUST RSVP AT THIS LINK >> https://tinyurl.com/ysjxs7c7 <<**\n**YOU MUST RSVP AT THIS LINK >> https://tinyurl.com/ysjxs7c7 <<**\n\nBoston Tech Mixer is the fastest growing startup, digital & tech networking organization in the country. Our events are comprised of the most influential professionals in the area. Our purpose is to help our members forge strong, lasting relationships",
-      "url": "https://www.meetup.com/boston-startup-and-tech-mixer/events/310409615/",
-      "start": "2026-04-30T18:00",
-      "date": "2026-04-30",
-      "venue": "Elephant & Castle",
-      "address": "Boston",
-      "score": 5,
-      "reason": "Boston Tech Mixer describes itself as networking for 'influential professionals' in startup/tech. Generic framing, but could have CTOs and senior operators. Worth checking the actual attendee quality before committing.",
-      "_proximity": 8
-    },
-    {
       "source": "Meetup: Tech Boston",
       "name": "GitHub Copilot Dev Days - Boston",
       "description": "Register on [AICamp event website](https://www.aicamp.ai/event/eventdetails/W2026042913) is REQUIRED for admission.\n\n**Description:**\nJoin us for a community-led developer event focused on AI-assisted coding with GitHub Copilot. This event brings together developers to explore practical workflows, real-world use cases, and hands-on experiences using GitHub Copilot.\nWhether you are new to GitHub Copilot or already using it, this event will help you better understand how to apply AI-assisted codin",
@@ -155,31 +79,6 @@
       "score": 5,
       "reason": "Developer-focused AI coding event. Peripherally relevant to Kirk's technical background, but primarily aimed at software engineers rather than technical sales professionals or hardware/industrial tech buyers. Lower priority.",
       "_proximity": 9
-    },
-    {
-      "source": "Meetup: Tech Boston",
-      "name": "The AI X Leadership Summit | Boston 2026",
-      "description": "**This is PAID event. Register for this event here -** [https://luma.com/u4pmy7bc](https://luma.com/u4pmy7bc)\nUse code - **COMMUNITYEAST2026** \\- for an extra discount\\.\n\n**[AI X Leadership Summit](https://odsc.ai/east/aix-east/) \\- co\\-located event with ODSC AI East Conference\\.**\n\n## **Summit is the place for enterprise leaders refining and scaling real-world AI strategy**\n\nMove beyond the hype. This is a dedicated space for 250 exclusive enterprise leaders to validate governance and AI opera",
-      "url": "https://www.meetup.com/open-data-science-ny-odsc/events/312786347/",
-      "start": "2026-04-28T09:00",
-      "date": "2026-04-28",
-      "venue": "Hynes Convention Center",
-      "address": "Boston",
-      "score": 5,
-      "reason": "AI X Leadership Summit (PAID, co-located with ODSC). Enterprise leaders, governance, AI operations at scale. Senior audience. Relevant for understanding enterprise buyer pain points, though framing is broad.",
-      "_proximity": 8
-    },
-    {
-      "source": "luma:boston",
-      "name": "Investor Breakfast: Tips for Successfully Transitioning Along the Pathway from Angel to VC to PE",
-      "description": "",
-      "url": "https://lu.ma/xb9uj5te",
-      "start": "2026-04-28T13:00",
-      "venue": "",
-      "address": "Boston, Massachusetts",
-      "score": 5,
-      "reason": "Investor breakfast on angel-to-VC-to-PE transitions \u2014 GTM/revenue leadership angle, though not specifically sales-focused; worth knowing for ecosystem context",
-      "_proximity": 8
     },
     {
       "source": "luma:boston",
@@ -206,51 +105,12 @@
       "_proximity": 9
     },
     {
-      "source": "Eventbrite:embedded+systems",
-      "name": "ODSC AI East 2026 Conference | Open Data Science Conference",
-      "description": "LAST CHANCE TO REGISTER! Secure your spot with like-minded individuals, practitioners, business leaders, or reskilling into AI.",
-      "url": "https://www.eventbrite.com/e/odsc-ai-east-2026-conference-open-data-science-conference-tickets-1780200771429",
-      "start": "2026-04-28",
-      "venue": "Hynes Convention Center",
-      "address": "900 Boylston Street, Boston",
-      "score": 5,
-      "reason": "ODSC AI East is a major data science & AI conference with practitioners and business leaders. Reasonable mix of technical depth and industry networking, though not specifically tailored to sales engineers or hardware/deep tech focus.",
-      "_proximity": 8,
-      "price": "$563\u2013$2948"
-    },
-    {
-      "source": "Eventbrite:presales+engineer",
-      "name": "Institution of Civil Engineers Member Meeting",
-      "description": "Join us in Boston and chat about professional development and networking with other Civil and Structural Engineers",
-      "url": "https://www.eventbrite.com/e/institution-of-civil-engineers-member-meeting-tickets-1982647799941",
+      "source": "Boston Calendar",
+      "name": "Boston Happy Hour Stroll in the South End (Food + Cocktail Pairings)",
+      "description": "",
+      "url": "https://www.thebostoncalendar.com/events/happy-hour-stroll-south-end--68",
       "start": "2026-04-29",
-      "venue": "Birch Bar",
-      "address": "425 Summer Street, Boston",
-      "score": 5,
-      "reason": "Institution of Civil Engineers member meeting offers professional networking with engineers. Weak match \u2014 civil/structural engineering is outside Kirk's core domains (geo/spatial, machine vision, semiconductors, hardware), but solid engineering community.",
-      "_proximity": 8,
-      "price": "$0"
-    },
-    {
-      "source": "Eventbrite:presales+engineer",
-      "name": "AWS Solution Architect Training | 4-Day Bootcamp in  Boston, MA",
-      "description": "Master AWS Solution Architect skills with our 4-day training. Learn to design scalable cloud solutions and prepare for AWS certification.",
-      "url": "https://www.eventbrite.com/e/aws-solution-architect-training-4-day-bootcamp-in-boston-ma-tickets-1987120306328",
-      "start": "2026-04-28",
-      "venue": "ONE Marina Park Drive",
-      "address": "One Marina Park Drive, Boston",
-      "score": 5,
-      "reason": "AWS Solution Architect bootcamp. Kirk may benefit from cloud infrastructure knowledge for GTM, but this is a certification training course, not a community or networking event where he'd be valued as a senior sales engineer.",
-      "_proximity": 8,
-      "price": "$3999"
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Wine Dinners at Forage",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/wine-dinners-at-forage--28",
-      "start": "2026-04-28",
-      "date": "2026-04-28",
+      "date": "2026-04-29",
       "venue": "",
       "address": "",
       "score": 2,
@@ -258,11 +118,11 @@
     },
     {
       "source": "Boston Calendar",
-      "name": "A Taste of Italy Comes to Gloucester: Exclusive Wine Dinner April 28",
+      "name": "San Felice Wine Dinner at Davio&#39;s Chestnut Hill",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/a-taste-of-italy-comes-to-gloucester-exclusive-wine-dinner-april-28",
-      "start": "2026-04-28",
-      "date": "2026-04-28",
+      "url": "https://www.thebostoncalendar.com/events/san-felice-wine-dinner-at-davio-s-chestnut-hill",
+      "start": "2026-04-29",
+      "date": "2026-04-29",
       "venue": "",
       "address": "",
       "score": 2,
@@ -270,23 +130,23 @@
     },
     {
       "source": "Boston Calendar",
-      "name": "$1 Oysters at Lincoln Tavern &amp; Restaurant",
+      "name": "Bambara Kitchen &amp; Bar Hosts a Cousi\u00f1o Macul Wine Dinner on Wednesday, April 29th",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/1-oysters-at-lincoln-tavern-restaurant--118",
-      "start": "2026-04-28",
-      "date": "2026-04-28",
+      "url": "https://www.thebostoncalendar.com/events/bambara-kitchen-bar-hosts-a-cousino-macul-wine-dinner-on-wednesday-april-29th",
+      "start": "2026-04-29",
+      "date": "2026-04-29",
       "venue": "",
       "address": "",
-      "score": 1,
+      "score": 2,
       "reason": ""
     },
     {
       "source": "Boston Calendar",
       "name": "Painted Burro Waltham- Happy Hour Deals!",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/painted-burro-waltham-weekly-happy-hour-deals--61",
-      "start": "2026-04-28",
-      "date": "2026-04-28",
+      "url": "https://www.thebostoncalendar.com/events/painted-burro-waltham-weekly-happy-hour-deals--156",
+      "start": "2026-04-29",
+      "date": "2026-04-29",
       "venue": "",
       "address": "",
       "score": 1,
@@ -294,35 +154,11 @@
     },
     {
       "source": "Boston Calendar",
-      "name": "Two&#39;sDay Night Dinner Date",
+      "name": "Wednesday Night Wine Flights",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/two-sday-night-dinner-date--14",
-      "start": "2026-04-28",
-      "date": "2026-04-28",
-      "venue": "",
-      "address": "",
-      "score": 1,
-      "reason": ""
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "$1 Oysters at Gray&#39;s Hall",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/1-oysters-at-gray-s-hall--167",
-      "start": "2026-04-28",
-      "date": "2026-04-28",
-      "venue": "",
-      "address": "",
-      "score": 1,
-      "reason": ""
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Painted Burro Davis Square- Happy Hour Deals!",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/painted-burro-davis-square-happy-hour-deals--205",
-      "start": "2026-04-28",
-      "date": "2026-04-28",
+      "url": "https://www.thebostoncalendar.com/events/wednesday-night-wine-flights--8",
+      "start": "2026-04-29",
+      "date": "2026-04-29",
       "venue": "",
       "address": "",
       "score": 1,
@@ -332,9 +168,9 @@
       "source": "Boston Calendar",
       "name": "Posto South End- Happy Hour Deals!",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/posto-south-end-happy-hour-deals--207",
-      "start": "2026-04-28",
-      "date": "2026-04-28",
+      "url": "https://www.thebostoncalendar.com/events/posto-south-end-happy-hour-deals--348",
+      "start": "2026-04-29",
+      "date": "2026-04-29",
       "venue": "",
       "address": "",
       "score": 1,
@@ -342,11 +178,11 @@
     },
     {
       "source": "Boston Calendar",
-      "name": "2026 Newton Civic Spotlight",
+      "name": "Painted Burro Davis Square- Happy Hour Deals!",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/2026-newton-civic-spotlight",
-      "start": "2026-04-28",
-      "date": "2026-04-28",
+      "url": "https://www.thebostoncalendar.com/events/painted-burro-davis-square-happy-hour-deals--253",
+      "start": "2026-04-29",
+      "date": "2026-04-29",
       "venue": "",
       "address": "",
       "score": 1,
@@ -354,11 +190,11 @@
     },
     {
       "source": "Boston Calendar",
-      "name": "Blooming Together: Latinas in Tech Mixer",
+      "name": "$25 Girl Dinner at Waverly Charlestown",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/blooming-together-latinas-in-tech-mixer",
-      "start": "2026-04-28",
-      "date": "2026-04-28",
+      "url": "https://www.thebostoncalendar.com/events/25-girl-dinner-at-waverly-charlestown--31",
+      "start": "2026-04-29",
+      "date": "2026-04-29",
       "venue": "",
       "address": "",
       "score": 1,
@@ -1364,79 +1200,6 @@
     "total": 5.3132,
     "runs": [
       {
-        "ts": "2026-04-27T11:58:57.701726",
-        "persona": "unknown",
-        "events_total": 703,
-        "events_cached": 210,
-        "events_scored": 253,
-        "cost_usd": 0,
-        "duration_ms": 0,
-        "models": {},
-        "by_stage": {},
-        "source_counts": {},
-        "deploy_why": "run",
-        "netlify": {},
-        "efficiency": {
-          "cache_hit_rate": 0.454,
-          "avg_hit_rate": 0.267,
-          "cost_per_scored_event": 0.0,
-          "notes": [
-            "Cache 45% hit (210 cached, 253 scored) \u2014 many new events, normal on first daily run",
-            "High scoring volume (253 scored) \u2014 consider raising min_score to cut costs"
-          ]
-        }
-      },
-      {
-        "ts": "2026-04-27T12:00:19.084449",
-        "persona": "unknown",
-        "events_total": 703,
-        "events_cached": 22,
-        "events_scored": 253,
-        "cost_usd": 0,
-        "duration_ms": 0,
-        "models": {},
-        "by_stage": {},
-        "source_counts": {},
-        "deploy_why": "run",
-        "netlify": {},
-        "efficiency": {
-          "cache_hit_rate": 0.08,
-          "avg_hit_rate": 0.341,
-          "cost_per_scored_event": 0.0,
-          "notes": [
-            "Cache 8% hit (22 cached, 253 scored) \u2014 many new events, normal on first daily run",
-            "High scoring volume (253 scored) \u2014 consider raising min_score to cut costs",
-            "Cache hit rate 8% vs recent avg 34% (22 cached / 253 scored) \u2014 possible new sources added or score cache cleared"
-          ]
-        }
-      },
-      {
-        "ts": "2026-04-28T08:11:46.442533",
-        "persona": "unknown",
-        "events_total": 747,
-        "events_cached": 87,
-        "events_scored": 325,
-        "cost_usd": 0,
-        "duration_ms": 0,
-        "models": {},
-        "by_stage": {},
-        "source_counts": {},
-        "deploy_why": "run",
-        "netlify": {
-          "total": 300,
-          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
-        },
-        "efficiency": {
-          "cache_hit_rate": 0.211,
-          "avg_hit_rate": 0.29,
-          "cost_per_scored_event": 0.0,
-          "notes": [
-            "Cache 21% hit (87 cached, 325 scored) \u2014 many new events, normal on first daily run",
-            "High scoring volume (325 scored) \u2014 consider raising min_score to cut costs"
-          ]
-        }
-      },
-      {
         "ts": "2026-04-28T08:12:39.173096",
         "persona": "unknown",
         "events_total": 747,
@@ -1488,16 +1251,92 @@
             "Cache hit rate 6% vs recent avg 28% (21 cached / 324 scored) \u2014 possible new sources added or score cache cleared"
           ]
         }
+      },
+      {
+        "ts": "2026-04-29T08:10:52.453434",
+        "persona": "unknown",
+        "events_total": 639,
+        "events_cached": 56,
+        "events_scored": 357,
+        "cost_usd": 0,
+        "duration_ms": 0,
+        "models": {},
+        "by_stage": {},
+        "source_counts": {},
+        "deploy_why": "run",
+        "netlify": {
+          "total": 300,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.136,
+          "avg_hit_rate": 0.236,
+          "cost_per_scored_event": 0.0,
+          "notes": [
+            "Cache 14% hit (56 cached, 357 scored) \u2014 many new events, normal on first daily run",
+            "High scoring volume (357 scored) \u2014 consider raising min_score to cut costs"
+          ]
+        }
+      },
+      {
+        "ts": "2026-04-29T08:11:24.647188",
+        "persona": "unknown",
+        "events_total": 639,
+        "events_cached": 125,
+        "events_scored": 355,
+        "cost_usd": 0,
+        "duration_ms": 0,
+        "models": {},
+        "by_stage": {},
+        "source_counts": {},
+        "deploy_why": "run",
+        "netlify": {
+          "total": 300,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.26,
+          "avg_hit_rate": 0.172,
+          "cost_per_scored_event": 0.0,
+          "notes": [
+            "Cache 26% hit (125 cached, 355 scored) \u2014 many new events, normal on first daily run",
+            "High scoring volume (355 scored) \u2014 consider raising min_score to cut costs"
+          ]
+        }
+      },
+      {
+        "ts": "2026-04-29T08:11:58.891864",
+        "persona": "unknown",
+        "events_total": 639,
+        "events_cached": 8,
+        "events_scored": 355,
+        "cost_usd": 0,
+        "duration_ms": 0,
+        "models": {},
+        "by_stage": {},
+        "source_counts": {},
+        "deploy_why": "run",
+        "netlify": {
+          "total": 300,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.022,
+          "avg_hit_rate": 0.208,
+          "cost_per_scored_event": 0.0,
+          "notes": [
+            "Cache 2% hit (8 cached, 355 scored) \u2014 many new events, normal on first daily run",
+            "High scoring volume (355 scored) \u2014 consider raising min_score to cut costs"
+          ]
+        }
       }
     ],
     "netlify": "300 credit pack \u2014 check balance at app.netlify.com/billing"
   },
   "sources": {
-    "Meetup": 6,
-    "luma": 7,
-    "Eventbrite": 5,
-    "allevents": 1,
-    "Boston Calendar": 10
+    "Meetup": 3,
+    "luma": 5,
+    "Boston Calendar": 8
   },
   "source_urls": {
     "do617": "https://do617.com/events/food-drink",
@@ -1551,10 +1390,8 @@
     "Venture Lane events": "https://www.venturelane.co/events"
   },
   "source_stats": {
-    "Meetup": 6,
-    "luma": 7,
-    "Eventbrite": 5,
-    "allevents": 1,
-    "Boston Calendar": 10
+    "Meetup": 3,
+    "luma": 5,
+    "Boston Calendar": 8
   }
 }
