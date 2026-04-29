@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-04-28T08:12:35.794029",
-  "today": "2026-04-28",
+  "generated_at": "2026-04-29T08:11:20.982386",
+  "today": "2026-04-29",
   "days": 7,
   "persona": "brian",
   "persona_prompt": "You are filtering Boston events for someone who wants high-status, interesting things to attend:\n- Oyster happy hours or upscale food/drink (wine dinners, tastings, chef's tables)\n- Galas, fundraisers, charity benefits, receptions, award ceremonies\n- Events where they can attend as a subject matter expert: public records law, open meeting law, FOIA, government transparency, civic accountability, journalism\n- High-status professional networking, panels, policy forums\n- Fashion/model events, press events, media events, bikini/swimwear shows, fitness model showcases, promotional model events\n- Recurring upscale nightlife events, scene-y bar/club nights, influencer events\n- Anything exclusive, influential, or scene-y\n\nNOT wanted: pure sports games, road races, youth sports, basic trivia nights at chains.",
@@ -18,30 +18,6 @@
       "_proximity": 3
     },
     {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "From Primaries to Presidential Campaigns: A Conversation with Robby Mook",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/28/from-primaries-to-presidential-campaigns-a-conversation-with-robby-mook-tickets",
-      "start": "2026-04-28T12:00",
-      "venue": "John F. Kennedy Jr. Forum at the Institute of Politics",
-      "address": "",
-      "score": 8,
-      "reason": "Political/media panel with campaign strategist Robby Mook - directly relevant to government, politics, and media expertise",
-      "_proximity": 3
-    },
-    {
-      "source": "luma:boston",
-      "name": "Boston Special Edition: Finance & Accounting Leaders Dinner",
-      "description": "",
-      "url": "https://lu.ma/2iextf0i",
-      "start": "2026-04-28T22:00",
-      "venue": "",
-      "address": "Boston, Massachusetts",
-      "score": 8,
-      "reason": "Finance & Accounting Leaders Dinner\u2014high-status professional networking event",
-      "_proximity": 3
-    },
-    {
       "source": "luma:boston",
       "name": "Fireside w/ Bumble and Slack CEO Lidiane Jones & Ando CEO Sara Du",
       "description": "",
@@ -52,97 +28,6 @@
       "score": 8,
       "reason": "Fireside chat with Slack CEO is high-status, exclusive professional networking with influential tech leader",
       "_proximity": 5
-    },
-    {
-      "source": "Eventbrite:reception",
-      "name": "ODSC AI East 2026 Conference | Group 2+",
-      "description": "Discover what\u2019s next for AI with the latest tools, topics, and ideas, for the future of AI with cutting-edge tools, themes, and concepts!",
-      "url": "https://www.eventbrite.com/e/odsc-ai-east-2026-conference-group-2-tickets-1856520385449",
-      "start": "2026-04-28",
-      "venue": "Hynes Convention Center",
-      "address": "900 Boylston Street, Boston",
-      "score": 7,
-      "reason": "Professional conference on AI with cutting-edge tools and ideas\u2014high-status professional development",
-      "_proximity": 3,
-      "price": "$245\u2013$1851"
-    },
-    {
-      "source": "Eventbrite:reception",
-      "name": "AI  X Leadership Summit | ODSC AI East 2026",
-      "description": "LAST CHANCE TO REGISTER! Secure your spot with like-minded individuals, practitioners, business leaders, or reskilling into AI.",
-      "url": "https://www.eventbrite.com/e/ai-x-leadership-summit-odsc-ai-east-2026-tickets-1781799232469",
-      "start": "2026-04-28",
-      "venue": "Hynes Convention Center",
-      "address": "900 Boylston St, Boston",
-      "score": 7,
-      "reason": "Leadership summit attracting business leaders and practitioners\u2014high-status professional networking",
-      "_proximity": 3,
-      "price": "$53\u2013$1005"
-    },
-    {
-      "source": "Eventbrite:launch+party",
-      "name": "Rooftop@Revere Summer Kickoff: Campari Aperitivo Party",
-      "description": "Kick off patio season at Rooftop@Revere with Campari cocktails, Aperol Spritz tree tower, bites, views & live music.",
-      "url": "https://www.eventbrite.com/e/rooftoprevere-summer-kickoff-campari-aperitivo-party-tickets-1986996663509",
-      "start": "2026-05-02",
-      "venue": "200 Stuart St",
-      "address": "200 Stuart Street, Boston",
-      "score": 7,
-      "reason": "Upscale rooftop aperitivo party with Campari cocktails, bites, live music, and views\u2014premium drinks/food event",
-      "_proximity": 3,
-      "price": "$30"
-    },
-    {
-      "source": "Eventbrite:model+showcase",
-      "name": "Fashion Show & Market featuring Emerging Brands & Small Businesses",
-      "description": "Step in a immersive fashion experience where runway energy meets curated pop-up shopping, live creativity, and emerging international brands",
-      "url": "https://www.eventbrite.com/e/fashion-show-market-featuring-emerging-brands-small-businesses-tickets-1987792243109",
-      "start": "2026-05-02",
-      "venue": "TBA",
-      "address": "TBA, Boston",
-      "score": 7,
-      "reason": "Fashion show with emerging brands and runway energy\u2014upscale fashion event open to public",
-      "_proximity": 3,
-      "price": "$40\u2013$60"
-    },
-    {
-      "source": "Eventbrite:model+showcase",
-      "name": "International Runway Show & Pop Up Shop  by Fashion SB Global",
-      "description": "Join us for fashion's top open to the public event for independent brands featuring our award winning runway show & pop up market",
-      "url": "https://www.eventbrite.com/e/international-runway-show-pop-up-shop-by-fashion-sb-global-tickets-1971489045807",
-      "start": "2026-05-02",
-      "venue": "64 C St",
-      "address": "64 C Street, Boston",
-      "score": 7,
-      "reason": "Award-winning runway show with pop-up market for independent brands\u2014stylish fashion event",
-      "_proximity": 3,
-      "price": "$0\u2013$50"
-    },
-    {
-      "source": "Eventbrite:fashion+show",
-      "name": "Fashion Show Pop Up Market",
-      "description": "Join us for fashion's top open to the public event for independent brands featuring our award winning runway show & pop up market",
-      "url": "https://www.eventbrite.com/e/fashion-show-pop-up-market-tickets-1987793346409",
-      "start": "2026-05-02",
-      "venue": "TBA",
-      "address": "TBA, Boston",
-      "score": 7,
-      "reason": "Public fashion event with runway show and pop-up market from independent brands\u2014fits upscale scene-y event profile",
-      "_proximity": 3,
-      "price": "$45\u2013$66"
-    },
-    {
-      "source": "Eventbrite:fashion+show",
-      "name": "Emerging Brands Runway Show",
-      "description": "Experience the next wave of style\u2014secure your front-row seat for Fashion\u2019s most exclusive independent runway shows before tickets are gone.",
-      "url": "https://www.eventbrite.com/e/emerging-brands-runway-show-tickets-1987792129770",
-      "start": "2026-05-02",
-      "venue": "TBA",
-      "address": "TBA, Boston",
-      "score": 7,
-      "reason": "Exclusive front-row runway show for emerging brands\u2014high-status fashion event",
-      "_proximity": 3,
-      "price": "$40\u2013$60"
     },
     {
       "source": "do617:food-drink",
@@ -254,18 +139,6 @@
     },
     {
       "source": "do617:film-theatre-performing-arts",
-      "name": "Chanda Prescod-Weinstein with David Kaiser: The Edge of Space-Time",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/28/chanda-prescod-weinstein-with-david-kaiser-the-edge-of-space-time-tickets",
-      "start": "2026-04-28T19:00",
-      "venue": "Brookline Booksmith",
-      "address": "",
-      "score": 7,
-      "reason": "Intellectual panel with physicist on space-time - high-status educational event",
-      "_proximity": 5
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
       "name": "Alvin Ailey American Dance Theater",
       "description": "",
       "url": "https://do617.com/events/2026/4/30/alvin-ailey-american-dance-theater-tickets",
@@ -325,68 +198,6 @@
       "_proximity": 3
     },
     {
-      "source": "Meetup: Tech Boston",
-      "name": "The AI X Leadership Summit | Boston 2026",
-      "description": "**This is PAID event. Register for this event here -** [https://luma.com/u4pmy7bc](https://luma.com/u4pmy7bc)\nUse code - **COMMUNITYEAST2026** \\- for an extra discount\\.\n\n**[AI X Leadership Summit](https://odsc.ai/east/aix-east/) \\- co\\-located event with ODSC AI East Conference\\.**\n\n## **Summit is the place for enterprise leaders refining and scaling real-world AI strategy**\n\nMove beyond the hype. This is a dedicated space for 250 exclusive enterprise leaders to validate governance and AI opera",
-      "url": "https://www.meetup.com/open-data-science-ny-odsc/events/312786347/",
-      "start": "2026-04-28T09:00",
-      "date": "2026-04-28",
-      "venue": "Hynes Convention Center",
-      "address": "Boston",
-      "score": 7,
-      "reason": "AI X Leadership Summit for enterprise leaders \u2014 exclusive (250 attendees), high-status executive networking on governance and AI strategy",
-      "_proximity": 3
-    },
-    {
-      "source": "Meetup: Career/Business",
-      "name": "Data-Driven Strategies with an Edge: A Fireside Chat ",
-      "description": "\\*YOU must **REGISTER HERE: https://luma.com/4zxxhw76**\n\nJoin us for an insightful fireside chat featuring **Derek Burleton**, Vice President and Deputy Chief Economist at TD Bank Group, and **Jacob Weinstein**, SVP Asset Allocation Research at Fidelity Investments as they unpack the forces reshaping global markets and financial innovation.\n\u200b\nThis conversation will explore the **macroeconomic trends driving investment behavior, emerging risks and opportunities for fintech**, and how data-driven ",
-      "url": "https://www.meetup.com/boston-fintech/events/314138921/",
-      "start": "2026-04-28T16:00",
-      "date": "2026-04-28",
-      "venue": "Fidelity Investments",
-      "address": "Boston",
-      "score": 7,
-      "reason": "Fireside chat with VP/Deputy Chief Economist (TD Bank) and SVP (Fidelity) on financial markets and fintech \u2014 high-status expert panel with influential speakers",
-      "_proximity": 3
-    },
-    {
-      "source": "luma:boston",
-      "name": "Investor Breakfast: Tips for Successfully Transitioning Along the Pathway from Angel to VC to PE",
-      "description": "",
-      "url": "https://lu.ma/xb9uj5te",
-      "start": "2026-04-28T13:00",
-      "venue": "",
-      "address": "Boston, Massachusetts",
-      "score": 7,
-      "reason": "Investor breakfast on angel-to-VC-to-PE pathway is high-status professional networking aligned with finance/investment interests",
-      "_proximity": 3
-    },
-    {
-      "source": "luma:boston",
-      "name": "Whiskey, Wine & Whiteboards - April 2026",
-      "description": "",
-      "url": "https://lu.ma/qwulxoid",
-      "start": "2026-04-28T21:30",
-      "venue": "",
-      "address": "Boston, Massachusetts",
-      "score": 7,
-      "reason": "Whiskey, Wine & Whiteboards suggests upscale drink event with creative/professional networking component",
-      "_proximity": 3
-    },
-    {
-      "source": "allevents:arts",
-      "name": "In Person Class: Some Like It Hot: All About Chilies with Josh Mamaclay",
-      "description": "",
-      "url": "https://allevents.in/boston/in-person-class-some-like-it-hot-all-about-chilies-with-josh-mamaclay/100001986812373292",
-      "start": "2026-04-28",
-      "venue": "177 Milk St",
-      "address": "Boston, MA",
-      "score": 7,
-      "reason": "Culinary class on chilies\u2014upscale food/drink educational event",
-      "_proximity": 3
-    },
-    {
       "source": "allevents:fashion",
       "name": "Celebrate Lidiya Romanchuk - FASHION DESIGNER OF THE YEAR",
       "description": "",
@@ -397,19 +208,6 @@
       "score": 7,
       "reason": "Fashion designer of the year celebration is exclusive, upscale fashion event",
       "_proximity": 3
-    },
-    {
-      "source": "Eventbrite:reception",
-      "name": "Small Works Reception",
-      "description": "Join this year's cohort of Small Works Artists for a social reception and showing of their work, ranging painting, photography, and ceramics",
-      "url": "https://www.eventbrite.com/e/small-works-reception-tickets-1987654543245",
-      "start": "2026-05-01",
-      "venue": "Gallery 263",
-      "address": "263 Pearl Street, Cambridge",
-      "score": 6,
-      "reason": "Art reception with artists present, spanning painting, photography, and ceramics\u2014cultural/art event",
-      "_proximity": 5,
-      "price": "$0"
     },
     {
       "source": "do617:food-drink",
@@ -436,19 +234,6 @@
       "_proximity": 5
     },
     {
-      "source": "Meetup: Tech Boston",
-      "name": "PyCon preview: The Exceptions We Don't Catch in Technical Conversations",
-      "description": "We write try/except blocks. We write unit tests. We handle edge cases. But what about the exceptions we throw at *each other* in technical conversations? Emin Martinian is here to debug that.\n\nJoin us for a preview and rehearsal of Emin's upcoming **PyCon US 2026** **talk**, *\"The Exceptions We Don't Catch in Technical Conversations\"*. He digs into the sociological bugs hiding in our supposedly objective feedback, our technically correct but totally unconvincing arguments, and our well-meaning t",
-      "url": "https://www.meetup.com/bostonpython/events/314284388/",
-      "start": "2026-04-28T18:00",
-      "date": "2026-04-28",
-      "venue": "Microsoft New England Research and Development Center",
-      "address": "Cambridge",
-      "score": 6,
-      "reason": "PyCon preview talk on technical communication \u2014 professional development and conference-level content",
-      "_proximity": 5
-    },
-    {
       "source": "luma:boston",
       "name": "Future of Higher Ed (Boston): Lunch Discussion with Kathleen deLaski",
       "description": "",
@@ -459,19 +244,6 @@
       "score": 6,
       "reason": "Lunch discussion with notable speaker on higher ed policy; good professional networking and policy forum",
       "_proximity": 5
-    },
-    {
-      "source": "Eventbrite:pavilion+revenue",
-      "name": "MIT Water, Food, & Agriculture Innovation Prize 2026",
-      "description": "Attend MIT's nationwide pitch competition for early-stage, student-run startups transforming the water, food, & agriculture sector!",
-      "url": "https://www.eventbrite.com/e/mit-water-food-agriculture-innovation-prize-2026-tickets-1979199882126",
-      "start": "2026-04-29",
-      "venue": "MIT E38",
-      "address": "292 Main Street, Cambridge",
-      "score": 6,
-      "reason": "MIT pitch competition; high-status innovation event with startup founders and investors",
-      "_proximity": 5,
-      "price": "$25"
     },
     {
       "source": "do617:film-theatre-performing-arts",
@@ -487,11 +259,11 @@
     },
     {
       "source": "Boston Calendar",
-      "name": "Wine Dinners at Forage",
+      "name": "Boston Happy Hour Stroll in the South End (Food + Cocktail Pairings)",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/wine-dinners-at-forage--28",
-      "start": "2026-04-28",
-      "date": "2026-04-28",
+      "url": "https://www.thebostoncalendar.com/events/happy-hour-stroll-south-end--68",
+      "start": "2026-04-29",
+      "date": "2026-04-29",
       "venue": "",
       "address": "",
       "score": 2,
@@ -499,11 +271,11 @@
     },
     {
       "source": "Boston Calendar",
-      "name": "A Taste of Italy Comes to Gloucester: Exclusive Wine Dinner April 28",
+      "name": "San Felice Wine Dinner at Davio&#39;s Chestnut Hill",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/a-taste-of-italy-comes-to-gloucester-exclusive-wine-dinner-april-28",
-      "start": "2026-04-28",
-      "date": "2026-04-28",
+      "url": "https://www.thebostoncalendar.com/events/san-felice-wine-dinner-at-davio-s-chestnut-hill",
+      "start": "2026-04-29",
+      "date": "2026-04-29",
       "venue": "",
       "address": "",
       "score": 2,
@@ -511,23 +283,23 @@
     },
     {
       "source": "Boston Calendar",
-      "name": "$1 Oysters at Lincoln Tavern &amp; Restaurant",
+      "name": "Bambara Kitchen &amp; Bar Hosts a Cousi\u00f1o Macul Wine Dinner on Wednesday, April 29th",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/1-oysters-at-lincoln-tavern-restaurant--118",
-      "start": "2026-04-28",
-      "date": "2026-04-28",
+      "url": "https://www.thebostoncalendar.com/events/bambara-kitchen-bar-hosts-a-cousino-macul-wine-dinner-on-wednesday-april-29th",
+      "start": "2026-04-29",
+      "date": "2026-04-29",
       "venue": "",
       "address": "",
-      "score": 1,
+      "score": 2,
       "reason": ""
     },
     {
       "source": "Boston Calendar",
       "name": "Painted Burro Waltham- Happy Hour Deals!",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/painted-burro-waltham-weekly-happy-hour-deals--61",
-      "start": "2026-04-28",
-      "date": "2026-04-28",
+      "url": "https://www.thebostoncalendar.com/events/painted-burro-waltham-weekly-happy-hour-deals--156",
+      "start": "2026-04-29",
+      "date": "2026-04-29",
       "venue": "",
       "address": "",
       "score": 1,
@@ -535,35 +307,11 @@
     },
     {
       "source": "Boston Calendar",
-      "name": "Two&#39;sDay Night Dinner Date",
+      "name": "Wednesday Night Wine Flights",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/two-sday-night-dinner-date--14",
-      "start": "2026-04-28",
-      "date": "2026-04-28",
-      "venue": "",
-      "address": "",
-      "score": 1,
-      "reason": ""
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "$1 Oysters at Gray&#39;s Hall",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/1-oysters-at-gray-s-hall--167",
-      "start": "2026-04-28",
-      "date": "2026-04-28",
-      "venue": "",
-      "address": "",
-      "score": 1,
-      "reason": ""
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Painted Burro Davis Square- Happy Hour Deals!",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/painted-burro-davis-square-happy-hour-deals--205",
-      "start": "2026-04-28",
-      "date": "2026-04-28",
+      "url": "https://www.thebostoncalendar.com/events/wednesday-night-wine-flights--8",
+      "start": "2026-04-29",
+      "date": "2026-04-29",
       "venue": "",
       "address": "",
       "score": 1,
@@ -573,9 +321,9 @@
       "source": "Boston Calendar",
       "name": "Posto South End- Happy Hour Deals!",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/posto-south-end-happy-hour-deals--207",
-      "start": "2026-04-28",
-      "date": "2026-04-28",
+      "url": "https://www.thebostoncalendar.com/events/posto-south-end-happy-hour-deals--348",
+      "start": "2026-04-29",
+      "date": "2026-04-29",
       "venue": "",
       "address": "",
       "score": 1,
@@ -583,11 +331,11 @@
     },
     {
       "source": "Boston Calendar",
-      "name": "2026 Newton Civic Spotlight",
+      "name": "Painted Burro Davis Square- Happy Hour Deals!",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/2026-newton-civic-spotlight",
-      "start": "2026-04-28",
-      "date": "2026-04-28",
+      "url": "https://www.thebostoncalendar.com/events/painted-burro-davis-square-happy-hour-deals--253",
+      "start": "2026-04-29",
+      "date": "2026-04-29",
       "venue": "",
       "address": "",
       "score": 1,
@@ -595,11 +343,11 @@
     },
     {
       "source": "Boston Calendar",
-      "name": "Blooming Together: Latinas in Tech Mixer",
+      "name": "$25 Girl Dinner at Waverly Charlestown",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/blooming-together-latinas-in-tech-mixer",
-      "start": "2026-04-28",
-      "date": "2026-04-28",
+      "url": "https://www.thebostoncalendar.com/events/25-girl-dinner-at-waverly-charlestown--31",
+      "start": "2026-04-29",
+      "date": "2026-04-29",
       "venue": "",
       "address": "",
       "score": 1,
@@ -1612,79 +1360,6 @@
     "total": 5.3132,
     "runs": [
       {
-        "ts": "2026-04-26T08:12:27.717951",
-        "persona": "unknown",
-        "events_total": 808,
-        "events_cached": 26,
-        "events_scored": 229,
-        "cost_usd": 0,
-        "duration_ms": 0,
-        "models": {},
-        "by_stage": {},
-        "source_counts": {},
-        "deploy_why": "run",
-        "netlify": {
-          "total": 300,
-          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
-        },
-        "efficiency": {
-          "cache_hit_rate": 0.102,
-          "avg_hit_rate": 0.354,
-          "cost_per_scored_event": 0.0,
-          "notes": [
-            "Cache 10% hit (26 cached, 229 scored) \u2014 many new events, normal on first daily run",
-            "High scoring volume (229 scored) \u2014 consider raising min_score to cut costs",
-            "Cache hit rate 10% vs recent avg 35% (26 cached / 229 scored) \u2014 possible new sources added or score cache cleared"
-          ]
-        }
-      },
-      {
-        "ts": "2026-04-27T11:58:36.357581",
-        "persona": "unknown",
-        "events_total": 703,
-        "events_cached": 95,
-        "events_scored": 255,
-        "cost_usd": 0,
-        "duration_ms": 0,
-        "models": {},
-        "by_stage": {},
-        "source_counts": {},
-        "deploy_why": "run",
-        "netlify": {},
-        "efficiency": {
-          "cache_hit_rate": 0.271,
-          "avg_hit_rate": 0.313,
-          "cost_per_scored_event": 0.0,
-          "notes": [
-            "Cache 27% hit (95 cached, 255 scored) \u2014 many new events, normal on first daily run",
-            "High scoring volume (255 scored) \u2014 consider raising min_score to cut costs"
-          ]
-        }
-      },
-      {
-        "ts": "2026-04-27T11:58:57.701726",
-        "persona": "unknown",
-        "events_total": 703,
-        "events_cached": 210,
-        "events_scored": 253,
-        "cost_usd": 0,
-        "duration_ms": 0,
-        "models": {},
-        "by_stage": {},
-        "source_counts": {},
-        "deploy_why": "run",
-        "netlify": {},
-        "efficiency": {
-          "cache_hit_rate": 0.454,
-          "avg_hit_rate": 0.267,
-          "cost_per_scored_event": 0.0,
-          "notes": [
-            "Cache 45% hit (210 cached, 253 scored) \u2014 many new events, normal on first daily run",
-            "High scoring volume (253 scored) \u2014 consider raising min_score to cut costs"
-          ]
-        }
-      },
-      {
         "ts": "2026-04-27T12:00:19.084449",
         "persona": "unknown",
         "events_total": 703,
@@ -1733,17 +1408,94 @@
             "High scoring volume (325 scored) \u2014 consider raising min_score to cut costs"
           ]
         }
+      },
+      {
+        "ts": "2026-04-28T08:12:39.173096",
+        "persona": "unknown",
+        "events_total": 747,
+        "events_cached": 192,
+        "events_scored": 324,
+        "cost_usd": 0,
+        "duration_ms": 0,
+        "models": {},
+        "by_stage": {},
+        "source_counts": {},
+        "deploy_why": "run",
+        "netlify": {
+          "total": 300,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.372,
+          "avg_hit_rate": 0.224,
+          "cost_per_scored_event": 0.0,
+          "notes": [
+            "Cache 37% hit (192 cached, 324 scored) \u2014 many new events, normal on first daily run",
+            "High scoring volume (324 scored) \u2014 consider raising min_score to cut costs"
+          ]
+        }
+      },
+      {
+        "ts": "2026-04-28T08:14:15.407205",
+        "persona": "unknown",
+        "events_total": 747,
+        "events_cached": 21,
+        "events_scored": 324,
+        "cost_usd": 0,
+        "duration_ms": 0,
+        "models": {},
+        "by_stage": {},
+        "source_counts": {},
+        "deploy_why": "run",
+        "netlify": {
+          "total": 300,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.061,
+          "avg_hit_rate": 0.278,
+          "cost_per_scored_event": 0.0,
+          "notes": [
+            "Cache 6% hit (21 cached, 324 scored) \u2014 many new events, normal on first daily run",
+            "High scoring volume (324 scored) \u2014 consider raising min_score to cut costs",
+            "Cache hit rate 6% vs recent avg 28% (21 cached / 324 scored) \u2014 possible new sources added or score cache cleared"
+          ]
+        }
+      },
+      {
+        "ts": "2026-04-29T08:10:52.453434",
+        "persona": "unknown",
+        "events_total": 639,
+        "events_cached": 56,
+        "events_scored": 357,
+        "cost_usd": 0,
+        "duration_ms": 0,
+        "models": {},
+        "by_stage": {},
+        "source_counts": {},
+        "deploy_why": "run",
+        "netlify": {
+          "total": 300,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.136,
+          "avg_hit_rate": 0.236,
+          "cost_per_scored_event": 0.0,
+          "notes": [
+            "Cache 14% hit (56 cached, 357 scored) \u2014 many new events, normal on first daily run",
+            "High scoring volume (357 scored) \u2014 consider raising min_score to cut costs"
+          ]
+        }
       }
     ],
     "netlify": "300 credit pack \u2014 check balance at app.netlify.com/billing"
   },
   "sources": {
-    "do617": 20,
-    "luma": 5,
-    "Eventbrite": 9,
-    "Meetup": 3,
-    "allevents": 2,
-    "Boston Calendar": 10
+    "do617": 18,
+    "luma": 2,
+    "allevents": 1,
+    "Boston Calendar": 8
   },
   "source_urls": {
     "do617": "https://do617.com/events/food-drink",
@@ -1797,11 +1549,9 @@
     "Venture Lane events": "https://www.venturelane.co/events"
   },
   "source_stats": {
-    "do617": 20,
-    "luma": 5,
-    "Eventbrite": 9,
-    "Meetup": 3,
-    "allevents": 2,
-    "Boston Calendar": 10
+    "do617": 18,
+    "luma": 2,
+    "allevents": 1,
+    "Boston Calendar": 8
   }
 }
