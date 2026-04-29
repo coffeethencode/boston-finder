@@ -1,23 +1,10 @@
 {
-  "generated_at": "2026-04-28T08:14:12.121287",
-  "today": "2026-04-28",
+  "generated_at": "2026-04-29T08:11:55.605764",
+  "today": "2026-04-29",
   "days": 7,
   "persona": "dates",
   "persona_prompt": "You are filtering Boston events for date ideas \u2014 things two people would enjoy doing together.\n\nGreat date events:\n- Food & drink: wine tastings, prix fixe dinners, cocktail classes, food festivals, tasting menus, new restaurant openings\n- Arts & culture: gallery openings, museum exhibits, live music, jazz, comedy shows, theater, film screenings\n- Experiences: cooking classes, pottery, dance lessons, sunset cruises, rooftop events, seasonal markets\n- Outdoor: scenic walks, garden events, waterfront activities, bike tours\n- Nightlife: speakeasy events, live DJ sets, themed parties, rooftop bars\n\nLower priority:\n- Kids/family-focused events\n- Pure networking or professional events\n- Large-scale sports (unless it's a unique experience like courtside)\n- Conferences, lectures, or panels with no social component\n\nScore 0-10. Only return events with score >= 5.",
   "events": [
-    {
-      "source": "Eventbrite:launch+party",
-      "name": "Rooftop@Revere Summer Kickoff: Campari Aperitivo Party",
-      "description": "Kick off patio season at Rooftop@Revere with Campari cocktails, Aperol Spritz tree tower, bites, views & live music.",
-      "url": "https://www.eventbrite.com/e/rooftoprevere-summer-kickoff-campari-aperitivo-party-tickets-1986996663509",
-      "start": "2026-05-02",
-      "venue": "200 Stuart St",
-      "address": "200 Stuart Street, Boston",
-      "score": 8,
-      "reason": "Rooftop summer kickoff with cocktails, food, and live music\u2014ideal upscale date setting",
-      "_proximity": 3,
-      "price": "$30"
-    },
     {
       "source": "do617:food-drink",
       "name": "Hands-On: Tiramis\u00f9",
@@ -154,18 +141,6 @@
       "source": "do617:film-theatre-performing-arts",
       "name": "Presented by Lexus Broadway In BostonDisney's Beauty and the Beast",
       "description": "",
-      "url": "https://do617.com/events/2026/4/28/disney-s-beauty-and-the-beast-tickets",
-      "start": "2026-04-28T19:00",
-      "venue": "Citizens Bank Opera House",
-      "address": "",
-      "score": 8,
-      "reason": "Broadway theater production - excellent date experience",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Presented by Lexus Broadway In BostonDisney's Beauty and the Beast",
-      "description": "",
       "url": "https://do617.com/events/2026/4/29/disney-s-beauty-and-the-beast-tickets",
       "start": "2026-04-29T19:00",
       "venue": "Citizens Bank Opera House",
@@ -220,30 +195,6 @@
       "address": "",
       "score": 8,
       "reason": "Alvin Ailey American Dance Theater - high-quality live performance",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
-      "name": "Latin Night! Salsa, Beginner 1A, Apr 7",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/28/latin-night-salsa-beginner-1a-apr-7-tickets",
-      "start": "2026-04-28T18:30",
-      "venue": "The Larcom Theatre",
-      "address": "",
-      "score": 8,
-      "reason": "Salsa dancing class - perfect date activity combining movement and cultural experience",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
-      "name": "Latin Night! Salsa, Beginner 1B, Apr 7",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/28/latin-night-salsa-beginner-1b-apr-7-tickets",
-      "start": "2026-04-28T19:30",
-      "venue": "The Larcom Theatre",
-      "address": "",
-      "score": 8,
-      "reason": "Salsa dancing class - perfect date activity combining movement and cultural experience",
       "_proximity": 3
     },
     {
@@ -427,160 +378,6 @@
       "_proximity": 3
     },
     {
-      "source": "Eventbrite:presales+engineer",
-      "name": "Orange Peel: A Musical Comedy Experience",
-      "description": "Music, improv and stand-up, all in one night?! They said it wasn't possible! Join us for a night of singing, dancing and laughter!",
-      "url": "https://www.eventbrite.com/e/orange-peel-a-musical-comedy-experience-tickets-1982741380844",
-      "start": "2026-04-30",
-      "venue": "The Lilypad",
-      "address": "1353 Cambridge Street, Cambridge",
-      "score": 8,
-      "reason": "Musical comedy experience combining singing, improv, and stand-up\u2014excellent entertaining date night",
-      "_proximity": 5,
-      "price": "$13"
-    },
-    {
-      "source": "Eventbrite:gala",
-      "name": "Kentucky Derby Oaks Day Purple Gala!",
-      "description": "Party in style at the BEST Kentucky Derby Oaks Gala!  Rock Purple for Pancreatic Cancer Awareness! Music by DJ Kevin Lawyer!  Onsite parking",
-      "url": "https://www.eventbrite.com/e/kentucky-derby-oaks-day-purple-gala-tickets-1984413101004",
-      "start": "2026-05-01",
-      "venue": "Prince Hall Grand Lodge-Biff's Lounge",
-      "address": "24 -18 Washington Street, Dorchester",
-      "score": 7,
-      "reason": "Charity gala with DJ and stylish dress code\u2014good date vibe with a cause",
-      "_proximity": 3,
-      "price": "$50"
-    },
-    {
-      "source": "Eventbrite:reception",
-      "name": "Small Works Reception",
-      "description": "Join this year's cohort of Small Works Artists for a social reception and showing of their work, ranging painting, photography, and ceramics",
-      "url": "https://www.eventbrite.com/e/small-works-reception-tickets-1987654543245",
-      "start": "2026-05-01",
-      "venue": "Gallery 263",
-      "address": "263 Pearl Street, Cambridge",
-      "score": 7,
-      "reason": "Art gallery reception with diverse artwork\u2014intimate cultural date experience",
-      "_proximity": 5,
-      "price": "$0"
-    },
-    {
-      "source": "Eventbrite:model+showcase",
-      "name": "Fashion Show & Market featuring Emerging Brands & Small Businesses",
-      "description": "Step in a immersive fashion experience where runway energy meets curated pop-up shopping, live creativity, and emerging international brands",
-      "url": "https://www.eventbrite.com/e/fashion-show-market-featuring-emerging-brands-small-businesses-tickets-1987792243109",
-      "start": "2026-05-02",
-      "venue": "TBA",
-      "address": "TBA, Boston",
-      "score": 7,
-      "reason": "Fashion show with runway, pop-up shopping, and live creativity\u2014immersive fashion date",
-      "_proximity": 3,
-      "price": "$40\u2013$60"
-    },
-    {
-      "source": "Eventbrite:model+showcase",
-      "name": "International Runway Show & Pop Up Shop  by Fashion SB Global",
-      "description": "Join us for fashion's top open to the public event for independent brands featuring our award winning runway show & pop up market",
-      "url": "https://www.eventbrite.com/e/international-runway-show-pop-up-shop-by-fashion-sb-global-tickets-1971489045807",
-      "start": "2026-05-02",
-      "venue": "64 C St",
-      "address": "64 C Street, Boston",
-      "score": 7,
-      "reason": "Fashion runway show and pop-up market with independent brands\u2014stylish date experience",
-      "_proximity": 3,
-      "price": "$0\u2013$50"
-    },
-    {
-      "source": "Eventbrite:art+opening",
-      "name": "ART MEDITATION & MASSAGE RETREAT",
-      "description": "ART MEDITATION & MASSAGE RETREAT\n\n\nA transformative Experience\n\nThe Hidden Art Gallery & A La Carte Massage.",
-      "url": "https://www.eventbrite.com/e/art-meditation-massage-retreat-tickets-1986540587373",
-      "start": "2026-05-01",
-      "venue": "The Hidden Art Gallery",
-      "address": "25 Myrtle Street, Boston",
-      "score": 7,
-      "reason": "Art gallery with massage and meditation - unique wellness date experience",
-      "_proximity": 3,
-      "price": "$413\u2013$605"
-    },
-    {
-      "source": "Eventbrite:fashion+show",
-      "name": "Fashion Show Pop Up Market",
-      "description": "Join us for fashion's top open to the public event for independent brands featuring our award winning runway show & pop up market",
-      "url": "https://www.eventbrite.com/e/fashion-show-pop-up-market-tickets-1987793346409",
-      "start": "2026-05-02",
-      "venue": "TBA",
-      "address": "TBA, Boston",
-      "score": 7,
-      "reason": "Fashion show with runway and market - style-focused date event",
-      "_proximity": 3,
-      "price": "$45\u2013$66"
-    },
-    {
-      "source": "Eventbrite:fashion+show",
-      "name": "Emerging Brands Runway Show",
-      "description": "Experience the next wave of style\u2014secure your front-row seat for Fashion\u2019s most exclusive independent runway shows before tickets are gone.",
-      "url": "https://www.eventbrite.com/e/emerging-brands-runway-show-tickets-1987792129770",
-      "start": "2026-05-02",
-      "venue": "TBA",
-      "address": "TBA, Boston",
-      "score": 7,
-      "reason": "Exclusive runway show - upscale fashion date experience",
-      "_proximity": 3,
-      "price": "$40\u2013$60"
-    },
-    {
-      "source": "Eventbrite:fashion+show",
-      "name": "Ibiza Beach Club Fashion Show and Afterparty",
-      "description": "Get ready to slay at Ibiza Beach Club Fashion Show and Afterparty\u2014style, beats, and vibes all night!",
-      "url": "https://www.eventbrite.com/e/ibiza-beach-club-fashion-show-and-afterparty-tickets-1987053772323",
-      "start": "2026-05-02",
-      "venue": "Temple Bnai Moshe",
-      "address": "1845 Commonwealth Avenue, Boston",
-      "score": 7,
-      "reason": "Fashion show with afterparty and DJ - combines style, music, and nightlife for date",
-      "_proximity": 3,
-      "price": "$45"
-    },
-    {
-      "source": "Eventbrite:runway+show",
-      "name": "The Third Annual Big Queer Boston Talent Show",
-      "description": "A variety competition show featuring a range of local talent including stand ups, drag performers, and more!",
-      "url": "https://www.eventbrite.com/e/the-third-annual-big-queer-boston-talent-show-tickets-1980890044447",
-      "start": "2026-04-30",
-      "venue": "Jacques' Cabaret",
-      "address": "79 Broadway Street, Boston",
-      "score": 7,
-      "reason": "Variety talent show with drag and comedy is entertaining and date-friendly",
-      "_proximity": 3,
-      "price": "$14"
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Hands-On: Pasta alla Carbonara",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/28/hands-on-pasta-alla-carbonara-tickets",
-      "start": "2026-04-28T15:00",
-      "venue": "Eataly Boston",
-      "address": "",
-      "score": 7,
-      "reason": "Hands-on cooking class is an interactive, collaborative date experience",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:food-drink",
-      "name": "Hands-On: Gnocchi al Pomodoro",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/28/hands-on-gnocchi-al-pomodoro-tickets",
-      "start": "2026-04-28T18:00",
-      "venue": "Eataly Boston",
-      "address": "",
-      "score": 7,
-      "reason": "Hands-on pasta cooking class is a fun, collaborative culinary date",
-      "_proximity": 3
-    },
-    {
       "source": "do617:food-drink",
       "name": "Karaoke Wednesdays",
       "description": "",
@@ -710,18 +507,6 @@
       "address": "",
       "score": 7,
       "reason": "Upscale spring social event \u2014 date-worthy occasion",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "The Moth: Boston StorySLAM",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/28/the-moth-boston-storyslam-tickets",
-      "start": "2026-04-28T18:30",
-      "venue": "Arts At The Armory",
-      "address": "",
-      "score": 7,
-      "reason": "Live storytelling event - engaging social date",
       "_proximity": 3
     },
     {
@@ -866,90 +651,6 @@
       "address": "",
       "score": 7,
       "reason": "Cult classic film - romantic cinema date",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
-      "name": "Hippie Sabotage",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/28/hippie-sabotage-tickets",
-      "start": "2026-04-28T19:00",
-      "venue": "Citizens House of Blues",
-      "address": "",
-      "score": 7,
-      "reason": "Live DJ/electronic music performance",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
-      "name": "Red Rum Club",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/28/red-rum-club-tickets",
-      "start": "2026-04-28T19:00",
-      "venue": "Brighton Music Hall",
-      "address": "",
-      "score": 7,
-      "reason": "Live music event",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
-      "name": "Wu Lyf",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/28/wu-lyf-tickets",
-      "start": "2026-04-28T20:00",
-      "venue": "The Sinclair",
-      "address": "",
-      "score": 7,
-      "reason": "Live music performance",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
-      "name": "Sam Shackleton",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/28/sam-shackleton-tickets",
-      "start": "2026-04-28T19:00",
-      "venue": "Deep Cuts",
-      "address": "",
-      "score": 7,
-      "reason": "Live DJ/electronic performance",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
-      "name": "Author Talk: Emma Straub",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/28/author-emma-straub-tickets",
-      "start": "2026-04-28T19:00",
-      "venue": "BNH Stage16 S. Main St",
-      "address": "",
-      "score": 7,
-      "reason": "Author talk - cultural event for book lovers",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
-      "name": "The Middle East presents:Mood",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/28/mood-tickets",
-      "start": "2026-04-28T21:30",
-      "venue": "The Middle East Corner Bar",
-      "address": "",
-      "score": 7,
-      "reason": "Live music venue event",
-      "_proximity": 3
-    },
-    {
-      "source": "do617:concerts",
-      "name": "Alasdair Fraser & Natalie Haas",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/28/alasdair-fraser-natalie-haas-tickets",
-      "start": "2026-04-28T19:00",
-      "venue": "Club Passim",
-      "address": "",
-      "score": 7,
-      "reason": "Acoustic/folk music performance - intimate date experience",
       "_proximity": 3
     },
     {
@@ -1229,19 +930,6 @@
       "_proximity": 3
     },
     {
-      "source": "Meetup: Career/Business",
-      "name": "SOLD OUT! Sauna + Cold Plunge Social",
-      "description": "**Sold out! If you haven\u2019t purchased a ticket we are at capacity. Stay tuned for more events!**\n\n**Sober & Curious Boston x MOKI**\n**present**\n**Sauna + Cold Plunge Social**\n**Join us for a different kind of night out.**\n**[Registration Required](https://minside.periode.no/booking/tHtv0CTPU4qrz9a9ndgo/ghbiFHa1InmhHqf8QbHf/2026-04-28/18:00) \u2022 $30 ticket**\n**Tuesday, April 28 \u2022 6\u20138 PM**\n**MOKI Sauna, 385 Dorchester Avenue, South Boston**\n**S&CB is taking over MOKI South Boston!**\n**\u2022 Hot sauna ses",
-      "url": "https://www.meetup.com/sober-curious-circle-boston-south-shore/events/314185678/",
-      "start": "2026-04-28T18:00",
-      "date": "2026-04-28",
-      "venue": "MOKI Sauna",
-      "address": "South Boston",
-      "score": 7,
-      "reason": "Unique social experience combining wellness (sauna/cold plunge) with socializing and zero-proof drinks. Great date activity for couples interested in wellness and conversation.",
-      "_proximity": 5
-    },
-    {
       "source": "allevents:arts",
       "name": "International Jazz Day Celebration feat. Godwin Louis / Jonathan Suazo",
       "description": "",
@@ -1251,18 +939,6 @@
       "address": "Boston, MA",
       "score": 7,
       "reason": "Jazz performance is a classic date activity. Live music provides ambiance and shared cultural experience perfect for a couple's evening out.",
-      "_proximity": 3
-    },
-    {
-      "source": "allevents:arts",
-      "name": "In Person Class: Some Like It Hot: All About Chilies with Josh Mamaclay",
-      "description": "",
-      "url": "https://allevents.in/boston/in-person-class-some-like-it-hot-all-about-chilies-with-josh-mamaclay/100001986812373292",
-      "start": "2026-04-28",
-      "venue": "177 Milk St",
-      "address": "Boston, MA",
-      "score": 7,
-      "reason": "Cooking class about chilies; hands-on food experience, great date activity",
       "_proximity": 3
     },
     {
@@ -1290,89 +966,12 @@
       "_proximity": 3
     },
     {
-      "source": "ticketmaster",
-      "name": "Disney's Beauty and the Beast (Touring)",
-      "description": "Disney on Broadway performances are recommended for a general audience. As an advisory to adults who might bring young people, Disney recommends its productions for ages 6 and up. All guests entering the theater, regardless of age, must have a ticket. The Extra Magic Package includes an excellent seat in the theater and show merchandise.",
-      "url": "https://www.ticketmaster.com/disneys-beauty-and-the-beast-touring-boston-massachusetts-04-28-2026/event/01006350B73BCC36",
-      "start": "2026-04-28T23:00",
-      "venue": "Citizens Opera House",
-      "address": "Boston, MA",
-      "price": "",
-      "score": 7,
-      "reason": "Disney Broadway show \u2014 classic theatrical date activity",
-      "_proximity": 3
-    },
-    {
-      "source": "Eventbrite:ARM+semiconductor",
-      "name": "Intro to Stained Glass: Make a Silly Bird Suncatcher",
-      "description": "Learn the fundamentals of stained glass by designing your own silly bird suncatcher!",
-      "url": "https://www.eventbrite.com/e/intro-to-stained-glass-make-a-silly-bird-suncatcher-tickets-1987558517028",
-      "start": "2026-05-02",
-      "venue": "Artisan's Asylum",
-      "address": "96 Holton Street, Boston",
-      "score": 7,
-      "reason": "Fun stained glass craft class with a playful theme\u2014great interactive date activity",
-      "_proximity": 3,
-      "price": "$127"
-    },
-    {
-      "source": "Eventbrite:presales+engineer",
-      "name": "Mod Rockr | Savoir Faire | Christina Lacoste",
-      "description": "Live Music at The Jungle",
-      "url": "https://www.eventbrite.com/e/mod-rockr-savoir-faire-christina-lacoste-tickets-1984518012798",
-      "start": "2026-05-02",
-      "venue": "The Jungle",
-      "address": "6 Sanborn Court, Somerville",
-      "score": 7,
-      "reason": "Live music at venue\u2014classic date night activity",
-      "_proximity": 4,
-      "price": "$12\u2013$17"
-    },
-    {
-      "source": "Eventbrite:presales+engineer",
-      "name": "Tour with Friends of the Harborwalk: MWRA: Deer Island\u2019s \u201cBig Dig\u201d",
-      "description": "Join the Friends of the Boston Harborwalk as we explore Boston's \"other\" Big Dig located on Deer Island.",
-      "url": "https://www.eventbrite.com/e/tour-with-friends-of-the-harborwalk-mwra-deer-islands-big-dig-tickets-1980815089254",
-      "start": "2026-05-02",
-      "venue": "Public Parking Area",
-      "address": "190 Tafts Street, Winthrop",
-      "score": 7,
-      "reason": "Guided historical tour of Deer Island's Big Dig\u2014interesting outdoor activity for couples interested in Boston history and infrastructure",
-      "_proximity": 3,
-      "price": "$23"
-    },
-    {
-      "source": "Eventbrite:masschallenge",
-      "name": "A Piano Recital with Paul-Andr\u00e9 Bemp\u00e9chat",
-      "description": "Piano Recital of music by Johannes Brahms and Franz Schubert",
-      "url": "https://www.eventbrite.com/e/a-piano-recital-with-paul-andre-bempechat-tickets-1986103374658",
-      "start": "2026-05-02",
-      "venue": "The First Church in Belmont Unitarian Universalist",
-      "address": "404 Concord Avenue, Belmont",
-      "score": 7,
-      "reason": "Piano recital of classical masters (Brahms, Schubert)\u2014elegant cultural date experience",
-      "_proximity": 3,
-      "price": "$29"
-    },
-    {
-      "source": "do617:film-theatre-performing-arts",
-      "name": "Chanda Prescod-Weinstein with David Kaiser: The Edge of Space-Time",
-      "description": "",
-      "url": "https://do617.com/events/2026/4/28/chanda-prescod-weinstein-with-david-kaiser-the-edge-of-space-time-tickets",
-      "start": "2026-04-28T19:00",
-      "venue": "Brookline Booksmith",
-      "address": "",
-      "score": 6,
-      "reason": "Author/speaker panel - intellectual date experience",
-      "_proximity": 6
-    },
-    {
       "source": "Boston Calendar",
-      "name": "Wine Dinners at Forage",
+      "name": "Boston Happy Hour Stroll in the South End (Food + Cocktail Pairings)",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/wine-dinners-at-forage--28",
-      "start": "2026-04-28",
-      "date": "2026-04-28",
+      "url": "https://www.thebostoncalendar.com/events/happy-hour-stroll-south-end--68",
+      "start": "2026-04-29",
+      "date": "2026-04-29",
       "venue": "",
       "address": "",
       "score": 2,
@@ -1380,11 +979,11 @@
     },
     {
       "source": "Boston Calendar",
-      "name": "A Taste of Italy Comes to Gloucester: Exclusive Wine Dinner April 28",
+      "name": "San Felice Wine Dinner at Davio&#39;s Chestnut Hill",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/a-taste-of-italy-comes-to-gloucester-exclusive-wine-dinner-april-28",
-      "start": "2026-04-28",
-      "date": "2026-04-28",
+      "url": "https://www.thebostoncalendar.com/events/san-felice-wine-dinner-at-davio-s-chestnut-hill",
+      "start": "2026-04-29",
+      "date": "2026-04-29",
       "venue": "",
       "address": "",
       "score": 2,
@@ -1392,23 +991,23 @@
     },
     {
       "source": "Boston Calendar",
-      "name": "$1 Oysters at Lincoln Tavern &amp; Restaurant",
+      "name": "Bambara Kitchen &amp; Bar Hosts a Cousi\u00f1o Macul Wine Dinner on Wednesday, April 29th",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/1-oysters-at-lincoln-tavern-restaurant--118",
-      "start": "2026-04-28",
-      "date": "2026-04-28",
+      "url": "https://www.thebostoncalendar.com/events/bambara-kitchen-bar-hosts-a-cousino-macul-wine-dinner-on-wednesday-april-29th",
+      "start": "2026-04-29",
+      "date": "2026-04-29",
       "venue": "",
       "address": "",
-      "score": 1,
+      "score": 2,
       "reason": ""
     },
     {
       "source": "Boston Calendar",
       "name": "Painted Burro Waltham- Happy Hour Deals!",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/painted-burro-waltham-weekly-happy-hour-deals--61",
-      "start": "2026-04-28",
-      "date": "2026-04-28",
+      "url": "https://www.thebostoncalendar.com/events/painted-burro-waltham-weekly-happy-hour-deals--156",
+      "start": "2026-04-29",
+      "date": "2026-04-29",
       "venue": "",
       "address": "",
       "score": 1,
@@ -1416,35 +1015,11 @@
     },
     {
       "source": "Boston Calendar",
-      "name": "Two&#39;sDay Night Dinner Date",
+      "name": "Wednesday Night Wine Flights",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/two-sday-night-dinner-date--14",
-      "start": "2026-04-28",
-      "date": "2026-04-28",
-      "venue": "",
-      "address": "",
-      "score": 1,
-      "reason": ""
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "$1 Oysters at Gray&#39;s Hall",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/1-oysters-at-gray-s-hall--167",
-      "start": "2026-04-28",
-      "date": "2026-04-28",
-      "venue": "",
-      "address": "",
-      "score": 1,
-      "reason": ""
-    },
-    {
-      "source": "Boston Calendar",
-      "name": "Painted Burro Davis Square- Happy Hour Deals!",
-      "description": "",
-      "url": "https://www.thebostoncalendar.com/events/painted-burro-davis-square-happy-hour-deals--205",
-      "start": "2026-04-28",
-      "date": "2026-04-28",
+      "url": "https://www.thebostoncalendar.com/events/wednesday-night-wine-flights--8",
+      "start": "2026-04-29",
+      "date": "2026-04-29",
       "venue": "",
       "address": "",
       "score": 1,
@@ -1454,9 +1029,9 @@
       "source": "Boston Calendar",
       "name": "Posto South End- Happy Hour Deals!",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/posto-south-end-happy-hour-deals--207",
-      "start": "2026-04-28",
-      "date": "2026-04-28",
+      "url": "https://www.thebostoncalendar.com/events/posto-south-end-happy-hour-deals--348",
+      "start": "2026-04-29",
+      "date": "2026-04-29",
       "venue": "",
       "address": "",
       "score": 1,
@@ -1464,11 +1039,11 @@
     },
     {
       "source": "Boston Calendar",
-      "name": "2026 Newton Civic Spotlight",
+      "name": "Painted Burro Davis Square- Happy Hour Deals!",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/2026-newton-civic-spotlight",
-      "start": "2026-04-28",
-      "date": "2026-04-28",
+      "url": "https://www.thebostoncalendar.com/events/painted-burro-davis-square-happy-hour-deals--253",
+      "start": "2026-04-29",
+      "date": "2026-04-29",
       "venue": "",
       "address": "",
       "score": 1,
@@ -1476,11 +1051,11 @@
     },
     {
       "source": "Boston Calendar",
-      "name": "Blooming Together: Latinas in Tech Mixer",
+      "name": "$25 Girl Dinner at Waverly Charlestown",
       "description": "",
-      "url": "https://www.thebostoncalendar.com/events/blooming-together-latinas-in-tech-mixer",
-      "start": "2026-04-28",
-      "date": "2026-04-28",
+      "url": "https://www.thebostoncalendar.com/events/25-girl-dinner-at-waverly-charlestown--31",
+      "start": "2026-04-29",
+      "date": "2026-04-29",
       "venue": "",
       "address": "",
       "score": 1,
@@ -2486,76 +2061,6 @@
     "total": 5.3132,
     "runs": [
       {
-        "ts": "2026-04-27T11:58:36.357581",
-        "persona": "unknown",
-        "events_total": 703,
-        "events_cached": 95,
-        "events_scored": 255,
-        "cost_usd": 0,
-        "duration_ms": 0,
-        "models": {},
-        "by_stage": {},
-        "source_counts": {},
-        "deploy_why": "run",
-        "netlify": {},
-        "efficiency": {
-          "cache_hit_rate": 0.271,
-          "avg_hit_rate": 0.313,
-          "cost_per_scored_event": 0.0,
-          "notes": [
-            "Cache 27% hit (95 cached, 255 scored) \u2014 many new events, normal on first daily run",
-            "High scoring volume (255 scored) \u2014 consider raising min_score to cut costs"
-          ]
-        }
-      },
-      {
-        "ts": "2026-04-27T11:58:57.701726",
-        "persona": "unknown",
-        "events_total": 703,
-        "events_cached": 210,
-        "events_scored": 253,
-        "cost_usd": 0,
-        "duration_ms": 0,
-        "models": {},
-        "by_stage": {},
-        "source_counts": {},
-        "deploy_why": "run",
-        "netlify": {},
-        "efficiency": {
-          "cache_hit_rate": 0.454,
-          "avg_hit_rate": 0.267,
-          "cost_per_scored_event": 0.0,
-          "notes": [
-            "Cache 45% hit (210 cached, 253 scored) \u2014 many new events, normal on first daily run",
-            "High scoring volume (253 scored) \u2014 consider raising min_score to cut costs"
-          ]
-        }
-      },
-      {
-        "ts": "2026-04-27T12:00:19.084449",
-        "persona": "unknown",
-        "events_total": 703,
-        "events_cached": 22,
-        "events_scored": 253,
-        "cost_usd": 0,
-        "duration_ms": 0,
-        "models": {},
-        "by_stage": {},
-        "source_counts": {},
-        "deploy_why": "run",
-        "netlify": {},
-        "efficiency": {
-          "cache_hit_rate": 0.08,
-          "avg_hit_rate": 0.341,
-          "cost_per_scored_event": 0.0,
-          "notes": [
-            "Cache 8% hit (22 cached, 253 scored) \u2014 many new events, normal on first daily run",
-            "High scoring volume (253 scored) \u2014 consider raising min_score to cut costs",
-            "Cache hit rate 8% vs recent avg 34% (22 cached / 253 scored) \u2014 possible new sources added or score cache cleared"
-          ]
-        }
-      },
-      {
         "ts": "2026-04-28T08:11:46.442533",
         "persona": "unknown",
         "events_total": 747,
@@ -2606,17 +2111,93 @@
             "High scoring volume (324 scored) \u2014 consider raising min_score to cut costs"
           ]
         }
+      },
+      {
+        "ts": "2026-04-28T08:14:15.407205",
+        "persona": "unknown",
+        "events_total": 747,
+        "events_cached": 21,
+        "events_scored": 324,
+        "cost_usd": 0,
+        "duration_ms": 0,
+        "models": {},
+        "by_stage": {},
+        "source_counts": {},
+        "deploy_why": "run",
+        "netlify": {
+          "total": 300,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.061,
+          "avg_hit_rate": 0.278,
+          "cost_per_scored_event": 0.0,
+          "notes": [
+            "Cache 6% hit (21 cached, 324 scored) \u2014 many new events, normal on first daily run",
+            "High scoring volume (324 scored) \u2014 consider raising min_score to cut costs",
+            "Cache hit rate 6% vs recent avg 28% (21 cached / 324 scored) \u2014 possible new sources added or score cache cleared"
+          ]
+        }
+      },
+      {
+        "ts": "2026-04-29T08:10:52.453434",
+        "persona": "unknown",
+        "events_total": 639,
+        "events_cached": 56,
+        "events_scored": 357,
+        "cost_usd": 0,
+        "duration_ms": 0,
+        "models": {},
+        "by_stage": {},
+        "source_counts": {},
+        "deploy_why": "run",
+        "netlify": {
+          "total": 300,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.136,
+          "avg_hit_rate": 0.236,
+          "cost_per_scored_event": 0.0,
+          "notes": [
+            "Cache 14% hit (56 cached, 357 scored) \u2014 many new events, normal on first daily run",
+            "High scoring volume (357 scored) \u2014 consider raising min_score to cut costs"
+          ]
+        }
+      },
+      {
+        "ts": "2026-04-29T08:11:24.647188",
+        "persona": "unknown",
+        "events_total": 639,
+        "events_cached": 125,
+        "events_scored": 355,
+        "cost_usd": 0,
+        "duration_ms": 0,
+        "models": {},
+        "by_stage": {},
+        "source_counts": {},
+        "deploy_why": "run",
+        "netlify": {
+          "total": 300,
+          "dashboard_url": "https://app.netlify.com/teams/mccarter-brian-j/billing"
+        },
+        "efficiency": {
+          "cache_hit_rate": 0.26,
+          "avg_hit_rate": 0.172,
+          "cost_per_scored_event": 0.0,
+          "notes": [
+            "Cache 26% hit (125 cached, 355 scored) \u2014 many new events, normal on first daily run",
+            "High scoring volume (355 scored) \u2014 consider raising min_score to cut costs"
+          ]
+        }
       }
     ],
     "netlify": "300 credit pack \u2014 check balance at app.netlify.com/billing"
   },
   "sources": {
-    "Eventbrite": 15,
-    "do617": 91,
-    "Meetup": 1,
-    "allevents": 4,
-    "ticketmaster": 1,
-    "Boston Calendar": 10
+    "do617": 77,
+    "allevents": 3,
+    "Boston Calendar": 8
   },
   "source_urls": {
     "do617": "https://do617.com/events/food-drink",
@@ -2670,11 +2251,8 @@
     "Venture Lane events": "https://www.venturelane.co/events"
   },
   "source_stats": {
-    "Eventbrite": 15,
-    "do617": 91,
-    "Meetup": 1,
-    "allevents": 4,
-    "ticketmaster": 1,
-    "Boston Calendar": 10
+    "do617": 77,
+    "allevents": 3,
+    "Boston Calendar": 8
   }
 }
